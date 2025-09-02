@@ -1,0 +1,5 @@
+--resource
+D:/Qtprogram/bandicam/build/.qt/rcc/qmake_bandicam.qrc
+--resource
+D:/Qtprogram/bandicam/build/.qt/rcc/appbandicam_raw_qml_0.qrc
+/qt/qml/bandicam/Main.qml

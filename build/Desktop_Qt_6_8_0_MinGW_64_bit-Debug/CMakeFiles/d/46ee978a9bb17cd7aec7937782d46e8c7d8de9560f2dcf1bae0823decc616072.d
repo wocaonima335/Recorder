@@ -1,0 +1,9 @@
+event/event_module_autogen/timestamp: \
+  D:/360Downloads/Cmake/bin/cmake.exe \
+  D:/Qtprogram/bandicam/event/CMakeLists.txt \
+  D:/Qtprogram/bandicam/event/abstracteventfactory.h \
+  D:/Qtprogram/bandicam/event/eventcategory.h \
+  D:/Qtprogram/bandicam/event/eventfactory.cpp \
+  D:/Qtprogram/bandicam/event/eventfactory.h \
+  D:/Qtprogram/bandicam/event/eventfactorymanager.h \
+  D:/Qtprogram/bandicam/event/ffevent.h

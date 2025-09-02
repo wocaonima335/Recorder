@@ -1,0 +1,2 @@
+D:\Vscode\MinGw64\mingw64\bin\ar.exe qc libdecoder_module.a CMakeFiles/decoder_module.dir/decoder_module_autogen/mocs_compilation.cpp.obj CMakeFiles/decoder_module.dir/ffvdecoder.cpp.obj CMakeFiles/decoder_module.dir/ffadecoder.cpp.obj
+D:\Vscode\MinGw64\mingw64\bin\ranlib.exe libdecoder_module.a

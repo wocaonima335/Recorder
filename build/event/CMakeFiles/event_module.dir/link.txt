@@ -1,0 +1,2 @@
+D:\Vscode\MinGw64\mingw64\bin\ar.exe qc libevent_module.a CMakeFiles/event_module.dir/event_module_autogen/mocs_compilation.cpp.obj CMakeFiles/event_module.dir/eventfactory.cpp.obj
+D:\Vscode\MinGw64\mingw64\bin\ranlib.exe libevent_module.a

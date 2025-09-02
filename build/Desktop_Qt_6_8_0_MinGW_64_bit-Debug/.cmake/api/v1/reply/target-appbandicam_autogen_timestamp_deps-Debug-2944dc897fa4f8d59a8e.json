@@ -1,0 +1,89 @@
+{
+	"backtrace" : 0,
+	"backtraceGraph" : 
+	{
+		"commands" : [],
+		"files" : 
+		[
+			"CMakeLists.txt"
+		],
+		"nodes" : 
+		[
+			{
+				"file" : 0
+			}
+		]
+	},
+	"dependencies" : 
+	[
+		{
+			"id" : "demuxer_module::@62de05a7f7381b9abf32"
+		},
+		{
+			"id" : "qml_module::@eaa524fd34c7a78d319c"
+		},
+		{
+			"id" : "qml_moduleplugin::@eaa524fd34c7a78d319c"
+		},
+		{
+			"id" : "filter_module::@1b82a0487573be3d2cb2"
+		},
+		{
+			"id" : "muxer_module::@fc19b510c7a860b446eb"
+		},
+		{
+			"id" : "resampler_module::@71fbd7bf679cdf4a925d"
+		},
+		{
+			"id" : "thread_module::@1994991b6c1bd8685afc"
+		},
+		{
+			"id" : "recorder_module::@11574ffb604c94479a0e"
+		}
+	],
+	"folder" : 
+	{
+		"name" : "QtInternalTargets"
+	},
+	"id" : "appbandicam_autogen_timestamp_deps::@6890427a1f51a3e7e1df",
+	"isGeneratorProvided" : true,
+	"name" : "appbandicam_autogen_timestamp_deps",
+	"paths" : 
+	{
+		"build" : ".",
+		"source" : "."
+	},
+	"sourceGroups" : 
+	[
+		{
+			"name" : "",
+			"sourceIndexes" : 
+			[
+				0
+			]
+		},
+		{
+			"name" : "CMake Rules",
+			"sourceIndexes" : 
+			[
+				1
+			]
+		}
+	],
+	"sources" : 
+	[
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
+			"path" : "build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/CMakeFiles/appbandicam_autogen_timestamp_deps",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
+			"path" : "build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/CMakeFiles/appbandicam_autogen_timestamp_deps.rule",
+			"sourceGroupIndex" : 1
+		}
+	],
+	"type" : "UTILITY"
+}

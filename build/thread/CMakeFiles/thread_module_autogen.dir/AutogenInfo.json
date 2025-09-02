@@ -1,0 +1,115 @@
+{
+	"BUILD_DIR" : "D:/Qtprogram/bandicam/build/thread/thread_module_autogen",
+	"CMAKE_BINARY_DIR" : "D:/Qtprogram/bandicam/build",
+	"CMAKE_CURRENT_BINARY_DIR" : "D:/Qtprogram/bandicam/build/thread",
+	"CMAKE_CURRENT_SOURCE_DIR" : "D:/Qtprogram/bandicam/thread",
+	"CMAKE_EXECUTABLE" : "D:/360Downloads/Cmake/bin/cmake.exe",
+	"CMAKE_LIST_FILES" : [ "D:/Qtprogram/bandicam/thread/CMakeLists.txt" ],
+	"CMAKE_SOURCE_DIR" : "D:/Qtprogram/bandicam",
+	"DEP_FILE" : "",
+	"DEP_FILE_RULE_NAME" : "",
+	"HEADERS" : 
+	[
+		[
+			"D:/Qtprogram/bandicam/thread/ffadecoderthread.h",
+			"MU",
+			"EWIEGA46WW/moc_ffadecoderthread.cpp",
+			null
+		],
+		[
+			"D:/Qtprogram/bandicam/thread/ffdemuxerthread.h",
+			"MU",
+			"EWIEGA46WW/moc_ffdemuxerthread.cpp",
+			null
+		],
+		[
+			"D:/Qtprogram/bandicam/thread/ffthread.h",
+			"MU",
+			"EWIEGA46WW/moc_ffthread.cpp",
+			null
+		],
+		[
+			"D:/Qtprogram/bandicam/thread/ffthreadpool.h",
+			"MU",
+			"EWIEGA46WW/moc_ffthreadpool.cpp",
+			null
+		]
+	],
+	"HEADER_EXTENSIONS" : [ "h", "hh", "h++", "hm", "hpp", "hxx", "in", "txx" ],
+	"INCLUDE_DIR" : "D:/Qtprogram/bandicam/build/thread/thread_module_autogen/include",
+	"MOC_COMPILATION_FILE" : "D:/Qtprogram/bandicam/build/thread/thread_module_autogen/mocs_compilation.cpp",
+	"MOC_DEFINITIONS" : 
+	[
+		"MINGW_HAS_SECURE_API=1",
+		"QT_CORE_LIB",
+		"UNICODE",
+		"WIN32",
+		"WIN64",
+		"_ENABLE_EXTENDED_ALIGNED_STORAGE",
+		"_UNICODE",
+		"_WIN64"
+	],
+	"MOC_DEPEND_FILTERS" : 
+	[
+		[
+			"Q_PLUGIN_METADATA",
+			"[\n][ \t]*Q_PLUGIN_METADATA[ \t]*\\([^\\)]*FILE[ \t]*\"([^\"]+)\""
+		]
+	],
+	"MOC_INCLUDES" : 
+	[
+		"D:/Qtprogram/bandicam/3rdparty/ffmpeg-amf/include",
+		"D:/Qtprogram/bandicam",
+		"D:/360Downloads/QT/6.8.0/mingw_64/include/QtCore",
+		"D:/360Downloads/QT/6.8.0/mingw_64/include",
+		"D:/360Downloads/QT/6.8.0/mingw_64/mkspecs/win32-g++",
+		"D:/Vscode/MinGw64/mingw64/lib/gcc/x86_64-w64-mingw32/13.2.0/include/c++",
+		"D:/Vscode/MinGw64/mingw64/lib/gcc/x86_64-w64-mingw32/13.2.0/include/c++/x86_64-w64-mingw32",
+		"D:/Vscode/MinGw64/mingw64/lib/gcc/x86_64-w64-mingw32/13.2.0/include/c++/backward",
+		"D:/Vscode/MinGw64/mingw64/lib/gcc/x86_64-w64-mingw32/13.2.0/include",
+		"D:/Vscode/MinGw64/mingw64/lib/gcc/x86_64-w64-mingw32/13.2.0/include-fixed",
+		"D:/Vscode/MinGw64/mingw64/x86_64-w64-mingw32/include"
+	],
+	"MOC_MACRO_NAMES" : 
+	[
+		"Q_OBJECT",
+		"Q_GADGET",
+		"Q_NAMESPACE",
+		"Q_NAMESPACE_EXPORT",
+		"Q_GADGET_EXPORT",
+		"Q_ENUM_NS"
+	],
+	"MOC_OPTIONS" : [ "--output-json" ],
+	"MOC_PATH_PREFIX" : false,
+	"MOC_PREDEFS_CMD" : 
+	[
+		"D:/Vscode/MinGw64/mingw64/bin/g++.exe",
+		"-dM",
+		"-E",
+		"-c",
+		"D:/360Downloads/Cmake/share/cmake-3.27/Modules/CMakeCXXCompilerABI.cpp"
+	],
+	"MOC_PREDEFS_FILE" : "D:/Qtprogram/bandicam/build/thread/thread_module_autogen/moc_predefs.h",
+	"MOC_RELAXED_MODE" : false,
+	"MOC_SKIP" : [],
+	"MULTI_CONFIG" : false,
+	"PARALLEL" : 6,
+	"PARSE_CACHE_FILE" : "D:/Qtprogram/bandicam/build/thread/CMakeFiles/thread_module_autogen.dir/ParseCache.txt",
+	"QT_MOC_EXECUTABLE" : "D:/360Downloads/QT/6.8.0/mingw_64/bin/moc.exe",
+	"QT_UIC_EXECUTABLE" : "D:/360Downloads/QT/6.8.0/mingw_64/bin/uic.exe",
+	"QT_VERSION_MAJOR" : 6,
+	"QT_VERSION_MINOR" : 8,
+	"SETTINGS_FILE" : "D:/Qtprogram/bandicam/build/thread/CMakeFiles/thread_module_autogen.dir/AutogenUsed.txt",
+	"SOURCES" : 
+	[
+		[ "D:/Qtprogram/bandicam/thread/ffadecoderthread.cpp", "MU", null ],
+		[ "D:/Qtprogram/bandicam/thread/ffdemuxerthread.cpp", "MU", null ],
+		[ "D:/Qtprogram/bandicam/thread/ffthread.cpp", "MU", null ],
+		[ "D:/Qtprogram/bandicam/thread/ffthreadpool.cpp", "MU", null ]
+	],
+	"UIC_OPTIONS" : [],
+	"UIC_SEARCH_PATHS" : [],
+	"UIC_SKIP" : [],
+	"UIC_UI_FILES" : [],
+	"VERBOSITY" : 0
+}

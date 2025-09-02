@@ -1,0 +1,6 @@
+<RCC>
+  <qresource prefix="/qt/qml/bandicam/">
+    <file alias="Main.qml">D:/Qtprogram/bandicam/Main.qml</file>
+  </qresource>
+</RCC>
+

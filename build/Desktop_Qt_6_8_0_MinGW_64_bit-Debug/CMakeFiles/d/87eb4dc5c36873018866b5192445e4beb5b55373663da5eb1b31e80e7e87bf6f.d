@@ -1,0 +1,5 @@
+muxer/muxer_module_autogen/timestamp: \
+  D:/360Downloads/Cmake/bin/cmake.exe \
+  D:/Qtprogram/bandicam/muxer/CMakeLists.txt \
+  D:/Qtprogram/bandicam/muxer/ffmuxer.cpp \
+  D:/Qtprogram/bandicam/muxer/ffmuxer.h

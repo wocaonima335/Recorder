@@ -1,0 +1,2 @@
+D:\Vscode\MinGw64\mingw64\bin\ar.exe qc libmuxer_module.a CMakeFiles/muxer_module.dir/muxer_module_autogen/mocs_compilation.cpp.obj CMakeFiles/muxer_module.dir/ffmuxer.cpp.obj
+D:\Vscode\MinGw64\mingw64\bin\ranlib.exe libmuxer_module.a

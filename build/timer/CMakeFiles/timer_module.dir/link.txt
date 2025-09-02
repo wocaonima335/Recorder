@@ -1,0 +1,2 @@
+D:\Vscode\MinGw64\mingw64\bin\ar.exe qc libtimer_module.a CMakeFiles/timer_module.dir/timer_module_autogen/mocs_compilation.cpp.obj
+D:\Vscode\MinGw64\mingw64\bin\ranlib.exe libtimer_module.a
