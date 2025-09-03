@@ -1,2 +1,0 @@
-D:\Vscode\MinGw64\mingw64\bin\ar.exe qc libthread_module.a CMakeFiles/thread_module.dir/thread_module_autogen/mocs_compilation.cpp.obj CMakeFiles/thread_module.dir/ffthread.cpp.obj CMakeFiles/thread_module.dir/ffthreadpool.cpp.obj CMakeFiles/thread_module.dir/ffdemuxerthread.cpp.obj CMakeFiles/thread_module.dir/ffadecoderthread.cpp.obj
-D:\Vscode\MinGw64\mingw64\bin\ranlib.exe libthread_module.a

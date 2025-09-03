@@ -1,0 +1,31 @@
+{
+	"backtrace" : 0,
+	"backtraceGraph" : 
+	{
+		"commands" : [],
+		"files" : 
+		[
+			"queue/CMakeLists.txt"
+		],
+		"nodes" : 
+		[
+			{
+				"file" : 0
+			}
+		]
+	},
+	"folder" : 
+	{
+		"name" : "QtInternalTargets"
+	},
+	"id" : "queue_module_autogen_timestamp_deps::@d63f5f69c5a9088733ed",
+	"isGeneratorProvided" : true,
+	"name" : "queue_module_autogen_timestamp_deps",
+	"paths" : 
+	{
+		"build" : "queue",
+		"source" : "queue"
+	},
+	"sources" : [],
+	"type" : "UTILITY"
+}

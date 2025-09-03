@@ -1,0 +1,38 @@
+{
+	"backtrace" : 0,
+	"backtraceGraph" : 
+	{
+		"commands" : [],
+		"files" : 
+		[
+			"resampler/CMakeLists.txt"
+		],
+		"nodes" : 
+		[
+			{
+				"file" : 0
+			}
+		]
+	},
+	"dependencies" : 
+	[
+		{
+			"backtrace" : 0,
+			"id" : "demuxer_module::@62de05a7f7381b9abf32"
+		}
+	],
+	"folder" : 
+	{
+		"name" : "QtInternalTargets"
+	},
+	"id" : "resampler_module_autogen_timestamp_deps::@71fbd7bf679cdf4a925d",
+	"isGeneratorProvided" : true,
+	"name" : "resampler_module_autogen_timestamp_deps",
+	"paths" : 
+	{
+		"build" : "resampler",
+		"source" : "resampler"
+	},
+	"sources" : [],
+	"type" : "UTILITY"
+}

@@ -1,49 +1,51 @@
 {
-	"BUILD_DIR" : "D:/Qtprogram/bandicam/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/event/event_module_autogen",
-	"CMAKE_BINARY_DIR" : "D:/Qtprogram/bandicam/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug",
-	"CMAKE_CURRENT_BINARY_DIR" : "D:/Qtprogram/bandicam/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/event",
-	"CMAKE_CURRENT_SOURCE_DIR" : "D:/Qtprogram/bandicam/event",
-	"CMAKE_EXECUTABLE" : "D:/360Downloads/Cmake/bin/cmake.exe",
-	"CMAKE_LIST_FILES" : [ "D:/Qtprogram/bandicam/event/CMakeLists.txt" ],
-	"CMAKE_SOURCE_DIR" : "D:/Qtprogram/bandicam",
-	"DEP_FILE" : "D:/Qtprogram/bandicam/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/event/event_module_autogen/deps",
+	"AUTOGEN_COMMAND_LINE_LENGTH_MAX" : 32000,
+	"BUILD_DIR" : "E:/myProgram/Recorder/record/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/event/event_module_autogen",
+	"CMAKE_BINARY_DIR" : "E:/myProgram/Recorder/record/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug",
+	"CMAKE_CURRENT_BINARY_DIR" : "E:/myProgram/Recorder/record/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/event",
+	"CMAKE_CURRENT_SOURCE_DIR" : "E:/myProgram/Recorder/record/event",
+	"CMAKE_EXECUTABLE" : "F:/Qt/Tools/CMake_64/bin/cmake.exe",
+	"CMAKE_LIST_FILES" : [ "E:/myProgram/Recorder/record/event/CMakeLists.txt" ],
+	"CMAKE_SOURCE_DIR" : "E:/myProgram/Recorder/record",
+	"CROSS_CONFIG" : false,
+	"DEP_FILE" : "E:/myProgram/Recorder/record/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/event/event_module_autogen/deps",
 	"DEP_FILE_RULE_NAME" : "event_module_autogen/timestamp",
 	"HEADERS" : 
 	[
 		[
-			"D:/Qtprogram/bandicam/event/abstracteventfactory.h",
+			"E:/myProgram/Recorder/record/event/abstracteventfactory.h",
 			"MU",
 			"EWIEGA46WW/moc_abstracteventfactory.cpp",
 			null
 		],
 		[
-			"D:/Qtprogram/bandicam/event/eventcategory.h",
+			"E:/myProgram/Recorder/record/event/eventcategory.h",
 			"MU",
 			"EWIEGA46WW/moc_eventcategory.cpp",
 			null
 		],
 		[
-			"D:/Qtprogram/bandicam/event/eventfactory.h",
+			"E:/myProgram/Recorder/record/event/eventfactory.h",
 			"MU",
 			"EWIEGA46WW/moc_eventfactory.cpp",
 			null
 		],
 		[
-			"D:/Qtprogram/bandicam/event/eventfactorymanager.h",
+			"E:/myProgram/Recorder/record/event/eventfactorymanager.h",
 			"MU",
 			"EWIEGA46WW/moc_eventfactorymanager.cpp",
 			null
 		],
 		[
-			"D:/Qtprogram/bandicam/event/ffevent.h",
+			"E:/myProgram/Recorder/record/event/ffevent.h",
 			"MU",
 			"EWIEGA46WW/moc_ffevent.cpp",
 			null
 		]
 	],
 	"HEADER_EXTENSIONS" : [ "h", "hh", "h++", "hm", "hpp", "hxx", "in", "txx" ],
-	"INCLUDE_DIR" : "D:/Qtprogram/bandicam/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/event/event_module_autogen/include",
-	"MOC_COMPILATION_FILE" : "D:/Qtprogram/bandicam/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/event/event_module_autogen/mocs_compilation.cpp",
+	"INCLUDE_DIR" : "E:/myProgram/Recorder/record/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/event/event_module_autogen/include",
+	"MOC_COMPILATION_FILE" : "E:/myProgram/Recorder/record/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/event/event_module_autogen/mocs_compilation.cpp",
 	"MOC_DEFINITIONS" : 
 	[
 		"MINGW_HAS_SECURE_API=1",
@@ -64,17 +66,17 @@
 	],
 	"MOC_INCLUDES" : 
 	[
-		"D:/Qtprogram/bandicam/3rdparty/ffmpeg-amf/include",
-		"D:/Qtprogram/bandicam",
-		"D:/360Downloads/QT/6.8.0/mingw_64/include/QtCore",
-		"D:/360Downloads/QT/6.8.0/mingw_64/include",
-		"D:/360Downloads/QT/6.8.0/mingw_64/mkspecs/win32-g++",
-		"D:/360Downloads/QT/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++",
-		"D:/360Downloads/QT/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/x86_64-w64-mingw32",
-		"D:/360Downloads/QT/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/backward",
-		"D:/360Downloads/QT/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include",
-		"D:/360Downloads/QT/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include-fixed",
-		"D:/360Downloads/QT/Tools/mingw1310_64/x86_64-w64-mingw32/include"
+		"E:/myProgram/Recorder/record/3rdparty/ffmpeg-amf/include",
+		"E:/myProgram/Recorder/record",
+		"F:/Qt/6.8.0/mingw_64/include/QtCore",
+		"F:/Qt/6.8.0/mingw_64/include",
+		"F:/Qt/6.8.0/mingw_64/mkspecs/win32-g++",
+		"F:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++",
+		"F:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/x86_64-w64-mingw32",
+		"F:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/backward",
+		"F:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include",
+		"F:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include-fixed",
+		"F:/Qt/Tools/mingw1310_64/x86_64-w64-mingw32/include"
 	],
 	"MOC_MACRO_NAMES" : 
 	[
@@ -89,30 +91,31 @@
 	"MOC_PATH_PREFIX" : false,
 	"MOC_PREDEFS_CMD" : 
 	[
-		"D:/360Downloads/QT/Tools/mingw1310_64/bin/g++.exe",
+		"F:/Qt/Tools/mingw1310_64/bin/g++.exe",
 		"-dM",
 		"-E",
 		"-c",
-		"D:/360Downloads/Cmake/share/cmake-3.27/Modules/CMakeCXXCompilerABI.cpp"
+		"F:/Qt/Tools/CMake_64/share/cmake-3.29/Modules/CMakeCXXCompilerABI.cpp"
 	],
-	"MOC_PREDEFS_FILE" : "D:/Qtprogram/bandicam/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/event/event_module_autogen/moc_predefs.h",
+	"MOC_PREDEFS_FILE" : "E:/myProgram/Recorder/record/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/event/event_module_autogen/moc_predefs.h",
 	"MOC_RELAXED_MODE" : false,
 	"MOC_SKIP" : [],
 	"MULTI_CONFIG" : false,
-	"PARALLEL" : 6,
-	"PARSE_CACHE_FILE" : "D:/Qtprogram/bandicam/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/event/CMakeFiles/event_module_autogen.dir/ParseCache.txt",
-	"QT_MOC_EXECUTABLE" : "D:/360Downloads/QT/6.8.0/mingw_64/bin/moc.exe",
-	"QT_UIC_EXECUTABLE" : "D:/360Downloads/QT/6.8.0/mingw_64/bin/uic.exe",
+	"PARALLEL" : 4,
+	"PARSE_CACHE_FILE" : "E:/myProgram/Recorder/record/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/event/CMakeFiles/event_module_autogen.dir/ParseCache.txt",
+	"QT_MOC_EXECUTABLE" : "F:/Qt/6.8.0/mingw_64/bin/moc.exe",
+	"QT_UIC_EXECUTABLE" : "F:/Qt/6.8.0/mingw_64/bin/uic.exe",
 	"QT_VERSION_MAJOR" : 6,
 	"QT_VERSION_MINOR" : 8,
-	"SETTINGS_FILE" : "D:/Qtprogram/bandicam/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/event/CMakeFiles/event_module_autogen.dir/AutogenUsed.txt",
+	"SETTINGS_FILE" : "E:/myProgram/Recorder/record/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/event/CMakeFiles/event_module_autogen.dir/AutogenUsed.txt",
 	"SOURCES" : 
 	[
-		[ "D:/Qtprogram/bandicam/event/eventfactory.cpp", "MU", null ]
+		[ "E:/myProgram/Recorder/record/event/eventfactory.cpp", "MU", null ]
 	],
 	"UIC_OPTIONS" : [],
 	"UIC_SEARCH_PATHS" : [],
 	"UIC_SKIP" : [],
 	"UIC_UI_FILES" : [],
+	"USE_BETTER_GRAPH" : true,
 	"VERBOSITY" : 0
 }

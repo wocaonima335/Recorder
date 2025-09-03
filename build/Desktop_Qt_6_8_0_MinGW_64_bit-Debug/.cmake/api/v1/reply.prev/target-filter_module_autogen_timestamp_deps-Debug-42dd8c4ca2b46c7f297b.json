@@ -1,0 +1,38 @@
+{
+	"backtrace" : 0,
+	"backtraceGraph" : 
+	{
+		"commands" : [],
+		"files" : 
+		[
+			"filter/CMakeLists.txt"
+		],
+		"nodes" : 
+		[
+			{
+				"file" : 0
+			}
+		]
+	},
+	"dependencies" : 
+	[
+		{
+			"backtrace" : 0,
+			"id" : "demuxer_module::@62de05a7f7381b9abf32"
+		}
+	],
+	"folder" : 
+	{
+		"name" : "QtInternalTargets"
+	},
+	"id" : "filter_module_autogen_timestamp_deps::@1b82a0487573be3d2cb2",
+	"isGeneratorProvided" : true,
+	"name" : "filter_module_autogen_timestamp_deps",
+	"paths" : 
+	{
+		"build" : "filter",
+		"source" : "filter"
+	},
+	"sources" : [],
+	"type" : "UTILITY"
+}

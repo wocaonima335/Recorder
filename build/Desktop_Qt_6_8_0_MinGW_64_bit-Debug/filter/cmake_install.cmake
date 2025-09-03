@@ -1,4 +1,4 @@
-# Install script for directory: D:/Qtprogram/bandicam/filter
+# Install script for directory: E:/myProgram/Recorder/record/filter
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -34,6 +34,6 @@ endif()
 
 # Set default install directory permissions.
 if(NOT DEFINED CMAKE_OBJDUMP)
-  set(CMAKE_OBJDUMP "D:/360Downloads/QT/Tools/mingw1310_64/bin/objdump.exe")
+  set(CMAKE_OBJDUMP "F:/Qt/Tools/mingw1310_64/bin/objdump.exe")
 endif()
 

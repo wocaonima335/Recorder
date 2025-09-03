@@ -1,8 +1,0 @@
-module bandicam.qml
-linktarget qml_moduleplugin
-optional plugin qml_moduleplugin
-classname bandicam_qmlPlugin
-typeinfo qml_module.qmltypes
-prefer :/qt/qml/bandicam/qml/
-Main 1.0 ../Main.qml
-
