@@ -22,9 +22,6 @@ extern "C" {
 class FFAFrameQueue;
 class FFADecoder;
 
-// 添加明确的枚举定义
-enum AudioSourceType { AUDIO_SOURCE_SYSTEM = 0, AUDIO_SOURCE_MICROPHONE = 1 };
-
 class FFAFilter
 {
 public:
@@ -43,7 +40,7 @@ public:
     void processSingleAudioFrame(AVFrame *frame,
                                  int64_t startTime,
                                  int64_t pauseTime,
-                                 AudioSourceType sourceType);
+                                 int sourceType);
     void forwardAudioFrame(AVFrame *frame, int64_t startTime, int64_t pauseTime);
 
     void setSystemAudioVolume(double volume);
@@ -59,9 +56,7 @@ public:
                                    AVStream *sysAudioStream,
                                    AVStream *micAudioStream);
 
-    void initializeIndividualFilter(AVCodecContext *codecCtx,
-                                    AVStream *stream,
-                                    AudioSourceType sourceType);
+    void initializeIndividualFilter(AVCodecContext *codecCtx, AVStream *stream, int sourceType);
 
     void createAudioBufferFilter(AVFilterGraph *filterGraph,
                                  AVFilterContext **context,

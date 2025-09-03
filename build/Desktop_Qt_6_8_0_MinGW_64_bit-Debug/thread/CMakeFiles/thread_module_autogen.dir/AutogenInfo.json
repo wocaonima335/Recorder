@@ -17,6 +17,12 @@
 			null
 		],
 		[
+			"D:/Qtprogram/bandicam/thread/ffafilterthread.h",
+			"MU",
+			"EWIEGA46WW/moc_ffafilterthread.cpp",
+			null
+		],
+		[
 			"D:/Qtprogram/bandicam/thread/ffdemuxerthread.h",
 			"MU",
 			"EWIEGA46WW/moc_ffdemuxerthread.cpp",
@@ -38,6 +44,12 @@
 			"D:/Qtprogram/bandicam/thread/ffvdecoderthread.h",
 			"MU",
 			"EWIEGA46WW/moc_ffvdecoderthread.cpp",
+			null
+		],
+		[
+			"D:/Qtprogram/bandicam/thread/ffvfilterthread.h",
+			"MU",
+			"EWIEGA46WW/moc_ffvfilterthread.cpp",
 			null
 		]
 	],
@@ -109,10 +121,12 @@
 	"SOURCES" : 
 	[
 		[ "D:/Qtprogram/bandicam/thread/ffadecoderthread.cpp", "MU", null ],
+		[ "D:/Qtprogram/bandicam/thread/ffafilterthread.cpp", "MU", null ],
 		[ "D:/Qtprogram/bandicam/thread/ffdemuxerthread.cpp", "MU", null ],
 		[ "D:/Qtprogram/bandicam/thread/ffthread.cpp", "MU", null ],
 		[ "D:/Qtprogram/bandicam/thread/ffthreadpool.cpp", "MU", null ],
-		[ "D:/Qtprogram/bandicam/thread/ffvdecoderthread.cpp", "MU", null ]
+		[ "D:/Qtprogram/bandicam/thread/ffvdecoderthread.cpp", "MU", null ],
+		[ "D:/Qtprogram/bandicam/thread/ffvfilterthread.cpp", "MU", null ]
 	],
 	"UIC_OPTIONS" : [],
 	"UIC_SEARCH_PATHS" : [],

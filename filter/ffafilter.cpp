@@ -1,6 +1,7 @@
 #include "ffafilter.h"
-#include "../decoder/ffadecoder.h"
-#include "../queue/ffaframequeue.h"
+#include "decoder/ffadecoder.h"
+#include "queue/ffaframequeue.h"
+#include "recorder/ffrecorder.h"
 
 #include <sstream>
 
@@ -106,7 +107,7 @@ int FFAFilter::processDualtAudioFrames(AVFrame *audioFrame,
 void FFAFilter::processSingleAudioFrame(AVFrame *frame,
                                         int64_t startTime,
                                         int64_t pauseTime,
-                                        AudioSourceType sourceType)
+                                        int sourceType)
 {
     std::lock_guard<std::mutex> lock(m_processingMutex);
 

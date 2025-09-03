@@ -1,9 +1,0 @@
-<RCC>
-  <qresource prefix="/qt/qml/bandicam/qml/">
-    <file alias="Main.qml">D:/Qtprogram/bandicam/qml/Main.qml</file>
-    <file alias="videopage.qml">D:/Qtprogram/bandicam/qml/videopage.qml</file>
-    <file alias="settingpage.qml">D:/Qtprogram/bandicam/qml/settingpage.qml</file>
-    <file alias="cuttingpage.qml">D:/Qtprogram/bandicam/qml/cuttingpage.qml</file>
-  </qresource>
-</RCC>
-

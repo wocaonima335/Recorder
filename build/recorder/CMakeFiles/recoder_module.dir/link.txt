@@ -1,2 +1,0 @@
-D:\Vscode\MinGw64\mingw64\bin\ar.exe qc librecoder_module.a CMakeFiles/recoder_module.dir/recoder_module_autogen/mocs_compilation.cpp.obj
-D:\Vscode\MinGw64\mingw64\bin\ranlib.exe librecoder_module.a

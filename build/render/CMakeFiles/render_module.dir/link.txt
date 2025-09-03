@@ -1,2 +1,0 @@
-D:\Vscode\MinGw64\mingw64\bin\ar.exe qc librender_module.a CMakeFiles/render_module.dir/render_module_autogen/mocs_compilation.cpp.obj CMakeFiles/render_module.dir/ffarender.cpp.obj
-D:\Vscode\MinGw64\mingw64\bin\ranlib.exe librender_module.a

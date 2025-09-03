@@ -1,8 +1,0 @@
-queue/queue_module_autogen/timestamp: \
-  D:/360Downloads/Cmake/bin/cmake.exe \
-  D:/Qtprogram/bandicam/queue/CMakeLists.txt \
-  D:/Qtprogram/bandicam/queue/ffaframequeue.h \
-  D:/Qtprogram/bandicam/queue/ffapacketqueue.h \
-  D:/Qtprogram/bandicam/queue/ffvframequeue.h \
-  D:/Qtprogram/bandicam/queue/ffvpacketqueue.cpp \
-  D:/Qtprogram/bandicam/queue/ffvpacketqueue.h

@@ -1,5 +1,0 @@
-module bandicam
-typeinfo appbandicam.qmltypes
-prefer :/qt/qml/bandicam/
-Main 1.0 Main.qml
-

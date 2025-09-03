@@ -418,24 +418,6 @@ bandicam_IS_TOP_LEVEL:STATIC=ON
 //Value Computed by CMake
 bandicam_SOURCE_DIR:STATIC=D:/Qtprogram/bandicam
 
-//Value Computed by CMake
-render_BINARY_DIR:STATIC=D:/Qtprogram/bandicam/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/render
-
-//Value Computed by CMake
-render_IS_TOP_LEVEL:STATIC=OFF
-
-//Value Computed by CMake
-render_SOURCE_DIR:STATIC=D:/Qtprogram/bandicam/render
-
-//Value Computed by CMake
-thread_BINARY_DIR:STATIC=D:/Qtprogram/bandicam/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/thread
-
-//Value Computed by CMake
-thread_IS_TOP_LEVEL:STATIC=OFF
-
-//Value Computed by CMake
-thread_SOURCE_DIR:STATIC=D:/Qtprogram/bandicam/thread
-
 
 ########################
 # INTERNAL cache entries
