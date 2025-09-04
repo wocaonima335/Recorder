@@ -1,0 +1,1 @@
+-IE:/myProgram/Recorder/record/build/muxer/muxer_module_autogen/include -I"E:/myProgram/Recorder/record/3rdparty/ffmpeg-amf/include" -isystem D:/Qt/6.5.3/mingw_64/include/QtCore -isystem D:/Qt/6.5.3/mingw_64/include -isystem "D:/Qt/6.5.3/mingw_64/mkspecs/win32-g++"

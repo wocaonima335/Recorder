@@ -19,6 +19,18 @@
 			null
 		],
 		[
+			"E:/myProgram/Recorder/record/thread/ffaencoderthread.h",
+			"MU",
+			"EWIEGA46WW/moc_ffaencoderthread.cpp",
+			null
+		],
+		[
+			"E:/myProgram/Recorder/record/thread/ffafilterthread.h",
+			"MU",
+			"EWIEGA46WW/moc_ffafilterthread.cpp",
+			null
+		],
+		[
 			"E:/myProgram/Recorder/record/thread/ffdemuxerthread.h",
 			"MU",
 			"EWIEGA46WW/moc_ffdemuxerthread.cpp",
@@ -121,6 +133,12 @@
 			"MU",
 			null
 		],
+		[
+			"E:/myProgram/Recorder/record/thread/ffaencoderthread.cpp",
+			"MU",
+			null
+		],
+		[ "E:/myProgram/Recorder/record/thread/ffafilterthread.cpp", "MU", null ],
 		[ "E:/myProgram/Recorder/record/thread/ffdemuxerthread.cpp", "MU", null ],
 		[ "E:/myProgram/Recorder/record/thread/ffthread.cpp", "MU", null ],
 		[ "E:/myProgram/Recorder/record/thread/ffthreadpool.cpp", "MU", null ],

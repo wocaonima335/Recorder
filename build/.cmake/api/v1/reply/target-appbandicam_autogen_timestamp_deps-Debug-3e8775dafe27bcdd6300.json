@@ -1,0 +1,66 @@
+{
+	"backtrace" : 0,
+	"backtraceGraph" : 
+	{
+		"commands" : [],
+		"files" : 
+		[
+			"CMakeLists.txt"
+		],
+		"nodes" : 
+		[
+			{
+				"file" : 0
+			}
+		]
+	},
+	"dependencies" : 
+	[
+		{
+			"backtrace" : 0,
+			"id" : "demuxer_module::@62de05a7f7381b9abf32"
+		},
+		{
+			"backtrace" : 0,
+			"id" : "qml_module::@eaa524fd34c7a78d319c"
+		},
+		{
+			"backtrace" : 0,
+			"id" : "appbandicam_qmlimportscan::@6890427a1f51a3e7e1df"
+		},
+		{
+			"backtrace" : 0,
+			"id" : "filter_module::@1b82a0487573be3d2cb2"
+		},
+		{
+			"backtrace" : 0,
+			"id" : "resampler_module::@71fbd7bf679cdf4a925d"
+		},
+		{
+			"backtrace" : 0,
+			"id" : "muxer_module::@fc19b510c7a860b446eb"
+		},
+		{
+			"backtrace" : 0,
+			"id" : "thread_module::@1994991b6c1bd8685afc"
+		},
+		{
+			"backtrace" : 0,
+			"id" : "recorder_module::@11574ffb604c94479a0e"
+		}
+	],
+	"folder" : 
+	{
+		"name" : "QtInternalTargets"
+	},
+	"id" : "appbandicam_autogen_timestamp_deps::@6890427a1f51a3e7e1df",
+	"isGeneratorProvided" : true,
+	"name" : "appbandicam_autogen_timestamp_deps",
+	"paths" : 
+	{
+		"build" : ".",
+		"source" : "."
+	},
+	"sources" : [],
+	"type" : "UTILITY"
+}

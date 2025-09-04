@@ -1,6 +1,7 @@
 #include "ffafilter.h"
-#include "../decoder/ffadecoder.h"
-#include "../queue/ffaframequeue.h"
+#include "decoder/ffadecoder.h"
+#include "queue/ffaframequeue.h"
+#include "recorder/ffrecorder.h"
 
 #include <sstream>
 
@@ -93,12 +94,7 @@ int FFAFilter::processDualtAudioFrames(AVFrame *audioFrame,
 
         av_frame_unref(filterFrame);
         av_frame_free(&filterFrame);
-    }
-    // av_frame_unref(primaryFrame);
-    // av_frame_free(&primaryFrame);
-
-    // av_frame_unref(secondaryFrame);
-    // av_frame_free(&secondaryFrame);
+    };
 
     return 0;
 }

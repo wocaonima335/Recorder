@@ -1,0 +1,2 @@
+F:\Qt\Tools\mingw1310_64\bin\ar.exe qc libqml_module.a CMakeFiles/qml_module.dir/qml_module_autogen/mocs_compilation.cpp.obj CMakeFiles/qml_module.dir/qml_module_qmltyperegistrations.cpp.obj CMakeFiles/qml_module.dir/.rcc/qmlcache/qml_module_Main_qml.cpp.obj CMakeFiles/qml_module.dir/.rcc/qmlcache/qml_module_videopage_qml.cpp.obj CMakeFiles/qml_module.dir/.rcc/qmlcache/qml_module_settingpage_qml.cpp.obj CMakeFiles/qml_module.dir/.rcc/qmlcache/qml_module_cuttingpage_qml.cpp.obj
+F:\Qt\Tools\mingw1310_64\bin\ranlib.exe libqml_module.a

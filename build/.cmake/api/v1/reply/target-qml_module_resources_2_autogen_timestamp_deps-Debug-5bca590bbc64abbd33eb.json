@@ -1,0 +1,31 @@
+{
+	"backtrace" : 0,
+	"backtraceGraph" : 
+	{
+		"commands" : [],
+		"files" : 
+		[
+			"qml/CMakeLists.txt"
+		],
+		"nodes" : 
+		[
+			{
+				"file" : 0
+			}
+		]
+	},
+	"folder" : 
+	{
+		"name" : "QtInternalTargets"
+	},
+	"id" : "qml_module_resources_2_autogen_timestamp_deps::@eaa524fd34c7a78d319c",
+	"isGeneratorProvided" : true,
+	"name" : "qml_module_resources_2_autogen_timestamp_deps",
+	"paths" : 
+	{
+		"build" : "qml",
+		"source" : "qml"
+	},
+	"sources" : [],
+	"type" : "UTILITY"
+}

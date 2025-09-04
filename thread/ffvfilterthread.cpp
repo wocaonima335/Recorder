@@ -81,6 +81,27 @@ void FFVFilterThread::closeVideoSource(int sourceType)
     cond.notify_one();
 }
 
+void FFVFilterThread::pauseEncoder()
+{
+    std::lock_guard<std::mutex> lock(mutex);
+    if (pauseFlag.load()) {
+        pauseTime += av_gettime_relative() - lastPauseTime;
+        pauseFlag.store(false);
+    } else {
+        pauseFlag.store(true);
+        lastPauseTime = av_gettime_relative();
+    }
+}
+
+void FFVFilterThread::peekStart() {}
+
+void FFVFilterThread::wakeAllThread()
+{
+    if (frmQueue) {
+        frmQueue->wakeAllThread();
+    }
+}
+
 void FFVFilterThread::run()
 {
     while (!m_stop) {

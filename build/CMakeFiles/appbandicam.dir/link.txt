@@ -1,0 +1,3 @@
+C:\Grpc\cmake-4.0.0-rc1-windows-x86_64\bin\cmake.exe -E rm -f CMakeFiles\appbandicam.dir/objects.a
+F:\Qt\Tools\mingw1310_64\bin\ar.exe qc CMakeFiles\appbandicam.dir/objects.a @CMakeFiles\appbandicam.dir\objects1.rsp
+F:\Qt\Tools\mingw1310_64\bin\g++.exe -g -mwindows -Wl,--whole-archive CMakeFiles\appbandicam.dir/objects.a -Wl,--no-whole-archive -o appbandicam.exe -Wl,--out-implib,libappbandicam.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\appbandicam.dir\linkLibs.rsp

@@ -1,0 +1,2 @@
+F:\Qt\Tools\mingw1310_64\bin\ar.exe qc libqueue_module.a CMakeFiles/queue_module.dir/queue_module_autogen/mocs_compilation.cpp.obj CMakeFiles/queue_module.dir/ffvpacketqueue.cpp.obj CMakeFiles/queue_module.dir/ffeventqueue.cpp.obj
+F:\Qt\Tools\mingw1310_64\bin\ranlib.exe libqueue_module.a

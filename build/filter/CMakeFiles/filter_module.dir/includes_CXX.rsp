@@ -1,0 +1,1 @@
+-IE:/myProgram/Recorder/record/build/filter/filter_module_autogen/include -I"E:/myProgram/Recorder/record/3rdparty/ffmpeg-amf/include" -IE:/myProgram/Recorder/record/filter/.. -isystem D:/Qt/6.5.3/mingw_64/include/QtCore -isystem D:/Qt/6.5.3/mingw_64/include -isystem "D:/Qt/6.5.3/mingw_64/mkspecs/win32-g++"

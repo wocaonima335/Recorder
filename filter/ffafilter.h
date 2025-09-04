@@ -14,6 +14,8 @@ extern "C" {
 #include <libavutil/time.h>
 }
 
+enum AudioSourceType { AUDIO_SOURCE_SYSTEM = 0, AUDIO_SOURCE_MICROPHONE = 1 };
+
 // 音频处理标准配置
 #define AUDIO_SAMPLE_RATE 48000
 #define AUDIO_SAMPLE_FORMAT AV_SAMPLE_FMT_FLTP
@@ -21,9 +23,6 @@ extern "C" {
 
 class FFAFrameQueue;
 class FFADecoder;
-
-// 添加明确的枚举定义
-enum AudioSourceType { AUDIO_SOURCE_SYSTEM = 0, AUDIO_SOURCE_MICROPHONE = 1 };
 
 class FFAFilter
 {

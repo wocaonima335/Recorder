@@ -1,0 +1,2 @@
+F:\Qt\Tools\mingw1310_64\bin\ar.exe qc bandicam\qml\libqml_moduleplugin.a CMakeFiles/qml_moduleplugin.dir/qml_moduleplugin_autogen/mocs_compilation.cpp.obj CMakeFiles/qml_moduleplugin.dir/qml_moduleplugin_bandicam_qmlPlugin.cpp.obj
+F:\Qt\Tools\mingw1310_64\bin\ranlib.exe bandicam\qml\libqml_moduleplugin.a

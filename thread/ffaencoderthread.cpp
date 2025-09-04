@@ -1,0 +1,7 @@
+#include "ffaencoderthread.h"
+#include "decoder/ffadecoder.h"
+#include "encoder/ffaencoder.h"
+#include "filter/ffafilter.h"
+#include "muxer/ffmuxer.h"
+#include "queue/ffaframequeue.h"
+#include "queue/ffapacketqueue.h"

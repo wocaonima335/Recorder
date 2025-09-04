@@ -1,0 +1,50 @@
+{
+	"backtrace" : 0,
+	"backtraceGraph" : 
+	{
+		"commands" : [],
+		"files" : 
+		[
+			"recorder/CMakeLists.txt"
+		],
+		"nodes" : 
+		[
+			{
+				"file" : 0
+			}
+		]
+	},
+	"dependencies" : 
+	[
+		{
+			"backtrace" : 0,
+			"id" : "demuxer_module::@62de05a7f7381b9abf32"
+		},
+		{
+			"backtrace" : 0,
+			"id" : "muxer_module::@fc19b510c7a860b446eb"
+		},
+		{
+			"backtrace" : 0,
+			"id" : "filter_module::@1b82a0487573be3d2cb2"
+		},
+		{
+			"backtrace" : 0,
+			"id" : "encoder_module::@372742a3ab0a8675e45e"
+		}
+	],
+	"folder" : 
+	{
+		"name" : "QtInternalTargets"
+	},
+	"id" : "recorder_module_autogen_timestamp_deps::@11574ffb604c94479a0e",
+	"isGeneratorProvided" : true,
+	"name" : "recorder_module_autogen_timestamp_deps",
+	"paths" : 
+	{
+		"build" : "recorder",
+		"source" : "recorder"
+	},
+	"sources" : [],
+	"type" : "UTILITY"
+}

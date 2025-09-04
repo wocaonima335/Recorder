@@ -20,6 +20,8 @@ set(__QT_DEPLOY_TARGET_thread_module_FILE E:/myProgram/Recorder/record/build/Des
 set(__QT_DEPLOY_TARGET_thread_module_TYPE STATIC_LIBRARY)
 set(__QT_DEPLOY_TARGET_recorder_module_FILE E:/myProgram/Recorder/record/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/recorder/librecorder_module.a)
 set(__QT_DEPLOY_TARGET_recorder_module_TYPE STATIC_LIBRARY)
+set(__QT_DEPLOY_TARGET_encoder_module_FILE E:/myProgram/Recorder/record/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/encoder/libencoder_module.a)
+set(__QT_DEPLOY_TARGET_encoder_module_TYPE STATIC_LIBRARY)
 set(__QT_DEPLOY_TARGET_appbandicam_FILE E:/myProgram/Recorder/record/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/appbandicam.exe)
 set(__QT_DEPLOY_TARGET_appbandicam_TYPE EXECUTABLE)
 set(__QT_DEPLOY_TARGET_appbandicam_RUNTIME_DLLS F:/Qt/6.8.0/mingw_64/bin/Qt6Quick.dll;F:/Qt/6.8.0/mingw_64/bin/Qt6QmlMeta.dll;F:/Qt/6.8.0/mingw_64/bin/Qt6QmlWorkerScript.dll;F:/Qt/6.8.0/mingw_64/bin/Qt6QmlModels.dll;F:/Qt/6.8.0/mingw_64/bin/Qt6OpenGL.dll;F:/Qt/6.8.0/mingw_64/bin/Qt6Qml.dll;F:/Qt/6.8.0/mingw_64/bin/Qt6Network.dll;F:/Qt/6.8.0/mingw_64/bin/Qt6Widgets.dll;F:/Qt/6.8.0/mingw_64/bin/Qt6Gui.dll;F:/Qt/6.8.0/mingw_64/bin/Qt6Core.dll)

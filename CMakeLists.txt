@@ -49,6 +49,7 @@ add_subdirectory(muxer)
 add_subdirectory(event)
 add_subdirectory(thread)
 add_subdirectory(recorder)
+add_subdirectory(encoder)
 
 # 主可执行文件
 qt_add_executable(appbandicam
@@ -80,6 +81,7 @@ target_link_libraries(appbandicam
         event_module
         thread_module
         recorder_module
+        encoder_module
 
 )
 

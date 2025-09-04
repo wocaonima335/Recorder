@@ -1,0 +1,31 @@
+{
+	"backtrace" : 0,
+	"backtraceGraph" : 
+	{
+		"commands" : [],
+		"files" : 
+		[
+			"demuxer/CMakeLists.txt"
+		],
+		"nodes" : 
+		[
+			{
+				"file" : 0
+			}
+		]
+	},
+	"folder" : 
+	{
+		"name" : "QtInternalTargets"
+	},
+	"id" : "demuxer_module_autogen_timestamp_deps::@62de05a7f7381b9abf32",
+	"isGeneratorProvided" : true,
+	"name" : "demuxer_module_autogen_timestamp_deps",
+	"paths" : 
+	{
+		"build" : "demuxer",
+		"source" : "demuxer"
+	},
+	"sources" : [],
+	"type" : "UTILITY"
+}
