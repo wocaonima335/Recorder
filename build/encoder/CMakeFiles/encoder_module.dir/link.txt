@@ -1,0 +1,2 @@
+F:\Qt\Tools\mingw1310_64\bin\ar.exe qc libencoder_module.a CMakeFiles/encoder_module.dir/encoder_module_autogen/mocs_compilation.cpp.obj CMakeFiles/encoder_module.dir/ffaencoder.cpp.obj
+F:\Qt\Tools\mingw1310_64\bin\ranlib.exe libencoder_module.a

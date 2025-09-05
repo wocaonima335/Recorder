@@ -1,6 +1,8 @@
 qt_add_library(encoder_module STATIC
     ffaencoder.cpp
     ffaencoder.h
+    ffvencoder.h
+    ffvencoder.cpp
 )
 
 target_link_libraries(encoder_module

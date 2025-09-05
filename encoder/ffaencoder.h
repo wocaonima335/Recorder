@@ -45,8 +45,6 @@ public:
 
 private:
     void printError(int ret);
-    AVFrame *createFrameFromPending();
-    void clearPendingFrame();
 
 private:
     FFAPacketQueue *pktQueue = nullptr;

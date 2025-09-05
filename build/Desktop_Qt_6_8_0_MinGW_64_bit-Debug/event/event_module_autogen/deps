@@ -1,0 +1,9 @@
+event_module_autogen/timestamp: \
+	E:/myProgram/Recorder/record/event/CMakeLists.txt \
+	E:/myProgram/Recorder/record/event/abstracteventfactory.h \
+	E:/myProgram/Recorder/record/event/eventcategory.h \
+	E:/myProgram/Recorder/record/event/eventfactory.cpp \
+	E:/myProgram/Recorder/record/event/eventfactory.h \
+	E:/myProgram/Recorder/record/event/eventfactorymanager.h \
+	E:/myProgram/Recorder/record/event/ffevent.h \
+	F:/Qt/Tools/CMake_64/bin/cmake.exe

@@ -1,0 +1,7 @@
+decoder_module_autogen/timestamp: \
+	E:/myProgram/Recorder/record/decoder/CMakeLists.txt \
+	E:/myProgram/Recorder/record/decoder/ffadecoder.cpp \
+	E:/myProgram/Recorder/record/decoder/ffadecoder.h \
+	E:/myProgram/Recorder/record/decoder/ffvdecoder.cpp \
+	E:/myProgram/Recorder/record/decoder/ffvdecoder.h \
+	F:/Qt/Tools/CMake_64/bin/cmake.exe

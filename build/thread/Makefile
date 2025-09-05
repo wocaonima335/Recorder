@@ -226,6 +226,30 @@ ffadecoderthread.cpp.s:
 	cd /d E:\myProgram\Recorder\record\build && $(MAKE) $(MAKESILENT) -f thread\CMakeFiles\thread_module.dir\build.make thread/CMakeFiles/thread_module.dir/ffadecoderthread.cpp.s
 .PHONY : ffadecoderthread.cpp.s
 
+ffaencoderthread.obj: ffaencoderthread.cpp.obj
+.PHONY : ffaencoderthread.obj
+
+# target to build an object file
+ffaencoderthread.cpp.obj:
+	cd /d E:\myProgram\Recorder\record\build && $(MAKE) $(MAKESILENT) -f thread\CMakeFiles\thread_module.dir\build.make thread/CMakeFiles/thread_module.dir/ffaencoderthread.cpp.obj
+.PHONY : ffaencoderthread.cpp.obj
+
+ffaencoderthread.i: ffaencoderthread.cpp.i
+.PHONY : ffaencoderthread.i
+
+# target to preprocess a source file
+ffaencoderthread.cpp.i:
+	cd /d E:\myProgram\Recorder\record\build && $(MAKE) $(MAKESILENT) -f thread\CMakeFiles\thread_module.dir\build.make thread/CMakeFiles/thread_module.dir/ffaencoderthread.cpp.i
+.PHONY : ffaencoderthread.cpp.i
+
+ffaencoderthread.s: ffaencoderthread.cpp.s
+.PHONY : ffaencoderthread.s
+
+# target to generate assembly for a file
+ffaencoderthread.cpp.s:
+	cd /d E:\myProgram\Recorder\record\build && $(MAKE) $(MAKESILENT) -f thread\CMakeFiles\thread_module.dir\build.make thread/CMakeFiles/thread_module.dir/ffaencoderthread.cpp.s
+.PHONY : ffaencoderthread.cpp.s
+
 ffafilterthread.obj: ffafilterthread.cpp.obj
 .PHONY : ffafilterthread.obj
 
@@ -412,6 +436,9 @@ help:
 	@echo ... ffadecoderthread.obj
 	@echo ... ffadecoderthread.i
 	@echo ... ffadecoderthread.s
+	@echo ... ffaencoderthread.obj
+	@echo ... ffaencoderthread.i
+	@echo ... ffaencoderthread.s
 	@echo ... ffafilterthread.obj
 	@echo ... ffafilterthread.i
 	@echo ... ffafilterthread.s

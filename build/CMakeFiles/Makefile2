@@ -73,6 +73,7 @@ all: muxer/all
 all: event/all
 all: thread/all
 all: recorder/all
+all: encoder/all
 .PHONY : all
 
 # The main recursive "codegen" target.
@@ -87,6 +88,7 @@ codegen: muxer/codegen
 codegen: event/codegen
 codegen: thread/codegen
 codegen: recorder/codegen
+codegen: encoder/codegen
 .PHONY : codegen
 
 # The main recursive "preinstall" target.
@@ -100,6 +102,7 @@ preinstall: muxer/preinstall
 preinstall: event/preinstall
 preinstall: thread/preinstall
 preinstall: recorder/preinstall
+preinstall: encoder/preinstall
 .PHONY : preinstall
 
 # The main recursive "clean" target.
@@ -117,6 +120,7 @@ clean: muxer/clean
 clean: event/clean
 clean: thread/clean
 clean: recorder/clean
+clean: encoder/clean
 .PHONY : clean
 
 #=============================================================================
@@ -160,6 +164,27 @@ demuxer/clean: demuxer/CMakeFiles/demuxer_module.dir/clean
 demuxer/clean: demuxer/CMakeFiles/demuxer_module_autogen_timestamp_deps.dir/clean
 demuxer/clean: demuxer/CMakeFiles/demuxer_module_autogen.dir/clean
 .PHONY : demuxer/clean
+
+#=============================================================================
+# Directory level rules for directory encoder
+
+# Recursive "all" directory target.
+encoder/all: encoder/CMakeFiles/encoder_module.dir/all
+.PHONY : encoder/all
+
+# Recursive "codegen" directory target.
+encoder/codegen: encoder/CMakeFiles/encoder_module.dir/codegen
+.PHONY : encoder/codegen
+
+# Recursive "preinstall" directory target.
+encoder/preinstall:
+.PHONY : encoder/preinstall
+
+# Recursive "clean" directory target.
+encoder/clean: encoder/CMakeFiles/encoder_module.dir/clean
+encoder/clean: encoder/CMakeFiles/encoder_module_autogen_timestamp_deps.dir/clean
+encoder/clean: encoder/CMakeFiles/encoder_module_autogen.dir/clean
+.PHONY : encoder/clean
 
 #=============================================================================
 # Directory level rules for directory event
@@ -370,18 +395,19 @@ thread/clean: thread/CMakeFiles/thread_module_autogen.dir/clean
 # Target rules for target CMakeFiles/appbandicam.dir
 
 # All Build rule for target.
-CMakeFiles/appbandicam.dir/all: demuxer/CMakeFiles/demuxer_module.dir/all
-CMakeFiles/appbandicam.dir/all: qml/CMakeFiles/qml_module.dir/all
 CMakeFiles/appbandicam.dir/all: CMakeFiles/appbandicam_qmlimportscan.dir/all
+CMakeFiles/appbandicam.dir/all: demuxer/CMakeFiles/demuxer_module.dir/all
 CMakeFiles/appbandicam.dir/all: qml/CMakeFiles/qml_module_resources_1.dir/all
+CMakeFiles/appbandicam.dir/all: qml/CMakeFiles/qml_module.dir/all
 CMakeFiles/appbandicam.dir/all: qml/CMakeFiles/qml_module_resources_2.dir/all
 CMakeFiles/appbandicam.dir/all: qml/CMakeFiles/qml_module_qmlcache.dir/all
-CMakeFiles/appbandicam.dir/all: filter/CMakeFiles/filter_module.dir/all
 CMakeFiles/appbandicam.dir/all: resampler/CMakeFiles/resampler_module.dir/all
+CMakeFiles/appbandicam.dir/all: filter/CMakeFiles/filter_module.dir/all
 CMakeFiles/appbandicam.dir/all: muxer/CMakeFiles/muxer_module.dir/all
 CMakeFiles/appbandicam.dir/all: thread/CMakeFiles/thread_module.dir/all
-CMakeFiles/appbandicam.dir/all: CMakeFiles/appbandicam_autogen.dir/all
+CMakeFiles/appbandicam.dir/all: encoder/CMakeFiles/encoder_module.dir/all
 CMakeFiles/appbandicam.dir/all: recorder/CMakeFiles/recorder_module.dir/all
+CMakeFiles/appbandicam.dir/all: CMakeFiles/appbandicam_autogen.dir/all
 CMakeFiles/appbandicam.dir/all: CMakeFiles/appbandicam_autogen_timestamp_deps.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\appbandicam.dir\build.make CMakeFiles/appbandicam.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\appbandicam.dir\build.make CMakeFiles/appbandicam.dir/build
@@ -390,7 +416,7 @@ CMakeFiles/appbandicam.dir/all: CMakeFiles/appbandicam_autogen_timestamp_deps.di
 
 # Build rule for subdir invocation for target.
 CMakeFiles/appbandicam.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start E:\myProgram\Recorder\record\build\CMakeFiles 91
+	$(CMAKE_COMMAND) -E cmake_progress_start E:\myProgram\Recorder\record\build\CMakeFiles 90
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 CMakeFiles/appbandicam.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start E:\myProgram\Recorder\record\build\CMakeFiles 0
 .PHONY : CMakeFiles/appbandicam.dir/rule
@@ -447,13 +473,14 @@ CMakeFiles/appbandicam_qmlimportscan.dir/clean:
 # Target rules for target CMakeFiles/appbandicam_autogen_timestamp_deps.dir
 
 # All Build rule for target.
+CMakeFiles/appbandicam_autogen_timestamp_deps.dir/all: CMakeFiles/appbandicam_qmlimportscan.dir/all
 CMakeFiles/appbandicam_autogen_timestamp_deps.dir/all: demuxer/CMakeFiles/demuxer_module.dir/all
 CMakeFiles/appbandicam_autogen_timestamp_deps.dir/all: qml/CMakeFiles/qml_module.dir/all
-CMakeFiles/appbandicam_autogen_timestamp_deps.dir/all: CMakeFiles/appbandicam_qmlimportscan.dir/all
-CMakeFiles/appbandicam_autogen_timestamp_deps.dir/all: filter/CMakeFiles/filter_module.dir/all
 CMakeFiles/appbandicam_autogen_timestamp_deps.dir/all: resampler/CMakeFiles/resampler_module.dir/all
+CMakeFiles/appbandicam_autogen_timestamp_deps.dir/all: filter/CMakeFiles/filter_module.dir/all
 CMakeFiles/appbandicam_autogen_timestamp_deps.dir/all: muxer/CMakeFiles/muxer_module.dir/all
 CMakeFiles/appbandicam_autogen_timestamp_deps.dir/all: thread/CMakeFiles/thread_module.dir/all
+CMakeFiles/appbandicam_autogen_timestamp_deps.dir/all: encoder/CMakeFiles/encoder_module.dir/all
 CMakeFiles/appbandicam_autogen_timestamp_deps.dir/all: recorder/CMakeFiles/recorder_module.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\appbandicam_autogen_timestamp_deps.dir\build.make CMakeFiles/appbandicam_autogen_timestamp_deps.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\appbandicam_autogen_timestamp_deps.dir\build.make CMakeFiles/appbandicam_autogen_timestamp_deps.dir/build
@@ -521,12 +548,12 @@ CMakeFiles/appbandicam_autogen.dir/clean:
 demuxer/CMakeFiles/demuxer_module.dir/all: queue/CMakeFiles/queue_module.dir/all
 	$(MAKE) $(MAKESILENT) -f demuxer\CMakeFiles\demuxer_module.dir\build.make demuxer/CMakeFiles/demuxer_module.dir/depend
 	$(MAKE) $(MAKESILENT) -f demuxer\CMakeFiles\demuxer_module.dir\build.make demuxer/CMakeFiles/demuxer_module.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=E:\myProgram\Recorder\record\build\CMakeFiles --progress-num=12,13,14,15 "Built target demuxer_module"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=E:\myProgram\Recorder\record\build\CMakeFiles --progress-num=11,12,13,14 "Built target demuxer_module"
 .PHONY : demuxer/CMakeFiles/demuxer_module.dir/all
 
 # Build rule for subdir invocation for target.
 demuxer/CMakeFiles/demuxer_module.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start E:\myProgram\Recorder\record\build\CMakeFiles 21
+	$(CMAKE_COMMAND) -E cmake_progress_start E:\myProgram\Recorder\record\build\CMakeFiles 20
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 demuxer/CMakeFiles/demuxer_module.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start E:\myProgram\Recorder\record\build\CMakeFiles 0
 .PHONY : demuxer/CMakeFiles/demuxer_module.dir/rule
@@ -538,7 +565,7 @@ demuxer_module: demuxer/CMakeFiles/demuxer_module.dir/rule
 # codegen rule for target.
 demuxer/CMakeFiles/demuxer_module.dir/codegen:
 	$(MAKE) $(MAKESILENT) -f demuxer\CMakeFiles\demuxer_module.dir\build.make demuxer/CMakeFiles/demuxer_module.dir/codegen
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=E:\myProgram\Recorder\record\build\CMakeFiles --progress-num=12,13,14,15 "Finished codegen for target demuxer_module"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=E:\myProgram\Recorder\record\build\CMakeFiles --progress-num=11,12,13,14 "Finished codegen for target demuxer_module"
 .PHONY : demuxer/CMakeFiles/demuxer_module.dir/codegen
 
 # clean rule for target.
@@ -585,7 +612,7 @@ demuxer/CMakeFiles/demuxer_module_autogen_timestamp_deps.dir/clean:
 demuxer/CMakeFiles/demuxer_module_autogen.dir/all: demuxer/CMakeFiles/demuxer_module_autogen_timestamp_deps.dir/all
 	$(MAKE) $(MAKESILENT) -f demuxer\CMakeFiles\demuxer_module_autogen.dir\build.make demuxer/CMakeFiles/demuxer_module_autogen.dir/depend
 	$(MAKE) $(MAKESILENT) -f demuxer\CMakeFiles\demuxer_module_autogen.dir\build.make demuxer/CMakeFiles/demuxer_module_autogen.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=E:\myProgram\Recorder\record\build\CMakeFiles --progress-num=16 "Built target demuxer_module_autogen"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=E:\myProgram\Recorder\record\build\CMakeFiles --progress-num=15 "Built target demuxer_module_autogen"
 .PHONY : demuxer/CMakeFiles/demuxer_module_autogen.dir/all
 
 # Build rule for subdir invocation for target.
@@ -602,7 +629,7 @@ demuxer_module_autogen: demuxer/CMakeFiles/demuxer_module_autogen.dir/rule
 # codegen rule for target.
 demuxer/CMakeFiles/demuxer_module_autogen.dir/codegen: demuxer/CMakeFiles/demuxer_module_autogen_timestamp_deps.dir/all
 	$(MAKE) $(MAKESILENT) -f demuxer\CMakeFiles\demuxer_module_autogen.dir\build.make demuxer/CMakeFiles/demuxer_module_autogen.dir/codegen
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=E:\myProgram\Recorder\record\build\CMakeFiles --progress-num=16 "Finished codegen for target demuxer_module_autogen"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=E:\myProgram\Recorder\record\build\CMakeFiles --progress-num=15 "Finished codegen for target demuxer_module_autogen"
 .PHONY : demuxer/CMakeFiles/demuxer_module_autogen.dir/codegen
 
 # clean rule for target.
@@ -620,12 +647,12 @@ qml/CMakeFiles/qml_module.dir/all: qml/CMakeFiles/qml_module_autogen_timestamp_d
 qml/CMakeFiles/qml_module.dir/all: qml/CMakeFiles/qml_module_autogen.dir/all
 	$(MAKE) $(MAKESILENT) -f qml\CMakeFiles\qml_module.dir\build.make qml/CMakeFiles/qml_module.dir/depend
 	$(MAKE) $(MAKESILENT) -f qml\CMakeFiles\qml_module.dir\build.make qml/CMakeFiles/qml_module.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=E:\myProgram\Recorder\record\build\CMakeFiles --progress-num=32,33,34,35,36,37,38,39,40,41,42,43,44 "Built target qml_module"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=E:\myProgram\Recorder\record\build\CMakeFiles --progress-num=34,35,36,37,38,39,40,41,42,43,44,45,46 "Built target qml_module"
 .PHONY : qml/CMakeFiles/qml_module.dir/all
 
 # Build rule for subdir invocation for target.
 qml/CMakeFiles/qml_module.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start E:\myProgram\Recorder\record\build\CMakeFiles 19
+	$(CMAKE_COMMAND) -E cmake_progress_start E:\myProgram\Recorder\record\build\CMakeFiles 18
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 qml/CMakeFiles/qml_module.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start E:\myProgram\Recorder\record\build\CMakeFiles 0
 .PHONY : qml/CMakeFiles/qml_module.dir/rule
@@ -639,7 +666,7 @@ qml/CMakeFiles/qml_module.dir/codegen: qml/CMakeFiles/qml_module_automoc_json_ex
 qml/CMakeFiles/qml_module.dir/codegen: qml/CMakeFiles/qml_module_tooling.dir/all
 qml/CMakeFiles/qml_module.dir/codegen: qml/CMakeFiles/qml_module_autogen_timestamp_deps.dir/all
 	$(MAKE) $(MAKESILENT) -f qml\CMakeFiles\qml_module.dir\build.make qml/CMakeFiles/qml_module.dir/codegen
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=E:\myProgram\Recorder\record\build\CMakeFiles --progress-num=32,33,34,35,36,37,38,39,40,41,42,43,44 "Finished codegen for target qml_module"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=E:\myProgram\Recorder\record\build\CMakeFiles --progress-num=34,35,36,37,38,39,40,41,42,43,44,45,46 "Finished codegen for target qml_module"
 .PHONY : qml/CMakeFiles/qml_module.dir/codegen
 
 # clean rule for target.
@@ -654,12 +681,12 @@ qml/CMakeFiles/qml_module.dir/clean:
 qml/CMakeFiles/qml_module_automoc_json_extraction.dir/all: qml/CMakeFiles/qml_module_autogen.dir/all
 	$(MAKE) $(MAKESILENT) -f qml\CMakeFiles\qml_module_automoc_json_extraction.dir\build.make qml/CMakeFiles/qml_module_automoc_json_extraction.dir/depend
 	$(MAKE) $(MAKESILENT) -f qml\CMakeFiles\qml_module_automoc_json_extraction.dir\build.make qml/CMakeFiles/qml_module_automoc_json_extraction.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=E:\myProgram\Recorder\record\build\CMakeFiles --progress-num=46 "Built target qml_module_automoc_json_extraction"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=E:\myProgram\Recorder\record\build\CMakeFiles --progress-num=48 "Built target qml_module_automoc_json_extraction"
 .PHONY : qml/CMakeFiles/qml_module_automoc_json_extraction.dir/all
 
 # Build rule for subdir invocation for target.
 qml/CMakeFiles/qml_module_automoc_json_extraction.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start E:\myProgram\Recorder\record\build\CMakeFiles 6
+	$(CMAKE_COMMAND) -E cmake_progress_start E:\myProgram\Recorder\record\build\CMakeFiles 5
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 qml/CMakeFiles/qml_module_automoc_json_extraction.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start E:\myProgram\Recorder\record\build\CMakeFiles 0
 .PHONY : qml/CMakeFiles/qml_module_automoc_json_extraction.dir/rule
@@ -671,7 +698,7 @@ qml_module_automoc_json_extraction: qml/CMakeFiles/qml_module_automoc_json_extra
 # codegen rule for target.
 qml/CMakeFiles/qml_module_automoc_json_extraction.dir/codegen: qml/CMakeFiles/qml_module_autogen.dir/all
 	$(MAKE) $(MAKESILENT) -f qml\CMakeFiles\qml_module_automoc_json_extraction.dir\build.make qml/CMakeFiles/qml_module_automoc_json_extraction.dir/codegen
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=E:\myProgram\Recorder\record\build\CMakeFiles --progress-num=46 "Finished codegen for target qml_module_automoc_json_extraction"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=E:\myProgram\Recorder\record\build\CMakeFiles --progress-num=48 "Finished codegen for target qml_module_automoc_json_extraction"
 .PHONY : qml/CMakeFiles/qml_module_automoc_json_extraction.dir/codegen
 
 # clean rule for target.
@@ -686,7 +713,7 @@ qml/CMakeFiles/qml_module_automoc_json_extraction.dir/clean:
 qml/CMakeFiles/qml_module_qmltyperegistration.dir/all:
 	$(MAKE) $(MAKESILENT) -f qml\CMakeFiles\qml_module_qmltyperegistration.dir\build.make qml/CMakeFiles/qml_module_qmltyperegistration.dir/depend
 	$(MAKE) $(MAKESILENT) -f qml\CMakeFiles\qml_module_qmltyperegistration.dir\build.make qml/CMakeFiles/qml_module_qmltyperegistration.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=E:\myProgram\Recorder\record\build\CMakeFiles --progress-num=52 "Built target qml_module_qmltyperegistration"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=E:\myProgram\Recorder\record\build\CMakeFiles --progress-num=54 "Built target qml_module_qmltyperegistration"
 .PHONY : qml/CMakeFiles/qml_module_qmltyperegistration.dir/all
 
 # Build rule for subdir invocation for target.
@@ -703,7 +730,7 @@ qml_module_qmltyperegistration: qml/CMakeFiles/qml_module_qmltyperegistration.di
 # codegen rule for target.
 qml/CMakeFiles/qml_module_qmltyperegistration.dir/codegen:
 	$(MAKE) $(MAKESILENT) -f qml\CMakeFiles\qml_module_qmltyperegistration.dir\build.make qml/CMakeFiles/qml_module_qmltyperegistration.dir/codegen
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=E:\myProgram\Recorder\record\build\CMakeFiles --progress-num=52 "Finished codegen for target qml_module_qmltyperegistration"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=E:\myProgram\Recorder\record\build\CMakeFiles --progress-num=54 "Finished codegen for target qml_module_qmltyperegistration"
 .PHONY : qml/CMakeFiles/qml_module_qmltyperegistration.dir/codegen
 
 # clean rule for target.
@@ -747,16 +774,16 @@ qml/CMakeFiles/all_qmltyperegistrations.dir/clean:
 # Target rules for target qml/CMakeFiles/qml_module_resources_1.dir
 
 # All Build rule for target.
-qml/CMakeFiles/qml_module_resources_1.dir/all: qml/CMakeFiles/qml_module_resources_1_autogen_timestamp_deps.dir/all
 qml/CMakeFiles/qml_module_resources_1.dir/all: qml/CMakeFiles/qml_module_resources_1_autogen.dir/all
+qml/CMakeFiles/qml_module_resources_1.dir/all: qml/CMakeFiles/qml_module_resources_1_autogen_timestamp_deps.dir/all
 	$(MAKE) $(MAKESILENT) -f qml\CMakeFiles\qml_module_resources_1.dir\build.make qml/CMakeFiles/qml_module_resources_1.dir/depend
 	$(MAKE) $(MAKESILENT) -f qml\CMakeFiles\qml_module_resources_1.dir\build.make qml/CMakeFiles/qml_module_resources_1.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=E:\myProgram\Recorder\record\build\CMakeFiles --progress-num=53,54,55,56 "Built target qml_module_resources_1"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=E:\myProgram\Recorder\record\build\CMakeFiles --progress-num=55,56,57,58 "Built target qml_module_resources_1"
 .PHONY : qml/CMakeFiles/qml_module_resources_1.dir/all
 
 # Build rule for subdir invocation for target.
 qml/CMakeFiles/qml_module_resources_1.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start E:\myProgram\Recorder\record\build\CMakeFiles 5
+	$(CMAKE_COMMAND) -E cmake_progress_start E:\myProgram\Recorder\record\build\CMakeFiles 4
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 qml/CMakeFiles/qml_module_resources_1.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start E:\myProgram\Recorder\record\build\CMakeFiles 0
 .PHONY : qml/CMakeFiles/qml_module_resources_1.dir/rule
@@ -768,7 +795,7 @@ qml_module_resources_1: qml/CMakeFiles/qml_module_resources_1.dir/rule
 # codegen rule for target.
 qml/CMakeFiles/qml_module_resources_1.dir/codegen: qml/CMakeFiles/qml_module_resources_1_autogen_timestamp_deps.dir/all
 	$(MAKE) $(MAKESILENT) -f qml\CMakeFiles\qml_module_resources_1.dir\build.make qml/CMakeFiles/qml_module_resources_1.dir/codegen
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=E:\myProgram\Recorder\record\build\CMakeFiles --progress-num=53,54,55,56 "Finished codegen for target qml_module_resources_1"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=E:\myProgram\Recorder\record\build\CMakeFiles --progress-num=55,56,57,58 "Finished codegen for target qml_module_resources_1"
 .PHONY : qml/CMakeFiles/qml_module_resources_1.dir/codegen
 
 # clean rule for target.
@@ -780,20 +807,20 @@ qml/CMakeFiles/qml_module_resources_1.dir/clean:
 # Target rules for target qml/CMakeFiles/qml_moduleplugin.dir
 
 # All Build rule for target.
-qml/CMakeFiles/qml_moduleplugin.dir/all: qml/CMakeFiles/qml_module.dir/all
 qml/CMakeFiles/qml_moduleplugin.dir/all: qml/CMakeFiles/qml_module_resources_1.dir/all
+qml/CMakeFiles/qml_moduleplugin.dir/all: qml/CMakeFiles/qml_module.dir/all
 qml/CMakeFiles/qml_moduleplugin.dir/all: qml/CMakeFiles/qml_module_resources_2.dir/all
 qml/CMakeFiles/qml_moduleplugin.dir/all: qml/CMakeFiles/qml_module_qmlcache.dir/all
-qml/CMakeFiles/qml_moduleplugin.dir/all: qml/CMakeFiles/qml_moduleplugin_autogen.dir/all
 qml/CMakeFiles/qml_moduleplugin.dir/all: qml/CMakeFiles/qml_moduleplugin_autogen_timestamp_deps.dir/all
+qml/CMakeFiles/qml_moduleplugin.dir/all: qml/CMakeFiles/qml_moduleplugin_autogen.dir/all
 	$(MAKE) $(MAKESILENT) -f qml\CMakeFiles\qml_moduleplugin.dir\build.make qml/CMakeFiles/qml_moduleplugin.dir/depend
 	$(MAKE) $(MAKESILENT) -f qml\CMakeFiles\qml_moduleplugin.dir\build.make qml/CMakeFiles/qml_moduleplugin.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=E:\myProgram\Recorder\record\build\CMakeFiles --progress-num=67,68,69 "Built target qml_moduleplugin"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=E:\myProgram\Recorder\record\build\CMakeFiles --progress-num=67,68,69,70 "Built target qml_moduleplugin"
 .PHONY : qml/CMakeFiles/qml_moduleplugin.dir/all
 
 # Build rule for subdir invocation for target.
 qml/CMakeFiles/qml_moduleplugin.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start E:\myProgram\Recorder\record\build\CMakeFiles 38
+	$(CMAKE_COMMAND) -E cmake_progress_start E:\myProgram\Recorder\record\build\CMakeFiles 37
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 qml/CMakeFiles/qml_moduleplugin.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start E:\myProgram\Recorder\record\build\CMakeFiles 0
 .PHONY : qml/CMakeFiles/qml_moduleplugin.dir/rule
@@ -805,7 +832,7 @@ qml_moduleplugin: qml/CMakeFiles/qml_moduleplugin.dir/rule
 # codegen rule for target.
 qml/CMakeFiles/qml_moduleplugin.dir/codegen: qml/CMakeFiles/qml_moduleplugin_autogen_timestamp_deps.dir/all
 	$(MAKE) $(MAKESILENT) -f qml\CMakeFiles\qml_moduleplugin.dir\build.make qml/CMakeFiles/qml_moduleplugin.dir/codegen
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=E:\myProgram\Recorder\record\build\CMakeFiles --progress-num=67,68,69 "Finished codegen for target qml_moduleplugin"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=E:\myProgram\Recorder\record\build\CMakeFiles --progress-num=67,68,69,70 "Finished codegen for target qml_moduleplugin"
 .PHONY : qml/CMakeFiles/qml_moduleplugin.dir/codegen
 
 # clean rule for target.
@@ -1013,7 +1040,7 @@ qml/CMakeFiles/qml_module_qmlcache.dir/all: qml/CMakeFiles/qml_module_qmlcache_a
 qml/CMakeFiles/qml_module_qmlcache.dir/all: qml/CMakeFiles/qml_module_qmlcache_autogen.dir/all
 	$(MAKE) $(MAKESILENT) -f qml\CMakeFiles\qml_module_qmlcache.dir\build.make qml/CMakeFiles/qml_module_qmlcache.dir/depend
 	$(MAKE) $(MAKESILENT) -f qml\CMakeFiles\qml_module_qmlcache.dir\build.make qml/CMakeFiles/qml_module_qmlcache.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=E:\myProgram\Recorder\record\build\CMakeFiles --progress-num=47,48,49,50 "Built target qml_module_qmlcache"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=E:\myProgram\Recorder\record\build\CMakeFiles --progress-num=49,50,51 "Built target qml_module_qmlcache"
 .PHONY : qml/CMakeFiles/qml_module_qmlcache.dir/all
 
 # Build rule for subdir invocation for target.
@@ -1030,7 +1057,7 @@ qml_module_qmlcache: qml/CMakeFiles/qml_module_qmlcache.dir/rule
 # codegen rule for target.
 qml/CMakeFiles/qml_module_qmlcache.dir/codegen: qml/CMakeFiles/qml_module_qmlcache_autogen_timestamp_deps.dir/all
 	$(MAKE) $(MAKESILENT) -f qml\CMakeFiles\qml_module_qmlcache.dir\build.make qml/CMakeFiles/qml_module_qmlcache.dir/codegen
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=E:\myProgram\Recorder\record\build\CMakeFiles --progress-num=47,48,49,50 "Finished codegen for target qml_module_qmlcache"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=E:\myProgram\Recorder\record\build\CMakeFiles --progress-num=49,50,51 "Finished codegen for target qml_module_qmlcache"
 .PHONY : qml/CMakeFiles/qml_module_qmlcache.dir/codegen
 
 # clean rule for target.
@@ -1045,12 +1072,12 @@ qml/CMakeFiles/qml_module_qmlcache.dir/clean:
 qml/CMakeFiles/qml_module_tooling.dir/all:
 	$(MAKE) $(MAKESILENT) -f qml\CMakeFiles\qml_module_tooling.dir\build.make qml/CMakeFiles/qml_module_tooling.dir/depend
 	$(MAKE) $(MAKESILENT) -f qml\CMakeFiles\qml_module_tooling.dir\build.make qml/CMakeFiles/qml_module_tooling.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=E:\myProgram\Recorder\record\build\CMakeFiles --progress-num=63,64,65,66 "Built target qml_module_tooling"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=E:\myProgram\Recorder\record\build\CMakeFiles --progress-num=64,65,66 "Built target qml_module_tooling"
 .PHONY : qml/CMakeFiles/qml_module_tooling.dir/all
 
 # Build rule for subdir invocation for target.
 qml/CMakeFiles/qml_module_tooling.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start E:\myProgram\Recorder\record\build\CMakeFiles 4
+	$(CMAKE_COMMAND) -E cmake_progress_start E:\myProgram\Recorder\record\build\CMakeFiles 3
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 qml/CMakeFiles/qml_module_tooling.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start E:\myProgram\Recorder\record\build\CMakeFiles 0
 .PHONY : qml/CMakeFiles/qml_module_tooling.dir/rule
@@ -1062,7 +1089,7 @@ qml_module_tooling: qml/CMakeFiles/qml_module_tooling.dir/rule
 # codegen rule for target.
 qml/CMakeFiles/qml_module_tooling.dir/codegen:
 	$(MAKE) $(MAKESILENT) -f qml\CMakeFiles\qml_module_tooling.dir\build.make qml/CMakeFiles/qml_module_tooling.dir/codegen
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=E:\myProgram\Recorder\record\build\CMakeFiles --progress-num=63,64,65,66 "Finished codegen for target qml_module_tooling"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=E:\myProgram\Recorder\record\build\CMakeFiles --progress-num=64,65,66 "Finished codegen for target qml_module_tooling"
 .PHONY : qml/CMakeFiles/qml_module_tooling.dir/codegen
 
 # clean rule for target.
@@ -1078,7 +1105,7 @@ qml/CMakeFiles/qml_module_resources_2.dir/all: qml/CMakeFiles/qml_module_resourc
 qml/CMakeFiles/qml_module_resources_2.dir/all: qml/CMakeFiles/qml_module_resources_2_autogen.dir/all
 	$(MAKE) $(MAKESILENT) -f qml\CMakeFiles\qml_module_resources_2.dir\build.make qml/CMakeFiles/qml_module_resources_2.dir/depend
 	$(MAKE) $(MAKESILENT) -f qml\CMakeFiles\qml_module_resources_2.dir\build.make qml/CMakeFiles/qml_module_resources_2.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=E:\myProgram\Recorder\record\build\CMakeFiles --progress-num=58,59,60,61 "Built target qml_module_resources_2"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=E:\myProgram\Recorder\record\build\CMakeFiles --progress-num=59,60,61,62 "Built target qml_module_resources_2"
 .PHONY : qml/CMakeFiles/qml_module_resources_2.dir/all
 
 # Build rule for subdir invocation for target.
@@ -1095,7 +1122,7 @@ qml_module_resources_2: qml/CMakeFiles/qml_module_resources_2.dir/rule
 # codegen rule for target.
 qml/CMakeFiles/qml_module_resources_2.dir/codegen: qml/CMakeFiles/qml_module_resources_2_autogen_timestamp_deps.dir/all
 	$(MAKE) $(MAKESILENT) -f qml\CMakeFiles\qml_module_resources_2.dir\build.make qml/CMakeFiles/qml_module_resources_2.dir/codegen
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=E:\myProgram\Recorder\record\build\CMakeFiles --progress-num=58,59,60,61 "Finished codegen for target qml_module_resources_2"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=E:\myProgram\Recorder\record\build\CMakeFiles --progress-num=59,60,61,62 "Finished codegen for target qml_module_resources_2"
 .PHONY : qml/CMakeFiles/qml_module_resources_2.dir/codegen
 
 # clean rule for target.
@@ -1107,11 +1134,11 @@ qml/CMakeFiles/qml_module_resources_2.dir/clean:
 # Target rules for target qml/CMakeFiles/qml_moduleplugin_init.dir
 
 # All Build rule for target.
-qml/CMakeFiles/qml_moduleplugin_init.dir/all: qml/CMakeFiles/qml_moduleplugin_init_autogen_timestamp_deps.dir/all
 qml/CMakeFiles/qml_moduleplugin_init.dir/all: qml/CMakeFiles/qml_moduleplugin_init_autogen.dir/all
+qml/CMakeFiles/qml_moduleplugin_init.dir/all: qml/CMakeFiles/qml_moduleplugin_init_autogen_timestamp_deps.dir/all
 	$(MAKE) $(MAKESILENT) -f qml\CMakeFiles\qml_moduleplugin_init.dir\build.make qml/CMakeFiles/qml_moduleplugin_init.dir/depend
 	$(MAKE) $(MAKESILENT) -f qml\CMakeFiles\qml_moduleplugin_init.dir\build.make qml/CMakeFiles/qml_moduleplugin_init.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=E:\myProgram\Recorder\record\build\CMakeFiles --progress-num=71,72,73 "Built target qml_moduleplugin_init"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=E:\myProgram\Recorder\record\build\CMakeFiles --progress-num=72,73,74 "Built target qml_moduleplugin_init"
 .PHONY : qml/CMakeFiles/qml_moduleplugin_init.dir/all
 
 # Build rule for subdir invocation for target.
@@ -1128,7 +1155,7 @@ qml_moduleplugin_init: qml/CMakeFiles/qml_moduleplugin_init.dir/rule
 # codegen rule for target.
 qml/CMakeFiles/qml_moduleplugin_init.dir/codegen: qml/CMakeFiles/qml_moduleplugin_init_autogen_timestamp_deps.dir/all
 	$(MAKE) $(MAKESILENT) -f qml\CMakeFiles\qml_moduleplugin_init.dir\build.make qml/CMakeFiles/qml_moduleplugin_init.dir/codegen
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=E:\myProgram\Recorder\record\build\CMakeFiles --progress-num=71,72,73 "Finished codegen for target qml_moduleplugin_init"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=E:\myProgram\Recorder\record\build\CMakeFiles --progress-num=72,73,74 "Finished codegen for target qml_moduleplugin_init"
 .PHONY : qml/CMakeFiles/qml_moduleplugin_init.dir/codegen
 
 # clean rule for target.
@@ -1148,7 +1175,7 @@ qml/CMakeFiles/qml_module_autogen_timestamp_deps.dir/all: qml/CMakeFiles/qml_mod
 
 # Build rule for subdir invocation for target.
 qml/CMakeFiles/qml_module_autogen_timestamp_deps.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start E:\myProgram\Recorder\record\build\CMakeFiles 4
+	$(CMAKE_COMMAND) -E cmake_progress_start E:\myProgram\Recorder\record\build\CMakeFiles 3
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 qml/CMakeFiles/qml_module_autogen_timestamp_deps.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start E:\myProgram\Recorder\record\build\CMakeFiles 0
 .PHONY : qml/CMakeFiles/qml_module_autogen_timestamp_deps.dir/rule
@@ -1175,12 +1202,12 @@ qml/CMakeFiles/qml_module_autogen_timestamp_deps.dir/clean:
 qml/CMakeFiles/qml_module_autogen.dir/all: qml/CMakeFiles/qml_module_autogen_timestamp_deps.dir/all
 	$(MAKE) $(MAKESILENT) -f qml\CMakeFiles\qml_module_autogen.dir\build.make qml/CMakeFiles/qml_module_autogen.dir/depend
 	$(MAKE) $(MAKESILENT) -f qml\CMakeFiles\qml_module_autogen.dir\build.make qml/CMakeFiles/qml_module_autogen.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=E:\myProgram\Recorder\record\build\CMakeFiles --progress-num=45 "Built target qml_module_autogen"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=E:\myProgram\Recorder\record\build\CMakeFiles --progress-num=47 "Built target qml_module_autogen"
 .PHONY : qml/CMakeFiles/qml_module_autogen.dir/all
 
 # Build rule for subdir invocation for target.
 qml/CMakeFiles/qml_module_autogen.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start E:\myProgram\Recorder\record\build\CMakeFiles 5
+	$(CMAKE_COMMAND) -E cmake_progress_start E:\myProgram\Recorder\record\build\CMakeFiles 4
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 qml/CMakeFiles/qml_module_autogen.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start E:\myProgram\Recorder\record\build\CMakeFiles 0
 .PHONY : qml/CMakeFiles/qml_module_autogen.dir/rule
@@ -1192,7 +1219,7 @@ qml_module_autogen: qml/CMakeFiles/qml_module_autogen.dir/rule
 # codegen rule for target.
 qml/CMakeFiles/qml_module_autogen.dir/codegen: qml/CMakeFiles/qml_module_autogen_timestamp_deps.dir/all
 	$(MAKE) $(MAKESILENT) -f qml\CMakeFiles\qml_module_autogen.dir\build.make qml/CMakeFiles/qml_module_autogen.dir/codegen
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=E:\myProgram\Recorder\record\build\CMakeFiles --progress-num=45 "Finished codegen for target qml_module_autogen"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=E:\myProgram\Recorder\record\build\CMakeFiles --progress-num=47 "Finished codegen for target qml_module_autogen"
 .PHONY : qml/CMakeFiles/qml_module_autogen.dir/codegen
 
 # clean rule for target.
@@ -1239,12 +1266,12 @@ qml/CMakeFiles/qml_module_resources_1_autogen_timestamp_deps.dir/clean:
 qml/CMakeFiles/qml_module_resources_1_autogen.dir/all: qml/CMakeFiles/qml_module_resources_1_autogen_timestamp_deps.dir/all
 	$(MAKE) $(MAKESILENT) -f qml\CMakeFiles\qml_module_resources_1_autogen.dir\build.make qml/CMakeFiles/qml_module_resources_1_autogen.dir/depend
 	$(MAKE) $(MAKESILENT) -f qml\CMakeFiles\qml_module_resources_1_autogen.dir\build.make qml/CMakeFiles/qml_module_resources_1_autogen.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=E:\myProgram\Recorder\record\build\CMakeFiles --progress-num=57 "Built target qml_module_resources_1_autogen"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=E:\myProgram\Recorder\record\build\CMakeFiles --progress-num= "Built target qml_module_resources_1_autogen"
 .PHONY : qml/CMakeFiles/qml_module_resources_1_autogen.dir/all
 
 # Build rule for subdir invocation for target.
 qml/CMakeFiles/qml_module_resources_1_autogen.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start E:\myProgram\Recorder\record\build\CMakeFiles 1
+	$(CMAKE_COMMAND) -E cmake_progress_start E:\myProgram\Recorder\record\build\CMakeFiles 0
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 qml/CMakeFiles/qml_module_resources_1_autogen.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start E:\myProgram\Recorder\record\build\CMakeFiles 0
 .PHONY : qml/CMakeFiles/qml_module_resources_1_autogen.dir/rule
@@ -1256,7 +1283,7 @@ qml_module_resources_1_autogen: qml/CMakeFiles/qml_module_resources_1_autogen.di
 # codegen rule for target.
 qml/CMakeFiles/qml_module_resources_1_autogen.dir/codegen: qml/CMakeFiles/qml_module_resources_1_autogen_timestamp_deps.dir/all
 	$(MAKE) $(MAKESILENT) -f qml\CMakeFiles\qml_module_resources_1_autogen.dir\build.make qml/CMakeFiles/qml_module_resources_1_autogen.dir/codegen
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=E:\myProgram\Recorder\record\build\CMakeFiles --progress-num=57 "Finished codegen for target qml_module_resources_1_autogen"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=E:\myProgram\Recorder\record\build\CMakeFiles --progress-num= "Finished codegen for target qml_module_resources_1_autogen"
 .PHONY : qml/CMakeFiles/qml_module_resources_1_autogen.dir/codegen
 
 # clean rule for target.
@@ -1276,7 +1303,7 @@ qml/CMakeFiles/qml_moduleplugin_autogen_timestamp_deps.dir/all: qml/CMakeFiles/q
 
 # Build rule for subdir invocation for target.
 qml/CMakeFiles/qml_moduleplugin_autogen_timestamp_deps.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start E:\myProgram\Recorder\record\build\CMakeFiles 19
+	$(CMAKE_COMMAND) -E cmake_progress_start E:\myProgram\Recorder\record\build\CMakeFiles 18
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 qml/CMakeFiles/qml_moduleplugin_autogen_timestamp_deps.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start E:\myProgram\Recorder\record\build\CMakeFiles 0
 .PHONY : qml/CMakeFiles/qml_moduleplugin_autogen_timestamp_deps.dir/rule
@@ -1303,12 +1330,12 @@ qml/CMakeFiles/qml_moduleplugin_autogen_timestamp_deps.dir/clean:
 qml/CMakeFiles/qml_moduleplugin_autogen.dir/all: qml/CMakeFiles/qml_moduleplugin_autogen_timestamp_deps.dir/all
 	$(MAKE) $(MAKESILENT) -f qml\CMakeFiles\qml_moduleplugin_autogen.dir\build.make qml/CMakeFiles/qml_moduleplugin_autogen.dir/depend
 	$(MAKE) $(MAKESILENT) -f qml\CMakeFiles\qml_moduleplugin_autogen.dir\build.make qml/CMakeFiles/qml_moduleplugin_autogen.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=E:\myProgram\Recorder\record\build\CMakeFiles --progress-num=70 "Built target qml_moduleplugin_autogen"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=E:\myProgram\Recorder\record\build\CMakeFiles --progress-num=71 "Built target qml_moduleplugin_autogen"
 .PHONY : qml/CMakeFiles/qml_moduleplugin_autogen.dir/all
 
 # Build rule for subdir invocation for target.
 qml/CMakeFiles/qml_moduleplugin_autogen.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start E:\myProgram\Recorder\record\build\CMakeFiles 20
+	$(CMAKE_COMMAND) -E cmake_progress_start E:\myProgram\Recorder\record\build\CMakeFiles 19
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 qml/CMakeFiles/qml_moduleplugin_autogen.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start E:\myProgram\Recorder\record\build\CMakeFiles 0
 .PHONY : qml/CMakeFiles/qml_moduleplugin_autogen.dir/rule
@@ -1320,7 +1347,7 @@ qml_moduleplugin_autogen: qml/CMakeFiles/qml_moduleplugin_autogen.dir/rule
 # codegen rule for target.
 qml/CMakeFiles/qml_moduleplugin_autogen.dir/codegen: qml/CMakeFiles/qml_moduleplugin_autogen_timestamp_deps.dir/all
 	$(MAKE) $(MAKESILENT) -f qml\CMakeFiles\qml_moduleplugin_autogen.dir\build.make qml/CMakeFiles/qml_moduleplugin_autogen.dir/codegen
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=E:\myProgram\Recorder\record\build\CMakeFiles --progress-num=70 "Finished codegen for target qml_moduleplugin_autogen"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=E:\myProgram\Recorder\record\build\CMakeFiles --progress-num=71 "Finished codegen for target qml_moduleplugin_autogen"
 .PHONY : qml/CMakeFiles/qml_moduleplugin_autogen.dir/codegen
 
 # clean rule for target.
@@ -1335,7 +1362,7 @@ qml/CMakeFiles/qml_moduleplugin_autogen.dir/clean:
 qml/CMakeFiles/qml_module_qmlcache_autogen_timestamp_deps.dir/all:
 	$(MAKE) $(MAKESILENT) -f qml\CMakeFiles\qml_module_qmlcache_autogen_timestamp_deps.dir\build.make qml/CMakeFiles/qml_module_qmlcache_autogen_timestamp_deps.dir/depend
 	$(MAKE) $(MAKESILENT) -f qml\CMakeFiles\qml_module_qmlcache_autogen_timestamp_deps.dir\build.make qml/CMakeFiles/qml_module_qmlcache_autogen_timestamp_deps.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=E:\myProgram\Recorder\record\build\CMakeFiles --progress-num=51 "Built target qml_module_qmlcache_autogen_timestamp_deps"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=E:\myProgram\Recorder\record\build\CMakeFiles --progress-num=53 "Built target qml_module_qmlcache_autogen_timestamp_deps"
 .PHONY : qml/CMakeFiles/qml_module_qmlcache_autogen_timestamp_deps.dir/all
 
 # Build rule for subdir invocation for target.
@@ -1352,7 +1379,7 @@ qml_module_qmlcache_autogen_timestamp_deps: qml/CMakeFiles/qml_module_qmlcache_a
 # codegen rule for target.
 qml/CMakeFiles/qml_module_qmlcache_autogen_timestamp_deps.dir/codegen:
 	$(MAKE) $(MAKESILENT) -f qml\CMakeFiles\qml_module_qmlcache_autogen_timestamp_deps.dir\build.make qml/CMakeFiles/qml_module_qmlcache_autogen_timestamp_deps.dir/codegen
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=E:\myProgram\Recorder\record\build\CMakeFiles --progress-num=51 "Finished codegen for target qml_module_qmlcache_autogen_timestamp_deps"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=E:\myProgram\Recorder\record\build\CMakeFiles --progress-num=53 "Finished codegen for target qml_module_qmlcache_autogen_timestamp_deps"
 .PHONY : qml/CMakeFiles/qml_module_qmlcache_autogen_timestamp_deps.dir/codegen
 
 # clean rule for target.
@@ -1367,12 +1394,12 @@ qml/CMakeFiles/qml_module_qmlcache_autogen_timestamp_deps.dir/clean:
 qml/CMakeFiles/qml_module_qmlcache_autogen.dir/all: qml/CMakeFiles/qml_module_qmlcache_autogen_timestamp_deps.dir/all
 	$(MAKE) $(MAKESILENT) -f qml\CMakeFiles\qml_module_qmlcache_autogen.dir\build.make qml/CMakeFiles/qml_module_qmlcache_autogen.dir/depend
 	$(MAKE) $(MAKESILENT) -f qml\CMakeFiles\qml_module_qmlcache_autogen.dir\build.make qml/CMakeFiles/qml_module_qmlcache_autogen.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=E:\myProgram\Recorder\record\build\CMakeFiles --progress-num= "Built target qml_module_qmlcache_autogen"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=E:\myProgram\Recorder\record\build\CMakeFiles --progress-num=52 "Built target qml_module_qmlcache_autogen"
 .PHONY : qml/CMakeFiles/qml_module_qmlcache_autogen.dir/all
 
 # Build rule for subdir invocation for target.
 qml/CMakeFiles/qml_module_qmlcache_autogen.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start E:\myProgram\Recorder\record\build\CMakeFiles 1
+	$(CMAKE_COMMAND) -E cmake_progress_start E:\myProgram\Recorder\record\build\CMakeFiles 2
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 qml/CMakeFiles/qml_module_qmlcache_autogen.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start E:\myProgram\Recorder\record\build\CMakeFiles 0
 .PHONY : qml/CMakeFiles/qml_module_qmlcache_autogen.dir/rule
@@ -1384,7 +1411,7 @@ qml_module_qmlcache_autogen: qml/CMakeFiles/qml_module_qmlcache_autogen.dir/rule
 # codegen rule for target.
 qml/CMakeFiles/qml_module_qmlcache_autogen.dir/codegen: qml/CMakeFiles/qml_module_qmlcache_autogen_timestamp_deps.dir/all
 	$(MAKE) $(MAKESILENT) -f qml\CMakeFiles\qml_module_qmlcache_autogen.dir\build.make qml/CMakeFiles/qml_module_qmlcache_autogen.dir/codegen
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=E:\myProgram\Recorder\record\build\CMakeFiles --progress-num= "Finished codegen for target qml_module_qmlcache_autogen"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=E:\myProgram\Recorder\record\build\CMakeFiles --progress-num=52 "Finished codegen for target qml_module_qmlcache_autogen"
 .PHONY : qml/CMakeFiles/qml_module_qmlcache_autogen.dir/codegen
 
 # clean rule for target.
@@ -1431,7 +1458,7 @@ qml/CMakeFiles/qml_module_resources_2_autogen_timestamp_deps.dir/clean:
 qml/CMakeFiles/qml_module_resources_2_autogen.dir/all: qml/CMakeFiles/qml_module_resources_2_autogen_timestamp_deps.dir/all
 	$(MAKE) $(MAKESILENT) -f qml\CMakeFiles\qml_module_resources_2_autogen.dir\build.make qml/CMakeFiles/qml_module_resources_2_autogen.dir/depend
 	$(MAKE) $(MAKESILENT) -f qml\CMakeFiles\qml_module_resources_2_autogen.dir\build.make qml/CMakeFiles/qml_module_resources_2_autogen.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=E:\myProgram\Recorder\record\build\CMakeFiles --progress-num=62 "Built target qml_module_resources_2_autogen"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=E:\myProgram\Recorder\record\build\CMakeFiles --progress-num=63 "Built target qml_module_resources_2_autogen"
 .PHONY : qml/CMakeFiles/qml_module_resources_2_autogen.dir/all
 
 # Build rule for subdir invocation for target.
@@ -1448,7 +1475,7 @@ qml_module_resources_2_autogen: qml/CMakeFiles/qml_module_resources_2_autogen.di
 # codegen rule for target.
 qml/CMakeFiles/qml_module_resources_2_autogen.dir/codegen: qml/CMakeFiles/qml_module_resources_2_autogen_timestamp_deps.dir/all
 	$(MAKE) $(MAKESILENT) -f qml\CMakeFiles\qml_module_resources_2_autogen.dir\build.make qml/CMakeFiles/qml_module_resources_2_autogen.dir/codegen
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=E:\myProgram\Recorder\record\build\CMakeFiles --progress-num=62 "Finished codegen for target qml_module_resources_2_autogen"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=E:\myProgram\Recorder\record\build\CMakeFiles --progress-num=63 "Finished codegen for target qml_module_resources_2_autogen"
 .PHONY : qml/CMakeFiles/qml_module_resources_2_autogen.dir/codegen
 
 # clean rule for target.
@@ -1495,7 +1522,7 @@ qml/CMakeFiles/qml_moduleplugin_init_autogen_timestamp_deps.dir/clean:
 qml/CMakeFiles/qml_moduleplugin_init_autogen.dir/all: qml/CMakeFiles/qml_moduleplugin_init_autogen_timestamp_deps.dir/all
 	$(MAKE) $(MAKESILENT) -f qml\CMakeFiles\qml_moduleplugin_init_autogen.dir\build.make qml/CMakeFiles/qml_moduleplugin_init_autogen.dir/depend
 	$(MAKE) $(MAKESILENT) -f qml\CMakeFiles\qml_moduleplugin_init_autogen.dir\build.make qml/CMakeFiles/qml_moduleplugin_init_autogen.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=E:\myProgram\Recorder\record\build\CMakeFiles --progress-num=74 "Built target qml_moduleplugin_init_autogen"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=E:\myProgram\Recorder\record\build\CMakeFiles --progress-num=75 "Built target qml_moduleplugin_init_autogen"
 .PHONY : qml/CMakeFiles/qml_moduleplugin_init_autogen.dir/all
 
 # Build rule for subdir invocation for target.
@@ -1512,7 +1539,7 @@ qml_moduleplugin_init_autogen: qml/CMakeFiles/qml_moduleplugin_init_autogen.dir/
 # codegen rule for target.
 qml/CMakeFiles/qml_moduleplugin_init_autogen.dir/codegen: qml/CMakeFiles/qml_moduleplugin_init_autogen_timestamp_deps.dir/all
 	$(MAKE) $(MAKESILENT) -f qml\CMakeFiles\qml_moduleplugin_init_autogen.dir\build.make qml/CMakeFiles/qml_moduleplugin_init_autogen.dir/codegen
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=E:\myProgram\Recorder\record\build\CMakeFiles --progress-num=74 "Finished codegen for target qml_moduleplugin_init_autogen"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=E:\myProgram\Recorder\record\build\CMakeFiles --progress-num=75 "Finished codegen for target qml_moduleplugin_init_autogen"
 .PHONY : qml/CMakeFiles/qml_moduleplugin_init_autogen.dir/codegen
 
 # clean rule for target.
@@ -1527,12 +1554,12 @@ qml/CMakeFiles/qml_moduleplugin_init_autogen.dir/clean:
 queue/CMakeFiles/queue_module.dir/all: decoder/CMakeFiles/decoder_module.dir/all
 	$(MAKE) $(MAKESILENT) -f queue\CMakeFiles\queue_module.dir\build.make queue/CMakeFiles/queue_module.dir/depend
 	$(MAKE) $(MAKESILENT) -f queue\CMakeFiles\queue_module.dir\build.make queue/CMakeFiles/queue_module.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=E:\myProgram\Recorder\record\build\CMakeFiles --progress-num=75,76,77,78,79 "Built target queue_module"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=E:\myProgram\Recorder\record\build\CMakeFiles --progress-num=76,77,78,79 "Built target queue_module"
 .PHONY : queue/CMakeFiles/queue_module.dir/all
 
 # Build rule for subdir invocation for target.
 queue/CMakeFiles/queue_module.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start E:\myProgram\Recorder\record\build\CMakeFiles 17
+	$(CMAKE_COMMAND) -E cmake_progress_start E:\myProgram\Recorder\record\build\CMakeFiles 16
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 queue/CMakeFiles/queue_module.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start E:\myProgram\Recorder\record\build\CMakeFiles 0
 .PHONY : queue/CMakeFiles/queue_module.dir/rule
@@ -1544,7 +1571,7 @@ queue_module: queue/CMakeFiles/queue_module.dir/rule
 # codegen rule for target.
 queue/CMakeFiles/queue_module.dir/codegen:
 	$(MAKE) $(MAKESILENT) -f queue\CMakeFiles\queue_module.dir\build.make queue/CMakeFiles/queue_module.dir/codegen
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=E:\myProgram\Recorder\record\build\CMakeFiles --progress-num=75,76,77,78,79 "Finished codegen for target queue_module"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=E:\myProgram\Recorder\record\build\CMakeFiles --progress-num=76,77,78,79 "Finished codegen for target queue_module"
 .PHONY : queue/CMakeFiles/queue_module.dir/codegen
 
 # clean rule for target.
@@ -1623,7 +1650,7 @@ queue/CMakeFiles/queue_module_autogen.dir/clean:
 decoder/CMakeFiles/decoder_module.dir/all: event/CMakeFiles/event_module.dir/all
 	$(MAKE) $(MAKESILENT) -f decoder\CMakeFiles\decoder_module.dir\build.make decoder/CMakeFiles/decoder_module.dir/depend
 	$(MAKE) $(MAKESILENT) -f decoder\CMakeFiles\decoder_module.dir\build.make decoder/CMakeFiles/decoder_module.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=E:\myProgram\Recorder\record\build\CMakeFiles --progress-num=6,7,8,9,10 "Built target decoder_module"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=E:\myProgram\Recorder\record\build\CMakeFiles --progress-num=6,7,8,9 "Built target decoder_module"
 .PHONY : decoder/CMakeFiles/decoder_module.dir/all
 
 # Build rule for subdir invocation for target.
@@ -1640,7 +1667,7 @@ decoder_module: decoder/CMakeFiles/decoder_module.dir/rule
 # codegen rule for target.
 decoder/CMakeFiles/decoder_module.dir/codegen:
 	$(MAKE) $(MAKESILENT) -f decoder\CMakeFiles\decoder_module.dir\build.make decoder/CMakeFiles/decoder_module.dir/codegen
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=E:\myProgram\Recorder\record\build\CMakeFiles --progress-num=6,7,8,9,10 "Finished codegen for target decoder_module"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=E:\myProgram\Recorder\record\build\CMakeFiles --progress-num=6,7,8,9 "Finished codegen for target decoder_module"
 .PHONY : decoder/CMakeFiles/decoder_module.dir/codegen
 
 # clean rule for target.
@@ -1687,7 +1714,7 @@ decoder/CMakeFiles/decoder_module_autogen_timestamp_deps.dir/clean:
 decoder/CMakeFiles/decoder_module_autogen.dir/all: decoder/CMakeFiles/decoder_module_autogen_timestamp_deps.dir/all
 	$(MAKE) $(MAKESILENT) -f decoder\CMakeFiles\decoder_module_autogen.dir\build.make decoder/CMakeFiles/decoder_module_autogen.dir/depend
 	$(MAKE) $(MAKESILENT) -f decoder\CMakeFiles\decoder_module_autogen.dir\build.make decoder/CMakeFiles/decoder_module_autogen.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=E:\myProgram\Recorder\record\build\CMakeFiles --progress-num=11 "Built target decoder_module_autogen"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=E:\myProgram\Recorder\record\build\CMakeFiles --progress-num=10 "Built target decoder_module_autogen"
 .PHONY : decoder/CMakeFiles/decoder_module_autogen.dir/all
 
 # Build rule for subdir invocation for target.
@@ -1704,7 +1731,7 @@ decoder_module_autogen: decoder/CMakeFiles/decoder_module_autogen.dir/rule
 # codegen rule for target.
 decoder/CMakeFiles/decoder_module_autogen.dir/codegen: decoder/CMakeFiles/decoder_module_autogen_timestamp_deps.dir/all
 	$(MAKE) $(MAKESILENT) -f decoder\CMakeFiles\decoder_module_autogen.dir\build.make decoder/CMakeFiles/decoder_module_autogen.dir/codegen
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=E:\myProgram\Recorder\record\build\CMakeFiles --progress-num=11 "Finished codegen for target decoder_module_autogen"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=E:\myProgram\Recorder\record\build\CMakeFiles --progress-num=10 "Finished codegen for target decoder_module_autogen"
 .PHONY : decoder/CMakeFiles/decoder_module_autogen.dir/codegen
 
 # clean rule for target.
@@ -1726,7 +1753,7 @@ resampler/CMakeFiles/resampler_module.dir/all: resampler/CMakeFiles/resampler_mo
 
 # Build rule for subdir invocation for target.
 resampler/CMakeFiles/resampler_module.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start E:\myProgram\Recorder\record\build\CMakeFiles 27
+	$(CMAKE_COMMAND) -E cmake_progress_start E:\myProgram\Recorder\record\build\CMakeFiles 26
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 resampler/CMakeFiles/resampler_module.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start E:\myProgram\Recorder\record\build\CMakeFiles 0
 .PHONY : resampler/CMakeFiles/resampler_module.dir/rule
@@ -1758,7 +1785,7 @@ resampler/CMakeFiles/resampler_module_autogen_timestamp_deps.dir/all: demuxer/CM
 
 # Build rule for subdir invocation for target.
 resampler/CMakeFiles/resampler_module_autogen_timestamp_deps.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start E:\myProgram\Recorder\record\build\CMakeFiles 21
+	$(CMAKE_COMMAND) -E cmake_progress_start E:\myProgram\Recorder\record\build\CMakeFiles 20
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 resampler/CMakeFiles/resampler_module_autogen_timestamp_deps.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start E:\myProgram\Recorder\record\build\CMakeFiles 0
 .PHONY : resampler/CMakeFiles/resampler_module_autogen_timestamp_deps.dir/rule
@@ -1790,7 +1817,7 @@ resampler/CMakeFiles/resampler_module_autogen.dir/all: resampler/CMakeFiles/resa
 
 # Build rule for subdir invocation for target.
 resampler/CMakeFiles/resampler_module_autogen.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start E:\myProgram\Recorder\record\build\CMakeFiles 22
+	$(CMAKE_COMMAND) -E cmake_progress_start E:\myProgram\Recorder\record\build\CMakeFiles 21
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 resampler/CMakeFiles/resampler_module_autogen.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start E:\myProgram\Recorder\record\build\CMakeFiles 0
 .PHONY : resampler/CMakeFiles/resampler_module_autogen.dir/rule
@@ -1819,12 +1846,12 @@ filter/CMakeFiles/filter_module.dir/all: filter/CMakeFiles/filter_module_autogen
 filter/CMakeFiles/filter_module.dir/all: filter/CMakeFiles/filter_module_autogen.dir/all
 	$(MAKE) $(MAKESILENT) -f filter\CMakeFiles\filter_module.dir\build.make filter/CMakeFiles/filter_module.dir/depend
 	$(MAKE) $(MAKESILENT) -f filter\CMakeFiles\filter_module.dir\build.make filter/CMakeFiles/filter_module.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=E:\myProgram\Recorder\record\build\CMakeFiles --progress-num=21,22,23,24,25 "Built target filter_module"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=E:\myProgram\Recorder\record\build\CMakeFiles --progress-num=25,26,27,28 "Built target filter_module"
 .PHONY : filter/CMakeFiles/filter_module.dir/all
 
 # Build rule for subdir invocation for target.
 filter/CMakeFiles/filter_module.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start E:\myProgram\Recorder\record\build\CMakeFiles 27
+	$(CMAKE_COMMAND) -E cmake_progress_start E:\myProgram\Recorder\record\build\CMakeFiles 25
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 filter/CMakeFiles/filter_module.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start E:\myProgram\Recorder\record\build\CMakeFiles 0
 .PHONY : filter/CMakeFiles/filter_module.dir/rule
@@ -1836,7 +1863,7 @@ filter_module: filter/CMakeFiles/filter_module.dir/rule
 # codegen rule for target.
 filter/CMakeFiles/filter_module.dir/codegen: filter/CMakeFiles/filter_module_autogen_timestamp_deps.dir/all
 	$(MAKE) $(MAKESILENT) -f filter\CMakeFiles\filter_module.dir\build.make filter/CMakeFiles/filter_module.dir/codegen
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=E:\myProgram\Recorder\record\build\CMakeFiles --progress-num=21,22,23,24,25 "Finished codegen for target filter_module"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=E:\myProgram\Recorder\record\build\CMakeFiles --progress-num=25,26,27,28 "Finished codegen for target filter_module"
 .PHONY : filter/CMakeFiles/filter_module.dir/codegen
 
 # clean rule for target.
@@ -1856,7 +1883,7 @@ filter/CMakeFiles/filter_module_autogen_timestamp_deps.dir/all: demuxer/CMakeFil
 
 # Build rule for subdir invocation for target.
 filter/CMakeFiles/filter_module_autogen_timestamp_deps.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start E:\myProgram\Recorder\record\build\CMakeFiles 21
+	$(CMAKE_COMMAND) -E cmake_progress_start E:\myProgram\Recorder\record\build\CMakeFiles 20
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 filter/CMakeFiles/filter_module_autogen_timestamp_deps.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start E:\myProgram\Recorder\record\build\CMakeFiles 0
 .PHONY : filter/CMakeFiles/filter_module_autogen_timestamp_deps.dir/rule
@@ -1883,12 +1910,12 @@ filter/CMakeFiles/filter_module_autogen_timestamp_deps.dir/clean:
 filter/CMakeFiles/filter_module_autogen.dir/all: filter/CMakeFiles/filter_module_autogen_timestamp_deps.dir/all
 	$(MAKE) $(MAKESILENT) -f filter\CMakeFiles\filter_module_autogen.dir\build.make filter/CMakeFiles/filter_module_autogen.dir/depend
 	$(MAKE) $(MAKESILENT) -f filter\CMakeFiles\filter_module_autogen.dir\build.make filter/CMakeFiles/filter_module_autogen.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=E:\myProgram\Recorder\record\build\CMakeFiles --progress-num=26 "Built target filter_module_autogen"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=E:\myProgram\Recorder\record\build\CMakeFiles --progress-num=29 "Built target filter_module_autogen"
 .PHONY : filter/CMakeFiles/filter_module_autogen.dir/all
 
 # Build rule for subdir invocation for target.
 filter/CMakeFiles/filter_module_autogen.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start E:\myProgram\Recorder\record\build\CMakeFiles 22
+	$(CMAKE_COMMAND) -E cmake_progress_start E:\myProgram\Recorder\record\build\CMakeFiles 21
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 filter/CMakeFiles/filter_module_autogen.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start E:\myProgram\Recorder\record\build\CMakeFiles 0
 .PHONY : filter/CMakeFiles/filter_module_autogen.dir/rule
@@ -1900,7 +1927,7 @@ filter_module_autogen: filter/CMakeFiles/filter_module_autogen.dir/rule
 # codegen rule for target.
 filter/CMakeFiles/filter_module_autogen.dir/codegen: filter/CMakeFiles/filter_module_autogen_timestamp_deps.dir/all
 	$(MAKE) $(MAKESILENT) -f filter\CMakeFiles\filter_module_autogen.dir\build.make filter/CMakeFiles/filter_module_autogen.dir/codegen
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=E:\myProgram\Recorder\record\build\CMakeFiles --progress-num=26 "Finished codegen for target filter_module_autogen"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=E:\myProgram\Recorder\record\build\CMakeFiles --progress-num=29 "Finished codegen for target filter_module_autogen"
 .PHONY : filter/CMakeFiles/filter_module_autogen.dir/codegen
 
 # clean rule for target.
@@ -1917,12 +1944,12 @@ muxer/CMakeFiles/muxer_module.dir/all: muxer/CMakeFiles/muxer_module_autogen.dir
 muxer/CMakeFiles/muxer_module.dir/all: muxer/CMakeFiles/muxer_module_autogen_timestamp_deps.dir/all
 	$(MAKE) $(MAKESILENT) -f muxer\CMakeFiles\muxer_module.dir\build.make muxer/CMakeFiles/muxer_module.dir/depend
 	$(MAKE) $(MAKESILENT) -f muxer\CMakeFiles\muxer_module.dir\build.make muxer/CMakeFiles/muxer_module.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=E:\myProgram\Recorder\record\build\CMakeFiles --progress-num=27,28,29,30 "Built target muxer_module"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=E:\myProgram\Recorder\record\build\CMakeFiles --progress-num=30,31,32,33 "Built target muxer_module"
 .PHONY : muxer/CMakeFiles/muxer_module.dir/all
 
 # Build rule for subdir invocation for target.
 muxer/CMakeFiles/muxer_module.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start E:\myProgram\Recorder\record\build\CMakeFiles 26
+	$(CMAKE_COMMAND) -E cmake_progress_start E:\myProgram\Recorder\record\build\CMakeFiles 24
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 muxer/CMakeFiles/muxer_module.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start E:\myProgram\Recorder\record\build\CMakeFiles 0
 .PHONY : muxer/CMakeFiles/muxer_module.dir/rule
@@ -1934,7 +1961,7 @@ muxer_module: muxer/CMakeFiles/muxer_module.dir/rule
 # codegen rule for target.
 muxer/CMakeFiles/muxer_module.dir/codegen: muxer/CMakeFiles/muxer_module_autogen_timestamp_deps.dir/all
 	$(MAKE) $(MAKESILENT) -f muxer\CMakeFiles\muxer_module.dir\build.make muxer/CMakeFiles/muxer_module.dir/codegen
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=E:\myProgram\Recorder\record\build\CMakeFiles --progress-num=27,28,29,30 "Finished codegen for target muxer_module"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=E:\myProgram\Recorder\record\build\CMakeFiles --progress-num=30,31,32,33 "Finished codegen for target muxer_module"
 .PHONY : muxer/CMakeFiles/muxer_module.dir/codegen
 
 # clean rule for target.
@@ -1954,7 +1981,7 @@ muxer/CMakeFiles/muxer_module_autogen_timestamp_deps.dir/all: demuxer/CMakeFiles
 
 # Build rule for subdir invocation for target.
 muxer/CMakeFiles/muxer_module_autogen_timestamp_deps.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start E:\myProgram\Recorder\record\build\CMakeFiles 21
+	$(CMAKE_COMMAND) -E cmake_progress_start E:\myProgram\Recorder\record\build\CMakeFiles 20
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 muxer/CMakeFiles/muxer_module_autogen_timestamp_deps.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start E:\myProgram\Recorder\record\build\CMakeFiles 0
 .PHONY : muxer/CMakeFiles/muxer_module_autogen_timestamp_deps.dir/rule
@@ -1981,12 +2008,12 @@ muxer/CMakeFiles/muxer_module_autogen_timestamp_deps.dir/clean:
 muxer/CMakeFiles/muxer_module_autogen.dir/all: muxer/CMakeFiles/muxer_module_autogen_timestamp_deps.dir/all
 	$(MAKE) $(MAKESILENT) -f muxer\CMakeFiles\muxer_module_autogen.dir\build.make muxer/CMakeFiles/muxer_module_autogen.dir/depend
 	$(MAKE) $(MAKESILENT) -f muxer\CMakeFiles\muxer_module_autogen.dir\build.make muxer/CMakeFiles/muxer_module_autogen.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=E:\myProgram\Recorder\record\build\CMakeFiles --progress-num=31 "Built target muxer_module_autogen"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=E:\myProgram\Recorder\record\build\CMakeFiles --progress-num= "Built target muxer_module_autogen"
 .PHONY : muxer/CMakeFiles/muxer_module_autogen.dir/all
 
 # Build rule for subdir invocation for target.
 muxer/CMakeFiles/muxer_module_autogen.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start E:\myProgram\Recorder\record\build\CMakeFiles 22
+	$(CMAKE_COMMAND) -E cmake_progress_start E:\myProgram\Recorder\record\build\CMakeFiles 20
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 muxer/CMakeFiles/muxer_module_autogen.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start E:\myProgram\Recorder\record\build\CMakeFiles 0
 .PHONY : muxer/CMakeFiles/muxer_module_autogen.dir/rule
@@ -1998,7 +2025,7 @@ muxer_module_autogen: muxer/CMakeFiles/muxer_module_autogen.dir/rule
 # codegen rule for target.
 muxer/CMakeFiles/muxer_module_autogen.dir/codegen: muxer/CMakeFiles/muxer_module_autogen_timestamp_deps.dir/all
 	$(MAKE) $(MAKESILENT) -f muxer\CMakeFiles\muxer_module_autogen.dir\build.make muxer/CMakeFiles/muxer_module_autogen.dir/codegen
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=E:\myProgram\Recorder\record\build\CMakeFiles --progress-num=31 "Finished codegen for target muxer_module_autogen"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=E:\myProgram\Recorder\record\build\CMakeFiles --progress-num= "Finished codegen for target muxer_module_autogen"
 .PHONY : muxer/CMakeFiles/muxer_module_autogen.dir/codegen
 
 # clean rule for target.
@@ -2010,22 +2037,22 @@ muxer/CMakeFiles/muxer_module_autogen.dir/clean:
 # Target rules for target event/CMakeFiles/event_module.dir
 
 # All Build rule for target.
+event/CMakeFiles/event_module.dir/all: decoder/CMakeFiles/decoder_module_autogen_timestamp_deps.dir/all
+event/CMakeFiles/event_module.dir/all: demuxer/CMakeFiles/demuxer_module_autogen_timestamp_deps.dir/all
+event/CMakeFiles/event_module.dir/all: queue/CMakeFiles/queue_module_autogen.dir/all
 event/CMakeFiles/event_module.dir/all: demuxer/CMakeFiles/demuxer_module_autogen.dir/all
 event/CMakeFiles/event_module.dir/all: queue/CMakeFiles/queue_module_autogen_timestamp_deps.dir/all
-event/CMakeFiles/event_module.dir/all: demuxer/CMakeFiles/demuxer_module_autogen_timestamp_deps.dir/all
-event/CMakeFiles/event_module.dir/all: event/CMakeFiles/event_module_autogen.dir/all
 event/CMakeFiles/event_module.dir/all: decoder/CMakeFiles/decoder_module_autogen.dir/all
-event/CMakeFiles/event_module.dir/all: decoder/CMakeFiles/decoder_module_autogen_timestamp_deps.dir/all
-event/CMakeFiles/event_module.dir/all: queue/CMakeFiles/queue_module_autogen.dir/all
+event/CMakeFiles/event_module.dir/all: event/CMakeFiles/event_module_autogen.dir/all
 event/CMakeFiles/event_module.dir/all: event/CMakeFiles/event_module_autogen_timestamp_deps.dir/all
 	$(MAKE) $(MAKESILENT) -f event\CMakeFiles\event_module.dir\build.make event/CMakeFiles/event_module.dir/depend
 	$(MAKE) $(MAKESILENT) -f event\CMakeFiles\event_module.dir\build.make event/CMakeFiles/event_module.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=E:\myProgram\Recorder\record\build\CMakeFiles --progress-num=17,18,19 "Built target event_module"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=E:\myProgram\Recorder\record\build\CMakeFiles --progress-num=20,21,22,23 "Built target event_module"
 .PHONY : event/CMakeFiles/event_module.dir/all
 
 # Build rule for subdir invocation for target.
 event/CMakeFiles/event_module.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start E:\myProgram\Recorder\record\build\CMakeFiles 7
+	$(CMAKE_COMMAND) -E cmake_progress_start E:\myProgram\Recorder\record\build\CMakeFiles 8
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 event/CMakeFiles/event_module.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start E:\myProgram\Recorder\record\build\CMakeFiles 0
 .PHONY : event/CMakeFiles/event_module.dir/rule
@@ -2037,7 +2064,7 @@ event_module: event/CMakeFiles/event_module.dir/rule
 # codegen rule for target.
 event/CMakeFiles/event_module.dir/codegen: event/CMakeFiles/event_module_autogen_timestamp_deps.dir/all
 	$(MAKE) $(MAKESILENT) -f event\CMakeFiles\event_module.dir\build.make event/CMakeFiles/event_module.dir/codegen
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=E:\myProgram\Recorder\record\build\CMakeFiles --progress-num=17,18,19 "Finished codegen for target event_module"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=E:\myProgram\Recorder\record\build\CMakeFiles --progress-num=20,21,22,23 "Finished codegen for target event_module"
 .PHONY : event/CMakeFiles/event_module.dir/codegen
 
 # clean rule for target.
@@ -2084,7 +2111,7 @@ event/CMakeFiles/event_module_autogen_timestamp_deps.dir/clean:
 event/CMakeFiles/event_module_autogen.dir/all: event/CMakeFiles/event_module_autogen_timestamp_deps.dir/all
 	$(MAKE) $(MAKESILENT) -f event\CMakeFiles\event_module_autogen.dir\build.make event/CMakeFiles/event_module_autogen.dir/depend
 	$(MAKE) $(MAKESILENT) -f event\CMakeFiles\event_module_autogen.dir\build.make event/CMakeFiles/event_module_autogen.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=E:\myProgram\Recorder\record\build\CMakeFiles --progress-num=20 "Built target event_module_autogen"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=E:\myProgram\Recorder\record\build\CMakeFiles --progress-num=24 "Built target event_module_autogen"
 .PHONY : event/CMakeFiles/event_module_autogen.dir/all
 
 # Build rule for subdir invocation for target.
@@ -2101,7 +2128,7 @@ event_module_autogen: event/CMakeFiles/event_module_autogen.dir/rule
 # codegen rule for target.
 event/CMakeFiles/event_module_autogen.dir/codegen: event/CMakeFiles/event_module_autogen_timestamp_deps.dir/all
 	$(MAKE) $(MAKESILENT) -f event\CMakeFiles\event_module_autogen.dir\build.make event/CMakeFiles/event_module_autogen.dir/codegen
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=E:\myProgram\Recorder\record\build\CMakeFiles --progress-num=20 "Finished codegen for target event_module_autogen"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=E:\myProgram\Recorder\record\build\CMakeFiles --progress-num=24 "Finished codegen for target event_module_autogen"
 .PHONY : event/CMakeFiles/event_module_autogen.dir/codegen
 
 # clean rule for target.
@@ -2114,8 +2141,8 @@ event/CMakeFiles/event_module_autogen.dir/clean:
 
 # All Build rule for target.
 thread/CMakeFiles/thread_module.dir/all: demuxer/CMakeFiles/demuxer_module.dir/all
-thread/CMakeFiles/thread_module.dir/all: thread/CMakeFiles/thread_module_autogen_timestamp_deps.dir/all
 thread/CMakeFiles/thread_module.dir/all: thread/CMakeFiles/thread_module_autogen.dir/all
+thread/CMakeFiles/thread_module.dir/all: thread/CMakeFiles/thread_module_autogen_timestamp_deps.dir/all
 	$(MAKE) $(MAKESILENT) -f thread\CMakeFiles\thread_module.dir\build.make thread/CMakeFiles/thread_module.dir/depend
 	$(MAKE) $(MAKESILENT) -f thread\CMakeFiles\thread_module.dir\build.make thread/CMakeFiles/thread_module.dir/build
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=E:\myProgram\Recorder\record\build\CMakeFiles --progress-num=90,91,92,93,94,95,96,97,98,99 "Built target thread_module"
@@ -2123,7 +2150,7 @@ thread/CMakeFiles/thread_module.dir/all: thread/CMakeFiles/thread_module_autogen
 
 # Build rule for subdir invocation for target.
 thread/CMakeFiles/thread_module.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start E:\myProgram\Recorder\record\build\CMakeFiles 32
+	$(CMAKE_COMMAND) -E cmake_progress_start E:\myProgram\Recorder\record\build\CMakeFiles 31
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 thread/CMakeFiles/thread_module.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start E:\myProgram\Recorder\record\build\CMakeFiles 0
 .PHONY : thread/CMakeFiles/thread_module.dir/rule
@@ -2155,7 +2182,7 @@ thread/CMakeFiles/thread_module_autogen_timestamp_deps.dir/all: demuxer/CMakeFil
 
 # Build rule for subdir invocation for target.
 thread/CMakeFiles/thread_module_autogen_timestamp_deps.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start E:\myProgram\Recorder\record\build\CMakeFiles 21
+	$(CMAKE_COMMAND) -E cmake_progress_start E:\myProgram\Recorder\record\build\CMakeFiles 20
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 thread/CMakeFiles/thread_module_autogen_timestamp_deps.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start E:\myProgram\Recorder\record\build\CMakeFiles 0
 .PHONY : thread/CMakeFiles/thread_module_autogen_timestamp_deps.dir/rule
@@ -2187,7 +2214,7 @@ thread/CMakeFiles/thread_module_autogen.dir/all: thread/CMakeFiles/thread_module
 
 # Build rule for subdir invocation for target.
 thread/CMakeFiles/thread_module_autogen.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start E:\myProgram\Recorder\record\build\CMakeFiles 22
+	$(CMAKE_COMMAND) -E cmake_progress_start E:\myProgram\Recorder\record\build\CMakeFiles 21
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 thread/CMakeFiles/thread_module_autogen.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start E:\myProgram\Recorder\record\build\CMakeFiles 0
 .PHONY : thread/CMakeFiles/thread_module_autogen.dir/rule
@@ -2214,6 +2241,7 @@ thread/CMakeFiles/thread_module_autogen.dir/clean:
 recorder/CMakeFiles/recorder_module.dir/all: demuxer/CMakeFiles/demuxer_module.dir/all
 recorder/CMakeFiles/recorder_module.dir/all: filter/CMakeFiles/filter_module.dir/all
 recorder/CMakeFiles/recorder_module.dir/all: muxer/CMakeFiles/muxer_module.dir/all
+recorder/CMakeFiles/recorder_module.dir/all: encoder/CMakeFiles/encoder_module.dir/all
 recorder/CMakeFiles/recorder_module.dir/all: recorder/CMakeFiles/recorder_module_autogen_timestamp_deps.dir/all
 recorder/CMakeFiles/recorder_module.dir/all: recorder/CMakeFiles/recorder_module_autogen.dir/all
 	$(MAKE) $(MAKESILENT) -f recorder\CMakeFiles\recorder_module.dir\build.make recorder/CMakeFiles/recorder_module.dir/depend
@@ -2223,7 +2251,7 @@ recorder/CMakeFiles/recorder_module.dir/all: recorder/CMakeFiles/recorder_module
 
 # Build rule for subdir invocation for target.
 recorder/CMakeFiles/recorder_module.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start E:\myProgram\Recorder\record\build\CMakeFiles 35
+	$(CMAKE_COMMAND) -E cmake_progress_start E:\myProgram\Recorder\record\build\CMakeFiles 36
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 recorder/CMakeFiles/recorder_module.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start E:\myProgram\Recorder\record\build\CMakeFiles 0
 .PHONY : recorder/CMakeFiles/recorder_module.dir/rule
@@ -2250,6 +2278,7 @@ recorder/CMakeFiles/recorder_module.dir/clean:
 recorder/CMakeFiles/recorder_module_autogen_timestamp_deps.dir/all: demuxer/CMakeFiles/demuxer_module.dir/all
 recorder/CMakeFiles/recorder_module_autogen_timestamp_deps.dir/all: filter/CMakeFiles/filter_module.dir/all
 recorder/CMakeFiles/recorder_module_autogen_timestamp_deps.dir/all: muxer/CMakeFiles/muxer_module.dir/all
+recorder/CMakeFiles/recorder_module_autogen_timestamp_deps.dir/all: encoder/CMakeFiles/encoder_module.dir/all
 	$(MAKE) $(MAKESILENT) -f recorder\CMakeFiles\recorder_module_autogen_timestamp_deps.dir\build.make recorder/CMakeFiles/recorder_module_autogen_timestamp_deps.dir/depend
 	$(MAKE) $(MAKESILENT) -f recorder\CMakeFiles\recorder_module_autogen_timestamp_deps.dir\build.make recorder/CMakeFiles/recorder_module_autogen_timestamp_deps.dir/build
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=E:\myProgram\Recorder\record\build\CMakeFiles --progress-num= "Built target recorder_module_autogen_timestamp_deps"
@@ -2257,7 +2286,7 @@ recorder/CMakeFiles/recorder_module_autogen_timestamp_deps.dir/all: muxer/CMakeF
 
 # Build rule for subdir invocation for target.
 recorder/CMakeFiles/recorder_module_autogen_timestamp_deps.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start E:\myProgram\Recorder\record\build\CMakeFiles 32
+	$(CMAKE_COMMAND) -E cmake_progress_start E:\myProgram\Recorder\record\build\CMakeFiles 33
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 recorder/CMakeFiles/recorder_module_autogen_timestamp_deps.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start E:\myProgram\Recorder\record\build\CMakeFiles 0
 .PHONY : recorder/CMakeFiles/recorder_module_autogen_timestamp_deps.dir/rule
@@ -2289,7 +2318,7 @@ recorder/CMakeFiles/recorder_module_autogen.dir/all: recorder/CMakeFiles/recorde
 
 # Build rule for subdir invocation for target.
 recorder/CMakeFiles/recorder_module_autogen.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start E:\myProgram\Recorder\record\build\CMakeFiles 32
+	$(CMAKE_COMMAND) -E cmake_progress_start E:\myProgram\Recorder\record\build\CMakeFiles 33
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 recorder/CMakeFiles/recorder_module_autogen.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start E:\myProgram\Recorder\record\build\CMakeFiles 0
 .PHONY : recorder/CMakeFiles/recorder_module_autogen.dir/rule
@@ -2308,6 +2337,104 @@ recorder/CMakeFiles/recorder_module_autogen.dir/codegen: recorder/CMakeFiles/rec
 recorder/CMakeFiles/recorder_module_autogen.dir/clean:
 	$(MAKE) $(MAKESILENT) -f recorder\CMakeFiles\recorder_module_autogen.dir\build.make recorder/CMakeFiles/recorder_module_autogen.dir/clean
 .PHONY : recorder/CMakeFiles/recorder_module_autogen.dir/clean
+
+#=============================================================================
+# Target rules for target encoder/CMakeFiles/encoder_module.dir
+
+# All Build rule for target.
+encoder/CMakeFiles/encoder_module.dir/all: demuxer/CMakeFiles/demuxer_module.dir/all
+encoder/CMakeFiles/encoder_module.dir/all: encoder/CMakeFiles/encoder_module_autogen_timestamp_deps.dir/all
+encoder/CMakeFiles/encoder_module.dir/all: encoder/CMakeFiles/encoder_module_autogen.dir/all
+	$(MAKE) $(MAKESILENT) -f encoder\CMakeFiles\encoder_module.dir\build.make encoder/CMakeFiles/encoder_module.dir/depend
+	$(MAKE) $(MAKESILENT) -f encoder\CMakeFiles\encoder_module.dir\build.make encoder/CMakeFiles/encoder_module.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=E:\myProgram\Recorder\record\build\CMakeFiles --progress-num=16,17,18 "Built target encoder_module"
+.PHONY : encoder/CMakeFiles/encoder_module.dir/all
+
+# Build rule for subdir invocation for target.
+encoder/CMakeFiles/encoder_module.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start E:\myProgram\Recorder\record\build\CMakeFiles 24
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 encoder/CMakeFiles/encoder_module.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start E:\myProgram\Recorder\record\build\CMakeFiles 0
+.PHONY : encoder/CMakeFiles/encoder_module.dir/rule
+
+# Convenience name for target.
+encoder_module: encoder/CMakeFiles/encoder_module.dir/rule
+.PHONY : encoder_module
+
+# codegen rule for target.
+encoder/CMakeFiles/encoder_module.dir/codegen: encoder/CMakeFiles/encoder_module_autogen_timestamp_deps.dir/all
+	$(MAKE) $(MAKESILENT) -f encoder\CMakeFiles\encoder_module.dir\build.make encoder/CMakeFiles/encoder_module.dir/codegen
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=E:\myProgram\Recorder\record\build\CMakeFiles --progress-num=16,17,18 "Finished codegen for target encoder_module"
+.PHONY : encoder/CMakeFiles/encoder_module.dir/codegen
+
+# clean rule for target.
+encoder/CMakeFiles/encoder_module.dir/clean:
+	$(MAKE) $(MAKESILENT) -f encoder\CMakeFiles\encoder_module.dir\build.make encoder/CMakeFiles/encoder_module.dir/clean
+.PHONY : encoder/CMakeFiles/encoder_module.dir/clean
+
+#=============================================================================
+# Target rules for target encoder/CMakeFiles/encoder_module_autogen_timestamp_deps.dir
+
+# All Build rule for target.
+encoder/CMakeFiles/encoder_module_autogen_timestamp_deps.dir/all: demuxer/CMakeFiles/demuxer_module.dir/all
+	$(MAKE) $(MAKESILENT) -f encoder\CMakeFiles\encoder_module_autogen_timestamp_deps.dir\build.make encoder/CMakeFiles/encoder_module_autogen_timestamp_deps.dir/depend
+	$(MAKE) $(MAKESILENT) -f encoder\CMakeFiles\encoder_module_autogen_timestamp_deps.dir\build.make encoder/CMakeFiles/encoder_module_autogen_timestamp_deps.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=E:\myProgram\Recorder\record\build\CMakeFiles --progress-num= "Built target encoder_module_autogen_timestamp_deps"
+.PHONY : encoder/CMakeFiles/encoder_module_autogen_timestamp_deps.dir/all
+
+# Build rule for subdir invocation for target.
+encoder/CMakeFiles/encoder_module_autogen_timestamp_deps.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start E:\myProgram\Recorder\record\build\CMakeFiles 20
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 encoder/CMakeFiles/encoder_module_autogen_timestamp_deps.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start E:\myProgram\Recorder\record\build\CMakeFiles 0
+.PHONY : encoder/CMakeFiles/encoder_module_autogen_timestamp_deps.dir/rule
+
+# Convenience name for target.
+encoder_module_autogen_timestamp_deps: encoder/CMakeFiles/encoder_module_autogen_timestamp_deps.dir/rule
+.PHONY : encoder_module_autogen_timestamp_deps
+
+# codegen rule for target.
+encoder/CMakeFiles/encoder_module_autogen_timestamp_deps.dir/codegen:
+	$(MAKE) $(MAKESILENT) -f encoder\CMakeFiles\encoder_module_autogen_timestamp_deps.dir\build.make encoder/CMakeFiles/encoder_module_autogen_timestamp_deps.dir/codegen
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=E:\myProgram\Recorder\record\build\CMakeFiles --progress-num= "Finished codegen for target encoder_module_autogen_timestamp_deps"
+.PHONY : encoder/CMakeFiles/encoder_module_autogen_timestamp_deps.dir/codegen
+
+# clean rule for target.
+encoder/CMakeFiles/encoder_module_autogen_timestamp_deps.dir/clean:
+	$(MAKE) $(MAKESILENT) -f encoder\CMakeFiles\encoder_module_autogen_timestamp_deps.dir\build.make encoder/CMakeFiles/encoder_module_autogen_timestamp_deps.dir/clean
+.PHONY : encoder/CMakeFiles/encoder_module_autogen_timestamp_deps.dir/clean
+
+#=============================================================================
+# Target rules for target encoder/CMakeFiles/encoder_module_autogen.dir
+
+# All Build rule for target.
+encoder/CMakeFiles/encoder_module_autogen.dir/all: encoder/CMakeFiles/encoder_module_autogen_timestamp_deps.dir/all
+	$(MAKE) $(MAKESILENT) -f encoder\CMakeFiles\encoder_module_autogen.dir\build.make encoder/CMakeFiles/encoder_module_autogen.dir/depend
+	$(MAKE) $(MAKESILENT) -f encoder\CMakeFiles\encoder_module_autogen.dir\build.make encoder/CMakeFiles/encoder_module_autogen.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=E:\myProgram\Recorder\record\build\CMakeFiles --progress-num=19 "Built target encoder_module_autogen"
+.PHONY : encoder/CMakeFiles/encoder_module_autogen.dir/all
+
+# Build rule for subdir invocation for target.
+encoder/CMakeFiles/encoder_module_autogen.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start E:\myProgram\Recorder\record\build\CMakeFiles 21
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 encoder/CMakeFiles/encoder_module_autogen.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start E:\myProgram\Recorder\record\build\CMakeFiles 0
+.PHONY : encoder/CMakeFiles/encoder_module_autogen.dir/rule
+
+# Convenience name for target.
+encoder_module_autogen: encoder/CMakeFiles/encoder_module_autogen.dir/rule
+.PHONY : encoder_module_autogen
+
+# codegen rule for target.
+encoder/CMakeFiles/encoder_module_autogen.dir/codegen: encoder/CMakeFiles/encoder_module_autogen_timestamp_deps.dir/all
+	$(MAKE) $(MAKESILENT) -f encoder\CMakeFiles\encoder_module_autogen.dir\build.make encoder/CMakeFiles/encoder_module_autogen.dir/codegen
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=E:\myProgram\Recorder\record\build\CMakeFiles --progress-num=19 "Finished codegen for target encoder_module_autogen"
+.PHONY : encoder/CMakeFiles/encoder_module_autogen.dir/codegen
+
+# clean rule for target.
+encoder/CMakeFiles/encoder_module_autogen.dir/clean:
+	$(MAKE) $(MAKESILENT) -f encoder\CMakeFiles\encoder_module_autogen.dir\build.make encoder/CMakeFiles/encoder_module_autogen.dir/clean
+.PHONY : encoder/CMakeFiles/encoder_module_autogen.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.

@@ -11,7 +11,8 @@
 		"E:/myProgram/Recorder/record/build/muxer/cmake_install.cmake",
 		"E:/myProgram/Recorder/record/build/event/cmake_install.cmake",
 		"E:/myProgram/Recorder/record/build/thread/cmake_install.cmake",
-		"E:/myProgram/Recorder/record/build/recorder/cmake_install.cmake"
+		"E:/myProgram/Recorder/record/build/recorder/cmake_install.cmake",
+		"E:/myProgram/Recorder/record/build/encoder/cmake_install.cmake"
 	],
 	"Parallel" : false
 }

@@ -17,6 +17,12 @@
 			"MU",
 			"EWIEGA46WW/moc_ffaencoder.cpp",
 			null
+		],
+		[
+			"E:/myProgram/Recorder/record/encoder/ffvencoder.h",
+			"MU",
+			"EWIEGA46WW/moc_ffvencoder.cpp",
+			null
 		]
 	],
 	"HEADER_EXTENSIONS" : [ "h", "hh", "h++", "hm", "hpp", "hxx", "in", "txx" ],
@@ -86,7 +92,8 @@
 	"SETTINGS_FILE" : "E:/myProgram/Recorder/record/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/encoder/CMakeFiles/encoder_module_autogen.dir/AutogenUsed.txt",
 	"SOURCES" : 
 	[
-		[ "E:/myProgram/Recorder/record/encoder/ffaencoder.cpp", "MU", null ]
+		[ "E:/myProgram/Recorder/record/encoder/ffaencoder.cpp", "MU", null ],
+		[ "E:/myProgram/Recorder/record/encoder/ffvencoder.cpp", "MU", null ]
 	],
 	"UIC_OPTIONS" : [],
 	"UIC_SEARCH_PATHS" : [],

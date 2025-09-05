@@ -198,6 +198,21 @@ thread/CMakeFiles/thread_module.dir/ffafilterthread.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/thread_module.dir/ffafilterthread.cpp.s"
 	cd /d E:\myProgram\Recorder\record\build\thread && F:\Qt\Tools\mingw1310_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S E:\myProgram\Recorder\record\thread\ffafilterthread.cpp -o CMakeFiles\thread_module.dir\ffafilterthread.cpp.s
 
+thread/CMakeFiles/thread_module.dir/ffaencoderthread.cpp.obj: thread/CMakeFiles/thread_module.dir/flags.make
+thread/CMakeFiles/thread_module.dir/ffaencoderthread.cpp.obj: thread/CMakeFiles/thread_module.dir/includes_CXX.rsp
+thread/CMakeFiles/thread_module.dir/ffaencoderthread.cpp.obj: E:/myProgram/Recorder/record/thread/ffaencoderthread.cpp
+thread/CMakeFiles/thread_module.dir/ffaencoderthread.cpp.obj: thread/CMakeFiles/thread_module.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=E:\myProgram\Recorder\record\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object thread/CMakeFiles/thread_module.dir/ffaencoderthread.cpp.obj"
+	cd /d E:\myProgram\Recorder\record\build\thread && F:\Qt\Tools\mingw1310_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT thread/CMakeFiles/thread_module.dir/ffaencoderthread.cpp.obj -MF CMakeFiles\thread_module.dir\ffaencoderthread.cpp.obj.d -o CMakeFiles\thread_module.dir\ffaencoderthread.cpp.obj -c E:\myProgram\Recorder\record\thread\ffaencoderthread.cpp
+
+thread/CMakeFiles/thread_module.dir/ffaencoderthread.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/thread_module.dir/ffaencoderthread.cpp.i"
+	cd /d E:\myProgram\Recorder\record\build\thread && F:\Qt\Tools\mingw1310_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E E:\myProgram\Recorder\record\thread\ffaencoderthread.cpp > CMakeFiles\thread_module.dir\ffaencoderthread.cpp.i
+
+thread/CMakeFiles/thread_module.dir/ffaencoderthread.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/thread_module.dir/ffaencoderthread.cpp.s"
+	cd /d E:\myProgram\Recorder\record\build\thread && F:\Qt\Tools\mingw1310_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S E:\myProgram\Recorder\record\thread\ffaencoderthread.cpp -o CMakeFiles\thread_module.dir\ffaencoderthread.cpp.s
+
 # Object files for target thread_module
 thread_module_OBJECTS = \
 "CMakeFiles/thread_module.dir/thread_module_autogen/mocs_compilation.cpp.obj" \
@@ -207,7 +222,8 @@ thread_module_OBJECTS = \
 "CMakeFiles/thread_module.dir/ffadecoderthread.cpp.obj" \
 "CMakeFiles/thread_module.dir/ffvdecoderthread.cpp.obj" \
 "CMakeFiles/thread_module.dir/ffvfilterthread.cpp.obj" \
-"CMakeFiles/thread_module.dir/ffafilterthread.cpp.obj"
+"CMakeFiles/thread_module.dir/ffafilterthread.cpp.obj" \
+"CMakeFiles/thread_module.dir/ffaencoderthread.cpp.obj"
 
 # External object files for target thread_module
 thread_module_EXTERNAL_OBJECTS =
@@ -220,9 +236,10 @@ thread/libthread_module.a: thread/CMakeFiles/thread_module.dir/ffadecoderthread.
 thread/libthread_module.a: thread/CMakeFiles/thread_module.dir/ffvdecoderthread.cpp.obj
 thread/libthread_module.a: thread/CMakeFiles/thread_module.dir/ffvfilterthread.cpp.obj
 thread/libthread_module.a: thread/CMakeFiles/thread_module.dir/ffafilterthread.cpp.obj
+thread/libthread_module.a: thread/CMakeFiles/thread_module.dir/ffaencoderthread.cpp.obj
 thread/libthread_module.a: thread/CMakeFiles/thread_module.dir/build.make
 thread/libthread_module.a: thread/CMakeFiles/thread_module.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=E:\myProgram\Recorder\record\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Linking CXX static library libthread_module.a"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=E:\myProgram\Recorder\record\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Linking CXX static library libthread_module.a"
 	cd /d E:\myProgram\Recorder\record\build\thread && $(CMAKE_COMMAND) -P CMakeFiles\thread_module.dir\cmake_clean_target.cmake
 	cd /d E:\myProgram\Recorder\record\build\thread && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\thread_module.dir\link.txt --verbose=$(VERBOSE)
 

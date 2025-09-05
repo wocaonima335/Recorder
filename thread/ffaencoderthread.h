@@ -39,7 +39,7 @@ private:
     FFAFilter *aFilter = nullptr;
 
     int64_t firstFramePts = 0;
-    bool fisrtFrame = true;
+    bool firstFrame = true;
 };
 
 #endif // FFAENCODERTHREAD_H

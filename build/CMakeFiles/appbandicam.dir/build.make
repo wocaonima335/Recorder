@@ -135,6 +135,7 @@ appbandicam.exe: muxer/libmuxer_module.a
 appbandicam.exe: event/libevent_module.a
 appbandicam.exe: thread/libthread_module.a
 appbandicam.exe: recorder/librecorder_module.a
+appbandicam.exe: encoder/libencoder_module.a
 appbandicam.exe: D:/Qt/6.5.3/mingw_64/lib/libQt6Quick.a
 appbandicam.exe: D:/Qt/6.5.3/mingw_64/lib/libQt6QmlModels.a
 appbandicam.exe: D:/Qt/6.5.3/mingw_64/lib/libQt6OpenGL.a

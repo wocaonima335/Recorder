@@ -1,6 +1,8 @@
 file(REMOVE_RECURSE
   "CMakeFiles/thread_module.dir/ffadecoderthread.cpp.obj"
   "CMakeFiles/thread_module.dir/ffadecoderthread.cpp.obj.d"
+  "CMakeFiles/thread_module.dir/ffaencoderthread.cpp.obj"
+  "CMakeFiles/thread_module.dir/ffaencoderthread.cpp.obj.d"
   "CMakeFiles/thread_module.dir/ffafilterthread.cpp.obj"
   "CMakeFiles/thread_module.dir/ffafilterthread.cpp.obj.d"
   "CMakeFiles/thread_module.dir/ffdemuxerthread.cpp.obj"

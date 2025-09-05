@@ -2397,6 +2397,14 @@ build encoder/CMakeFiles/encoder_module.dir/ffaencoder.cpp.obj: CXX_COMPILER__en
   OBJECT_DIR = encoder\CMakeFiles\encoder_module.dir
   OBJECT_FILE_DIR = encoder\CMakeFiles\encoder_module.dir
 
+build encoder/CMakeFiles/encoder_module.dir/ffvencoder.cpp.obj: CXX_COMPILER__encoder_module_unscanned_Debug E$:/myProgram/Recorder/record/encoder/ffvencoder.cpp || cmake_object_order_depends_target_encoder_module
+  DEFINES = -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64
+  DEP_FILE = encoder\CMakeFiles\encoder_module.dir\ffvencoder.cpp.obj.d
+  FLAGS = -DQT_QML_DEBUG -g -fdiagnostics-color=always
+  INCLUDES = -IE:/myProgram/Recorder/record/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/encoder/encoder_module_autogen/include -IE:/myProgram/Recorder/record/3rdparty/ffmpeg-amf/include -IE:/myProgram/Recorder/record/encoder/.. -isystem F:/Qt/6.8.0/mingw_64/include/QtCore -isystem F:/Qt/6.8.0/mingw_64/include -isystem F:/Qt/6.8.0/mingw_64/mkspecs/win32-g++
+  OBJECT_DIR = encoder\CMakeFiles\encoder_module.dir
+  OBJECT_FILE_DIR = encoder\CMakeFiles\encoder_module.dir
+
 
 # =============================================================================
 # Link build statements for STATIC_LIBRARY target encoder_module
@@ -2405,7 +2413,7 @@ build encoder/CMakeFiles/encoder_module.dir/ffaencoder.cpp.obj: CXX_COMPILER__en
 #############################################
 # Link the static library encoder\libencoder_module.a
 
-build encoder/libencoder_module.a: CXX_STATIC_LIBRARY_LINKER__encoder_module_Debug encoder/CMakeFiles/encoder_module.dir/encoder_module_autogen/mocs_compilation.cpp.obj encoder/CMakeFiles/encoder_module.dir/ffaencoder.cpp.obj || demuxer/libdemuxer_module.a encoder/encoder_module_autogen encoder/encoder_module_autogen_timestamp_deps
+build encoder/libencoder_module.a: CXX_STATIC_LIBRARY_LINKER__encoder_module_Debug encoder/CMakeFiles/encoder_module.dir/encoder_module_autogen/mocs_compilation.cpp.obj encoder/CMakeFiles/encoder_module.dir/ffaencoder.cpp.obj encoder/CMakeFiles/encoder_module.dir/ffvencoder.cpp.obj || demuxer/libdemuxer_module.a encoder/encoder_module_autogen encoder/encoder_module_autogen_timestamp_deps
   LANGUAGE_COMPILE_FLAGS = -DQT_QML_DEBUG -g
   OBJECT_DIR = encoder\CMakeFiles\encoder_module.dir
   POST_BUILD = cd .

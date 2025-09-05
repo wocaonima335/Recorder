@@ -70,7 +70,60 @@ int FFAEncoder::encode(AVFrame *frame, int streamIndex, int64_t pts, AVRational 
         AVFrame *sub_frame = av_frame_alloc();
         sub_frame->format = codecCtx->sample_fmt;
         sub_frame->ch_layout = codecCtx->ch_layout;
+        sub_frame->ch_layout.nb_channels = codecCtx->ch_layout.nb_channels;
+        sub_frame->sample_rate = codecCtx->sample_rate;
+        sub_frame->nb_samples = frame_size;
+        sub_frame->pts = pendingFrame.next_pts + i * frame_size;
+
+        av_frame_get_buffer(sub_frame, 0);
+
+        for (int ch = 0; ch < sub_frame->ch_layout.nb_channels; ch++) {
+            uint8_t *src = merged_data[ch].data() + i * frame_size * bytes_per_sample;
+            memcpy(sub_frame->data[ch], src, frame_size * bytes_per_sample);
+        }
+
+        avcodec_send_frame(codecCtx, sub_frame);
+        av_frame_free(&sub_frame);
+
+        while (1) {
+            AVPacket *pkt = av_packet_alloc();
+            int ret = avcodec_receive_packet(codecCtx, pkt);
+
+            if (ret == AVERROR(EAGAIN)) {
+                av_packet_free(&pkt);
+                break;
+            } else if (ret < 0) {
+                av_packet_free(&pkt);
+                return -1;
+            }
+
+            pkt->stream_index = streamIndex;
+            pktQueue->enqueue(pkt);
+        }
     }
+
+    pendingFrame.next_pts = pendingFrame.next_pts + total_full_frames * frame_size;
+    pendingFrame.samples = remaining_samples;
+    for (int ch = 0; ch < codecCtx->ch_layout.nb_channels; ++ch) {
+        pendingFrame.data[ch].resize(remaining_samples * bytes_per_sample);
+        if (remaining_samples > 0) {
+            uint8_t *src = merged_data[ch].data()
+                           + total_full_frames * frame_size * bytes_per_sample;
+            memcpy(pendingFrame.data[ch].data(), src, remaining_samples * bytes_per_sample);
+        }
+    }
+    return 0;
+}
+
+FFAEncoderPars *FFAEncoder::getEncoderPars()
+{
+    std::lock_guard<std::mutex> lock(mutex);
+    return aPars;
+}
+
+AVCodecContext *FFAEncoder::getCodecCtx()
+{
+    return codecCtx;
 }
 
 void FFAEncoder::initAudio(AVFrame *frame)
@@ -107,5 +160,16 @@ void FFAEncoder::initAudio(AVFrame *frame)
     if (ret < 0) {
         printError(ret);
         return;
+    }
+}
+
+void FFAEncoder::printError(int ret)
+{
+    char errorBuffer[AV_ERROR_MAX_STRING_SIZE];
+    int res = av_strerror(ret, errorBuffer, sizeof errorBuffer);
+    if (res < 0) {
+        std::cerr << "Unknow Error!" << std::endl;
+    } else {
+        std::cerr << "Error:" << errorBuffer << std::endl;
     }
 }

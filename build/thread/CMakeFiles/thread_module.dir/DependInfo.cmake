@@ -10,6 +10,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "" "thread/thread_module_autogen/timestamp" "custom" "thread/thread_module_autogen/deps"
   "E:/myProgram/Recorder/record/thread/ffadecoderthread.cpp" "thread/CMakeFiles/thread_module.dir/ffadecoderthread.cpp.obj" "gcc" "thread/CMakeFiles/thread_module.dir/ffadecoderthread.cpp.obj.d"
+  "E:/myProgram/Recorder/record/thread/ffaencoderthread.cpp" "thread/CMakeFiles/thread_module.dir/ffaencoderthread.cpp.obj" "gcc" "thread/CMakeFiles/thread_module.dir/ffaencoderthread.cpp.obj.d"
   "E:/myProgram/Recorder/record/thread/ffafilterthread.cpp" "thread/CMakeFiles/thread_module.dir/ffafilterthread.cpp.obj" "gcc" "thread/CMakeFiles/thread_module.dir/ffafilterthread.cpp.obj.d"
   "E:/myProgram/Recorder/record/thread/ffdemuxerthread.cpp" "thread/CMakeFiles/thread_module.dir/ffdemuxerthread.cpp.obj" "gcc" "thread/CMakeFiles/thread_module.dir/ffdemuxerthread.cpp.obj.d"
   "E:/myProgram/Recorder/record/thread/ffthread.cpp" "thread/CMakeFiles/thread_module.dir/ffthread.cpp.obj" "gcc" "thread/CMakeFiles/thread_module.dir/ffthread.cpp.obj.d"

@@ -927,6 +927,45 @@ recorder_module_autogen/fast:
 	$(MAKE) $(MAKESILENT) -f recorder\CMakeFiles\recorder_module_autogen.dir\build.make recorder/CMakeFiles/recorder_module_autogen.dir/build
 .PHONY : recorder_module_autogen/fast
 
+#=============================================================================
+# Target rules for targets named encoder_module
+
+# Build rule for target.
+encoder_module: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 encoder_module
+.PHONY : encoder_module
+
+# fast build rule for target.
+encoder_module/fast:
+	$(MAKE) $(MAKESILENT) -f encoder\CMakeFiles\encoder_module.dir\build.make encoder/CMakeFiles/encoder_module.dir/build
+.PHONY : encoder_module/fast
+
+#=============================================================================
+# Target rules for targets named encoder_module_autogen_timestamp_deps
+
+# Build rule for target.
+encoder_module_autogen_timestamp_deps: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 encoder_module_autogen_timestamp_deps
+.PHONY : encoder_module_autogen_timestamp_deps
+
+# fast build rule for target.
+encoder_module_autogen_timestamp_deps/fast:
+	$(MAKE) $(MAKESILENT) -f encoder\CMakeFiles\encoder_module_autogen_timestamp_deps.dir\build.make encoder/CMakeFiles/encoder_module_autogen_timestamp_deps.dir/build
+.PHONY : encoder_module_autogen_timestamp_deps/fast
+
+#=============================================================================
+# Target rules for targets named encoder_module_autogen
+
+# Build rule for target.
+encoder_module_autogen: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 encoder_module_autogen
+.PHONY : encoder_module_autogen
+
+# fast build rule for target.
+encoder_module_autogen/fast:
+	$(MAKE) $(MAKESILENT) -f encoder\CMakeFiles\encoder_module_autogen.dir\build.make encoder/CMakeFiles/encoder_module_autogen.dir/build
+.PHONY : encoder_module_autogen/fast
+
 appbandicam_autogen/mocs_compilation.obj: appbandicam_autogen/mocs_compilation.cpp.obj
 .PHONY : appbandicam_autogen/mocs_compilation.obj
 
@@ -998,6 +1037,8 @@ help:
 	@echo ... decoder_module_autogen_timestamp_deps
 	@echo ... demuxer_module_autogen
 	@echo ... demuxer_module_autogen_timestamp_deps
+	@echo ... encoder_module_autogen
+	@echo ... encoder_module_autogen_timestamp_deps
 	@echo ... event_module_autogen
 	@echo ... event_module_autogen_timestamp_deps
 	@echo ... filter_module_autogen
@@ -1032,6 +1073,7 @@ help:
 	@echo ... appbandicam
 	@echo ... decoder_module
 	@echo ... demuxer_module
+	@echo ... encoder_module
 	@echo ... event_module
 	@echo ... filter_module
 	@echo ... muxer_module

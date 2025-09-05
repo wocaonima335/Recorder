@@ -1,0 +1,10 @@
+qml_moduleplugin_init_autogen/timestamp: \
+	E:/myProgram/Recorder/record/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/qml/qml_moduleplugin_bandicam_qmlPlugin_in.cpp \
+	E:/myProgram/Recorder/record/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/qml/qml_moduleplugin_init.cpp \
+	E:/myProgram/Recorder/record/qml/CMakeLists.txt \
+	F:/Qt/6.8.0/mingw_64/lib/cmake/Qt6Core/Qt6CoreConfigureFileTemplate.in \
+	F:/Qt/6.8.0/mingw_64/lib/cmake/Qt6Core/Qt6CoreResourceInit.in.cpp \
+	F:/Qt/6.8.0/mingw_64/lib/cmake/Qt6Qml/Qt6QmlModuleDirMappingTemplate.qrc.in \
+	F:/Qt/6.8.0/mingw_64/lib/cmake/Qt6Qml/Qt6QmlPluginTemplate.cpp.in \
+	F:/Qt/6.8.0/mingw_64/lib/cmake/Qt6Qml/Qt6qmldirTemplate.cmake.in \
+	F:/Qt/Tools/CMake_64/bin/cmake.exe

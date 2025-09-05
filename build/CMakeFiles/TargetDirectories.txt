@@ -123,3 +123,12 @@ E:/myProgram/Recorder/record/build/recorder/CMakeFiles/install/local.dir
 E:/myProgram/Recorder/record/build/recorder/CMakeFiles/install/strip.dir
 E:/myProgram/Recorder/record/build/recorder/CMakeFiles/recorder_module_autogen_timestamp_deps.dir
 E:/myProgram/Recorder/record/build/recorder/CMakeFiles/recorder_module_autogen.dir
+E:/myProgram/Recorder/record/build/encoder/CMakeFiles/encoder_module.dir
+E:/myProgram/Recorder/record/build/encoder/CMakeFiles/edit_cache.dir
+E:/myProgram/Recorder/record/build/encoder/CMakeFiles/rebuild_cache.dir
+E:/myProgram/Recorder/record/build/encoder/CMakeFiles/list_install_components.dir
+E:/myProgram/Recorder/record/build/encoder/CMakeFiles/install.dir
+E:/myProgram/Recorder/record/build/encoder/CMakeFiles/install/local.dir
+E:/myProgram/Recorder/record/build/encoder/CMakeFiles/install/strip.dir
+E:/myProgram/Recorder/record/build/encoder/CMakeFiles/encoder_module_autogen_timestamp_deps.dir
+E:/myProgram/Recorder/record/build/encoder/CMakeFiles/encoder_module_autogen.dir
