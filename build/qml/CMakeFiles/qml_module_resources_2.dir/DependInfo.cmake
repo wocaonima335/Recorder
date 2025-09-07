@@ -8,17 +8,11 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "" "qml/qml_module_resources_2_autogen/timestamp" "custom" "qml/qml_module_resources_2_autogen/deps"
-  "E:/myProgram/Recorder/record/build/qml/.rcc/qrc_qml_module_raw_qml_0.cpp" "qml/CMakeFiles/qml_module_resources_2.dir/.rcc/qrc_qml_module_raw_qml_0.cpp.obj" "gcc" "qml/CMakeFiles/qml_module_resources_2.dir/.rcc/qrc_qml_module_raw_qml_0.cpp.obj.d"
-  "E:/myProgram/Recorder/record/build/qml/qml_module_resources_2_autogen/mocs_compilation.cpp" "qml/CMakeFiles/qml_module_resources_2.dir/qml_module_resources_2_autogen/mocs_compilation.cpp.obj" "gcc" "qml/CMakeFiles/qml_module_resources_2.dir/qml_module_resources_2_autogen/mocs_compilation.cpp.obj.d"
+  "D:/Qtprogram/bandicam/build/qml/.qt/rcc/qrc_qml_module_raw_qml_0_init.cpp" "qml/CMakeFiles/qml_module_resources_2.dir/.qt/rcc/qrc_qml_module_raw_qml_0_init.cpp.obj" "gcc" "qml/CMakeFiles/qml_module_resources_2.dir/.qt/rcc/qrc_qml_module_raw_qml_0_init.cpp.obj.d"
   )
 
 # Targets to which this target links which contain Fortran sources.
 set(CMAKE_Fortran_TARGET_LINKED_INFO_FILES
-  )
-
-# Targets to which this target links which contain Fortran sources.
-set(CMAKE_Fortran_TARGET_FORWARD_LINKED_INFO_FILES
   )
 
 # Fortran module output directory.

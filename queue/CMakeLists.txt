@@ -6,7 +6,10 @@ qt_add_library(queue_module STATIC
     ffaframequeue.h
     ffeventqueue.h
     ffeventqueue.cpp
-    ffpacket.h )
+    ffpacket.h
+    ffapacketqueue.cpp
+    ffaframequeue.cpp
+    ffvframequeue.cpp )
 
 target_link_libraries(queue_module 
 PRIVATE

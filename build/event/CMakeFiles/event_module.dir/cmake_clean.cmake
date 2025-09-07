@@ -6,10 +6,10 @@ file(REMOVE_RECURSE
   "CMakeFiles/event_module_autogen.dir/AutogenUsed.txt"
   "CMakeFiles/event_module_autogen.dir/ParseCache.txt"
   "event_module_autogen"
-  "event_module_autogen/mocs_compilation.cpp"
-  "event_module_autogen/timestamp"
   "libevent_module.a"
   "libevent_module.pdb"
+  "meta_types/qt6event_module_debug_metatypes.json"
+  "meta_types/qt6event_module_debug_metatypes.json.gen"
 )
 
 # Per-language clean rules from dependency scanning.

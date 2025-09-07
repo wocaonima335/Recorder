@@ -5,6 +5,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/thread_module.dir/ffaencoderthread.cpp.obj.d"
   "CMakeFiles/thread_module.dir/ffafilterthread.cpp.obj"
   "CMakeFiles/thread_module.dir/ffafilterthread.cpp.obj.d"
+  "CMakeFiles/thread_module.dir/ffamuxerthread.cpp.obj"
+  "CMakeFiles/thread_module.dir/ffamuxerthread.cpp.obj.d"
   "CMakeFiles/thread_module.dir/ffdemuxerthread.cpp.obj"
   "CMakeFiles/thread_module.dir/ffdemuxerthread.cpp.obj.d"
   "CMakeFiles/thread_module.dir/ffthread.cpp.obj"
@@ -13,8 +15,12 @@ file(REMOVE_RECURSE
   "CMakeFiles/thread_module.dir/ffthreadpool.cpp.obj.d"
   "CMakeFiles/thread_module.dir/ffvdecoderthread.cpp.obj"
   "CMakeFiles/thread_module.dir/ffvdecoderthread.cpp.obj.d"
+  "CMakeFiles/thread_module.dir/ffvencoderthread.cpp.obj"
+  "CMakeFiles/thread_module.dir/ffvencoderthread.cpp.obj.d"
   "CMakeFiles/thread_module.dir/ffvfilterthread.cpp.obj"
   "CMakeFiles/thread_module.dir/ffvfilterthread.cpp.obj.d"
+  "CMakeFiles/thread_module.dir/ffvmuxerthread.cpp.obj"
+  "CMakeFiles/thread_module.dir/ffvmuxerthread.cpp.obj.d"
   "CMakeFiles/thread_module.dir/thread_module_autogen/mocs_compilation.cpp.obj"
   "CMakeFiles/thread_module.dir/thread_module_autogen/mocs_compilation.cpp.obj.d"
   "CMakeFiles/thread_module_autogen.dir/AutogenUsed.txt"
@@ -22,8 +28,8 @@ file(REMOVE_RECURSE
   "thread_module_autogen"
   "libthread_module.a"
   "libthread_module.pdb"
-  "thread_module_autogen/mocs_compilation.cpp"
-  "thread_module_autogen/timestamp"
+  "meta_types/qt6thread_module_debug_metatypes.json"
+  "meta_types/qt6thread_module_debug_metatypes.json.gen"
 )
 
 # Per-language clean rules from dependency scanning.

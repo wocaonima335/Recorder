@@ -1,5 +1,5 @@
 file(REMOVE_RECURSE
-  ".qt_plugins/Qt6_QmlPlugins_Imports_appbandicam.cmake"
+  ".qt/qml_imports/appbandicam_build.cmake"
   "CMakeFiles/appbandicam_qmlimportscan"
 )
 

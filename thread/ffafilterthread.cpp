@@ -3,6 +3,8 @@
 #include "queue/ffaframequeue.h"
 #include "recorder/ffrecorder.h"
 
+#include <iostream>
+
 using namespace FFRecordContextType;
 
 FFAFilterThread::FFAFilterThread()

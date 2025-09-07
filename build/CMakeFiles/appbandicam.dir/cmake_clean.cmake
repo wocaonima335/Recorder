@@ -9,8 +9,6 @@ file(REMOVE_RECURSE
   "appbandicam.exe"
   "appbandicam.exe.manifest"
   "appbandicam.pdb"
-  "appbandicam_autogen/mocs_compilation.cpp"
-  "appbandicam_autogen/timestamp"
   "libappbandicam.dll.a"
 )
 

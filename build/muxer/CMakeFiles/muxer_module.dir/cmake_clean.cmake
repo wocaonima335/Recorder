@@ -8,8 +8,8 @@ file(REMOVE_RECURSE
   "muxer_module_autogen"
   "libmuxer_module.a"
   "libmuxer_module.pdb"
-  "muxer_module_autogen/mocs_compilation.cpp"
-  "muxer_module_autogen/timestamp"
+  "meta_types/qt6muxer_module_debug_metatypes.json"
+  "meta_types/qt6muxer_module_debug_metatypes.json.gen"
 )
 
 # Per-language clean rules from dependency scanning.

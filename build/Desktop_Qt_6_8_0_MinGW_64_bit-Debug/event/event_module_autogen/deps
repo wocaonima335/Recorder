@@ -1,9 +1,9 @@
 event_module_autogen/timestamp: \
-	E:/myProgram/Recorder/record/event/CMakeLists.txt \
-	E:/myProgram/Recorder/record/event/abstracteventfactory.h \
-	E:/myProgram/Recorder/record/event/eventcategory.h \
-	E:/myProgram/Recorder/record/event/eventfactory.cpp \
-	E:/myProgram/Recorder/record/event/eventfactory.h \
-	E:/myProgram/Recorder/record/event/eventfactorymanager.h \
-	E:/myProgram/Recorder/record/event/ffevent.h \
-	F:/Qt/Tools/CMake_64/bin/cmake.exe
+	D:/Qtprogram/bandicam/event/CMakeLists.txt \
+	D:/Qtprogram/bandicam/event/abstracteventfactory.h \
+	D:/Qtprogram/bandicam/event/eventcategory.h \
+	D:/Qtprogram/bandicam/event/eventfactory.cpp \
+	D:/Qtprogram/bandicam/event/eventfactory.h \
+	D:/Qtprogram/bandicam/event/eventfactorymanager.h \
+	D:/Qtprogram/bandicam/event/ffevent.h \
+	D:/360Downloads/Cmake/bin/cmake.exe

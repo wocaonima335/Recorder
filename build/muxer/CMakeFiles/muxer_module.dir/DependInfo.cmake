@@ -8,17 +8,12 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "" "muxer/muxer_module_autogen/timestamp" "custom" "muxer/muxer_module_autogen/deps"
-  "E:/myProgram/Recorder/record/muxer/ffmuxer.cpp" "muxer/CMakeFiles/muxer_module.dir/ffmuxer.cpp.obj" "gcc" "muxer/CMakeFiles/muxer_module.dir/ffmuxer.cpp.obj.d"
-  "E:/myProgram/Recorder/record/build/muxer/muxer_module_autogen/mocs_compilation.cpp" "muxer/CMakeFiles/muxer_module.dir/muxer_module_autogen/mocs_compilation.cpp.obj" "gcc" "muxer/CMakeFiles/muxer_module.dir/muxer_module_autogen/mocs_compilation.cpp.obj.d"
+  "D:/Qtprogram/bandicam/muxer/ffmuxer.cpp" "muxer/CMakeFiles/muxer_module.dir/ffmuxer.cpp.obj" "gcc" "muxer/CMakeFiles/muxer_module.dir/ffmuxer.cpp.obj.d"
+  "D:/Qtprogram/bandicam/build/muxer/muxer_module_autogen/mocs_compilation.cpp" "muxer/CMakeFiles/muxer_module.dir/muxer_module_autogen/mocs_compilation.cpp.obj" "gcc" "muxer/CMakeFiles/muxer_module.dir/muxer_module_autogen/mocs_compilation.cpp.obj.d"
   )
 
 # Targets to which this target links which contain Fortran sources.
 set(CMAKE_Fortran_TARGET_LINKED_INFO_FILES
-  )
-
-# Targets to which this target links which contain Fortran sources.
-set(CMAKE_Fortran_TARGET_FORWARD_LINKED_INFO_FILES
   )
 
 # Fortran module output directory.

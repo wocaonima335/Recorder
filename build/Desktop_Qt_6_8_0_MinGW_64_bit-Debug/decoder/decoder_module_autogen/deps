@@ -1,7 +1,7 @@
 decoder_module_autogen/timestamp: \
-	E:/myProgram/Recorder/record/decoder/CMakeLists.txt \
-	E:/myProgram/Recorder/record/decoder/ffadecoder.cpp \
-	E:/myProgram/Recorder/record/decoder/ffadecoder.h \
-	E:/myProgram/Recorder/record/decoder/ffvdecoder.cpp \
-	E:/myProgram/Recorder/record/decoder/ffvdecoder.h \
-	F:/Qt/Tools/CMake_64/bin/cmake.exe
+	D:/Qtprogram/bandicam/decoder/CMakeLists.txt \
+	D:/Qtprogram/bandicam/decoder/ffadecoder.cpp \
+	D:/Qtprogram/bandicam/decoder/ffadecoder.h \
+	D:/Qtprogram/bandicam/decoder/ffvdecoder.cpp \
+	D:/Qtprogram/bandicam/decoder/ffvdecoder.h \
+	D:/360Downloads/Cmake/bin/cmake.exe

@@ -26,7 +26,6 @@ void FFAEncoder::close()
         delete aPars;
         aPars = nullptr;
     }
-    clearPendingFrame();
 }
 
 void FFAEncoder::wakeAllThread()

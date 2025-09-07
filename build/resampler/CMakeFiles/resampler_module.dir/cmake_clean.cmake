@@ -10,8 +10,8 @@ file(REMOVE_RECURSE
   "resampler_module_autogen"
   "libresampler_module.a"
   "libresampler_module.pdb"
-  "resampler_module_autogen/mocs_compilation.cpp"
-  "resampler_module_autogen/timestamp"
+  "meta_types/qt6resampler_module_debug_metatypes.json"
+  "meta_types/qt6resampler_module_debug_metatypes.json.gen"
 )
 
 # Per-language clean rules from dependency scanning.
