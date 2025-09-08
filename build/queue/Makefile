@@ -202,6 +202,54 @@ queue_module_autogen/fast:
 	cd /d D:\Qtprogram\bandicam\build && $(MAKE) $(MAKESILENT) -f queue\CMakeFiles\queue_module_autogen.dir\build.make queue/CMakeFiles/queue_module_autogen.dir/build
 .PHONY : queue_module_autogen/fast
 
+ffaframequeue.obj: ffaframequeue.cpp.obj
+.PHONY : ffaframequeue.obj
+
+# target to build an object file
+ffaframequeue.cpp.obj:
+	cd /d D:\Qtprogram\bandicam\build && $(MAKE) $(MAKESILENT) -f queue\CMakeFiles\queue_module.dir\build.make queue/CMakeFiles/queue_module.dir/ffaframequeue.cpp.obj
+.PHONY : ffaframequeue.cpp.obj
+
+ffaframequeue.i: ffaframequeue.cpp.i
+.PHONY : ffaframequeue.i
+
+# target to preprocess a source file
+ffaframequeue.cpp.i:
+	cd /d D:\Qtprogram\bandicam\build && $(MAKE) $(MAKESILENT) -f queue\CMakeFiles\queue_module.dir\build.make queue/CMakeFiles/queue_module.dir/ffaframequeue.cpp.i
+.PHONY : ffaframequeue.cpp.i
+
+ffaframequeue.s: ffaframequeue.cpp.s
+.PHONY : ffaframequeue.s
+
+# target to generate assembly for a file
+ffaframequeue.cpp.s:
+	cd /d D:\Qtprogram\bandicam\build && $(MAKE) $(MAKESILENT) -f queue\CMakeFiles\queue_module.dir\build.make queue/CMakeFiles/queue_module.dir/ffaframequeue.cpp.s
+.PHONY : ffaframequeue.cpp.s
+
+ffapacketqueue.obj: ffapacketqueue.cpp.obj
+.PHONY : ffapacketqueue.obj
+
+# target to build an object file
+ffapacketqueue.cpp.obj:
+	cd /d D:\Qtprogram\bandicam\build && $(MAKE) $(MAKESILENT) -f queue\CMakeFiles\queue_module.dir\build.make queue/CMakeFiles/queue_module.dir/ffapacketqueue.cpp.obj
+.PHONY : ffapacketqueue.cpp.obj
+
+ffapacketqueue.i: ffapacketqueue.cpp.i
+.PHONY : ffapacketqueue.i
+
+# target to preprocess a source file
+ffapacketqueue.cpp.i:
+	cd /d D:\Qtprogram\bandicam\build && $(MAKE) $(MAKESILENT) -f queue\CMakeFiles\queue_module.dir\build.make queue/CMakeFiles/queue_module.dir/ffapacketqueue.cpp.i
+.PHONY : ffapacketqueue.cpp.i
+
+ffapacketqueue.s: ffapacketqueue.cpp.s
+.PHONY : ffapacketqueue.s
+
+# target to generate assembly for a file
+ffapacketqueue.cpp.s:
+	cd /d D:\Qtprogram\bandicam\build && $(MAKE) $(MAKESILENT) -f queue\CMakeFiles\queue_module.dir\build.make queue/CMakeFiles/queue_module.dir/ffapacketqueue.cpp.s
+.PHONY : ffapacketqueue.cpp.s
+
 ffeventqueue.obj: ffeventqueue.cpp.obj
 .PHONY : ffeventqueue.obj
 
@@ -225,6 +273,30 @@ ffeventqueue.s: ffeventqueue.cpp.s
 ffeventqueue.cpp.s:
 	cd /d D:\Qtprogram\bandicam\build && $(MAKE) $(MAKESILENT) -f queue\CMakeFiles\queue_module.dir\build.make queue/CMakeFiles/queue_module.dir/ffeventqueue.cpp.s
 .PHONY : ffeventqueue.cpp.s
+
+ffvframequeue.obj: ffvframequeue.cpp.obj
+.PHONY : ffvframequeue.obj
+
+# target to build an object file
+ffvframequeue.cpp.obj:
+	cd /d D:\Qtprogram\bandicam\build && $(MAKE) $(MAKESILENT) -f queue\CMakeFiles\queue_module.dir\build.make queue/CMakeFiles/queue_module.dir/ffvframequeue.cpp.obj
+.PHONY : ffvframequeue.cpp.obj
+
+ffvframequeue.i: ffvframequeue.cpp.i
+.PHONY : ffvframequeue.i
+
+# target to preprocess a source file
+ffvframequeue.cpp.i:
+	cd /d D:\Qtprogram\bandicam\build && $(MAKE) $(MAKESILENT) -f queue\CMakeFiles\queue_module.dir\build.make queue/CMakeFiles/queue_module.dir/ffvframequeue.cpp.i
+.PHONY : ffvframequeue.cpp.i
+
+ffvframequeue.s: ffvframequeue.cpp.s
+.PHONY : ffvframequeue.s
+
+# target to generate assembly for a file
+ffvframequeue.cpp.s:
+	cd /d D:\Qtprogram\bandicam\build && $(MAKE) $(MAKESILENT) -f queue\CMakeFiles\queue_module.dir\build.make queue/CMakeFiles/queue_module.dir/ffvframequeue.cpp.s
+.PHONY : ffvframequeue.cpp.s
 
 ffvpacketqueue.obj: ffvpacketqueue.cpp.obj
 .PHONY : ffvpacketqueue.obj
@@ -289,9 +361,18 @@ help:
 	@echo ... queue_module_autogen
 	@echo ... queue_module_automoc_json_extraction
 	@echo ... queue_module
+	@echo ... ffaframequeue.obj
+	@echo ... ffaframequeue.i
+	@echo ... ffaframequeue.s
+	@echo ... ffapacketqueue.obj
+	@echo ... ffapacketqueue.i
+	@echo ... ffapacketqueue.s
 	@echo ... ffeventqueue.obj
 	@echo ... ffeventqueue.i
 	@echo ... ffeventqueue.s
+	@echo ... ffvframequeue.obj
+	@echo ... ffvframequeue.i
+	@echo ... ffvframequeue.s
 	@echo ... ffvpacketqueue.obj
 	@echo ... ffvpacketqueue.i
 	@echo ... ffvpacketqueue.s

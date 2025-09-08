@@ -41,6 +41,12 @@
 			null
 		],
 		[
+			"D:/Qtprogram/bandicam/thread/ffmuxerthread.h",
+			"MU",
+			"EWIEGA46WW/moc_ffmuxerthread.cpp",
+			null
+		],
+		[
 			"D:/Qtprogram/bandicam/thread/ffthread.h",
 			"MU",
 			"EWIEGA46WW/moc_ffthread.cpp",

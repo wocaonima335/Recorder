@@ -219,7 +219,7 @@ build .qt/qml_imports/appbandicam_build.cmake | ${cmake_ninja_workdir}.qt/qml_im
 #############################################
 # Phony custom command for CMakeFiles\appbandicam_autogen_timestamp_deps
 
-build CMakeFiles/appbandicam_autogen_timestamp_deps | ${cmake_ninja_workdir}CMakeFiles/appbandicam_autogen_timestamp_deps: phony D$:/360Downloads/QT/6.8.0/mingw_64/bin/uic.exe D$:/360Downloads/QT/6.8.0/mingw_64/bin/moc.exe D$:/360Downloads/QT/6.8.0/mingw_64/lib/libQt6Core.a D$:/360Downloads/QT/6.8.0/mingw_64/lib/libQt6Quick.a decoder/libdecoder_module.a qml/libqml_module.a resampler/libresampler_module.a demuxer/libdemuxer_module.a queue/libqueue_module.a recorder/librecorder_module.a filter/libfilter_module.a muxer/libmuxer_module.a event/libevent_module.a encoder/libencoder_module.a thread/libthread_module.a || decoder/decoder_module_autogen decoder/decoder_module_autogen_timestamp_deps decoder/libdecoder_module.a demuxer/demuxer_module_autogen demuxer/demuxer_module_autogen_timestamp_deps demuxer/libdemuxer_module.a encoder/encoder_module_autogen encoder/encoder_module_autogen_timestamp_deps encoder/libencoder_module.a event/event_module_autogen event/event_module_autogen_timestamp_deps event/libevent_module.a filter/filter_module_autogen filter/filter_module_autogen_timestamp_deps filter/libfilter_module.a muxer/libmuxer_module.a muxer/muxer_module_autogen muxer/muxer_module_autogen_timestamp_deps qml/libqml_module.a qml/qml_module_autogen qml/qml_module_autogen_timestamp_deps qml/qml_module_tooling queue/libqueue_module.a queue/queue_module_autogen queue/queue_module_autogen_timestamp_deps recorder/librecorder_module.a recorder/recorder_module_autogen recorder/recorder_module_autogen_timestamp_deps resampler/libresampler_module.a resampler/resampler_module_autogen resampler/resampler_module_autogen_timestamp_deps thread/libthread_module.a thread/thread_module_autogen thread/thread_module_autogen_timestamp_deps
+build CMakeFiles/appbandicam_autogen_timestamp_deps | ${cmake_ninja_workdir}CMakeFiles/appbandicam_autogen_timestamp_deps: phony D$:/360Downloads/QT/6.8.0/mingw_64/bin/uic.exe D$:/360Downloads/QT/6.8.0/mingw_64/lib/libQt6Core.a D$:/360Downloads/QT/6.8.0/mingw_64/bin/moc.exe D$:/360Downloads/QT/6.8.0/mingw_64/lib/libQt6Quick.a decoder/libdecoder_module.a resampler/libresampler_module.a qml/libqml_module.a recorder/librecorder_module.a queue/libqueue_module.a demuxer/libdemuxer_module.a event/libevent_module.a filter/libfilter_module.a muxer/libmuxer_module.a encoder/libencoder_module.a thread/libthread_module.a || decoder/decoder_module_autogen decoder/decoder_module_autogen_timestamp_deps decoder/libdecoder_module.a demuxer/demuxer_module_autogen demuxer/demuxer_module_autogen_timestamp_deps demuxer/libdemuxer_module.a encoder/encoder_module_autogen encoder/encoder_module_autogen_timestamp_deps encoder/libencoder_module.a event/event_module_autogen event/event_module_autogen_timestamp_deps event/libevent_module.a filter/filter_module_autogen filter/filter_module_autogen_timestamp_deps filter/libfilter_module.a muxer/libmuxer_module.a muxer/muxer_module_autogen muxer/muxer_module_autogen_timestamp_deps qml/libqml_module.a qml/qml_module_autogen qml/qml_module_autogen_timestamp_deps qml/qml_module_tooling queue/libqueue_module.a queue/queue_module_autogen queue/queue_module_autogen_timestamp_deps recorder/librecorder_module.a recorder/recorder_module_autogen recorder/recorder_module_autogen_timestamp_deps resampler/libresampler_module.a resampler/resampler_module_autogen resampler/resampler_module_autogen_timestamp_deps thread/libthread_module.a thread/thread_module_autogen thread/thread_module_autogen_timestamp_deps
 
 
 #############################################
@@ -383,7 +383,7 @@ build demuxer/meta_types/demuxer_module_json_file_list.txt demuxer/meta_types/de
 #############################################
 # Phony custom command for demuxer\CMakeFiles\demuxer_module_autogen_timestamp_deps
 
-build demuxer/CMakeFiles/demuxer_module_autogen_timestamp_deps | ${cmake_ninja_workdir}demuxer/CMakeFiles/demuxer_module_autogen_timestamp_deps: phony D$:/360Downloads/QT/6.8.0/mingw_64/bin/uic.exe D$:/360Downloads/QT/6.8.0/mingw_64/bin/moc.exe D$:/360Downloads/QT/6.8.0/mingw_64/lib/libQt6Core.a
+build demuxer/CMakeFiles/demuxer_module_autogen_timestamp_deps | ${cmake_ninja_workdir}demuxer/CMakeFiles/demuxer_module_autogen_timestamp_deps: phony D$:/360Downloads/QT/6.8.0/mingw_64/bin/uic.exe D$:/360Downloads/QT/6.8.0/mingw_64/lib/libQt6Core.a D$:/360Downloads/QT/6.8.0/mingw_64/bin/moc.exe
 
 
 #############################################
@@ -996,7 +996,7 @@ build qml/meta_types/qml_moduleplugin_init_json_file_list.txt qml/meta_types/qml
 #############################################
 # Phony custom command for qml\CMakeFiles\qml_module_autogen_timestamp_deps
 
-build qml/CMakeFiles/qml_module_autogen_timestamp_deps | ${cmake_ninja_workdir}qml/CMakeFiles/qml_module_autogen_timestamp_deps: phony D$:/360Downloads/QT/6.8.0/mingw_64/bin/uic.exe D$:/360Downloads/QT/6.8.0/mingw_64/bin/moc.exe D$:/360Downloads/QT/6.8.0/mingw_64/lib/libQt6Core.a D$:/360Downloads/QT/6.8.0/mingw_64/lib/libQt6Qml.a D$:/360Downloads/QT/6.8.0/mingw_64/lib/libQt6Quick.a
+build qml/CMakeFiles/qml_module_autogen_timestamp_deps | ${cmake_ninja_workdir}qml/CMakeFiles/qml_module_autogen_timestamp_deps: phony D$:/360Downloads/QT/6.8.0/mingw_64/bin/uic.exe D$:/360Downloads/QT/6.8.0/mingw_64/lib/libQt6Core.a D$:/360Downloads/QT/6.8.0/mingw_64/lib/libQt6Qml.a D$:/360Downloads/QT/6.8.0/mingw_64/bin/moc.exe D$:/360Downloads/QT/6.8.0/mingw_64/lib/libQt6Quick.a
 
 
 #############################################
@@ -1008,7 +1008,7 @@ build qml/CMakeFiles/qml_module_autogen | ${cmake_ninja_workdir}qml/CMakeFiles/q
 #############################################
 # Phony custom command for qml\CMakeFiles\qml_moduleplugin_autogen_timestamp_deps
 
-build qml/CMakeFiles/qml_moduleplugin_autogen_timestamp_deps | ${cmake_ninja_workdir}qml/CMakeFiles/qml_moduleplugin_autogen_timestamp_deps: phony qml/qml_moduleplugin_bandicam_qmlPlugin.cpp D$:/360Downloads/QT/6.8.0/mingw_64/bin/uic.exe D$:/360Downloads/QT/6.8.0/mingw_64/bin/moc.exe D$:/360Downloads/QT/6.8.0/mingw_64/lib/libQt6Qml.a
+build qml/CMakeFiles/qml_moduleplugin_autogen_timestamp_deps | ${cmake_ninja_workdir}qml/CMakeFiles/qml_moduleplugin_autogen_timestamp_deps: phony qml/qml_moduleplugin_bandicam_qmlPlugin.cpp D$:/360Downloads/QT/6.8.0/mingw_64/bin/uic.exe D$:/360Downloads/QT/6.8.0/mingw_64/lib/libQt6Qml.a D$:/360Downloads/QT/6.8.0/mingw_64/bin/moc.exe
 
 
 #############################################
@@ -1020,7 +1020,7 @@ build qml/CMakeFiles/qml_moduleplugin_autogen | ${cmake_ninja_workdir}qml/CMakeF
 #############################################
 # Phony custom command for qml\CMakeFiles\qml_moduleplugin_init_autogen_timestamp_deps
 
-build qml/CMakeFiles/qml_moduleplugin_init_autogen_timestamp_deps | ${cmake_ninja_workdir}qml/CMakeFiles/qml_moduleplugin_init_autogen_timestamp_deps: phony qml/qml_moduleplugin_init.cpp D$:/360Downloads/QT/6.8.0/mingw_64/bin/uic.exe D$:/360Downloads/QT/6.8.0/mingw_64/bin/moc.exe D$:/360Downloads/QT/6.8.0/mingw_64/lib/libQt6Core.a
+build qml/CMakeFiles/qml_moduleplugin_init_autogen_timestamp_deps | ${cmake_ninja_workdir}qml/CMakeFiles/qml_moduleplugin_init_autogen_timestamp_deps: phony qml/qml_moduleplugin_init.cpp D$:/360Downloads/QT/6.8.0/mingw_64/bin/uic.exe D$:/360Downloads/QT/6.8.0/mingw_64/lib/libQt6Core.a D$:/360Downloads/QT/6.8.0/mingw_64/bin/moc.exe
 
 
 #############################################
@@ -1216,7 +1216,7 @@ build queue/meta_types/queue_module_json_file_list.txt queue/meta_types/queue_mo
 #############################################
 # Phony custom command for queue\CMakeFiles\queue_module_autogen_timestamp_deps
 
-build queue/CMakeFiles/queue_module_autogen_timestamp_deps | ${cmake_ninja_workdir}queue/CMakeFiles/queue_module_autogen_timestamp_deps: phony D$:/360Downloads/QT/6.8.0/mingw_64/bin/uic.exe D$:/360Downloads/QT/6.8.0/mingw_64/bin/moc.exe D$:/360Downloads/QT/6.8.0/mingw_64/lib/libQt6Core.a
+build queue/CMakeFiles/queue_module_autogen_timestamp_deps | ${cmake_ninja_workdir}queue/CMakeFiles/queue_module_autogen_timestamp_deps: phony D$:/360Downloads/QT/6.8.0/mingw_64/bin/uic.exe D$:/360Downloads/QT/6.8.0/mingw_64/lib/libQt6Core.a D$:/360Downloads/QT/6.8.0/mingw_64/bin/moc.exe
 
 
 #############################################
@@ -1388,7 +1388,7 @@ build decoder/meta_types/decoder_module_json_file_list.txt decoder/meta_types/de
 #############################################
 # Phony custom command for decoder\CMakeFiles\decoder_module_autogen_timestamp_deps
 
-build decoder/CMakeFiles/decoder_module_autogen_timestamp_deps | ${cmake_ninja_workdir}decoder/CMakeFiles/decoder_module_autogen_timestamp_deps: phony D$:/360Downloads/QT/6.8.0/mingw_64/bin/uic.exe D$:/360Downloads/QT/6.8.0/mingw_64/bin/moc.exe D$:/360Downloads/QT/6.8.0/mingw_64/lib/libQt6Core.a
+build decoder/CMakeFiles/decoder_module_autogen_timestamp_deps | ${cmake_ninja_workdir}decoder/CMakeFiles/decoder_module_autogen_timestamp_deps: phony D$:/360Downloads/QT/6.8.0/mingw_64/bin/uic.exe D$:/360Downloads/QT/6.8.0/mingw_64/lib/libQt6Core.a D$:/360Downloads/QT/6.8.0/mingw_64/bin/moc.exe
 
 
 #############################################
@@ -1560,7 +1560,7 @@ build resampler/meta_types/resampler_module_json_file_list.txt resampler/meta_ty
 #############################################
 # Phony custom command for resampler\CMakeFiles\resampler_module_autogen_timestamp_deps
 
-build resampler/CMakeFiles/resampler_module_autogen_timestamp_deps | ${cmake_ninja_workdir}resampler/CMakeFiles/resampler_module_autogen_timestamp_deps: phony D$:/360Downloads/QT/6.8.0/mingw_64/bin/uic.exe D$:/360Downloads/QT/6.8.0/mingw_64/bin/moc.exe D$:/360Downloads/QT/6.8.0/mingw_64/lib/libQt6Core.a decoder/libdecoder_module.a queue/libqueue_module.a || decoder/decoder_module_autogen decoder/decoder_module_autogen_timestamp_deps decoder/libdecoder_module.a demuxer/demuxer_module_autogen demuxer/demuxer_module_autogen_timestamp_deps demuxer/libdemuxer_module.a event/event_module_autogen event/event_module_autogen_timestamp_deps event/libevent_module.a queue/libqueue_module.a queue/queue_module_autogen queue/queue_module_autogen_timestamp_deps
+build resampler/CMakeFiles/resampler_module_autogen_timestamp_deps | ${cmake_ninja_workdir}resampler/CMakeFiles/resampler_module_autogen_timestamp_deps: phony D$:/360Downloads/QT/6.8.0/mingw_64/bin/uic.exe D$:/360Downloads/QT/6.8.0/mingw_64/lib/libQt6Core.a D$:/360Downloads/QT/6.8.0/mingw_64/bin/moc.exe decoder/libdecoder_module.a queue/libqueue_module.a || decoder/decoder_module_autogen decoder/decoder_module_autogen_timestamp_deps decoder/libdecoder_module.a demuxer/demuxer_module_autogen demuxer/demuxer_module_autogen_timestamp_deps demuxer/libdemuxer_module.a event/event_module_autogen event/event_module_autogen_timestamp_deps event/libevent_module.a queue/libqueue_module.a queue/queue_module_autogen queue/queue_module_autogen_timestamp_deps
 
 
 #############################################
@@ -1732,7 +1732,7 @@ build filter/meta_types/filter_module_json_file_list.txt filter/meta_types/filte
 #############################################
 # Phony custom command for filter\CMakeFiles\filter_module_autogen_timestamp_deps
 
-build filter/CMakeFiles/filter_module_autogen_timestamp_deps | ${cmake_ninja_workdir}filter/CMakeFiles/filter_module_autogen_timestamp_deps: phony D$:/360Downloads/QT/6.8.0/mingw_64/bin/uic.exe D$:/360Downloads/QT/6.8.0/mingw_64/bin/moc.exe D$:/360Downloads/QT/6.8.0/mingw_64/lib/libQt6Core.a queue/libqueue_module.a || decoder/decoder_module_autogen decoder/decoder_module_autogen_timestamp_deps decoder/libdecoder_module.a demuxer/demuxer_module_autogen demuxer/demuxer_module_autogen_timestamp_deps demuxer/libdemuxer_module.a event/event_module_autogen event/event_module_autogen_timestamp_deps event/libevent_module.a queue/libqueue_module.a queue/queue_module_autogen queue/queue_module_autogen_timestamp_deps
+build filter/CMakeFiles/filter_module_autogen_timestamp_deps | ${cmake_ninja_workdir}filter/CMakeFiles/filter_module_autogen_timestamp_deps: phony D$:/360Downloads/QT/6.8.0/mingw_64/bin/uic.exe D$:/360Downloads/QT/6.8.0/mingw_64/lib/libQt6Core.a D$:/360Downloads/QT/6.8.0/mingw_64/bin/moc.exe queue/libqueue_module.a || decoder/decoder_module_autogen decoder/decoder_module_autogen_timestamp_deps decoder/libdecoder_module.a demuxer/demuxer_module_autogen demuxer/demuxer_module_autogen_timestamp_deps demuxer/libdemuxer_module.a event/event_module_autogen event/event_module_autogen_timestamp_deps event/libevent_module.a queue/libqueue_module.a queue/queue_module_autogen queue/queue_module_autogen_timestamp_deps
 
 
 #############################################
@@ -1896,7 +1896,7 @@ build muxer/meta_types/muxer_module_json_file_list.txt muxer/meta_types/muxer_mo
 #############################################
 # Phony custom command for muxer\CMakeFiles\muxer_module_autogen_timestamp_deps
 
-build muxer/CMakeFiles/muxer_module_autogen_timestamp_deps | ${cmake_ninja_workdir}muxer/CMakeFiles/muxer_module_autogen_timestamp_deps: phony D$:/360Downloads/QT/6.8.0/mingw_64/bin/uic.exe D$:/360Downloads/QT/6.8.0/mingw_64/bin/moc.exe D$:/360Downloads/QT/6.8.0/mingw_64/lib/libQt6Core.a queue/libqueue_module.a || decoder/decoder_module_autogen decoder/decoder_module_autogen_timestamp_deps decoder/libdecoder_module.a demuxer/demuxer_module_autogen demuxer/demuxer_module_autogen_timestamp_deps demuxer/libdemuxer_module.a event/event_module_autogen event/event_module_autogen_timestamp_deps event/libevent_module.a queue/libqueue_module.a queue/queue_module_autogen queue/queue_module_autogen_timestamp_deps
+build muxer/CMakeFiles/muxer_module_autogen_timestamp_deps | ${cmake_ninja_workdir}muxer/CMakeFiles/muxer_module_autogen_timestamp_deps: phony D$:/360Downloads/QT/6.8.0/mingw_64/bin/uic.exe D$:/360Downloads/QT/6.8.0/mingw_64/lib/libQt6Core.a D$:/360Downloads/QT/6.8.0/mingw_64/bin/moc.exe queue/libqueue_module.a || decoder/decoder_module_autogen decoder/decoder_module_autogen_timestamp_deps decoder/libdecoder_module.a demuxer/demuxer_module_autogen demuxer/demuxer_module_autogen_timestamp_deps demuxer/libdemuxer_module.a event/event_module_autogen event/event_module_autogen_timestamp_deps event/libevent_module.a queue/libqueue_module.a queue/queue_module_autogen queue/queue_module_autogen_timestamp_deps
 
 
 #############################################
@@ -2060,7 +2060,7 @@ build event/meta_types/event_module_json_file_list.txt event/meta_types/event_mo
 #############################################
 # Phony custom command for event\CMakeFiles\event_module_autogen_timestamp_deps
 
-build event/CMakeFiles/event_module_autogen_timestamp_deps | ${cmake_ninja_workdir}event/CMakeFiles/event_module_autogen_timestamp_deps: phony D$:/360Downloads/QT/6.8.0/mingw_64/bin/uic.exe D$:/360Downloads/QT/6.8.0/mingw_64/bin/moc.exe D$:/360Downloads/QT/6.8.0/mingw_64/lib/libQt6Core.a
+build event/CMakeFiles/event_module_autogen_timestamp_deps | ${cmake_ninja_workdir}event/CMakeFiles/event_module_autogen_timestamp_deps: phony D$:/360Downloads/QT/6.8.0/mingw_64/bin/uic.exe D$:/360Downloads/QT/6.8.0/mingw_64/lib/libQt6Core.a D$:/360Downloads/QT/6.8.0/mingw_64/bin/moc.exe
 
 
 #############################################
@@ -2304,7 +2304,7 @@ build thread/meta_types/thread_module_json_file_list.txt thread/meta_types/threa
 #############################################
 # Phony custom command for thread\CMakeFiles\thread_module_autogen_timestamp_deps
 
-build thread/CMakeFiles/thread_module_autogen_timestamp_deps | ${cmake_ninja_workdir}thread/CMakeFiles/thread_module_autogen_timestamp_deps: phony D$:/360Downloads/QT/6.8.0/mingw_64/bin/uic.exe D$:/360Downloads/QT/6.8.0/mingw_64/bin/moc.exe D$:/360Downloads/QT/6.8.0/mingw_64/lib/libQt6Core.a decoder/libdecoder_module.a queue/libqueue_module.a || decoder/decoder_module_autogen decoder/decoder_module_autogen_timestamp_deps decoder/libdecoder_module.a demuxer/demuxer_module_autogen demuxer/demuxer_module_autogen_timestamp_deps demuxer/libdemuxer_module.a event/event_module_autogen event/event_module_autogen_timestamp_deps event/libevent_module.a queue/libqueue_module.a queue/queue_module_autogen queue/queue_module_autogen_timestamp_deps
+build thread/CMakeFiles/thread_module_autogen_timestamp_deps | ${cmake_ninja_workdir}thread/CMakeFiles/thread_module_autogen_timestamp_deps: phony D$:/360Downloads/QT/6.8.0/mingw_64/bin/uic.exe D$:/360Downloads/QT/6.8.0/mingw_64/lib/libQt6Core.a D$:/360Downloads/QT/6.8.0/mingw_64/bin/moc.exe decoder/libdecoder_module.a queue/libqueue_module.a || decoder/decoder_module_autogen decoder/decoder_module_autogen_timestamp_deps decoder/libdecoder_module.a demuxer/demuxer_module_autogen demuxer/demuxer_module_autogen_timestamp_deps demuxer/libdemuxer_module.a event/event_module_autogen event/event_module_autogen_timestamp_deps event/libevent_module.a queue/libqueue_module.a queue/queue_module_autogen queue/queue_module_autogen_timestamp_deps
 
 
 #############################################
@@ -2334,6 +2334,22 @@ build recorder/CMakeFiles/recorder_module.dir/recorder_module_autogen/mocs_compi
   OBJECT_DIR = recorder\CMakeFiles\recorder_module.dir
   OBJECT_FILE_DIR = recorder\CMakeFiles\recorder_module.dir\recorder_module_autogen
 
+build recorder/CMakeFiles/recorder_module.dir/ffrecoder_p.cpp.obj: CXX_COMPILER__recorder_module_unscanned_Debug D$:/Qtprogram/bandicam/recorder/ffrecoder_p.cpp || cmake_object_order_depends_target_recorder_module
+  DEFINES = -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64
+  DEP_FILE = recorder\CMakeFiles\recorder_module.dir\ffrecoder_p.cpp.obj.d
+  FLAGS = -DQT_QML_DEBUG -g -fdiagnostics-color=always
+  INCLUDES = -ID:/Qtprogram/bandicam/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/recorder/recorder_module_autogen/include -ID:/Qtprogram/bandicam/3rdparty/ffmpeg-amf/include -ID:/Qtprogram/bandicam/recorder/.. -isystem D:/360Downloads/QT/6.8.0/mingw_64/include/QtCore -isystem D:/360Downloads/QT/6.8.0/mingw_64/include -isystem D:/360Downloads/QT/6.8.0/mingw_64/mkspecs/win32-g++ -isystem D:/360Downloads/QT/6.8.0/mingw_64/include/QtWidgets -isystem D:/360Downloads/QT/6.8.0/mingw_64/include/QtGui
+  OBJECT_DIR = recorder\CMakeFiles\recorder_module.dir
+  OBJECT_FILE_DIR = recorder\CMakeFiles\recorder_module.dir
+
+build recorder/CMakeFiles/recorder_module.dir/ffrecoder.cpp.obj: CXX_COMPILER__recorder_module_unscanned_Debug D$:/Qtprogram/bandicam/recorder/ffrecoder.cpp || cmake_object_order_depends_target_recorder_module
+  DEFINES = -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64
+  DEP_FILE = recorder\CMakeFiles\recorder_module.dir\ffrecoder.cpp.obj.d
+  FLAGS = -DQT_QML_DEBUG -g -fdiagnostics-color=always
+  INCLUDES = -ID:/Qtprogram/bandicam/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/recorder/recorder_module_autogen/include -ID:/Qtprogram/bandicam/3rdparty/ffmpeg-amf/include -ID:/Qtprogram/bandicam/recorder/.. -isystem D:/360Downloads/QT/6.8.0/mingw_64/include/QtCore -isystem D:/360Downloads/QT/6.8.0/mingw_64/include -isystem D:/360Downloads/QT/6.8.0/mingw_64/mkspecs/win32-g++ -isystem D:/360Downloads/QT/6.8.0/mingw_64/include/QtWidgets -isystem D:/360Downloads/QT/6.8.0/mingw_64/include/QtGui
+  OBJECT_DIR = recorder\CMakeFiles\recorder_module.dir
+  OBJECT_FILE_DIR = recorder\CMakeFiles\recorder_module.dir
+
 
 # =============================================================================
 # Link build statements for STATIC_LIBRARY target recorder_module
@@ -2342,7 +2358,7 @@ build recorder/CMakeFiles/recorder_module.dir/recorder_module_autogen/mocs_compi
 #############################################
 # Link the static library recorder\librecorder_module.a
 
-build recorder/librecorder_module.a: CXX_STATIC_LIBRARY_LINKER__recorder_module_Debug recorder/CMakeFiles/recorder_module.dir/recorder_module_autogen/mocs_compilation.cpp.obj || demuxer/libdemuxer_module.a encoder/libencoder_module.a filter/libfilter_module.a muxer/libmuxer_module.a recorder/recorder_module_autogen recorder/recorder_module_autogen_timestamp_deps
+build recorder/librecorder_module.a: CXX_STATIC_LIBRARY_LINKER__recorder_module_Debug recorder/CMakeFiles/recorder_module.dir/recorder_module_autogen/mocs_compilation.cpp.obj recorder/CMakeFiles/recorder_module.dir/ffrecoder_p.cpp.obj recorder/CMakeFiles/recorder_module.dir/ffrecoder.cpp.obj || demuxer/libdemuxer_module.a encoder/libencoder_module.a filter/libfilter_module.a muxer/libmuxer_module.a recorder/recorder_module_autogen recorder/recorder_module_autogen_timestamp_deps
   LANGUAGE_COMPILE_FLAGS = -DQT_QML_DEBUG -g
   OBJECT_DIR = recorder\CMakeFiles\recorder_module.dir
   POST_BUILD = cd .
@@ -2460,7 +2476,7 @@ build recorder/meta_types/recorder_module_json_file_list.txt recorder/meta_types
 #############################################
 # Phony custom command for recorder\CMakeFiles\recorder_module_autogen_timestamp_deps
 
-build recorder/CMakeFiles/recorder_module_autogen_timestamp_deps | ${cmake_ninja_workdir}recorder/CMakeFiles/recorder_module_autogen_timestamp_deps: phony D$:/360Downloads/QT/6.8.0/mingw_64/lib/libQt6Widgets.a D$:/360Downloads/QT/6.8.0/mingw_64/bin/uic.exe D$:/360Downloads/QT/6.8.0/mingw_64/bin/moc.exe D$:/360Downloads/QT/6.8.0/mingw_64/lib/libQt6Gui.a D$:/360Downloads/QT/6.8.0/mingw_64/lib/libQt6Core.a decoder/libdecoder_module.a demuxer/libdemuxer_module.a queue/libqueue_module.a filter/libfilter_module.a muxer/libmuxer_module.a encoder/libencoder_module.a || decoder/decoder_module_autogen decoder/decoder_module_autogen_timestamp_deps decoder/libdecoder_module.a demuxer/demuxer_module_autogen demuxer/demuxer_module_autogen_timestamp_deps demuxer/libdemuxer_module.a encoder/encoder_module_autogen encoder/encoder_module_autogen_timestamp_deps encoder/libencoder_module.a event/event_module_autogen event/event_module_autogen_timestamp_deps event/libevent_module.a filter/filter_module_autogen filter/filter_module_autogen_timestamp_deps filter/libfilter_module.a muxer/libmuxer_module.a muxer/muxer_module_autogen muxer/muxer_module_autogen_timestamp_deps queue/libqueue_module.a queue/queue_module_autogen queue/queue_module_autogen_timestamp_deps
+build recorder/CMakeFiles/recorder_module_autogen_timestamp_deps | ${cmake_ninja_workdir}recorder/CMakeFiles/recorder_module_autogen_timestamp_deps: phony D$:/360Downloads/QT/6.8.0/mingw_64/bin/uic.exe D$:/360Downloads/QT/6.8.0/mingw_64/lib/libQt6Widgets.a D$:/360Downloads/QT/6.8.0/mingw_64/lib/libQt6Gui.a D$:/360Downloads/QT/6.8.0/mingw_64/lib/libQt6Core.a D$:/360Downloads/QT/6.8.0/mingw_64/bin/moc.exe decoder/libdecoder_module.a queue/libqueue_module.a demuxer/libdemuxer_module.a filter/libfilter_module.a muxer/libmuxer_module.a encoder/libencoder_module.a || decoder/decoder_module_autogen decoder/decoder_module_autogen_timestamp_deps decoder/libdecoder_module.a demuxer/demuxer_module_autogen demuxer/demuxer_module_autogen_timestamp_deps demuxer/libdemuxer_module.a encoder/encoder_module_autogen encoder/encoder_module_autogen_timestamp_deps encoder/libencoder_module.a event/event_module_autogen event/event_module_autogen_timestamp_deps event/libevent_module.a filter/filter_module_autogen filter/filter_module_autogen_timestamp_deps filter/libfilter_module.a muxer/libmuxer_module.a muxer/muxer_module_autogen muxer/muxer_module_autogen_timestamp_deps queue/libqueue_module.a queue/queue_module_autogen queue/queue_module_autogen_timestamp_deps
 
 
 #############################################
@@ -2632,7 +2648,7 @@ build encoder/meta_types/encoder_module_json_file_list.txt encoder/meta_types/en
 #############################################
 # Phony custom command for encoder\CMakeFiles\encoder_module_autogen_timestamp_deps
 
-build encoder/CMakeFiles/encoder_module_autogen_timestamp_deps | ${cmake_ninja_workdir}encoder/CMakeFiles/encoder_module_autogen_timestamp_deps: phony D$:/360Downloads/QT/6.8.0/mingw_64/bin/uic.exe D$:/360Downloads/QT/6.8.0/mingw_64/bin/moc.exe D$:/360Downloads/QT/6.8.0/mingw_64/lib/libQt6Core.a queue/libqueue_module.a || decoder/decoder_module_autogen decoder/decoder_module_autogen_timestamp_deps decoder/libdecoder_module.a demuxer/demuxer_module_autogen demuxer/demuxer_module_autogen_timestamp_deps demuxer/libdemuxer_module.a event/event_module_autogen event/event_module_autogen_timestamp_deps event/libevent_module.a queue/libqueue_module.a queue/queue_module_autogen queue/queue_module_autogen_timestamp_deps
+build encoder/CMakeFiles/encoder_module_autogen_timestamp_deps | ${cmake_ninja_workdir}encoder/CMakeFiles/encoder_module_autogen_timestamp_deps: phony D$:/360Downloads/QT/6.8.0/mingw_64/bin/uic.exe D$:/360Downloads/QT/6.8.0/mingw_64/lib/libQt6Core.a D$:/360Downloads/QT/6.8.0/mingw_64/bin/moc.exe queue/libqueue_module.a || decoder/decoder_module_autogen decoder/decoder_module_autogen_timestamp_deps decoder/libdecoder_module.a demuxer/demuxer_module_autogen demuxer/demuxer_module_autogen_timestamp_deps demuxer/libdemuxer_module.a event/event_module_autogen event/event_module_autogen_timestamp_deps event/libevent_module.a queue/libqueue_module.a queue/queue_module_autogen queue/queue_module_autogen_timestamp_deps
 
 
 #############################################

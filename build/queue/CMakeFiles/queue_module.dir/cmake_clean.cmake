@@ -1,6 +1,12 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/queue_module.dir/ffaframequeue.cpp.obj"
+  "CMakeFiles/queue_module.dir/ffaframequeue.cpp.obj.d"
+  "CMakeFiles/queue_module.dir/ffapacketqueue.cpp.obj"
+  "CMakeFiles/queue_module.dir/ffapacketqueue.cpp.obj.d"
   "CMakeFiles/queue_module.dir/ffeventqueue.cpp.obj"
   "CMakeFiles/queue_module.dir/ffeventqueue.cpp.obj.d"
+  "CMakeFiles/queue_module.dir/ffvframequeue.cpp.obj"
+  "CMakeFiles/queue_module.dir/ffvframequeue.cpp.obj.d"
   "CMakeFiles/queue_module.dir/ffvpacketqueue.cpp.obj"
   "CMakeFiles/queue_module.dir/ffvpacketqueue.cpp.obj.d"
   "CMakeFiles/queue_module.dir/queue_module_autogen/mocs_compilation.cpp.obj"

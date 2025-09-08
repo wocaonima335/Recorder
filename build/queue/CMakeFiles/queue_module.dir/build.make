@@ -119,11 +119,59 @@ queue/CMakeFiles/queue_module.dir/ffeventqueue.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/queue_module.dir/ffeventqueue.cpp.s"
 	cd /d D:\Qtprogram\bandicam\build\queue && D:\Vscode\MinGw64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\Qtprogram\bandicam\queue\ffeventqueue.cpp -o CMakeFiles\queue_module.dir\ffeventqueue.cpp.s
 
+queue/CMakeFiles/queue_module.dir/ffapacketqueue.cpp.obj: queue/CMakeFiles/queue_module.dir/flags.make
+queue/CMakeFiles/queue_module.dir/ffapacketqueue.cpp.obj: queue/CMakeFiles/queue_module.dir/includes_CXX.rsp
+queue/CMakeFiles/queue_module.dir/ffapacketqueue.cpp.obj: D:/Qtprogram/bandicam/queue/ffapacketqueue.cpp
+queue/CMakeFiles/queue_module.dir/ffapacketqueue.cpp.obj: queue/CMakeFiles/queue_module.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\Qtprogram\bandicam\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object queue/CMakeFiles/queue_module.dir/ffapacketqueue.cpp.obj"
+	cd /d D:\Qtprogram\bandicam\build\queue && D:\Vscode\MinGw64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT queue/CMakeFiles/queue_module.dir/ffapacketqueue.cpp.obj -MF CMakeFiles\queue_module.dir\ffapacketqueue.cpp.obj.d -o CMakeFiles\queue_module.dir\ffapacketqueue.cpp.obj -c D:\Qtprogram\bandicam\queue\ffapacketqueue.cpp
+
+queue/CMakeFiles/queue_module.dir/ffapacketqueue.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/queue_module.dir/ffapacketqueue.cpp.i"
+	cd /d D:\Qtprogram\bandicam\build\queue && D:\Vscode\MinGw64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\Qtprogram\bandicam\queue\ffapacketqueue.cpp > CMakeFiles\queue_module.dir\ffapacketqueue.cpp.i
+
+queue/CMakeFiles/queue_module.dir/ffapacketqueue.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/queue_module.dir/ffapacketqueue.cpp.s"
+	cd /d D:\Qtprogram\bandicam\build\queue && D:\Vscode\MinGw64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\Qtprogram\bandicam\queue\ffapacketqueue.cpp -o CMakeFiles\queue_module.dir\ffapacketqueue.cpp.s
+
+queue/CMakeFiles/queue_module.dir/ffaframequeue.cpp.obj: queue/CMakeFiles/queue_module.dir/flags.make
+queue/CMakeFiles/queue_module.dir/ffaframequeue.cpp.obj: queue/CMakeFiles/queue_module.dir/includes_CXX.rsp
+queue/CMakeFiles/queue_module.dir/ffaframequeue.cpp.obj: D:/Qtprogram/bandicam/queue/ffaframequeue.cpp
+queue/CMakeFiles/queue_module.dir/ffaframequeue.cpp.obj: queue/CMakeFiles/queue_module.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\Qtprogram\bandicam\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object queue/CMakeFiles/queue_module.dir/ffaframequeue.cpp.obj"
+	cd /d D:\Qtprogram\bandicam\build\queue && D:\Vscode\MinGw64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT queue/CMakeFiles/queue_module.dir/ffaframequeue.cpp.obj -MF CMakeFiles\queue_module.dir\ffaframequeue.cpp.obj.d -o CMakeFiles\queue_module.dir\ffaframequeue.cpp.obj -c D:\Qtprogram\bandicam\queue\ffaframequeue.cpp
+
+queue/CMakeFiles/queue_module.dir/ffaframequeue.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/queue_module.dir/ffaframequeue.cpp.i"
+	cd /d D:\Qtprogram\bandicam\build\queue && D:\Vscode\MinGw64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\Qtprogram\bandicam\queue\ffaframequeue.cpp > CMakeFiles\queue_module.dir\ffaframequeue.cpp.i
+
+queue/CMakeFiles/queue_module.dir/ffaframequeue.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/queue_module.dir/ffaframequeue.cpp.s"
+	cd /d D:\Qtprogram\bandicam\build\queue && D:\Vscode\MinGw64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\Qtprogram\bandicam\queue\ffaframequeue.cpp -o CMakeFiles\queue_module.dir\ffaframequeue.cpp.s
+
+queue/CMakeFiles/queue_module.dir/ffvframequeue.cpp.obj: queue/CMakeFiles/queue_module.dir/flags.make
+queue/CMakeFiles/queue_module.dir/ffvframequeue.cpp.obj: queue/CMakeFiles/queue_module.dir/includes_CXX.rsp
+queue/CMakeFiles/queue_module.dir/ffvframequeue.cpp.obj: D:/Qtprogram/bandicam/queue/ffvframequeue.cpp
+queue/CMakeFiles/queue_module.dir/ffvframequeue.cpp.obj: queue/CMakeFiles/queue_module.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\Qtprogram\bandicam\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object queue/CMakeFiles/queue_module.dir/ffvframequeue.cpp.obj"
+	cd /d D:\Qtprogram\bandicam\build\queue && D:\Vscode\MinGw64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT queue/CMakeFiles/queue_module.dir/ffvframequeue.cpp.obj -MF CMakeFiles\queue_module.dir\ffvframequeue.cpp.obj.d -o CMakeFiles\queue_module.dir\ffvframequeue.cpp.obj -c D:\Qtprogram\bandicam\queue\ffvframequeue.cpp
+
+queue/CMakeFiles/queue_module.dir/ffvframequeue.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/queue_module.dir/ffvframequeue.cpp.i"
+	cd /d D:\Qtprogram\bandicam\build\queue && D:\Vscode\MinGw64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\Qtprogram\bandicam\queue\ffvframequeue.cpp > CMakeFiles\queue_module.dir\ffvframequeue.cpp.i
+
+queue/CMakeFiles/queue_module.dir/ffvframequeue.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/queue_module.dir/ffvframequeue.cpp.s"
+	cd /d D:\Qtprogram\bandicam\build\queue && D:\Vscode\MinGw64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\Qtprogram\bandicam\queue\ffvframequeue.cpp -o CMakeFiles\queue_module.dir\ffvframequeue.cpp.s
+
 # Object files for target queue_module
 queue_module_OBJECTS = \
 "CMakeFiles/queue_module.dir/queue_module_autogen/mocs_compilation.cpp.obj" \
 "CMakeFiles/queue_module.dir/ffvpacketqueue.cpp.obj" \
-"CMakeFiles/queue_module.dir/ffeventqueue.cpp.obj"
+"CMakeFiles/queue_module.dir/ffeventqueue.cpp.obj" \
+"CMakeFiles/queue_module.dir/ffapacketqueue.cpp.obj" \
+"CMakeFiles/queue_module.dir/ffaframequeue.cpp.obj" \
+"CMakeFiles/queue_module.dir/ffvframequeue.cpp.obj"
 
 # External object files for target queue_module
 queue_module_EXTERNAL_OBJECTS =
@@ -131,9 +179,12 @@ queue_module_EXTERNAL_OBJECTS =
 queue/libqueue_module.a: queue/CMakeFiles/queue_module.dir/queue_module_autogen/mocs_compilation.cpp.obj
 queue/libqueue_module.a: queue/CMakeFiles/queue_module.dir/ffvpacketqueue.cpp.obj
 queue/libqueue_module.a: queue/CMakeFiles/queue_module.dir/ffeventqueue.cpp.obj
+queue/libqueue_module.a: queue/CMakeFiles/queue_module.dir/ffapacketqueue.cpp.obj
+queue/libqueue_module.a: queue/CMakeFiles/queue_module.dir/ffaframequeue.cpp.obj
+queue/libqueue_module.a: queue/CMakeFiles/queue_module.dir/ffvframequeue.cpp.obj
 queue/libqueue_module.a: queue/CMakeFiles/queue_module.dir/build.make
 queue/libqueue_module.a: queue/CMakeFiles/queue_module.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=D:\Qtprogram\bandicam\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking CXX static library libqueue_module.a"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=D:\Qtprogram\bandicam\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Linking CXX static library libqueue_module.a"
 	cd /d D:\Qtprogram\bandicam\build\queue && $(CMAKE_COMMAND) -P CMakeFiles\queue_module.dir\cmake_clean_target.cmake
 	cd /d D:\Qtprogram\bandicam\build\queue && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\queue_module.dir\link.txt --verbose=$(VERBOSE)
 

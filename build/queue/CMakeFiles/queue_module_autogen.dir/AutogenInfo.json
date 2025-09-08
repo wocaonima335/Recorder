@@ -114,7 +114,10 @@
 	"SETTINGS_FILE" : "D:/Qtprogram/bandicam/build/queue/CMakeFiles/queue_module_autogen.dir/AutogenUsed.txt",
 	"SOURCES" : 
 	[
+		[ "D:/Qtprogram/bandicam/queue/ffaframequeue.cpp", "MU", null ],
+		[ "D:/Qtprogram/bandicam/queue/ffapacketqueue.cpp", "MU", null ],
 		[ "D:/Qtprogram/bandicam/queue/ffeventqueue.cpp", "MU", null ],
+		[ "D:/Qtprogram/bandicam/queue/ffvframequeue.cpp", "MU", null ],
 		[ "D:/Qtprogram/bandicam/queue/ffvpacketqueue.cpp", "MU", null ]
 	],
 	"UIC_OPTIONS" : [],

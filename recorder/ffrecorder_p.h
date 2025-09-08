@@ -1,22 +1,33 @@
 #ifndef FFRECORDER_P_H
 #define FFRECORDER_P_H
 
+#include "decoder/ffadecoder.h"
+#include "decoder/ffvdecoder.h"
+#include "demuxer/demuxer.h"
+#include "encoder/ffaencoder.h"
+#include "encoder/ffvencoder.h"
+#include "filter/ffafilter.h"
+#include "filter/ffvfilter.h"
+#include "muxer/ffmuxer.h"
+
+#include "queue/ffaframequeue.h"
+#include "queue/ffapacketqueue.h"
+#include "queue/ffvframequeue.h"
+#include "queue/ffvpacketqueue.h"
+
+#include "thread/ffadecoderthread.h"
+#include "thread/ffaencoderthread.h"
+#include "thread/ffafilterthread.h"
+#include "thread/ffamuxerthread.h"
+#include "thread/ffdemuxerthread.h"
+#include "thread/ffmuxerthread.h"
+#include "thread/ffvdecoderthread.h"
+#include "thread/ffvencoderthread.h"
+#include "thread/ffvfilterthread.h"
+#include "thread/ffvmuxerthread.h"
+
 #include <QObject>
 #include <QtWidgets/QApplication>
-
-// 前向声明
-class FFCapWindow;
-class FFDemuxer;
-class FFADecoder;
-class FFVDecoder;
-class FFVRender;
-class FFMuxer;
-class FFAEncoder;
-class FFVEncoder;
-class FFVFilter;
-class FFAFilter;
-class FFEventLoop;
-class FFThreadPool;
 
 namespace FFRecordURLS {
 static std::string CAMERA1_URL = "video=Integrated Camera";
@@ -77,23 +88,17 @@ public:
     //音频filter编码Frame队列
     class FFAFrameQueue *aFilterEncoderFrmQueue;
 
-    //视频渲染帧队列：【视频文件】
-    class FFVFrameQueue *vRenderFrmQueue;
-
     //音频解复用器
-    FFDemuxer *aDemuxer[FFRecordContextType::A_DEMUXER_SIZE];
+    Demuxer *aDemuxer[FFRecordContextType::A_DEMUXER_SIZE];
 
     //视频解复用器
-    FFDemuxer *vDemuxer[FFRecordContextType::V_DEMUXER_SIZE];
+    Demuxer *vDemuxer[FFRecordContextType::V_DEMUXER_SIZE];
 
     //音频解码器
     FFADecoder *aDecoder[FFRecordContextType::A_DECODER_SIZE];
 
     //视频解码器
     FFVDecoder *vDecoder[FFRecordContextType::V_DECODER_SIZE];
-
-    //视频渲染器
-    FFVRender *vRender;
 
     //复用器
     FFMuxer *muxer;
@@ -124,9 +129,6 @@ public:
 
     //音频滤镜线程
     class FFAFilterThread *aFilterThread;
-
-    //UI窗口
-    FFCapWindow *capWindow;
 };
 
 } // namespace FFRecordContextType
