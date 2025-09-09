@@ -8,6 +8,8 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
+  "D:/Qtprogram/bandicam/recorder/ffrecoder.cpp" "recorder/CMakeFiles/recorder_module.dir/ffrecoder.cpp.obj" "gcc" "recorder/CMakeFiles/recorder_module.dir/ffrecoder.cpp.obj.d"
+  "D:/Qtprogram/bandicam/recorder/ffrecoder_p.cpp" "recorder/CMakeFiles/recorder_module.dir/ffrecoder_p.cpp.obj" "gcc" "recorder/CMakeFiles/recorder_module.dir/ffrecoder_p.cpp.obj.d"
   "D:/Qtprogram/bandicam/build/recorder/recorder_module_autogen/mocs_compilation.cpp" "recorder/CMakeFiles/recorder_module.dir/recorder_module_autogen/mocs_compilation.cpp.obj" "gcc" "recorder/CMakeFiles/recorder_module.dir/recorder_module_autogen/mocs_compilation.cpp.obj.d"
   )
 

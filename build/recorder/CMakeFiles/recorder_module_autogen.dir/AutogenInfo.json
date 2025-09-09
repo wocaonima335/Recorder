@@ -92,7 +92,11 @@
 	"QT_VERSION_MAJOR" : 6,
 	"QT_VERSION_MINOR" : 8,
 	"SETTINGS_FILE" : "D:/Qtprogram/bandicam/build/recorder/CMakeFiles/recorder_module_autogen.dir/AutogenUsed.txt",
-	"SOURCES" : [],
+	"SOURCES" : 
+	[
+		[ "D:/Qtprogram/bandicam/recorder/ffrecoder.cpp", "MU", null ],
+		[ "D:/Qtprogram/bandicam/recorder/ffrecoder_p.cpp", "MU", null ]
+	],
 	"UIC_OPTIONS" : [],
 	"UIC_SEARCH_PATHS" : [],
 	"UIC_SKIP" : [],

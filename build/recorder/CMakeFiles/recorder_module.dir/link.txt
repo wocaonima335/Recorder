@@ -1,2 +1,2 @@
-D:\Vscode\MinGw64\mingw64\bin\ar.exe qc librecorder_module.a CMakeFiles/recorder_module.dir/recorder_module_autogen/mocs_compilation.cpp.obj
+D:\Vscode\MinGw64\mingw64\bin\ar.exe qc librecorder_module.a CMakeFiles/recorder_module.dir/recorder_module_autogen/mocs_compilation.cpp.obj CMakeFiles/recorder_module.dir/ffrecoder_p.cpp.obj CMakeFiles/recorder_module.dir/ffrecoder.cpp.obj
 D:\Vscode\MinGw64\mingw64\bin\ranlib.exe librecorder_module.a

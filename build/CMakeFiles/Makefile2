@@ -321,18 +321,18 @@ thread/clean: thread/CMakeFiles/thread_module_autogen.dir/clean
 # Target rules for target CMakeFiles/appbandicam.dir
 
 # All Build rule for target.
-CMakeFiles/appbandicam.dir/all: qml/CMakeFiles/qml_module_resources_1.dir/all
 CMakeFiles/appbandicam.dir/all: CMakeFiles/appbandicam_qmlimportscan.dir/all
 CMakeFiles/appbandicam.dir/all: qml/CMakeFiles/qml_module.dir/all
 CMakeFiles/appbandicam.dir/all: demuxer/CMakeFiles/demuxer_module.dir/all
 CMakeFiles/appbandicam.dir/all: qml/CMakeFiles/qml_module_resources_2.dir/all
-CMakeFiles/appbandicam.dir/all: filter/CMakeFiles/filter_module.dir/all
+CMakeFiles/appbandicam.dir/all: qml/CMakeFiles/qml_module_resources_1.dir/all
 CMakeFiles/appbandicam.dir/all: resampler/CMakeFiles/resampler_module.dir/all
 CMakeFiles/appbandicam.dir/all: muxer/CMakeFiles/muxer_module.dir/all
-CMakeFiles/appbandicam.dir/all: encoder/CMakeFiles/encoder_module.dir/all
-CMakeFiles/appbandicam.dir/all: thread/CMakeFiles/thread_module.dir/all
+CMakeFiles/appbandicam.dir/all: filter/CMakeFiles/filter_module.dir/all
 CMakeFiles/appbandicam.dir/all: recorder/CMakeFiles/recorder_module.dir/all
+CMakeFiles/appbandicam.dir/all: encoder/CMakeFiles/encoder_module.dir/all
 CMakeFiles/appbandicam.dir/all: CMakeFiles/appbandicam_autogen.dir/all
+CMakeFiles/appbandicam.dir/all: thread/CMakeFiles/thread_module.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\appbandicam.dir\build.make CMakeFiles/appbandicam.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\appbandicam.dir\build.make CMakeFiles/appbandicam.dir/build
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=D:\Qtprogram\bandicam\build\CMakeFiles --progress-num=1,2,3 "Built target appbandicam"
@@ -340,7 +340,7 @@ CMakeFiles/appbandicam.dir/all: CMakeFiles/appbandicam_autogen.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/appbandicam.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start D:\Qtprogram\bandicam\build\CMakeFiles 87
+	$(CMAKE_COMMAND) -E cmake_progress_start D:\Qtprogram\bandicam\build\CMakeFiles 88
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 CMakeFiles/appbandicam.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start D:\Qtprogram\bandicam\build\CMakeFiles 0
 .PHONY : CMakeFiles/appbandicam.dir/rule
@@ -366,7 +366,7 @@ CMakeFiles/all_aotstats.dir/all: qml/CMakeFiles/module_qml_module_aotstats_targe
 
 # Build rule for subdir invocation for target.
 CMakeFiles/all_aotstats.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start D:\Qtprogram\bandicam\build\CMakeFiles 11
+	$(CMAKE_COMMAND) -E cmake_progress_start D:\Qtprogram\bandicam\build\CMakeFiles 10
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 CMakeFiles/all_aotstats.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start D:\Qtprogram\bandicam\build\CMakeFiles 0
 .PHONY : CMakeFiles/all_aotstats.dir/rule
@@ -413,12 +413,12 @@ CMakeFiles/appbandicam_qmlimportscan.dir/clean:
 CMakeFiles/appbandicam_autogen.dir/all: CMakeFiles/appbandicam_qmlimportscan.dir/all
 CMakeFiles/appbandicam_autogen.dir/all: qml/CMakeFiles/qml_module.dir/all
 CMakeFiles/appbandicam_autogen.dir/all: demuxer/CMakeFiles/demuxer_module.dir/all
-CMakeFiles/appbandicam_autogen.dir/all: filter/CMakeFiles/filter_module.dir/all
 CMakeFiles/appbandicam_autogen.dir/all: resampler/CMakeFiles/resampler_module.dir/all
 CMakeFiles/appbandicam_autogen.dir/all: muxer/CMakeFiles/muxer_module.dir/all
+CMakeFiles/appbandicam_autogen.dir/all: filter/CMakeFiles/filter_module.dir/all
+CMakeFiles/appbandicam_autogen.dir/all: recorder/CMakeFiles/recorder_module.dir/all
 CMakeFiles/appbandicam_autogen.dir/all: encoder/CMakeFiles/encoder_module.dir/all
 CMakeFiles/appbandicam_autogen.dir/all: thread/CMakeFiles/thread_module.dir/all
-CMakeFiles/appbandicam_autogen.dir/all: recorder/CMakeFiles/recorder_module.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\appbandicam_autogen.dir\build.make CMakeFiles/appbandicam_autogen.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\appbandicam_autogen.dir\build.make CMakeFiles/appbandicam_autogen.dir/build
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=D:\Qtprogram\bandicam\build\CMakeFiles --progress-num= "Built target appbandicam_autogen"
@@ -426,7 +426,7 @@ CMakeFiles/appbandicam_autogen.dir/all: recorder/CMakeFiles/recorder_module.dir/
 
 # Build rule for subdir invocation for target.
 CMakeFiles/appbandicam_autogen.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start D:\Qtprogram\bandicam\build\CMakeFiles 82
+	$(CMAKE_COMMAND) -E cmake_progress_start D:\Qtprogram\bandicam\build\CMakeFiles 83
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 CMakeFiles/appbandicam_autogen.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start D:\Qtprogram\bandicam\build\CMakeFiles 0
 .PHONY : CMakeFiles/appbandicam_autogen.dir/rule
@@ -452,7 +452,7 @@ demuxer/CMakeFiles/demuxer_module.dir/all: queue/CMakeFiles/queue_module.dir/all
 
 # Build rule for subdir invocation for target.
 demuxer/CMakeFiles/demuxer_module.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start D:\Qtprogram\bandicam\build\CMakeFiles 23
+	$(CMAKE_COMMAND) -E cmake_progress_start D:\Qtprogram\bandicam\build\CMakeFiles 21
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 demuxer/CMakeFiles/demuxer_module.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start D:\Qtprogram\bandicam\build\CMakeFiles 0
 .PHONY : demuxer/CMakeFiles/demuxer_module.dir/rule
@@ -473,7 +473,7 @@ demuxer/CMakeFiles/demuxer_module.dir/clean:
 demuxer/CMakeFiles/demuxer_module_automoc_json_extraction.dir/all: demuxer/CMakeFiles/demuxer_module_autogen.dir/all
 	$(MAKE) $(MAKESILENT) -f demuxer\CMakeFiles\demuxer_module_automoc_json_extraction.dir\build.make demuxer/CMakeFiles/demuxer_module_automoc_json_extraction.dir/depend
 	$(MAKE) $(MAKESILENT) -f demuxer\CMakeFiles\demuxer_module_automoc_json_extraction.dir\build.make demuxer/CMakeFiles/demuxer_module_automoc_json_extraction.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=D:\Qtprogram\bandicam\build\CMakeFiles --progress-num= "Built target demuxer_module_automoc_json_extraction"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=D:\Qtprogram\bandicam\build\CMakeFiles --progress-num=14 "Built target demuxer_module_automoc_json_extraction"
 .PHONY : demuxer/CMakeFiles/demuxer_module_automoc_json_extraction.dir/all
 
 # Build rule for subdir invocation for target.
@@ -499,12 +499,12 @@ demuxer/CMakeFiles/demuxer_module_automoc_json_extraction.dir/clean:
 demuxer/CMakeFiles/demuxer_module_autogen.dir/all:
 	$(MAKE) $(MAKESILENT) -f demuxer\CMakeFiles\demuxer_module_autogen.dir\build.make demuxer/CMakeFiles/demuxer_module_autogen.dir/depend
 	$(MAKE) $(MAKESILENT) -f demuxer\CMakeFiles\demuxer_module_autogen.dir\build.make demuxer/CMakeFiles/demuxer_module_autogen.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=D:\Qtprogram\bandicam\build\CMakeFiles --progress-num=14 "Built target demuxer_module_autogen"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=D:\Qtprogram\bandicam\build\CMakeFiles --progress-num= "Built target demuxer_module_autogen"
 .PHONY : demuxer/CMakeFiles/demuxer_module_autogen.dir/all
 
 # Build rule for subdir invocation for target.
 demuxer/CMakeFiles/demuxer_module_autogen.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start D:\Qtprogram\bandicam\build\CMakeFiles 1
+	$(CMAKE_COMMAND) -E cmake_progress_start D:\Qtprogram\bandicam\build\CMakeFiles 0
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 demuxer/CMakeFiles/demuxer_module_autogen.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start D:\Qtprogram\bandicam\build\CMakeFiles 0
 .PHONY : demuxer/CMakeFiles/demuxer_module_autogen.dir/rule
@@ -527,7 +527,7 @@ qml/CMakeFiles/qml_module.dir/all: qml/CMakeFiles/qml_module_tooling.dir/all
 qml/CMakeFiles/qml_module.dir/all: qml/CMakeFiles/qml_module_autogen.dir/all
 	$(MAKE) $(MAKESILENT) -f qml\CMakeFiles\qml_module.dir\build.make qml/CMakeFiles/qml_module.dir/depend
 	$(MAKE) $(MAKESILENT) -f qml\CMakeFiles\qml_module.dir\build.make qml/CMakeFiles/qml_module.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=D:\Qtprogram\bandicam\build\CMakeFiles --progress-num=40,41,42,43,44,45,46,47,48,49,50,51,52,53,54 "Built target qml_module"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=D:\Qtprogram\bandicam\build\CMakeFiles --progress-num=39,40,41,42,43,44,45,46,47,48,49,50,51,52,53 "Built target qml_module"
 .PHONY : qml/CMakeFiles/qml_module.dir/all
 
 # Build rule for subdir invocation for target.
@@ -553,7 +553,7 @@ qml/CMakeFiles/qml_module.dir/clean:
 qml/CMakeFiles/qml_module_automoc_json_extraction.dir/all: qml/CMakeFiles/qml_module_autogen.dir/all
 	$(MAKE) $(MAKESILENT) -f qml\CMakeFiles\qml_module_automoc_json_extraction.dir\build.make qml/CMakeFiles/qml_module_automoc_json_extraction.dir/depend
 	$(MAKE) $(MAKESILENT) -f qml\CMakeFiles\qml_module_automoc_json_extraction.dir\build.make qml/CMakeFiles/qml_module_automoc_json_extraction.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=D:\Qtprogram\bandicam\build\CMakeFiles --progress-num=56 "Built target qml_module_automoc_json_extraction"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=D:\Qtprogram\bandicam\build\CMakeFiles --progress-num=55 "Built target qml_module_automoc_json_extraction"
 .PHONY : qml/CMakeFiles/qml_module_automoc_json_extraction.dir/all
 
 # Build rule for subdir invocation for target.
@@ -579,7 +579,7 @@ qml/CMakeFiles/qml_module_automoc_json_extraction.dir/clean:
 qml/CMakeFiles/qml_module_qmltyperegistration.dir/all: qml/CMakeFiles/qml_module_automoc_json_extraction.dir/all
 	$(MAKE) $(MAKESILENT) -f qml\CMakeFiles\qml_module_qmltyperegistration.dir\build.make qml/CMakeFiles/qml_module_qmltyperegistration.dir/depend
 	$(MAKE) $(MAKESILENT) -f qml\CMakeFiles\qml_module_qmltyperegistration.dir\build.make qml/CMakeFiles/qml_module_qmltyperegistration.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=D:\Qtprogram\bandicam\build\CMakeFiles --progress-num=57,58 "Built target qml_module_qmltyperegistration"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=D:\Qtprogram\bandicam\build\CMakeFiles --progress-num=56,57 "Built target qml_module_qmltyperegistration"
 .PHONY : qml/CMakeFiles/qml_module_qmltyperegistration.dir/all
 
 # Build rule for subdir invocation for target.
@@ -631,7 +631,7 @@ qml/CMakeFiles/all_qmltyperegistrations.dir/clean:
 qml/CMakeFiles/qml_module_resources_1.dir/all:
 	$(MAKE) $(MAKESILENT) -f qml\CMakeFiles\qml_module_resources_1.dir\build.make qml/CMakeFiles/qml_module_resources_1.dir/depend
 	$(MAKE) $(MAKESILENT) -f qml\CMakeFiles\qml_module_resources_1.dir\build.make qml/CMakeFiles/qml_module_resources_1.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=D:\Qtprogram\bandicam\build\CMakeFiles --progress-num=59 "Built target qml_module_resources_1"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=D:\Qtprogram\bandicam\build\CMakeFiles --progress-num=58 "Built target qml_module_resources_1"
 .PHONY : qml/CMakeFiles/qml_module_resources_1.dir/all
 
 # Build rule for subdir invocation for target.
@@ -654,13 +654,13 @@ qml/CMakeFiles/qml_module_resources_1.dir/clean:
 # Target rules for target qml/CMakeFiles/qml_moduleplugin.dir
 
 # All Build rule for target.
-qml/CMakeFiles/qml_moduleplugin.dir/all: qml/CMakeFiles/qml_module_resources_1.dir/all
 qml/CMakeFiles/qml_moduleplugin.dir/all: qml/CMakeFiles/qml_module.dir/all
 qml/CMakeFiles/qml_moduleplugin.dir/all: qml/CMakeFiles/qml_module_resources_2.dir/all
+qml/CMakeFiles/qml_moduleplugin.dir/all: qml/CMakeFiles/qml_module_resources_1.dir/all
 qml/CMakeFiles/qml_moduleplugin.dir/all: qml/CMakeFiles/qml_moduleplugin_autogen.dir/all
 	$(MAKE) $(MAKESILENT) -f qml\CMakeFiles\qml_moduleplugin.dir\build.make qml/CMakeFiles/qml_moduleplugin.dir/depend
 	$(MAKE) $(MAKESILENT) -f qml\CMakeFiles\qml_moduleplugin.dir\build.make qml/CMakeFiles/qml_moduleplugin.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=D:\Qtprogram\bandicam\build\CMakeFiles --progress-num=64,65 "Built target qml_moduleplugin"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=D:\Qtprogram\bandicam\build\CMakeFiles --progress-num=63,64 "Built target qml_moduleplugin"
 .PHONY : qml/CMakeFiles/qml_moduleplugin.dir/all
 
 # Build rule for subdir invocation for target.
@@ -843,12 +843,12 @@ qml/CMakeFiles/module_qml_module_aotstats_targets.dir/all: qml/CMakeFiles/qml_mo
 qml/CMakeFiles/module_qml_module_aotstats_targets.dir/all: qml/CMakeFiles/qml_module_qmltyperegistration.dir/all
 	$(MAKE) $(MAKESILENT) -f qml\CMakeFiles\module_qml_module_aotstats_targets.dir\build.make qml/CMakeFiles/module_qml_module_aotstats_targets.dir/depend
 	$(MAKE) $(MAKESILENT) -f qml\CMakeFiles\module_qml_module_aotstats_targets.dir\build.make qml/CMakeFiles/module_qml_module_aotstats_targets.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=D:\Qtprogram\bandicam\build\CMakeFiles --progress-num=31,32,33,34 "Built target module_qml_module_aotstats_targets"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=D:\Qtprogram\bandicam\build\CMakeFiles --progress-num=31,32,33 "Built target module_qml_module_aotstats_targets"
 .PHONY : qml/CMakeFiles/module_qml_module_aotstats_targets.dir/all
 
 # Build rule for subdir invocation for target.
 qml/CMakeFiles/module_qml_module_aotstats_targets.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start D:\Qtprogram\bandicam\build\CMakeFiles 11
+	$(CMAKE_COMMAND) -E cmake_progress_start D:\Qtprogram\bandicam\build\CMakeFiles 10
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 qml/CMakeFiles/module_qml_module_aotstats_targets.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start D:\Qtprogram\bandicam\build\CMakeFiles 0
 .PHONY : qml/CMakeFiles/module_qml_module_aotstats_targets.dir/rule
@@ -869,7 +869,7 @@ qml/CMakeFiles/module_qml_module_aotstats_targets.dir/clean:
 qml/CMakeFiles/qml_module_tooling.dir/all:
 	$(MAKE) $(MAKESILENT) -f qml\CMakeFiles\qml_module_tooling.dir\build.make qml/CMakeFiles/qml_module_tooling.dir/depend
 	$(MAKE) $(MAKESILENT) -f qml\CMakeFiles\qml_module_tooling.dir\build.make qml/CMakeFiles/qml_module_tooling.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=D:\Qtprogram\bandicam\build\CMakeFiles --progress-num=61,62,63 "Built target qml_module_tooling"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=D:\Qtprogram\bandicam\build\CMakeFiles --progress-num=60,61,62 "Built target qml_module_tooling"
 .PHONY : qml/CMakeFiles/qml_module_tooling.dir/all
 
 # Build rule for subdir invocation for target.
@@ -895,7 +895,7 @@ qml/CMakeFiles/qml_module_tooling.dir/clean:
 qml/CMakeFiles/qml_module_resources_2.dir/all:
 	$(MAKE) $(MAKESILENT) -f qml\CMakeFiles\qml_module_resources_2.dir\build.make qml/CMakeFiles/qml_module_resources_2.dir/depend
 	$(MAKE) $(MAKESILENT) -f qml\CMakeFiles\qml_module_resources_2.dir\build.make qml/CMakeFiles/qml_module_resources_2.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=D:\Qtprogram\bandicam\build\CMakeFiles --progress-num=60 "Built target qml_module_resources_2"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=D:\Qtprogram\bandicam\build\CMakeFiles --progress-num=59 "Built target qml_module_resources_2"
 .PHONY : qml/CMakeFiles/qml_module_resources_2.dir/all
 
 # Build rule for subdir invocation for target.
@@ -922,7 +922,7 @@ qml/CMakeFiles/qml_moduleplugin_init.dir/all: qml/CMakeFiles/qml_moduleplugin_in
 qml/CMakeFiles/qml_moduleplugin_init.dir/all: qml/CMakeFiles/qml_moduleplugin_init_autogen.dir/all
 	$(MAKE) $(MAKESILENT) -f qml\CMakeFiles\qml_moduleplugin_init.dir\build.make qml/CMakeFiles/qml_moduleplugin_init.dir/depend
 	$(MAKE) $(MAKESILENT) -f qml\CMakeFiles\qml_moduleplugin_init.dir\build.make qml/CMakeFiles/qml_moduleplugin_init.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=D:\Qtprogram\bandicam\build\CMakeFiles --progress-num=67,68 "Built target qml_moduleplugin_init"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=D:\Qtprogram\bandicam\build\CMakeFiles --progress-num=66,67 "Built target qml_moduleplugin_init"
 .PHONY : qml/CMakeFiles/qml_moduleplugin_init.dir/all
 
 # Build rule for subdir invocation for target.
@@ -948,7 +948,7 @@ qml/CMakeFiles/qml_moduleplugin_init.dir/clean:
 qml/CMakeFiles/qml_moduleplugin_init_automoc_json_extraction.dir/all: qml/CMakeFiles/qml_moduleplugin_init_autogen.dir/all
 	$(MAKE) $(MAKESILENT) -f qml\CMakeFiles\qml_moduleplugin_init_automoc_json_extraction.dir\build.make qml/CMakeFiles/qml_moduleplugin_init_automoc_json_extraction.dir/depend
 	$(MAKE) $(MAKESILENT) -f qml\CMakeFiles\qml_moduleplugin_init_automoc_json_extraction.dir\build.make qml/CMakeFiles/qml_moduleplugin_init_automoc_json_extraction.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=D:\Qtprogram\bandicam\build\CMakeFiles --progress-num=70 "Built target qml_moduleplugin_init_automoc_json_extraction"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=D:\Qtprogram\bandicam\build\CMakeFiles --progress-num=69 "Built target qml_moduleplugin_init_automoc_json_extraction"
 .PHONY : qml/CMakeFiles/qml_moduleplugin_init_automoc_json_extraction.dir/all
 
 # Build rule for subdir invocation for target.
@@ -974,7 +974,7 @@ qml/CMakeFiles/qml_moduleplugin_init_automoc_json_extraction.dir/clean:
 qml/CMakeFiles/qml_module_autogen.dir/all: qml/CMakeFiles/qml_module_tooling.dir/all
 	$(MAKE) $(MAKESILENT) -f qml\CMakeFiles\qml_module_autogen.dir\build.make qml/CMakeFiles/qml_module_autogen.dir/depend
 	$(MAKE) $(MAKESILENT) -f qml\CMakeFiles\qml_module_autogen.dir\build.make qml/CMakeFiles/qml_module_autogen.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=D:\Qtprogram\bandicam\build\CMakeFiles --progress-num=55 "Built target qml_module_autogen"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=D:\Qtprogram\bandicam\build\CMakeFiles --progress-num=54 "Built target qml_module_autogen"
 .PHONY : qml/CMakeFiles/qml_module_autogen.dir/all
 
 # Build rule for subdir invocation for target.
@@ -1000,7 +1000,7 @@ qml/CMakeFiles/qml_module_autogen.dir/clean:
 qml/CMakeFiles/qml_moduleplugin_autogen.dir/all:
 	$(MAKE) $(MAKESILENT) -f qml\CMakeFiles\qml_moduleplugin_autogen.dir\build.make qml/CMakeFiles/qml_moduleplugin_autogen.dir/depend
 	$(MAKE) $(MAKESILENT) -f qml\CMakeFiles\qml_moduleplugin_autogen.dir\build.make qml/CMakeFiles/qml_moduleplugin_autogen.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=D:\Qtprogram\bandicam\build\CMakeFiles --progress-num=66 "Built target qml_moduleplugin_autogen"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=D:\Qtprogram\bandicam\build\CMakeFiles --progress-num=65 "Built target qml_moduleplugin_autogen"
 .PHONY : qml/CMakeFiles/qml_moduleplugin_autogen.dir/all
 
 # Build rule for subdir invocation for target.
@@ -1026,7 +1026,7 @@ qml/CMakeFiles/qml_moduleplugin_autogen.dir/clean:
 qml/CMakeFiles/qml_moduleplugin_init_autogen.dir/all:
 	$(MAKE) $(MAKESILENT) -f qml\CMakeFiles\qml_moduleplugin_init_autogen.dir\build.make qml/CMakeFiles/qml_moduleplugin_init_autogen.dir/depend
 	$(MAKE) $(MAKESILENT) -f qml\CMakeFiles\qml_moduleplugin_init_autogen.dir\build.make qml/CMakeFiles/qml_moduleplugin_init_autogen.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=D:\Qtprogram\bandicam\build\CMakeFiles --progress-num=69 "Built target qml_moduleplugin_init_autogen"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=D:\Qtprogram\bandicam\build\CMakeFiles --progress-num=68 "Built target qml_moduleplugin_init_autogen"
 .PHONY : qml/CMakeFiles/qml_moduleplugin_init_autogen.dir/all
 
 # Build rule for subdir invocation for target.
@@ -1052,12 +1052,12 @@ qml/CMakeFiles/qml_moduleplugin_init_autogen.dir/clean:
 queue/CMakeFiles/queue_module.dir/all: decoder/CMakeFiles/decoder_module.dir/all
 	$(MAKE) $(MAKESILENT) -f queue\CMakeFiles\queue_module.dir\build.make queue/CMakeFiles/queue_module.dir/depend
 	$(MAKE) $(MAKESILENT) -f queue\CMakeFiles\queue_module.dir\build.make queue/CMakeFiles/queue_module.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=D:\Qtprogram\bandicam\build\CMakeFiles --progress-num=71,72,73,74,75,76 "Built target queue_module"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=D:\Qtprogram\bandicam\build\CMakeFiles --progress-num=70,71,72,73,74,75 "Built target queue_module"
 .PHONY : queue/CMakeFiles/queue_module.dir/all
 
 # Build rule for subdir invocation for target.
 queue/CMakeFiles/queue_module.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start D:\Qtprogram\bandicam\build\CMakeFiles 20
+	$(CMAKE_COMMAND) -E cmake_progress_start D:\Qtprogram\bandicam\build\CMakeFiles 18
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 queue/CMakeFiles/queue_module.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start D:\Qtprogram\bandicam\build\CMakeFiles 0
 .PHONY : queue/CMakeFiles/queue_module.dir/rule
@@ -1078,12 +1078,12 @@ queue/CMakeFiles/queue_module.dir/clean:
 queue/CMakeFiles/queue_module_automoc_json_extraction.dir/all: queue/CMakeFiles/queue_module_autogen.dir/all
 	$(MAKE) $(MAKESILENT) -f queue\CMakeFiles\queue_module_automoc_json_extraction.dir\build.make queue/CMakeFiles/queue_module_automoc_json_extraction.dir/depend
 	$(MAKE) $(MAKESILENT) -f queue\CMakeFiles\queue_module_automoc_json_extraction.dir\build.make queue/CMakeFiles/queue_module_automoc_json_extraction.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=D:\Qtprogram\bandicam\build\CMakeFiles --progress-num=78 "Built target queue_module_automoc_json_extraction"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=D:\Qtprogram\bandicam\build\CMakeFiles --progress-num= "Built target queue_module_automoc_json_extraction"
 .PHONY : queue/CMakeFiles/queue_module_automoc_json_extraction.dir/all
 
 # Build rule for subdir invocation for target.
 queue/CMakeFiles/queue_module_automoc_json_extraction.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start D:\Qtprogram\bandicam\build\CMakeFiles 2
+	$(CMAKE_COMMAND) -E cmake_progress_start D:\Qtprogram\bandicam\build\CMakeFiles 1
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 queue/CMakeFiles/queue_module_automoc_json_extraction.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start D:\Qtprogram\bandicam\build\CMakeFiles 0
 .PHONY : queue/CMakeFiles/queue_module_automoc_json_extraction.dir/rule
@@ -1104,7 +1104,7 @@ queue/CMakeFiles/queue_module_automoc_json_extraction.dir/clean:
 queue/CMakeFiles/queue_module_autogen.dir/all:
 	$(MAKE) $(MAKESILENT) -f queue\CMakeFiles\queue_module_autogen.dir\build.make queue/CMakeFiles/queue_module_autogen.dir/depend
 	$(MAKE) $(MAKESILENT) -f queue\CMakeFiles\queue_module_autogen.dir\build.make queue/CMakeFiles/queue_module_autogen.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=D:\Qtprogram\bandicam\build\CMakeFiles --progress-num=77 "Built target queue_module_autogen"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=D:\Qtprogram\bandicam\build\CMakeFiles --progress-num=76 "Built target queue_module_autogen"
 .PHONY : queue/CMakeFiles/queue_module_autogen.dir/all
 
 # Build rule for subdir invocation for target.
@@ -1135,7 +1135,7 @@ decoder/CMakeFiles/decoder_module.dir/all: event/CMakeFiles/event_module.dir/all
 
 # Build rule for subdir invocation for target.
 decoder/CMakeFiles/decoder_module.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start D:\Qtprogram\bandicam\build\CMakeFiles 14
+	$(CMAKE_COMMAND) -E cmake_progress_start D:\Qtprogram\bandicam\build\CMakeFiles 12
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 decoder/CMakeFiles/decoder_module.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start D:\Qtprogram\bandicam\build\CMakeFiles 0
 .PHONY : decoder/CMakeFiles/decoder_module.dir/rule
@@ -1210,12 +1210,12 @@ resampler/CMakeFiles/resampler_module.dir/all: resampler/CMakeFiles/resampler_mo
 resampler/CMakeFiles/resampler_module.dir/all: resampler/CMakeFiles/resampler_module_autogen.dir/all
 	$(MAKE) $(MAKESILENT) -f resampler\CMakeFiles\resampler_module.dir\build.make resampler/CMakeFiles/resampler_module.dir/depend
 	$(MAKE) $(MAKESILENT) -f resampler\CMakeFiles\resampler_module.dir\build.make resampler/CMakeFiles/resampler_module.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=D:\Qtprogram\bandicam\build\CMakeFiles --progress-num=83,84,85 "Built target resampler_module"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=D:\Qtprogram\bandicam\build\CMakeFiles --progress-num=83,84,85,86 "Built target resampler_module"
 .PHONY : resampler/CMakeFiles/resampler_module.dir/all
 
 # Build rule for subdir invocation for target.
 resampler/CMakeFiles/resampler_module.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start D:\Qtprogram\bandicam\build\CMakeFiles 28
+	$(CMAKE_COMMAND) -E cmake_progress_start D:\Qtprogram\bandicam\build\CMakeFiles 26
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 resampler/CMakeFiles/resampler_module.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start D:\Qtprogram\bandicam\build\CMakeFiles 0
 .PHONY : resampler/CMakeFiles/resampler_module.dir/rule
@@ -1241,7 +1241,7 @@ resampler/CMakeFiles/resampler_module_automoc_json_extraction.dir/all: resampler
 
 # Build rule for subdir invocation for target.
 resampler/CMakeFiles/resampler_module_automoc_json_extraction.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start D:\Qtprogram\bandicam\build\CMakeFiles 25
+	$(CMAKE_COMMAND) -E cmake_progress_start D:\Qtprogram\bandicam\build\CMakeFiles 22
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 resampler/CMakeFiles/resampler_module_automoc_json_extraction.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start D:\Qtprogram\bandicam\build\CMakeFiles 0
 .PHONY : resampler/CMakeFiles/resampler_module_automoc_json_extraction.dir/rule
@@ -1262,12 +1262,12 @@ resampler/CMakeFiles/resampler_module_automoc_json_extraction.dir/clean:
 resampler/CMakeFiles/resampler_module_autogen.dir/all: demuxer/CMakeFiles/demuxer_module.dir/all
 	$(MAKE) $(MAKESILENT) -f resampler\CMakeFiles\resampler_module_autogen.dir\build.make resampler/CMakeFiles/resampler_module_autogen.dir/depend
 	$(MAKE) $(MAKESILENT) -f resampler\CMakeFiles\resampler_module_autogen.dir\build.make resampler/CMakeFiles/resampler_module_autogen.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=D:\Qtprogram\bandicam\build\CMakeFiles --progress-num=86 "Built target resampler_module_autogen"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=D:\Qtprogram\bandicam\build\CMakeFiles --progress-num= "Built target resampler_module_autogen"
 .PHONY : resampler/CMakeFiles/resampler_module_autogen.dir/all
 
 # Build rule for subdir invocation for target.
 resampler/CMakeFiles/resampler_module_autogen.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start D:\Qtprogram\bandicam\build\CMakeFiles 24
+	$(CMAKE_COMMAND) -E cmake_progress_start D:\Qtprogram\bandicam\build\CMakeFiles 21
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 resampler/CMakeFiles/resampler_module_autogen.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start D:\Qtprogram\bandicam\build\CMakeFiles 0
 .PHONY : resampler/CMakeFiles/resampler_module_autogen.dir/rule
@@ -1290,12 +1290,12 @@ filter/CMakeFiles/filter_module.dir/all: filter/CMakeFiles/filter_module_automoc
 filter/CMakeFiles/filter_module.dir/all: filter/CMakeFiles/filter_module_autogen.dir/all
 	$(MAKE) $(MAKESILENT) -f filter\CMakeFiles\filter_module.dir\build.make filter/CMakeFiles/filter_module.dir/depend
 	$(MAKE) $(MAKESILENT) -f filter\CMakeFiles\filter_module.dir\build.make filter/CMakeFiles/filter_module.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=D:\Qtprogram\bandicam\build\CMakeFiles --progress-num=26,27,28 "Built target filter_module"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=D:\Qtprogram\bandicam\build\CMakeFiles --progress-num=25,26,27,28 "Built target filter_module"
 .PHONY : filter/CMakeFiles/filter_module.dir/all
 
 # Build rule for subdir invocation for target.
 filter/CMakeFiles/filter_module.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start D:\Qtprogram\bandicam\build\CMakeFiles 28
+	$(CMAKE_COMMAND) -E cmake_progress_start D:\Qtprogram\bandicam\build\CMakeFiles 27
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 filter/CMakeFiles/filter_module.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start D:\Qtprogram\bandicam\build\CMakeFiles 0
 .PHONY : filter/CMakeFiles/filter_module.dir/rule
@@ -1321,7 +1321,7 @@ filter/CMakeFiles/filter_module_automoc_json_extraction.dir/all: filter/CMakeFil
 
 # Build rule for subdir invocation for target.
 filter/CMakeFiles/filter_module_automoc_json_extraction.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start D:\Qtprogram\bandicam\build\CMakeFiles 25
+	$(CMAKE_COMMAND) -E cmake_progress_start D:\Qtprogram\bandicam\build\CMakeFiles 23
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 filter/CMakeFiles/filter_module_automoc_json_extraction.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start D:\Qtprogram\bandicam\build\CMakeFiles 0
 .PHONY : filter/CMakeFiles/filter_module_automoc_json_extraction.dir/rule
@@ -1347,7 +1347,7 @@ filter/CMakeFiles/filter_module_autogen.dir/all: demuxer/CMakeFiles/demuxer_modu
 
 # Build rule for subdir invocation for target.
 filter/CMakeFiles/filter_module_autogen.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start D:\Qtprogram\bandicam\build\CMakeFiles 24
+	$(CMAKE_COMMAND) -E cmake_progress_start D:\Qtprogram\bandicam\build\CMakeFiles 22
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 filter/CMakeFiles/filter_module_autogen.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start D:\Qtprogram\bandicam\build\CMakeFiles 0
 .PHONY : filter/CMakeFiles/filter_module_autogen.dir/rule
@@ -1370,12 +1370,12 @@ muxer/CMakeFiles/muxer_module.dir/all: muxer/CMakeFiles/muxer_module_automoc_jso
 muxer/CMakeFiles/muxer_module.dir/all: muxer/CMakeFiles/muxer_module_autogen.dir/all
 	$(MAKE) $(MAKESILENT) -f muxer\CMakeFiles\muxer_module.dir\build.make muxer/CMakeFiles/muxer_module.dir/depend
 	$(MAKE) $(MAKESILENT) -f muxer\CMakeFiles\muxer_module.dir\build.make muxer/CMakeFiles/muxer_module.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=D:\Qtprogram\bandicam\build\CMakeFiles --progress-num=35,36,37 "Built target muxer_module"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=D:\Qtprogram\bandicam\build\CMakeFiles --progress-num=34,35,36 "Built target muxer_module"
 .PHONY : muxer/CMakeFiles/muxer_module.dir/all
 
 # Build rule for subdir invocation for target.
 muxer/CMakeFiles/muxer_module.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start D:\Qtprogram\bandicam\build\CMakeFiles 28
+	$(CMAKE_COMMAND) -E cmake_progress_start D:\Qtprogram\bandicam\build\CMakeFiles 26
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 muxer/CMakeFiles/muxer_module.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start D:\Qtprogram\bandicam\build\CMakeFiles 0
 .PHONY : muxer/CMakeFiles/muxer_module.dir/rule
@@ -1396,12 +1396,12 @@ muxer/CMakeFiles/muxer_module.dir/clean:
 muxer/CMakeFiles/muxer_module_automoc_json_extraction.dir/all: muxer/CMakeFiles/muxer_module_autogen.dir/all
 	$(MAKE) $(MAKESILENT) -f muxer\CMakeFiles\muxer_module_automoc_json_extraction.dir\build.make muxer/CMakeFiles/muxer_module_automoc_json_extraction.dir/depend
 	$(MAKE) $(MAKESILENT) -f muxer\CMakeFiles\muxer_module_automoc_json_extraction.dir\build.make muxer/CMakeFiles/muxer_module_automoc_json_extraction.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=D:\Qtprogram\bandicam\build\CMakeFiles --progress-num=39 "Built target muxer_module_automoc_json_extraction"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=D:\Qtprogram\bandicam\build\CMakeFiles --progress-num=38 "Built target muxer_module_automoc_json_extraction"
 .PHONY : muxer/CMakeFiles/muxer_module_automoc_json_extraction.dir/all
 
 # Build rule for subdir invocation for target.
 muxer/CMakeFiles/muxer_module_automoc_json_extraction.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start D:\Qtprogram\bandicam\build\CMakeFiles 25
+	$(CMAKE_COMMAND) -E cmake_progress_start D:\Qtprogram\bandicam\build\CMakeFiles 23
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 muxer/CMakeFiles/muxer_module_automoc_json_extraction.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start D:\Qtprogram\bandicam\build\CMakeFiles 0
 .PHONY : muxer/CMakeFiles/muxer_module_automoc_json_extraction.dir/rule
@@ -1422,12 +1422,12 @@ muxer/CMakeFiles/muxer_module_automoc_json_extraction.dir/clean:
 muxer/CMakeFiles/muxer_module_autogen.dir/all: demuxer/CMakeFiles/demuxer_module.dir/all
 	$(MAKE) $(MAKESILENT) -f muxer\CMakeFiles\muxer_module_autogen.dir\build.make muxer/CMakeFiles/muxer_module_autogen.dir/depend
 	$(MAKE) $(MAKESILENT) -f muxer\CMakeFiles\muxer_module_autogen.dir\build.make muxer/CMakeFiles/muxer_module_autogen.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=D:\Qtprogram\bandicam\build\CMakeFiles --progress-num=38 "Built target muxer_module_autogen"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=D:\Qtprogram\bandicam\build\CMakeFiles --progress-num=37 "Built target muxer_module_autogen"
 .PHONY : muxer/CMakeFiles/muxer_module_autogen.dir/all
 
 # Build rule for subdir invocation for target.
 muxer/CMakeFiles/muxer_module_autogen.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start D:\Qtprogram\bandicam\build\CMakeFiles 24
+	$(CMAKE_COMMAND) -E cmake_progress_start D:\Qtprogram\bandicam\build\CMakeFiles 22
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 muxer/CMakeFiles/muxer_module_autogen.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start D:\Qtprogram\bandicam\build\CMakeFiles 0
 .PHONY : muxer/CMakeFiles/muxer_module_autogen.dir/rule
@@ -1446,13 +1446,13 @@ muxer/CMakeFiles/muxer_module_autogen.dir/clean:
 
 # All Build rule for target.
 event/CMakeFiles/event_module.dir/all: demuxer/CMakeFiles/demuxer_module_automoc_json_extraction.dir/all
-event/CMakeFiles/event_module.dir/all: decoder/CMakeFiles/decoder_module_automoc_json_extraction.dir/all
 event/CMakeFiles/event_module.dir/all: queue/CMakeFiles/queue_module_automoc_json_extraction.dir/all
+event/CMakeFiles/event_module.dir/all: decoder/CMakeFiles/decoder_module_automoc_json_extraction.dir/all
 event/CMakeFiles/event_module.dir/all: event/CMakeFiles/event_module_automoc_json_extraction.dir/all
-event/CMakeFiles/event_module.dir/all: queue/CMakeFiles/queue_module_autogen.dir/all
-event/CMakeFiles/event_module.dir/all: decoder/CMakeFiles/decoder_module_autogen.dir/all
 event/CMakeFiles/event_module.dir/all: demuxer/CMakeFiles/demuxer_module_autogen.dir/all
 event/CMakeFiles/event_module.dir/all: event/CMakeFiles/event_module_autogen.dir/all
+event/CMakeFiles/event_module.dir/all: decoder/CMakeFiles/decoder_module_autogen.dir/all
+event/CMakeFiles/event_module.dir/all: queue/CMakeFiles/queue_module_autogen.dir/all
 	$(MAKE) $(MAKESILENT) -f event\CMakeFiles\event_module.dir\build.make event/CMakeFiles/event_module.dir/depend
 	$(MAKE) $(MAKESILENT) -f event\CMakeFiles\event_module.dir\build.make event/CMakeFiles/event_module.dir/build
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=D:\Qtprogram\bandicam\build\CMakeFiles --progress-num=21,22,23 "Built target event_module"
@@ -1460,7 +1460,7 @@ event/CMakeFiles/event_module.dir/all: event/CMakeFiles/event_module_autogen.dir
 
 # Build rule for subdir invocation for target.
 event/CMakeFiles/event_module.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start D:\Qtprogram\bandicam\build\CMakeFiles 10
+	$(CMAKE_COMMAND) -E cmake_progress_start D:\Qtprogram\bandicam\build\CMakeFiles 8
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 event/CMakeFiles/event_module.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start D:\Qtprogram\bandicam\build\CMakeFiles 0
 .PHONY : event/CMakeFiles/event_module.dir/rule
@@ -1481,12 +1481,12 @@ event/CMakeFiles/event_module.dir/clean:
 event/CMakeFiles/event_module_automoc_json_extraction.dir/all: event/CMakeFiles/event_module_autogen.dir/all
 	$(MAKE) $(MAKESILENT) -f event\CMakeFiles\event_module_automoc_json_extraction.dir\build.make event/CMakeFiles/event_module_automoc_json_extraction.dir/depend
 	$(MAKE) $(MAKESILENT) -f event\CMakeFiles\event_module_automoc_json_extraction.dir\build.make event/CMakeFiles/event_module_automoc_json_extraction.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=D:\Qtprogram\bandicam\build\CMakeFiles --progress-num=25 "Built target event_module_automoc_json_extraction"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=D:\Qtprogram\bandicam\build\CMakeFiles --progress-num=24 "Built target event_module_automoc_json_extraction"
 .PHONY : event/CMakeFiles/event_module_automoc_json_extraction.dir/all
 
 # Build rule for subdir invocation for target.
 event/CMakeFiles/event_module_automoc_json_extraction.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start D:\Qtprogram\bandicam\build\CMakeFiles 2
+	$(CMAKE_COMMAND) -E cmake_progress_start D:\Qtprogram\bandicam\build\CMakeFiles 1
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 event/CMakeFiles/event_module_automoc_json_extraction.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start D:\Qtprogram\bandicam\build\CMakeFiles 0
 .PHONY : event/CMakeFiles/event_module_automoc_json_extraction.dir/rule
@@ -1507,12 +1507,12 @@ event/CMakeFiles/event_module_automoc_json_extraction.dir/clean:
 event/CMakeFiles/event_module_autogen.dir/all:
 	$(MAKE) $(MAKESILENT) -f event\CMakeFiles\event_module_autogen.dir\build.make event/CMakeFiles/event_module_autogen.dir/depend
 	$(MAKE) $(MAKESILENT) -f event\CMakeFiles\event_module_autogen.dir\build.make event/CMakeFiles/event_module_autogen.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=D:\Qtprogram\bandicam\build\CMakeFiles --progress-num=24 "Built target event_module_autogen"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=D:\Qtprogram\bandicam\build\CMakeFiles --progress-num= "Built target event_module_autogen"
 .PHONY : event/CMakeFiles/event_module_autogen.dir/all
 
 # Build rule for subdir invocation for target.
 event/CMakeFiles/event_module_autogen.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start D:\Qtprogram\bandicam\build\CMakeFiles 1
+	$(CMAKE_COMMAND) -E cmake_progress_start D:\Qtprogram\bandicam\build\CMakeFiles 0
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 event/CMakeFiles/event_module_autogen.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start D:\Qtprogram\bandicam\build\CMakeFiles 0
 .PHONY : event/CMakeFiles/event_module_autogen.dir/rule
@@ -1540,7 +1540,7 @@ thread/CMakeFiles/thread_module.dir/all: thread/CMakeFiles/thread_module_autogen
 
 # Build rule for subdir invocation for target.
 thread/CMakeFiles/thread_module.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start D:\Qtprogram\bandicam\build\CMakeFiles 36
+	$(CMAKE_COMMAND) -E cmake_progress_start D:\Qtprogram\bandicam\build\CMakeFiles 34
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 thread/CMakeFiles/thread_module.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start D:\Qtprogram\bandicam\build\CMakeFiles 0
 .PHONY : thread/CMakeFiles/thread_module.dir/rule
@@ -1566,7 +1566,7 @@ thread/CMakeFiles/thread_module_automoc_json_extraction.dir/all: thread/CMakeFil
 
 # Build rule for subdir invocation for target.
 thread/CMakeFiles/thread_module_automoc_json_extraction.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start D:\Qtprogram\bandicam\build\CMakeFiles 25
+	$(CMAKE_COMMAND) -E cmake_progress_start D:\Qtprogram\bandicam\build\CMakeFiles 23
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 thread/CMakeFiles/thread_module_automoc_json_extraction.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start D:\Qtprogram\bandicam\build\CMakeFiles 0
 .PHONY : thread/CMakeFiles/thread_module_automoc_json_extraction.dir/rule
@@ -1592,7 +1592,7 @@ thread/CMakeFiles/thread_module_autogen.dir/all: demuxer/CMakeFiles/demuxer_modu
 
 # Build rule for subdir invocation for target.
 thread/CMakeFiles/thread_module_autogen.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start D:\Qtprogram\bandicam\build\CMakeFiles 24
+	$(CMAKE_COMMAND) -E cmake_progress_start D:\Qtprogram\bandicam\build\CMakeFiles 22
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 thread/CMakeFiles/thread_module_autogen.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start D:\Qtprogram\bandicam\build\CMakeFiles 0
 .PHONY : thread/CMakeFiles/thread_module_autogen.dir/rule
@@ -1611,19 +1611,19 @@ thread/CMakeFiles/thread_module_autogen.dir/clean:
 
 # All Build rule for target.
 recorder/CMakeFiles/recorder_module.dir/all: demuxer/CMakeFiles/demuxer_module.dir/all
-recorder/CMakeFiles/recorder_module.dir/all: filter/CMakeFiles/filter_module.dir/all
 recorder/CMakeFiles/recorder_module.dir/all: muxer/CMakeFiles/muxer_module.dir/all
-recorder/CMakeFiles/recorder_module.dir/all: recorder/CMakeFiles/recorder_module_automoc_json_extraction.dir/all
+recorder/CMakeFiles/recorder_module.dir/all: filter/CMakeFiles/filter_module.dir/all
 recorder/CMakeFiles/recorder_module.dir/all: encoder/CMakeFiles/encoder_module.dir/all
+recorder/CMakeFiles/recorder_module.dir/all: recorder/CMakeFiles/recorder_module_automoc_json_extraction.dir/all
 recorder/CMakeFiles/recorder_module.dir/all: recorder/CMakeFiles/recorder_module_autogen.dir/all
 	$(MAKE) $(MAKESILENT) -f recorder\CMakeFiles\recorder_module.dir\build.make recorder/CMakeFiles/recorder_module.dir/depend
 	$(MAKE) $(MAKESILENT) -f recorder\CMakeFiles\recorder_module.dir\build.make recorder/CMakeFiles/recorder_module.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=D:\Qtprogram\bandicam\build\CMakeFiles --progress-num=79,80 "Built target recorder_module"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=D:\Qtprogram\bandicam\build\CMakeFiles --progress-num=77,78,79,80 "Built target recorder_module"
 .PHONY : recorder/CMakeFiles/recorder_module.dir/all
 
 # Build rule for subdir invocation for target.
 recorder/CMakeFiles/recorder_module.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start D:\Qtprogram\bandicam\build\CMakeFiles 43
+	$(CMAKE_COMMAND) -E cmake_progress_start D:\Qtprogram\bandicam\build\CMakeFiles 44
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 recorder/CMakeFiles/recorder_module.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start D:\Qtprogram\bandicam\build\CMakeFiles 0
 .PHONY : recorder/CMakeFiles/recorder_module.dir/rule
@@ -1649,7 +1649,7 @@ recorder/CMakeFiles/recorder_module_automoc_json_extraction.dir/all: recorder/CM
 
 # Build rule for subdir invocation for target.
 recorder/CMakeFiles/recorder_module_automoc_json_extraction.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start D:\Qtprogram\bandicam\build\CMakeFiles 41
+	$(CMAKE_COMMAND) -E cmake_progress_start D:\Qtprogram\bandicam\build\CMakeFiles 40
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 recorder/CMakeFiles/recorder_module_automoc_json_extraction.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start D:\Qtprogram\bandicam\build\CMakeFiles 0
 .PHONY : recorder/CMakeFiles/recorder_module_automoc_json_extraction.dir/rule
@@ -1668,8 +1668,8 @@ recorder/CMakeFiles/recorder_module_automoc_json_extraction.dir/clean:
 
 # All Build rule for target.
 recorder/CMakeFiles/recorder_module_autogen.dir/all: demuxer/CMakeFiles/demuxer_module.dir/all
-recorder/CMakeFiles/recorder_module_autogen.dir/all: filter/CMakeFiles/filter_module.dir/all
 recorder/CMakeFiles/recorder_module_autogen.dir/all: muxer/CMakeFiles/muxer_module.dir/all
+recorder/CMakeFiles/recorder_module_autogen.dir/all: filter/CMakeFiles/filter_module.dir/all
 recorder/CMakeFiles/recorder_module_autogen.dir/all: encoder/CMakeFiles/encoder_module.dir/all
 	$(MAKE) $(MAKESILENT) -f recorder\CMakeFiles\recorder_module_autogen.dir\build.make recorder/CMakeFiles/recorder_module_autogen.dir/depend
 	$(MAKE) $(MAKESILENT) -f recorder\CMakeFiles\recorder_module_autogen.dir\build.make recorder/CMakeFiles/recorder_module_autogen.dir/build
@@ -1678,7 +1678,7 @@ recorder/CMakeFiles/recorder_module_autogen.dir/all: encoder/CMakeFiles/encoder_
 
 # Build rule for subdir invocation for target.
 recorder/CMakeFiles/recorder_module_autogen.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start D:\Qtprogram\bandicam\build\CMakeFiles 40
+	$(CMAKE_COMMAND) -E cmake_progress_start D:\Qtprogram\bandicam\build\CMakeFiles 39
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 recorder/CMakeFiles/recorder_module_autogen.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start D:\Qtprogram\bandicam\build\CMakeFiles 0
 .PHONY : recorder/CMakeFiles/recorder_module_autogen.dir/rule
@@ -1706,7 +1706,7 @@ encoder/CMakeFiles/encoder_module.dir/all: encoder/CMakeFiles/encoder_module_aut
 
 # Build rule for subdir invocation for target.
 encoder/CMakeFiles/encoder_module.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start D:\Qtprogram\bandicam\build\CMakeFiles 29
+	$(CMAKE_COMMAND) -E cmake_progress_start D:\Qtprogram\bandicam\build\CMakeFiles 27
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 encoder/CMakeFiles/encoder_module.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start D:\Qtprogram\bandicam\build\CMakeFiles 0
 .PHONY : encoder/CMakeFiles/encoder_module.dir/rule
@@ -1732,7 +1732,7 @@ encoder/CMakeFiles/encoder_module_automoc_json_extraction.dir/all: encoder/CMake
 
 # Build rule for subdir invocation for target.
 encoder/CMakeFiles/encoder_module_automoc_json_extraction.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start D:\Qtprogram\bandicam\build\CMakeFiles 25
+	$(CMAKE_COMMAND) -E cmake_progress_start D:\Qtprogram\bandicam\build\CMakeFiles 23
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 encoder/CMakeFiles/encoder_module_automoc_json_extraction.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start D:\Qtprogram\bandicam\build\CMakeFiles 0
 .PHONY : encoder/CMakeFiles/encoder_module_automoc_json_extraction.dir/rule
@@ -1758,7 +1758,7 @@ encoder/CMakeFiles/encoder_module_autogen.dir/all: demuxer/CMakeFiles/demuxer_mo
 
 # Build rule for subdir invocation for target.
 encoder/CMakeFiles/encoder_module_autogen.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start D:\Qtprogram\bandicam\build\CMakeFiles 24
+	$(CMAKE_COMMAND) -E cmake_progress_start D:\Qtprogram\bandicam\build\CMakeFiles 22
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 encoder/CMakeFiles/encoder_module_autogen.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start D:\Qtprogram\bandicam\build\CMakeFiles 0
 .PHONY : encoder/CMakeFiles/encoder_module_autogen.dir/rule

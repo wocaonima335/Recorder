@@ -39,6 +39,12 @@
 			"MU",
 			"EWIEGA46WW/moc_ffevent.cpp",
 			null
+		],
+		[
+			"D:/Qtprogram/bandicam/event/ffeventloop.h",
+			"MU",
+			"EWIEGA46WW/moc_ffeventloop.cpp",
+			null
 		]
 	],
 	"HEADER_EXTENSIONS" : [ "h", "hh", "h++", "hm", "hpp", "hxx", "in", "txx" ],

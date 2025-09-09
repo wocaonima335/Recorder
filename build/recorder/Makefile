@@ -202,6 +202,54 @@ recorder_module_autogen/fast:
 	cd /d D:\Qtprogram\bandicam\build && $(MAKE) $(MAKESILENT) -f recorder\CMakeFiles\recorder_module_autogen.dir\build.make recorder/CMakeFiles/recorder_module_autogen.dir/build
 .PHONY : recorder_module_autogen/fast
 
+ffrecoder.obj: ffrecoder.cpp.obj
+.PHONY : ffrecoder.obj
+
+# target to build an object file
+ffrecoder.cpp.obj:
+	cd /d D:\Qtprogram\bandicam\build && $(MAKE) $(MAKESILENT) -f recorder\CMakeFiles\recorder_module.dir\build.make recorder/CMakeFiles/recorder_module.dir/ffrecoder.cpp.obj
+.PHONY : ffrecoder.cpp.obj
+
+ffrecoder.i: ffrecoder.cpp.i
+.PHONY : ffrecoder.i
+
+# target to preprocess a source file
+ffrecoder.cpp.i:
+	cd /d D:\Qtprogram\bandicam\build && $(MAKE) $(MAKESILENT) -f recorder\CMakeFiles\recorder_module.dir\build.make recorder/CMakeFiles/recorder_module.dir/ffrecoder.cpp.i
+.PHONY : ffrecoder.cpp.i
+
+ffrecoder.s: ffrecoder.cpp.s
+.PHONY : ffrecoder.s
+
+# target to generate assembly for a file
+ffrecoder.cpp.s:
+	cd /d D:\Qtprogram\bandicam\build && $(MAKE) $(MAKESILENT) -f recorder\CMakeFiles\recorder_module.dir\build.make recorder/CMakeFiles/recorder_module.dir/ffrecoder.cpp.s
+.PHONY : ffrecoder.cpp.s
+
+ffrecoder_p.obj: ffrecoder_p.cpp.obj
+.PHONY : ffrecoder_p.obj
+
+# target to build an object file
+ffrecoder_p.cpp.obj:
+	cd /d D:\Qtprogram\bandicam\build && $(MAKE) $(MAKESILENT) -f recorder\CMakeFiles\recorder_module.dir\build.make recorder/CMakeFiles/recorder_module.dir/ffrecoder_p.cpp.obj
+.PHONY : ffrecoder_p.cpp.obj
+
+ffrecoder_p.i: ffrecoder_p.cpp.i
+.PHONY : ffrecoder_p.i
+
+# target to preprocess a source file
+ffrecoder_p.cpp.i:
+	cd /d D:\Qtprogram\bandicam\build && $(MAKE) $(MAKESILENT) -f recorder\CMakeFiles\recorder_module.dir\build.make recorder/CMakeFiles/recorder_module.dir/ffrecoder_p.cpp.i
+.PHONY : ffrecoder_p.cpp.i
+
+ffrecoder_p.s: ffrecoder_p.cpp.s
+.PHONY : ffrecoder_p.s
+
+# target to generate assembly for a file
+ffrecoder_p.cpp.s:
+	cd /d D:\Qtprogram\bandicam\build && $(MAKE) $(MAKESILENT) -f recorder\CMakeFiles\recorder_module.dir\build.make recorder/CMakeFiles/recorder_module.dir/ffrecoder_p.cpp.s
+.PHONY : ffrecoder_p.cpp.s
+
 recorder_module_autogen/mocs_compilation.obj: recorder_module_autogen/mocs_compilation.cpp.obj
 .PHONY : recorder_module_autogen/mocs_compilation.obj
 
@@ -241,6 +289,12 @@ help:
 	@echo ... recorder_module_autogen
 	@echo ... recorder_module_automoc_json_extraction
 	@echo ... recorder_module
+	@echo ... ffrecoder.obj
+	@echo ... ffrecoder.i
+	@echo ... ffrecoder.s
+	@echo ... ffrecoder_p.obj
+	@echo ... ffrecoder_p.i
+	@echo ... ffrecoder_p.s
 	@echo ... recorder_module_autogen/mocs_compilation.obj
 	@echo ... recorder_module_autogen/mocs_compilation.i
 	@echo ... recorder_module_autogen/mocs_compilation.s

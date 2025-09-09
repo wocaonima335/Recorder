@@ -89,17 +89,51 @@ recorder/CMakeFiles/recorder_module.dir/recorder_module_autogen/mocs_compilation
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/recorder_module.dir/recorder_module_autogen/mocs_compilation.cpp.s"
 	cd /d D:\Qtprogram\bandicam\build\recorder && D:\Vscode\MinGw64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\Qtprogram\bandicam\build\recorder\recorder_module_autogen\mocs_compilation.cpp -o CMakeFiles\recorder_module.dir\recorder_module_autogen\mocs_compilation.cpp.s
 
+recorder/CMakeFiles/recorder_module.dir/ffrecoder_p.cpp.obj: recorder/CMakeFiles/recorder_module.dir/flags.make
+recorder/CMakeFiles/recorder_module.dir/ffrecoder_p.cpp.obj: recorder/CMakeFiles/recorder_module.dir/includes_CXX.rsp
+recorder/CMakeFiles/recorder_module.dir/ffrecoder_p.cpp.obj: D:/Qtprogram/bandicam/recorder/ffrecoder_p.cpp
+recorder/CMakeFiles/recorder_module.dir/ffrecoder_p.cpp.obj: recorder/CMakeFiles/recorder_module.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\Qtprogram\bandicam\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object recorder/CMakeFiles/recorder_module.dir/ffrecoder_p.cpp.obj"
+	cd /d D:\Qtprogram\bandicam\build\recorder && D:\Vscode\MinGw64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT recorder/CMakeFiles/recorder_module.dir/ffrecoder_p.cpp.obj -MF CMakeFiles\recorder_module.dir\ffrecoder_p.cpp.obj.d -o CMakeFiles\recorder_module.dir\ffrecoder_p.cpp.obj -c D:\Qtprogram\bandicam\recorder\ffrecoder_p.cpp
+
+recorder/CMakeFiles/recorder_module.dir/ffrecoder_p.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/recorder_module.dir/ffrecoder_p.cpp.i"
+	cd /d D:\Qtprogram\bandicam\build\recorder && D:\Vscode\MinGw64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\Qtprogram\bandicam\recorder\ffrecoder_p.cpp > CMakeFiles\recorder_module.dir\ffrecoder_p.cpp.i
+
+recorder/CMakeFiles/recorder_module.dir/ffrecoder_p.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/recorder_module.dir/ffrecoder_p.cpp.s"
+	cd /d D:\Qtprogram\bandicam\build\recorder && D:\Vscode\MinGw64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\Qtprogram\bandicam\recorder\ffrecoder_p.cpp -o CMakeFiles\recorder_module.dir\ffrecoder_p.cpp.s
+
+recorder/CMakeFiles/recorder_module.dir/ffrecoder.cpp.obj: recorder/CMakeFiles/recorder_module.dir/flags.make
+recorder/CMakeFiles/recorder_module.dir/ffrecoder.cpp.obj: recorder/CMakeFiles/recorder_module.dir/includes_CXX.rsp
+recorder/CMakeFiles/recorder_module.dir/ffrecoder.cpp.obj: D:/Qtprogram/bandicam/recorder/ffrecoder.cpp
+recorder/CMakeFiles/recorder_module.dir/ffrecoder.cpp.obj: recorder/CMakeFiles/recorder_module.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\Qtprogram\bandicam\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object recorder/CMakeFiles/recorder_module.dir/ffrecoder.cpp.obj"
+	cd /d D:\Qtprogram\bandicam\build\recorder && D:\Vscode\MinGw64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT recorder/CMakeFiles/recorder_module.dir/ffrecoder.cpp.obj -MF CMakeFiles\recorder_module.dir\ffrecoder.cpp.obj.d -o CMakeFiles\recorder_module.dir\ffrecoder.cpp.obj -c D:\Qtprogram\bandicam\recorder\ffrecoder.cpp
+
+recorder/CMakeFiles/recorder_module.dir/ffrecoder.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/recorder_module.dir/ffrecoder.cpp.i"
+	cd /d D:\Qtprogram\bandicam\build\recorder && D:\Vscode\MinGw64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\Qtprogram\bandicam\recorder\ffrecoder.cpp > CMakeFiles\recorder_module.dir\ffrecoder.cpp.i
+
+recorder/CMakeFiles/recorder_module.dir/ffrecoder.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/recorder_module.dir/ffrecoder.cpp.s"
+	cd /d D:\Qtprogram\bandicam\build\recorder && D:\Vscode\MinGw64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\Qtprogram\bandicam\recorder\ffrecoder.cpp -o CMakeFiles\recorder_module.dir\ffrecoder.cpp.s
+
 # Object files for target recorder_module
 recorder_module_OBJECTS = \
-"CMakeFiles/recorder_module.dir/recorder_module_autogen/mocs_compilation.cpp.obj"
+"CMakeFiles/recorder_module.dir/recorder_module_autogen/mocs_compilation.cpp.obj" \
+"CMakeFiles/recorder_module.dir/ffrecoder_p.cpp.obj" \
+"CMakeFiles/recorder_module.dir/ffrecoder.cpp.obj"
 
 # External object files for target recorder_module
 recorder_module_EXTERNAL_OBJECTS =
 
 recorder/librecorder_module.a: recorder/CMakeFiles/recorder_module.dir/recorder_module_autogen/mocs_compilation.cpp.obj
+recorder/librecorder_module.a: recorder/CMakeFiles/recorder_module.dir/ffrecoder_p.cpp.obj
+recorder/librecorder_module.a: recorder/CMakeFiles/recorder_module.dir/ffrecoder.cpp.obj
 recorder/librecorder_module.a: recorder/CMakeFiles/recorder_module.dir/build.make
 recorder/librecorder_module.a: recorder/CMakeFiles/recorder_module.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=D:\Qtprogram\bandicam\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX static library librecorder_module.a"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=D:\Qtprogram\bandicam\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking CXX static library librecorder_module.a"
 	cd /d D:\Qtprogram\bandicam\build\recorder && $(CMAKE_COMMAND) -P CMakeFiles\recorder_module.dir\cmake_clean_target.cmake
 	cd /d D:\Qtprogram\bandicam\build\recorder && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\recorder_module.dir\link.txt --verbose=$(VERBOSE)
 

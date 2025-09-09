@@ -1,4 +1,8 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/recorder_module.dir/ffrecoder.cpp.obj"
+  "CMakeFiles/recorder_module.dir/ffrecoder.cpp.obj.d"
+  "CMakeFiles/recorder_module.dir/ffrecoder_p.cpp.obj"
+  "CMakeFiles/recorder_module.dir/ffrecoder_p.cpp.obj.d"
   "CMakeFiles/recorder_module.dir/recorder_module_autogen/mocs_compilation.cpp.obj"
   "CMakeFiles/recorder_module.dir/recorder_module_autogen/mocs_compilation.cpp.obj.d"
   "CMakeFiles/recorder_module_autogen.dir/AutogenUsed.txt"

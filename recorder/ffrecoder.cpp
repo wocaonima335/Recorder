@@ -8,7 +8,8 @@ std::mutex FFRecorder::m_mutex;
 FFRecorder &FFRecorder::getInstance()
 {
     std::lock_guard<std::mutex> lock(m_mutex);
-    if (!m_instance) {
+    if (!m_instance)
+    {
         m_instance = new FFRecorder();
     }
     return *m_instance;
@@ -23,7 +24,27 @@ void FFRecorder::destoryInstance()
 
 FFCaptureContext *FFRecorder::getCaptureContext() {}
 
-void FFRecorder::initCoreComponents() {}
+void FFRecorder::initCoreComponents()
+{
+    d->aDecoderPktQueue = new FFAPacketQueue();
+    d->vDecoderPktQueue = new FFVPacketQueue();
+    d->aEncoderPktQueue = new FFAPacketQueue();
+    d->vEncoderPktQueue = new FFVPacketQueue();
+    d->vDecoderFrmQueue = new FFVFrameQueue();
+    d->aDecoderFrmQueue = new FFVFrameQueue();
+    d->aFilterEncoderFrmQueue = new FFVFrameQueue();
+    d->vFilterEncoderFrmQueue = new FFVFrameQueue();
+
+    d->aDemuxer = new Demuxer();
+    d->vDemuxer = new Demuxer();
+    d->aDecoder = new FFADecoder();
+    d->vDecoder = new FFVDecoder();
+    d->aFilter = new FFAFilter();
+    d->vFilter = new FFVFilter();
+    d->muxer = new FFMuxer();
+    d->aEncoder = new FFAEncoder();
+    d->vEncoder = new FFVEncoder();
+}
 
 void FFRecorder::initRecorderContext() {}
 
