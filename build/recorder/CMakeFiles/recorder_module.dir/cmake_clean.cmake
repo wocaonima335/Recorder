@@ -6,8 +6,8 @@ file(REMOVE_RECURSE
   "recorder_module_autogen"
   "librecorder_module.a"
   "librecorder_module.pdb"
-  "recorder_module_autogen/mocs_compilation.cpp"
-  "recorder_module_autogen/timestamp"
+  "meta_types/qt6recorder_module_debug_metatypes.json"
+  "meta_types/qt6recorder_module_debug_metatypes.json.gen"
 )
 
 # Per-language clean rules from dependency scanning.

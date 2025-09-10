@@ -1,9 +1,9 @@
 -rootPath
-E:/myProgram/Recorder/record
+D:/Qtprogram/bandicam
 -cmake-output
 -output-file
-E:/myProgram/Recorder/record/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/.qt/qml_imports/appbandicam_build.cmake
+D:/Qtprogram/bandicam/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/.qt/qml_imports/appbandicam_build.cmake
 -importPath
-E:/myProgram/Recorder/record/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug
+D:/Qtprogram/bandicam/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug
 -importPath
-F:/Qt/6.8.0/mingw_64/qml
+D:/360Downloads/QT/6.8.0/mingw_64/qml

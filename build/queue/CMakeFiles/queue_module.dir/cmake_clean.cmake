@@ -10,8 +10,8 @@ file(REMOVE_RECURSE
   "queue_module_autogen"
   "libqueue_module.a"
   "libqueue_module.pdb"
-  "queue_module_autogen/mocs_compilation.cpp"
-  "queue_module_autogen/timestamp"
+  "meta_types/qt6queue_module_debug_metatypes.json"
+  "meta_types/qt6queue_module_debug_metatypes.json.gen"
 )
 
 # Per-language clean rules from dependency scanning.

@@ -1,2 +1,2 @@
-F:\Qt\Tools\mingw1310_64\bin\ar.exe qc libdemuxer_module.a CMakeFiles/demuxer_module.dir/demuxer_module_autogen/mocs_compilation.cpp.obj CMakeFiles/demuxer_module.dir/demuxer.cpp.obj
-F:\Qt\Tools\mingw1310_64\bin\ranlib.exe libdemuxer_module.a
+D:\Vscode\MinGw64\mingw64\bin\ar.exe qc libdemuxer_module.a CMakeFiles/demuxer_module.dir/demuxer_module_autogen/mocs_compilation.cpp.obj CMakeFiles/demuxer_module.dir/demuxer.cpp.obj
+D:\Vscode\MinGw64\mingw64\bin\ranlib.exe libdemuxer_module.a

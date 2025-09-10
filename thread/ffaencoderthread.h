@@ -16,7 +16,7 @@ class FFAEncoderThread : public FFThread
 {
 public:
     FFAEncoderThread();
-    ~FFAEncoderThread();
+    virtual ~FFAEncoderThread() override;
 
     void init(FFAFilter *aFilter_, FFAEncoder *aEncoder_, FFMuxer *muxer_, FFAFrameQueue *frmQueue_);
 

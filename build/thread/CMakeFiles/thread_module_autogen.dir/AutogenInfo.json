@@ -1,69 +1,85 @@
 {
-	"AUTOGEN_COMMAND_LINE_LENGTH_MAX" : 32000,
-	"BUILD_DIR" : "E:/myProgram/Recorder/record/build/thread/thread_module_autogen",
-	"CMAKE_BINARY_DIR" : "E:/myProgram/Recorder/record/build",
-	"CMAKE_CURRENT_BINARY_DIR" : "E:/myProgram/Recorder/record/build/thread",
-	"CMAKE_CURRENT_SOURCE_DIR" : "E:/myProgram/Recorder/record/thread",
-	"CMAKE_EXECUTABLE" : "C:/Grpc/cmake-4.0.0-rc1-windows-x86_64/bin/cmake.exe",
-	"CMAKE_LIST_FILES" : [ "E:/myProgram/Recorder/record/thread/CMakeLists.txt" ],
-	"CMAKE_SOURCE_DIR" : "E:/myProgram/Recorder/record",
-	"CROSS_CONFIG" : false,
-	"DEP_FILE" : "E:/myProgram/Recorder/record/build/thread/thread_module_autogen/deps",
-	"DEP_FILE_RULE_NAME" : "thread_module_autogen/timestamp",
+	"BUILD_DIR" : "D:/Qtprogram/bandicam/build/thread/thread_module_autogen",
+	"CMAKE_BINARY_DIR" : "D:/Qtprogram/bandicam/build",
+	"CMAKE_CURRENT_BINARY_DIR" : "D:/Qtprogram/bandicam/build/thread",
+	"CMAKE_CURRENT_SOURCE_DIR" : "D:/Qtprogram/bandicam/thread",
+	"CMAKE_EXECUTABLE" : "D:/360Downloads/Cmake/bin/cmake.exe",
+	"CMAKE_LIST_FILES" : [ "D:/Qtprogram/bandicam/thread/CMakeLists.txt" ],
+	"CMAKE_SOURCE_DIR" : "D:/Qtprogram/bandicam",
+	"DEP_FILE" : "",
+	"DEP_FILE_RULE_NAME" : "",
 	"HEADERS" : 
 	[
 		[
-			"E:/myProgram/Recorder/record/thread/ffadecoderthread.h",
+			"D:/Qtprogram/bandicam/thread/ffadecoderthread.h",
 			"MU",
 			"EWIEGA46WW/moc_ffadecoderthread.cpp",
 			null
 		],
 		[
-			"E:/myProgram/Recorder/record/thread/ffaencoderthread.h",
+			"D:/Qtprogram/bandicam/thread/ffaencoderthread.h",
 			"MU",
 			"EWIEGA46WW/moc_ffaencoderthread.cpp",
 			null
 		],
 		[
-			"E:/myProgram/Recorder/record/thread/ffafilterthread.h",
+			"D:/Qtprogram/bandicam/thread/ffafilterthread.h",
 			"MU",
 			"EWIEGA46WW/moc_ffafilterthread.cpp",
 			null
 		],
 		[
-			"E:/myProgram/Recorder/record/thread/ffdemuxerthread.h",
+			"D:/Qtprogram/bandicam/thread/ffamuxerthread.h",
+			"MU",
+			"EWIEGA46WW/moc_ffamuxerthread.cpp",
+			null
+		],
+		[
+			"D:/Qtprogram/bandicam/thread/ffdemuxerthread.h",
 			"MU",
 			"EWIEGA46WW/moc_ffdemuxerthread.cpp",
 			null
 		],
 		[
-			"E:/myProgram/Recorder/record/thread/ffthread.h",
+			"D:/Qtprogram/bandicam/thread/ffthread.h",
 			"MU",
 			"EWIEGA46WW/moc_ffthread.cpp",
 			null
 		],
 		[
-			"E:/myProgram/Recorder/record/thread/ffthreadpool.h",
+			"D:/Qtprogram/bandicam/thread/ffthreadpool.h",
 			"MU",
 			"EWIEGA46WW/moc_ffthreadpool.cpp",
 			null
 		],
 		[
-			"E:/myProgram/Recorder/record/thread/ffvdecoderthread.h",
+			"D:/Qtprogram/bandicam/thread/ffvdecoderthread.h",
 			"MU",
 			"EWIEGA46WW/moc_ffvdecoderthread.cpp",
 			null
 		],
 		[
-			"E:/myProgram/Recorder/record/thread/ffvfilterthread.h",
+			"D:/Qtprogram/bandicam/thread/ffvencoderthread.h",
+			"MU",
+			"EWIEGA46WW/moc_ffvencoderthread.cpp",
+			null
+		],
+		[
+			"D:/Qtprogram/bandicam/thread/ffvfilterthread.h",
 			"MU",
 			"EWIEGA46WW/moc_ffvfilterthread.cpp",
+			null
+		],
+		[
+			"D:/Qtprogram/bandicam/thread/ffvmuxerthread.h",
+			"MU",
+			"EWIEGA46WW/moc_ffvmuxerthread.cpp",
 			null
 		]
 	],
 	"HEADER_EXTENSIONS" : [ "h", "hh", "h++", "hm", "hpp", "hxx", "in", "txx" ],
-	"INCLUDE_DIR" : "E:/myProgram/Recorder/record/build/thread/thread_module_autogen/include",
-	"MOC_COMPILATION_FILE" : "E:/myProgram/Recorder/record/build/thread/thread_module_autogen/mocs_compilation.cpp",
+	"INCLUDE_DIR" : "D:/Qtprogram/bandicam/build/thread/thread_module_autogen/include",
+	"MOC_COMPILATION_FILE" : "D:/Qtprogram/bandicam/build/thread/thread_module_autogen/mocs_compilation.cpp",
 	"MOC_DEFINITIONS" : 
 	[
 		"MINGW_HAS_SECURE_API=1",
@@ -84,17 +100,17 @@
 	],
 	"MOC_INCLUDES" : 
 	[
-		"E:/myProgram/Recorder/record/3rdparty/ffmpeg-amf/include",
-		"E:/myProgram/Recorder/record",
-		"D:/Qt/6.5.3/mingw_64/include/QtCore",
-		"D:/Qt/6.5.3/mingw_64/include",
-		"D:/Qt/6.5.3/mingw_64/mkspecs/win32-g++",
-		"F:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++",
-		"F:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/x86_64-w64-mingw32",
-		"F:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/backward",
-		"F:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include",
-		"F:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include-fixed",
-		"F:/Qt/Tools/mingw1310_64/x86_64-w64-mingw32/include"
+		"D:/Qtprogram/bandicam/3rdparty/ffmpeg-amf/include",
+		"D:/Qtprogram/bandicam",
+		"D:/360Downloads/QT/6.8.0/mingw_64/include/QtCore",
+		"D:/360Downloads/QT/6.8.0/mingw_64/include",
+		"D:/360Downloads/QT/6.8.0/mingw_64/mkspecs/win32-g++",
+		"D:/Vscode/MinGw64/mingw64/lib/gcc/x86_64-w64-mingw32/13.2.0/include/c++",
+		"D:/Vscode/MinGw64/mingw64/lib/gcc/x86_64-w64-mingw32/13.2.0/include/c++/x86_64-w64-mingw32",
+		"D:/Vscode/MinGw64/mingw64/lib/gcc/x86_64-w64-mingw32/13.2.0/include/c++/backward",
+		"D:/Vscode/MinGw64/mingw64/lib/gcc/x86_64-w64-mingw32/13.2.0/include",
+		"D:/Vscode/MinGw64/mingw64/lib/gcc/x86_64-w64-mingw32/13.2.0/include-fixed",
+		"D:/Vscode/MinGw64/mingw64/x86_64-w64-mingw32/include"
 	],
 	"MOC_MACRO_NAMES" : 
 	[
@@ -102,56 +118,47 @@
 		"Q_GADGET",
 		"Q_NAMESPACE",
 		"Q_NAMESPACE_EXPORT",
-		"Q_GADGET_EXPORT"
+		"Q_GADGET_EXPORT",
+		"Q_ENUM_NS"
 	],
-	"MOC_OPTIONS" : [],
+	"MOC_OPTIONS" : [ "--output-json" ],
 	"MOC_PATH_PREFIX" : false,
 	"MOC_PREDEFS_CMD" : 
 	[
-		"F:/Qt/Tools/mingw1310_64/bin/g++.exe",
+		"D:/Vscode/MinGw64/mingw64/bin/g++.exe",
 		"-dM",
 		"-E",
 		"-c",
-		"C:/Grpc/cmake-4.0.0-rc1-windows-x86_64/share/cmake-4.0/Modules/CMakeCXXCompilerABI.cpp"
+		"D:/360Downloads/Cmake/share/cmake-3.27/Modules/CMakeCXXCompilerABI.cpp"
 	],
-	"MOC_PREDEFS_FILE" : "E:/myProgram/Recorder/record/build/thread/thread_module_autogen/moc_predefs.h",
+	"MOC_PREDEFS_FILE" : "D:/Qtprogram/bandicam/build/thread/thread_module_autogen/moc_predefs.h",
 	"MOC_RELAXED_MODE" : false,
 	"MOC_SKIP" : [],
 	"MULTI_CONFIG" : false,
-	"PARALLEL" : 4,
-	"PARSE_CACHE_FILE" : "E:/myProgram/Recorder/record/build/thread/CMakeFiles/thread_module_autogen.dir/ParseCache.txt",
-	"QT_MOC_EXECUTABLE" : "D:/Qt/6.5.3/mingw_64/./bin/moc.exe",
-	"QT_UIC_EXECUTABLE" : "D:/Qt/6.5.3/mingw_64/./bin/uic.exe",
+	"PARALLEL" : 6,
+	"PARSE_CACHE_FILE" : "D:/Qtprogram/bandicam/build/thread/CMakeFiles/thread_module_autogen.dir/ParseCache.txt",
+	"QT_MOC_EXECUTABLE" : "D:/360Downloads/QT/6.8.0/mingw_64/bin/moc.exe",
+	"QT_UIC_EXECUTABLE" : "D:/360Downloads/QT/6.8.0/mingw_64/bin/uic.exe",
 	"QT_VERSION_MAJOR" : 6,
-	"QT_VERSION_MINOR" : 5,
-	"SETTINGS_FILE" : "E:/myProgram/Recorder/record/build/thread/CMakeFiles/thread_module_autogen.dir/AutogenUsed.txt",
+	"QT_VERSION_MINOR" : 8,
+	"SETTINGS_FILE" : "D:/Qtprogram/bandicam/build/thread/CMakeFiles/thread_module_autogen.dir/AutogenUsed.txt",
 	"SOURCES" : 
 	[
-		[
-			"E:/myProgram/Recorder/record/thread/ffadecoderthread.cpp",
-			"MU",
-			null
-		],
-		[
-			"E:/myProgram/Recorder/record/thread/ffaencoderthread.cpp",
-			"MU",
-			null
-		],
-		[ "E:/myProgram/Recorder/record/thread/ffafilterthread.cpp", "MU", null ],
-		[ "E:/myProgram/Recorder/record/thread/ffdemuxerthread.cpp", "MU", null ],
-		[ "E:/myProgram/Recorder/record/thread/ffthread.cpp", "MU", null ],
-		[ "E:/myProgram/Recorder/record/thread/ffthreadpool.cpp", "MU", null ],
-		[
-			"E:/myProgram/Recorder/record/thread/ffvdecoderthread.cpp",
-			"MU",
-			null
-		],
-		[ "E:/myProgram/Recorder/record/thread/ffvfilterthread.cpp", "MU", null ]
+		[ "D:/Qtprogram/bandicam/thread/ffadecoderthread.cpp", "MU", null ],
+		[ "D:/Qtprogram/bandicam/thread/ffaencoderthread.cpp", "MU", null ],
+		[ "D:/Qtprogram/bandicam/thread/ffafilterthread.cpp", "MU", null ],
+		[ "D:/Qtprogram/bandicam/thread/ffamuxerthread.cpp", "MU", null ],
+		[ "D:/Qtprogram/bandicam/thread/ffdemuxerthread.cpp", "MU", null ],
+		[ "D:/Qtprogram/bandicam/thread/ffthread.cpp", "MU", null ],
+		[ "D:/Qtprogram/bandicam/thread/ffthreadpool.cpp", "MU", null ],
+		[ "D:/Qtprogram/bandicam/thread/ffvdecoderthread.cpp", "MU", null ],
+		[ "D:/Qtprogram/bandicam/thread/ffvencoderthread.cpp", "MU", null ],
+		[ "D:/Qtprogram/bandicam/thread/ffvfilterthread.cpp", "MU", null ],
+		[ "D:/Qtprogram/bandicam/thread/ffvmuxerthread.cpp", "MU", null ]
 	],
 	"UIC_OPTIONS" : [],
 	"UIC_SEARCH_PATHS" : [],
 	"UIC_SKIP" : [],
 	"UIC_UI_FILES" : [],
-	"USE_BETTER_GRAPH" : false,
 	"VERBOSITY" : 0
 }

@@ -8,18 +8,13 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "" "resampler/resampler_module_autogen/timestamp" "custom" "resampler/resampler_module_autogen/deps"
-  "E:/myProgram/Recorder/record/resampler/ffaresampler.cpp" "resampler/CMakeFiles/resampler_module.dir/ffaresampler.cpp.obj" "gcc" "resampler/CMakeFiles/resampler_module.dir/ffaresampler.cpp.obj.d"
-  "E:/myProgram/Recorder/record/resampler/ffvresampler.cpp" "resampler/CMakeFiles/resampler_module.dir/ffvresampler.cpp.obj" "gcc" "resampler/CMakeFiles/resampler_module.dir/ffvresampler.cpp.obj.d"
-  "E:/myProgram/Recorder/record/build/resampler/resampler_module_autogen/mocs_compilation.cpp" "resampler/CMakeFiles/resampler_module.dir/resampler_module_autogen/mocs_compilation.cpp.obj" "gcc" "resampler/CMakeFiles/resampler_module.dir/resampler_module_autogen/mocs_compilation.cpp.obj.d"
+  "D:/Qtprogram/bandicam/resampler/ffaresampler.cpp" "resampler/CMakeFiles/resampler_module.dir/ffaresampler.cpp.obj" "gcc" "resampler/CMakeFiles/resampler_module.dir/ffaresampler.cpp.obj.d"
+  "D:/Qtprogram/bandicam/resampler/ffvresampler.cpp" "resampler/CMakeFiles/resampler_module.dir/ffvresampler.cpp.obj" "gcc" "resampler/CMakeFiles/resampler_module.dir/ffvresampler.cpp.obj.d"
+  "D:/Qtprogram/bandicam/build/resampler/resampler_module_autogen/mocs_compilation.cpp" "resampler/CMakeFiles/resampler_module.dir/resampler_module_autogen/mocs_compilation.cpp.obj" "gcc" "resampler/CMakeFiles/resampler_module.dir/resampler_module_autogen/mocs_compilation.cpp.obj.d"
   )
 
 # Targets to which this target links which contain Fortran sources.
 set(CMAKE_Fortran_TARGET_LINKED_INFO_FILES
-  )
-
-# Targets to which this target links which contain Fortran sources.
-set(CMAKE_Fortran_TARGET_FORWARD_LINKED_INFO_FILES
   )
 
 # Fortran module output directory.

@@ -1,2 +1,2 @@
-F:\Qt\Tools\mingw1310_64\bin\ar.exe qc librecorder_module.a CMakeFiles/recorder_module.dir/recorder_module_autogen/mocs_compilation.cpp.obj
-F:\Qt\Tools\mingw1310_64\bin\ranlib.exe librecorder_module.a
+D:\Vscode\MinGw64\mingw64\bin\ar.exe qc librecorder_module.a CMakeFiles/recorder_module.dir/recorder_module_autogen/mocs_compilation.cpp.obj
+D:\Vscode\MinGw64\mingw64\bin\ranlib.exe librecorder_module.a

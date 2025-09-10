@@ -1,30 +1,28 @@
 {
-	"AUTOGEN_COMMAND_LINE_LENGTH_MAX" : 32000,
-	"BUILD_DIR" : "E:/myProgram/Recorder/record/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/qml/qml_moduleplugin_init_autogen",
-	"CMAKE_BINARY_DIR" : "E:/myProgram/Recorder/record/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug",
-	"CMAKE_CURRENT_BINARY_DIR" : "E:/myProgram/Recorder/record/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/qml",
-	"CMAKE_CURRENT_SOURCE_DIR" : "E:/myProgram/Recorder/record/qml",
-	"CMAKE_EXECUTABLE" : "F:/Qt/Tools/CMake_64/bin/cmake.exe",
+	"BUILD_DIR" : "D:/Qtprogram/bandicam/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/qml/qml_moduleplugin_init_autogen",
+	"CMAKE_BINARY_DIR" : "D:/Qtprogram/bandicam/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug",
+	"CMAKE_CURRENT_BINARY_DIR" : "D:/Qtprogram/bandicam/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/qml",
+	"CMAKE_CURRENT_SOURCE_DIR" : "D:/Qtprogram/bandicam/qml",
+	"CMAKE_EXECUTABLE" : "D:/360Downloads/Cmake/bin/cmake.exe",
 	"CMAKE_LIST_FILES" : 
 	[
-		"E:/myProgram/Recorder/record/qml/CMakeLists.txt",
-		"F:/Qt/6.8.0/mingw_64/lib/cmake/Qt6Core/Qt6CoreConfigureFileTemplate.in",
-		"F:/Qt/6.8.0/mingw_64/lib/cmake/Qt6Core/Qt6CoreResourceInit.in.cpp",
-		"F:/Qt/6.8.0/mingw_64/lib/cmake/Qt6Qml/Qt6QmlPluginTemplate.cpp.in",
-		"F:/Qt/6.8.0/mingw_64/lib/cmake/Qt6Qml/Qt6QmlModuleDirMappingTemplate.qrc.in",
-		"F:/Qt/6.8.0/mingw_64/lib/cmake/Qt6Core/Qt6CoreConfigureFileTemplate.in",
-		"F:/Qt/6.8.0/mingw_64/lib/cmake/Qt6Core/Qt6CoreResourceInit.in.cpp",
-		"F:/Qt/6.8.0/mingw_64/lib/cmake/Qt6Qml/Qt6qmldirTemplate.cmake.in",
-		"E:/myProgram/Recorder/record/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/qml/qml_moduleplugin_bandicam_qmlPlugin_in.cpp"
+		"D:/Qtprogram/bandicam/qml/CMakeLists.txt",
+		"D:/360Downloads/QT/6.8.0/mingw_64/lib/cmake/Qt6Core/Qt6CoreConfigureFileTemplate.in",
+		"D:/360Downloads/QT/6.8.0/mingw_64/lib/cmake/Qt6Core/Qt6CoreResourceInit.in.cpp",
+		"D:/360Downloads/QT/6.8.0/mingw_64/lib/cmake/Qt6Qml/Qt6QmlPluginTemplate.cpp.in",
+		"D:/360Downloads/QT/6.8.0/mingw_64/lib/cmake/Qt6Qml/Qt6QmlModuleDirMappingTemplate.qrc.in",
+		"D:/360Downloads/QT/6.8.0/mingw_64/lib/cmake/Qt6Core/Qt6CoreConfigureFileTemplate.in",
+		"D:/360Downloads/QT/6.8.0/mingw_64/lib/cmake/Qt6Core/Qt6CoreResourceInit.in.cpp",
+		"D:/360Downloads/QT/6.8.0/mingw_64/lib/cmake/Qt6Qml/Qt6qmldirTemplate.cmake.in",
+		"D:/Qtprogram/bandicam/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/qml/qml_moduleplugin_bandicam_qmlPlugin_in.cpp"
 	],
-	"CMAKE_SOURCE_DIR" : "E:/myProgram/Recorder/record",
-	"CROSS_CONFIG" : false,
-	"DEP_FILE" : "E:/myProgram/Recorder/record/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/qml/qml_moduleplugin_init_autogen/deps",
+	"CMAKE_SOURCE_DIR" : "D:/Qtprogram/bandicam",
+	"DEP_FILE" : "D:/Qtprogram/bandicam/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/qml/qml_moduleplugin_init_autogen/deps",
 	"DEP_FILE_RULE_NAME" : "qml_moduleplugin_init_autogen/timestamp",
 	"HEADERS" : [],
 	"HEADER_EXTENSIONS" : [ "h", "hh", "h++", "hm", "hpp", "hxx", "in", "txx" ],
-	"INCLUDE_DIR" : "E:/myProgram/Recorder/record/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/qml/qml_moduleplugin_init_autogen/include",
-	"MOC_COMPILATION_FILE" : "E:/myProgram/Recorder/record/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/qml/qml_moduleplugin_init_autogen/mocs_compilation.cpp",
+	"INCLUDE_DIR" : "D:/Qtprogram/bandicam/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/qml/qml_moduleplugin_init_autogen/include",
+	"MOC_COMPILATION_FILE" : "D:/Qtprogram/bandicam/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/qml/qml_moduleplugin_init_autogen/mocs_compilation.cpp",
 	"MOC_DEFINITIONS" : 
 	[
 		"MINGW_HAS_SECURE_API=1",
@@ -51,20 +49,20 @@
 	],
 	"MOC_INCLUDES" : 
 	[
-		"E:/myProgram/Recorder/record/3rdparty/ffmpeg-amf/include",
-		"E:/myProgram/Recorder/record/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/qml/qml_moduleplugin_autogen/include",
-		"F:/Qt/6.8.0/mingw_64/include/QtQml",
-		"F:/Qt/6.8.0/mingw_64/include/QtQmlIntegration",
-		"F:/Qt/6.8.0/mingw_64/include/QtNetwork",
-		"F:/Qt/6.8.0/mingw_64/include",
-		"F:/Qt/6.8.0/mingw_64/include/QtCore",
-		"F:/Qt/6.8.0/mingw_64/mkspecs/win32-g++",
-		"F:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++",
-		"F:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/x86_64-w64-mingw32",
-		"F:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/backward",
-		"F:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include",
-		"F:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include-fixed",
-		"F:/Qt/Tools/mingw1310_64/x86_64-w64-mingw32/include"
+		"D:/Qtprogram/bandicam/3rdparty/ffmpeg-amf/include",
+		"D:/Qtprogram/bandicam/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/qml/qml_moduleplugin_autogen/include",
+		"D:/360Downloads/QT/6.8.0/mingw_64/include/QtQml",
+		"D:/360Downloads/QT/6.8.0/mingw_64/include/QtQmlIntegration",
+		"D:/360Downloads/QT/6.8.0/mingw_64/include/QtNetwork",
+		"D:/360Downloads/QT/6.8.0/mingw_64/include",
+		"D:/360Downloads/QT/6.8.0/mingw_64/include/QtCore",
+		"D:/360Downloads/QT/6.8.0/mingw_64/mkspecs/win32-g++",
+		"D:/360Downloads/QT/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++",
+		"D:/360Downloads/QT/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/x86_64-w64-mingw32",
+		"D:/360Downloads/QT/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/backward",
+		"D:/360Downloads/QT/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include",
+		"D:/360Downloads/QT/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include-fixed",
+		"D:/360Downloads/QT/Tools/mingw1310_64/x86_64-w64-mingw32/include"
 	],
 	"MOC_MACRO_NAMES" : 
 	[
@@ -79,41 +77,41 @@
 	"MOC_PATH_PREFIX" : false,
 	"MOC_PREDEFS_CMD" : 
 	[
-		"F:/Qt/Tools/mingw1310_64/bin/g++.exe",
+		"D:/360Downloads/QT/Tools/mingw1310_64/bin/g++.exe",
 		"-dM",
 		"-E",
 		"-c",
-		"F:/Qt/Tools/CMake_64/share/cmake-3.29/Modules/CMakeCXXCompilerABI.cpp"
+		"D:/360Downloads/Cmake/share/cmake-3.27/Modules/CMakeCXXCompilerABI.cpp"
 	],
-	"MOC_PREDEFS_FILE" : "E:/myProgram/Recorder/record/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/qml/qml_moduleplugin_init_autogen/moc_predefs.h",
+	"MOC_PREDEFS_FILE" : "D:/Qtprogram/bandicam/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/qml/qml_moduleplugin_init_autogen/moc_predefs.h",
 	"MOC_RELAXED_MODE" : false,
 	"MOC_SKIP" : 
 	[
-		"E:/myProgram/Recorder/record/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/qml/.qt/rcc/qrc_qmake_bandicam_qml.cpp",
-		"E:/myProgram/Recorder/record/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/qml/.qt/rcc/qrc_qmake_bandicam_qml_init.cpp",
-		"E:/myProgram/Recorder/record/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/qml/.qt/rcc/qrc_qml_module_raw_qml_0.cpp",
-		"E:/myProgram/Recorder/record/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/qml/.qt/rcc/qrc_qml_module_raw_qml_0_init.cpp",
-		"E:/myProgram/Recorder/record/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/qml/.rcc/qmlcache/qml_module_Main_qml.cpp",
-		"E:/myProgram/Recorder/record/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/qml/.rcc/qmlcache/qml_module_cuttingpage_qml.cpp",
-		"E:/myProgram/Recorder/record/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/qml/.rcc/qmlcache/qml_module_qmlcache_loader.cpp",
-		"E:/myProgram/Recorder/record/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/qml/.rcc/qmlcache/qml_module_settingpage_qml.cpp",
-		"E:/myProgram/Recorder/record/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/qml/.rcc/qmlcache/qml_module_videopage_qml.cpp",
-		"E:/myProgram/Recorder/record/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/qml/qml_module_autogen/mocs_compilation.cpp",
-		"E:/myProgram/Recorder/record/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/qml/qml_module_qmltyperegistrations.cpp",
-		"E:/myProgram/Recorder/record/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/qml/qml_moduleplugin_autogen/mocs_compilation.cpp"
+		"D:/Qtprogram/bandicam/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/qml/.qt/rcc/qrc_qmake_bandicam_qml.cpp",
+		"D:/Qtprogram/bandicam/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/qml/.qt/rcc/qrc_qmake_bandicam_qml_init.cpp",
+		"D:/Qtprogram/bandicam/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/qml/.qt/rcc/qrc_qml_module_raw_qml_0.cpp",
+		"D:/Qtprogram/bandicam/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/qml/.qt/rcc/qrc_qml_module_raw_qml_0_init.cpp",
+		"D:/Qtprogram/bandicam/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/qml/.rcc/qmlcache/qml_module_Main_qml.cpp",
+		"D:/Qtprogram/bandicam/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/qml/.rcc/qmlcache/qml_module_cuttingpage_qml.cpp",
+		"D:/Qtprogram/bandicam/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/qml/.rcc/qmlcache/qml_module_qmlcache_loader.cpp",
+		"D:/Qtprogram/bandicam/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/qml/.rcc/qmlcache/qml_module_settingpage_qml.cpp",
+		"D:/Qtprogram/bandicam/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/qml/.rcc/qmlcache/qml_module_videopage_qml.cpp",
+		"D:/Qtprogram/bandicam/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/qml/qml_module_autogen/mocs_compilation.cpp",
+		"D:/Qtprogram/bandicam/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/qml/qml_module_qmltyperegistrations.cpp",
+		"D:/Qtprogram/bandicam/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/qml/qml_moduleplugin_autogen/mocs_compilation.cpp"
 	],
 	"MULTI_CONFIG" : false,
-	"PARALLEL" : 4,
-	"PARSE_CACHE_FILE" : "E:/myProgram/Recorder/record/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/qml/CMakeFiles/qml_moduleplugin_init_autogen.dir/ParseCache.txt",
-	"QT_MOC_EXECUTABLE" : "F:/Qt/6.8.0/mingw_64/bin/moc.exe",
-	"QT_UIC_EXECUTABLE" : "F:/Qt/6.8.0/mingw_64/bin/uic.exe",
+	"PARALLEL" : 6,
+	"PARSE_CACHE_FILE" : "D:/Qtprogram/bandicam/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/qml/CMakeFiles/qml_moduleplugin_init_autogen.dir/ParseCache.txt",
+	"QT_MOC_EXECUTABLE" : "D:/360Downloads/QT/6.8.0/mingw_64/bin/moc.exe",
+	"QT_UIC_EXECUTABLE" : "D:/360Downloads/QT/6.8.0/mingw_64/bin/uic.exe",
 	"QT_VERSION_MAJOR" : 6,
 	"QT_VERSION_MINOR" : 8,
-	"SETTINGS_FILE" : "E:/myProgram/Recorder/record/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/qml/CMakeFiles/qml_moduleplugin_init_autogen.dir/AutogenUsed.txt",
+	"SETTINGS_FILE" : "D:/Qtprogram/bandicam/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/qml/CMakeFiles/qml_moduleplugin_init_autogen.dir/AutogenUsed.txt",
 	"SOURCES" : 
 	[
 		[
-			"E:/myProgram/Recorder/record/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/qml/qml_moduleplugin_init.cpp",
+			"D:/Qtprogram/bandicam/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/qml/qml_moduleplugin_init.cpp",
 			"MU",
 			null
 		]
@@ -122,20 +120,19 @@
 	"UIC_SEARCH_PATHS" : [],
 	"UIC_SKIP" : 
 	[
-		"E:/myProgram/Recorder/record/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/qml/.qt/rcc/qrc_qmake_bandicam_qml.cpp",
-		"E:/myProgram/Recorder/record/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/qml/.qt/rcc/qrc_qmake_bandicam_qml_init.cpp",
-		"E:/myProgram/Recorder/record/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/qml/.qt/rcc/qrc_qml_module_raw_qml_0.cpp",
-		"E:/myProgram/Recorder/record/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/qml/.qt/rcc/qrc_qml_module_raw_qml_0_init.cpp",
-		"E:/myProgram/Recorder/record/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/qml/.rcc/qmlcache/qml_module_Main_qml.cpp",
-		"E:/myProgram/Recorder/record/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/qml/.rcc/qmlcache/qml_module_cuttingpage_qml.cpp",
-		"E:/myProgram/Recorder/record/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/qml/.rcc/qmlcache/qml_module_qmlcache_loader.cpp",
-		"E:/myProgram/Recorder/record/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/qml/.rcc/qmlcache/qml_module_settingpage_qml.cpp",
-		"E:/myProgram/Recorder/record/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/qml/.rcc/qmlcache/qml_module_videopage_qml.cpp",
-		"E:/myProgram/Recorder/record/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/qml/qml_module_autogen/mocs_compilation.cpp",
-		"E:/myProgram/Recorder/record/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/qml/qml_module_qmltyperegistrations.cpp",
-		"E:/myProgram/Recorder/record/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/qml/qml_moduleplugin_autogen/mocs_compilation.cpp"
+		"D:/Qtprogram/bandicam/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/qml/.qt/rcc/qrc_qmake_bandicam_qml.cpp",
+		"D:/Qtprogram/bandicam/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/qml/.qt/rcc/qrc_qmake_bandicam_qml_init.cpp",
+		"D:/Qtprogram/bandicam/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/qml/.qt/rcc/qrc_qml_module_raw_qml_0.cpp",
+		"D:/Qtprogram/bandicam/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/qml/.qt/rcc/qrc_qml_module_raw_qml_0_init.cpp",
+		"D:/Qtprogram/bandicam/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/qml/.rcc/qmlcache/qml_module_Main_qml.cpp",
+		"D:/Qtprogram/bandicam/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/qml/.rcc/qmlcache/qml_module_cuttingpage_qml.cpp",
+		"D:/Qtprogram/bandicam/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/qml/.rcc/qmlcache/qml_module_qmlcache_loader.cpp",
+		"D:/Qtprogram/bandicam/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/qml/.rcc/qmlcache/qml_module_settingpage_qml.cpp",
+		"D:/Qtprogram/bandicam/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/qml/.rcc/qmlcache/qml_module_videopage_qml.cpp",
+		"D:/Qtprogram/bandicam/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/qml/qml_module_autogen/mocs_compilation.cpp",
+		"D:/Qtprogram/bandicam/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/qml/qml_module_qmltyperegistrations.cpp",
+		"D:/Qtprogram/bandicam/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/qml/qml_moduleplugin_autogen/mocs_compilation.cpp"
 	],
 	"UIC_UI_FILES" : [],
-	"USE_BETTER_GRAPH" : true,
 	"VERBOSITY" : 0
 }

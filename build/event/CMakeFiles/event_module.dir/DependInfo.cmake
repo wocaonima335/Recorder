@@ -8,17 +8,12 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "" "event/event_module_autogen/timestamp" "custom" "event/event_module_autogen/deps"
-  "E:/myProgram/Recorder/record/build/event/event_module_autogen/mocs_compilation.cpp" "event/CMakeFiles/event_module.dir/event_module_autogen/mocs_compilation.cpp.obj" "gcc" "event/CMakeFiles/event_module.dir/event_module_autogen/mocs_compilation.cpp.obj.d"
-  "E:/myProgram/Recorder/record/event/eventfactory.cpp" "event/CMakeFiles/event_module.dir/eventfactory.cpp.obj" "gcc" "event/CMakeFiles/event_module.dir/eventfactory.cpp.obj.d"
+  "D:/Qtprogram/bandicam/build/event/event_module_autogen/mocs_compilation.cpp" "event/CMakeFiles/event_module.dir/event_module_autogen/mocs_compilation.cpp.obj" "gcc" "event/CMakeFiles/event_module.dir/event_module_autogen/mocs_compilation.cpp.obj.d"
+  "D:/Qtprogram/bandicam/event/eventfactory.cpp" "event/CMakeFiles/event_module.dir/eventfactory.cpp.obj" "gcc" "event/CMakeFiles/event_module.dir/eventfactory.cpp.obj.d"
   )
 
 # Targets to which this target links which contain Fortran sources.
 set(CMAKE_Fortran_TARGET_LINKED_INFO_FILES
-  )
-
-# Targets to which this target links which contain Fortran sources.
-set(CMAKE_Fortran_TARGET_FORWARD_LINKED_INFO_FILES
   )
 
 # Fortran module output directory.

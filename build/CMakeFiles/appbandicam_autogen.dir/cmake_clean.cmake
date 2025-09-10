@@ -1,7 +1,6 @@
 file(REMOVE_RECURSE
   "CMakeFiles/appbandicam_autogen"
   "appbandicam_autogen/mocs_compilation.cpp"
-  "appbandicam_autogen/timestamp"
 )
 
 # Per-language clean rules from dependency scanning.

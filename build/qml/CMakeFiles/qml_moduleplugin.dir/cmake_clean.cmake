@@ -8,8 +8,6 @@ file(REMOVE_RECURSE
   "qml_moduleplugin_autogen"
   "bandicam/qml/libqml_moduleplugin.a"
   "bandicam/qml/libqml_moduleplugin.pdb"
-  "qml_moduleplugin_autogen/mocs_compilation.cpp"
-  "qml_moduleplugin_autogen/timestamp"
 )
 
 # Per-language clean rules from dependency scanning.

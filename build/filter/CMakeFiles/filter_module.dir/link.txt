@@ -1,2 +1,2 @@
-F:\Qt\Tools\mingw1310_64\bin\ar.exe qc libfilter_module.a CMakeFiles/filter_module.dir/filter_module_autogen/mocs_compilation.cpp.obj CMakeFiles/filter_module.dir/ffvfilter.cpp.obj CMakeFiles/filter_module.dir/ffafilter.cpp.obj
-F:\Qt\Tools\mingw1310_64\bin\ranlib.exe libfilter_module.a
+D:\Vscode\MinGw64\mingw64\bin\ar.exe qc libfilter_module.a CMakeFiles/filter_module.dir/filter_module_autogen/mocs_compilation.cpp.obj CMakeFiles/filter_module.dir/ffvfilter.cpp.obj CMakeFiles/filter_module.dir/ffafilter.cpp.obj
+D:\Vscode\MinGw64\mingw64\bin\ranlib.exe libfilter_module.a

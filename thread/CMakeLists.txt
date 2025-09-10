@@ -16,6 +16,12 @@ qt_add_library(thread_module STATIC
     ffafilterthread.cpp
     ffaencoderthread.h
     ffaencoderthread.cpp
+    ffvencoderthread.h
+    ffvencoderthread.cpp
+    ffvmuxerthread.h
+    ffvmuxerthread.cpp
+    ffamuxerthread.h
+    ffamuxerthread.cpp
 )
 
 target_link_libraries(thread_module

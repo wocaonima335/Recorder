@@ -1,2 +1,2 @@
-F:\Qt\Tools\mingw1310_64\bin\ar.exe qc libresampler_module.a CMakeFiles/resampler_module.dir/resampler_module_autogen/mocs_compilation.cpp.obj CMakeFiles/resampler_module.dir/ffaresampler.cpp.obj CMakeFiles/resampler_module.dir/ffvresampler.cpp.obj
-F:\Qt\Tools\mingw1310_64\bin\ranlib.exe libresampler_module.a
+D:\Vscode\MinGw64\mingw64\bin\ar.exe qc libresampler_module.a CMakeFiles/resampler_module.dir/resampler_module_autogen/mocs_compilation.cpp.obj CMakeFiles/resampler_module.dir/ffaresampler.cpp.obj CMakeFiles/resampler_module.dir/ffvresampler.cpp.obj
+D:\Vscode\MinGw64\mingw64\bin\ranlib.exe libresampler_module.a

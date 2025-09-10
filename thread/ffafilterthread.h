@@ -17,7 +17,7 @@ class FFAFilterThread : public FFThread
 {
 public:
     FFAFilterThread();
-    ~FFAFilterThread();
+    virtual ~FFAFilterThread() override;
 
     void openAudioSource(int audioType);
     void closeAudioSource(int audioType);

@@ -1,11 +1,14 @@
 queue_module_autogen/timestamp: \
-	E:/myProgram/Recorder/record/queue/CMakeLists.txt \
-	E:/myProgram/Recorder/record/queue/ffaframequeue.h \
-	E:/myProgram/Recorder/record/queue/ffapacketqueue.h \
-	E:/myProgram/Recorder/record/queue/ffeventqueue.cpp \
-	E:/myProgram/Recorder/record/queue/ffeventqueue.h \
-	E:/myProgram/Recorder/record/queue/ffpacket.h \
-	E:/myProgram/Recorder/record/queue/ffvframequeue.h \
-	E:/myProgram/Recorder/record/queue/ffvpacketqueue.cpp \
-	E:/myProgram/Recorder/record/queue/ffvpacketqueue.h \
-	F:/Qt/Tools/CMake_64/bin/cmake.exe
+	D:/Qtprogram/bandicam/queue/CMakeLists.txt \
+	D:/Qtprogram/bandicam/queue/ffaframequeue.cpp \
+	D:/Qtprogram/bandicam/queue/ffaframequeue.h \
+	D:/Qtprogram/bandicam/queue/ffapacketqueue.cpp \
+	D:/Qtprogram/bandicam/queue/ffapacketqueue.h \
+	D:/Qtprogram/bandicam/queue/ffeventqueue.cpp \
+	D:/Qtprogram/bandicam/queue/ffeventqueue.h \
+	D:/Qtprogram/bandicam/queue/ffpacket.h \
+	D:/Qtprogram/bandicam/queue/ffvframequeue.cpp \
+	D:/Qtprogram/bandicam/queue/ffvframequeue.h \
+	D:/Qtprogram/bandicam/queue/ffvpacketqueue.cpp \
+	D:/Qtprogram/bandicam/queue/ffvpacketqueue.h \
+	D:/360Downloads/Cmake/bin/cmake.exe
