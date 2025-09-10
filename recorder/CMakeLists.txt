@@ -1,6 +1,8 @@
 qt_add_library(recorder_module STATIC
     ffrecorder.h
     ffrecorder_p.h
+    ffrecoder_p.cpp
+    ffrecoder.cpp
 
 )
 target_link_libraries(recorder_module PRIVATE

@@ -1,4 +1,4 @@
-# Install script for directory: D:/Qtprogram/bandicam
+# Install script for directory: E:/myProgram/Recorder/record
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -34,83 +34,83 @@ endif()
 
 # Set default install directory permissions.
 if(NOT DEFINED CMAKE_OBJDUMP)
-  set(CMAKE_OBJDUMP "D:/360Downloads/QT/Tools/mingw1310_64/bin/objdump.exe")
+  set(CMAKE_OBJDUMP "F:/Qt/Tools/mingw1310_64/bin/objdump.exe")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("D:/Qtprogram/bandicam/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/demuxer/cmake_install.cmake")
+  include("E:/myProgram/Recorder/record/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/demuxer/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("D:/Qtprogram/bandicam/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/qml/cmake_install.cmake")
+  include("E:/myProgram/Recorder/record/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/qml/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("D:/Qtprogram/bandicam/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/queue/cmake_install.cmake")
+  include("E:/myProgram/Recorder/record/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/queue/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("D:/Qtprogram/bandicam/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/decoder/cmake_install.cmake")
+  include("E:/myProgram/Recorder/record/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/decoder/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("D:/Qtprogram/bandicam/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/resampler/cmake_install.cmake")
+  include("E:/myProgram/Recorder/record/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/resampler/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("D:/Qtprogram/bandicam/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/filter/cmake_install.cmake")
+  include("E:/myProgram/Recorder/record/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/filter/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("D:/Qtprogram/bandicam/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/muxer/cmake_install.cmake")
+  include("E:/myProgram/Recorder/record/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/muxer/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("D:/Qtprogram/bandicam/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/event/cmake_install.cmake")
+  include("E:/myProgram/Recorder/record/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/event/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("D:/Qtprogram/bandicam/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/thread/cmake_install.cmake")
+  include("E:/myProgram/Recorder/record/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/thread/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("D:/Qtprogram/bandicam/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/recorder/cmake_install.cmake")
+  include("E:/myProgram/Recorder/record/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/recorder/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("D:/Qtprogram/bandicam/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/encoder/cmake_install.cmake")
+  include("E:/myProgram/Recorder/record/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/encoder/cmake_install.cmake")
 endif()
 
 if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/bin" TYPE EXECUTABLE FILES "D:/Qtprogram/bandicam/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/appbandicam.exe")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/bin" TYPE EXECUTABLE FILES "E:/myProgram/Recorder/record/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/appbandicam.exe")
   if(EXISTS "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/bin/appbandicam.exe" AND
      NOT IS_SYMLINK "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/bin/appbandicam.exe")
     if(CMAKE_INSTALL_DO_STRIP)
-      execute_process(COMMAND "D:/360Downloads/QT/Tools/mingw1310_64/bin/strip.exe" "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/bin/appbandicam.exe")
+      execute_process(COMMAND "F:/Qt/Tools/mingw1310_64/bin/strip.exe" "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/bin/appbandicam.exe")
     endif()
   endif()
 endif()
 
 if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/bin" TYPE FILE FILES
-    "D:/Qtprogram/bandicam/3rdparty/ffmpeg-amf/bin/avcodec-62.dll"
-    "D:/Qtprogram/bandicam/3rdparty/ffmpeg-amf/bin/avdevice-62.dll"
-    "D:/Qtprogram/bandicam/3rdparty/ffmpeg-amf/bin/avfilter-11.dll"
-    "D:/Qtprogram/bandicam/3rdparty/ffmpeg-amf/bin/avformat-62.dll"
-    "D:/Qtprogram/bandicam/3rdparty/ffmpeg-amf/bin/avutil-60.dll"
-    "D:/Qtprogram/bandicam/3rdparty/ffmpeg-amf/bin/swresample-6.dll"
-    "D:/Qtprogram/bandicam/3rdparty/ffmpeg-amf/bin/swscale-9.dll"
+    "E:/myProgram/Recorder/record/3rdparty/ffmpeg-amf/bin/avcodec-62.dll"
+    "E:/myProgram/Recorder/record/3rdparty/ffmpeg-amf/bin/avdevice-62.dll"
+    "E:/myProgram/Recorder/record/3rdparty/ffmpeg-amf/bin/avfilter-11.dll"
+    "E:/myProgram/Recorder/record/3rdparty/ffmpeg-amf/bin/avformat-62.dll"
+    "E:/myProgram/Recorder/record/3rdparty/ffmpeg-amf/bin/avutil-60.dll"
+    "E:/myProgram/Recorder/record/3rdparty/ffmpeg-amf/bin/swresample-6.dll"
+    "E:/myProgram/Recorder/record/3rdparty/ffmpeg-amf/bin/swscale-9.dll"
     )
 endif()
 
@@ -122,5 +122,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "D:/Qtprogram/bandicam/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "E:/myProgram/Recorder/record/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

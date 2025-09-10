@@ -1,22 +1,33 @@
 #ifndef FFRECORDER_P_H
 #define FFRECORDER_P_H
 
+#include "decoder/ffadecoder.h"
+#include "decoder/ffvdecoder.h"
+#include "demuxer/demuxer.h"
+#include "encoder/ffaencoder.h"
+#include "encoder/ffvencoder.h"
+#include "filter/ffafilter.h"
+#include "filter/ffvfilter.h"
+#include "muxer/ffmuxer.h"
+
+#include "queue/ffaframequeue.h"
+#include "queue/ffapacketqueue.h"
+#include "queue/ffvframequeue.h"
+#include "queue/ffvpacketqueue.h"
+
+#include "thread/ffadecoderthread.h"
+#include "thread/ffaencoderthread.h"
+#include "thread/ffafilterthread.h"
+#include "thread/ffamuxerthread.h"
+#include "thread/ffdemuxerthread.h"
+#include "thread/ffmuxerthread.h"
+#include "thread/ffvdecoderthread.h"
+#include "thread/ffvencoderthread.h"
+#include "thread/ffvfilterthread.h"
+#include "thread/ffvmuxerthread.h"
+
 #include <QObject>
 #include <QtWidgets/QApplication>
-
-// 前向声明
-class FFCapWindow;
-class FFDemuxer;
-class FFADecoder;
-class FFVDecoder;
-class FFVRender;
-class FFMuxer;
-class FFAEncoder;
-class FFVEncoder;
-class FFVFilter;
-class FFAFilter;
-class FFEventLoop;
-class FFThreadPool;
 
 namespace FFRecordURLS {
 static std::string CAMERA1_URL = "video=Integrated Camera";
@@ -43,57 +54,51 @@ public:
     ~FFRecorderPrivate();
 
     //音频解码线程：【声卡】、【麦克风】
-    class FFADecoderThread *aDecoderThread[FFRecordContextType::A_DECODER_SIZE];
+    FFADecoderThread *aDecoderThread[FFRecordContextType::A_DECODER_SIZE];
 
     //视频解码线程：【屏幕】、【摄像头】、【视频】
-    class FFVDecoderThread *vDecoderThread[FFRecordContextType::V_DECODER_SIZE];
+    FFVDecoderThread *vDecoderThread[FFRecordContextType::V_DECODER_SIZE];
 
     //音频解复用线程：【音频】、【麦克风】
-    class FFDemuxerThread *aDemuxerThread[FFRecordContextType::A_DEMUXER_SIZE];
+    FFDemuxerThread *aDemuxerThread[FFRecordContextType::A_DEMUXER_SIZE];
     //视频解复用线程 【屏幕】、【摄像头】、【视频】
-    class FFDemuxerThread *vDemuxerThread[FFRecordContextType::V_DEMUXER_SIZE];
+    FFDemuxerThread *vDemuxerThread[FFRecordContextType::V_DEMUXER_SIZE];
 
     //音频解码packet包队列
-    class FFAPacketQueue *aDecoderPktQueue[FFRecordContextType::A_DECODER_SIZE];
+    FFAPacketQueue *aDecoderPktQueue[FFRecordContextType::A_DECODER_SIZE];
 
     //视频解码packet包队列
-    class FFVPacketQueue *vDecoderPktQueue[FFRecordContextType::V_DECODER_SIZE];
+    FFVPacketQueue *vDecoderPktQueue[FFRecordContextType::V_DECODER_SIZE];
 
     //视频编码packet包队列
-    class FFVPacketQueue *vEncoderPktQueue;
+    FFVPacketQueue *vEncoderPktQueue;
 
     //音频编码packet包队列
-    class FFAPacketQueue *aEncoderPktQueue;
+    FFAPacketQueue *aEncoderPktQueue;
 
     //音频解码帧队列
-    class FFAFrameQueue *aDecoderFrmQueue[FFRecordContextType::A_DECODER_SIZE];
+    FFAFrameQueue *aDecoderFrmQueue[FFRecordContextType::A_DECODER_SIZE];
 
     //视频解码帧队列
-    class FFVFrameQueue *vDecoderFrmQueue[FFRecordContextType::V_DECODER_SIZE];
+    FFVFrameQueue *vDecoderFrmQueue[FFRecordContextType::V_DECODER_SIZE];
 
     //视频filter编码Frame队列
-    class FFVFrameQueue *vFilterEncoderFrmQueue;
+    FFVFrameQueue *vFilterEncoderFrmQueue;
 
     //音频filter编码Frame队列
-    class FFAFrameQueue *aFilterEncoderFrmQueue;
-
-    //视频渲染帧队列：【视频文件】
-    class FFVFrameQueue *vRenderFrmQueue;
+    FFAFrameQueue *aFilterEncoderFrmQueue;
 
     //音频解复用器
-    FFDemuxer *aDemuxer[FFRecordContextType::A_DEMUXER_SIZE];
+    Demuxer *aDemuxer[FFRecordContextType::A_DEMUXER_SIZE];
 
     //视频解复用器
-    FFDemuxer *vDemuxer[FFRecordContextType::V_DEMUXER_SIZE];
+    Demuxer *vDemuxer[FFRecordContextType::V_DEMUXER_SIZE];
 
     //音频解码器
     FFADecoder *aDecoder[FFRecordContextType::A_DECODER_SIZE];
 
     //视频解码器
     FFVDecoder *vDecoder[FFRecordContextType::V_DECODER_SIZE];
-
-    //视频渲染器
-    FFVRender *vRender;
 
     //复用器
     FFMuxer *muxer;
@@ -111,22 +116,19 @@ public:
     FFVEncoder *vEncoder;
 
     //视频编码线程
-    class FFVEncoderThread *vEncoderThread;
+    FFVEncoderThread *vEncoderThread;
 
     //视频过滤器
     FFVFilter *vFilter;
 
     //视频过滤线程
-    class FFVFilterThread *vFilterThread;
+    FFVFilterThread *vFilterThread;
 
     //音频过滤器
     FFAFilter *aFilter;
 
     //音频滤镜线程
-    class FFAFilterThread *aFilterThread;
-
-    //UI窗口
-    FFCapWindow *capWindow;
+    FFAFilterThread *aFilterThread;
 };
 
 } // namespace FFRecordContextType
