@@ -2,12 +2,6 @@
 #include "queue/ffvframequeue.h"
 #include "resampler/ffvresampler.h"
 
-FFVDecoder &FFVDecoder::getInstance()
-{
-    std::call_once(s_flag, []() { s_instance = std::unique_ptr<FFVDecoder>(new FFVDecoder); });
-    return *s_instance;
-}
-
 FFVDecoder::~FFVDecoder()
 {
     close();

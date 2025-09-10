@@ -12,7 +12,6 @@ target_link_libraries(recorder_module PRIVATE
         Qt6::Gui
         ${FFMPEG_LIBRARIES}
         queue_module
-        timer_module
         muxer_module
         demuxer_module
         encoder_module

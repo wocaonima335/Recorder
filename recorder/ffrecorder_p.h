@@ -45,6 +45,9 @@ constexpr size_t V_DEMUXER_SIZE = 3;
 
 enum demuxerType { SCREEN, CAMERA, VIDEO, AUDIO, MICROPHONE, NOTYPE };
 
+enum aDecoderType { A_MICROPHONE, A_AUDIO };
+enum vDecoderType { V_VIDEO, V_SCREEN, V_CAMERA };
+
 constexpr int demuxerIndex[A_DEMUXER_SIZE + V_DEMUXER_SIZE + 1]{0, 1, 2, 0, 1, -1};
 
 class FFRecorderPrivate
@@ -53,40 +56,34 @@ public:
     FFRecorderPrivate();
     ~FFRecorderPrivate();
 
-    //音频解码线程：【声卡】、【麦克风】
-    class FFADecoderThread *aDecoderThread[FFRecordContextType::A_DECODER_SIZE];
-
-    //视频解码线程：【屏幕】、【摄像头】、【视频】
-    class FFVDecoderThread *vDecoderThread[FFRecordContextType::V_DECODER_SIZE];
-
-    //音频解复用线程：【音频】、【麦克风】
-    class FFDemuxerThread *aDemuxerThread[FFRecordContextType::A_DEMUXER_SIZE];
-    //视频解复用线程 【屏幕】、【摄像头】、【视频】
-    class FFDemuxerThread *vDemuxerThread[FFRecordContextType::V_DEMUXER_SIZE];
+    FFADecoderThread *aDecoderThread[FFRecordContextType::A_DECODER_SIZE];
+    FFVDecoderThread *vDecoderThread[FFRecordContextType::V_DECODER_SIZE];
+    FFDemuxerThread *aDemuxerThread[FFRecordContextType::A_DEMUXER_SIZE];
+    FFDemuxerThread *vDemuxerThread[FFRecordContextType::V_DEMUXER_SIZE];
 
     //音频解码packet包队列
-    class FFAPacketQueue *aDecoderPktQueue[FFRecordContextType::A_DECODER_SIZE];
+    FFAPacketQueue *aDecoderPktQueue[FFRecordContextType::A_DECODER_SIZE];
 
     //视频解码packet包队列
-    class FFVPacketQueue *vDecoderPktQueue[FFRecordContextType::V_DECODER_SIZE];
+    FFVPacketQueue *vDecoderPktQueue[FFRecordContextType::V_DECODER_SIZE];
 
     //视频编码packet包队列
-    class FFVPacketQueue *vEncoderPktQueue;
+    FFVPacketQueue *vEncoderPktQueue;
 
     //音频编码packet包队列
-    class FFAPacketQueue *aEncoderPktQueue;
+    FFAPacketQueue *aEncoderPktQueue;
 
     //音频解码帧队列
-    class FFAFrameQueue *aDecoderFrmQueue[FFRecordContextType::A_DECODER_SIZE];
+    FFAFrameQueue *aDecoderFrmQueue[FFRecordContextType::A_DECODER_SIZE];
 
     //视频解码帧队列
-    class FFVFrameQueue *vDecoderFrmQueue[FFRecordContextType::V_DECODER_SIZE];
+    FFVFrameQueue *vDecoderFrmQueue[FFRecordContextType::V_DECODER_SIZE];
 
     //视频filter编码Frame队列
-    class FFVFrameQueue *vFilterEncoderFrmQueue;
+    FFVFrameQueue *vFilterEncoderFrmQueue;
 
     //音频filter编码Frame队列
-    class FFAFrameQueue *aFilterEncoderFrmQueue;
+    FFAFrameQueue *aFilterEncoderFrmQueue;
 
     //音频解复用器
     Demuxer *aDemuxer[FFRecordContextType::A_DEMUXER_SIZE];
@@ -116,19 +113,19 @@ public:
     FFVEncoder *vEncoder;
 
     //视频编码线程
-    class FFVEncoderThread *vEncoderThread;
+    FFVEncoderThread *vEncoderThread;
 
     //视频过滤器
     FFVFilter *vFilter;
 
     //视频过滤线程
-    class FFVFilterThread *vFilterThread;
+    FFVFilterThread *vFilterThread;
 
     //音频过滤器
     FFAFilter *aFilter;
 
     //音频滤镜线程
-    class FFAFilterThread *aFilterThread;
+    FFAFilterThread *aFilterThread;
 };
 
 } // namespace FFRecordContextType

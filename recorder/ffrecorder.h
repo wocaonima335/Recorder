@@ -4,6 +4,7 @@
 #include "ffrecorder_p.h"
 
 #include "event/ffeventloop.h"
+
 #include "thread/ffthreadpool.h"
 
 #include <QObject>
@@ -25,8 +26,7 @@ public:
     void startRecord();
     void stopRecord();
 
-    // 公共接口，让外部访问私有Context中的变量
-    class FFCaptureContext *getCaptureContext();
+    class FFRecorderPrivate *getContext();
 
     FFVFilter *getVFilter();
     FFAFilter *getAFilter();
@@ -36,7 +36,7 @@ public:
     Demuxer *getADemuxer(int index);
     Demuxer *getVDemuxer(int index);
 
-    FFDemuxerThread getADemuxerThread(int index);
+    FFDemuxerThread *getADemuxerThread(int index);
     FFDemuxerThread *getVDemuxerThread(int index);
     FFADecoderThread *getADecoderThread(int index);
     FFVDecoderThread *getVDecoderThread(int index);
@@ -61,7 +61,6 @@ public:
 
 private:
     void initCoreComponents();
-    void initRecorderContext();
     void registerMetaTypes();
 
 private:
@@ -73,9 +72,9 @@ private:
     static std::mutex m_mutex;
 
     FFThreadPool *m_threadPool = nullptr;
-    FFEventLoop *m_eventPool = nullptr;
+    FFEventLoop *m_eventLoop = nullptr;
 
-    bool n_isRecording = false;
+    bool m_isRecording = false;
 };
 
 ; // namespace FFRecordContextType

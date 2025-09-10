@@ -1,0 +1,20 @@
+[
+    {
+        "classes": [
+            {
+                "className": "FFRecorder",
+                "lineNumber": 15,
+                "object": true,
+                "qualifiedClassName": "FFRecorder",
+                "superClasses": [
+                    {
+                        "access": "public",
+                        "name": "QObject"
+                    }
+                ]
+            }
+        ],
+        "inputFile": "ffrecorder.h",
+        "outputRevision": 68
+    }
+]

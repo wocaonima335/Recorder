@@ -26,11 +26,7 @@ class FFVResampler;
 class FFVDecoder
 {
 public:
-    static FFVDecoder &getInstance();
-
-    FFVDecoder(const FFVDecoder &) = delete;
-    FFVDecoder *operator=(const FFVDecoder &) = delete;
-
+    explicit FFVDecoder();
     ~FFVDecoder();
     void decode(AVPacket *packet);
     void init(AVStream *stream_, FFVFrameQueue *frmQueue_);
@@ -49,7 +45,6 @@ public:
 
 private:
     // 私有构造函数
-    explicit FFVDecoder();
 
     void initResampler();
     void initVideoPars(AVFrame *frame);
@@ -68,10 +63,6 @@ private:
     std::atomic<bool> m_stop;
 
     std::mutex mutex;
-
-    // 单例相关的静态成员
-    static std::once_flag s_flag;
-    static std::unique_ptr<FFVDecoder> s_instance;
 };
 
 #endif // FFVDECODER_H
