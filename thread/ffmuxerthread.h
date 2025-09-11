@@ -2,6 +2,7 @@
 #define FFMUXERTHREAD_H
 
 #include "ffthread.h"
+
 #include <mutex>
 extern "C" {
 #include <libavformat/avformat.h>
@@ -13,7 +14,7 @@ class FFMuxer;
 class FFAEncoder;
 class FFVEncoder;
 class FFPacket;
-class FFCaptureContext;
+class FFRecorder;
 
 class FFMuxerThread : public FFThread
 {
@@ -26,7 +27,7 @@ public:
               FFMuxer *muxer_,
               FFAEncoder *aEncoder_,
               FFVEncoder *vEncoder_,
-              FFCaptureContext *captureCtx_);
+              FFRecorder *recorder_);
 
     void close();
     void wakeAllThread();
@@ -53,7 +54,7 @@ private:
 
     double lastProcessTime = 0;
 
-    FFCaptureContext *captureCtx = nullptr;
+    FFRecorder *recorderCtx = nullptr;
 };
 
 #endif // FFMUXERTHREAD_H

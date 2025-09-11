@@ -23,6 +23,7 @@ qt_add_library(thread_module STATIC
     ffamuxerthread.h
     ffamuxerthread.cpp
     ffmuxerthread.h
+    ffmuxerthread.cpp
 )
 
 target_link_libraries(thread_module
