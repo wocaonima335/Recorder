@@ -47,7 +47,6 @@ protected:
 
     FFAFrameQueue *aFrmQueue[A_DECODER_SIZE]; // 音频帧队列数组
     FFVFrameQueue *vFrmQueue[V_DECODER_SIZE]; // 视频帧队列数组
-    FFVFrameQueue *vRenderFrmQueue;           // 视频渲染帧队列
     FFAFrameQueue *aFilterEncoderFrmQueue;    // 音频滤镜编码帧队列
     FFVFrameQueue *vFilterEncoderFrmQueue;    // 视频滤镜编码帧队列
 
