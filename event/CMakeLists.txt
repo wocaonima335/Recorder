@@ -5,7 +5,8 @@ qt_add_library(event_module STATIC
     eventfactorymanager.h
     eventfactory.cpp
     ffevent.h
-    ffeventloop.h)
+    ffeventloop.h
+    ffevent.cpp)
 
 target_link_libraries(event_module PRIVATE
     PRIVATE 
