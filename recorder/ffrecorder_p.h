@@ -40,6 +40,7 @@ static std::string MICROPHONE_URL = "audio=麦克风阵列 (Realtek(R) Audio)";
 namespace FFRecordContextType {
 constexpr size_t A_DECODER_SIZE = 2;
 constexpr size_t A_DEMUXER_SIZE = 2;
+
 constexpr size_t V_DECODER_SIZE = 3;
 constexpr size_t V_DEMUXER_SIZE = 3;
 
@@ -57,8 +58,9 @@ public:
     ~FFRecorderPrivate();
 
     FFADecoderThread *aDecoderThread[FFRecordContextType::A_DECODER_SIZE];
-    FFVDecoderThread *vDecoderThread[FFRecordContextType::V_DECODER_SIZE];
     FFDemuxerThread *aDemuxerThread[FFRecordContextType::A_DEMUXER_SIZE];
+
+    FFVDecoderThread *vDecoderThread[FFRecordContextType::V_DECODER_SIZE];
     FFDemuxerThread *vDemuxerThread[FFRecordContextType::V_DEMUXER_SIZE];
 
     //音频解码packet包队列

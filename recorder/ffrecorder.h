@@ -28,13 +28,16 @@ public:
 
     class FFRecorderPrivate *getContext();
 
-    FFVFilter *getVFilter();
-    FFAFilter *getAFilter();
-    FFMuxer *getMuxer();
     FFADecoder *getADecoder(int index);
     FFVDecoder *getVDecoder(int index);
     Demuxer *getADemuxer(int index);
     Demuxer *getVDemuxer(int index);
+    FFVFilter *getVFilter();
+    FFAFilter *getAFilter();
+
+    FFAEncoder *getAEncoder();
+    FFVEncoder *getVEncoder();
+    FFMuxer *getMuxer();
 
     FFDemuxerThread *getADemuxerThread(int index);
     FFDemuxerThread *getVDemuxerThread(int index);
@@ -48,13 +51,15 @@ public:
 
     FFAPacketQueue *getADecoderPktQueue(int index);
     FFVPacketQueue *getVDecoderPktQueue(int index);
+
     FFVPacketQueue *getVEncoderPktQueue();
     FFAPacketQueue *getAEncoderPktQueue();
+
     FFAFrameQueue *getADecoderFrmQueue(int index);
     FFVFrameQueue *getVDecoderFrmQueue(int index);
+
     FFVFrameQueue *getVFilterEncoderFrmQueue();
     FFAFrameQueue *getAFilterEncoderFrmQueue();
-    FFVFrameQueue *getVRenderFrmQueue();
 
     FFThreadPool *getThreadPool();
     FFEventLoop *getEventLoop();

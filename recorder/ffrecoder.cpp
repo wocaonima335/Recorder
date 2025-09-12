@@ -159,6 +159,16 @@ FFAFilter *FFRecorder::getAFilter()
     return d ? d->aFilter : nullptr;
 }
 
+FFAEncoder *FFRecorder::getAEncoder()
+{
+    return d ? d->aEncoder : nullptr;
+}
+
+FFVEncoder *FFRecorder::getVEncoder()
+{
+    return d ? d->vEncoder : nullptr;
+}
+
 FFMuxer *FFRecorder::getMuxer()
 {
     return d ? d->muxer : nullptr;
@@ -191,6 +201,7 @@ Demuxer *FFRecorder::getVDemuxer(int index)
         return nullptr;
     return d->vDemuxer[index];
 }
+
 
 FFDemuxerThread *FFRecorder::getADemuxerThread(int index)
 {
@@ -291,12 +302,6 @@ FFVFrameQueue *FFRecorder::getVFilterEncoderFrmQueue()
 FFAFrameQueue *FFRecorder::getAFilterEncoderFrmQueue()
 {
     return d ? d->aFilterEncoderFrmQueue : nullptr;
-}
-
-FFVFrameQueue *FFRecorder::getVRenderFrmQueue()
-{
-    // Not explicitly managed in FFRecorderPrivate; return nullptr by default
-    return nullptr;
 }
 
 FFThreadPool *FFRecorder::getThreadPool()

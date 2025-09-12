@@ -27,8 +27,6 @@ class FFADecoderThread;
 class FFVDecoderThread;
 class FFDemuxerThread;
 class FFDemuxerThread;
-class FFAEncoder;
-class FFVEncoder;
 
 class FFEvent
 {

@@ -1,0 +1,6 @@
+<RCC>
+  <qresource prefix="/qt/qml/bandicam/qml">
+    <file alias="qmldir">E:/myProgram/Recorder/record/build/qml/bandicam/qml/qmldir</file>
+  </qresource>
+</RCC>
+
