@@ -13,7 +13,7 @@ std::unique_ptr<FFEvent> EventFactoryManager::createEvent(EventCategory category
                                                           const EventParameters &params)
 {
     auto factory = factories_.find(category);
-    if (factory == factories_.begin()) {
+    if (factory == factories_.end()) {
         return nullptr;
     }
     return factory->second->createEvent(context, params);
