@@ -131,3 +131,16 @@ void FFVPacketQueue::wakeAllThread()
     m_stop = true;
     cond.notify_all();
 }
+
+void FFVPacketQueue::clearQueue()
+{
+    while (!pktQueue.empty()) {
+        std::lock_guard<std::mutex> lock(mutex);
+        FFPacket *pkt = pktQueue.front();
+        pktQueue.pop();
+        if (pkt) {
+            av_packet_unref(&pkt->packet);
+            av_freep(&pkt);
+        }
+    }
+}

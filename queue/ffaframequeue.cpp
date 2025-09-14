@@ -115,3 +115,8 @@ void FFAFrameQueue::start()
 {
     m_stop = false;
 }
+
+AVFrame *FFAFrameQueue::peekQueue()
+{
+    return frmQueue.empty() ? nullptr : frmQueue.front();
+}

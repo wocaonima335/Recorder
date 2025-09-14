@@ -8,7 +8,9 @@ target_link_libraries(decoder_module
     PRIVATE
     Qt6::Core
     ${FFMPEG_LIBRARIES}
-    queue_module)
+    queue_module
+    resampler_module)
+
 
 # 添加FFmpeg头文件目录
 target_include_directories(decoder_module PRIVATE

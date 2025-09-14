@@ -31,7 +31,7 @@ class FFDemuxerThread;
 class FFEvent
 {
 public:
-    FFEvent(FFRecorder *recoderContext);
+    FFEvent(FFRecorder *recoderContext_);
     virtual ~FFEvent();
     virtual void work() = 0;
 

@@ -30,8 +30,7 @@
 #include <QtWidgets/QApplication>
 
 namespace FFRecordURLS {
-static std::string CAMERA1_URL = "video=Integrated Camera";
-static std::string CAMERA2_URL = "video=USB2.0 Camera";
+static std::string CAMERA_URL = "video=Integrated Camera";
 static std::string SCREEN_URL = "video=screen-capture-recorder";
 static std::string AUDIO_URL = "audio=virtual-audio-capturer";
 static std::string MICROPHONE_URL = "audio=麦克风阵列 (Realtek(R) Audio)";

@@ -136,9 +136,11 @@ void FFRecorder::registerMetaTypes()
 }
 
 FFRecorder::FFRecorder(QObject *parent)
+
 {
     avdevice_register_all();
     avformat_network_init();
+    d = new FFRecorderPrivate();
 }
 
 FFRecorder::~FFRecorder()

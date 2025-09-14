@@ -78,6 +78,8 @@
     "cfloat": "cpp",
     "climits": "cpp",
     "queue": "cpp",
-    "version": "cpp"
+    "version": "cpp",
+    "shared_mutex": "cpp",
+    "qquickwindow": "cpp"
   }
 }

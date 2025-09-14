@@ -9,7 +9,7 @@ target_link_libraries(resampler_module
     Qt::Core
     ${FFMPEG_LIBRARIES}
     queue_module
-    decoder_module)
+)
 
 target_include_directories(resampler_module PRIVATE
     ${FFMPEG_INCLUDE_DIR}

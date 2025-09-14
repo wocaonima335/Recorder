@@ -1,8 +1,8 @@
 #include "ffevent.h"
 
-FFEvent::FFEvent(FFRecorder *recoderContext)
+FFEvent::FFEvent(FFRecorder *recoderContext_)
 {
-    recoderContext = &FFRecorder::getInstance();
+    recoderContext = recoderContext_;
 
     for (size_t i = 0; i < FFRecordContextType::A_DECODER_SIZE; i++) {
         aPktQueue[i] = this->recoderContext->getADecoderPktQueue(i);
@@ -43,3 +43,5 @@ FFEvent::FFEvent(FFRecorder *recoderContext)
     muxer = this->recoderContext->getMuxer();
     muxerThread = this->recoderContext->getMuxerThread();
 }
+
+FFEvent::~FFEvent() {}

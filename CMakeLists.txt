@@ -5,7 +5,7 @@ project(bandicam VERSION 0.1 LANGUAGES CXX)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 find_package(Qt6 REQUIRED COMPONENTS Quick)
-find_package(Qt6 REQUIRED COMPONENTS Quick Multimedia Widgets Gui)
+find_package(Qt6 REQUIRED COMPONENTS Quick Qml Multimedia Widgets Gui)
 
 qt_standard_project_setup(REQUIRES 6.5)
 
@@ -13,6 +13,8 @@ qt_standard_project_setup(REQUIRES 6.5)
 set(FFMPEG_ROOT "${CMAKE_CURRENT_SOURCE_DIR}/3rdparty/ffmpeg-amf")
 set(FFMPEG_INCLUDE_DIR "${FFMPEG_ROOT}/include")
 set(FFMPEG_LIB_DIR "${FFMPEG_ROOT}/lib")
+
+
 
 # 添加FFmpeg头文件目录
 include_directories(${FFMPEG_INCLUDE_DIR})
@@ -67,9 +69,13 @@ set_target_properties(appbandicam PROPERTIES
     WIN32_EXECUTABLE TRUE
 )
 
+target_include_directories(appbandicam PRIVATE ${CMAKE_CURRENT_SOURCE_DIR})
+
+
 # 链接库（包括子模块）
 target_link_libraries(appbandicam
     PRIVATE 
+        Qt6::Qml
         Qt6::Quick
         qml_module
         demuxer_module

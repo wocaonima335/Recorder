@@ -186,6 +186,11 @@ void FFVDecoder::wakeAllThread()
     frmQueue->wakeAllThread();
 }
 
+void FFVDecoder::stop()
+{
+    m_stop = true;
+}
+
 void FFVDecoder::flushQueue()
 {
     frmQueue->flushQueue();

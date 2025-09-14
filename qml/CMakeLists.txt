@@ -2,11 +2,10 @@
 qt_add_library(qml_module STATIC)
 
 qt_add_qml_module(qml_module
-    URI bandicam.qml
+    URI bandicam
     VERSION 1.0
     QML_FILES
-        Main.qml
-     OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/qml/bandicam/qml
+    Main.qml
      QML_FILES videopage.qml
      QML_FILES settingpage.qml
      QML_FILES cuttingpage.qml

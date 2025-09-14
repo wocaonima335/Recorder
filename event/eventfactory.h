@@ -4,6 +4,8 @@
 #include "abstracteventfactory.h"
 #include "eventcategory.h"
 
+#include "event/ffopensourceevent.h"
+
 #include <memory>
 
 class FFStartEvent;
@@ -12,36 +14,12 @@ class FFPauseEvent;
 class FFReadyEvent;
 class FFEndEvent;
 
-class ControlEventFactory : public AbstractEventFactory
-{
-public:
-    std::unique_ptr<FFEvent> createEvent(FFCaptureContext *context,
-                                         const EventParameters &params) override;
-    EventCategory getCategory() const override { return EventCategory::CONTROL; }
-};
-
 class SourceEventFactory : public AbstractEventFactory
 {
 public:
-    std::unique_ptr<FFEvent> createEvent(FFCaptureContext *context,
+    std::unique_ptr<FFEvent> createEvent(FFRecorder *context,
                                          const EventParameters &params) override;
     EventCategory getCategory() const override { return EventCategory::SOURCE; }
-};
-
-class ParameterEventFactory : public AbstractEventFactory
-{
-public:
-    std::unique_ptr<FFEvent> createEvent(FFCaptureContext *context,
-                                         const EventParameters &params) override;
-    EventCategory getCategory() const override { return EventCategory::PARAMETER; }
-};
-
-class ProcessEventFactory : public AbstractEventFactory
-{
-public:
-    std::unique_ptr<FFEvent> createEvent(FFCaptureContext *context,
-                                         const EventParameters &params) override;
-    EventCategory getCategory() const override { return EventCategory::PROCESS; }
 };
 
 #endif // EVENTFACTORY_H

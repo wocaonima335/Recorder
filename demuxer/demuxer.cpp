@@ -156,3 +156,16 @@ int Demuxer::getType()
 {
     return type;
 }
+
+void Demuxer::printError(int ret)
+{
+    {
+        char errorBuffer[AV_ERROR_MAX_STRING_SIZE];
+        int res = av_strerror(ret, errorBuffer, sizeof errorBuffer);
+        if (res < 0) {
+            std::cerr << "Unknow Error!" << std::endl;
+        } else {
+            std::cerr << "Error:" << errorBuffer << std::endl;
+        }
+    }
+}

@@ -17,6 +17,7 @@ target_link_libraries(recorder_module PRIVATE
         encoder_module
         decoder_module
         filter_module
+        thread_module
 )
 
 target_include_directories(recorder_module PRIVATE

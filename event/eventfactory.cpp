@@ -1,8 +1,19 @@
 #include "eventfactory.h"
 #include "eventcategory.h"
 
-std::unique_ptr<FFEvent> ControlEventFactory::createEvent(FFCaptureContext *context,
-                                                          const EventParameters &params)
+std::unique_ptr<FFEvent> SourceEventFactory::createEvent(FFRecorder *context,
+                                                         const EventParameters &params)
 {
-    const auto &controlParams = static_cast<const ControlEventParams &>(params);
+    const auto &sourceParams = static_cast<const SourceEventParams &>(params);
+
+    switch (sourceParams.type) {
+    case SourceEventType::OPEN_SOURCE:
+        return std::make_unique<FFOpenSourceEvent>(context,
+                                                   sourceParams.sourceType,
+                                                   sourceParams.url,
+                                                   sourceParams.format);
+
+    default:
+        throw std::invalid_argument("Unknown source event type");
+    }
 }

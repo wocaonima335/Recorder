@@ -3,14 +3,12 @@
 
 #include "eventcategory.h"
 
+#include "recorder/ffrecorder.h"
+
 #include <memory>
 #include <string>
-#include <variant>
 
-class FFCaptureContext;
 class FFEvent;
-
-enum demuxerType { SCREEN, CAMERA, VIDEO, AUDIO, MICROPHONE, NOTYPE };
 
 // 事件参数基类
 struct EventParameters
@@ -51,8 +49,7 @@ class AbstractEventFactory
 {
 public:
     virtual ~AbstractEventFactory() = default;
-    virtual std::unique_ptr<FFEvent> createEvent(FFCaptureContext *context,
-                                                 const EventParameters &params)
+    virtual std::unique_ptr<FFEvent> createEvent(FFRecorder *context, const EventParameters &params)
         = 0;
     virtual EventCategory getCategory() const = 0;
 };
