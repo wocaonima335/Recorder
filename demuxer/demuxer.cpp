@@ -123,6 +123,10 @@ void Demuxer::initDemuxer()
     avdevice_register_all();
 
     inputFmt = av_find_input_format(format.c_str());
+    if (!inputFmt) {
+        std::cerr << "Cannot find input format: " << format << std::endl;
+        return;
+    }
 
     int ret = avformat_open_input(&fmtCtx, url.c_str(), inputFmt, &opts);
     if (ret < 0) {
@@ -155,6 +159,38 @@ void Demuxer::initDemuxer()
 int Demuxer::getType()
 {
     return type;
+}
+
+void Demuxer::PrintDshowDevices()
+{
+    const AVInputFormat *dshow = av_find_input_format("dshow");
+    if (!dshow) {
+        std::cerr << "dshow input format not found, your FFmpeg may not include dshow."
+                  << std::endl;
+        return;
+    }
+
+    AVDeviceInfoList *list = nullptr;
+    int count = avdevice_list_input_sources(const_cast<AVInputFormat *>(dshow),
+                                            nullptr, // 不筛选设备名，全部列出
+                                            nullptr,
+                                            &list); // 注意是 &list
+
+    if (count < 0) {
+        char err[256] = {0};
+        av_strerror(count, err, sizeof(err));
+        std::cerr << "avdevice_list_input_sources() failed: " << err << std::endl;
+    } else {
+        std::cout << "Found " << list->nb_devices << " dshow devices:" << std::endl;
+        for (int i = 0; i < list->nb_devices; ++i) {
+            AVDeviceInfo *info = list->devices[i];
+            const char *name = (info && info->device_name) ? info->device_name : "";
+            const char *desc = (info && info->device_description) ? info->device_description : "";
+            std::cout << "  [" << i << "] name=" << name << " | desc=" << desc << std::endl;
+        }
+    }
+
+    avdevice_free_list_devices(&list);
 }
 
 void Demuxer::printError(int ret)

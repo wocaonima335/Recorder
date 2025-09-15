@@ -32,7 +32,7 @@
 namespace FFRecordURLS {
 static std::string CAMERA_URL = "video=Integrated Camera";
 static std::string SCREEN_URL = "video=screen-capture-recorder";
-static std::string AUDIO_URL = "audio=virtual-audio-capturer";
+static std::string AUDIO_URL = "audio=Realtek Digital Input (Realtek High Definition Audio)";
 static std::string MICROPHONE_URL = "audio=麦克风阵列 (Realtek(R) Audio)";
 }; // namespace FFRecordURLS
 

@@ -39,6 +39,7 @@ public:
     void close();
     void initDemuxer();
     int getType();
+    void PrintDshowDevices();
 
 private:
     void printError(int ret);
