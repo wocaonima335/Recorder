@@ -5,6 +5,7 @@
 #include <QGuiApplication>
 #include <QQmlApplicationEngine>
 #include <QQuickWindow>
+#include <QTimer>
 
 void init()
 {
@@ -13,6 +14,7 @@ void init()
 
 void recordTest()
 {
+    FFRecorder::getInstance().startRecord();
     SourceEventParams params;
     params.type = SourceEventType::OPEN_SOURCE;
     params.sourceType = demuxerType::CAMERA;
@@ -23,6 +25,17 @@ void recordTest()
                                                                 &FFRecorder::getInstance(),
                                                                 params);
     event->work();
+
+    // Schedule closing the same source after 10 seconds
+    QTimer::singleShot(50000, []() {
+        SourceEventParams closeParams;
+        closeParams.type = SourceEventType::CLOSE_SOURCE;
+        closeParams.sourceType = demuxerType::CAMERA;
+        auto closeEvent = EventFactoryManager::getInstance().createEvent(EventCategory::SOURCE,
+                                                                         &FFRecorder::getInstance(),
+                                                                         closeParams);
+        closeEvent->work();
+    });
 }
 
 int main(int argc, char *argv[])

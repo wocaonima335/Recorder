@@ -91,10 +91,10 @@ void FFVFilter::setOverLayPos(int x, int y, int w, int h)
 
 void FFVFilter::sendEncodeFrame(AVFrame *frame)
 {
-    if (codecCtx == nullptr) {
-        codecCtx = vDecoder->getCodecCtx();
-        stream = vDecoder->getStream();
-    }
+    // if (codecCtx == nullptr) {
+    //     codecCtx = vDecoder->getCodecCtx();
+    //     stream = vDecoder->getStream();
+    // }
     encoderFrameQueue->enqueue(frame);
 }
 

@@ -43,6 +43,7 @@ private:
 
     std::atomic<bool> encoderFlag;
     std::atomic<bool> screenFlag;
+    std::atomic<bool> cameraFlag;
 
     AVFrame *screenFrame = nullptr;
     AVFrame *lastVideoFrame = nullptr;

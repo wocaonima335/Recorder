@@ -39,9 +39,6 @@ void FFRecorder::startRecord()
     if (m_isRecording)
         return;
 
-    d->vFilterThread->start();
-    d->aFilterThread->start();
-
     m_eventLoop->start();
     m_isRecording = true;
 }
@@ -119,7 +116,9 @@ void FFRecorder::initCoreComponents()
     d->aFilterThread->init(d->aDecoderFrmQueue[aDecoderType::A_MICROPHONE],
                            d->aDecoderFrmQueue[aDecoderType::A_AUDIO],
                            d->aFilter);
-    d->vFilterThread->init(d->vDecoderFrmQueue[vDecoderType::V_SCREEN], d->vFilter);
+    d->vFilterThread->init(d->vDecoderFrmQueue[demuxerType::CAMERA], d->vFilter);
+
+    d->vFilter->init(d->vDecoderFrmQueue[demuxerType::CAMERA], d->vDecoder[demuxerType::CAMERA]);
 
     m_threadPool = new FFThreadPool();
     m_threadPool->init(4);
