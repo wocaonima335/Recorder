@@ -274,6 +274,30 @@ eventfactorymanager.cpp.s:
 	cd /d D:\Qtprogram\bandicam\build && $(MAKE) $(MAKESILENT) -f event\CMakeFiles\event_module.dir\build.make event/CMakeFiles/event_module.dir/eventfactorymanager.cpp.s
 .PHONY : eventfactorymanager.cpp.s
 
+ffclosesourceevent.obj: ffclosesourceevent.cpp.obj
+.PHONY : ffclosesourceevent.obj
+
+# target to build an object file
+ffclosesourceevent.cpp.obj:
+	cd /d D:\Qtprogram\bandicam\build && $(MAKE) $(MAKESILENT) -f event\CMakeFiles\event_module.dir\build.make event/CMakeFiles/event_module.dir/ffclosesourceevent.cpp.obj
+.PHONY : ffclosesourceevent.cpp.obj
+
+ffclosesourceevent.i: ffclosesourceevent.cpp.i
+.PHONY : ffclosesourceevent.i
+
+# target to preprocess a source file
+ffclosesourceevent.cpp.i:
+	cd /d D:\Qtprogram\bandicam\build && $(MAKE) $(MAKESILENT) -f event\CMakeFiles\event_module.dir\build.make event/CMakeFiles/event_module.dir/ffclosesourceevent.cpp.i
+.PHONY : ffclosesourceevent.cpp.i
+
+ffclosesourceevent.s: ffclosesourceevent.cpp.s
+.PHONY : ffclosesourceevent.s
+
+# target to generate assembly for a file
+ffclosesourceevent.cpp.s:
+	cd /d D:\Qtprogram\bandicam\build && $(MAKE) $(MAKESILENT) -f event\CMakeFiles\event_module.dir\build.make event/CMakeFiles/event_module.dir/ffclosesourceevent.cpp.s
+.PHONY : ffclosesourceevent.cpp.s
+
 ffevent.obj: ffevent.cpp.obj
 .PHONY : ffevent.obj
 
@@ -370,6 +394,9 @@ help:
 	@echo ... eventfactorymanager.obj
 	@echo ... eventfactorymanager.i
 	@echo ... eventfactorymanager.s
+	@echo ... ffclosesourceevent.obj
+	@echo ... ffclosesourceevent.i
+	@echo ... ffclosesourceevent.s
 	@echo ... ffevent.obj
 	@echo ... ffevent.i
 	@echo ... ffevent.s
