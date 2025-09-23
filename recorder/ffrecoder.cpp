@@ -119,7 +119,7 @@ void FFRecorder::initCoreComponents()
     d->aFilterThread->init(d->aDecoderFrmQueue[aDecoderType::A_MICROPHONE],
                            d->aDecoderFrmQueue[aDecoderType::A_AUDIO],
                            d->aFilter);
-    d->vFilterThread->init(d->vDecoderFrmQueue[vDecoderType::V_SCREEN], d->vFilter);
+    d->vFilterThread->init(d->vDecoderFrmQueue[demuxerType::SCREEN], d->vFilter);
 
     m_threadPool = new FFThreadPool();
     m_threadPool->init(4);

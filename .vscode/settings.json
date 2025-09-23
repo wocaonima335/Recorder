@@ -80,6 +80,9 @@
     "queue": "cpp",
     "version": "cpp",
     "shared_mutex": "cpp",
-    "qquickwindow": "cpp"
+    "qquickwindow": "cpp",
+    "xhash": "cpp",
+    "xlocmon": "cpp",
+    "xlocnum": "cpp"
   }
 }

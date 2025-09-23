@@ -122,6 +122,8 @@ void Demuxer::initDemuxer()
     avformat_network_init();
     avdevice_register_all();
 
+    PrintDshowDevices();
+
     inputFmt = av_find_input_format(format.c_str());
     if (!inputFmt) {
         std::cerr << "Cannot find input format: " << format << std::endl;
@@ -163,34 +165,50 @@ int Demuxer::getType()
 
 void Demuxer::PrintDshowDevices()
 {
-    const AVInputFormat *dshow = av_find_input_format("dshow");
-    if (!dshow) {
-        std::cerr << "dshow input format not found, your FFmpeg may not include dshow."
+    // 枚举 gdigrab 的“源”（gdigrab 一般不实现设备列表，下面加了回退方案）
+    const AVInputFormat *fmt = av_find_input_format("gdigrab");
+    if (!fmt) {
+        std::cerr << "gdigrab input format not found, your FFmpeg may not include gdigrab."
                   << std::endl;
         return;
     }
 
+    // 1) 先尝试通过设备 API 列举（很多版本可能返回 0 或不支持）
     AVDeviceInfoList *list = nullptr;
-    int count = avdevice_list_input_sources(const_cast<AVInputFormat *>(dshow),
-                                            nullptr, // 不筛选设备名，全部列出
+    int count = avdevice_list_input_sources(const_cast<AVInputFormat *>(fmt),
                                             nullptr,
-                                            &list); // 注意是 &list
+                                            nullptr,
+                                            &list);
 
-    if (count < 0) {
-        char err[256] = {0};
-        av_strerror(count, err, sizeof(err));
-        std::cerr << "avdevice_list_input_sources() failed: " << err << std::endl;
-    } else {
-        std::cout << "Found " << list->nb_devices << " dshow devices:" << std::endl;
+    if (count > 0 && list) {
+        std::cout << "Found " << list->nb_devices << " gdigrab sources:" << std::endl;
         for (int i = 0; i < list->nb_devices; ++i) {
             AVDeviceInfo *info = list->devices[i];
             const char *name = (info && info->device_name) ? info->device_name : "";
             const char *desc = (info && info->device_description) ? info->device_description : "";
             std::cout << "  [" << i << "] name=" << name << " | desc=" << desc << std::endl;
         }
+        avdevice_free_list_devices(&list);
+        return;
     }
-
     avdevice_free_list_devices(&list);
+
+    // 2) 回退方案：让 gdigrab 把可抓取窗口列表打印到日志（等价于 CLI: ffmpeg -f gdigrab -list_windows 1 -i desktop）
+    AVFormatContext *tmpCtx = nullptr;
+    AVDictionary *opts = nullptr;
+    av_dict_set(&opts, "list_windows", "1", 0);
+    av_log_set_level(AV_LOG_INFO); // 确保能看到窗口列表输出
+
+    int ret = avformat_open_input(&tmpCtx, "desktop", fmt, &opts);
+    if (ret < 0) {
+        char err[256] = {0};
+        av_strerror(ret, err, sizeof(err));
+        std::cerr << "gdigrab list_windows failed: " << err << std::endl;
+    } else {
+        // gdigrab 已在日志中打印了窗口列表，这里立即关闭
+        avformat_close_input(&tmpCtx);
+    }
+    av_dict_free(&opts);
 }
 
 void Demuxer::printError(int ret)

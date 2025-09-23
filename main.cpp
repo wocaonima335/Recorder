@@ -15,9 +15,9 @@ void recordTest()
 {
     SourceEventParams params;
     params.type = SourceEventType::OPEN_SOURCE;
-    params.sourceType = demuxerType::AUDIO;
-    params.url = FFRecordURLS::AUDIO_URL;
-    params.format = "dshow";
+    params.sourceType = demuxerType::SCREEN;
+    params.url = FFRecordURLS::SCREEN_URL;
+    params.format = "gdigrab";
 
     auto event = EventFactoryManager::getInstance().createEvent(EventCategory::SOURCE,
                                                                 &FFRecorder::getInstance(),
