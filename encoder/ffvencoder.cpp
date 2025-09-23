@@ -63,6 +63,7 @@ int FFVEncoder::encode(AVFrame *frame, int streamIndex, int64_t pts, AVRational 
         ret = avcodec_receive_packet(codecCtx, pkt);
         if (ret == AVERROR(EAGAIN)) {
             av_packet_free(&pkt);
+            printError(ret);
             break;
         } else if (ret == AVERROR_EOF) {
             std::cout << "Encode Video EOF !" << std::endl;
@@ -76,6 +77,10 @@ int FFVEncoder::encode(AVFrame *frame, int streamIndex, int64_t pts, AVRational 
             return -1;
         } else {
             pkt->stream_index = streamIndex;
+            std::cerr << "[VEncPkt] produced: pts=" << pkt->pts
+                      << " dts=" << pkt->dts
+                      << " size=" << pkt->size
+                      << " stream=" << streamIndex << std::endl;
             pktQueue->enqueue(pkt);
             av_packet_free(&pkt);
         }
@@ -117,7 +122,7 @@ void FFVEncoder::initVideo(AVFrame *frame, AVRational fps)
     vPars->frameRate = fps;
 
 #if 1
-    const AVCodec *codec = avcodec_find_decoder(AV_CODEC_ID_H264);
+    const AVCodec *codec = avcodec_find_encoder(AV_CODEC_ID_H264);
 #else
     const AVCodec *codec = avcodec_find_encoder_by_name("h264_amf");
 #endif

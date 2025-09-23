@@ -12,7 +12,9 @@ std::unique_ptr<FFEvent> SourceEventFactory::createEvent(FFRecorder *context,
                                                    sourceParams.sourceType,
                                                    sourceParams.url,
                                                    sourceParams.format);
-
+    case SourceEventType::CLOSE_SOURCE:
+        return std::make_unique<FFCloseSourceEvent>(context,
+                                                    sourceParams.sourceType);
     default:
         throw std::invalid_argument("Unknown source event type");
     }

@@ -29,10 +29,15 @@ int Demuxer::demux()
     AVPacket *packet = av_packet_alloc();
 
     if (fmtCtx == nullptr) {
+        std::cerr << "[Demux] fmtCtx is null, return -1" << std::endl;
         return -1;
     }
 
     int ret = av_read_frame(fmtCtx, packet);
+
+    // 打印读取结果
+    static int read_cnt = 0;
+    std::cerr << "[Demux] av_read_frame ret=" << ret << " count=" << ++read_cnt << std::endl;
 
     if (ret < 0) {
         if (ret == AVERROR_EOF) {
@@ -48,9 +53,12 @@ int Demuxer::demux()
                 av_packet_free(&packet);
             }
             std::cout << "AVERROR_EOF" << endl;
+            std::cerr << "[Demux] EOF, enqueueNull A/V, return 1" << std::endl;
             return 1;
         } else {
-            printError(ret);
+            char err[256] = {0};
+            av_strerror(ret, err, sizeof(err));
+            std::cerr << "[Demux][ERR] ret=" << ret << " msg=" << err << " -> close fmtCtx" << std::endl;
             avformat_close_input(&fmtCtx);
             av_packet_free(&packet);
             return -1;
@@ -58,11 +66,17 @@ int Demuxer::demux()
     }
 
     if (stopFlag) {
+        std::cerr << "[Demux] stopFlag set, return 0" << std::endl;
         return 0;
     }
 
     if (aStream && packet->stream_index == aStream->index) {
         if (aPktQueue) {
+            static int a_cnt = 0;
+            std::cerr << "[Demux] A pkt idx=" << packet->stream_index
+                      << " pts=" << packet->pts << " dts=" << packet->dts
+                      << " dur=" << packet->duration << " size=" << packet->size
+                      << " count=" << ++a_cnt << std::endl;
             aPktQueue->enqueue(packet);
             av_packet_free(&packet);
         } else {
@@ -71,6 +85,11 @@ int Demuxer::demux()
         }
     } else if (vStream && packet->stream_index == vStream->index) {
         if (vPktQueue) {
+            static int v_cnt = 0;
+            std::cerr << "[Demux] V pkt idx=" << packet->stream_index
+                      << " pts=" << packet->pts << " dts=" << packet->dts
+                      << " dur=" << packet->duration << " size=" << packet->size
+                      << " count=" << ++v_cnt << std::endl;
             vPktQueue->enqueue(packet);
             av_packet_free(&packet);
         } else {

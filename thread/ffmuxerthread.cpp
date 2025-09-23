@@ -64,7 +64,7 @@ void FFMuxerThread::wakeAllThread()
 
 void FFMuxerThread::run()
 {
-    bool audioFinish = true;
+    bool audioFinish = false;
     bool videoFinish = true;
 
     muxer->writeHeader();
@@ -106,7 +106,7 @@ void FFMuxerThread::run()
             videoPkt = vPktQueue->dequeue();
 
             if (videoPkt == nullptr) {
-                std::cerr << "audioPkt is nullptr" << std::endl;
+                std::cerr << "videoPkt is nullptr" << std::endl;
                 m_stop = true;
                 continue;
             }
@@ -118,6 +118,11 @@ void FFMuxerThread::run()
             }
 
             videoPtsSec = vPacket->pts * av_q2d(vTimeBase);
+            std::cerr << "[MuxQ] got video pkt: pts=" << vPacket->pts
+                      << " dts=" << vPacket->dts
+                      << " sec=" << videoPtsSec
+                      << " size=" << vPacket->size
+                      << " tb=" << vTimeBase.num << "/" << vTimeBase.den << std::endl;
             if (videoPtsSec < 0) {
                 videoFinish = true;
                 av_packet_unref(vPacket);
@@ -126,22 +131,30 @@ void FFMuxerThread::run()
         }
 
         if (audioPtsSec < videoPtsSec) {
-            ret = muxer->mux(aPacket);
-            if (ret < 0) {
-                std::cerr << "Mux Audio Fail !" << std::endl;
-                m_stop = true;
-                return;
-            }
+            // std::cerr << "[Mux] write audio pkt: pts=" << (aPacket ? aPacket->pts : -1)
+            //           << " dts=" << (aPacket ? aPacket->dts : -1)
+            //           << " size=" << (aPacket ? aPacket->size : -1) << std::endl;
+            // ret = muxer->mux(aPacket);
+            // if (ret < 0) {
+            //     std::cerr << "Mux Audio Fail !" << std::endl;
+            //     m_stop = true;
+            //     return;
+            // }
+            // std::cerr << "[Mux] wrote audio pkt ok" << std::endl;
 
-            audioFinish = true;
-            videoFinish = false;
+            // audioFinish = true;
+            // videoFinish = false;
         } else {
+            std::cerr << "[Mux] write video pkt: pts=" << vPacket->pts
+                      << " dts=" << vPacket->dts
+                      << " size=" << vPacket->size << std::endl;
             ret = muxer->mux(vPacket);
             if (ret < 0) {
                 std::cerr << "Mux Video Fail !" << std::endl;
                 m_stop = true;
                 return;
             }
+            std::cerr << "[Mux] wrote video pkt ok" << std::endl;
 
             videoFinish = true;
             audioFinish = false;

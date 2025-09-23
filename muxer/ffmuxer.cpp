@@ -56,6 +56,8 @@ void FFMuxer::addStream(AVCodecContext *codecCtx)
     //    std::cout << "streamCout = "<< streamCount <<std::endl;
     if (streamCount == 2) {
         readyFlag = true; // 直接赋值，由锁保证可见性
+    } else {
+        readyFlag = true;
     }
 }
 
