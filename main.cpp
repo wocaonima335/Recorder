@@ -14,6 +14,17 @@ void init()
 
 void recordTest()
 {
+    SourceEventParams audioParams;
+    audioParams.type = SourceEventType::OPEN_SOURCE;
+    audioParams.sourceType = demuxerType::MICROPHONE;
+    audioParams.url = FFRecordURLS::MICROPHONE_URL;
+    audioParams.format = "dshow";
+
+    auto audioevent = EventFactoryManager::getInstance().createEvent(EventCategory::SOURCE,
+                                                                     &FFRecorder::getInstance(),
+                                                                     audioParams);
+    audioevent->work();
+
     FFRecorder::getInstance().startRecord();
     SourceEventParams params;
     params.type = SourceEventType::OPEN_SOURCE;
@@ -35,6 +46,15 @@ void recordTest()
                                                                          &FFRecorder::getInstance(),
                                                                          closeParams);
         closeEvent->work();
+
+        SourceEventParams closeAudioParams;
+        closeAudioParams.type = SourceEventType::CLOSE_SOURCE;
+        closeAudioParams.sourceType = demuxerType::MICROPHONE;
+        auto closeAudioEvent = EventFactoryManager::getInstance()
+                                   .createEvent(EventCategory::SOURCE,
+                                                &FFRecorder::getInstance(),
+                                                closeAudioParams);
+        closeAudioEvent->work();
     });
 }
 

@@ -80,6 +80,7 @@
     "queue": "cpp",
     "version": "cpp",
     "shared_mutex": "cpp",
-    "qquickwindow": "cpp"
+    "qquickwindow": "cpp",
+    "qtimer": "cpp"
   }
 }

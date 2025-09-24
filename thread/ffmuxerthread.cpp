@@ -132,16 +132,33 @@ void FFMuxerThread::run()
 
         std::cerr << "[Mux] write video pkt: pts=" << vPacket->pts << " dts=" << vPacket->dts
                   << " size=" << vPacket->size << std::endl;
-        ret = muxer->mux(vPacket);
-        if (ret < 0) {
-            std::cerr << "Mux Video Fail !" << std::endl;
-            m_stop = true;
-            return;
-        }
-        std::cerr << "[Mux] wrote video pkt ok" << std::endl;
 
-        videoFinish = true;
-        audioFinish = false;
+        std::cout << "muxer thread stated !" << std::endl;
+        if (audioPtsSec < videoPtsSec) {
+            //            std::cout<<"audio Finish:"<<audioPtsSec<<std::fixed<<std::endl;
+            ret = muxer->mux(aPacket);
+            if (ret < 0) {
+                std::cerr << "Mux Audio Fail !" << std::endl;
+                m_stop = true;
+                return;
+            }
+            std::cerr << "[Mux] wrote aideo pkt ok" << std::endl;
+
+            audioFinish = true;
+            videoFinish = false;
+
+        } else {
+            ret = muxer->mux(vPacket);
+            if (ret < 0) {
+                std::cerr << "Mux Video Fail !" << std::endl;
+                m_stop = true;
+                return;
+            }
+            std::cerr << "[Mux] wrote video pkt ok" << std::endl;
+
+            videoFinish = true;
+            audioFinish = false;
+        }
     }
     muxer->writeTrailer();
 }
