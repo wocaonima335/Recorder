@@ -1,6 +1,4 @@
 #include "ffopensourceevent.h"
-#include <chrono>
-#include <thread>
 
 using namespace FFRecordContextType;
 
