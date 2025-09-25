@@ -27,6 +27,19 @@ void FFMuxer::addStream(AVCodecContext *codecCtx)
 {
     std::lock_guard<std::shared_mutex> lock(mutex);
 
+    // 验证编码器上下文
+    if (!codecCtx || !codecCtx->codec) {
+        std::cerr << "Invalid codec context!" << std::endl;
+        return;
+    }
+
+    // 验证时间基
+    if (codecCtx->time_base.num <= 0 || codecCtx->time_base.den <= 0) {
+        std::cerr << "Invalid time base: " << codecCtx->time_base.num << "/"
+                  << codecCtx->time_base.den << std::endl;
+        return;
+    }
+
     AVStream *stream = avformat_new_stream(fmtCtx, nullptr);
     if (!stream) {
         std::cerr << "New Stream Fail !" << std::endl;

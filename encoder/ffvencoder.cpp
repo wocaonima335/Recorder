@@ -45,12 +45,14 @@ int FFVEncoder::encode(AVFrame *frame, int streamIndex, int64_t pts, AVRational 
         return 0;
     }
 
-    pts = av_rescale_q(pts, timeBase, codecCtx->time_base);
+    pts = av_rescale_q_rnd(pts, timeBase, codecCtx->time_base, AV_ROUND_NEAR_INF);
     if (pts <= lastPts) {
         pts = lastPts + 1;
     }
 
     frame->pts = pts;
+
+    lastPts = pts;
 
     int ret = avcodec_send_frame(codecCtx, frame);
     if (ret < 0) {

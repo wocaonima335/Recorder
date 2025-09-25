@@ -149,8 +149,32 @@ void Demuxer::initDemuxer()
         std::cerr << "Cannot find input format: " << format << std::endl;
         return;
     }
+    // 假设 url = "desktop"，inputFmt = av_find_input_format("gdigrab")
+    AVDictionary *opts = nullptr;
+
+    // 1) 设置偶数化分辨率，避免后续 x264 报 "height not divisible by 2"
+    //    注意：宽高必须都在虚拟桌面范围之内
+    av_dict_set(&opts, "video_size", "3840x1266", 0);
+
+    // 2) 固定帧率
+    av_dict_set(&opts, "framerate", "30", 0);
+
+    // 3) 关键：与日志一致的起点坐标，确保截取区域不会越界（根据你的日志：x=0, y=-187）
+    av_dict_set(&opts, "offset_x", "0", 0);
+    av_dict_set(&opts, "offset_y", "-187", 0);
+
+    // 4) 可选：绘制鼠标
+    // av_dict_set(&opts, "draw_mouse", "1", 0);
 
     int ret = avformat_open_input(&fmtCtx, url.c_str(), inputFmt, &opts);
+    av_dict_free(&opts); // 无论成功与否都释放字典
+    if (ret == AVERROR(EIO)) {
+        // 回退策略：去掉裁剪，仅设帧率，避免区域越界导致的 -5
+        AVDictionary *fallback = nullptr;
+        av_dict_set(&fallback, "framerate", "30", 0);
+        ret = avformat_open_input(&fmtCtx, url.c_str(), inputFmt, &fallback);
+        av_dict_free(&fallback);
+    }
     if (ret < 0) {
         avformat_close_input(&fmtCtx);
         printError(ret);
@@ -176,6 +200,7 @@ void Demuxer::initDemuxer()
             vTimeBase = stream->time_base;
         }
     }
+    av_dict_free(&opts);
 }
 
 int Demuxer::getType()

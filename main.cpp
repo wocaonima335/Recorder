@@ -28,7 +28,7 @@ void recordTest()
     event->work();
 
     // Schedule closing the same source after 10 seconds
-    QTimer::singleShot(50000, []() {
+    QTimer::singleShot(10000, []() {
         SourceEventParams closeParams;
         closeParams.type = SourceEventType::CLOSE_SOURCE;
         closeParams.sourceType = demuxerType::SCREEN;
