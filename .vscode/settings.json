@@ -81,6 +81,7 @@
     "version": "cpp",
     "shared_mutex": "cpp",
     "qquickwindow": "cpp",
+<<<<<<< HEAD
     "xhash": "cpp",
     "xlocmon": "cpp",
     "xlocnum": "cpp",
@@ -90,5 +91,8 @@
     "xstring": "cpp",
     "xtr1common": "cpp",
     "xutility": "cpp"
+=======
+    "qtimer": "cpp"
+>>>>>>> e81a36465c7ab47ae437ac1711c63d39f3188f37
   }
 }

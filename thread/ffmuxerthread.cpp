@@ -64,7 +64,7 @@ void FFMuxerThread::wakeAllThread()
 
 void FFMuxerThread::run()
 {
-    bool audioFinish = false;
+    bool audioFinish = true;
     bool videoFinish = true;
 
     muxer->writeHeader();
@@ -93,6 +93,11 @@ void FFMuxerThread::run()
             if (aTimeBase.den == -1 && aTimeBase.num == -1) {
                 aTimeBase = aEncoder->getCodecCtx()->time_base;
             }
+
+            audioPtsSec = aPacket->pts * av_q2d(aTimeBase);
+            std::cerr << "[MuxQ] got audio pkt: pts=" << aPacket->pts << " dts=" << aPacket->dts
+                      << " sec=" << audioPtsSec << " size=" << aPacket->size
+                      << " tb=" << aTimeBase.num << "/" << aTimeBase.den << std::endl;
 
             if (audioPtsSec < 0) {
                 audioFinish = true;
@@ -132,16 +137,32 @@ void FFMuxerThread::run()
 
         std::cerr << "[Mux] write video pkt: pts=" << vPacket->pts << " dts=" << vPacket->dts
                   << " size=" << vPacket->size << std::endl;
-        ret = muxer->mux(vPacket);
-        if (ret < 0) {
-            std::cerr << "Mux Video Fail !" << std::endl;
-            m_stop = true;
-            return;
-        }
-        std::cerr << "[Mux] wrote video pkt ok" << std::endl;
 
-        videoFinish = true;
-        audioFinish = false;
+        if (audioPtsSec < videoPtsSec) {
+            //            std::cout<<"audio Finish:"<<audioPtsSec<<std::fixed<<std::endl;
+            ret = muxer->mux(aPacket);
+            if (ret < 0) {
+                std::cerr << "Mux Audio Fail !" << std::endl;
+                m_stop = true;
+                return;
+            }
+            std::cerr << "[Mux] wrote aideo pkt ok" << std::endl;
+
+            audioFinish = true;
+            videoFinish = false;
+
+        } else {
+            ret = muxer->mux(vPacket);
+            if (ret < 0) {
+                std::cerr << "Mux Video Fail !" << std::endl;
+                m_stop = true;
+                return;
+            }
+            std::cerr << "[Mux] wrote video pkt ok" << std::endl;
+
+            videoFinish = true;
+            audioFinish = false;
+        }
     }
     muxer->writeTrailer();
 }

@@ -141,8 +141,6 @@ void Demuxer::initDemuxer()
     avformat_network_init();
     avdevice_register_all();
 
-    PrintDshowDevices();
-
     inputFmt = av_find_input_format(format.c_str());
 
     if (!inputFmt) {

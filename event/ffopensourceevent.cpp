@@ -31,6 +31,15 @@ void FFOpenSourceEvent::init()
         aDecoderThread[index]->close();
         aDecoder[index]->init(aDemuxer[index]->getAStream(), aFrmQueue[index]);
         aDecoderThread[index]->init(aDecoder[index], aPktQueue[index]);
+
+        aEncoderThread->close();
+        aEncoder->init(aEncoderPktQueue);
+        aEncoderThread->init(aFilter, aEncoder, muxer, aFrmQueue[index]);
+
+        muxer->init("E:/Videos/output.mp4");
+        muxerThread
+            ->init(aEncoderPktQueue, vEncoderPktQueue, muxer, aEncoder, vEncoder, recoderContext);
+        std::cout << "init opensource" << std::endl;
     }
     else
     {
@@ -45,12 +54,7 @@ void FFOpenSourceEvent::init()
         vEncoderThread->close();
         vEncoder->init(vEncoderPktQueue);
         vEncoderThread->init(vFilter, vEncoder, muxer, vFrmQueue[index]);
-
-        muxer->init("E:/Videos/output.mp4");
-        muxerThread
-            ->init(aEncoderPktQueue, vEncoderPktQueue, muxer, aEncoder, vEncoder, recoderContext);
     }
-    std::cout << "init opensource" << std::endl;
 }
 
 void FFOpenSourceEvent::start()
@@ -63,36 +67,29 @@ void FFOpenSourceEvent::start()
         aDecoderThread[index]->wakeAllThread();
         aDecoderThread[index]->start();
 
+        aEncoderThread->start();
+
+        recoderContext->getAEncoderPktQueue()->start();
+
         aPktQueue[index]->start();
         aFrmQueue[index]->start();
 
-        aFilterThread->openAudioSource(sourceType);
-    }
-    else
-    {
+        muxerThread->start();
+
+    } else {
         vDemuxerThread[index]->wakeAllThread();
         vDemuxerThread[index]->start();
 
         vDecoderThread[index]->wakeAllThread();
         vDecoderThread[index]->start();
 
-        // std::this_thread::sleep_for(std::chrono::milliseconds(300));
-
-        // vFilterThread->openVideoSource(sourceType);
-        // vFilterThread->startEncoder();
-        // vFilterThread->start();
-
         vEncoderThread->start();
 
-        // std::this_thread::sleep_for(std::chrono::milliseconds(300));
-
-        muxerThread->start();
-
-        recoderContext->getVFilterEncoderFrmQueue()->start();
         recoderContext->getVEncoderPktQueue()->start();
 
         vPktQueue[index]->start();
         vFrmQueue[index]->start();
     }
+
     std::cout << "start opensource " << std::endl;
 }
