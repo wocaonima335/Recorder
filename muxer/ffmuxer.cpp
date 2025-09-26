@@ -41,6 +41,7 @@ void FFMuxer::addStream(AVCodecContext *codecCtx)
     }
 
     AVStream *stream = avformat_new_stream(fmtCtx, nullptr);
+
     if (!stream) {
         std::cerr << "New Stream Fail !" << std::endl;
         return;
@@ -59,6 +60,7 @@ void FFMuxer::addStream(AVCodecContext *codecCtx)
         aCodecCtx = codecCtx;
         aStream = stream;
         aStreamIndex = stream->index;
+
     } else if (codecCtx->codec_type == AVMEDIA_TYPE_VIDEO) {
         vCodecCtx = codecCtx;
         vStream = stream;
