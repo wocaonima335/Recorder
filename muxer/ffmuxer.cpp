@@ -1,4 +1,5 @@
 #include "ffmuxer.h"
+#include <libavutil/timestamp.h>
 
 FFMuxer::FFMuxer() {}
 
@@ -78,6 +79,29 @@ int FFMuxer::mux(AVPacket *packet)
         return 1;
 
     int streamIndex = packet->stream_index;
+
+    // === 步骤1：打印输入包信息 ===
+    const char *streamType = (streamIndex == aStreamIndex)   ? "Audio"
+                             : (streamIndex == vStreamIndex) ? "Video"
+                                                             : "Unknown";
+
+    // 使用静态缓冲区替代 av_ts2str 宏
+    char pts_buf[AV_TS_MAX_STRING_SIZE];
+    char dts_buf[AV_TS_MAX_STRING_SIZE];
+    char duration_buf[AV_TS_MAX_STRING_SIZE];
+
+    av_ts_make_string(pts_buf, packet->pts);
+    av_ts_make_string(dts_buf, packet->dts);
+    av_ts_make_string(duration_buf, packet->duration);
+
+    printf("[Mux Input] %s pkt: stream_index=%d, pts=%s, dts=%s, duration=%s, size=%d\n",
+           streamType,
+           streamIndex,
+           pts_buf,
+           dts_buf,
+           duration_buf,
+           packet->size);
+
     AVRational srcTimeBase, dstTimeBase;
     {
         std::lock_guard<std::shared_mutex> lock(mutex);
@@ -92,12 +116,64 @@ int FFMuxer::mux(AVPacket *packet)
         }
     }
 
+    // === 步骤2：打印时间基信息和转换前的时间戳 ===
+    printf("[Mux TimeBase] %s: src_tb=%d/%d, dst_tb=%d/%d\n",
+           streamType,
+           srcTimeBase.num,
+           srcTimeBase.den,
+           dstTimeBase.num,
+           dstTimeBase.den);
+
+    printf("[Mux Before Rescale] %s: pts=%s(%.6fs), dts=%s(%.6fs), duration=%s\n",
+           streamType,
+           pts_buf,
+           av_q2d(srcTimeBase) * packet->pts,
+           dts_buf,
+           av_q2d(srcTimeBase) * packet->dts,
+           duration_buf);
+
     // 时间戳转换
+    int64_t old_pts = packet->pts;
+    int64_t old_dts = packet->dts;
+    int64_t old_duration = packet->duration;
+
     packet->pts = av_rescale_q(packet->pts, srcTimeBase, dstTimeBase);
     packet->dts = av_rescale_q(packet->dts, srcTimeBase, dstTimeBase);
     packet->duration = av_rescale_q(packet->duration, srcTimeBase, dstTimeBase);
 
+    // === 步骤3：打印转换后的时间戳 ===
+    char old_pts_buf[AV_TS_MAX_STRING_SIZE];
+    char old_dts_buf[AV_TS_MAX_STRING_SIZE];
+    char old_duration_buf[AV_TS_MAX_STRING_SIZE];
+    char new_pts_buf[AV_TS_MAX_STRING_SIZE];
+    char new_dts_buf[AV_TS_MAX_STRING_SIZE];
+    char new_duration_buf[AV_TS_MAX_STRING_SIZE];
+
+    av_ts_make_string(old_pts_buf, old_pts);
+    av_ts_make_string(old_dts_buf, old_dts);
+    av_ts_make_string(old_duration_buf, old_duration);
+    av_ts_make_string(new_pts_buf, packet->pts);
+    av_ts_make_string(new_dts_buf, packet->dts);
+    av_ts_make_string(new_duration_buf, packet->duration);
+
+    printf("[Mux After Rescale] %s: pts=%s->%s(%.6fs), dts=%s->%s(%.6fs), duration=%s->%s\n",
+           streamType,
+           old_pts_buf,
+           new_pts_buf,
+           av_q2d(dstTimeBase) * packet->pts,
+           old_dts_buf,
+           new_dts_buf,
+           av_q2d(dstTimeBase) * packet->dts,
+           old_duration_buf,
+           new_duration_buf);
+
     if (packet->pts == AV_NOPTS_VALUE || packet->dts == AV_NOPTS_VALUE || packet->pts < 0) {
+        av_ts_make_string(pts_buf, packet->pts);
+        av_ts_make_string(dts_buf, packet->dts);
+        printf("[Mux Drop] %s pkt dropped: invalid pts/dts (pts=%s, dts=%s)\n",
+               streamType,
+               pts_buf,
+               dts_buf);
         av_packet_unref(packet);
         av_packet_free(&packet);
         return 0;
@@ -109,6 +185,19 @@ int FFMuxer::mux(AVPacket *packet)
         if (fmtCtx == nullptr) {
             return 0;
         }
+
+        // === 步骤4：打印最终写入的包信息 ===
+        av_ts_make_string(pts_buf, packet->pts);
+        av_ts_make_string(dts_buf, packet->dts);
+
+        printf("[Mux Write] %s pkt: stream_index=%d, pts=%s(%.6fs), dts=%s(%.6fs), size=%d\n",
+               streamType,
+               packet->stream_index,
+               pts_buf,
+               av_q2d(dstTimeBase) * packet->pts,
+               dts_buf,
+               av_q2d(dstTimeBase) * packet->dts,
+               packet->size);
 
         int ret = av_interleaved_write_frame(fmtCtx, packet);
         if (ret < 0) {
