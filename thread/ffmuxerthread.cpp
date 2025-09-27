@@ -11,6 +11,8 @@
 
 #define CAPTURE_TIME 60
 
+const double SYNC_THRESHOLD = 0.020;
+
 FFMuxerThread::FFMuxerThread()
 {
     vTimeBase = {-1, -1};
@@ -138,7 +140,7 @@ void FFMuxerThread::run()
         std::cerr << "[Mux] write video pkt: pts=" << vPacket->pts << " dts=" << vPacket->dts
                   << " size=" << vPacket->size << std::endl;
 
-        if (audioPtsSec < videoPtsSec) {
+        if (audioPtsSec + SYNC_THRESHOLD < videoPtsSec) {
             //            std::cout<<"audio Finish:"<<audioPtsSec<<std::fixed<<std::endl;
             ret = muxer->mux(aPacket);
             if (ret < 0) {
@@ -150,8 +152,7 @@ void FFMuxerThread::run()
 
             audioFinish = true;
             videoFinish = false;
-
-        } else {
+        } else if (videoPtsSec + SYNC_THRESHOLD < audioPtsSec) {
             ret = muxer->mux(vPacket);
             if (ret < 0) {
                 std::cerr << "Mux Video Fail !" << std::endl;
@@ -162,6 +163,30 @@ void FFMuxerThread::run()
 
             videoFinish = true;
             audioFinish = false;
+        } else {
+            if (aPktQueue->length() > vPktQueue->length()) {
+                ret = muxer->mux(aPacket);
+                if (ret < 0) {
+                    std::cerr << "Mux Audio Fail !" << std::endl;
+                    m_stop = true;
+                    return;
+                }
+                std::cerr << "[Mux] wrote aideo pkt ok" << std::endl;
+
+                audioFinish = true;
+                videoFinish = false;
+            } else {
+                ret = muxer->mux(vPacket);
+                if (ret < 0) {
+                    std::cerr << "Mux Video Fail !" << std::endl;
+                    m_stop = true;
+                    return;
+                }
+                std::cerr << "[Mux] wrote video pkt ok" << std::endl;
+
+                videoFinish = true;
+                audioFinish = false;
+            }
         }
     }
     muxer->writeTrailer();

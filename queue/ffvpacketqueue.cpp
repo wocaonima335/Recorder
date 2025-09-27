@@ -126,6 +126,11 @@ void FFVPacketQueue::setMaxSize(size_t maxSize_)
     maxSize = maxSize_;
 }
 
+int FFVPacketQueue::length()
+{
+    return pktQueue.size();
+}
+
 void FFVPacketQueue::wakeAllThread()
 {
     m_stop = true;

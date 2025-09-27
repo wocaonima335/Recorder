@@ -139,3 +139,8 @@ void FFAPacketQueue::start()
 {
     m_stop = false;
 }
+
+int FFAPacketQueue::length()
+{
+    return pktQueue.size();
+}

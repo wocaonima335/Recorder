@@ -30,6 +30,7 @@ public:
     void wakeAllThread();
     void close();
     void start();
+    int length();
 
 private:
     std::mutex mutex;
