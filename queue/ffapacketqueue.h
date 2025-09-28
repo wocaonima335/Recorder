@@ -20,6 +20,7 @@ public:
 
     FFPacket *dequeue();
     FFPacket *peekQueue();
+    FFPacket *peekBack();
     void enqueue(AVPacket *pkt);
     void enqueueFlush();
     void enqueueNull();

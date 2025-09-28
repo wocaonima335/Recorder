@@ -39,6 +39,10 @@ private:
     void sendCaptureProcessEvent(double seconds);
 
 private:
+    double calculateQueueDuration(FFAPacketQueue *queue, AVRational timeBase);
+    double calculateQueueDuration(FFVPacketQueue *queue, AVRational timeBase);
+
+private:
     FFAPacketQueue *aPktQueue = nullptr;
     FFVPacketQueue *vPktQueue = nullptr;
 

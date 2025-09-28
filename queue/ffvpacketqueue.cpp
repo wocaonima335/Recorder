@@ -34,6 +34,11 @@ FFPacket *FFVPacketQueue::peekQueue()
     return pktQueue.empty() ? nullptr : pktQueue.front();
 }
 
+FFPacket *FFVPacketQueue::peekBack()
+{
+    return pktQueue.back();
+}
+
 void FFVPacketQueue::enqueue(AVPacket *pkt)
 {
     std::unique_lock<std::mutex> lock(mutex);
