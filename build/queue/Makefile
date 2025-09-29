@@ -250,6 +250,30 @@ ffapacketqueue.cpp.s:
 	cd /d E:\myProgram\Recorder\record\build && $(MAKE) $(MAKESILENT) -f queue\CMakeFiles\queue_module.dir\build.make queue/CMakeFiles/queue_module.dir/ffapacketqueue.cpp.s
 .PHONY : ffapacketqueue.cpp.s
 
+ffboundedqueue.obj: ffboundedqueue.cpp.obj
+.PHONY : ffboundedqueue.obj
+
+# target to build an object file
+ffboundedqueue.cpp.obj:
+	cd /d E:\myProgram\Recorder\record\build && $(MAKE) $(MAKESILENT) -f queue\CMakeFiles\queue_module.dir\build.make queue/CMakeFiles/queue_module.dir/ffboundedqueue.cpp.obj
+.PHONY : ffboundedqueue.cpp.obj
+
+ffboundedqueue.i: ffboundedqueue.cpp.i
+.PHONY : ffboundedqueue.i
+
+# target to preprocess a source file
+ffboundedqueue.cpp.i:
+	cd /d E:\myProgram\Recorder\record\build && $(MAKE) $(MAKESILENT) -f queue\CMakeFiles\queue_module.dir\build.make queue/CMakeFiles/queue_module.dir/ffboundedqueue.cpp.i
+.PHONY : ffboundedqueue.cpp.i
+
+ffboundedqueue.s: ffboundedqueue.cpp.s
+.PHONY : ffboundedqueue.s
+
+# target to generate assembly for a file
+ffboundedqueue.cpp.s:
+	cd /d E:\myProgram\Recorder\record\build && $(MAKE) $(MAKESILENT) -f queue\CMakeFiles\queue_module.dir\build.make queue/CMakeFiles/queue_module.dir/ffboundedqueue.cpp.s
+.PHONY : ffboundedqueue.cpp.s
+
 ffeventqueue.obj: ffeventqueue.cpp.obj
 .PHONY : ffeventqueue.obj
 
@@ -367,6 +391,9 @@ help:
 	@echo ... ffapacketqueue.obj
 	@echo ... ffapacketqueue.i
 	@echo ... ffapacketqueue.s
+	@echo ... ffboundedqueue.obj
+	@echo ... ffboundedqueue.i
+	@echo ... ffboundedqueue.s
 	@echo ... ffeventqueue.obj
 	@echo ... ffeventqueue.i
 	@echo ... ffeventqueue.s

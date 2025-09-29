@@ -33,6 +33,11 @@ FFPacket *FFAPacketQueue::peekQueue()
     return pktQueue.empty() ? nullptr : pktQueue.front();
 }
 
+FFPacket *FFAPacketQueue::peekBack()
+{
+    return pktQueue.back();
+}
+
 void FFAPacketQueue::enqueue(AVPacket *pkt)
 {
     std::unique_lock<std::mutex> lock(mutex);
@@ -138,4 +143,9 @@ void FFAPacketQueue::close()
 void FFAPacketQueue::start()
 {
     m_stop = false;
+}
+
+int FFAPacketQueue::length()
+{
+    return pktQueue.size();
 }

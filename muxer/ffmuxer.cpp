@@ -42,6 +42,7 @@ void FFMuxer::addStream(AVCodecContext *codecCtx)
     }
 
     AVStream *stream = avformat_new_stream(fmtCtx, nullptr);
+
     if (!stream) {
         std::cerr << "New Stream Fail !" << std::endl;
         return;
@@ -60,6 +61,7 @@ void FFMuxer::addStream(AVCodecContext *codecCtx)
         aCodecCtx = codecCtx;
         aStream = stream;
         aStreamIndex = stream->index;
+
     } else if (codecCtx->codec_type == AVMEDIA_TYPE_VIDEO) {
         vCodecCtx = codecCtx;
         vStream = stream;
@@ -116,56 +118,9 @@ int FFMuxer::mux(AVPacket *packet)
         }
     }
 
-    // === 步骤2：打印时间基信息和转换前的时间戳 ===
-    printf("[Mux TimeBase] %s: src_tb=%d/%d, dst_tb=%d/%d\n",
-           streamType,
-           srcTimeBase.num,
-           srcTimeBase.den,
-           dstTimeBase.num,
-           dstTimeBase.den);
-
-    printf("[Mux Before Rescale] %s: pts=%s(%.6fs), dts=%s(%.6fs), duration=%s\n",
-           streamType,
-           pts_buf,
-           av_q2d(srcTimeBase) * packet->pts,
-           dts_buf,
-           av_q2d(srcTimeBase) * packet->dts,
-           duration_buf);
-
-    // 时间戳转换
-    int64_t old_pts = packet->pts;
-    int64_t old_dts = packet->dts;
-    int64_t old_duration = packet->duration;
-
     packet->pts = av_rescale_q(packet->pts, srcTimeBase, dstTimeBase);
     packet->dts = av_rescale_q(packet->dts, srcTimeBase, dstTimeBase);
     packet->duration = av_rescale_q(packet->duration, srcTimeBase, dstTimeBase);
-
-    // === 步骤3：打印转换后的时间戳 ===
-    char old_pts_buf[AV_TS_MAX_STRING_SIZE];
-    char old_dts_buf[AV_TS_MAX_STRING_SIZE];
-    char old_duration_buf[AV_TS_MAX_STRING_SIZE];
-    char new_pts_buf[AV_TS_MAX_STRING_SIZE];
-    char new_dts_buf[AV_TS_MAX_STRING_SIZE];
-    char new_duration_buf[AV_TS_MAX_STRING_SIZE];
-
-    av_ts_make_string(old_pts_buf, old_pts);
-    av_ts_make_string(old_dts_buf, old_dts);
-    av_ts_make_string(old_duration_buf, old_duration);
-    av_ts_make_string(new_pts_buf, packet->pts);
-    av_ts_make_string(new_dts_buf, packet->dts);
-    av_ts_make_string(new_duration_buf, packet->duration);
-
-    printf("[Mux After Rescale] %s: pts=%s->%s(%.6fs), dts=%s->%s(%.6fs), duration=%s->%s\n",
-           streamType,
-           old_pts_buf,
-           new_pts_buf,
-           av_q2d(dstTimeBase) * packet->pts,
-           old_dts_buf,
-           new_dts_buf,
-           av_q2d(dstTimeBase) * packet->dts,
-           old_duration_buf,
-           new_duration_buf);
 
     if (packet->pts == AV_NOPTS_VALUE || packet->dts == AV_NOPTS_VALUE || packet->pts < 0) {
         av_ts_make_string(pts_buf, packet->pts);

@@ -1,15 +1,6 @@
-#ifndef FFVFRAMEQUEUE_H
-#define FFVFRAMEQUEUE_H
+#pragma
 
-#include <atomic>
-#include <condition_variable>
-#include <iostream>
-#include <mutex>
-#include <queue>
-
-extern "C" {
-#include <libavformat/avformat.h>
-}
+#include "ffboundedqueue.h"
 
 class FFVFrameQueue
 {
@@ -32,10 +23,5 @@ private:
     AVFrame *peekQueue();
 
 private:
-    std::queue<AVFrame *> frmQueue;
-    std::mutex mutex;
-    std::condition_variable cond;
-    std::atomic<bool> m_stop;
+    FFBoundedQueue<AVFrame, AVFrameTraits> impl;
 };
-
-#endif // FFVFRAMEQUEUE_H

@@ -34,6 +34,11 @@ FFPacket *FFVPacketQueue::peekQueue()
     return pktQueue.empty() ? nullptr : pktQueue.front();
 }
 
+FFPacket *FFVPacketQueue::peekBack()
+{
+    return pktQueue.back();
+}
+
 void FFVPacketQueue::enqueue(AVPacket *pkt)
 {
     std::unique_lock<std::mutex> lock(mutex);
@@ -124,6 +129,11 @@ void FFVPacketQueue::start()
 void FFVPacketQueue::setMaxSize(size_t maxSize_)
 {
     maxSize = maxSize_;
+}
+
+int FFVPacketQueue::length()
+{
+    return pktQueue.size();
 }
 
 void FFVPacketQueue::wakeAllThread()

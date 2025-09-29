@@ -11,6 +11,8 @@
 
 #define CAPTURE_TIME 60
 
+const double SYNC_THRESHOLD = 0.020;
+
 FFMuxerThread::FFMuxerThread()
 {
     vTimeBase = {-1, -1};
@@ -138,7 +140,7 @@ void FFMuxerThread::run()
         std::cerr << "[Mux] write video pkt: pts=" << vPacket->pts << " dts=" << vPacket->dts
                   << " size=" << vPacket->size << std::endl;
 
-        if (audioPtsSec < videoPtsSec) {
+        if (audioPtsSec + SYNC_THRESHOLD < videoPtsSec) {
             //            std::cout<<"audio Finish:"<<audioPtsSec<<std::fixed<<std::endl;
             ret = muxer->mux(aPacket);
             if (ret < 0) {
@@ -150,8 +152,7 @@ void FFMuxerThread::run()
 
             audioFinish = true;
             videoFinish = false;
-
-        } else {
+        } else if (videoPtsSec + SYNC_THRESHOLD < audioPtsSec) {
             ret = muxer->mux(vPacket);
             if (ret < 0) {
                 std::cerr << "Mux Video Fail !" << std::endl;
@@ -162,10 +163,85 @@ void FFMuxerThread::run()
 
             videoFinish = true;
             audioFinish = false;
-         
+        } else {
+            double audioQueueDuration = calculateQueueDuration(aPktQueue, aTimeBase);
+            double videoQueueDuration = calculateQueueDuration(vPktQueue, vTimeBase);
+
+            if (audioQueueDuration > videoQueueDuration + 0.010) { // 10ms差异
+                std::cerr << "[Mux] Prioritizing audio (longer queue duration)" << std::endl;
+                ret = muxer->mux(aPacket);
+                if (ret < 0) {
+                    std::cerr << "Mux Audio Fail !" << std::endl;
+                    m_stop = true;
+                    return;
+                }
+                std::cerr << "[Mux] wrote audio pkt ok" << std::endl;
+                audioFinish = true;
+                videoFinish = false;
+            } else {
+                std::cerr << "[Mux] Prioritizing video (longer queue duration or similar)"
+                          << std::endl;
+                ret = muxer->mux(vPacket);
+                if (ret < 0) {
+                    std::cerr << "Mux Video Fail !" << std::endl;
+                    m_stop = true;
+                    return;
+                }
+                std::cerr << "[Mux] wrote video pkt ok" << std::endl;
+                videoFinish = true;
+                audioFinish = false;
+            }
         }
     }
     muxer->writeTrailer();
 }
 
 void FFMuxerThread::sendCaptureProcessEvent(double seconds) {}
+
+double FFMuxerThread::calculateQueueDuration(FFAPacketQueue *queue, AVRational timeBase)
+{
+    if (!queue || timeBase.den <= 0) {
+        return 0.0;
+    }
+
+    FFPacket *firstPkt = queue->peekQueue();
+    FFPacket *lastPkt = queue->peekBack();
+
+    if (!firstPkt || !lastPkt) {
+        return 0.0;
+    }
+
+    int64_t firstPts = firstPkt->packet.pts;
+    int64_t lastPts = lastPkt->packet.pts;
+    int64_t lastDuration = lastPkt->packet.duration;
+    if (firstPts == AV_NOPTS_VALUE || lastPts == AV_NOPTS_VALUE) {
+        return 0.0;
+    }
+
+    double duration = (lastPts + lastDuration - firstPts) * av_q2d(timeBase);
+    return duration > 0 ? duration : 0.0;
+}
+
+double FFMuxerThread::calculateQueueDuration(FFVPacketQueue *queue, AVRational timeBase)
+{
+    if (!queue || timeBase.den <= 0) {
+        return 0.0;
+    }
+
+    FFPacket *firstPkt = queue->peekQueue();
+    FFPacket *lastPkt = queue->peekBack();
+
+    if (!firstPkt || !lastPkt) {
+        return 0.0;
+    }
+
+    int64_t firstPts = firstPkt->packet.pts;
+    int64_t lastPts = lastPkt->packet.pts;
+    int64_t lastDuration = lastPkt->packet.duration;
+    if (firstPts == AV_NOPTS_VALUE || lastPts == AV_NOPTS_VALUE) {
+        return 0.0;
+    }
+
+    double duration = (lastPts + lastDuration - firstPts) * av_q2d(timeBase);
+    return duration > 0 ? duration : 0.0;
+}

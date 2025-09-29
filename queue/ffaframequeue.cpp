@@ -15,9 +15,11 @@ void FFAFrameQueue::enqueue(AVFrame *srcFrame)
 {
     std::unique_lock<std::mutex> lock(mutex);
 
-    cond.wait(lock, [this]() { return frmQueue.size() < MAX_FRAME_SIZE || m_stop.load(); });
+    cond.wait(lock, [this]() {
+        return frmQueue.size() < MAX_FRAME_SIZE || m_stop.load(std::memory_order_acquire);
+    });
 
-    if (m_stop.load()) {
+    if (m_stop.load(std::memory_order_acquire)) {
         av_frame_unref(srcFrame);
         return;
     }
@@ -36,9 +38,11 @@ void FFAFrameQueue::enqueue(AVFrame *srcFrame)
 void FFAFrameQueue::enqueueNull()
 {
     std::unique_lock<std::mutex> lock(mutex);
-    cond.wait(lock, [this]() { return frmQueue.size() < MAX_FRAME_SIZE || m_stop.load(); });
+    cond.wait(lock, [this]() {
+        return frmQueue.size() < MAX_FRAME_SIZE || m_stop.load(std::memory_order_acquire);
+    });
 
-    if (m_stop.load()) {
+    if (m_stop.load(std::memory_order_acquire)) {
         return;
     }
 
@@ -55,19 +59,20 @@ void FFAFrameQueue::enqueueNull()
 AVFrame *FFAFrameQueue::dequeue()
 {
     std::unique_lock<std::mutex> lock(mutex);
-    if (m_stop) {
+    if (m_stop.load(std::memory_order_acquire)) {
         return nullptr;
     }
+    cond.wait(lock,
+              [this]() { return !frmQueue.empty() || m_stop.load(std::memory_order_acquire); });
 
-    cond.wait(lock, [this]() { return !frmQueue.empty() || m_stop.load(); });
-
-    if (m_stop.load()) {
+    if (m_stop.load(std::memory_order_acquire)) {
         return nullptr;
     }
 
     AVFrame *frame = frmQueue.front();
     frmQueue.pop();
     cond.notify_one();
+
     return frame;
 }
 
@@ -84,8 +89,7 @@ void FFAFrameQueue::clearQueue()
         AVFrame *frame = frmQueue.front();
         frmQueue.pop();
         if (frame) {
-            av_frame_unref(frame);
-            av_frame_free(&frame);
+            freeFrame(frame);
         }
     }
 }
@@ -99,8 +103,7 @@ void FFAFrameQueue::flushQueue()
             break;
         }
         frmQueue.pop();
-        av_frame_unref(frame);
-        av_frame_free(&frame);
+        freeFrame(frame);
     }
     cond.notify_one();
 }
@@ -113,10 +116,18 @@ void FFAFrameQueue::close()
 
 void FFAFrameQueue::start()
 {
-    m_stop = false;
+    m_stop.store(false, std::memory_order_release);
 }
 
 AVFrame *FFAFrameQueue::peekQueue()
 {
     return frmQueue.empty() ? nullptr : frmQueue.front();
+}
+
+void FFAFrameQueue::freeFrame(AVFrame *frame)
+{
+    if (frame) {
+        av_frame_unref(frame);
+        av_frame_free(&frame);
+    }
 }

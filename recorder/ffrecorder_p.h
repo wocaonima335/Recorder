@@ -33,8 +33,7 @@ namespace FFRecordURLS {
 static std::string CAMERA_URL = "video=Integrated Camera";
 static std::string SCREEN_URL = "desktop";
 static std::string AUDIO_URL = "audio=Realtek Digital Input (Realtek High Definition Audio)";
-static std::string MICROPHONE_URL = "audio=@device_cm_{33D9A762-90C8-11D0-BD43-00A0C911CE86}\\wave_"
-                                    "{D3AEF6E4-E0F3-4C2E-A183-23132446840C}";
+static std::string MICROPHONE_URL = "audio=麦克风阵列 (Realtek(R) Audio)";
 }; // namespace FFRecordURLS
 
 namespace FFRecordContextType {

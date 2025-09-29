@@ -20,6 +20,7 @@ public:
 
     FFPacket *dequeue();
     FFPacket *peekQueue();
+    FFPacket *peekBack();
     void enqueue(AVPacket *pkt);
     void enqueueFlush();
     void enqueueNull();
@@ -32,6 +33,7 @@ public:
     void close();
     void start();
     void setMaxSize(size_t maxSize);
+    int length();
 
 private:
     std::mutex mutex;

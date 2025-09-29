@@ -46,7 +46,7 @@ int FFAEncoder::encode(AVFrame *frame, int streamIndex, int64_t pts, AVRational 
 
     std::cerr << "[AEnc] encode enter: in_nb_samples=" << frame->nb_samples
               << " ch=" << codecCtx->ch_layout.nb_channels << " frame_size=" << codecCtx->frame_size
-              << " pending=" << pendingFrame.samples << std::endl;
+              << " pending=" << pendingFrame.samples << " stream=" << streamIndex << std::endl;
 
     int frame_size = codecCtx->frame_size;
     int input_samples = frame->nb_samples;
