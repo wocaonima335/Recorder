@@ -162,6 +162,7 @@ void FFMuxerThread::run()
 
             videoFinish = true;
             audioFinish = false;
+         
         }
     }
     muxer->writeTrailer();
