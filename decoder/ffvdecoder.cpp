@@ -2,6 +2,8 @@
 #include "queue/ffvframequeue.h"
 #include "resampler/ffvresampler.h"
 
+#include <iostream>
+
 FFVDecoder::~FFVDecoder()
 {
     close();
@@ -110,9 +112,8 @@ void FFVDecoder::decode(AVPacket *packet)
                     av_frame_unref(frame);
                     break;
                 } else {
-                    // 无重采样分支打印 pts
                     std::cerr << "[VDec][nosws] frame pts=" << frame->pts << std::endl;
-                    //解码队列
+
                     if (frmQueue) {
                         AVFrame *decoderFrame = av_frame_clone(frame);
                         frmQueue->enqueue(decoderFrame);

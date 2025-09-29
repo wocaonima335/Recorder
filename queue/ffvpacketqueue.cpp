@@ -6,6 +6,7 @@
 FFVPacketQueue::FFVPacketQueue()
     : serial(0)
     , m_stop(false)
+    , impl(new FFBoundedQueue<FFPacket, FFPacketTraits>(maxSize))
 
 {}
 
@@ -124,11 +125,6 @@ void FFVPacketQueue::close()
 void FFVPacketQueue::start()
 {
     m_stop = false;
-}
-
-void FFVPacketQueue::setMaxSize(size_t maxSize_)
-{
-    maxSize = maxSize_;
 }
 
 int FFVPacketQueue::length()

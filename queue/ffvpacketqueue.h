@@ -1,6 +1,8 @@
 #ifndef FFVPACKETQUEUE_H
 #define FFVPACKETQUEUE_H
 
+#include "ffboundedqueue.h"
+
 #include <atomic>
 #include <condition_variable>
 #include <iostream>
@@ -32,7 +34,6 @@ public:
     void clearQueue();
     void close();
     void start();
-    void setMaxSize(size_t maxSize);
     int length();
 
 private:
@@ -41,8 +42,8 @@ private:
     std::atomic<size_t> serial;
     std::queue<FFPacket *> pktQueue;
     std::atomic<bool> m_stop;
-
     size_t maxSize = 2;
+    FFBoundedQueue<FFPacket, FFPacketTraits> *impl;
 };
 
 #endif // FFPACKETQUEUE_H

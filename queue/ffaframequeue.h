@@ -29,9 +29,10 @@ public:
 
 private:
     AVFrame *peekQueue();
+    static void freeFrame(AVFrame *frame);
 
 private:
-    std::queue<AVFrame *> frmQueue; // 数据队列
+    std::queue<AVFrame *> frmQueue;
     std::mutex mutex;
     std::condition_variable cond;
     std::atomic<bool> m_stop;
