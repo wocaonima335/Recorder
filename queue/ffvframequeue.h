@@ -1,4 +1,5 @@
-#pragma
+#ifndef FFVFRAMEQUEUE_H
+#define FFVFRAMEQUEUE_H
 
 #include "ffboundedqueue.h"
 
@@ -21,7 +22,7 @@ public:
 
 private:
     AVFrame *peekQueue();
-
-private:
-    FFBoundedQueue<AVFrame, AVFrameTraits> impl;
+    FFBoundedQueue<AVFrame, AVFrameTraits> *impl;
 };
+
+#endif

@@ -1,4 +1,5 @@
-#pragma once
+#ifndef FFBOUNDEDQUEUE_H
+#define FFBOUNDEDQUEUE_H
 
 #include "ffpacket.h"
 
@@ -20,29 +21,18 @@ extern "C" {
 
 struct FFPacketTraits
 {
-    static FFPacket *allocateFromSrc(AVPacket *src)
-    {
-        if (!src)
-            return nullptr;
-        FFPacket *pkt = new FFPacket();
-        av_packet_move_ref(&pkt->packet, src);
-        pkt->serial = 0; // 可按需设置
-        pkt->type = 0;   // NORMAL
-        av_packet_unref(src);
-        return pkt;
-    }
+    static FFPacket *allocateFromSrc(FFPacket *src) { return src; }
 
-    static void releaseSrc(AVPacket *src)
+    static void releaseSrc(FFPacket * /*src*/)
     {
-        if (src)
-            av_packet_unref(src);
+        // no-op
     }
 
     static FFPacket *allocateNull()
     {
-        FFPacket *pkt = new FFPacket();
-        pkt->serial = 0;
-        pkt->type = 2; // NULLP
+        FFPacket *pkt = static_cast<FFPacket *>(av_mallocz(sizeof(FFPacket)));
+        pkt->type = NULLP;
+        pkt->serial = 0; // 实际 serial 由外部设置更合适
         return pkt;
     }
 
@@ -50,15 +40,12 @@ struct FFPacketTraits
     {
         if (pkt) {
             av_packet_unref(&pkt->packet);
-            delete pkt;
+            av_freep(&pkt);
             pkt = nullptr;
         }
     }
 
-    static bool isNull(const FFPacket *pkt)
-    {
-        return pkt && pkt->type == 2; // NULLP
-    }
+    static bool isNull(const FFPacket *pkt) { return pkt && pkt->type == NULLP; }
 };
 
 struct AVFrameTraits
@@ -122,10 +109,10 @@ public:
     void enqueueNull();
     T *dequeue();
     bool peekEmpty() const;
-    AVFrame *peekQueue() const;
+    T *peekQueue() const;
+    T *peekBack() const;
     size_t length() const;
     static bool isNull(const T *item);
-
     void clearQueue();
     void flushQueue();
 
@@ -136,3 +123,140 @@ private:
     std::atomic<bool> m_stop;
     size_t m_maxSize;
 };
+
+template<typename T, typename Traits>
+FFBoundedQueue<T, Traits>::FFBoundedQueue(size_t maxSize)
+    : m_stop(false)
+    , m_maxSize(maxSize)
+{}
+
+template<typename T, typename Traits>
+void FFBoundedQueue<T, Traits>::start()
+{
+    m_stop.store(false, std::memory_order_release);
+}
+
+template<typename T, typename Traits>
+void FFBoundedQueue<T, Traits>::wakeAllThread()
+{
+    m_stop.store(true, std::memory_order_release);
+    cond.notify_all();
+}
+
+template<typename T, typename Traits>
+void FFBoundedQueue<T, Traits>::close()
+{
+    wakeAllThread();
+    clearQueue();
+}
+
+template<typename T, typename Traits>
+void FFBoundedQueue<T, Traits>::enqueueFromSrc(T *src)
+{
+    std::unique_lock<std::mutex> lock(mutex);
+    cond.wait(lock, [this]() { return q.size() < m_maxSize || m_stop.load(memory_order_acquire); });
+
+    if (m_stop.load(std::memory_order_acquire)) {
+        Traits::releaseSrc(src);
+        return;
+    }
+    T *dest = Traits::allocateFromSrc(src); // 由 Traits 执行 move/ref
+    if (!dest) {
+        Traits::releaseSrc(src);
+        return;
+    }
+    q.push(dest);
+    cond.notify_one();
+}
+
+template<typename T, typename Traits>
+void FFBoundedQueue<T, Traits>::enqueueNull()
+{
+    std::unique_lock<std::mutex> lock(mutex);
+    cond.wait(lock,
+              [this]() { return q.size() < m_maxSize || m_stop.load(std::memory_order_acquire); });
+    if (m_stop.load(std::memory_order_acquire)) {
+        return;
+    }
+    T *item = Traits::allocateNull();
+    if (item) {
+        q.push(item);
+        cond.notify_one();
+    }
+}
+
+template<typename T, typename Traits>
+T *FFBoundedQueue<T, Traits>::dequeue()
+{
+    std::unique_lock<std::mutex> lock(mutex);
+    if (m_stop.load(std::memory_order_acquire)) {
+        return nullptr;
+    }
+    cond.wait(lock, [this]() { return !q.empty() || m_stop.load(std::memory_order_acquire); });
+    if (m_stop.load(std::memory_order_acquire)) {
+        return nullptr;
+    }
+    T *item = q.front();
+    q.pop();
+    cond.notify_one();
+    return item;
+}
+
+template<typename T, typename Traits>
+bool FFBoundedQueue<T, Traits>::peekEmpty() const
+{
+    std::lock_guard<std::mutex> lock(mutex);
+    return q.empty();
+}
+
+template<typename T, typename Traits>
+T *FFBoundedQueue<T, Traits>::peekQueue() const
+{
+    std::lock_guard<std::mutex> lock(mutex);
+    return q.empty() ? nullptr : q.front();
+}
+
+template<typename T, typename Traits>
+T *FFBoundedQueue<T, Traits>::peekBack() const
+{
+    std::lock_guard<std::mutex> lock(mutex);
+    return q.empty() ? nullptr : q.back();
+}
+
+template<typename T, typename Traits>
+size_t FFBoundedQueue<T, Traits>::length() const
+{
+    std::lock_guard<std::mutex> lock(mutex);
+    return q.size();
+}
+
+template<typename T, typename Traits>
+bool FFBoundedQueue<T, Traits>::isNull(const T *item)
+{
+    return Traits::isNull(item);
+}
+
+template<typename T, typename Traits>
+void FFBoundedQueue<T, Traits>::clearQueue()
+{
+    std::lock_guard<std::mutex> lock(mutex);
+    while (!q.empty()) {
+        T *item = q.front();
+        q.pop();
+        Traits::release(item);
+    }
+}
+
+template<typename T, typename Traits>
+void FFBoundedQueue<T, Traits>::flushQueue()
+{
+    std::lock_guard<std::mutex> lock(mutex);
+    while (!q.empty()) {
+        T *item = q.front();
+        q.pop();
+        Traits::release(item);
+    }
+    cond.notify_one();
+}
+
+#endif

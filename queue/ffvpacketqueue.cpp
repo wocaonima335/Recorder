@@ -5,109 +5,69 @@
 
 FFVPacketQueue::FFVPacketQueue()
     : serial(0)
-    , m_stop(false)
+    , impl(new FFBoundedQueue<FFPacket, FFPacketTraits>())
 
 {}
 
 FFVPacketQueue::~FFVPacketQueue()
 {
     close();
+    delete impl;
 }
 
 FFPacket *FFVPacketQueue::dequeue()
 {
-    std::unique_lock<std::mutex> lock(mutex);
-    cond.wait(lock, [this]() { return !pktQueue.empty() || m_stop.load(); });
-    if (m_stop.load()) {
-        return nullptr;
-    }
-    FFPacket *ffpkt = pktQueue.front();
-    pktQueue.pop();
-    cond.notify_one();
-
-    return ffpkt;
+    return impl->dequeue();
 }
 
-FFPacket *FFVPacketQueue::peekQueue()
+FFPacket *FFVPacketQueue::peekQueue() const
 {
-    std::lock_guard<std::mutex> lock(mutex);
-    return pktQueue.empty() ? nullptr : pktQueue.front();
+    return impl->peekQueue();
 }
 
-FFPacket *FFVPacketQueue::peekBack()
+FFPacket *FFVPacketQueue::peekBack() const
 {
-    return pktQueue.back();
+    return impl->peekBack();
 }
 
 void FFVPacketQueue::enqueue(AVPacket *pkt)
 {
-    std::unique_lock<std::mutex> lock(mutex);
-
-    cond.wait(lock, [this]() { return pktQueue.size() < MAX_PACKET_SIZE || m_stop.load(); });
-    if (m_stop.load()) {
-        std::cout << "stop load!" << std::endl;
-        av_packet_unref(pkt);
-        m_stop.store(false);
-        return;
-    }
     FFPacket *ffpkt = static_cast<FFPacket *>(av_mallocz(sizeof(FFPacket)));
-
     av_packet_move_ref(&ffpkt->packet, pkt);
-    ffpkt->serial = serial;
+    ffpkt->serial = serial.load();
     ffpkt->type = NORMAL;
-
-    pktQueue.push(ffpkt);
-    cond.notify_one();
+    impl->enqueueFromSrc(ffpkt);
 }
 
 void FFVPacketQueue::enqueueFlush()
 {
-    std::unique_lock<std::mutex> lock(mutex);
-    cond.wait(lock, [this]() { return pktQueue.size() < MAX_PACKET_SIZE || m_stop.load(); });
-
-    if (m_stop) {
-        return;
-    }
-
     FFPacket *ffpkt = static_cast<FFPacket *>(av_mallocz(sizeof(FFPacket)));
     ffpkt->type = FLUSH;
-    ffpkt->serial = serial++;
-    pktQueue.push(ffpkt);
-    cond.notify_one();
+    ffpkt->serial = serial++; // 与原实现保持一致
+    impl->enqueueFromSrc(ffpkt);
 }
 
 void FFVPacketQueue::enqueueNull()
 {
-    std::unique_lock<std::mutex> lock(mutex);
-    cond.wait(lock, [this]() { return pktQueue.size() < MAX_PACKET_SIZE || m_stop.load(); });
-
-    if (m_stop) {
-        return;
-    }
-
     FFPacket *ffpkt = static_cast<FFPacket *>(av_mallocz(sizeof(FFPacket)));
     ffpkt->type = NULLP;
-    ffpkt->serial = this->serial;
+    ffpkt->serial = serial.load();
     ffpkt->packet.data = nullptr;
-    pktQueue.push(ffpkt);
-
-    cond.notify_one();
+    impl->enqueueFromSrc(ffpkt);
 }
 
 void FFVPacketQueue::flushQueue()
 {
-    while (1) {
-        FFPacket *pkt = peekQueue();
-        if (pkt == nullptr || pkt->serial == this->serial) {
+    while (true) {
+        FFPacket *pkt = impl->peekQueue();
+        if (pkt == nullptr || pkt->serial == serial.load()) {
             break;
-        } else {
-            std::lock_guard<std::mutex> lock(mutex);
-            pktQueue.pop();
-            av_packet_unref(&pkt->packet);
-            av_freep(&pkt);
         }
+        pkt = impl->dequeue();
+        if (!pkt)
+            break;
+        FFPacketTraits::release(pkt);
     }
-    cond.notify_one();
 }
 
 size_t FFVPacketQueue::getSerial()
@@ -117,40 +77,25 @@ size_t FFVPacketQueue::getSerial()
 
 void FFVPacketQueue::close()
 {
-    wakeAllThread();
-    clearQueue();
+    impl->close();
 }
 
 void FFVPacketQueue::start()
 {
-    m_stop = false;
-}
-
-void FFVPacketQueue::setMaxSize(size_t maxSize_)
-{
-    maxSize = maxSize_;
+    impl->start();
 }
 
 int FFVPacketQueue::length()
 {
-    return pktQueue.size();
+    return impl->length();
 }
 
 void FFVPacketQueue::wakeAllThread()
 {
-    m_stop = true;
-    cond.notify_all();
+    impl->wakeAllThread();
 }
 
 void FFVPacketQueue::clearQueue()
 {
-    while (!pktQueue.empty()) {
-        std::lock_guard<std::mutex> lock(mutex);
-        FFPacket *pkt = pktQueue.front();
-        pktQueue.pop();
-        if (pkt) {
-            av_packet_unref(&pkt->packet);
-            av_freep(&pkt);
-        }
-    }
+    impl->clearQueue();
 }

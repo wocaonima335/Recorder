@@ -1,6 +1,8 @@
 #include "ffaencoder.h"
-#include "queue/ffaframequeue.h"
+
 #include "queue/ffapacketqueue.h"
+
+#include <iostream>
 
 FFAEncoder::FFAEncoder() {}
 

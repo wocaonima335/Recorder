@@ -1,6 +1,8 @@
 #include "ffvencoder.h"
 #include "queue/ffvpacketqueue.h"
 
+#include <iostream>
+
 FFVEncoder::FFVEncoder() {}
 
 FFVEncoder::~FFVEncoder()

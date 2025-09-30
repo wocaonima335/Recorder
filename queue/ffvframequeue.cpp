@@ -3,7 +3,7 @@
 #define MAX_FRAME_SIZE 2
 
 FFVFrameQueue::FFVFrameQueue()
-    : m_stop(false)
+    : impl(new FFBoundedQueue<AVFrame, AVFrameTraits>())
 {}
 
 FFVFrameQueue::~FFVFrameQueue()
@@ -13,50 +13,50 @@ FFVFrameQueue::~FFVFrameQueue()
 
 void FFVFrameQueue::enqueue(AVFrame *srcFrame)
 {
-    impl.enqueueFromSrc(srcFrame);
+    impl->enqueueFromSrc(srcFrame);
 }
 
 AVFrame *FFVFrameQueue::dequeue()
 {
-    return impl.dequeue();
+    return impl->dequeue();
 }
 
 void FFVFrameQueue::wakeAllThread()
 {
-    impl.wakeAllThread();
+    impl->wakeAllThread();
 }
 
 void FFVFrameQueue::clearQueue()
 {
-    impl.clearQueue();
+    impl->clearQueue();
 }
 
 void FFVFrameQueue::enqueueNull()
 {
-    impl.enqueueNull();
+    impl->enqueueNull();
 }
 
 void FFVFrameQueue::flushQueue()
 {
-    impl.flushQueue();
+    impl->flushQueue();
 }
 
 void FFVFrameQueue::close()
 {
-    impl.close();
+    impl->close();
 }
 
 void FFVFrameQueue::start()
 {
-    impl.start();
+    impl->start();
 }
 
 bool FFVFrameQueue::peekEmpty()
 {
-    return impl.peekEmpty();
+    return impl->peekEmpty();
 }
 
 AVFrame *FFVFrameQueue::peekQueue()
 {
-    return impl.peekQueue();
+    return impl->peekQueue();
 }

@@ -1,13 +1,22 @@
 #ifndef FFEVENTQUEUE_H
 #define FFEVENTQUEUE_H
 
-#include <atomic>
-#include <condition_variable>
-#include <iostream>
-#include <mutex>
-#include <queue>
+#include "event/ffevent.h"
 
-class FFEvent;
+struct FFEventTraits
+{
+    static FFEvent *allocateFromSrc(FFEvent *src) { return src; }
+    static void releaseSrc(FFEvent * /*src*/) {}
+    static FFEvent *allocateNull() { return nullptr; }
+    static void release(FFEvent *&ev)
+    {
+        if (ev) {
+            delete ev;
+            ev = nullptr;
+        }
+    }
+    static bool isNull(const FFEvent *ev) { return ev == nullptr; }
+};
 
 class FFEventQueue final
 {
@@ -25,13 +34,8 @@ public:
     ~FFEventQueue();
 
 private:
-    FFEventQueue()
-        : m_stop(false)
-    {}
-    std::queue<FFEvent *> evQueue;
-    std::condition_variable cond;
-    std::mutex mutex;
-    std::atomic<bool> m_stop;
+    FFEventQueue();
+    FFBoundedQueue<FFEvent, FFEventTraits> *impl;
 };
 
 #endif // FFEVENTQUEUE_H

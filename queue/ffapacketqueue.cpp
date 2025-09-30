@@ -5,109 +5,69 @@
 
 FFAPacketQueue::FFAPacketQueue()
     : serial(0)
-    , m_stop(false)
+    , impl(new FFBoundedQueue<FFPacket, FFPacketTraits>())
 {}
 
 FFAPacketQueue::~FFAPacketQueue()
 {
     close();
+    delete impl;
 }
 
 FFPacket *FFAPacketQueue::dequeue()
 {
-    std::unique_lock<std::mutex> lock(mutex);
-    cond.wait(lock, [this]() { return !pktQueue.empty() || m_stop.load(); });
-    if (m_stop.load()) {
-        return nullptr;
-    }
-    FFPacket *ffpkt = pktQueue.front();
-    pktQueue.pop();
-    cond.notify_one();
-    //    std::cout << "dequeue apacket! "<< std::endl;
-    return ffpkt;
+    return impl->dequeue();
 }
 
-FFPacket *FFAPacketQueue::peekQueue()
+FFPacket *FFAPacketQueue::peekQueue() const
 {
-    std::lock_guard<std::mutex> lock(mutex);
-    return pktQueue.empty() ? nullptr : pktQueue.front();
+    return impl->peekQueue();
 }
 
-FFPacket *FFAPacketQueue::peekBack()
+FFPacket *FFAPacketQueue::peekBack() const
 {
-    return pktQueue.back();
+    return impl->peekBack();
 }
 
 void FFAPacketQueue::enqueue(AVPacket *pkt)
 {
-    std::unique_lock<std::mutex> lock(mutex);
-    cond.wait(lock, [this]() { return pktQueue.size() < MAX_PACKET_SIZE || m_stop.load(); });
-    if (m_stop.load()) {
-        std::cerr << "m_stop load!" << std::endl;
-        av_packet_unref(pkt);
-        return;
-    }
-
     FFPacket *ffpkt = static_cast<FFPacket *>(av_mallocz(sizeof(FFPacket)));
     av_packet_move_ref(&ffpkt->packet, pkt);
-    ffpkt->serial = serial;
+    ffpkt->serial = serial.load();
     ffpkt->type = NORMAL;
-
-    pktQueue.push(ffpkt);
-    cond.notify_one();
+    impl->enqueueFromSrc(ffpkt);
 }
 
 void FFAPacketQueue::enqueueFlush()
 {
-    std::unique_lock<std::mutex> lock(mutex);
-    cond.wait(lock, [this]() { return pktQueue.size() < MAX_PACKET_SIZE || m_stop.load(); });
-
-    if (m_stop) {
-        return;
-    }
-
     FFPacket *ffpkt = static_cast<FFPacket *>(av_mallocz(sizeof(FFPacket)));
-
     ffpkt->type = FLUSH;
-    ffpkt->serial = this->serial++;
-    pktQueue.push(ffpkt);
-    cond.notify_one();
+    ffpkt->serial = serial++;
+    impl->enqueueFromSrc(ffpkt);
+    ;
 }
 
 void FFAPacketQueue::enqueueNull()
 {
-    std::unique_lock<std::mutex> lock(mutex);
-    cond.wait(lock, [this]() { return pktQueue.size() < MAX_PACKET_SIZE || m_stop.load(); });
-
-    if (m_stop) {
-        return;
-    }
-
     FFPacket *ffpkt = static_cast<FFPacket *>(av_mallocz(sizeof(FFPacket)));
-
     ffpkt->type = NULLP;
-    ffpkt->serial = this->serial;
+    ffpkt->serial = serial.load();
     ffpkt->packet.data = nullptr;
-    pktQueue.push(ffpkt);
-
-    cond.notify_one();
+    impl->enqueueFromSrc(ffpkt);
 }
 
 void FFAPacketQueue::flushQueue()
 {
-    while (1) {
-        FFPacket *pkt = peekQueue();
-        if (pkt == nullptr || pkt->serial == this->serial) {
+    while (true) {
+        FFPacket *pkt = impl->peekQueue();
+        if (pkt == nullptr || pkt->serial == serial.load()) {
             break;
-        } else {
-            std::lock_guard<std::mutex> lock(mutex);
-            pktQueue.pop();
-
-            av_packet_unref(&pkt->packet);
-            av_freep(&pkt);
         }
+        pkt = impl->dequeue();
+        if (!pkt)
+            break;
+        FFPacketTraits::release(pkt);
     }
-    cond.notify_one();
 }
 
 size_t FFAPacketQueue::getSerial()
@@ -117,35 +77,25 @@ size_t FFAPacketQueue::getSerial()
 
 void FFAPacketQueue::clearQueue()
 {
-    std::lock_guard<std::mutex> lock(mutex);
-    while (!pktQueue.empty()) {
-        FFPacket *ffpkt = pktQueue.front();
-        pktQueue.pop();
-        if (ffpkt != nullptr) {
-            av_packet_unref(&ffpkt->packet);
-            av_freep(&ffpkt);
-        }
-    }
+    impl->clearQueue();
 }
 
 void FFAPacketQueue::wakeAllThread()
 {
-    m_stop = true;
-    cond.notify_all();
+    impl->wakeAllThread();
 }
 
 void FFAPacketQueue::close()
 {
-    wakeAllThread();
-    clearQueue();
+    impl->close();
 }
 
 void FFAPacketQueue::start()
 {
-    m_stop = false;
+    impl->start();
 }
 
 int FFAPacketQueue::length()
 {
-    return pktQueue.size();
+    return impl->length();
 }

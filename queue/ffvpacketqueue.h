@@ -1,17 +1,14 @@
 #ifndef FFVPACKETQUEUE_H
 #define FFVPACKETQUEUE_H
 
-#include <atomic>
-#include <condition_variable>
-#include <iostream>
-#include <mutex>
-#include <queue>
-#include <thread>
+#include "ffboundedqueue.h"
+
 extern "C" {
 #include <libavformat/avformat.h>
 }
 
 class FFPacket;
+
 class FFVPacketQueue
 {
 public:
@@ -19,8 +16,8 @@ public:
     ~FFVPacketQueue();
 
     FFPacket *dequeue();
-    FFPacket *peekQueue();
-    FFPacket *peekBack();
+    FFPacket *peekQueue() const;
+    FFPacket *peekBack() const;
     void enqueue(AVPacket *pkt);
     void enqueueFlush();
     void enqueueNull();
@@ -32,17 +29,11 @@ public:
     void clearQueue();
     void close();
     void start();
-    void setMaxSize(size_t maxSize);
     int length();
 
 private:
-    std::mutex mutex;
-    std::condition_variable cond;
     std::atomic<size_t> serial;
-    std::queue<FFPacket *> pktQueue;
-    std::atomic<bool> m_stop;
-
-    size_t maxSize = 2;
+    FFBoundedQueue<FFPacket, FFPacketTraits> *impl;
 };
 
-#endif // FFPACKETQUEUE_H
+#endif

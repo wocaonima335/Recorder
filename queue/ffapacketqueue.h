@@ -1,11 +1,8 @@
 #ifndef FFAPACKETQUEUE_H
 #define FFAPACKETQUEUE_H
 
-#include <atomic>
-#include <condition_variable>
-#include <iostream>
-#include <mutex>
-#include <queue>
+#include "ffboundedqueue.h"
+
 extern "C" {
 #include <libavformat/avformat.h>
 }
@@ -19,8 +16,8 @@ public:
     ~FFAPacketQueue();
 
     FFPacket *dequeue();
-    FFPacket *peekQueue();
-    FFPacket *peekBack();
+    FFPacket *peekQueue() const;
+    FFPacket *peekBack() const;
     void enqueue(AVPacket *pkt);
     void enqueueFlush();
     void enqueueNull();
@@ -34,11 +31,7 @@ public:
     int length();
 
 private:
-    std::mutex mutex;
-    std::condition_variable cond;
     std::atomic<size_t> serial;
-    std::queue<FFPacket *> pktQueue;
-    std::atomic<bool> m_stop;
+    FFBoundedQueue<FFPacket, FFPacketTraits> *impl;
 };
-
-#endif // FFAPACKETQUEUE_H
+#endif
