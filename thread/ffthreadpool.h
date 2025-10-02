@@ -1,7 +1,6 @@
 #ifndef FFTHREADPOOL_H
 #define FFTHREADPOOL_H
 
-#include <atomic>
 #include <condition_variable>
 #include <functional>
 #include <mutex>

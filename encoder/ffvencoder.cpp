@@ -53,7 +53,6 @@ int FFVEncoder::encode(AVFrame *frame, int streamIndex, int64_t pts, AVRational 
     }
 
     frame->pts = pts;
-
     lastPts = pts;
 
     int ret = avcodec_send_frame(codecCtx, frame);
@@ -76,8 +75,6 @@ int FFVEncoder::encode(AVFrame *frame, int streamIndex, int64_t pts, AVRational 
         } else if (ret < 0) {
             printError(ret);
             av_packet_free(&pkt);
-            av_frame_unref(frame);
-            av_frame_free(&frame);
             return -1;
         } else {
             pkt->stream_index = streamIndex;

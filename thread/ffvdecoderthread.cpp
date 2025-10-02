@@ -1,6 +1,6 @@
 #include "ffvdecoderthread.h"
+
 #include "decoder/ffvdecoder.h"
-#include "queue/ffeventqueue.h"
 #include "queue/ffpacket.h"
 #include "queue/ffvpacketqueue.h"
 
@@ -60,18 +60,15 @@ void FFVDecoderThread::run()
 
         if (pkt->serial != vPktQueue->getSerial()) {
             vPktQueue->flushQueue();
-            vDecoder->flushQueue();
             vDecoder->flushDecoder();
         } else {
             if (pkt->type == NULLP && pkt->packet.data == nullptr) {
                 vDecoder->decode(nullptr);
-
                 vDecoder->enqueueNull();
             } else {
                 vDecoder->decode(&pkt->packet);
             }
-            av_packet_unref(&pkt->packet);
-            av_freep(&pkt->packet);
+            FFPacketTraits::release(pkt);
         }
     }
 }

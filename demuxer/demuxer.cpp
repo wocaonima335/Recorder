@@ -143,7 +143,8 @@ void Demuxer::initDemuxer()
     avformat_network_init();
     avdevice_register_all();
 
-    PrintDshowDevices();
+    // PrintDshowDevices();
+    inputFmt = av_find_input_format(format.c_str());
 
     if (!inputFmt) {
         std::cerr << "Cannot find input format: " << format << std::endl;

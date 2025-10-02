@@ -1,9 +1,7 @@
 #ifndef FFADECODERTHREAD_H
 #define FFADECODERTHREAD_H
+
 #include "ffthread.h"
-extern "C" {
-#include "libavformat/avformat.h"
-}
 
 class FFAPacketQueue;
 class FFADecoder;

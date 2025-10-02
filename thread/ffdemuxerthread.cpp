@@ -1,4 +1,5 @@
 #include "ffdemuxerthread.h"
+
 #include "demuxer/demuxer.h"
 
 FFDemuxerThread::FFDemuxerThread()
@@ -48,9 +49,8 @@ void FFDemuxerThread::run()
         stopFlag.store(false, std::memory_order_release);
         int ret = demuxer->demux();
         if (ret != 0) {
-            m_stop = true;
+            break;
         }
-
         if (m_stop) {
             break;
         }

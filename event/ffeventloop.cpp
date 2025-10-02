@@ -9,13 +9,13 @@ FFEventLoop::FFEventLoop()
 
 void FFEventLoop::start()
 {
-    m_stop = false;
+    m_stop.store(false, std::memory_order_release);
     loopThread = std::thread(&FFEventLoop::work, this);
 }
 
 void FFEventLoop::stop()
 {
-    m_stop = true;
+    m_stop.store(true, std::memory_order_release);
 }
 
 void FFEventLoop::wait()

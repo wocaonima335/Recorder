@@ -101,11 +101,8 @@ void FFVDecoder::decode(AVPacket *packet)
                     if (frmQueue != nullptr) {
                         frmQueue->enqueue(decoderFrame);
                     }
-                    av_frame_unref(decoderFrame);
-                    av_frame_free(&decoderFrame);
-
-                    av_frame_unref(swsFrame);
-                    av_frame_free(&swsFrame);
+                    AVFrameTraits::release(decoderFrame);
+                    AVFrameTraits::release(swsFrame);
                 }
             } else {
                 if (m_stop.load(std::memory_order_acquire)) {
@@ -222,7 +219,7 @@ void FFVDecoder::wakeAllThread()
 
 void FFVDecoder::stop()
 {
-    m_stop = true;
+    m_stop.store(true, std::memory_order_release);
 }
 
 void FFVDecoder::flushQueue()

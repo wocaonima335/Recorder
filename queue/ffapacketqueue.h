@@ -7,8 +7,6 @@ extern "C" {
 #include <libavformat/avformat.h>
 }
 
-class FFPacket;
-
 class FFAPacketQueue
 {
 public:

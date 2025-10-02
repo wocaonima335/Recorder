@@ -18,13 +18,11 @@
 #include "thread/ffadecoderthread.h"
 #include "thread/ffaencoderthread.h"
 #include "thread/ffafilterthread.h"
-#include "thread/ffamuxerthread.h"
 #include "thread/ffdemuxerthread.h"
 #include "thread/ffmuxerthread.h"
 #include "thread/ffvdecoderthread.h"
 #include "thread/ffvencoderthread.h"
 #include "thread/ffvfilterthread.h"
-#include "thread/ffvmuxerthread.h"
 
 #include <QObject>
 #include <QtWidgets/QApplication>

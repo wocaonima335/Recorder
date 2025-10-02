@@ -18,10 +18,10 @@ qt_add_library(thread_module STATIC
     ffaencoderthread.cpp
     ffvencoderthread.h
     ffvencoderthread.cpp
-    ffvmuxerthread.h
-    ffvmuxerthread.cpp
-    ffamuxerthread.h
-    ffamuxerthread.cpp
+
+
+
+
     ffmuxerthread.h
     ffmuxerthread.cpp
 )

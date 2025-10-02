@@ -85,8 +85,7 @@ void FFADecoder::decode(AVPacket *packet)
 
                     if (frmQueue != nullptr)
                         frmQueue->enqueue(swrFrame);
-                    av_frame_unref(swrFrame);
-                    av_frame_free(&swrFrame);
+                    AVFrameTraits::release(swrFrame);
                 }
             } else {
                 if (m_stop.load(std::memory_order_acquire)) {
@@ -107,7 +106,7 @@ void FFADecoder::decode(AVPacket *packet)
 void FFADecoder::init(AVStream *stream_, FFAFrameQueue *frmQueue_)
 {
     std::lock_guard<std::mutex> lock(mutex);
-    m_stop = false;
+    m_stop.store(false, std::memory_order_release);
     stream = stream_;
     frmQueue = frmQueue_;
 
@@ -167,7 +166,7 @@ void FFADecoder::wakeAllThreads()
 
 void FFADecoder::stop()
 {
-    m_stop = true;
+    m_stop.store(true, std::memory_order_release);
 }
 
 void FFADecoder::enqueueNull()

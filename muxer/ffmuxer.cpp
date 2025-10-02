@@ -129,8 +129,6 @@ int FFMuxer::mux(AVPacket *packet)
                streamType,
                pts_buf,
                dts_buf);
-        av_packet_unref(packet);
-        av_packet_free(&packet);
         return 0;
     }
 
@@ -158,14 +156,9 @@ int FFMuxer::mux(AVPacket *packet)
         if (ret < 0) {
             std::cerr << "Mux Fail !" << std::endl;
             printError(ret);
-            av_packet_unref(packet);
-            av_packet_free(&packet);
             return -1;
         }
     }
-
-    av_packet_unref(packet);
-    av_packet_free(&packet);
     return 0;
 }
 

@@ -70,8 +70,7 @@ void FFADecoderThread::run()
             } else {
                 aDecoder->decode(&pkt->packet);
             }
-            av_packet_unref(&pkt->packet);
-            av_freep(&pkt);
+            FFPacketTraits::release(pkt);
         }
     }
 }

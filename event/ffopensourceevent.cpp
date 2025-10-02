@@ -36,10 +36,6 @@ void FFOpenSourceEvent::init()
         aEncoder->init(aEncoderPktQueue);
         aEncoderThread->init(aFilter, aEncoder, muxer, aFrmQueue[index]);
 
-        muxer->init("E:/Videos/output.mp4");
-        muxerThread
-            ->init(aEncoderPktQueue, vEncoderPktQueue, muxer, aEncoder, vEncoder, recoderContext);
-        std::cout << "init opensource" << std::endl;
     }
     else
     {
@@ -54,6 +50,11 @@ void FFOpenSourceEvent::init()
         vEncoderThread->close();
         vEncoder->init(vEncoderPktQueue);
         vEncoderThread->init(vFilter, vEncoder, muxer, vFrmQueue[index]);
+
+        muxer->init("E:/Videos/output.mp4");
+        muxerThread
+            ->init(aEncoderPktQueue, vEncoderPktQueue, muxer, aEncoder, vEncoder, recoderContext);
+        std::cout << "init opensource" << std::endl;
     }
 }
 
@@ -73,9 +74,6 @@ void FFOpenSourceEvent::start()
 
         aPktQueue[index]->start();
         aFrmQueue[index]->start();
-
-        muxerThread->start();
-
     } else {
         vDemuxerThread[index]->wakeAllThread();
         vDemuxerThread[index]->start();
@@ -89,6 +87,8 @@ void FFOpenSourceEvent::start()
 
         vPktQueue[index]->start();
         vFrmQueue[index]->start();
+
+        muxerThread->start();
     }
 
     std::cout << "start opensource " << std::endl;
