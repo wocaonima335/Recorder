@@ -66,8 +66,8 @@ int main(int argc, char *argv[])
 
     QQuickWindow::setGraphicsApi(QSGRendererInterface::OpenGL);
 
-    init();
-    recordTest();
+    // init();
+    // recordTest();
 
     QQmlApplicationEngine engine;
     QObject::connect(

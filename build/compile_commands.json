@@ -25,6 +25,12 @@
 },
 {
   "directory": "D:/Qtprogram/bandicam/build/qml",
+  "command": "D:\\Vscode\\MinGw64\\mingw64\\bin\\g++.exe -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_OPENGL_LIB -DQT_QMLINTEGRATION_LIB -DQT_QMLMETA_LIB -DQT_QMLMODELS_LIB -DQT_QMLWORKERSCRIPT_LIB -DQT_QML_LIB -DQT_QUICK_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64 @CMakeFiles/qml_module_resources_1.dir/includes_CXX.rsp -g -pthread -o CMakeFiles\\qml_module_resources_1.dir\\.qt\\rcc\\qrc_qmake_bandicam_init.cpp.obj -c D:\\Qtprogram\\bandicam\\build\\qml\\.qt\\rcc\\qrc_qmake_bandicam_init.cpp",
+  "file": "D:/Qtprogram/bandicam/build/qml/.qt/rcc/qrc_qmake_bandicam_init.cpp",
+  "output": "qml/CMakeFiles/qml_module_resources_1.dir/.qt/rcc/qrc_qmake_bandicam_init.cpp.obj"
+},
+{
+  "directory": "D:/Qtprogram/bandicam/build/qml",
   "command": "D:\\Vscode\\MinGw64\\mingw64\\bin\\g++.exe -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_OPENGL_LIB -DQT_QMLINTEGRATION_LIB -DQT_QMLMETA_LIB -DQT_QMLMODELS_LIB -DQT_QMLWORKERSCRIPT_LIB -DQT_QML_LIB -DQT_QUICK_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64 @CMakeFiles/qml_module.dir/includes_CXX.rsp -g -pthread -o CMakeFiles\\qml_module.dir\\qml_module_autogen\\mocs_compilation.cpp.obj -c D:\\Qtprogram\\bandicam\\build\\qml\\qml_module_autogen\\mocs_compilation.cpp",
   "file": "D:/Qtprogram/bandicam/build/qml/qml_module_autogen/mocs_compilation.cpp",
   "output": "qml/CMakeFiles/qml_module.dir/qml_module_autogen/mocs_compilation.cpp.obj"
@@ -76,12 +82,6 @@
   "command": "D:\\Vscode\\MinGw64\\mingw64\\bin\\g++.exe -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_OPENGL_LIB -DQT_QMLINTEGRATION_LIB -DQT_QMLMETA_LIB -DQT_QMLMODELS_LIB -DQT_QMLWORKERSCRIPT_LIB -DQT_QML_LIB -DQT_QUICK_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64 @CMakeFiles/qml_module.dir/includes_CXX.rsp -g -pthread -o CMakeFiles\\qml_module.dir\\.qt\\rcc\\qrc_qml_module_raw_qml_0.cpp.obj -c D:\\Qtprogram\\bandicam\\build\\qml\\.qt\\rcc\\qrc_qml_module_raw_qml_0.cpp",
   "file": "D:/Qtprogram/bandicam/build/qml/.qt/rcc/qrc_qml_module_raw_qml_0.cpp",
   "output": "qml/CMakeFiles/qml_module.dir/.qt/rcc/qrc_qml_module_raw_qml_0.cpp.obj"
-},
-{
-  "directory": "D:/Qtprogram/bandicam/build/qml",
-  "command": "D:\\Vscode\\MinGw64\\mingw64\\bin\\g++.exe -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_OPENGL_LIB -DQT_QMLINTEGRATION_LIB -DQT_QMLMETA_LIB -DQT_QMLMODELS_LIB -DQT_QMLWORKERSCRIPT_LIB -DQT_QML_LIB -DQT_QUICK_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64 @CMakeFiles/qml_module_resources_1.dir/includes_CXX.rsp -g -pthread -o CMakeFiles\\qml_module_resources_1.dir\\.qt\\rcc\\qrc_qmake_bandicam_init.cpp.obj -c D:\\Qtprogram\\bandicam\\build\\qml\\.qt\\rcc\\qrc_qmake_bandicam_init.cpp",
-  "file": "D:/Qtprogram/bandicam/build/qml/.qt/rcc/qrc_qmake_bandicam_init.cpp",
-  "output": "qml/CMakeFiles/qml_module_resources_1.dir/.qt/rcc/qrc_qmake_bandicam_init.cpp.obj"
 },
 {
   "directory": "D:/Qtprogram/bandicam/build/qml",
@@ -316,18 +316,6 @@
   "command": "D:\\Vscode\\MinGw64\\mingw64\\bin\\g++.exe -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64 @CMakeFiles/thread_module.dir/includes_CXX.rsp -g -pthread -o CMakeFiles\\thread_module.dir\\ffvencoderthread.cpp.obj -c D:\\Qtprogram\\bandicam\\thread\\ffvencoderthread.cpp",
   "file": "D:/Qtprogram/bandicam/thread/ffvencoderthread.cpp",
   "output": "thread/CMakeFiles/thread_module.dir/ffvencoderthread.cpp.obj"
-},
-{
-  "directory": "D:/Qtprogram/bandicam/build/thread",
-  "command": "D:\\Vscode\\MinGw64\\mingw64\\bin\\g++.exe -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64 @CMakeFiles/thread_module.dir/includes_CXX.rsp -g -pthread -o CMakeFiles\\thread_module.dir\\ffvmuxerthread.cpp.obj -c D:\\Qtprogram\\bandicam\\thread\\ffvmuxerthread.cpp",
-  "file": "D:/Qtprogram/bandicam/thread/ffvmuxerthread.cpp",
-  "output": "thread/CMakeFiles/thread_module.dir/ffvmuxerthread.cpp.obj"
-},
-{
-  "directory": "D:/Qtprogram/bandicam/build/thread",
-  "command": "D:\\Vscode\\MinGw64\\mingw64\\bin\\g++.exe -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64 @CMakeFiles/thread_module.dir/includes_CXX.rsp -g -pthread -o CMakeFiles\\thread_module.dir\\ffamuxerthread.cpp.obj -c D:\\Qtprogram\\bandicam\\thread\\ffamuxerthread.cpp",
-  "file": "D:/Qtprogram/bandicam/thread/ffamuxerthread.cpp",
-  "output": "thread/CMakeFiles/thread_module.dir/ffamuxerthread.cpp.obj"
 },
 {
   "directory": "D:/Qtprogram/bandicam/build/thread",

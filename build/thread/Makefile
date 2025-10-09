@@ -274,30 +274,6 @@ ffafilterthread.cpp.s:
 	cd /d D:\Qtprogram\bandicam\build && $(MAKE) $(MAKESILENT) -f thread\CMakeFiles\thread_module.dir\build.make thread/CMakeFiles/thread_module.dir/ffafilterthread.cpp.s
 .PHONY : ffafilterthread.cpp.s
 
-ffamuxerthread.obj: ffamuxerthread.cpp.obj
-.PHONY : ffamuxerthread.obj
-
-# target to build an object file
-ffamuxerthread.cpp.obj:
-	cd /d D:\Qtprogram\bandicam\build && $(MAKE) $(MAKESILENT) -f thread\CMakeFiles\thread_module.dir\build.make thread/CMakeFiles/thread_module.dir/ffamuxerthread.cpp.obj
-.PHONY : ffamuxerthread.cpp.obj
-
-ffamuxerthread.i: ffamuxerthread.cpp.i
-.PHONY : ffamuxerthread.i
-
-# target to preprocess a source file
-ffamuxerthread.cpp.i:
-	cd /d D:\Qtprogram\bandicam\build && $(MAKE) $(MAKESILENT) -f thread\CMakeFiles\thread_module.dir\build.make thread/CMakeFiles/thread_module.dir/ffamuxerthread.cpp.i
-.PHONY : ffamuxerthread.cpp.i
-
-ffamuxerthread.s: ffamuxerthread.cpp.s
-.PHONY : ffamuxerthread.s
-
-# target to generate assembly for a file
-ffamuxerthread.cpp.s:
-	cd /d D:\Qtprogram\bandicam\build && $(MAKE) $(MAKESILENT) -f thread\CMakeFiles\thread_module.dir\build.make thread/CMakeFiles/thread_module.dir/ffamuxerthread.cpp.s
-.PHONY : ffamuxerthread.cpp.s
-
 ffdemuxerthread.obj: ffdemuxerthread.cpp.obj
 .PHONY : ffdemuxerthread.obj
 
@@ -466,30 +442,6 @@ ffvfilterthread.cpp.s:
 	cd /d D:\Qtprogram\bandicam\build && $(MAKE) $(MAKESILENT) -f thread\CMakeFiles\thread_module.dir\build.make thread/CMakeFiles/thread_module.dir/ffvfilterthread.cpp.s
 .PHONY : ffvfilterthread.cpp.s
 
-ffvmuxerthread.obj: ffvmuxerthread.cpp.obj
-.PHONY : ffvmuxerthread.obj
-
-# target to build an object file
-ffvmuxerthread.cpp.obj:
-	cd /d D:\Qtprogram\bandicam\build && $(MAKE) $(MAKESILENT) -f thread\CMakeFiles\thread_module.dir\build.make thread/CMakeFiles/thread_module.dir/ffvmuxerthread.cpp.obj
-.PHONY : ffvmuxerthread.cpp.obj
-
-ffvmuxerthread.i: ffvmuxerthread.cpp.i
-.PHONY : ffvmuxerthread.i
-
-# target to preprocess a source file
-ffvmuxerthread.cpp.i:
-	cd /d D:\Qtprogram\bandicam\build && $(MAKE) $(MAKESILENT) -f thread\CMakeFiles\thread_module.dir\build.make thread/CMakeFiles/thread_module.dir/ffvmuxerthread.cpp.i
-.PHONY : ffvmuxerthread.cpp.i
-
-ffvmuxerthread.s: ffvmuxerthread.cpp.s
-.PHONY : ffvmuxerthread.s
-
-# target to generate assembly for a file
-ffvmuxerthread.cpp.s:
-	cd /d D:\Qtprogram\bandicam\build && $(MAKE) $(MAKESILENT) -f thread\CMakeFiles\thread_module.dir\build.make thread/CMakeFiles/thread_module.dir/ffvmuxerthread.cpp.s
-.PHONY : ffvmuxerthread.cpp.s
-
 thread_module_autogen/mocs_compilation.obj: thread_module_autogen/mocs_compilation.cpp.obj
 .PHONY : thread_module_autogen/mocs_compilation.obj
 
@@ -538,9 +490,6 @@ help:
 	@echo ... ffafilterthread.obj
 	@echo ... ffafilterthread.i
 	@echo ... ffafilterthread.s
-	@echo ... ffamuxerthread.obj
-	@echo ... ffamuxerthread.i
-	@echo ... ffamuxerthread.s
 	@echo ... ffdemuxerthread.obj
 	@echo ... ffdemuxerthread.i
 	@echo ... ffdemuxerthread.s
@@ -562,9 +511,6 @@ help:
 	@echo ... ffvfilterthread.obj
 	@echo ... ffvfilterthread.i
 	@echo ... ffvfilterthread.s
-	@echo ... ffvmuxerthread.obj
-	@echo ... ffvmuxerthread.i
-	@echo ... ffvmuxerthread.s
 	@echo ... thread_module_autogen/mocs_compilation.obj
 	@echo ... thread_module_autogen/mocs_compilation.i
 	@echo ... thread_module_autogen/mocs_compilation.s
