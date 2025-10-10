@@ -2,12 +2,13 @@
 #define FFAFILTERTHREAD_H
 
 #include "ffthread.h"
-#include <condition_variable>
-#include <mutex>
 
 extern "C" {
 #include <libavutil/time.h>
 }
+
+#include <condition_variable>
+#include <mutex>
 
 class FFAFrameQueue;
 class FFAFilter;

@@ -1,7 +1,9 @@
 #include "ffvfilterthread.h"
+
 #include "filter/ffvfilter.h"
 #include "queue/ffvframequeue.h"
 #include "recorder/ffrecorder.h"
+
 #include <iostream>
 
 FFVFilterThread::FFVFilterThread()
@@ -17,13 +19,11 @@ FFVFilterThread::FFVFilterThread()
 FFVFilterThread::~FFVFilterThread()
 {
     if (screenFrame) {
-        av_frame_unref(screenFrame);
-        av_frame_free(&screenFrame);
+        AVFrameTraits::release(screenFrame);
     }
 
     if (lastVideoFrame) {
-        av_frame_unref(lastVideoFrame);
-        av_frame_free(&lastVideoFrame);
+        AVFrameTraits::release(lastVideoFrame);
     }
 }
 

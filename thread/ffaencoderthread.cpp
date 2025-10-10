@@ -1,11 +1,10 @@
 #include "ffaencoderthread.h"
+
 #include "decoder/ffadecoder.h"
 #include "encoder/ffaencoder.h"
 #include "filter/ffafilter.h"
 #include "muxer/ffmuxer.h"
 #include "queue/ffaframequeue.h"
-
-#include <atomic>
 
 FFAEncoderThread::FFAEncoderThread() {}
 
@@ -46,7 +45,6 @@ void FFAEncoderThread::run()
     while (!m_stop) {
         AVFrame *frame = frmQueue->dequeue();
         if (frame == nullptr) {
-            m_stop = true;
             break;
         }
 
@@ -63,8 +61,7 @@ void FFAEncoderThread::run()
             int64_t relativePts = frame->pts - firstFramePts;
             aEncoder->encode(frame, streamIndex, relativePts, audioTimeBase);
         }
-        av_frame_unref(frame);
-        av_frame_free(&frame);
+        AVFrameTraits::release(frame);
     }
 }
 

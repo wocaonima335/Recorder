@@ -56,6 +56,7 @@ add_subdirectory(encoder)
 # 主可执行文件
 qt_add_executable(appbandicam
     main.cpp
+    res.qrc
 )
 
 # Qt for iOS sets MACOSX_BUNDLE_GUI_IDENTIFIER automatically since Qt 6.1.

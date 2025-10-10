@@ -5,9 +5,10 @@
 
 #include "muxer/ffmuxer.h"
 #include "queue/ffapacketqueue.h"
-#include "queue/ffeventqueue.h"
 #include "queue/ffpacket.h"
 #include "queue/ffvpacketqueue.h"
+
+#include <QtCore/QtGlobal>
 
 #define CAPTURE_TIME 60
 
@@ -86,9 +87,7 @@ void FFMuxerThread::run()
             audioPkt = aPktQueue->dequeue();
 
             if (audioPkt == nullptr) {
-                m_stop = true;
-                std::cerr << "audioPkt is nullptr" << std::endl;
-                continue;
+                break; // 避免设置 m_stop，让基类统一管理
             }
 
             aPacket = &audioPkt->packet;
@@ -97,13 +96,12 @@ void FFMuxerThread::run()
             }
 
             audioPtsSec = aPacket->pts * av_q2d(aTimeBase);
-            std::cerr << "[MuxQ] got audio pkt: pts=" << aPacket->pts << " dts=" << aPacket->dts
-                      << " sec=" << audioPtsSec << " size=" << aPacket->size
-                      << " tb=" << aTimeBase.num << "/" << aTimeBase.den << std::endl;
 
             if (audioPtsSec < 0) {
+                // 修复：使用统一的释放方法
+                FFPacketTraits::release(audioPkt);
+                audioPkt = nullptr;
                 audioFinish = true;
-                av_packet_unref(aPacket);
                 continue;
             }
         }
@@ -113,9 +111,7 @@ void FFMuxerThread::run()
             videoPkt = vPktQueue->dequeue();
 
             if (videoPkt == nullptr) {
-                std::cerr << "videoPkt is nullptr" << std::endl;
-                m_stop = true;
-                continue;
+                break; // 避免设置 m_stop
             }
 
             vPacket = &videoPkt->packet;
@@ -125,78 +121,93 @@ void FFMuxerThread::run()
             }
 
             videoPtsSec = vPacket->pts * av_q2d(vTimeBase);
-            std::cerr << "[MuxQ] got video pkt: pts=" << vPacket->pts
-                      << " dts=" << vPacket->dts
-                      << " sec=" << videoPtsSec
-                      << " size=" << vPacket->size
-                      << " tb=" << vTimeBase.num << "/" << vTimeBase.den << std::endl;
+
             if (videoPtsSec < 0) {
+                // 修复：使用统一的释放方法
+                FFPacketTraits::release(videoPkt);
+                videoPkt = nullptr;
                 videoFinish = true;
-                av_packet_unref(vPacket);
                 continue;
             }
         }
 
-        std::cerr << "[Mux] write video pkt: pts=" << vPacket->pts << " dts=" << vPacket->dts
-                  << " size=" << vPacket->size << std::endl;
-
         if (audioPtsSec + SYNC_THRESHOLD < videoPtsSec) {
-            //            std::cout<<"audio Finish:"<<audioPtsSec<<std::fixed<<std::endl;
             ret = muxer->mux(aPacket);
             if (ret < 0) {
                 std::cerr << "Mux Audio Fail !" << std::endl;
-                m_stop = true;
+                // 修复：错误时也要释放资源
+                FFPacketTraits::release(audioPkt);
+                FFPacketTraits::release(videoPkt);
                 return;
             }
-            std::cerr << "[Mux] wrote aideo pkt ok" << std::endl;
 
+            // 修复：mux 成功后释放 FFPacket
+            FFPacketTraits::release(audioPkt);
+            audioPkt = nullptr;
             audioFinish = true;
             videoFinish = false;
+
         } else if (videoPtsSec + SYNC_THRESHOLD < audioPtsSec) {
             ret = muxer->mux(vPacket);
             if (ret < 0) {
                 std::cerr << "Mux Video Fail !" << std::endl;
-                m_stop = true;
+                // 修复：错误时也要释放资源
+                FFPacketTraits::release(audioPkt);
+                FFPacketTraits::release(videoPkt);
                 return;
             }
-            std::cerr << "[Mux] wrote video pkt ok" << std::endl;
 
+            // 修复：mux 成功后释放 FFPacket
+            FFPacketTraits::release(videoPkt);
+            videoPkt = nullptr;
             videoFinish = true;
             audioFinish = false;
+
         } else {
+            // 队列长度比较逻辑...
             double audioQueueDuration = calculateQueueDuration(aPktQueue, aTimeBase);
             double videoQueueDuration = calculateQueueDuration(vPktQueue, vTimeBase);
 
-            if (audioQueueDuration > videoQueueDuration + 0.010) { // 10ms差异
-                std::cerr << "[Mux] Prioritizing audio (longer queue duration)" << std::endl;
+            if (audioQueueDuration > videoQueueDuration + 0.010) {
                 ret = muxer->mux(aPacket);
                 if (ret < 0) {
-                    std::cerr << "Mux Audio Fail !" << std::endl;
-                    m_stop = true;
+                    FFPacketTraits::release(audioPkt);
+                    FFPacketTraits::release(videoPkt);
                     return;
                 }
-                std::cerr << "[Mux] wrote audio pkt ok" << std::endl;
+                FFPacketTraits::release(audioPkt);
+                audioPkt = nullptr;
                 audioFinish = true;
                 videoFinish = false;
             } else {
-                std::cerr << "[Mux] Prioritizing video (longer queue duration or similar)"
-                          << std::endl;
                 ret = muxer->mux(vPacket);
                 if (ret < 0) {
-                    std::cerr << "Mux Video Fail !" << std::endl;
-                    m_stop = true;
+                    FFPacketTraits::release(audioPkt);
+                    FFPacketTraits::release(videoPkt);
                     return;
                 }
-                std::cerr << "[Mux] wrote video pkt ok" << std::endl;
+                FFPacketTraits::release(videoPkt);
+                videoPkt = nullptr;
                 videoFinish = true;
                 audioFinish = false;
             }
         }
     }
+
+    // 修复：退出时清理剩余资源
+    if (audioPkt) {
+        FFPacketTraits::release(audioPkt);
+    }
+    if (videoPkt) {
+        FFPacketTraits::release(videoPkt);
+    }
+
     muxer->writeTrailer();
 }
-
-void FFMuxerThread::sendCaptureProcessEvent(double seconds) {}
+void FFMuxerThread::sendCaptureProcessEvent(double seconds)
+{
+    Q_UNUSED(seconds);
+}
 
 double FFMuxerThread::calculateQueueDuration(FFAPacketQueue *queue, AVRational timeBase)
 {

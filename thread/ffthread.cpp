@@ -15,7 +15,7 @@ FFThread::~FFThread()
 
 void FFThread::stop()
 {
-    m_stop = true;
+    m_stop.store(true, std::memory_order_release);
 }
 
 void FFThread::wait()

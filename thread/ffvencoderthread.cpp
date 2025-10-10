@@ -1,10 +1,11 @@
 #include "ffvencoderthread.h"
+
 #include "decoder/ffvdecoder.h"
 #include "encoder/ffvencoder.h"
 #include "filter/ffvfilter.h"
 #include "muxer/ffmuxer.h"
 #include "queue/ffvframequeue.h"
-#include "queue/ffvpacketqueue.h"
+
 #include <iostream>
 
 FFVEncoderThread::FFVEncoderThread() {}
@@ -20,7 +21,6 @@ void FFVEncoderThread::init(FFVFilter *vFilter_,
     vEncoder = vEncoder_;
     muxer = muxer_;
     frmQueue = frmQueue_;
-    // logging init pointers
     std::cerr << "[VEncThread] init: vFilter=" << vFilter
               << " vEncoder=" << vEncoder
               << " muxer=" << muxer
@@ -55,7 +55,6 @@ void FFVEncoderThread::run()
         AVFrame *frame = frmQueue->dequeue();
         if (frame == nullptr) {
             std::cerr << "[VEncThread] frmQueue->dequeue returned nullptr, stopping thread" << std::endl;
-            m_stop = true;
             break;
         }
 
@@ -92,8 +91,7 @@ void FFVEncoderThread::run()
 
         // after submit to encoder, free frame
         std::cerr << "[VEncThread] frame submitted to encoder, releasing frame" << std::endl;
-        av_frame_unref(frame);
-        av_frame_free(&frame);
+        AVFrameTraits::release(frame);
     }
     std::cerr << "[VEncThread] run exit" << std::endl;
 }

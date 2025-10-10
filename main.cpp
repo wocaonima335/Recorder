@@ -14,6 +14,18 @@ void init()
 
 void recordTest()
 {
+    SourceEventParams params;
+    params.type = SourceEventType::OPEN_SOURCE;
+
+    params.sourceType = demuxerType::CAMERA;
+    params.url = FFRecordURLS::CAMERA_URL;
+    params.format = "dshow";
+
+    auto event = EventFactoryManager::getInstance().createEvent(EventCategory::SOURCE,
+                                                                &FFRecorder::getInstance(),
+                                                                params);
+    event->work();
+
     SourceEventParams audioParams;
     audioParams.type = SourceEventType::OPEN_SOURCE;
     audioParams.sourceType = demuxerType::MICROPHONE;
@@ -26,17 +38,6 @@ void recordTest()
     audioevent->work();
 
     FFRecorder::getInstance().startRecord();
-    SourceEventParams params;
-    params.type = SourceEventType::OPEN_SOURCE;
-
-    params.sourceType = demuxerType::CAMERA;
-    params.url = FFRecordURLS::CAMERA_URL;
-    params.format = "dshow";
-
-    auto event = EventFactoryManager::getInstance().createEvent(EventCategory::SOURCE,
-                                                                &FFRecorder::getInstance(),
-                                                                params);
-    event->work();
 
     // Schedule closing the same source after 10 seconds
     QTimer::singleShot(10000, []() {
@@ -65,8 +66,8 @@ int main(int argc, char *argv[])
 
     QQuickWindow::setGraphicsApi(QSGRendererInterface::OpenGL);
 
-    init();
-    recordTest();
+    // init();
+    // recordTest();
 
     QQmlApplicationEngine engine;
     QObject::connect(

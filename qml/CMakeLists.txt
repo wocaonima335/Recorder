@@ -9,6 +9,7 @@ qt_add_qml_module(qml_module
      QML_FILES videopage.qml
      QML_FILES settingpage.qml
      QML_FILES cuttingpage.qml
+     QML_FILES settinglist.qml
 )
 
 target_link_libraries(qml_module
