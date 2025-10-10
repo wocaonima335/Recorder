@@ -114,13 +114,28 @@ ApplicationWindow{
             Rectangle { anchors.right: parent.right; anchors.top: parent.top; anchors.bottom: parent.bottom; width: sepWidth; color: sepColor; opacity: sepOpacity }
 
             Text {
-                anchors.centerIn: parent
-                text: "TIME"
-                color: "#FFFFFF"
-                font.pixelSize: 14
-                font.bold: true
+                anchors.horizontalCenter: parent.horizontalCenter
+                font.pointSize: Style.fontSize
+                font.family: "Consolas, Monaco, 'Courier New', monospace" // 等宽字体
+                color: palette.text
+                // 可选：添加数字显示效果
+                style: Text.Outline
+                styleColor: "black"
             }
         }
+
+        Timer {
+            running: true; interval: 100; repeat: true
+            onTriggered: {
+                var totalSeconds = recorder.duration / 1000
+                var m = Math.floor(totalSeconds / 60)
+                var s = Math.floor(totalSeconds % 60)
+                var ms = Math.floor((totalSeconds % 1) * 10)
+
+                timeShowArea.text = `${m.toString().padStart(2, '0')}:${s.toString().padStart(2, '0')}.${ms}`
+            }
+        }
+
         Item
         {
             id : microPhoneArea
