@@ -1,0 +1,7 @@
+resampler_module_autogen/timestamp: \
+	E:/myProgram/Recorder/record/resampler/CMakeLists.txt \
+	E:/myProgram/Recorder/record/resampler/ffaresampler.cpp \
+	E:/myProgram/Recorder/record/resampler/ffaresampler.h \
+	E:/myProgram/Recorder/record/resampler/ffvresampler.cpp \
+	E:/myProgram/Recorder/record/resampler/ffvresampler.h \
+	C:/Grpc/cmake-4.0.0-rc1-windows-x86_64/bin/cmake.exe

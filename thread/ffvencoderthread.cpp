@@ -74,22 +74,24 @@ void FFVEncoderThread::run()
                       << " timeBase=" << timeBase.num << "/" << timeBase.den << std::endl;
         }
 
-        if (firstFrame) {
-            firstFramePts = frame->pts;
-            firstFrame = false;
-            std::cerr << "[VEncThread] first frame: firstFramePts=" << firstFramePts
-                      << ", encode with relativePts=0" << std::endl;
-            vEncoder->encode(frame, streamIndex, 0, timeBase);
-        } else {
-            int64_t relativePts = frame->pts - firstFramePts;
-            std::cerr << "[VEncThread] encode frame: relativePts=" << relativePts
-                      << " (abs pts=" << frame->pts << ")"
-                      << " streamIndex=" << streamIndex
-                      << " timeBase=" << timeBase.num << "/" << timeBase.den << std::endl;
-            vEncoder->encode(frame, streamIndex, relativePts, timeBase);
-        }
+        int64_t now_us = av_gettime_relative();
+        int64_t wall_us = now_us - start_time_us;
+        AVRational src_tb = {1, AV_TIME_BASE};
+        int64_t vpts = av_rescale_q(wall_us, src_tb, timeBase);
+        double vpts_sec = vpts * av_q2d(timeBase);
 
         // after submit to encoder, free frame
+        std::cerr << "[VEncThread] frame submitted to encoder, releasing frame" << std::endl;
+        AVFrameTraits::release(frame);
+
+        std::cerr << "[VEncThread] wallclock: now_us=" << now_us << " start_us=" << start_time_us
+                  << " wall_us=" << wall_us << " -> vpts=" << vpts << " (" << vpts_sec << " sec)"
+                  << " timeBase=" << timeBase.num << "/" << timeBase.den << std::endl;
+
+        // 将墙钟 PTS 传给编码器
+        vEncoder->encode(frame, streamIndex, vpts, timeBase);
+
+        // 释放帧
         std::cerr << "[VEncThread] frame submitted to encoder, releasing frame" << std::endl;
         AVFrameTraits::release(frame);
     }
@@ -100,7 +102,7 @@ void FFVEncoderThread::initEncoder(AVFrame *frame)
 {
     frameRate = vFilter->getFrameRate();
     //    frameRate = {30,1};
-    timeBase = vFilter->getTimeBase();
+    timeBase = vEncoder->getCodecCtx()->time_base;
     //    timeBase ={1,10000000};
 
     std::cerr << "[VEncThread] initEncoder: frameRate=" << frameRate.num << "/" << frameRate.den
@@ -111,4 +113,9 @@ void FFVEncoderThread::initEncoder(AVFrame *frame)
     muxer->addStream(vEncoder->getCodecCtx());
     streamIndex = muxer->getVStreamIndex();
     std::cerr << "[VEncThread] initEncoder: stream added to muxer, streamIndex=" << streamIndex << std::endl;
+
+    // 记录墙钟起点（微秒）
+    start_time_us = av_gettime_relative();
+    std::cerr << "[VEncThread] start_time_us=" << start_time_us << " (use wall-clock pts)"
+              << std::endl;
 }

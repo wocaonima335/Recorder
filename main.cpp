@@ -1,3 +1,4 @@
+#include "event/eventfactory.h"
 #include "event/eventfactorymanager.h"
 #include "recorder/ffrecorder.h"
 
@@ -6,6 +7,7 @@
 #include <QQmlApplicationEngine>
 #include <QQuickWindow>
 #include <QTimer>
+#include <QObject>
 
 void init()
 {
@@ -60,24 +62,102 @@ void recordTest()
     });
 }
 
+// 录制控制函数
+void startRecording()
+{
+    qDebug() << "开始录制...";
+    
+    // 初始化录制器
+    FFRecorder::getInstance().initialize();
+
+    SourceEventParams cameraParams;
+    cameraParams.type = SourceEventType::OPEN_SOURCE;
+    cameraParams.sourceType = demuxerType::SCREEN;
+    cameraParams.url = FFRecordURLS::SCREEN_URL;
+    cameraParams.format = "gdigrab";
+
+    auto cameraEvent = EventFactoryManager::getInstance().createEvent(EventCategory::SOURCE,
+                                                                      &FFRecorder::getInstance(),
+                                                                      cameraParams);
+    cameraEvent->work();
+
+    SourceEventParams audioParams;
+    audioParams.type = SourceEventType::OPEN_SOURCE;
+    audioParams.sourceType = demuxerType::AUDIO;
+    audioParams.url = FFRecordURLS::AUDIO_URL;
+    audioParams.format = "dshow";
+
+    auto audioEvent = EventFactoryManager::getInstance().createEvent(EventCategory::SOURCE,
+                                                                     &FFRecorder::getInstance(),
+                                                                     audioParams);
+    audioEvent->work();
+
+    // 开始录制
+    FFRecorder::getInstance().startRecord();
+}
+
+void stopRecording()
+{
+    qDebug() << "停止录制...";
+    
+    // 关闭摄像头源
+    SourceEventParams closeCameraParams;
+    closeCameraParams.type = SourceEventType::CLOSE_SOURCE;
+    closeCameraParams.sourceType = demuxerType::SCREEN;
+    auto closeCameraEvent = EventFactoryManager::getInstance().createEvent(EventCategory::SOURCE,
+                                                                           &FFRecorder::getInstance(),
+                                                                           closeCameraParams);
+    closeCameraEvent->work();
+
+    // 关闭麦克风源
+    SourceEventParams closeAudioParams;
+    closeAudioParams.type = SourceEventType::CLOSE_SOURCE;
+    closeAudioParams.sourceType = demuxerType::AUDIO;
+    auto closeAudioEvent = EventFactoryManager::getInstance().createEvent(EventCategory::SOURCE,
+                                                                          &FFRecorder::getInstance(),
+                                                                          closeAudioParams);
+    closeAudioEvent->work();
+    
+    // 停止录制
+    FFRecorder::getInstance().stopRecord();
+}
+
+class QmlBridge : public QObject
+{
+    Q_OBJECT
+public:
+    explicit QmlBridge(QObject *parent = nullptr)
+        : QObject(parent)
+    {}
+public slots:
+    void onStartRecording() { startRecording(); }
+    void onStopRecording() { stopRecording(); }
+};
+
 int main(int argc, char *argv[])
 {
     QGuiApplication app(argc, argv);
 
-    QQuickWindow::setGraphicsApi(QSGRendererInterface::OpenGL);
-
-    // init();
-    // recordTest();
+    init();
 
     QQmlApplicationEngine engine;
     QObject::connect(
         &engine,
         &QQmlApplicationEngine::objectCreationFailed,
         &app,
-        []()
-        { QCoreApplication::exit(-1); },
+        []() { QCoreApplication::exit(-1); },
         Qt::QueuedConnection);
     engine.loadFromModule("bandicam", "Main");
 
+    if (!engine.rootObjects().isEmpty()) {
+        auto root = engine.rootObjects().first();
+        static QmlBridge bridge;
+        QObject::connect(root, SIGNAL(startRecording()), &bridge, SLOT(onStartRecording()));
+        QObject::connect(root, SIGNAL(stopRecording()), &bridge, SLOT(onStopRecording()));
+    } else {
+        qDebug() << "Failed to load QML root object";
+    }
+
     return app.exec();
 }
+#include "main.moc"

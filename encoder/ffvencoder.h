@@ -33,6 +33,7 @@ public:
     AVCodecContext *getCodecCtx();
     FFVEncoderPars *getEncoderPars();
     void initVideo(AVFrame *frame, AVRational fps);
+    void resetPtsClock();
 
 private:
     void printError(int ret);

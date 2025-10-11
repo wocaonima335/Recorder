@@ -43,6 +43,9 @@ private:
 
     int64_t firstFramePts = 0;
     bool firstFrame = true;
+
+    int64_t start_time_us = 0;
+    bool useWallClockPts = true;
 };
 
 #endif // FFVENCODERTHREAD_H

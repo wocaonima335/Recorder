@@ -8,5 +8,10 @@
         <file>icons/record.png</file>
         <file>icons/Setting.png</file>
         <file>icons/video.png</file>
+        <file>qml/Main.qml</file>
+        <file>qml/settinglist.qml</file>
+        <file>qml/settingpage.qml</file>
+        <file>qml/videopage.qml</file>
+        <file>qml/cuttingpage.qml</file>
     </qresource>
 </RCC>

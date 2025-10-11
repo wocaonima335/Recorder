@@ -1,0 +1,5 @@
+demuxer_module_autogen/timestamp: \
+	E:/myProgram/Recorder/record/demuxer/CMakeLists.txt \
+	E:/myProgram/Recorder/record/demuxer/demuxer.cpp \
+	E:/myProgram/Recorder/record/demuxer/demuxer.h \
+	C:/Grpc/cmake-4.0.0-rc1-windows-x86_64/bin/cmake.exe
