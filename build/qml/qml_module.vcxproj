@@ -1,0 +1,841 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <PreferredToolArchitecture>x64</PreferredToolArchitecture>
+  </PropertyGroup>
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="MinSizeRel|x64">
+      <Configuration>MinSizeRel</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="RelWithDebInfo|x64">
+      <Configuration>RelWithDebInfo</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{1E071B6A-8054-361C-8E8E-4EB2B7B6612E}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <WindowsTargetPlatformVersion>10.0.22621.0</WindowsTargetPlatformVersion>
+    <Platform>x64</Platform>
+    <ProjectName>qml_module</ProjectName>
+    <VCProjectUpgraderObjectName>NoUpgrade</VCProjectUpgraderObjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>Unicode</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>Unicode</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>Unicode</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>Unicode</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.20506.1</_ProjectFileVersion>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">E:\myProgram\Recorder\record\build\qml\Debug\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">qml_module.dir\Debug\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">qml_module</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.lib</TargetExt>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">E:\myProgram\Recorder\record\build\qml\Release\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">qml_module.dir\Release\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">qml_module</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.lib</TargetExt>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">E:\myProgram\Recorder\record\build\qml\MinSizeRel\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">qml_module.dir\MinSizeRel\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">qml_module</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">.lib</TargetExt>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">E:\myProgram\Recorder\record\build\qml\RelWithDebInfo\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">qml_module.dir\RelWithDebInfo\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">qml_module</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">.lib</TargetExt>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>E:\myProgram\Recorder\record\build\qml\qml_module_autogen\include_Debug;E:\myProgram\Recorder\record\3rdparty\ffmpeg-amf\include;E:\myProgram\Recorder\record\qml;D:\Qt\6.5.3\mingw_64\include\QtQml\6.5.3;D:\Qt\6.5.3\mingw_64\include\QtQml\6.5.3\QtQml;D:\Qt\6.5.3\mingw_64\include\QtCore\6.5.3;D:\Qt\6.5.3\mingw_64\include\QtCore\6.5.3\QtCore;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /external:I "D:/Qt/6.5.3/mingw_64/include/QtCore" /external:I "D:/Qt/6.5.3/mingw_64/include" /external:I "D:/Qt/6.5.3/mingw_64/mkspecs/win32-g++" /external:I "D:/Qt/6.5.3/mingw_64/include/QtQml" /external:I "D:/Qt/6.5.3/mingw_64/include/QtQmlIntegration" /external:I "D:/Qt/6.5.3/mingw_64/include/QtNetwork" /external:I "D:/Qt/6.5.3/mingw_64/include/QtQuick" /external:I "D:/Qt/6.5.3/mingw_64/include/QtGui" /external:I "D:/Qt/6.5.3/mingw_64/include/QtQmlModels" /external:I "D:/Qt/6.5.3/mingw_64/include/QtOpenGL"</AdditionalOptions>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <ExternalWarningLevel>TurnOffAllWarnings</ExternalWarningLevel>
+      <InlineFunctionExpansion>Disabled</InlineFunctionExpansion>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+      <MinimalRebuild></MinimalRebuild>
+      <Optimization>Disabled</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <SupportJustMyCode></SupportJustMyCode>
+      <UseFullPaths>false</UseFullPaths>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;QT_QML_LIB;QT_CORE_LIB;_ENABLE_EXTENDED_ALIGNED_STORAGE;WIN64;_WIN64;MINGW_HAS_SECURE_API=1;UNICODE;_UNICODE;QT_QMLINTEGRATION_LIB;QT_NETWORK_LIB;QT_QUICK_LIB;QT_GUI_LIB;QT_QMLMODELS_LIB;QT_OPENGL_LIB;CMAKE_INTDIR="Debug"</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <ScanSourceForModuleDependencies>false</ScanSourceForModuleDependencies>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_DEBUG;_WINDOWS;QT_QML_LIB;QT_CORE_LIB;_ENABLE_EXTENDED_ALIGNED_STORAGE;WIN64;_WIN64;MINGW_HAS_SECURE_API=1;UNICODE;_UNICODE;QT_QMLINTEGRATION_LIB;QT_NETWORK_LIB;QT_QUICK_LIB;QT_GUI_LIB;QT_QMLMODELS_LIB;QT_OPENGL_LIB;CMAKE_INTDIR=\"Debug\"</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>E:\myProgram\Recorder\record\build\qml\qml_module_autogen\include_Debug;E:\myProgram\Recorder\record\3rdparty\ffmpeg-amf\include;E:\myProgram\Recorder\record\qml;D:\Qt\6.5.3\mingw_64\include\QtQml\6.5.3;D:\Qt\6.5.3\mingw_64\include\QtQml\6.5.3\QtQml;D:\Qt\6.5.3\mingw_64\include\QtCore\6.5.3;D:\Qt\6.5.3\mingw_64\include\QtCore\6.5.3\QtCore;D:\Qt\6.5.3\mingw_64\include\QtCore;D:\Qt\6.5.3\mingw_64\include;D:\Qt\6.5.3\mingw_64\mkspecs\win32-g++;D:\Qt\6.5.3\mingw_64\include\QtQml;D:\Qt\6.5.3\mingw_64\include\QtQmlIntegration;D:\Qt\6.5.3\mingw_64\include\QtNetwork;D:\Qt\6.5.3\mingw_64\include\QtQuick;D:\Qt\6.5.3\mingw_64\include\QtGui;D:\Qt\6.5.3\mingw_64\include\QtQmlModels;D:\Qt\6.5.3\mingw_64\include\QtOpenGL;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>E:\myProgram\Recorder\record\build\qml\qml_module_autogen\include_Debug;E:\myProgram\Recorder\record\3rdparty\ffmpeg-amf\include;E:\myProgram\Recorder\record\qml;D:\Qt\6.5.3\mingw_64\include\QtQml\6.5.3;D:\Qt\6.5.3\mingw_64\include\QtQml\6.5.3\QtQml;D:\Qt\6.5.3\mingw_64\include\QtCore\6.5.3;D:\Qt\6.5.3\mingw_64\include\QtCore\6.5.3\QtCore;D:\Qt\6.5.3\mingw_64\include\QtCore;D:\Qt\6.5.3\mingw_64\include;D:\Qt\6.5.3\mingw_64\mkspecs\win32-g++;D:\Qt\6.5.3\mingw_64\include\QtQml;D:\Qt\6.5.3\mingw_64\include\QtQmlIntegration;D:\Qt\6.5.3\mingw_64\include\QtNetwork;D:\Qt\6.5.3\mingw_64\include\QtQuick;D:\Qt\6.5.3\mingw_64\include\QtGui;D:\Qt\6.5.3\mingw_64\include\QtQmlModels;D:\Qt\6.5.3\mingw_64\include\QtOpenGL;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Lib>
+      <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>E:\myProgram\Recorder\record\build\qml\qml_module_autogen\include_Release;E:\myProgram\Recorder\record\3rdparty\ffmpeg-amf\include;E:\myProgram\Recorder\record\qml;D:\Qt\6.5.3\mingw_64\include\QtQml\6.5.3;D:\Qt\6.5.3\mingw_64\include\QtQml\6.5.3\QtQml;D:\Qt\6.5.3\mingw_64\include\QtCore\6.5.3;D:\Qt\6.5.3\mingw_64\include\QtCore\6.5.3\QtCore;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /external:I "D:/Qt/6.5.3/mingw_64/include/QtCore" /external:I "D:/Qt/6.5.3/mingw_64/include" /external:I "D:/Qt/6.5.3/mingw_64/mkspecs/win32-g++" /external:I "D:/Qt/6.5.3/mingw_64/include/QtQml" /external:I "D:/Qt/6.5.3/mingw_64/include/QtQmlIntegration" /external:I "D:/Qt/6.5.3/mingw_64/include/QtNetwork" /external:I "D:/Qt/6.5.3/mingw_64/include/QtQuick" /external:I "D:/Qt/6.5.3/mingw_64/include/QtGui" /external:I "D:/Qt/6.5.3/mingw_64/include/QtQmlModels" /external:I "D:/Qt/6.5.3/mingw_64/include/QtOpenGL"</AdditionalOptions>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <BasicRuntimeChecks>Default</BasicRuntimeChecks>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <ExternalWarningLevel>TurnOffAllWarnings</ExternalWarningLevel>
+      <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+      <MinimalRebuild></MinimalRebuild>
+      <Optimization>MaxSpeed</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <SupportJustMyCode></SupportJustMyCode>
+      <UseFullPaths>false</UseFullPaths>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;QT_QML_LIB;QT_CORE_LIB;QT_NO_DEBUG;_ENABLE_EXTENDED_ALIGNED_STORAGE;WIN64;_WIN64;MINGW_HAS_SECURE_API=1;UNICODE;_UNICODE;QT_QMLINTEGRATION_LIB;QT_NETWORK_LIB;QT_QUICK_LIB;QT_GUI_LIB;QT_QMLMODELS_LIB;QT_OPENGL_LIB;CMAKE_INTDIR="Release"</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <DebugInformationFormat>
+      </DebugInformationFormat>
+      <ScanSourceForModuleDependencies>false</ScanSourceForModuleDependencies>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;QT_QML_LIB;QT_CORE_LIB;QT_NO_DEBUG;_ENABLE_EXTENDED_ALIGNED_STORAGE;WIN64;_WIN64;MINGW_HAS_SECURE_API=1;UNICODE;_UNICODE;QT_QMLINTEGRATION_LIB;QT_NETWORK_LIB;QT_QUICK_LIB;QT_GUI_LIB;QT_QMLMODELS_LIB;QT_OPENGL_LIB;CMAKE_INTDIR=\"Release\"</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>E:\myProgram\Recorder\record\build\qml\qml_module_autogen\include_Release;E:\myProgram\Recorder\record\3rdparty\ffmpeg-amf\include;E:\myProgram\Recorder\record\qml;D:\Qt\6.5.3\mingw_64\include\QtQml\6.5.3;D:\Qt\6.5.3\mingw_64\include\QtQml\6.5.3\QtQml;D:\Qt\6.5.3\mingw_64\include\QtCore\6.5.3;D:\Qt\6.5.3\mingw_64\include\QtCore\6.5.3\QtCore;D:\Qt\6.5.3\mingw_64\include\QtCore;D:\Qt\6.5.3\mingw_64\include;D:\Qt\6.5.3\mingw_64\mkspecs\win32-g++;D:\Qt\6.5.3\mingw_64\include\QtQml;D:\Qt\6.5.3\mingw_64\include\QtQmlIntegration;D:\Qt\6.5.3\mingw_64\include\QtNetwork;D:\Qt\6.5.3\mingw_64\include\QtQuick;D:\Qt\6.5.3\mingw_64\include\QtGui;D:\Qt\6.5.3\mingw_64\include\QtQmlModels;D:\Qt\6.5.3\mingw_64\include\QtOpenGL;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>E:\myProgram\Recorder\record\build\qml\qml_module_autogen\include_Release;E:\myProgram\Recorder\record\3rdparty\ffmpeg-amf\include;E:\myProgram\Recorder\record\qml;D:\Qt\6.5.3\mingw_64\include\QtQml\6.5.3;D:\Qt\6.5.3\mingw_64\include\QtQml\6.5.3\QtQml;D:\Qt\6.5.3\mingw_64\include\QtCore\6.5.3;D:\Qt\6.5.3\mingw_64\include\QtCore\6.5.3\QtCore;D:\Qt\6.5.3\mingw_64\include\QtCore;D:\Qt\6.5.3\mingw_64\include;D:\Qt\6.5.3\mingw_64\mkspecs\win32-g++;D:\Qt\6.5.3\mingw_64\include\QtQml;D:\Qt\6.5.3\mingw_64\include\QtQmlIntegration;D:\Qt\6.5.3\mingw_64\include\QtNetwork;D:\Qt\6.5.3\mingw_64\include\QtQuick;D:\Qt\6.5.3\mingw_64\include\QtGui;D:\Qt\6.5.3\mingw_64\include\QtQmlModels;D:\Qt\6.5.3\mingw_64\include\QtOpenGL;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Lib>
+      <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>E:\myProgram\Recorder\record\build\qml\qml_module_autogen\include_MinSizeRel;E:\myProgram\Recorder\record\3rdparty\ffmpeg-amf\include;E:\myProgram\Recorder\record\qml;D:\Qt\6.5.3\mingw_64\include\QtQml\6.5.3;D:\Qt\6.5.3\mingw_64\include\QtQml\6.5.3\QtQml;D:\Qt\6.5.3\mingw_64\include\QtCore\6.5.3;D:\Qt\6.5.3\mingw_64\include\QtCore\6.5.3\QtCore;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /external:I "D:/Qt/6.5.3/mingw_64/include/QtCore" /external:I "D:/Qt/6.5.3/mingw_64/include" /external:I "D:/Qt/6.5.3/mingw_64/mkspecs/win32-g++" /external:I "D:/Qt/6.5.3/mingw_64/include/QtQml" /external:I "D:/Qt/6.5.3/mingw_64/include/QtQmlIntegration" /external:I "D:/Qt/6.5.3/mingw_64/include/QtNetwork" /external:I "D:/Qt/6.5.3/mingw_64/include/QtQuick" /external:I "D:/Qt/6.5.3/mingw_64/include/QtGui" /external:I "D:/Qt/6.5.3/mingw_64/include/QtQmlModels" /external:I "D:/Qt/6.5.3/mingw_64/include/QtOpenGL"</AdditionalOptions>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <BasicRuntimeChecks>Default</BasicRuntimeChecks>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <ExternalWarningLevel>TurnOffAllWarnings</ExternalWarningLevel>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+      <MinimalRebuild></MinimalRebuild>
+      <Optimization>MinSpace</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <SupportJustMyCode></SupportJustMyCode>
+      <UseFullPaths>false</UseFullPaths>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;QT_QML_LIB;QT_CORE_LIB;QT_NO_DEBUG;_ENABLE_EXTENDED_ALIGNED_STORAGE;WIN64;_WIN64;MINGW_HAS_SECURE_API=1;UNICODE;_UNICODE;QT_QMLINTEGRATION_LIB;QT_NETWORK_LIB;QT_QUICK_LIB;QT_GUI_LIB;QT_QMLMODELS_LIB;QT_OPENGL_LIB;CMAKE_INTDIR="MinSizeRel"</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <DebugInformationFormat>
+      </DebugInformationFormat>
+      <ScanSourceForModuleDependencies>false</ScanSourceForModuleDependencies>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;QT_QML_LIB;QT_CORE_LIB;QT_NO_DEBUG;_ENABLE_EXTENDED_ALIGNED_STORAGE;WIN64;_WIN64;MINGW_HAS_SECURE_API=1;UNICODE;_UNICODE;QT_QMLINTEGRATION_LIB;QT_NETWORK_LIB;QT_QUICK_LIB;QT_GUI_LIB;QT_QMLMODELS_LIB;QT_OPENGL_LIB;CMAKE_INTDIR=\"MinSizeRel\"</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>E:\myProgram\Recorder\record\build\qml\qml_module_autogen\include_MinSizeRel;E:\myProgram\Recorder\record\3rdparty\ffmpeg-amf\include;E:\myProgram\Recorder\record\qml;D:\Qt\6.5.3\mingw_64\include\QtQml\6.5.3;D:\Qt\6.5.3\mingw_64\include\QtQml\6.5.3\QtQml;D:\Qt\6.5.3\mingw_64\include\QtCore\6.5.3;D:\Qt\6.5.3\mingw_64\include\QtCore\6.5.3\QtCore;D:\Qt\6.5.3\mingw_64\include\QtCore;D:\Qt\6.5.3\mingw_64\include;D:\Qt\6.5.3\mingw_64\mkspecs\win32-g++;D:\Qt\6.5.3\mingw_64\include\QtQml;D:\Qt\6.5.3\mingw_64\include\QtQmlIntegration;D:\Qt\6.5.3\mingw_64\include\QtNetwork;D:\Qt\6.5.3\mingw_64\include\QtQuick;D:\Qt\6.5.3\mingw_64\include\QtGui;D:\Qt\6.5.3\mingw_64\include\QtQmlModels;D:\Qt\6.5.3\mingw_64\include\QtOpenGL;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>E:\myProgram\Recorder\record\build\qml\qml_module_autogen\include_MinSizeRel;E:\myProgram\Recorder\record\3rdparty\ffmpeg-amf\include;E:\myProgram\Recorder\record\qml;D:\Qt\6.5.3\mingw_64\include\QtQml\6.5.3;D:\Qt\6.5.3\mingw_64\include\QtQml\6.5.3\QtQml;D:\Qt\6.5.3\mingw_64\include\QtCore\6.5.3;D:\Qt\6.5.3\mingw_64\include\QtCore\6.5.3\QtCore;D:\Qt\6.5.3\mingw_64\include\QtCore;D:\Qt\6.5.3\mingw_64\include;D:\Qt\6.5.3\mingw_64\mkspecs\win32-g++;D:\Qt\6.5.3\mingw_64\include\QtQml;D:\Qt\6.5.3\mingw_64\include\QtQmlIntegration;D:\Qt\6.5.3\mingw_64\include\QtNetwork;D:\Qt\6.5.3\mingw_64\include\QtQuick;D:\Qt\6.5.3\mingw_64\include\QtGui;D:\Qt\6.5.3\mingw_64\include\QtQmlModels;D:\Qt\6.5.3\mingw_64\include\QtOpenGL;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Lib>
+      <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>E:\myProgram\Recorder\record\build\qml\qml_module_autogen\include_RelWithDebInfo;E:\myProgram\Recorder\record\3rdparty\ffmpeg-amf\include;E:\myProgram\Recorder\record\qml;D:\Qt\6.5.3\mingw_64\include\QtQml\6.5.3;D:\Qt\6.5.3\mingw_64\include\QtQml\6.5.3\QtQml;D:\Qt\6.5.3\mingw_64\include\QtCore\6.5.3;D:\Qt\6.5.3\mingw_64\include\QtCore\6.5.3\QtCore;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /external:I "D:/Qt/6.5.3/mingw_64/include/QtCore" /external:I "D:/Qt/6.5.3/mingw_64/include" /external:I "D:/Qt/6.5.3/mingw_64/mkspecs/win32-g++" /external:I "D:/Qt/6.5.3/mingw_64/include/QtQml" /external:I "D:/Qt/6.5.3/mingw_64/include/QtQmlIntegration" /external:I "D:/Qt/6.5.3/mingw_64/include/QtNetwork" /external:I "D:/Qt/6.5.3/mingw_64/include/QtQuick" /external:I "D:/Qt/6.5.3/mingw_64/include/QtGui" /external:I "D:/Qt/6.5.3/mingw_64/include/QtQmlModels" /external:I "D:/Qt/6.5.3/mingw_64/include/QtOpenGL"</AdditionalOptions>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <BasicRuntimeChecks>Default</BasicRuntimeChecks>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <ExternalWarningLevel>TurnOffAllWarnings</ExternalWarningLevel>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+      <MinimalRebuild></MinimalRebuild>
+      <Optimization>MaxSpeed</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <SupportJustMyCode></SupportJustMyCode>
+      <UseFullPaths>false</UseFullPaths>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;QT_QML_LIB;QT_CORE_LIB;QT_NO_DEBUG;_ENABLE_EXTENDED_ALIGNED_STORAGE;WIN64;_WIN64;MINGW_HAS_SECURE_API=1;UNICODE;_UNICODE;QT_QMLINTEGRATION_LIB;QT_NETWORK_LIB;QT_QUICK_LIB;QT_GUI_LIB;QT_QMLMODELS_LIB;QT_OPENGL_LIB;CMAKE_INTDIR="RelWithDebInfo"</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <ScanSourceForModuleDependencies>false</ScanSourceForModuleDependencies>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;QT_QML_LIB;QT_CORE_LIB;QT_NO_DEBUG;_ENABLE_EXTENDED_ALIGNED_STORAGE;WIN64;_WIN64;MINGW_HAS_SECURE_API=1;UNICODE;_UNICODE;QT_QMLINTEGRATION_LIB;QT_NETWORK_LIB;QT_QUICK_LIB;QT_GUI_LIB;QT_QMLMODELS_LIB;QT_OPENGL_LIB;CMAKE_INTDIR=\"RelWithDebInfo\"</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>E:\myProgram\Recorder\record\build\qml\qml_module_autogen\include_RelWithDebInfo;E:\myProgram\Recorder\record\3rdparty\ffmpeg-amf\include;E:\myProgram\Recorder\record\qml;D:\Qt\6.5.3\mingw_64\include\QtQml\6.5.3;D:\Qt\6.5.3\mingw_64\include\QtQml\6.5.3\QtQml;D:\Qt\6.5.3\mingw_64\include\QtCore\6.5.3;D:\Qt\6.5.3\mingw_64\include\QtCore\6.5.3\QtCore;D:\Qt\6.5.3\mingw_64\include\QtCore;D:\Qt\6.5.3\mingw_64\include;D:\Qt\6.5.3\mingw_64\mkspecs\win32-g++;D:\Qt\6.5.3\mingw_64\include\QtQml;D:\Qt\6.5.3\mingw_64\include\QtQmlIntegration;D:\Qt\6.5.3\mingw_64\include\QtNetwork;D:\Qt\6.5.3\mingw_64\include\QtQuick;D:\Qt\6.5.3\mingw_64\include\QtGui;D:\Qt\6.5.3\mingw_64\include\QtQmlModels;D:\Qt\6.5.3\mingw_64\include\QtOpenGL;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>E:\myProgram\Recorder\record\build\qml\qml_module_autogen\include_RelWithDebInfo;E:\myProgram\Recorder\record\3rdparty\ffmpeg-amf\include;E:\myProgram\Recorder\record\qml;D:\Qt\6.5.3\mingw_64\include\QtQml\6.5.3;D:\Qt\6.5.3\mingw_64\include\QtQml\6.5.3\QtQml;D:\Qt\6.5.3\mingw_64\include\QtCore\6.5.3;D:\Qt\6.5.3\mingw_64\include\QtCore\6.5.3\QtCore;D:\Qt\6.5.3\mingw_64\include\QtCore;D:\Qt\6.5.3\mingw_64\include;D:\Qt\6.5.3\mingw_64\mkspecs\win32-g++;D:\Qt\6.5.3\mingw_64\include\QtQml;D:\Qt\6.5.3\mingw_64\include\QtQmlIntegration;D:\Qt\6.5.3\mingw_64\include\QtNetwork;D:\Qt\6.5.3\mingw_64\include\QtQuick;D:\Qt\6.5.3\mingw_64\include\QtGui;D:\Qt\6.5.3\mingw_64\include\QtQmlModels;D:\Qt\6.5.3\mingw_64\include\QtOpenGL;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Lib>
+      <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <CustomBuild Include="E:\myProgram\Recorder\record\build\CMakeFiles\ecbbcd2931e0e48f880670e6c02cb5e2\qt6qml_module_metatypes.json.gen.rule">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Running moc --collect-json for target qml_module</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">setlocal
+D:\Qt\6.5.3\mingw_64\.\bin\moc.exe -o E:/myProgram/Recorder/record/build/qml/meta_types/qt6qml_module_metatypes.json.gen --collect-json @E:/myProgram/Recorder/record/build/qml/meta_types/qml_module_json_file_list.txt
+if %errorlevel% neq 0 goto :cmEnd
+C:\Grpc\cmake-4.0.0-rc1-windows-x86_64\bin\cmake.exe -E copy_if_different E:/myProgram/Recorder/record/build/qml/meta_types/qt6qml_module_metatypes.json.gen E:/myProgram/Recorder/record/build/qml/meta_types/qt6qml_module_metatypes.json
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">D:\Qt\6.5.3\mingw_64\.\bin\moc.exe;E:\myProgram\Recorder\record\build\qml\meta_types\qml_module_json_file_list.txt;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">E:\myProgram\Recorder\record\build\qml\meta_types\qt6qml_module_metatypes.json.gen</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Running moc --collect-json for target qml_module</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">setlocal
+D:\Qt\6.5.3\mingw_64\.\bin\moc.exe -o E:/myProgram/Recorder/record/build/qml/meta_types/qt6qml_module_metatypes.json.gen --collect-json @E:/myProgram/Recorder/record/build/qml/meta_types/qml_module_json_file_list.txt
+if %errorlevel% neq 0 goto :cmEnd
+C:\Grpc\cmake-4.0.0-rc1-windows-x86_64\bin\cmake.exe -E copy_if_different E:/myProgram/Recorder/record/build/qml/meta_types/qt6qml_module_metatypes.json.gen E:/myProgram/Recorder/record/build/qml/meta_types/qt6qml_module_metatypes.json
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">D:\Qt\6.5.3\mingw_64\.\bin\moc.exe;E:\myProgram\Recorder\record\build\qml\meta_types\qml_module_json_file_list.txt;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">E:\myProgram\Recorder\record\build\qml\meta_types\qt6qml_module_metatypes.json.gen</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">Running moc --collect-json for target qml_module</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">setlocal
+D:\Qt\6.5.3\mingw_64\.\bin\moc.exe -o E:/myProgram/Recorder/record/build/qml/meta_types/qt6qml_module_metatypes.json.gen --collect-json @E:/myProgram/Recorder/record/build/qml/meta_types/qml_module_json_file_list.txt
+if %errorlevel% neq 0 goto :cmEnd
+C:\Grpc\cmake-4.0.0-rc1-windows-x86_64\bin\cmake.exe -E copy_if_different E:/myProgram/Recorder/record/build/qml/meta_types/qt6qml_module_metatypes.json.gen E:/myProgram/Recorder/record/build/qml/meta_types/qt6qml_module_metatypes.json
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">D:\Qt\6.5.3\mingw_64\.\bin\moc.exe;E:\myProgram\Recorder\record\build\qml\meta_types\qml_module_json_file_list.txt;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">E:\myProgram\Recorder\record\build\qml\meta_types\qt6qml_module_metatypes.json.gen</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">Running moc --collect-json for target qml_module</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">setlocal
+D:\Qt\6.5.3\mingw_64\.\bin\moc.exe -o E:/myProgram/Recorder/record/build/qml/meta_types/qt6qml_module_metatypes.json.gen --collect-json @E:/myProgram/Recorder/record/build/qml/meta_types/qml_module_json_file_list.txt
+if %errorlevel% neq 0 goto :cmEnd
+C:\Grpc\cmake-4.0.0-rc1-windows-x86_64\bin\cmake.exe -E copy_if_different E:/myProgram/Recorder/record/build/qml/meta_types/qt6qml_module_metatypes.json.gen E:/myProgram/Recorder/record/build/qml/meta_types/qt6qml_module_metatypes.json
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">D:\Qt\6.5.3\mingw_64\.\bin\moc.exe;E:\myProgram\Recorder\record\build\qml\meta_types\qml_module_json_file_list.txt;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">E:\myProgram\Recorder\record\build\qml\meta_types\qt6qml_module_metatypes.json.gen</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</LinkObjects>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="E:\myProgram\Recorder\record\build\CMakeFiles\cfbb3e52a6cb91e9ce20d334612840aa\qml_module_qmltyperegistrations.cpp.rule">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Automatic QML type registration for target qml_module</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">setlocal
+call ..\.qt\bin\qt_setup_tool_path.bat D:/Qt/6.5.3/mingw_64/./bin/qmltyperegistrar.exe --generate-qmltypes=E:/myProgram/Recorder/record/build/qml/qml_module.qmltypes --import-name=bandicam --major-version=1 --minor-version=0 @E:/myProgram/Recorder/record/build/qml/qmltypes/qml_module_foreign_types.txt -o E:/myProgram/Recorder/record/build/qml/qml_module_qmltyperegistrations.cpp E:/myProgram/Recorder/record/build/qml/meta_types/qt6qml_module_metatypes.json
+if %errorlevel% neq 0 goto :cmEnd
+C:\Grpc\cmake-4.0.0-rc1-windows-x86_64\bin\cmake.exe -E make_directory E:/myProgram/Recorder/record/build/qml/.generated
+if %errorlevel% neq 0 goto :cmEnd
+C:\Grpc\cmake-4.0.0-rc1-windows-x86_64\bin\cmake.exe -E touch E:/myProgram/Recorder/record/build/qml/.generated/qml_module.qmltypes
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">E:\myProgram\Recorder\record\build\qml\qmltypes\qml_module_foreign_types.txt;E:\myProgram\Recorder\record\build\qml\meta_types\qt6qml_module_metatypes.json;D:\Qt\6.5.3\mingw_64\.\bin\qmltyperegistrar.exe;D:\Qt\6.5.3\mingw_64\metatypes\qt6qml_relwithdebinfo_metatypes.json;D:\Qt\6.5.3\mingw_64\metatypes\qt6core_relwithdebinfo_metatypes.json;D:\Qt\6.5.3\mingw_64\metatypes\qt6network_relwithdebinfo_metatypes.json;D:\Qt\6.5.3\mingw_64\metatypes\qt6quick_relwithdebinfo_metatypes.json;D:\Qt\6.5.3\mingw_64\metatypes\qt6gui_relwithdebinfo_metatypes.json;D:\Qt\6.5.3\mingw_64\metatypes\qt6qmlmodels_relwithdebinfo_metatypes.json;D:\Qt\6.5.3\mingw_64\metatypes\qt6opengl_relwithdebinfo_metatypes.json;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">E:\myProgram\Recorder\record\build\qml\qml_module_qmltyperegistrations.cpp;E:\myProgram\Recorder\record\build\qml\qml_module.qmltypes</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Automatic QML type registration for target qml_module</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">setlocal
+call ..\.qt\bin\qt_setup_tool_path.bat D:/Qt/6.5.3/mingw_64/./bin/qmltyperegistrar.exe --generate-qmltypes=E:/myProgram/Recorder/record/build/qml/qml_module.qmltypes --import-name=bandicam --major-version=1 --minor-version=0 @E:/myProgram/Recorder/record/build/qml/qmltypes/qml_module_foreign_types.txt -o E:/myProgram/Recorder/record/build/qml/qml_module_qmltyperegistrations.cpp E:/myProgram/Recorder/record/build/qml/meta_types/qt6qml_module_metatypes.json
+if %errorlevel% neq 0 goto :cmEnd
+C:\Grpc\cmake-4.0.0-rc1-windows-x86_64\bin\cmake.exe -E make_directory E:/myProgram/Recorder/record/build/qml/.generated
+if %errorlevel% neq 0 goto :cmEnd
+C:\Grpc\cmake-4.0.0-rc1-windows-x86_64\bin\cmake.exe -E touch E:/myProgram/Recorder/record/build/qml/.generated/qml_module.qmltypes
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">E:\myProgram\Recorder\record\build\qml\qmltypes\qml_module_foreign_types.txt;E:\myProgram\Recorder\record\build\qml\meta_types\qt6qml_module_metatypes.json;D:\Qt\6.5.3\mingw_64\.\bin\qmltyperegistrar.exe;D:\Qt\6.5.3\mingw_64\metatypes\qt6qml_relwithdebinfo_metatypes.json;D:\Qt\6.5.3\mingw_64\metatypes\qt6core_relwithdebinfo_metatypes.json;D:\Qt\6.5.3\mingw_64\metatypes\qt6network_relwithdebinfo_metatypes.json;D:\Qt\6.5.3\mingw_64\metatypes\qt6quick_relwithdebinfo_metatypes.json;D:\Qt\6.5.3\mingw_64\metatypes\qt6gui_relwithdebinfo_metatypes.json;D:\Qt\6.5.3\mingw_64\metatypes\qt6qmlmodels_relwithdebinfo_metatypes.json;D:\Qt\6.5.3\mingw_64\metatypes\qt6opengl_relwithdebinfo_metatypes.json;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">E:\myProgram\Recorder\record\build\qml\qml_module_qmltyperegistrations.cpp;E:\myProgram\Recorder\record\build\qml\qml_module.qmltypes</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">Automatic QML type registration for target qml_module</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">setlocal
+call ..\.qt\bin\qt_setup_tool_path.bat D:/Qt/6.5.3/mingw_64/./bin/qmltyperegistrar.exe --generate-qmltypes=E:/myProgram/Recorder/record/build/qml/qml_module.qmltypes --import-name=bandicam --major-version=1 --minor-version=0 @E:/myProgram/Recorder/record/build/qml/qmltypes/qml_module_foreign_types.txt -o E:/myProgram/Recorder/record/build/qml/qml_module_qmltyperegistrations.cpp E:/myProgram/Recorder/record/build/qml/meta_types/qt6qml_module_metatypes.json
+if %errorlevel% neq 0 goto :cmEnd
+C:\Grpc\cmake-4.0.0-rc1-windows-x86_64\bin\cmake.exe -E make_directory E:/myProgram/Recorder/record/build/qml/.generated
+if %errorlevel% neq 0 goto :cmEnd
+C:\Grpc\cmake-4.0.0-rc1-windows-x86_64\bin\cmake.exe -E touch E:/myProgram/Recorder/record/build/qml/.generated/qml_module.qmltypes
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">E:\myProgram\Recorder\record\build\qml\qmltypes\qml_module_foreign_types.txt;E:\myProgram\Recorder\record\build\qml\meta_types\qt6qml_module_metatypes.json;D:\Qt\6.5.3\mingw_64\.\bin\qmltyperegistrar.exe;D:\Qt\6.5.3\mingw_64\metatypes\qt6qml_relwithdebinfo_metatypes.json;D:\Qt\6.5.3\mingw_64\metatypes\qt6core_relwithdebinfo_metatypes.json;D:\Qt\6.5.3\mingw_64\metatypes\qt6network_relwithdebinfo_metatypes.json;D:\Qt\6.5.3\mingw_64\metatypes\qt6quick_relwithdebinfo_metatypes.json;D:\Qt\6.5.3\mingw_64\metatypes\qt6gui_relwithdebinfo_metatypes.json;D:\Qt\6.5.3\mingw_64\metatypes\qt6qmlmodels_relwithdebinfo_metatypes.json;D:\Qt\6.5.3\mingw_64\metatypes\qt6opengl_relwithdebinfo_metatypes.json;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">E:\myProgram\Recorder\record\build\qml\qml_module_qmltyperegistrations.cpp;E:\myProgram\Recorder\record\build\qml\qml_module.qmltypes</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">Automatic QML type registration for target qml_module</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">setlocal
+call ..\.qt\bin\qt_setup_tool_path.bat D:/Qt/6.5.3/mingw_64/./bin/qmltyperegistrar.exe --generate-qmltypes=E:/myProgram/Recorder/record/build/qml/qml_module.qmltypes --import-name=bandicam --major-version=1 --minor-version=0 @E:/myProgram/Recorder/record/build/qml/qmltypes/qml_module_foreign_types.txt -o E:/myProgram/Recorder/record/build/qml/qml_module_qmltyperegistrations.cpp E:/myProgram/Recorder/record/build/qml/meta_types/qt6qml_module_metatypes.json
+if %errorlevel% neq 0 goto :cmEnd
+C:\Grpc\cmake-4.0.0-rc1-windows-x86_64\bin\cmake.exe -E make_directory E:/myProgram/Recorder/record/build/qml/.generated
+if %errorlevel% neq 0 goto :cmEnd
+C:\Grpc\cmake-4.0.0-rc1-windows-x86_64\bin\cmake.exe -E touch E:/myProgram/Recorder/record/build/qml/.generated/qml_module.qmltypes
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">E:\myProgram\Recorder\record\build\qml\qmltypes\qml_module_foreign_types.txt;E:\myProgram\Recorder\record\build\qml\meta_types\qt6qml_module_metatypes.json;D:\Qt\6.5.3\mingw_64\.\bin\qmltyperegistrar.exe;D:\Qt\6.5.3\mingw_64\metatypes\qt6qml_relwithdebinfo_metatypes.json;D:\Qt\6.5.3\mingw_64\metatypes\qt6core_relwithdebinfo_metatypes.json;D:\Qt\6.5.3\mingw_64\metatypes\qt6network_relwithdebinfo_metatypes.json;D:\Qt\6.5.3\mingw_64\metatypes\qt6quick_relwithdebinfo_metatypes.json;D:\Qt\6.5.3\mingw_64\metatypes\qt6gui_relwithdebinfo_metatypes.json;D:\Qt\6.5.3\mingw_64\metatypes\qt6qmlmodels_relwithdebinfo_metatypes.json;D:\Qt\6.5.3\mingw_64\metatypes\qt6opengl_relwithdebinfo_metatypes.json;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">E:\myProgram\Recorder\record\build\qml\qml_module_qmltyperegistrations.cpp;E:\myProgram\Recorder\record\build\qml\qml_module.qmltypes</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</LinkObjects>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="E:\myProgram\Recorder\record\build\CMakeFiles\927bae9e632d4f482dfc8fd211ef2e81\qml_module_Main_qml.cpp.rule">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Generating .rcc/qmlcache/qml_module_Main_qml.cpp</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">setlocal
+C:\Grpc\cmake-4.0.0-rc1-windows-x86_64\bin\cmake.exe -E make_directory E:/myProgram/Recorder/record/build/qml/.rcc/qmlcache
+if %errorlevel% neq 0 goto :cmEnd
+call ..\.qt\bin\qt_setup_tool_path.bat D:/Qt/6.5.3/mingw_64/./bin/qmlcachegen.exe --bare --resource-path /qt/qml/bandicam/Main.qml -I D:/Qt/6.5.3/mingw_64/./qml -i E:/myProgram/Recorder/record/build/qml/qmldir --resource E:/myProgram/Recorder/record/build/qml/.rcc/qmake_bandicam.qrc --resource E:/myProgram/Recorder/record/build/qml/.rcc/qml_module_raw_qml_0.qrc -o E:/myProgram/Recorder/record/build/qml/.rcc/qmlcache/qml_module_Main_qml.cpp E:/myProgram/Recorder/record/qml/Main.qml
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">D:\Qt\6.5.3\mingw_64\bin\qmlcachegen.exe;E:\myProgram\Recorder\record\qml\Main.qml;E:\myProgram\Recorder\record\build\qml\.rcc\qmake_bandicam.qrc;E:\myProgram\Recorder\record\build\qml\.rcc\qml_module_raw_qml_0.qrc;E:\myProgram\Recorder\record\build\qml\qml_module.qmltypes;E:\myProgram\Recorder\record\build\qml\qmldir;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">E:\myProgram\Recorder\record\build\qml\.rcc\qmlcache\qml_module_Main_qml.cpp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Generating .rcc/qmlcache/qml_module_Main_qml.cpp</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">setlocal
+C:\Grpc\cmake-4.0.0-rc1-windows-x86_64\bin\cmake.exe -E make_directory E:/myProgram/Recorder/record/build/qml/.rcc/qmlcache
+if %errorlevel% neq 0 goto :cmEnd
+call ..\.qt\bin\qt_setup_tool_path.bat D:/Qt/6.5.3/mingw_64/./bin/qmlcachegen.exe --bare --resource-path /qt/qml/bandicam/Main.qml -I D:/Qt/6.5.3/mingw_64/./qml -i E:/myProgram/Recorder/record/build/qml/qmldir --resource E:/myProgram/Recorder/record/build/qml/.rcc/qmake_bandicam.qrc --resource E:/myProgram/Recorder/record/build/qml/.rcc/qml_module_raw_qml_0.qrc -o E:/myProgram/Recorder/record/build/qml/.rcc/qmlcache/qml_module_Main_qml.cpp E:/myProgram/Recorder/record/qml/Main.qml
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">D:\Qt\6.5.3\mingw_64\bin\qmlcachegen.exe;E:\myProgram\Recorder\record\qml\Main.qml;E:\myProgram\Recorder\record\build\qml\.rcc\qmake_bandicam.qrc;E:\myProgram\Recorder\record\build\qml\.rcc\qml_module_raw_qml_0.qrc;E:\myProgram\Recorder\record\build\qml\qml_module.qmltypes;E:\myProgram\Recorder\record\build\qml\qmldir;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">E:\myProgram\Recorder\record\build\qml\.rcc\qmlcache\qml_module_Main_qml.cpp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">Generating .rcc/qmlcache/qml_module_Main_qml.cpp</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">setlocal
+C:\Grpc\cmake-4.0.0-rc1-windows-x86_64\bin\cmake.exe -E make_directory E:/myProgram/Recorder/record/build/qml/.rcc/qmlcache
+if %errorlevel% neq 0 goto :cmEnd
+call ..\.qt\bin\qt_setup_tool_path.bat D:/Qt/6.5.3/mingw_64/./bin/qmlcachegen.exe --bare --resource-path /qt/qml/bandicam/Main.qml -I D:/Qt/6.5.3/mingw_64/./qml -i E:/myProgram/Recorder/record/build/qml/qmldir --resource E:/myProgram/Recorder/record/build/qml/.rcc/qmake_bandicam.qrc --resource E:/myProgram/Recorder/record/build/qml/.rcc/qml_module_raw_qml_0.qrc -o E:/myProgram/Recorder/record/build/qml/.rcc/qmlcache/qml_module_Main_qml.cpp E:/myProgram/Recorder/record/qml/Main.qml
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">D:\Qt\6.5.3\mingw_64\bin\qmlcachegen.exe;E:\myProgram\Recorder\record\qml\Main.qml;E:\myProgram\Recorder\record\build\qml\.rcc\qmake_bandicam.qrc;E:\myProgram\Recorder\record\build\qml\.rcc\qml_module_raw_qml_0.qrc;E:\myProgram\Recorder\record\build\qml\qml_module.qmltypes;E:\myProgram\Recorder\record\build\qml\qmldir;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">E:\myProgram\Recorder\record\build\qml\.rcc\qmlcache\qml_module_Main_qml.cpp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">Generating .rcc/qmlcache/qml_module_Main_qml.cpp</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">setlocal
+C:\Grpc\cmake-4.0.0-rc1-windows-x86_64\bin\cmake.exe -E make_directory E:/myProgram/Recorder/record/build/qml/.rcc/qmlcache
+if %errorlevel% neq 0 goto :cmEnd
+call ..\.qt\bin\qt_setup_tool_path.bat D:/Qt/6.5.3/mingw_64/./bin/qmlcachegen.exe --bare --resource-path /qt/qml/bandicam/Main.qml -I D:/Qt/6.5.3/mingw_64/./qml -i E:/myProgram/Recorder/record/build/qml/qmldir --resource E:/myProgram/Recorder/record/build/qml/.rcc/qmake_bandicam.qrc --resource E:/myProgram/Recorder/record/build/qml/.rcc/qml_module_raw_qml_0.qrc -o E:/myProgram/Recorder/record/build/qml/.rcc/qmlcache/qml_module_Main_qml.cpp E:/myProgram/Recorder/record/qml/Main.qml
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">D:\Qt\6.5.3\mingw_64\bin\qmlcachegen.exe;E:\myProgram\Recorder\record\qml\Main.qml;E:\myProgram\Recorder\record\build\qml\.rcc\qmake_bandicam.qrc;E:\myProgram\Recorder\record\build\qml\.rcc\qml_module_raw_qml_0.qrc;E:\myProgram\Recorder\record\build\qml\qml_module.qmltypes;E:\myProgram\Recorder\record\build\qml\qmldir;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">E:\myProgram\Recorder\record\build\qml\.rcc\qmlcache\qml_module_Main_qml.cpp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</LinkObjects>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="E:\myProgram\Recorder\record\build\CMakeFiles\927bae9e632d4f482dfc8fd211ef2e81\qml_module_videopage_qml.cpp.rule">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Generating .rcc/qmlcache/qml_module_videopage_qml.cpp</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">setlocal
+C:\Grpc\cmake-4.0.0-rc1-windows-x86_64\bin\cmake.exe -E make_directory E:/myProgram/Recorder/record/build/qml/.rcc/qmlcache
+if %errorlevel% neq 0 goto :cmEnd
+call ..\.qt\bin\qt_setup_tool_path.bat D:/Qt/6.5.3/mingw_64/./bin/qmlcachegen.exe --bare --resource-path /qt/qml/bandicam/videopage.qml -I D:/Qt/6.5.3/mingw_64/./qml -i E:/myProgram/Recorder/record/build/qml/qmldir --resource E:/myProgram/Recorder/record/build/qml/.rcc/qmake_bandicam.qrc --resource E:/myProgram/Recorder/record/build/qml/.rcc/qml_module_raw_qml_0.qrc -o E:/myProgram/Recorder/record/build/qml/.rcc/qmlcache/qml_module_videopage_qml.cpp E:/myProgram/Recorder/record/qml/videopage.qml
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">D:\Qt\6.5.3\mingw_64\bin\qmlcachegen.exe;E:\myProgram\Recorder\record\qml\videopage.qml;E:\myProgram\Recorder\record\build\qml\.rcc\qmake_bandicam.qrc;E:\myProgram\Recorder\record\build\qml\.rcc\qml_module_raw_qml_0.qrc;E:\myProgram\Recorder\record\build\qml\qml_module.qmltypes;E:\myProgram\Recorder\record\build\qml\qmldir;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">E:\myProgram\Recorder\record\build\qml\.rcc\qmlcache\qml_module_videopage_qml.cpp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Generating .rcc/qmlcache/qml_module_videopage_qml.cpp</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">setlocal
+C:\Grpc\cmake-4.0.0-rc1-windows-x86_64\bin\cmake.exe -E make_directory E:/myProgram/Recorder/record/build/qml/.rcc/qmlcache
+if %errorlevel% neq 0 goto :cmEnd
+call ..\.qt\bin\qt_setup_tool_path.bat D:/Qt/6.5.3/mingw_64/./bin/qmlcachegen.exe --bare --resource-path /qt/qml/bandicam/videopage.qml -I D:/Qt/6.5.3/mingw_64/./qml -i E:/myProgram/Recorder/record/build/qml/qmldir --resource E:/myProgram/Recorder/record/build/qml/.rcc/qmake_bandicam.qrc --resource E:/myProgram/Recorder/record/build/qml/.rcc/qml_module_raw_qml_0.qrc -o E:/myProgram/Recorder/record/build/qml/.rcc/qmlcache/qml_module_videopage_qml.cpp E:/myProgram/Recorder/record/qml/videopage.qml
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">D:\Qt\6.5.3\mingw_64\bin\qmlcachegen.exe;E:\myProgram\Recorder\record\qml\videopage.qml;E:\myProgram\Recorder\record\build\qml\.rcc\qmake_bandicam.qrc;E:\myProgram\Recorder\record\build\qml\.rcc\qml_module_raw_qml_0.qrc;E:\myProgram\Recorder\record\build\qml\qml_module.qmltypes;E:\myProgram\Recorder\record\build\qml\qmldir;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">E:\myProgram\Recorder\record\build\qml\.rcc\qmlcache\qml_module_videopage_qml.cpp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">Generating .rcc/qmlcache/qml_module_videopage_qml.cpp</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">setlocal
+C:\Grpc\cmake-4.0.0-rc1-windows-x86_64\bin\cmake.exe -E make_directory E:/myProgram/Recorder/record/build/qml/.rcc/qmlcache
+if %errorlevel% neq 0 goto :cmEnd
+call ..\.qt\bin\qt_setup_tool_path.bat D:/Qt/6.5.3/mingw_64/./bin/qmlcachegen.exe --bare --resource-path /qt/qml/bandicam/videopage.qml -I D:/Qt/6.5.3/mingw_64/./qml -i E:/myProgram/Recorder/record/build/qml/qmldir --resource E:/myProgram/Recorder/record/build/qml/.rcc/qmake_bandicam.qrc --resource E:/myProgram/Recorder/record/build/qml/.rcc/qml_module_raw_qml_0.qrc -o E:/myProgram/Recorder/record/build/qml/.rcc/qmlcache/qml_module_videopage_qml.cpp E:/myProgram/Recorder/record/qml/videopage.qml
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">D:\Qt\6.5.3\mingw_64\bin\qmlcachegen.exe;E:\myProgram\Recorder\record\qml\videopage.qml;E:\myProgram\Recorder\record\build\qml\.rcc\qmake_bandicam.qrc;E:\myProgram\Recorder\record\build\qml\.rcc\qml_module_raw_qml_0.qrc;E:\myProgram\Recorder\record\build\qml\qml_module.qmltypes;E:\myProgram\Recorder\record\build\qml\qmldir;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">E:\myProgram\Recorder\record\build\qml\.rcc\qmlcache\qml_module_videopage_qml.cpp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">Generating .rcc/qmlcache/qml_module_videopage_qml.cpp</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">setlocal
+C:\Grpc\cmake-4.0.0-rc1-windows-x86_64\bin\cmake.exe -E make_directory E:/myProgram/Recorder/record/build/qml/.rcc/qmlcache
+if %errorlevel% neq 0 goto :cmEnd
+call ..\.qt\bin\qt_setup_tool_path.bat D:/Qt/6.5.3/mingw_64/./bin/qmlcachegen.exe --bare --resource-path /qt/qml/bandicam/videopage.qml -I D:/Qt/6.5.3/mingw_64/./qml -i E:/myProgram/Recorder/record/build/qml/qmldir --resource E:/myProgram/Recorder/record/build/qml/.rcc/qmake_bandicam.qrc --resource E:/myProgram/Recorder/record/build/qml/.rcc/qml_module_raw_qml_0.qrc -o E:/myProgram/Recorder/record/build/qml/.rcc/qmlcache/qml_module_videopage_qml.cpp E:/myProgram/Recorder/record/qml/videopage.qml
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">D:\Qt\6.5.3\mingw_64\bin\qmlcachegen.exe;E:\myProgram\Recorder\record\qml\videopage.qml;E:\myProgram\Recorder\record\build\qml\.rcc\qmake_bandicam.qrc;E:\myProgram\Recorder\record\build\qml\.rcc\qml_module_raw_qml_0.qrc;E:\myProgram\Recorder\record\build\qml\qml_module.qmltypes;E:\myProgram\Recorder\record\build\qml\qmldir;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">E:\myProgram\Recorder\record\build\qml\.rcc\qmlcache\qml_module_videopage_qml.cpp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</LinkObjects>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="E:\myProgram\Recorder\record\build\CMakeFiles\927bae9e632d4f482dfc8fd211ef2e81\qml_module_settingpage_qml.cpp.rule">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Generating .rcc/qmlcache/qml_module_settingpage_qml.cpp</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">setlocal
+C:\Grpc\cmake-4.0.0-rc1-windows-x86_64\bin\cmake.exe -E make_directory E:/myProgram/Recorder/record/build/qml/.rcc/qmlcache
+if %errorlevel% neq 0 goto :cmEnd
+call ..\.qt\bin\qt_setup_tool_path.bat D:/Qt/6.5.3/mingw_64/./bin/qmlcachegen.exe --bare --resource-path /qt/qml/bandicam/settingpage.qml -I D:/Qt/6.5.3/mingw_64/./qml -i E:/myProgram/Recorder/record/build/qml/qmldir --resource E:/myProgram/Recorder/record/build/qml/.rcc/qmake_bandicam.qrc --resource E:/myProgram/Recorder/record/build/qml/.rcc/qml_module_raw_qml_0.qrc -o E:/myProgram/Recorder/record/build/qml/.rcc/qmlcache/qml_module_settingpage_qml.cpp E:/myProgram/Recorder/record/qml/settingpage.qml
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">D:\Qt\6.5.3\mingw_64\bin\qmlcachegen.exe;E:\myProgram\Recorder\record\qml\settingpage.qml;E:\myProgram\Recorder\record\build\qml\.rcc\qmake_bandicam.qrc;E:\myProgram\Recorder\record\build\qml\.rcc\qml_module_raw_qml_0.qrc;E:\myProgram\Recorder\record\build\qml\qml_module.qmltypes;E:\myProgram\Recorder\record\build\qml\qmldir;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">E:\myProgram\Recorder\record\build\qml\.rcc\qmlcache\qml_module_settingpage_qml.cpp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Generating .rcc/qmlcache/qml_module_settingpage_qml.cpp</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">setlocal
+C:\Grpc\cmake-4.0.0-rc1-windows-x86_64\bin\cmake.exe -E make_directory E:/myProgram/Recorder/record/build/qml/.rcc/qmlcache
+if %errorlevel% neq 0 goto :cmEnd
+call ..\.qt\bin\qt_setup_tool_path.bat D:/Qt/6.5.3/mingw_64/./bin/qmlcachegen.exe --bare --resource-path /qt/qml/bandicam/settingpage.qml -I D:/Qt/6.5.3/mingw_64/./qml -i E:/myProgram/Recorder/record/build/qml/qmldir --resource E:/myProgram/Recorder/record/build/qml/.rcc/qmake_bandicam.qrc --resource E:/myProgram/Recorder/record/build/qml/.rcc/qml_module_raw_qml_0.qrc -o E:/myProgram/Recorder/record/build/qml/.rcc/qmlcache/qml_module_settingpage_qml.cpp E:/myProgram/Recorder/record/qml/settingpage.qml
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">D:\Qt\6.5.3\mingw_64\bin\qmlcachegen.exe;E:\myProgram\Recorder\record\qml\settingpage.qml;E:\myProgram\Recorder\record\build\qml\.rcc\qmake_bandicam.qrc;E:\myProgram\Recorder\record\build\qml\.rcc\qml_module_raw_qml_0.qrc;E:\myProgram\Recorder\record\build\qml\qml_module.qmltypes;E:\myProgram\Recorder\record\build\qml\qmldir;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">E:\myProgram\Recorder\record\build\qml\.rcc\qmlcache\qml_module_settingpage_qml.cpp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">Generating .rcc/qmlcache/qml_module_settingpage_qml.cpp</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">setlocal
+C:\Grpc\cmake-4.0.0-rc1-windows-x86_64\bin\cmake.exe -E make_directory E:/myProgram/Recorder/record/build/qml/.rcc/qmlcache
+if %errorlevel% neq 0 goto :cmEnd
+call ..\.qt\bin\qt_setup_tool_path.bat D:/Qt/6.5.3/mingw_64/./bin/qmlcachegen.exe --bare --resource-path /qt/qml/bandicam/settingpage.qml -I D:/Qt/6.5.3/mingw_64/./qml -i E:/myProgram/Recorder/record/build/qml/qmldir --resource E:/myProgram/Recorder/record/build/qml/.rcc/qmake_bandicam.qrc --resource E:/myProgram/Recorder/record/build/qml/.rcc/qml_module_raw_qml_0.qrc -o E:/myProgram/Recorder/record/build/qml/.rcc/qmlcache/qml_module_settingpage_qml.cpp E:/myProgram/Recorder/record/qml/settingpage.qml
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">D:\Qt\6.5.3\mingw_64\bin\qmlcachegen.exe;E:\myProgram\Recorder\record\qml\settingpage.qml;E:\myProgram\Recorder\record\build\qml\.rcc\qmake_bandicam.qrc;E:\myProgram\Recorder\record\build\qml\.rcc\qml_module_raw_qml_0.qrc;E:\myProgram\Recorder\record\build\qml\qml_module.qmltypes;E:\myProgram\Recorder\record\build\qml\qmldir;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">E:\myProgram\Recorder\record\build\qml\.rcc\qmlcache\qml_module_settingpage_qml.cpp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">Generating .rcc/qmlcache/qml_module_settingpage_qml.cpp</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">setlocal
+C:\Grpc\cmake-4.0.0-rc1-windows-x86_64\bin\cmake.exe -E make_directory E:/myProgram/Recorder/record/build/qml/.rcc/qmlcache
+if %errorlevel% neq 0 goto :cmEnd
+call ..\.qt\bin\qt_setup_tool_path.bat D:/Qt/6.5.3/mingw_64/./bin/qmlcachegen.exe --bare --resource-path /qt/qml/bandicam/settingpage.qml -I D:/Qt/6.5.3/mingw_64/./qml -i E:/myProgram/Recorder/record/build/qml/qmldir --resource E:/myProgram/Recorder/record/build/qml/.rcc/qmake_bandicam.qrc --resource E:/myProgram/Recorder/record/build/qml/.rcc/qml_module_raw_qml_0.qrc -o E:/myProgram/Recorder/record/build/qml/.rcc/qmlcache/qml_module_settingpage_qml.cpp E:/myProgram/Recorder/record/qml/settingpage.qml
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">D:\Qt\6.5.3\mingw_64\bin\qmlcachegen.exe;E:\myProgram\Recorder\record\qml\settingpage.qml;E:\myProgram\Recorder\record\build\qml\.rcc\qmake_bandicam.qrc;E:\myProgram\Recorder\record\build\qml\.rcc\qml_module_raw_qml_0.qrc;E:\myProgram\Recorder\record\build\qml\qml_module.qmltypes;E:\myProgram\Recorder\record\build\qml\qmldir;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">E:\myProgram\Recorder\record\build\qml\.rcc\qmlcache\qml_module_settingpage_qml.cpp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</LinkObjects>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="E:\myProgram\Recorder\record\build\CMakeFiles\927bae9e632d4f482dfc8fd211ef2e81\qml_module_cuttingpage_qml.cpp.rule">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Generating .rcc/qmlcache/qml_module_cuttingpage_qml.cpp</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">setlocal
+C:\Grpc\cmake-4.0.0-rc1-windows-x86_64\bin\cmake.exe -E make_directory E:/myProgram/Recorder/record/build/qml/.rcc/qmlcache
+if %errorlevel% neq 0 goto :cmEnd
+call ..\.qt\bin\qt_setup_tool_path.bat D:/Qt/6.5.3/mingw_64/./bin/qmlcachegen.exe --bare --resource-path /qt/qml/bandicam/cuttingpage.qml -I D:/Qt/6.5.3/mingw_64/./qml -i E:/myProgram/Recorder/record/build/qml/qmldir --resource E:/myProgram/Recorder/record/build/qml/.rcc/qmake_bandicam.qrc --resource E:/myProgram/Recorder/record/build/qml/.rcc/qml_module_raw_qml_0.qrc -o E:/myProgram/Recorder/record/build/qml/.rcc/qmlcache/qml_module_cuttingpage_qml.cpp E:/myProgram/Recorder/record/qml/cuttingpage.qml
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">D:\Qt\6.5.3\mingw_64\bin\qmlcachegen.exe;E:\myProgram\Recorder\record\qml\cuttingpage.qml;E:\myProgram\Recorder\record\build\qml\.rcc\qmake_bandicam.qrc;E:\myProgram\Recorder\record\build\qml\.rcc\qml_module_raw_qml_0.qrc;E:\myProgram\Recorder\record\build\qml\qml_module.qmltypes;E:\myProgram\Recorder\record\build\qml\qmldir;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">E:\myProgram\Recorder\record\build\qml\.rcc\qmlcache\qml_module_cuttingpage_qml.cpp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Generating .rcc/qmlcache/qml_module_cuttingpage_qml.cpp</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">setlocal
+C:\Grpc\cmake-4.0.0-rc1-windows-x86_64\bin\cmake.exe -E make_directory E:/myProgram/Recorder/record/build/qml/.rcc/qmlcache
+if %errorlevel% neq 0 goto :cmEnd
+call ..\.qt\bin\qt_setup_tool_path.bat D:/Qt/6.5.3/mingw_64/./bin/qmlcachegen.exe --bare --resource-path /qt/qml/bandicam/cuttingpage.qml -I D:/Qt/6.5.3/mingw_64/./qml -i E:/myProgram/Recorder/record/build/qml/qmldir --resource E:/myProgram/Recorder/record/build/qml/.rcc/qmake_bandicam.qrc --resource E:/myProgram/Recorder/record/build/qml/.rcc/qml_module_raw_qml_0.qrc -o E:/myProgram/Recorder/record/build/qml/.rcc/qmlcache/qml_module_cuttingpage_qml.cpp E:/myProgram/Recorder/record/qml/cuttingpage.qml
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">D:\Qt\6.5.3\mingw_64\bin\qmlcachegen.exe;E:\myProgram\Recorder\record\qml\cuttingpage.qml;E:\myProgram\Recorder\record\build\qml\.rcc\qmake_bandicam.qrc;E:\myProgram\Recorder\record\build\qml\.rcc\qml_module_raw_qml_0.qrc;E:\myProgram\Recorder\record\build\qml\qml_module.qmltypes;E:\myProgram\Recorder\record\build\qml\qmldir;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">E:\myProgram\Recorder\record\build\qml\.rcc\qmlcache\qml_module_cuttingpage_qml.cpp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">Generating .rcc/qmlcache/qml_module_cuttingpage_qml.cpp</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">setlocal
+C:\Grpc\cmake-4.0.0-rc1-windows-x86_64\bin\cmake.exe -E make_directory E:/myProgram/Recorder/record/build/qml/.rcc/qmlcache
+if %errorlevel% neq 0 goto :cmEnd
+call ..\.qt\bin\qt_setup_tool_path.bat D:/Qt/6.5.3/mingw_64/./bin/qmlcachegen.exe --bare --resource-path /qt/qml/bandicam/cuttingpage.qml -I D:/Qt/6.5.3/mingw_64/./qml -i E:/myProgram/Recorder/record/build/qml/qmldir --resource E:/myProgram/Recorder/record/build/qml/.rcc/qmake_bandicam.qrc --resource E:/myProgram/Recorder/record/build/qml/.rcc/qml_module_raw_qml_0.qrc -o E:/myProgram/Recorder/record/build/qml/.rcc/qmlcache/qml_module_cuttingpage_qml.cpp E:/myProgram/Recorder/record/qml/cuttingpage.qml
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">D:\Qt\6.5.3\mingw_64\bin\qmlcachegen.exe;E:\myProgram\Recorder\record\qml\cuttingpage.qml;E:\myProgram\Recorder\record\build\qml\.rcc\qmake_bandicam.qrc;E:\myProgram\Recorder\record\build\qml\.rcc\qml_module_raw_qml_0.qrc;E:\myProgram\Recorder\record\build\qml\qml_module.qmltypes;E:\myProgram\Recorder\record\build\qml\qmldir;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">E:\myProgram\Recorder\record\build\qml\.rcc\qmlcache\qml_module_cuttingpage_qml.cpp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">Generating .rcc/qmlcache/qml_module_cuttingpage_qml.cpp</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">setlocal
+C:\Grpc\cmake-4.0.0-rc1-windows-x86_64\bin\cmake.exe -E make_directory E:/myProgram/Recorder/record/build/qml/.rcc/qmlcache
+if %errorlevel% neq 0 goto :cmEnd
+call ..\.qt\bin\qt_setup_tool_path.bat D:/Qt/6.5.3/mingw_64/./bin/qmlcachegen.exe --bare --resource-path /qt/qml/bandicam/cuttingpage.qml -I D:/Qt/6.5.3/mingw_64/./qml -i E:/myProgram/Recorder/record/build/qml/qmldir --resource E:/myProgram/Recorder/record/build/qml/.rcc/qmake_bandicam.qrc --resource E:/myProgram/Recorder/record/build/qml/.rcc/qml_module_raw_qml_0.qrc -o E:/myProgram/Recorder/record/build/qml/.rcc/qmlcache/qml_module_cuttingpage_qml.cpp E:/myProgram/Recorder/record/qml/cuttingpage.qml
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">D:\Qt\6.5.3\mingw_64\bin\qmlcachegen.exe;E:\myProgram\Recorder\record\qml\cuttingpage.qml;E:\myProgram\Recorder\record\build\qml\.rcc\qmake_bandicam.qrc;E:\myProgram\Recorder\record\build\qml\.rcc\qml_module_raw_qml_0.qrc;E:\myProgram\Recorder\record\build\qml\qml_module.qmltypes;E:\myProgram\Recorder\record\build\qml\qmldir;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">E:\myProgram\Recorder\record\build\qml\.rcc\qmlcache\qml_module_cuttingpage_qml.cpp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</LinkObjects>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="E:\myProgram\Recorder\record\build\CMakeFiles\927bae9e632d4f482dfc8fd211ef2e81\qml_module_settinglist_qml.cpp.rule">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Generating .rcc/qmlcache/qml_module_settinglist_qml.cpp</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">setlocal
+C:\Grpc\cmake-4.0.0-rc1-windows-x86_64\bin\cmake.exe -E make_directory E:/myProgram/Recorder/record/build/qml/.rcc/qmlcache
+if %errorlevel% neq 0 goto :cmEnd
+call ..\.qt\bin\qt_setup_tool_path.bat D:/Qt/6.5.3/mingw_64/./bin/qmlcachegen.exe --bare --resource-path /qt/qml/bandicam/settinglist.qml -I D:/Qt/6.5.3/mingw_64/./qml -i E:/myProgram/Recorder/record/build/qml/qmldir --resource E:/myProgram/Recorder/record/build/qml/.rcc/qmake_bandicam.qrc --resource E:/myProgram/Recorder/record/build/qml/.rcc/qml_module_raw_qml_0.qrc -o E:/myProgram/Recorder/record/build/qml/.rcc/qmlcache/qml_module_settinglist_qml.cpp E:/myProgram/Recorder/record/qml/settinglist.qml
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">D:\Qt\6.5.3\mingw_64\bin\qmlcachegen.exe;E:\myProgram\Recorder\record\qml\settinglist.qml;E:\myProgram\Recorder\record\build\qml\.rcc\qmake_bandicam.qrc;E:\myProgram\Recorder\record\build\qml\.rcc\qml_module_raw_qml_0.qrc;E:\myProgram\Recorder\record\build\qml\qml_module.qmltypes;E:\myProgram\Recorder\record\build\qml\qmldir;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">E:\myProgram\Recorder\record\build\qml\.rcc\qmlcache\qml_module_settinglist_qml.cpp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Generating .rcc/qmlcache/qml_module_settinglist_qml.cpp</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">setlocal
+C:\Grpc\cmake-4.0.0-rc1-windows-x86_64\bin\cmake.exe -E make_directory E:/myProgram/Recorder/record/build/qml/.rcc/qmlcache
+if %errorlevel% neq 0 goto :cmEnd
+call ..\.qt\bin\qt_setup_tool_path.bat D:/Qt/6.5.3/mingw_64/./bin/qmlcachegen.exe --bare --resource-path /qt/qml/bandicam/settinglist.qml -I D:/Qt/6.5.3/mingw_64/./qml -i E:/myProgram/Recorder/record/build/qml/qmldir --resource E:/myProgram/Recorder/record/build/qml/.rcc/qmake_bandicam.qrc --resource E:/myProgram/Recorder/record/build/qml/.rcc/qml_module_raw_qml_0.qrc -o E:/myProgram/Recorder/record/build/qml/.rcc/qmlcache/qml_module_settinglist_qml.cpp E:/myProgram/Recorder/record/qml/settinglist.qml
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">D:\Qt\6.5.3\mingw_64\bin\qmlcachegen.exe;E:\myProgram\Recorder\record\qml\settinglist.qml;E:\myProgram\Recorder\record\build\qml\.rcc\qmake_bandicam.qrc;E:\myProgram\Recorder\record\build\qml\.rcc\qml_module_raw_qml_0.qrc;E:\myProgram\Recorder\record\build\qml\qml_module.qmltypes;E:\myProgram\Recorder\record\build\qml\qmldir;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">E:\myProgram\Recorder\record\build\qml\.rcc\qmlcache\qml_module_settinglist_qml.cpp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">Generating .rcc/qmlcache/qml_module_settinglist_qml.cpp</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">setlocal
+C:\Grpc\cmake-4.0.0-rc1-windows-x86_64\bin\cmake.exe -E make_directory E:/myProgram/Recorder/record/build/qml/.rcc/qmlcache
+if %errorlevel% neq 0 goto :cmEnd
+call ..\.qt\bin\qt_setup_tool_path.bat D:/Qt/6.5.3/mingw_64/./bin/qmlcachegen.exe --bare --resource-path /qt/qml/bandicam/settinglist.qml -I D:/Qt/6.5.3/mingw_64/./qml -i E:/myProgram/Recorder/record/build/qml/qmldir --resource E:/myProgram/Recorder/record/build/qml/.rcc/qmake_bandicam.qrc --resource E:/myProgram/Recorder/record/build/qml/.rcc/qml_module_raw_qml_0.qrc -o E:/myProgram/Recorder/record/build/qml/.rcc/qmlcache/qml_module_settinglist_qml.cpp E:/myProgram/Recorder/record/qml/settinglist.qml
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">D:\Qt\6.5.3\mingw_64\bin\qmlcachegen.exe;E:\myProgram\Recorder\record\qml\settinglist.qml;E:\myProgram\Recorder\record\build\qml\.rcc\qmake_bandicam.qrc;E:\myProgram\Recorder\record\build\qml\.rcc\qml_module_raw_qml_0.qrc;E:\myProgram\Recorder\record\build\qml\qml_module.qmltypes;E:\myProgram\Recorder\record\build\qml\qmldir;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">E:\myProgram\Recorder\record\build\qml\.rcc\qmlcache\qml_module_settinglist_qml.cpp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">Generating .rcc/qmlcache/qml_module_settinglist_qml.cpp</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">setlocal
+C:\Grpc\cmake-4.0.0-rc1-windows-x86_64\bin\cmake.exe -E make_directory E:/myProgram/Recorder/record/build/qml/.rcc/qmlcache
+if %errorlevel% neq 0 goto :cmEnd
+call ..\.qt\bin\qt_setup_tool_path.bat D:/Qt/6.5.3/mingw_64/./bin/qmlcachegen.exe --bare --resource-path /qt/qml/bandicam/settinglist.qml -I D:/Qt/6.5.3/mingw_64/./qml -i E:/myProgram/Recorder/record/build/qml/qmldir --resource E:/myProgram/Recorder/record/build/qml/.rcc/qmake_bandicam.qrc --resource E:/myProgram/Recorder/record/build/qml/.rcc/qml_module_raw_qml_0.qrc -o E:/myProgram/Recorder/record/build/qml/.rcc/qmlcache/qml_module_settinglist_qml.cpp E:/myProgram/Recorder/record/qml/settinglist.qml
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">D:\Qt\6.5.3\mingw_64\bin\qmlcachegen.exe;E:\myProgram\Recorder\record\qml\settinglist.qml;E:\myProgram\Recorder\record\build\qml\.rcc\qmake_bandicam.qrc;E:\myProgram\Recorder\record\build\qml\.rcc\qml_module_raw_qml_0.qrc;E:\myProgram\Recorder\record\build\qml\qml_module.qmltypes;E:\myProgram\Recorder\record\build\qml\qmldir;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">E:\myProgram\Recorder\record\build\qml\.rcc\qmlcache\qml_module_settinglist_qml.cpp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</LinkObjects>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="E:\myProgram\Recorder\record\qml\CMakeLists.txt">
+      <UseUtf8Encoding>Always</UseUtf8Encoding>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Building Custom Rule E:/myProgram/Recorder/record/qml/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">setlocal
+C:\Grpc\cmake-4.0.0-rc1-windows-x86_64\bin\cmake.exe -SE:/myProgram/Recorder/record -BE:/myProgram/Recorder/record/build --check-stamp-file E:/myProgram/Recorder/record/build/qml/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">D:\Qt\6.5.3\mingw_64\lib\cmake\Qt6Core\Qt6CoreConfigureFileTemplate.in;D:\Qt\6.5.3\mingw_64\lib\cmake\Qt6Qml\Qt6QmlModuleDirMappingTemplate.qrc.in;D:\Qt\6.5.3\mingw_64\lib\cmake\Qt6Qml\Qt6QmlPluginTemplate.cpp.in;D:\Qt\6.5.3\mingw_64\lib\cmake\Qt6Qml\Qt6qmldirTemplate.cmake.in;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">E:\myProgram\Recorder\record\build\qml\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Building Custom Rule E:/myProgram/Recorder/record/qml/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">setlocal
+C:\Grpc\cmake-4.0.0-rc1-windows-x86_64\bin\cmake.exe -SE:/myProgram/Recorder/record -BE:/myProgram/Recorder/record/build --check-stamp-file E:/myProgram/Recorder/record/build/qml/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">D:\Qt\6.5.3\mingw_64\lib\cmake\Qt6Core\Qt6CoreConfigureFileTemplate.in;D:\Qt\6.5.3\mingw_64\lib\cmake\Qt6Qml\Qt6QmlModuleDirMappingTemplate.qrc.in;D:\Qt\6.5.3\mingw_64\lib\cmake\Qt6Qml\Qt6QmlPluginTemplate.cpp.in;D:\Qt\6.5.3\mingw_64\lib\cmake\Qt6Qml\Qt6qmldirTemplate.cmake.in;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">E:\myProgram\Recorder\record\build\qml\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">Building Custom Rule E:/myProgram/Recorder/record/qml/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">setlocal
+C:\Grpc\cmake-4.0.0-rc1-windows-x86_64\bin\cmake.exe -SE:/myProgram/Recorder/record -BE:/myProgram/Recorder/record/build --check-stamp-file E:/myProgram/Recorder/record/build/qml/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">D:\Qt\6.5.3\mingw_64\lib\cmake\Qt6Core\Qt6CoreConfigureFileTemplate.in;D:\Qt\6.5.3\mingw_64\lib\cmake\Qt6Qml\Qt6QmlModuleDirMappingTemplate.qrc.in;D:\Qt\6.5.3\mingw_64\lib\cmake\Qt6Qml\Qt6QmlPluginTemplate.cpp.in;D:\Qt\6.5.3\mingw_64\lib\cmake\Qt6Qml\Qt6qmldirTemplate.cmake.in;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">E:\myProgram\Recorder\record\build\qml\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">Building Custom Rule E:/myProgram/Recorder/record/qml/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">setlocal
+C:\Grpc\cmake-4.0.0-rc1-windows-x86_64\bin\cmake.exe -SE:/myProgram/Recorder/record -BE:/myProgram/Recorder/record/build --check-stamp-file E:/myProgram/Recorder/record/build/qml/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">D:\Qt\6.5.3\mingw_64\lib\cmake\Qt6Core\Qt6CoreConfigureFileTemplate.in;D:\Qt\6.5.3\mingw_64\lib\cmake\Qt6Qml\Qt6QmlModuleDirMappingTemplate.qrc.in;D:\Qt\6.5.3\mingw_64\lib\cmake\Qt6Qml\Qt6QmlPluginTemplate.cpp.in;D:\Qt\6.5.3\mingw_64\lib\cmake\Qt6Qml\Qt6qmldirTemplate.cmake.in;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">E:\myProgram\Recorder\record\build\qml\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</LinkObjects>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="E:\myProgram\Recorder\record\build\qml\qml_module_autogen\mocs_compilation_Debug.cpp">
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClInclude Include="E:\myProgram\Recorder\record\build\qml\ddf_qml_module.h" />
+    <None Include="E:\myProgram\Recorder\record\build\qml\meta_types\qt6qml_module_metatypes.json.gen">
+    </None>
+    <ClCompile Include="E:\myProgram\Recorder\record\build\qml\qml_module_qmltyperegistrations.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">%(AdditionalOptions) /bigobj</AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x64'">%(AdditionalOptions) /bigobj</AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">%(AdditionalOptions) /bigobj</AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">%(AdditionalOptions) /bigobj</AdditionalOptions>
+    </ClCompile>
+    <None Include="E:\myProgram\Recorder\record\qml\Main.qml">
+    </None>
+    <ClCompile Include="E:\myProgram\Recorder\record\build\qml\.rcc\qmlcache\qml_module_Main_qml.cpp" />
+    <None Include="E:\myProgram\Recorder\record\qml\videopage.qml">
+    </None>
+    <ClCompile Include="E:\myProgram\Recorder\record\build\qml\.rcc\qmlcache\qml_module_videopage_qml.cpp" />
+    <None Include="E:\myProgram\Recorder\record\qml\settingpage.qml">
+    </None>
+    <ClCompile Include="E:\myProgram\Recorder\record\build\qml\.rcc\qmlcache\qml_module_settingpage_qml.cpp" />
+    <None Include="E:\myProgram\Recorder\record\qml\cuttingpage.qml">
+    </None>
+    <ClCompile Include="E:\myProgram\Recorder\record\build\qml\.rcc\qmlcache\qml_module_cuttingpage_qml.cpp" />
+    <None Include="E:\myProgram\Recorder\record\qml\settinglist.qml">
+    </None>
+    <ClCompile Include="E:\myProgram\Recorder\record\build\qml\.rcc\qmlcache\qml_module_settinglist_qml.cpp" />
+    <ClInclude Include="E:\myProgram\Recorder\record\build\qml\qmldir" />
+    <None Include="D:\Qt\6.5.3\mingw_64\metatypes\qt6qml_relwithdebinfo_metatypes.json">
+    </None>
+    <None Include="D:\Qt\6.5.3\mingw_64\metatypes\qt6core_relwithdebinfo_metatypes.json">
+    </None>
+    <None Include="D:\Qt\6.5.3\mingw_64\metatypes\qt6network_relwithdebinfo_metatypes.json">
+    </None>
+    <None Include="D:\Qt\6.5.3\mingw_64\metatypes\qt6quick_relwithdebinfo_metatypes.json">
+    </None>
+    <None Include="D:\Qt\6.5.3\mingw_64\metatypes\qt6gui_relwithdebinfo_metatypes.json">
+    </None>
+    <None Include="D:\Qt\6.5.3\mingw_64\metatypes\qt6qmlmodels_relwithdebinfo_metatypes.json">
+    </None>
+    <None Include="D:\Qt\6.5.3\mingw_64\metatypes\qt6opengl_relwithdebinfo_metatypes.json">
+    </None>
+    <ClCompile Include="E:\myProgram\Recorder\record\build\qml\qml_module_autogen\mocs_compilation_Release.cpp">
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="E:\myProgram\Recorder\record\build\qml\qml_module_autogen\mocs_compilation_MinSizeRel.cpp">
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="E:\myProgram\Recorder\record\build\qml\qml_module_autogen\mocs_compilation_RelWithDebInfo.cpp">
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="E:\myProgram\Recorder\record\build\ZERO_CHECK.vcxproj">
+      <Project>{D7233E65-2D9B-3C2A-947A-26F2F0FA0AD7}</Project>
+      <Name>ZERO_CHECK</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="E:\myProgram\Recorder\record\build\qml\qml_module_autogen.vcxproj">
+      <Project>{75B0647E-1CD4-3B97-B61B-6C86480CEF08}</Project>
+      <Name>qml_module_autogen</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="E:\myProgram\Recorder\record\build\qml\qml_module_automoc_json_extraction.vcxproj">
+      <Project>{AA3D5847-9D78-3BBE-80B9-8A5B12E8D3F1}</Project>
+      <Name>qml_module_automoc_json_extraction</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="E:\myProgram\Recorder\record\build\qml\qml_module_tooling.vcxproj">
+      <Project>{0E56FE57-126D-3C56-AC41-8BFEBCF4B59E}</Project>
+      <Name>qml_module_tooling</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

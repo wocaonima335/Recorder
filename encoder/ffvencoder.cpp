@@ -47,13 +47,13 @@ int FFVEncoder::encode(AVFrame *frame, int streamIndex, int64_t pts, AVRational 
         return 0;
     }
 
-    pts = av_rescale_q_rnd(pts, timeBase, codecCtx->time_base, AV_ROUND_NEAR_INF);
-    if (pts <= lastPts) {
-        pts = lastPts + 1;
+    if (lastPts >= 0 && pts <= lastPts) {
+        pts = lastPts + 1; // 最小步进为1单位的 timeBase
+        std::cerr << "[VEnc] adjust pts to monotonic: new pts=" << pts << std::endl;
     }
-
-    frame->pts = pts;
     lastPts = pts;
+
+    frame->pts = pts; // 将计算好的 PTS 写到 AVFrame 上，交给编码器
 
     int ret = avcodec_send_frame(codecCtx, frame);
     if (ret < 0) {
@@ -174,4 +174,10 @@ void FFVEncoder::initVideo(AVFrame *frame, AVRational fps)
         return;
     }
     av_dict_free(&codec_options);
+}
+
+void FFVEncoder::resetPtsClock()
+{
+    std::lock_guard<std::mutex> lock(mutex);
+    lastPts = -1;
 }

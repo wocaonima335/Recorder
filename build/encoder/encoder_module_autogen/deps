@@ -1,0 +1,7 @@
+encoder_module_autogen/timestamp: \
+	E:/myProgram/Recorder/record/encoder/CMakeLists.txt \
+	E:/myProgram/Recorder/record/encoder/ffaencoder.cpp \
+	E:/myProgram/Recorder/record/encoder/ffaencoder.h \
+	E:/myProgram/Recorder/record/encoder/ffvencoder.cpp \
+	E:/myProgram/Recorder/record/encoder/ffvencoder.h \
+	C:/Grpc/cmake-4.0.0-rc1-windows-x86_64/bin/cmake.exe
