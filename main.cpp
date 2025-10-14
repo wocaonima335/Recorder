@@ -83,8 +83,8 @@ void startRecording()
 
     SourceEventParams audioParams;
     audioParams.type = SourceEventType::OPEN_SOURCE;
-    audioParams.sourceType = demuxerType::MICROPHONE;
-    audioParams.url = FFRecordURLS::MICROPHONE_URL;
+    audioParams.sourceType = demuxerType::AUDIO;
+    audioParams.url = FFRecordURLS::AUDIO_URL;
     audioParams.format = "dshow";
 
     auto audioEvent = EventFactoryManager::getInstance().createEvent(EventCategory::SOURCE,
@@ -112,7 +112,7 @@ void stopRecording()
     // 关闭麦克风源
     SourceEventParams closeAudioParams;
     closeAudioParams.type = SourceEventType::CLOSE_SOURCE;
-    closeAudioParams.sourceType = demuxerType::MICROPHONE;
+    closeAudioParams.sourceType = demuxerType::AUDIO;
     auto closeAudioEvent = EventFactoryManager::getInstance().createEvent(EventCategory::SOURCE,
                                                                           &FFRecorder::getInstance(),
                                                                           closeAudioParams);
