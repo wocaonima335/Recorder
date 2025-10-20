@@ -66,15 +66,18 @@ void recordTest()
 void startRecording()
 {
     qDebug() << "开始录制...";
-    
+
     // 初始化录制器
     FFRecorder::getInstance().initialize();
+
+    // 开始录制
+    FFRecorder::getInstance().startRecord();
 
     SourceEventParams cameraParams;
     cameraParams.type = SourceEventType::OPEN_SOURCE;
     cameraParams.sourceType = demuxerType::SCREEN;
     cameraParams.url = FFRecordURLS::SCREEN_URL;
-    cameraParams.format = "gdigrab";
+    cameraParams.format = "dshow";
 
     auto cameraEvent = EventFactoryManager::getInstance().createEvent(EventCategory::SOURCE,
                                                                       &FFRecorder::getInstance(),
@@ -91,9 +94,6 @@ void startRecording()
                                                                      &FFRecorder::getInstance(),
                                                                      audioParams);
     audioEvent->work();
-
-    // 开始录制
-    FFRecorder::getInstance().startRecord();
 }
 
 void stopRecording()

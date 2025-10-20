@@ -1,7 +1,9 @@
 #include "ffvencoder.h"
 #include "queue/ffvpacketqueue.h"
 
+#include <QtGlobal>
 #include <iostream>
+#include <thread>
 
 FFVEncoder::FFVEncoder() {}
 
@@ -40,18 +42,13 @@ void FFVEncoder::wakeAllThread()
 
 int FFVEncoder::encode(AVFrame *frame, int streamIndex, int64_t pts, AVRational timeBase)
 {
+    Q_UNUSED(timeBase);
     std::lock_guard<std::mutex> lock(mutex);
 
     if (frame == nullptr || codecCtx == nullptr) {
         std::cout << "nullptr" << std::endl;
         return 0;
     }
-
-    if (lastPts >= 0 && pts <= lastPts) {
-        pts = lastPts + 1; // 最小步进为1单位的 timeBase
-        std::cerr << "[VEnc] adjust pts to monotonic: new pts=" << pts << std::endl;
-    }
-    lastPts = pts;
 
     frame->pts = pts; // 将计算好的 PTS 写到 AVFrame 上，交给编码器
 
@@ -114,70 +111,142 @@ void FFVEncoder::printError(int ret)
 void FFVEncoder::initVideo(AVFrame *frame, AVRational fps)
 {
     std::lock_guard<std::mutex> lock(mutex);
+    resetPtsClock();
 
+    // 参数验证
+    if (!frame || frame->width <= 0 || frame->height <= 0) {
+        std::cerr << "Invalid frame parameters!" << std::endl;
+        return;
+    }
+
+    // 清理旧参数（防止内存泄漏）
+    if (vPars) {
+        delete vPars;
+        vPars = nullptr;
+    }
+
+    // 初始化编码参数
     vPars = new FFVEncoderPars();
-    vPars->biteRate = 2 * 1024 * 1024;
     vPars->width = frame->width;
     vPars->height = frame->height;
     vPars->videoFmt = AV_PIX_FMT_YUV420P;
     vPars->frameRate = fps;
 
-#if 1
-    const AVCodec *codec = avcodec_find_encoder(AV_CODEC_ID_H264);
-#else
-    const AVCodec *codec = avcodec_find_encoder_by_name("h264_amf");
-#endif
+    // 根据分辨率智能设置码率
+    int pixelCount = vPars->width * vPars->height;
+    if (pixelCount > 1920 * 1080) {        // 1080p以上
+        vPars->biteRate = 4 * 1024 * 1024; // 4Mbps
+    } else if (pixelCount > 1280 * 720) {  // 720p以上
+        vPars->biteRate = 2 * 1024 * 1024; // 2Mbps
+    } else {
+        vPars->biteRate = 1 * 1024 * 1024; // 1Mbps
+    }
 
-    if (codec == nullptr) {
+    // 编码器选择（增加备选方案）
+    const AVCodec *codec = nullptr;
+
+    // 备用方案：通用H.264编码器
+    if (!codec) {
+        codec = avcodec_find_encoder(AV_CODEC_ID_H264);
+        std::cout << "Using fallback encoder: H264" << std::endl;
+    }
+
+    if (!codec) {
         std::cerr << "Find H264 Codec Fail !" << std::endl;
+        delete vPars;
+        vPars = nullptr;
         return;
+    }
+
+    // 清理旧编码器上下文
+    if (codecCtx) {
+        avcodec_free_context(&codecCtx);
     }
 
     codecCtx = avcodec_alloc_context3(codec);
-    if (codecCtx == nullptr) {
+    if (!codecCtx) {
         std::cerr << "Alloc CodecCtx Fail !" << std::endl;
+        delete vPars;
+        vPars = nullptr;
         return;
     }
 
+    // 统一的编码器参数配置
     codecCtx->width = vPars->width;
     codecCtx->height = vPars->height;
+    codecCtx->bit_rate = vPars->biteRate;
+    codecCtx->rc_max_rate = vPars->biteRate;
+    codecCtx->rc_buffer_size = vPars->biteRate * 2;
     codecCtx->framerate = vPars->frameRate;
-    codecCtx->time_base = AVRational{vPars->frameRate.den, vPars->frameRate.num};
+    codecCtx->time_base = av_inv_q(vPars->frameRate); // 等同于 {fps.den, fps.num}
     codecCtx->pix_fmt = vPars->videoFmt;
-    codecCtx->flags |= AV_CODEC_FLAG_GLOBAL_HEADER; //不设置就没有封面
+    codecCtx->flags |= AV_CODEC_FLAG_GLOBAL_HEADER;
 
-    codecCtx->max_b_frames = 0;
-    codecCtx->gop_size = 12;
-    codecCtx->keyint_min = 12;
-    codecCtx->flags |= AV_CODEC_FLAG_LOW_DELAY;
+    // 根据使用场景优化配置
+    bool isHardwareEncoder = codec->id == AV_CODEC_ID_H264
+                             && (strstr(codec->name, "nvenc") || strstr(codec->name, "amf")
+                                 || strstr(codec->name, "videotoolbox"));
 
-#if 0
+    if (isHardwareEncoder) {
+        // 硬件编码器优化配置
+        codecCtx->gop_size = 60;    // 硬件编码器可以处理更大的GOP
+        codecCtx->max_b_frames = 2; // 硬件编码器可以处理少量B帧
+    } else {
+        // 软件编码器低延迟配置
+        codecCtx->gop_size = 30;
+        codecCtx->max_b_frames = 0; // 无B帧以减少延迟
+        codecCtx->flags |= AV_CODEC_FLAG_LOW_DELAY;
+    }
+
+    // 通用性能优化
+    codecCtx->keyint_min = codecCtx->gop_size;
+    codecCtx->thread_count = codecCtx->thread_count
+        = std::min(8, (int) std::thread::hardware_concurrency());
+    ;
     codecCtx->thread_type = FF_THREAD_FRAME;
-    codecCtx->thread_count = 8;
-#endif
+
+    // 质量与速度平衡
+    codecCtx->qmin = 10;
+    codecCtx->qmax = 40;
+    codecCtx->max_qdiff = 4;
 
     AVDictionary *codec_options = nullptr;
 
-#if 0
-    av_dict_set(&codec_options, "usage", "3", 0);
-    av_dict_set(&codec_options,"max_b_frames","0",0);
-    av_dict_set(&codec_options,"latency","true",0);
-
-#else
+    // 智能预设选择
+    const char *preset = isHardwareEncoder ? "medium" : "ultrafast";
+    av_dict_set(&codec_options, "preset", preset, 0);
     av_dict_set(&codec_options, "tune", "zerolatency", 0);
-    av_dict_set(&codec_options, "preset", "ultrafast", 0);
-#endif
+
+    // 码率控制优化
+    av_dict_set(&codec_options, "rc-lookahead", "0", 0);
 
     int ret = avcodec_open2(codecCtx, codec, &codec_options);
     if (ret < 0) {
+        std::cerr << "Open codec failed: ";
         printError(ret);
+        avcodec_free_context(&codecCtx);
+        delete vPars;
+        vPars = nullptr;
+        av_dict_free(&codec_options);
         return;
     }
-    av_dict_free(&codec_options);
+
+    // 检查未使用的选项
+    if (codec_options) {
+        AVDictionaryEntry *t = nullptr;
+        std::cout << "Unused codec options:" << std::endl;
+        while ((t = av_dict_get(codec_options, "", t, AV_DICT_IGNORE_SUFFIX))) {
+            std::cout << "  " << t->key << " = " << t->value << std::endl;
+        }
+        av_dict_free(&codec_options);
+    }
+
+    std::cout << "Encoder initialized successfully: " << vPars->width << "x" << vPars->height
+              << " @" << av_q2d(vPars->frameRate) << "fps"
+              << " bitrate: " << (vPars->biteRate / 1024 / 1024) << "Mbps" << std::endl;
 }
 
 void FFVEncoder::resetPtsClock()
 {
-    std::lock_guard<std::mutex> lock(mutex);
     lastPts = -1;
 }

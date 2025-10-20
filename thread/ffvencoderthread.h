@@ -24,6 +24,8 @@ public:
     void wakeAllThread();
     void close();
 
+    void setStartTimeUs(int64_t us) { start_time_us = us; }
+
 protected:
     virtual void run() override;
 

@@ -30,13 +30,12 @@
 namespace FFRecordURLS
 {
     static std::string CAMERA_URL = "video=Integrated Camera";
-    static std::string SCREEN_URL = "desktop";
+    static std::string SCREEN_URL = "video=screen-capture-recorder";
     static std::string AUDIO_URL = "audio=virtual-audio-capturer";
     static std::string MICROPHONE_URL = "audio=麦克风阵列 (Realtek(R) Audio)";
-}; // namespace FFRecordURLS
+    }; // namespace FFRecordURLS
 
-namespace FFRecordContextType
-{
+    namespace FFRecordContextType {
     constexpr size_t A_DECODER_SIZE = 2;
     constexpr size_t A_DEMUXER_SIZE = 2;
 
@@ -146,6 +145,6 @@ namespace FFRecordContextType
         FFAFilterThread *aFilterThread;
     };
 
-} // namespace FFRecordContextType
+    } // namespace FFRecordContextType
 
 #endif // FFRECORDER_P_H

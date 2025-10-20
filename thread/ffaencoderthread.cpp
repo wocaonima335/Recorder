@@ -44,7 +44,7 @@ void FFAEncoderThread::run()
 {
     while (!m_stop) {
         AVFrame *frame = frmQueue->dequeue();
-        if (frame == nullptr) {
+        if (!frame) {
             break;
         }
 
@@ -52,25 +52,30 @@ void FFAEncoderThread::run()
             initEncoder(frame);
         }
 
-        if (firstFrame) {
-            firstFramePts = frame->pts;
-            firstFrame = false;
+        // 用统一墙钟计算音频 PTS
+        int64_t now_us = av_gettime_relative();
+        int64_t wall_us = now_us - start_time_us;
+        AVRational src_tb = {1, AV_TIME_BASE};
+        int64_t apts = av_rescale_q(wall_us, src_tb, audioTimeBase);
 
-            aEncoder->encode(frame, streamIndex, 0, audioTimeBase);
-        } else {
-            std::cerr << "[AEncThread] frame submitted to encoder, releasing frame" << std::endl;
-            int64_t relativePts = frame->pts - firstFramePts;
-            aEncoder->encode(frame, streamIndex, relativePts, audioTimeBase);
-        }
+        aEncoder->encode(frame, streamIndex, apts, audioTimeBase);
         AVFrameTraits::release(frame);
     }
 }
 
 void FFAEncoderThread::initEncoder(AVFrame *frame)
 {
-    audioTimeBase = aFilter->getTimeBase();
+    // 初始化音频编码器
     aEncoder->initAudio(frame);
 
+    // 使用编码器的 time_base（与输出流一致）
+    audioTimeBase = aEncoder->getCodecCtx()->time_base;
+
+    // 复用器添加音频流，并获取音频流索引
     muxer->addStream(aEncoder->getCodecCtx());
     streamIndex = muxer->getAStreamIndex();
+
+    // 首帧标记仅用于初始化，不用于 PTS 计算
+    firstFrame = false;
+    firstFramePts = 0;
 }

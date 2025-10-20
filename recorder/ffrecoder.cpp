@@ -39,6 +39,10 @@ void FFRecorder::startRecord()
     if (m_isRecording)
         return;
 
+    int64_t t0 = av_gettime_relative();
+    d->vEncoderThread->setStartTimeUs(t0);
+    d->aEncoderThread->setStartTimeUs(t0);
+
     m_eventLoop->start();
     m_isRecording = true;
 }
