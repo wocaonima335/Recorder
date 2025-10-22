@@ -41,7 +41,7 @@ struct ParameterEventParams : public EventParameters
 
 struct ProcessEventParams : public EventParameters
 {
-    ParameterEventType type;
+    ProcessEventType type;
     int curSec;
 };
 

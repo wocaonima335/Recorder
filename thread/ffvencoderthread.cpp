@@ -27,17 +27,20 @@ void FFVEncoderThread::init(FFVFilter *vFilter_,
 
 void FFVEncoderThread::wakeAllThread()
 {
-    if (frmQueue) {
+    if (frmQueue)
+    {
         frmQueue->wakeAllThread();
     }
-    if (vEncoder) {
+    if (vEncoder)
+    {
         vEncoder->wakeAllThread();
     }
 }
 
 void FFVEncoderThread::close()
 {
-    if (vEncoder) {
+    if (vEncoder)
+    {
         vEncoder->close();
     }
     firstFrame = true;
@@ -52,7 +55,8 @@ void FFVEncoderThread::run()
     double total_encode_time = 0.0;
     double total_dequeue_time = 0.0;
 
-    while (!m_stop) {
+    while (!m_stop)
+    {
         // 监控dequeue时间
         auto dequeue_start = std::chrono::high_resolution_clock::now();
         AVFrame *frame = frmQueue->dequeue();
@@ -92,38 +96,25 @@ void FFVEncoderThread::run()
                                .count();
         total_encode_time += encode_ms;
 
-        // // 实时日志输出
-        // std::cerr << "[VEncThread] Frame " << frame_count << ": dequeue=" << std::fixed
-        //           << std::setprecision(2) << dequeue_ms << "ms"
-        //           << ", encode=" << encode_ms << "ms"
-        //           << ", vpts=" << vpts << std::endl;
-
         // 警告慢编码
-        if (encode_ms > 50.0) {
+        if (encode_ms > 50.0)
+        {
             std::cerr << "[VEncThread] WARNING: Slow encode detected! " << encode_ms
                       << "ms (target: <33ms for 30fps)" << std::endl;
         }
 
         // 警告长时间dequeue
-        if (dequeue_ms > 50.0) {
+        if (dequeue_ms > 50.0)
+        {
             std::cerr << "[VEncThread] WARNING: Long dequeue wait! " << dequeue_ms
                       << "ms (queue may be empty)" << std::endl;
         }
 
         AVFrameTraits::release(frame);
-
-        // // 每100帧输出统计信息
-        // if (frame_count % 100 == 0) {
-        //     double avg_encode = total_encode_time / frame_count;
-        //     double avg_dequeue = total_dequeue_time / frame_count;
-        //     std::cerr << "[VEncThread] Stats after " << frame_count << " frames:"
-        //               << " avg_encode=" << avg_encode << "ms"
-        //               << ", avg_dequeue=" << avg_dequeue << "ms"
-        //               << ", theoretical_fps=" << (1000.0 / avg_encode) << std::endl;
-        // }
     }
 
-    if (frame_count > 0) {
+    if (frame_count > 0)
+    {
         double avg_encode = total_encode_time / frame_count;
         double avg_dequeue = total_dequeue_time / frame_count;
         std::cerr << "[VEncThread] Final stats: " << frame_count << " frames processed"

@@ -19,3 +19,7 @@ std::unique_ptr<FFEvent> SourceEventFactory::createEvent(FFRecorder *context,
         throw std::invalid_argument("Unknown source event type");
     }
 }
+
+std::unique_ptr<FFEvent> ProcessEventFactory::createEvent(FFRecorder *context,
+                                                          const EventParameters &params)
+{}

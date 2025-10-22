@@ -154,13 +154,6 @@ void Demuxer::initDemuxer()
     int ret = avformat_open_input(&fmtCtx, url.c_str(), inputFmt, &opts);
     av_dict_free(&opts); // 无论成功与否都释放字典
 
-    if (ret == AVERROR(EIO)) {
-        // 回退策略：去掉裁剪，仅设帧率，避免区域越界导致的 -5
-        AVDictionary *fallback = nullptr;
-        av_dict_set(&fallback, "framerate", "30", 0);
-        ret = avformat_open_input(&fmtCtx, url.c_str(), inputFmt, &fallback);
-        av_dict_free(&fallback);
-    }
     if (ret < 0) {
         avformat_close_input(&fmtCtx);
         printError(ret);

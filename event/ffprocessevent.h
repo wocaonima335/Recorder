@@ -1,0 +1,4 @@
+#ifndef FFPROCESSEVENT_H
+#define FFPROCESSEVENT_H
+
+#endif // FFPROCESSEVENT_H

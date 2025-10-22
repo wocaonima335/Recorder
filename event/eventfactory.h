@@ -9,18 +9,20 @@
 
 #include <memory>
 
-class FFStartEvent;
-class FFStopEvent;
-class FFPauseEvent;
-class FFReadyEvent;
-class FFEndEvent;
-
 class SourceEventFactory : public AbstractEventFactory
 {
 public:
     std::unique_ptr<FFEvent> createEvent(FFRecorder *context,
                                          const EventParameters &params) override;
     EventCategory getCategory() const override { return EventCategory::SOURCE; }
+};
+
+class ProcessEventFactory : public AbstractEventFactory
+{
+public:
+    std::unique_ptr<FFEvent> createEvent(FFRecorder *context,
+                                         const EventParameters &params) override;
+    EventCategory getCategory() const override { return EventCategory::PROCESS; }
 };
 
 #endif // EVENTFACTORY_H
