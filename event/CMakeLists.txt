@@ -13,7 +13,8 @@ qt_add_library(event_module STATIC
     eventfactorymanager.cpp
     ffclosesourceevent.h
     ffclosesourceevent.cpp
-    ffprocessevent.h)
+    ffprocessevent.h
+    ffprocessevent.cpp)
 
 target_link_libraries(event_module PRIVATE
     PRIVATE 

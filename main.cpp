@@ -1,6 +1,8 @@
-#include "event/eventfactory.h"
 #include "event/eventfactorymanager.h"
 #include "recorder/ffrecorder.h"
+
+#include "event/ffclosesourceevent.h"
+#include "event/ffopensourceevent.h"
 
 #include <QDebug>
 #include <QGuiApplication>

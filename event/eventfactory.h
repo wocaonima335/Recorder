@@ -4,9 +4,6 @@
 #include "abstracteventfactory.h"
 #include "eventcategory.h"
 
-#include "event/ffopensourceevent.h"
-#include "event/ffclosesourceevent.h"
-
 #include <memory>
 
 class SourceEventFactory : public AbstractEventFactory

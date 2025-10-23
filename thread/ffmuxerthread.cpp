@@ -8,6 +8,8 @@
 #include "queue/ffpacket.h"
 #include "queue/ffvpacketqueue.h"
 
+#include "event/eventcategory.h"
+
 #include <QtCore/QtGlobal>
 
 #define CAPTURE_TIME 60
@@ -130,7 +132,7 @@ void FFMuxerThread::run()
 
 void FFMuxerThread::sendCaptureProcessEvent(double seconds)
 {
-    Q_UNUSED(seconds);
+  
 }
 
 double FFMuxerThread::calculateQueueDuration(FFAPacketQueue *queue, AVRational timeBase)
