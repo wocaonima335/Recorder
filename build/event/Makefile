@@ -370,6 +370,30 @@ ffopensourceevent.cpp.s:
 	cd /d D:\Qtprogram\bandicam\build && $(MAKE) $(MAKESILENT) -f event\CMakeFiles\event_module.dir\build.make event/CMakeFiles/event_module.dir/ffopensourceevent.cpp.s
 .PHONY : ffopensourceevent.cpp.s
 
+ffprocessevent.obj: ffprocessevent.cpp.obj
+.PHONY : ffprocessevent.obj
+
+# target to build an object file
+ffprocessevent.cpp.obj:
+	cd /d D:\Qtprogram\bandicam\build && $(MAKE) $(MAKESILENT) -f event\CMakeFiles\event_module.dir\build.make event/CMakeFiles/event_module.dir/ffprocessevent.cpp.obj
+.PHONY : ffprocessevent.cpp.obj
+
+ffprocessevent.i: ffprocessevent.cpp.i
+.PHONY : ffprocessevent.i
+
+# target to preprocess a source file
+ffprocessevent.cpp.i:
+	cd /d D:\Qtprogram\bandicam\build && $(MAKE) $(MAKESILENT) -f event\CMakeFiles\event_module.dir\build.make event/CMakeFiles/event_module.dir/ffprocessevent.cpp.i
+.PHONY : ffprocessevent.cpp.i
+
+ffprocessevent.s: ffprocessevent.cpp.s
+.PHONY : ffprocessevent.s
+
+# target to generate assembly for a file
+ffprocessevent.cpp.s:
+	cd /d D:\Qtprogram\bandicam\build && $(MAKE) $(MAKESILENT) -f event\CMakeFiles\event_module.dir\build.make event/CMakeFiles/event_module.dir/ffprocessevent.cpp.s
+.PHONY : ffprocessevent.cpp.s
+
 # Help Target
 help:
 	@echo The following are some of the valid targets for this Makefile:
@@ -406,6 +430,9 @@ help:
 	@echo ... ffopensourceevent.obj
 	@echo ... ffopensourceevent.i
 	@echo ... ffopensourceevent.s
+	@echo ... ffprocessevent.obj
+	@echo ... ffprocessevent.i
+	@echo ... ffprocessevent.s
 .PHONY : help
 
 

@@ -43,6 +43,7 @@ void FFRecorder::startRecord()
     d->vEncoderThread->setStartTimeUs(t0);
     d->aEncoderThread->setStartTimeUs(t0);
 
+    FFEventQueue::getInstance().start();
     m_eventLoop->start();
     m_isRecording = true;
 }

@@ -67,32 +67,28 @@ int FFVEncoder::encode(AVFrame *frame, int streamIndex, int64_t pts, AVRational 
 
     AVPacket *pkt = av_packet_alloc();
     ret = avcodec_receive_packet(codecCtx, pkt);
-    // 性能监控结束
-    auto encodeEnd = std::chrono::steady_clock::now();
-    if (ret == AVERROR(EAGAIN))
-    {
+
+    if (ret == AVERROR(EAGAIN)) {
         av_packet_free(&pkt);
         printError(ret);
-    }
-    else if (ret == AVERROR_EOF)
-    {
+    } else if (ret == AVERROR_EOF) {
         std::cout << "Encode Video EOF !" << std::endl;
         av_packet_free(&pkt);
-    }
-    else if (ret < 0)
-    {
+    } else if (ret < 0) {
         printError(ret);
         av_packet_free(&pkt);
         return -1;
-    }
-    else
-    {
+    } else {
         pkt->stream_index = streamIndex;
-        pktQueue->enqueue(pkt);
+        pktQueue->tryEnqueue(pkt);
         av_packet_free(&pkt);
     }
 
-    auto encodeDuration = std::chrono::duration_cast<std::chrono::microseconds>(encodeEnd - encodeStart);
+    // 性能监控结束
+    auto encodeEnd = std::chrono::steady_clock::now();
+
+    auto encodeDuration = std::chrono::duration_cast<std::chrono::microseconds>(encodeEnd
+                                                                                - encodeStart);
     double encodeTimeMs = encodeDuration.count() / 1000.0;
 
     // 更新平均编码时间
@@ -268,7 +264,7 @@ void FFVEncoder::initVideo(AVFrame *frame, AVRational fps)
     codecCtx->height = vPars->height;
     codecCtx->bit_rate = vPars->biteRate;
     codecCtx->rc_max_rate = vPars->biteRate * 1.2;  // 允许20%的码率波动
-    codecCtx->rc_buffer_size = vPars->biteRate / 2; // 减小缓冲区以降低延迟
+    codecCtx->rc_buffer_size = vPars->biteRate;     // 减小缓冲区以降低延迟
     codecCtx->framerate = vPars->frameRate;
     codecCtx->time_base = av_inv_q(vPars->frameRate); // 等同于 {fps.den, fps.num}
     codecCtx->pix_fmt = vPars->videoFmt;
@@ -288,8 +284,8 @@ void FFVEncoder::initVideo(AVFrame *frame, AVRational fps)
     else
     {
         // 软件编码器低延迟配置
-        codecCtx->gop_size = 15;    // 减小GOP以降低延迟
-        codecCtx->max_b_frames = 0; // 无B帧以减少延迟
+        codecCtx->gop_size = 60;    // 减小GOP以降低延迟
+        codecCtx->max_b_frames = 2; // 无B帧以减少延迟
         codecCtx->flags |= AV_CODEC_FLAG_LOW_DELAY;
 
         // 软件编码器多线程优化 - 使用更多线程
@@ -316,8 +312,6 @@ void FFVEncoder::initVideo(AVFrame *frame, AVRational fps)
         // 软件编码器：放宽质量限制以提升速度
         codecCtx->qmin = 18;       // 提高最小质量值
         codecCtx->qmax = 45;       // 提高最大质量值
-        codecCtx->max_qdiff = 8;   // 允许更大的质量差异
-        codecCtx->qcompress = 0.8; // 降低质量压缩以提升速度
     }
 
     AVDictionary *codec_options = nullptr;

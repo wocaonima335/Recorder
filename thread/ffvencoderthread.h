@@ -7,6 +7,9 @@ extern "C" {
 #include <libavutil/time.h>
 }
 
+#include <condition_variable>
+#include <mutex>
+
 class FFVEncoderPars;
 class FFVEncoder;
 class FFVFrameQueue;
@@ -25,6 +28,9 @@ public:
     void close();
 
     void setStartTimeUs(int64_t us) { start_time_us = us; }
+
+    // 供事件调用的线程安全入口
+    void onPauseChanged(bool pausedFlag, int64_t ts_us);
 
 protected:
     virtual void run() override;
@@ -48,6 +54,13 @@ private:
 
     int64_t start_time_us = 0;
     bool useWallClockPts = true;
+
+    std::atomic<bool> paused{false};
+    int64_t pause_start_us{0};
+    int64_t pause_accum_us{0};
+    bool first_after_resume{false};
+    std::mutex pause_mutex;
+    std::condition_variable pause_cv;
 };
 
 #endif // FFVENCODERTHREAD_H

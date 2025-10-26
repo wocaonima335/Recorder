@@ -6,10 +6,11 @@
 
 #include <QDebug>
 #include <QGuiApplication>
+#include <QObject>
 #include <QQmlApplicationEngine>
+#include <QQmlContext>
 #include <QQuickWindow>
 #include <QTimer>
-#include <QObject>
 
 void init()
 {
@@ -149,6 +150,9 @@ int main(int argc, char *argv[])
         &app,
         []() { QCoreApplication::exit(-1); },
         Qt::QueuedConnection);
+    
+    // Register the recorder object with QML context before loading the module
+    engine.rootContext()->setContextProperty("recorder", &FFRecorder::getInstance());
     engine.loadFromModule("bandicam", "Main");
 
     if (!engine.rootObjects().isEmpty()) {

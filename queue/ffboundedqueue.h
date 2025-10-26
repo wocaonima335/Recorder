@@ -7,6 +7,7 @@ extern "C" {
 #include <libavformat/avformat.h>
 }
 
+#include <QDebug>
 #include <atomic>
 #include <condition_variable>
 #include <corecrt.h>
@@ -106,8 +107,10 @@ public:
     void wakeAllThread();
     void close();
     void enqueueFromSrc(T *src);
+    bool tryEnqueueFromSrc(T *src);
     void enqueueNull();
     T *dequeue();
+    T *tryDequeue();
     bool peekEmpty() const;
     T *peekQueue() const;
     T *peekBack() const;
@@ -126,9 +129,10 @@ private:
 
 template<typename T, typename Traits>
 FFBoundedQueue<T, Traits>::FFBoundedQueue(size_t maxSize)
-    : m_stop(false)
-    , m_maxSize(maxSize)
-{}
+    : m_maxSize(maxSize)
+{
+    m_stop.store(false, std::memory_order_release);
+}
 
 template<typename T, typename Traits>
 void FFBoundedQueue<T, Traits>::start()
@@ -170,6 +174,33 @@ void FFBoundedQueue<T, Traits>::enqueueFromSrc(T *src)
 }
 
 template<typename T, typename Traits>
+bool FFBoundedQueue<T, Traits>::tryEnqueueFromSrc(T *src)
+{
+    std::unique_lock<std::mutex> lock(mutex);
+
+    // 检查是否已停止
+    if (m_stop.load(std::memory_order_acquire)) {
+        Traits::releaseSrc(src);
+        return false;
+    }
+
+    // 检查队列是否已满
+    if (q.size() >= m_maxSize) {
+        return false; // 队列已满，不阻塞直接返回
+    }
+
+    T *dest = Traits::allocateFromSrc(src);
+    if (!dest) {
+        Traits::releaseSrc(src);
+        return false;
+    }
+
+    q.push(dest);
+    cond.notify_one();
+    return true;
+}
+
+template<typename T, typename Traits>
 void FFBoundedQueue<T, Traits>::enqueueNull()
 {
     std::unique_lock<std::mutex> lock(mutex);
@@ -193,7 +224,25 @@ T *FFBoundedQueue<T, Traits>::dequeue()
         return nullptr;
     }
     cond.wait(lock, [this]() { return !q.empty() || m_stop.load(std::memory_order_acquire); });
+
     if (m_stop.load(std::memory_order_acquire)) {
+        return nullptr;
+    }
+
+    T *item = q.front();
+    q.pop();
+    cond.notify_one();
+    return item;
+}
+
+template<typename T, typename Traits>
+inline T *FFBoundedQueue<T, Traits>::tryDequeue()
+{
+    std::unique_lock<std::mutex> lock(mutex);
+    if (m_stop.load(std::memory_order_acquire)) {
+        return nullptr;
+    }
+    if (q.empty()) {
         return nullptr;
     }
     T *item = q.front();

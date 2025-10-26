@@ -49,25 +49,46 @@ void FFVEncoderThread::close()
     std::cerr << "[VEncThread] close: reset firstFrame and streamIndex" << std::endl;
 }
 
+void FFVEncoderThread::onPauseChanged(bool pausedFlag, int64_t ts_us)
+{
+    std::unique_lock<std::mutex> lk(pause_mutex);
+    if (pausedFlag) {
+        // 收到 paused=true
+        pause_start_us = ts_us > 0 ? ts_us : av_gettime_relative();
+        paused.store(true, std::memory_order_release);
+        pause_cv.notify_all();
+        std::cerr << "[VEncThread] paused at " << pause_start_us << "us" << std::endl;
+    } else {
+        // 收到 paused=false
+        int64_t now = ts_us > 0 ? ts_us : av_gettime_relative();
+        pause_accum_us += (now - pause_start_us);
+        paused.store(false, std::memory_order_release);
+        first_after_resume = true; // 恢复后首帧 I 帧
+        pause_cv.notify_all();
+        std::cerr << "[VEncThread] resumed at " << now << "us, total_pause=" << pause_accum_us
+                  << "us" << std::endl;
+    }
+}
+
 void FFVEncoderThread::run()
 {
     int64_t frame_count = 0;
-    double total_encode_time = 0.0;
-    double total_dequeue_time = 0.0;
+    // double total_encode_time = 0.0;
+    // double total_dequeue_time = 0.0;
 
     while (!m_stop)
     {
         // 监控dequeue时间
-        auto dequeue_start = std::chrono::high_resolution_clock::now();
+        // auto dequeue_start = std::chrono::high_resolution_clock::now();
         AVFrame *frame = frmQueue->dequeue();
-        auto dequeue_end = std::chrono::high_resolution_clock::now();
+        // auto dequeue_end = std::chrono::high_resolution_clock::now();
 
         if (!frame)
             break;
 
-        double dequeue_ms = std::chrono::duration<double, std::milli>(dequeue_end - dequeue_start)
-                                .count();
-        total_dequeue_time += dequeue_ms;
+        // double dequeue_ms = std::chrono::duration<double, std::milli>(dequeue_end - dequeue_start)
+        //                         .count();
+        // total_dequeue_time += dequeue_ms;
 
         if (streamIndex == -1)
             initEncoder(frame);
@@ -88,40 +109,40 @@ void FFVEncoderThread::run()
         frame_count = vpts + 1;
 
         // 监控编码时间
-        auto encode_start = std::chrono::high_resolution_clock::now();
+        // auto encode_start = std::chrono::high_resolution_clock::now();
         vEncoder->encode(frame, streamIndex, vpts, timeBase);
-        auto encode_end = std::chrono::high_resolution_clock::now();
+        // auto encode_end = std::chrono::high_resolution_clock::now();
 
-        double encode_ms = std::chrono::duration<double, std::milli>(encode_end - encode_start)
-                               .count();
-        total_encode_time += encode_ms;
+        // double encode_ms = std::chrono::duration<double, std::milli>(encode_end - encode_start)
+        //                        .count();
+        // total_encode_time += encode_ms;
 
-        // 警告慢编码
-        if (encode_ms > 50.0)
-        {
-            std::cerr << "[VEncThread] WARNING: Slow encode detected! " << encode_ms
-                      << "ms (target: <33ms for 30fps)" << std::endl;
-        }
+        // // 警告慢编码
+        // if (encode_ms > 50.0)
+        // {
+        //     std::cerr << "[VEncThread] WARNING: Slow encode detected! " << encode_ms
+        //               << "ms (target: <33ms for 30fps)" << std::endl;
+        // }
 
-        // 警告长时间dequeue
-        if (dequeue_ms > 50.0)
-        {
-            std::cerr << "[VEncThread] WARNING: Long dequeue wait! " << dequeue_ms
-                      << "ms (queue may be empty)" << std::endl;
-        }
+        // // 警告长时间dequeue
+        // if (dequeue_ms > 50.0)
+        // {
+        //     std::cerr << "[VEncThread] WARNING: Long dequeue wait! " << dequeue_ms
+        //               << "ms (queue may be empty)" << std::endl;
+        // }
 
         AVFrameTraits::release(frame);
     }
 
-    if (frame_count > 0)
-    {
-        double avg_encode = total_encode_time / frame_count;
-        double avg_dequeue = total_dequeue_time / frame_count;
-        std::cerr << "[VEncThread] Final stats: " << frame_count << " frames processed"
-                  << ", avg_encode=" << avg_encode << "ms"
-                  << ", avg_dequeue=" << avg_dequeue << "ms"
-                  << ", actual_fps=" << (frame_count * 1000.0 / total_encode_time) << std::endl;
-    }
+    // if (frame_count > 0)
+    // {
+    //     double avg_encode = total_encode_time / frame_count;
+    //     double avg_dequeue = total_dequeue_time / frame_count;
+    //     std::cerr << "[VEncThread] Final stats: " << frame_count << " frames processed"
+    //               << ", avg_encode=" << avg_encode << "ms"
+    //               << ", avg_dequeue=" << avg_dequeue << "ms"
+    //               << ", actual_fps=" << (frame_count * 1000.0 / total_encode_time) << std::endl;
+    // }
 }
 
 void FFVEncoderThread::initEncoder(AVFrame *frame)

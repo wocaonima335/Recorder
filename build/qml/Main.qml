@@ -123,21 +123,11 @@ ApplicationWindow{
                 font.pointSize: 30
                 font.family: "Consolas, Monaco, 'Courier New', monospace" // 等宽字体
                 color: palette.text
-                // 可选：添加数字显示效果
+                text: recorder.captureTimeText
                 style: Text.Outline
                 styleColor: "white"
             }
 
-            Timer {
-                running: true; interval: 100; repeat: true
-                onTriggered: {
-                    var totalSeconds = 60000 / 1000
-                    var m = Math.floor(totalSeconds / 60)
-                    var s = Math.floor(totalSeconds % 60)
-                    var ms = Math.floor((totalSeconds % 1) * 10)
-                    showText.text= `${m.toString().padStart(2, '0')}:${s.toString().padStart(2, '0')}.${ms}`
-                }
-            }
         }
 
         Item
@@ -203,7 +193,6 @@ ApplicationWindow{
 
                 z: 2
 
-                // 使用 x 坐标来控制位置，避免锚点冲突
                 x: isRecording ? 5 : parent.width - width - 5
 
                 // 添加位置动画
@@ -275,7 +264,7 @@ ApplicationWindow{
 
                 Image {
                     id: pauseIcon
-                    source: "file:///e:/myProgram/Recorder/record/icons/Pause.png"
+                    source: ":/icons/Pause.png"
                     anchors.centerIn:parent
                     fillMode:Image.PreserveAspectFit
                     width:parent.width * 0.8

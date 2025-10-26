@@ -61,7 +61,6 @@ void FFADecoderThread::run()
         if (pkt->serial != aPktQueue->getSerial()) {
             aPktQueue->flushQueue();
             aDecoder->flushQueue();
-
             aDecoder->flushDecoder();
         } else {
             if (pkt->type == NULLP && pkt->packet.data == nullptr) {
