@@ -100,7 +100,7 @@ template<typename T, typename Traits>
 class FFBoundedQueue
 {
 public:
-    explicit FFBoundedQueue(size_t maxSize = 3);
+    explicit FFBoundedQueue(size_t maxSize = 10);
 
     void start();
     void wakeAllThread();

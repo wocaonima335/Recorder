@@ -58,6 +58,7 @@ void FFAEncoderThread::run()
 
             aEncoder->encode(frame, streamIndex, 0, audioTimeBase);
         } else {
+            std::cerr << "[AEncThread] frame submitted to encoder, releasing frame" << std::endl;
             int64_t relativePts = frame->pts - firstFramePts;
             aEncoder->encode(frame, streamIndex, relativePts, audioTimeBase);
         }
