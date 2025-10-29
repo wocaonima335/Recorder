@@ -370,6 +370,30 @@ ffopensourceevent.cpp.s:
 	cd /d D:\Qtprogram\bandicam\build && $(MAKE) $(MAKESILENT) -f event\CMakeFiles\event_module.dir\build.make event/CMakeFiles/event_module.dir/ffopensourceevent.cpp.s
 .PHONY : ffopensourceevent.cpp.s
 
+ffpauseevent.obj: ffpauseevent.cpp.obj
+.PHONY : ffpauseevent.obj
+
+# target to build an object file
+ffpauseevent.cpp.obj:
+	cd /d D:\Qtprogram\bandicam\build && $(MAKE) $(MAKESILENT) -f event\CMakeFiles\event_module.dir\build.make event/CMakeFiles/event_module.dir/ffpauseevent.cpp.obj
+.PHONY : ffpauseevent.cpp.obj
+
+ffpauseevent.i: ffpauseevent.cpp.i
+.PHONY : ffpauseevent.i
+
+# target to preprocess a source file
+ffpauseevent.cpp.i:
+	cd /d D:\Qtprogram\bandicam\build && $(MAKE) $(MAKESILENT) -f event\CMakeFiles\event_module.dir\build.make event/CMakeFiles/event_module.dir/ffpauseevent.cpp.i
+.PHONY : ffpauseevent.cpp.i
+
+ffpauseevent.s: ffpauseevent.cpp.s
+.PHONY : ffpauseevent.s
+
+# target to generate assembly for a file
+ffpauseevent.cpp.s:
+	cd /d D:\Qtprogram\bandicam\build && $(MAKE) $(MAKESILENT) -f event\CMakeFiles\event_module.dir\build.make event/CMakeFiles/event_module.dir/ffpauseevent.cpp.s
+.PHONY : ffpauseevent.cpp.s
+
 ffprocessevent.obj: ffprocessevent.cpp.obj
 .PHONY : ffprocessevent.obj
 
@@ -430,6 +454,9 @@ help:
 	@echo ... ffopensourceevent.obj
 	@echo ... ffopensourceevent.i
 	@echo ... ffopensourceevent.s
+	@echo ... ffpauseevent.obj
+	@echo ... ffpauseevent.i
+	@echo ... ffpauseevent.s
 	@echo ... ffprocessevent.obj
 	@echo ... ffprocessevent.i
 	@echo ... ffprocessevent.s

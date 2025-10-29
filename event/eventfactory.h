@@ -22,4 +22,12 @@ public:
     EventCategory getCategory() const override { return EventCategory::PROCESS; }
 };
 
+class ControlEventFactory : public AbstractEventFactory
+{
+public:
+    std::unique_ptr<FFEvent> createEvent(FFRecorder *context,
+                                         const EventParameters &params) override;
+    EventCategory getCategory() const override { return EventCategory::CONTROL; }
+};
+
 #endif // EVENTFACTORY_H

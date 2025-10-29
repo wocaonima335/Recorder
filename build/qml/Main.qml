@@ -264,7 +264,7 @@ ApplicationWindow{
 
                 Image {
                     id: pauseIcon
-                    source: ":/icons/Pause.png"
+                    source: "icons/Pause.png"
                     anchors.centerIn:parent
                     fillMode:Image.PreserveAspectFit
                     width:parent.width * 0.8

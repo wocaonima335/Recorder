@@ -18,18 +18,18 @@ Item {
 
         ListElement {
             title: "主页"
-            icon: " qrc:/icons/main.png"
-            iconGray: "qrc:/icons/main-gray.png"
+            icon: "icons/main.png"
+            iconGray: "icons/main-gray.png"
         }
         ListElement {
             title: "设置"
-            icon: "qrc:/icons/Setting.png"
-            iconGray: "qrc:/icons/setting-gray.png"
+            icon: "icons/Setting.png"
+            iconGray: "icons/setting-gray.png"
         }
         ListElement {
             title: "视频"
-            icon: "qrc:/icons/video.png"
-            iconGray: "qrc:/icons/video-gray.png"
+            icon: "icons/video.png"
+            iconGray: "icons/video-gray.png"
         }
     }
 
