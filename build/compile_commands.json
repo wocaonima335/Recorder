@@ -97,18 +97,6 @@
 },
 {
   "directory": "D:/Qtprogram/bandicam/build/qml",
-  "command": "D:\\Vscode\\MinGw64\\mingw64\\bin\\g++.exe -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_DEPRECATED_WARNINGS -DQT_NETWORK_LIB -DQT_PLUGIN -DQT_QMLINTEGRATION_LIB -DQT_QML_LIB -DQT_STATICPLUGIN -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64 @CMakeFiles/qml_moduleplugin_init.dir/includes_CXX.rsp -g -std=gnu++17 -pthread -o CMakeFiles\\qml_moduleplugin_init.dir\\qml_moduleplugin_init_autogen\\mocs_compilation.cpp.obj -c D:\\Qtprogram\\bandicam\\build\\qml\\qml_moduleplugin_init_autogen\\mocs_compilation.cpp",
-  "file": "D:/Qtprogram/bandicam/build/qml/qml_moduleplugin_init_autogen/mocs_compilation.cpp",
-  "output": "qml/CMakeFiles/qml_moduleplugin_init.dir/qml_moduleplugin_init_autogen/mocs_compilation.cpp.obj"
-},
-{
-  "directory": "D:/Qtprogram/bandicam/build/qml",
-  "command": "D:\\Vscode\\MinGw64\\mingw64\\bin\\g++.exe -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_DEPRECATED_WARNINGS -DQT_NETWORK_LIB -DQT_PLUGIN -DQT_QMLINTEGRATION_LIB -DQT_QML_LIB -DQT_STATICPLUGIN -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64 @CMakeFiles/qml_moduleplugin_init.dir/includes_CXX.rsp -g -std=gnu++17 -pthread -o CMakeFiles\\qml_moduleplugin_init.dir\\qml_moduleplugin_init.cpp.obj -c D:\\Qtprogram\\bandicam\\build\\qml\\qml_moduleplugin_init.cpp",
-  "file": "D:/Qtprogram/bandicam/build/qml/qml_moduleplugin_init.cpp",
-  "output": "qml/CMakeFiles/qml_moduleplugin_init.dir/qml_moduleplugin_init.cpp.obj"
-},
-{
-  "directory": "D:/Qtprogram/bandicam/build/qml",
   "command": "D:\\Vscode\\MinGw64\\mingw64\\bin\\g++.exe -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_DEPRECATED_WARNINGS -DQT_NETWORK_LIB -DQT_PLUGIN -DQT_QMLINTEGRATION_LIB -DQT_QML_LIB -DQT_STATICPLUGIN -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64 @CMakeFiles/qml_moduleplugin.dir/includes_CXX.rsp -g -std=gnu++17 -pthread -o CMakeFiles\\qml_moduleplugin.dir\\qml_moduleplugin_autogen\\mocs_compilation.cpp.obj -c D:\\Qtprogram\\bandicam\\build\\qml\\qml_moduleplugin_autogen\\mocs_compilation.cpp",
   "file": "D:/Qtprogram/bandicam/build/qml/qml_moduleplugin_autogen/mocs_compilation.cpp",
   "output": "qml/CMakeFiles/qml_moduleplugin.dir/qml_moduleplugin_autogen/mocs_compilation.cpp.obj"
@@ -118,6 +106,18 @@
   "command": "D:\\Vscode\\MinGw64\\mingw64\\bin\\g++.exe -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_DEPRECATED_WARNINGS -DQT_NETWORK_LIB -DQT_PLUGIN -DQT_QMLINTEGRATION_LIB -DQT_QML_LIB -DQT_STATICPLUGIN -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64 @CMakeFiles/qml_moduleplugin.dir/includes_CXX.rsp -g -std=gnu++17 -pthread -o CMakeFiles\\qml_moduleplugin.dir\\qml_moduleplugin_bandicamPlugin.cpp.obj -c D:\\Qtprogram\\bandicam\\build\\qml\\qml_moduleplugin_bandicamPlugin.cpp",
   "file": "D:/Qtprogram/bandicam/build/qml/qml_moduleplugin_bandicamPlugin.cpp",
   "output": "qml/CMakeFiles/qml_moduleplugin.dir/qml_moduleplugin_bandicamPlugin.cpp.obj"
+},
+{
+  "directory": "D:/Qtprogram/bandicam/build/qml",
+  "command": "D:\\Vscode\\MinGw64\\mingw64\\bin\\g++.exe -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_DEPRECATED_WARNINGS -DQT_NETWORK_LIB -DQT_PLUGIN -DQT_QMLINTEGRATION_LIB -DQT_QML_LIB -DQT_STATICPLUGIN -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64 @CMakeFiles/qml_moduleplugin_init.dir/includes_CXX.rsp -g -std=gnu++17 -pthread -o CMakeFiles\\qml_moduleplugin_init.dir\\qml_moduleplugin_init_autogen\\mocs_compilation.cpp.obj -c D:\\Qtprogram\\bandicam\\build\\qml\\qml_moduleplugin_init_autogen\\mocs_compilation.cpp",
+  "file": "D:/Qtprogram/bandicam/build/qml/qml_moduleplugin_init_autogen/mocs_compilation.cpp",
+  "output": "qml/CMakeFiles/qml_moduleplugin_init.dir/qml_moduleplugin_init_autogen/mocs_compilation.cpp.obj"
+},
+{
+  "directory": "D:/Qtprogram/bandicam/build/qml",
+  "command": "D:\\Vscode\\MinGw64\\mingw64\\bin\\g++.exe -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_DEPRECATED_WARNINGS -DQT_NETWORK_LIB -DQT_PLUGIN -DQT_QMLINTEGRATION_LIB -DQT_QML_LIB -DQT_STATICPLUGIN -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64 @CMakeFiles/qml_moduleplugin_init.dir/includes_CXX.rsp -g -std=gnu++17 -pthread -o CMakeFiles\\qml_moduleplugin_init.dir\\qml_moduleplugin_init.cpp.obj -c D:\\Qtprogram\\bandicam\\build\\qml\\qml_moduleplugin_init.cpp",
+  "file": "D:/Qtprogram/bandicam/build/qml/qml_moduleplugin_init.cpp",
+  "output": "qml/CMakeFiles/qml_moduleplugin_init.dir/qml_moduleplugin_init.cpp.obj"
 },
 {
   "directory": "D:/Qtprogram/bandicam/build/queue",
