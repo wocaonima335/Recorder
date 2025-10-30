@@ -5,14 +5,19 @@
 
 #include "muxer/ffmuxer.h"
 #include "queue/ffapacketqueue.h"
+#include "queue/ffeventqueue.h"
 #include "queue/ffpacket.h"
 #include "queue/ffvpacketqueue.h"
+
+#include "event/abstracteventfactory.h"
+#include "event/eventcategory.h"
+#include "event/eventfactorymanager.h"
 
 #include <QtCore/QtGlobal>
 
 #define CAPTURE_TIME 60
 
-const double SYNC_THRESHOLD = 0.020;
+const double SYNC_THRESHOLD = 1.0 / 30.0; // 约 0.033
 
 FFMuxerThread::FFMuxerThread()
 {
@@ -67,146 +72,81 @@ void FFMuxerThread::wakeAllThread()
 
 void FFMuxerThread::run()
 {
-    bool audioFinish = true;
-    bool videoFinish = true;
-
     muxer->writeHeader();
 
     FFPacket *audioPkt = nullptr;
     FFPacket *videoPkt = nullptr;
-    AVPacket *aPacket = nullptr;
-    AVPacket *vPacket = nullptr;
 
-    double audioPtsSec = 0;
-    double videoPtsSec = 0;
+    // 预计算时间基准转换因子
+    const double audioTimeBaseFactor = av_q2d(aEncoder->getCodecCtx()->time_base);
+    const double videoTimeBaseFactor = av_q2d(vEncoder->getCodecCtx()->time_base);
 
-    int ret = 0;
+    // 获取初始包
+    while (!audioPkt && !m_stop)
+        audioPkt = aPktQueue->dequeue();
+    while (!videoPkt && !m_stop)
+        videoPkt = vPktQueue->dequeue();
+
+    if (!audioPkt || !videoPkt)
+        return;
+
+    AVPacket *aPacket = &audioPkt->packet;
+    AVPacket *vPacket = &videoPkt->packet;
+
+    // 主循环 - 内联优化
     while (!m_stop) {
-        if (audioFinish) {
-            std::lock_guard<std::mutex> lock(mutex);
-            audioPkt = aPktQueue->dequeue();
+        // 快速路径：直接计算时间，避免重复函数调用
+        const double audioTime = aPacket->pts * audioTimeBaseFactor;
+        const double videoTime = vPacket->pts * videoTimeBaseFactor;
 
-            if (audioPkt == nullptr) {
-                break; // 避免设置 m_stop，让基类统一管理
-            }
+        int ret;
+        double processedTime;
 
-            aPacket = &audioPkt->packet;
-            if (aTimeBase.den == -1 && aTimeBase.num == -1) {
-                aTimeBase = aEncoder->getCodecCtx()->time_base;
-            }
-
-            audioPtsSec = aPacket->pts * av_q2d(aTimeBase);
-
-            if (audioPtsSec < 0) {
-                // 修复：使用统一的释放方法
-                FFPacketTraits::release(audioPkt);
-                audioPkt = nullptr;
-                audioFinish = true;
-                continue;
-            }
-        }
-
-        if (videoFinish) {
-            std::lock_guard<std::mutex> lock(mutex);
-            videoPkt = vPktQueue->dequeue();
-
-            if (videoPkt == nullptr) {
-                break; // 避免设置 m_stop
-            }
-
-            vPacket = &videoPkt->packet;
-
-            if (vTimeBase.den == -1 && vTimeBase.num == -1) {
-                vTimeBase = vEncoder->getCodecCtx()->time_base;
-            }
-
-            videoPtsSec = vPacket->pts * av_q2d(vTimeBase);
-
-            if (videoPtsSec < 0) {
-                // 修复：使用统一的释放方法
-                FFPacketTraits::release(videoPkt);
-                videoPkt = nullptr;
-                videoFinish = true;
-                continue;
-            }
-        }
-
-        if (audioPtsSec + SYNC_THRESHOLD < videoPtsSec) {
+        if (audioTime <= videoTime + SYNC_THRESHOLD) {
             ret = muxer->mux(aPacket);
-            if (ret < 0) {
-                std::cerr << "Mux Audio Fail !" << std::endl;
-                // 修复：错误时也要释放资源
-                FFPacketTraits::release(audioPkt);
-                FFPacketTraits::release(videoPkt);
-                return;
-            }
-
-            // 修复：mux 成功后释放 FFPacket
+            processedTime = audioTime;
             FFPacketTraits::release(audioPkt);
-            audioPkt = nullptr;
-            audioFinish = true;
-            videoFinish = false;
-
-        } else if (videoPtsSec + SYNC_THRESHOLD < audioPtsSec) {
-            ret = muxer->mux(vPacket);
-            if (ret < 0) {
-                std::cerr << "Mux Video Fail !" << std::endl;
-                // 修复：错误时也要释放资源
-                FFPacketTraits::release(audioPkt);
-                FFPacketTraits::release(videoPkt);
-                return;
-            }
-
-            // 修复：mux 成功后释放 FFPacket
-            FFPacketTraits::release(videoPkt);
-            videoPkt = nullptr;
-            videoFinish = true;
-            audioFinish = false;
-
+            audioPkt = aPktQueue->dequeue();
+            if (!audioPkt)
+                break;
+            aPacket = &audioPkt->packet;
         } else {
-            // 队列长度比较逻辑...
-            double audioQueueDuration = calculateQueueDuration(aPktQueue, aTimeBase);
-            double videoQueueDuration = calculateQueueDuration(vPktQueue, vTimeBase);
-
-            if (audioQueueDuration > videoQueueDuration + 0.010) {
-                ret = muxer->mux(aPacket);
-                if (ret < 0) {
-                    FFPacketTraits::release(audioPkt);
-                    FFPacketTraits::release(videoPkt);
-                    return;
-                }
-                FFPacketTraits::release(audioPkt);
-                audioPkt = nullptr;
-                audioFinish = true;
-                videoFinish = false;
-            } else {
-                ret = muxer->mux(vPacket);
-                if (ret < 0) {
-                    FFPacketTraits::release(audioPkt);
-                    FFPacketTraits::release(videoPkt);
-                    return;
-                }
-                FFPacketTraits::release(videoPkt);
-                videoPkt = nullptr;
-                videoFinish = true;
-                audioFinish = false;
-            }
+            ret = muxer->mux(vPacket);
+            processedTime = videoTime;
+            FFPacketTraits::release(videoPkt);
+            videoPkt = vPktQueue->dequeue();
+            if (!videoPkt)
+                break;
+            vPacket = &videoPkt->packet;
         }
+
+        // 批量进度更新（减少事件发送频率）
+        if (processedTime - lastProcessTime >= 0.01) {
+            sendCaptureProcessEvent(processedTime);
+            lastProcessTime = processedTime;
+        }
+
+        if (ret < 0)
+            break; // 快速错误退出
     }
 
-    // 修复：退出时清理剩余资源
-    if (audioPkt) {
+    // 清理
+    if (audioPkt)
         FFPacketTraits::release(audioPkt);
-    }
-    if (videoPkt) {
+    if (videoPkt)
         FFPacketTraits::release(videoPkt);
-    }
-
     muxer->writeTrailer();
 }
+
 void FFMuxerThread::sendCaptureProcessEvent(double seconds)
 {
-    Q_UNUSED(seconds);
+    ProcessEventParams params;
+    params.type = ProcessEventType::CAPTURE_PROCESS;
+    params.curSec = seconds;
+    auto ev = EventFactoryManager::getInstance().createEvent(EventCategory::PROCESS,
+                                                             recorderCtx,
+                                                             params);
+    FFEventQueue::getInstance().enqueue(ev.release());
 }
 
 double FFMuxerThread::calculateQueueDuration(FFAPacketQueue *queue, AVRational timeBase)

@@ -4,6 +4,7 @@
 #include "abstracteventfactory.h"
 #include "eventcategory.h"
 #include "eventfactory.h"
+#include "ffevent.h"
 
 #include <unordered_map>
 
@@ -25,6 +26,7 @@ private:
     EventFactoryManager()
     {
         registerFactory(EventCategory::SOURCE, std::make_unique<SourceEventFactory>());
+        registerFactory(EventCategory::PROCESS, std::make_unique<ProcessEventFactory>());
     }
 
 private:

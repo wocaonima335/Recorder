@@ -30,6 +30,7 @@ public:
     FFEvent *dequeue();
     void clearQueue();
     void wakeAllThread();
+    void start();
 
     ~FFEventQueue();
 

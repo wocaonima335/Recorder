@@ -16,19 +16,21 @@ void FFVDecoder::decode(AVPacket *packet)
         return;
     }
 
-    // 增加解码入口打印
-    if (packet) {
-        std::cerr << "[VDec] decode enter, pkt=" << packet
-                  << " pts=" << packet->pts << " dts=" << packet->dts << std::endl;
-    } else {
-        std::cerr << "[VDec] decode enter, pkt=null (flush)" << std::endl;
-    }
+    // // 增加解码入口打印
+    // if (packet) {
+    //     std::cerr << "[VDec] decode enter, pkt=" << packet
+    //               << " pts=" << packet->pts << " dts=" << packet->dts << std::endl;
+    // } else {
+    //     std::cerr << "[VDec] decode enter, pkt=null (flush)" << std::endl;
+    // }
 
     int ret = avcodec_send_packet(codecCtx, packet);
     // 打印 send_packet 返回值
     std::cerr << "[VDec] send_packet ret=" << ret;
-    if (ret == AVERROR(EAGAIN)) std::cerr << " (EAGAIN)";
-    if (ret == AVERROR_EOF) std::cerr << " (EOF)";
+    if (ret == AVERROR(EAGAIN))
+        std::cerr << " (EAGAIN)";
+    if (ret == AVERROR_EOF)
+        std::cerr << " (EOF)";
     std::cerr << std::endl;
 
     if (ret < 0 && ret != AVERROR(EAGAIN)) {

@@ -18,12 +18,12 @@ void FFADecoder::decode(AVPacket *packet)
         return;
     }
 
-    if (packet) {
-        std::cerr << "[ADec] decode enter, pkt=" << packet << " pts=" << packet->pts
-                  << " dts=" << packet->dts << std::endl;
-    } else {
-        std::cerr << "[ADec] decode enter, pkt=null (flush)" << std::endl;
-    }
+    // if (packet) {
+    //     std::cerr << "[ADec] decode enter, pkt=" << packet << " pts=" << packet->pts
+    //               << " dts=" << packet->dts << std::endl;
+    // } else {
+    //     std::cerr << "[ADec] decode enter, pkt=null (flush)" << std::endl;
+    // }
 
     int ret = avcodec_send_packet(codecCtx, packet);
 

@@ -60,8 +60,11 @@ void FFOpenSourceEvent::init()
 
 void FFOpenSourceEvent::start()
 {
-    if (sourceType == AUDIO || sourceType == MICROPHONE)
-    {
+    int64_t t0 = av_gettime_relative(); // 统一墙钟起点
+    aEncoderThread->setStartTimeUs(t0);
+    vEncoderThread->setStartTimeUs(t0);
+
+    if (sourceType == AUDIO || sourceType == MICROPHONE) {
         aDemuxerThread[index]->wakeAllThread();
         aDemuxerThread[index]->start();
 

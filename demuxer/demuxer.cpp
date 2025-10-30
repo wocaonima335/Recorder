@@ -37,9 +37,9 @@ int Demuxer::demux()
 
     int ret = av_read_frame(fmtCtx, packet);
 
-    // 打印读取结果
-    static int read_cnt = 0;
-    std::cerr << "[Demux] av_read_frame ret=" << ret << " count=" << ++read_cnt << std::endl;
+    // // 打印读取结果
+    // static int read_cnt = 0;
+    // std::cerr << "[Demux] av_read_frame ret=" << ret << " count=" << ++read_cnt << std::endl;
 
     if (ret < 0) {
         if (ret == AVERROR_EOF) {
@@ -60,7 +60,8 @@ int Demuxer::demux()
         } else {
             char err[256] = {0};
             av_strerror(ret, err, sizeof(err));
-            std::cerr << "[Demux][ERR] ret=" << ret << " msg=" << err << " -> close fmtCtx" << std::endl;
+            std::cerr << "[Demux][ERR] ret=" << ret << " msg=" << err << " -> close fmtCtx"
+                      << std::endl;
             avformat_close_input(&fmtCtx);
             av_packet_free(&packet);
             return -1;
@@ -74,11 +75,6 @@ int Demuxer::demux()
 
     if (aStream && packet->stream_index == aStream->index) {
         if (aPktQueue) {
-            static int a_cnt = 0;
-            std::cerr << "[Demux] A pkt idx=" << packet->stream_index
-                      << " pts=" << packet->pts << " dts=" << packet->dts
-                      << " dur=" << packet->duration << " size=" << packet->size
-                      << " count=" << ++a_cnt << std::endl;
             aPktQueue->enqueue(packet);
             av_packet_free(&packet);
         } else {
@@ -88,10 +84,9 @@ int Demuxer::demux()
     } else if (vStream && packet->stream_index == vStream->index) {
         if (vPktQueue) {
             static int v_cnt = 0;
-            std::cerr << "[Demux] V pkt idx=" << packet->stream_index
-                      << " pts=" << packet->pts << " dts=" << packet->dts
-                      << " dur=" << packet->duration << " size=" << packet->size
-                      << " count=" << ++v_cnt << std::endl;
+            std::cerr << "[Demux] V pkt idx=" << packet->stream_index << " pts=" << packet->pts
+                      << " dts=" << packet->dts << " dur=" << packet->duration
+                      << " size=" << packet->size << " count=" << ++v_cnt << std::endl;
             vPktQueue->enqueue(packet);
             av_packet_free(&packet);
         } else {
@@ -153,29 +148,12 @@ void Demuxer::initDemuxer()
     // 假设 url = "desktop"，inputFmt = av_find_input_format("gdigrab")
     AVDictionary *opts = nullptr;
 
-    // 1) 设置偶数化分辨率，避免后续 x264 报 "height not divisible by 2"
-    //    注意：宽高必须都在虚拟桌面范围之内
-    av_dict_set(&opts, "video_size", "3840x1266", 0);
-
     // 2) 固定帧率
     av_dict_set(&opts, "framerate", "30", 0);
 
-    // 3) 关键：与日志一致的起点坐标，确保截取区域不会越界（根据你的日志：x=0, y=-187）
-    av_dict_set(&opts, "offset_x", "0", 0);
-    av_dict_set(&opts, "offset_y", "-187", 0);
-
-    // 4) 可选：绘制鼠标
-    // av_dict_set(&opts, "draw_mouse", "1", 0);
-
     int ret = avformat_open_input(&fmtCtx, url.c_str(), inputFmt, &opts);
     av_dict_free(&opts); // 无论成功与否都释放字典
-    if (ret == AVERROR(EIO)) {
-        // 回退策略：去掉裁剪，仅设帧率，避免区域越界导致的 -5
-        AVDictionary *fallback = nullptr;
-        av_dict_set(&fallback, "framerate", "30", 0);
-        ret = avformat_open_input(&fmtCtx, url.c_str(), inputFmt, &fallback);
-        av_dict_free(&fallback);
-    }
+
     if (ret < 0) {
         avformat_close_input(&fmtCtx);
         printError(ret);

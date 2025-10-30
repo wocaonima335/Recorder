@@ -15,6 +15,7 @@ using namespace FFRecordContextType;
 class FFRecorder : public QObject
 {
     Q_OBJECT;
+    Q_PROPERTY(QString captureTimeText READ captureTimeText NOTIFY captureTimeTextChanged)
 
 public:
     static FFRecorder &getInstance();
@@ -64,6 +65,14 @@ public:
     FFThreadPool *getThreadPool();
     FFEventLoop *getEventLoop();
 
+    QString captureTimeText() const;
+
+public slots:
+    void setCaptureTimeText(const QString &timeText);
+
+signals:
+    void captureTimeTextChanged();
+
 private:
     void initCoreComponents();
     void registerMetaTypes();
@@ -80,8 +89,8 @@ private:
     FFEventLoop *m_eventLoop = nullptr;
 
     bool m_isRecording = false;
-};
 
-; // namespace FFRecordContextType
+    QString m_captureTimeText = "00:00.0";
+};
 
 #endif

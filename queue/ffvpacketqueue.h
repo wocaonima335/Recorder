@@ -7,8 +7,6 @@ extern "C" {
 #include <libavformat/avformat.h>
 }
 
-class FFPacket;
-
 class FFVPacketQueue
 {
 public:
@@ -22,6 +20,8 @@ public:
     void enqueueFlush();
     void enqueueNull();
     void flushQueue();
+    bool tryEnqueue(AVPacket *pkt);
+    FFPacket *tryDequeue();
 
     size_t getSerial();
 

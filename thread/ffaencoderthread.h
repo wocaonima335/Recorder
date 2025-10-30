@@ -22,6 +22,7 @@ public:
 
     void close();
     void wakeAllThread();
+    void setStartTimeUs(int64_t us) { start_time_us = us; }
 
 protected:
     virtual void run() override;
@@ -33,13 +34,14 @@ private:
     FFAEncoder *aEncoder = nullptr;
     FFAFrameQueue *frmQueue = nullptr;
     FFMuxer *muxer = nullptr;
-    AVRational audioTimeBase;
+    AVRational audioTimeBase = {0, 1};
 
     int streamIndex = -1;
     FFAFilter *aFilter = nullptr;
 
     int64_t firstFramePts = 0;
     bool firstFrame = true;
+    int64_t start_time_us = 0;
 };
 
 #endif // FFAENCODERTHREAD_H

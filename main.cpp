@@ -1,13 +1,16 @@
-#include "event/eventfactory.h"
 #include "event/eventfactorymanager.h"
 #include "recorder/ffrecorder.h"
 
+#include "event/ffclosesourceevent.h"
+#include "event/ffopensourceevent.h"
+
 #include <QDebug>
 #include <QGuiApplication>
+#include <QObject>
 #include <QQmlApplicationEngine>
+#include <QQmlContext>
 #include <QQuickWindow>
 #include <QTimer>
-#include <QObject>
 
 void init()
 {
@@ -66,15 +69,18 @@ void recordTest()
 void startRecording()
 {
     qDebug() << "开始录制...";
-    
+
     // 初始化录制器
     FFRecorder::getInstance().initialize();
+
+    // 开始录制
+    FFRecorder::getInstance().startRecord();
 
     SourceEventParams cameraParams;
     cameraParams.type = SourceEventType::OPEN_SOURCE;
     cameraParams.sourceType = demuxerType::SCREEN;
     cameraParams.url = FFRecordURLS::SCREEN_URL;
-    cameraParams.format = "gdigrab";
+    cameraParams.format = "dshow";
 
     auto cameraEvent = EventFactoryManager::getInstance().createEvent(EventCategory::SOURCE,
                                                                       &FFRecorder::getInstance(),
@@ -91,9 +97,6 @@ void startRecording()
                                                                      &FFRecorder::getInstance(),
                                                                      audioParams);
     audioEvent->work();
-
-    // 开始录制
-    FFRecorder::getInstance().startRecord();
 }
 
 void stopRecording()
@@ -147,6 +150,9 @@ int main(int argc, char *argv[])
         &app,
         []() { QCoreApplication::exit(-1); },
         Qt::QueuedConnection);
+    
+    // Register the recorder object with QML context before loading the module
+    engine.rootContext()->setContextProperty("recorder", &FFRecorder::getInstance());
     engine.loadFromModule("bandicam", "Main");
 
     if (!engine.rootObjects().isEmpty()) {

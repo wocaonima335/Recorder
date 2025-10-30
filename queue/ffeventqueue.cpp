@@ -26,6 +26,11 @@ void FFEventQueue::wakeAllThread()
     impl->wakeAllThread();
 }
 
+void FFEventQueue::start()
+{
+    impl->start();
+}
+
 FFEventQueue::~FFEventQueue()
 {
     impl->wakeAllThread();

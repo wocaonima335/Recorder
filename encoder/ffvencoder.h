@@ -2,7 +2,9 @@
 #define FFVENCODER_H
 
 #include <mutex>
-extern "C" {
+#include <chrono>
+extern "C"
+{
 #include <libavcodec/avcodec.h>
 #include <libavformat/avformat.h>
 #include <libavutil/time.h>
@@ -45,6 +47,12 @@ private:
     int64_t lastPts = -1;
 
     std::mutex mutex;
+
+    // 性能监控相关
+    std::chrono::steady_clock::time_point lastEncodeTime;
+    double avgEncodeTime = 0.0;
+    int encodeCount = 0;
+    static constexpr double TARGET_ENCODE_TIME_MS = 33.0; // 30fps目标时间
 };
 
 #endif // FFVENCODER_H

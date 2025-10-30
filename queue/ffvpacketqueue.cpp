@@ -1,11 +1,9 @@
 #include "ffvpacketqueue.h"
 #include "ffpacket.h"
 
-#define MAX_PACKET_SIZE 2
-
 FFVPacketQueue::FFVPacketQueue()
     : serial(0)
-    , impl(new FFBoundedQueue<FFPacket, FFPacketTraits>())
+    , impl(new FFBoundedQueue<FFPacket, FFPacketTraits>(120))
 
 {}
 
@@ -68,6 +66,20 @@ void FFVPacketQueue::flushQueue()
             break;
         FFPacketTraits::release(pkt);
     }
+}
+
+bool FFVPacketQueue::tryEnqueue(AVPacket *pkt)
+{
+    FFPacket *ffpkt = static_cast<FFPacket *>(av_mallocz(sizeof(FFPacket)));
+    av_packet_move_ref(&ffpkt->packet, pkt);
+    ffpkt->serial = serial.load();
+    ffpkt->type = NORMAL;
+    return impl->tryEnqueueFromSrc(ffpkt);
+}
+
+FFPacket *FFVPacketQueue::tryDequeue()
+{
+    return impl->tryDequeue();
 }
 
 size_t FFVPacketQueue::getSerial()

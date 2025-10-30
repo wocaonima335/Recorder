@@ -39,6 +39,11 @@ void FFRecorder::startRecord()
     if (m_isRecording)
         return;
 
+    int64_t t0 = av_gettime_relative();
+    d->vEncoderThread->setStartTimeUs(t0);
+    d->aEncoderThread->setStartTimeUs(t0);
+
+    FFEventQueue::getInstance().start();
     m_eventLoop->start();
     m_isRecording = true;
 }
@@ -66,6 +71,7 @@ void FFRecorder::stopRecord()
         m_eventLoop->wait();
     }
 
+    setCaptureTimeText("00:00.0");
     m_isRecording = false;
 }
 
@@ -136,8 +142,8 @@ void FFRecorder::registerMetaTypes()
 }
 
 FFRecorder::FFRecorder(QObject *parent)
-
 {
+    Q_UNUSED(parent);
     avdevice_register_all();
     avformat_network_init();
     d = new FFRecorderPrivate();
@@ -314,4 +320,17 @@ FFThreadPool *FFRecorder::getThreadPool()
 FFEventLoop *FFRecorder::getEventLoop()
 {
     return m_eventLoop;
+}
+
+QString FFRecorder::captureTimeText() const
+{
+    return m_captureTimeText;
+}
+
+void FFRecorder::setCaptureTimeText(const QString &timeText)
+{
+    if (m_captureTimeText != timeText) {
+        m_captureTimeText = timeText;
+        emit captureTimeTextChanged();
+    }
 }

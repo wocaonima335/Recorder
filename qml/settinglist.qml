@@ -18,18 +18,18 @@ Item {
 
         ListElement {
             title: "主页"
-            icon: "file:///e:/myProgram/Recorder/record/icons/main.png"
-            iconGray: "file:///e:/myProgram/Recorder/record/icons/main-gray.png"
+            icon: "icons/main.png"
+            iconGray: "icons/main-gray.png"
         }
         ListElement {
             title: "设置"
-            icon: "file:///e:/myProgram/Recorder/record/icons/Setting.png"
-            iconGray: "file:///e:/myProgram/Recorder/record/icons/setting-gray.png"
+            icon: "icons/Setting.png"
+            iconGray: "icons/setting-gray.png"
         }
         ListElement {
             title: "视频"
-            icon: "file:///e:/myProgram/Recorder/record/icons/video.png"
-            iconGray: "file:///e:/myProgram/Recorder/record/icons/video-gray.png"
+            icon: "icons/video.png"
+            iconGray: "icons/video-gray.png"
         }
     }
 
