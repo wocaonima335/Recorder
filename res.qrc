@@ -13,5 +13,9 @@
         <file>qml/settingpage.qml</file>
         <file>qml/videopage.qml</file>
         <file>qml/cuttingpage.qml</file>
+        <file>icons/audio.png</file>
+        <file>icons/microphone.png</file>
+        <file>icons/camera.png</file>
+        <file>icons/screen.png</file>
     </qresource>
 </RCC>

@@ -3,6 +3,7 @@
 
 #include "event/ffclosesourceevent.h"
 #include "event/ffopensourceevent.h"
+#include "queue/ffeventqueue.h"
 
 #include <QDebug>
 #include <QGuiApplication>
@@ -85,7 +86,7 @@ void startRecording()
     auto cameraEvent = EventFactoryManager::getInstance().createEvent(EventCategory::SOURCE,
                                                                       &FFRecorder::getInstance(),
                                                                       cameraParams);
-    cameraEvent->work();
+    FFEventQueue::getInstance().enqueue(cameraEvent.release());
 
     SourceEventParams audioParams;
     audioParams.type = SourceEventType::OPEN_SOURCE;
@@ -96,7 +97,7 @@ void startRecording()
     auto audioEvent = EventFactoryManager::getInstance().createEvent(EventCategory::SOURCE,
                                                                      &FFRecorder::getInstance(),
                                                                      audioParams);
-    audioEvent->work();
+    FFEventQueue::getInstance().enqueue(audioEvent.release());
 }
 
 void stopRecording()
@@ -110,7 +111,7 @@ void stopRecording()
     auto closeCameraEvent = EventFactoryManager::getInstance().createEvent(EventCategory::SOURCE,
                                                                            &FFRecorder::getInstance(),
                                                                            closeCameraParams);
-    closeCameraEvent->work();
+    FFEventQueue::getInstance().enqueue(closeCameraEvent.release());
 
     // 关闭麦克风源
     SourceEventParams closeAudioParams;
@@ -122,7 +123,33 @@ void stopRecording()
     closeAudioEvent->work();
     
     // 停止录制
-    FFRecorder::getInstance().stopRecord();
+    FFEventQueue::getInstance().enqueue(closeAudioEvent.release());
+}
+
+void pauseRecording()
+{
+    ControlEventParams pauseRecordParams;
+    pauseRecordParams.type = ControlEventType::PAUSE;
+    pauseRecordParams.paused = true;
+    pauseRecordParams.ts_us = av_gettime_relative();
+
+    auto pauseRecordEvent = EventFactoryManager::getInstance().createEvent(EventCategory::CONTROL,
+                                                                           &FFRecorder::getInstance(),
+                                                                           pauseRecordParams);
+    FFEventQueue::getInstance().enqueue(pauseRecordEvent.release());
+}
+
+void readyRecording()
+{
+    ControlEventParams readyRecordParams;
+    readyRecordParams.type = ControlEventType::READY;
+    readyRecordParams.paused = false;
+    readyRecordParams.ts_us = av_gettime_relative();
+
+    auto readyRecordEvent = EventFactoryManager::getInstance().createEvent(EventCategory::CONTROL,
+                                                                           &FFRecorder::getInstance(),
+                                                                           readyRecordParams);
+    FFEventQueue::getInstance().enqueue(readyRecordEvent.release());
 }
 
 class QmlBridge : public QObject
@@ -135,6 +162,7 @@ public:
 public slots:
     void onStartRecording() { startRecording(); }
     void onStopRecording() { stopRecording(); }
+    void onPauseRecording() { pauseRecording(); }
 };
 
 int main(int argc, char *argv[])
@@ -160,6 +188,8 @@ int main(int argc, char *argv[])
         static QmlBridge bridge;
         QObject::connect(root, SIGNAL(startRecording()), &bridge, SLOT(onStartRecording()));
         QObject::connect(root, SIGNAL(stopRecording()), &bridge, SLOT(onStopRecording()));
+        QObject::connect(root, SIGNAL(pauseRecording()), &bridge, SLOT(onPauseRecording()));
+
     } else {
         qDebug() << "Failed to load QML root object";
     }

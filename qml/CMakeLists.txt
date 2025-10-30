@@ -25,6 +25,10 @@ qt_add_qml_module(qml_module
         ../icons/setting-gray.png
         ../icons/video-gray.png
         ../icons/video.png
+        ../icons/microphone.png
+        ../icons/audio.png
+        ../icons/camera.png
+        ../icons/screen.png
 )
 
 target_link_libraries(qml_module

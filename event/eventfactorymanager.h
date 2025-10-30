@@ -27,6 +27,7 @@ private:
     {
         registerFactory(EventCategory::SOURCE, std::make_unique<SourceEventFactory>());
         registerFactory(EventCategory::PROCESS, std::make_unique<ProcessEventFactory>());
+        registerFactory(EventCategory::CONTROL, std::make_unique<ControlEventFactory>());
     }
 
 private:

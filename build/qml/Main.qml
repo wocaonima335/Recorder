@@ -22,8 +22,6 @@ ApplicationWindow{
     // 添加录制相关信号
     signal startRecording()
     signal stopRecording()
-    signal pauseRecording()
-    signal readyRecording()
 
     Item
     {
@@ -97,29 +95,6 @@ ApplicationWindow{
                 height: parent.height
                 visible: true
                 color: "#B9E8FE"
-                opacity:0.6
-                MouseArea {
-                    hoverEnabled: true
-                    anchors.fill: parent
-                    opacity: 1
-
-                    onEntered: {
-                        screenRecordArea.opacity = 1
-                    }
-                    onExited: {
-                        screenRecordArea.opacity = 0.6
-                    }
-                }
-
-                Image
-                {
-                    id:screenIcon
-                    anchors.centerIn:parent
-                    source:"icons/screen.png"
-                    width : 40
-                    height: 40
-                    fillMode: Image.PreserveAspectCrop
-                }
             }
 
             Rectangle {
@@ -128,29 +103,6 @@ ApplicationWindow{
                 height: parent.height
                 visible: true
                 color: "#B9E8FE"
-                opacity: 0.6
-
-                MouseArea {
-                    hoverEnabled: true
-                    anchors.fill: parent
-                    opacity: 1
-
-                    onEntered: {
-                        cameraRecordArea.opacity = 1
-                    }
-                    onExited: {
-                        cameraRecordArea.opacity = 0.6
-                    }
-                }
-
-                Image {
-                    id: cameraIcon
-                    anchors.centerIn: parent
-                    source: "icons/camera.png"
-                    width: 30
-                    height: 30
-                    fillMode: Image.PreserveAspectCrop
-                }
             }
         }
 
@@ -190,20 +142,8 @@ ApplicationWindow{
             Rectangle { anchors.left: parent.left;  anchors.top: parent.top; anchors.bottom: parent.bottom; width: sepWidth; color: sepColor; opacity: sepOpacity }
             Rectangle { anchors.right: parent.right; anchors.top: parent.top; anchors.bottom: parent.bottom; width: sepWidth; color: sepColor; opacity: sepOpacity }
 
-            Image
-            {
-                id:microPhoneIcon
-                anchors.centerIn:parent
-                source:"icons/microphone.png"
-                width : 30
-                height: 30
-                fillMode: Image.PreserveAspectCrop
-            }
-
             Text {
-                anchors.bottom: parent.bottom
-                anchors.bottomMargin : 10
-                anchors.horizontalCenter:parent.horizontalCenter
+                anchors.centerIn: parent
                 text: "MICROPHONE"
                 color: "#FFFFFF"
                 font.pixelSize: 8
@@ -223,26 +163,13 @@ ApplicationWindow{
             Rectangle { anchors.left: parent.left;  anchors.top: parent.top; anchors.bottom: parent.bottom; width: sepWidth; color: sepColor; opacity: sepOpacity }
             Rectangle { anchors.right: parent.right; anchors.top: parent.top; anchors.bottom: parent.bottom; width: sepWidth; color: sepColor; opacity: sepOpacity }
 
-            Image
-            {
-                id:audioIcon
-                anchors.centerIn:parent
-                source:"icons/audio.png"
-                width : 30
-                height: 30
-                fillMode: Image.PreserveAspectCrop
-            }
-
             Text {
-                anchors.bottom: parent.bottom
-                anchors.bottomMargin : 10
-                anchors.horizontalCenter:parent.horizontalCenter
+                anchors.centerIn: parent
                 text: "Audio"
                 color: "#FFFFFF"
-                font.pixelSize: 10
+                font.pixelSize: 8
                 font.bold: true
             }
-
         }
 
        Item {
@@ -335,8 +262,6 @@ ApplicationWindow{
                 color: "transparent"
                 z: 1
 
-                property bool isPause: false
-
                 Image {
                     id: pauseIcon
                     source: "icons/Pause.png"
@@ -347,25 +272,6 @@ ApplicationWindow{
                     visible:parent.opacity > 0
                     opacity : parent.opacity
                 }
-
-                SequentialAnimation on opacity {
-                         id: blinkAnimation
-                         running: stopButton.isPause && stopButton.opacity > 0
-                         loops: Animation.Infinite
-
-                         NumberAnimation {
-                             from: 1.0
-                             to: 0.3
-                             duration: 500
-                             easing.type: Easing.InOutQuad
-                         }
-                         NumberAnimation {
-                             from: 0.3
-                             to: 1.0
-                             duration: 500
-                             easing.type: Easing.InOutQuad
-                         }
-                     }
 
                 // 只有在录制时才显示
                 opacity: recordButton.isRecording ? 1.0 : 0.0
@@ -383,42 +289,15 @@ ApplicationWindow{
                 MouseArea {
                     anchors.fill: parent
                     onClicked: {
-                        stopButton.isPause = !stopButton.isPause
-                        if(stopButton.isPause)
-                        {
-                            mainwindow.pauseRecording()
-                        }
-                        else
-                        {
-                            mainwindow.readyRecording()
-                        }
+                     
                     }
                 }
 
             }
         }
     }
-    Item
-    {
-        id:screenTitle
-        anchors.top : optionsArea.bottom
-        anchors.left : parent.left
-        anchors.right : parent.right
-        height:20
-        Text
-        {
-            anchors.left:parent.left
-            anchors.leftMargin : 10
-            anchors.horizontalCenter:parent.horizontalCenter
-            text:"1080 X 720 : Screen"
-            color:"white"
-            font.pixelSize: 12
-        }
-    }
 
     RowLayout {
-
-        id:contentArea
         anchors.top: optionsArea.bottom
         anchors.topMargin: 20
         anchors.left: parent.left

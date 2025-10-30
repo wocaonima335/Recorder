@@ -22,6 +22,8 @@ struct ControlEventParams : public EventParameters
     ControlEventType type;
     std::string url;
     std::string format;
+    bool paused = false;
+    int64_t ts_us = 0;
 };
 
 struct SourceEventParams : public EventParameters
@@ -32,17 +34,10 @@ struct SourceEventParams : public EventParameters
     std::string format;
 };
 
-struct ParameterEventParams : public EventParameters
-{
-    ParameterEventType type;
-    std::variant<double, int, std::pair<int, int>> value;
-    demuxerType sourceType = CAMERA;
-};
-
 struct ProcessEventParams : public EventParameters
 {
     ProcessEventType type;
-    int curSec;
+    int curSec = 0;
 };
 
 class AbstractEventFactory

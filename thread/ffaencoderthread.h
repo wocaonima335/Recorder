@@ -3,6 +3,9 @@
 
 #include "ffthread.h"
 
+#include <condition_variable>
+#include <mutex>
+
 extern "C" {
 #include <libavformat/avformat.h>
 }
@@ -24,6 +27,8 @@ public:
     void wakeAllThread();
     void setStartTimeUs(int64_t us) { start_time_us = us; }
 
+    void onPauseChanged(bool pauseFlag, int64_t ts_us);
+
 protected:
     virtual void run() override;
 
@@ -42,6 +47,13 @@ private:
     int64_t firstFramePts = 0;
     bool firstFrame = true;
     int64_t start_time_us = 0;
+
+    std::atomic<bool> paused{false};
+    int64_t pause_start_us{0};
+    int64_t pause_accum_us{0};
+    bool first_after_resume{false}; // 音频不需要关键帧，这里仅保留结构一致性
+    std::mutex pause_mutex;
+    std::condition_variable pause_cv;
 };
 
 #endif // FFAENCODERTHREAD_H
