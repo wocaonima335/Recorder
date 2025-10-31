@@ -5,6 +5,7 @@ import QtQuick.Window 2.15
 import QtQuick.Controls.Material 2.15
 
 
+
 ApplicationWindow{
     id: mainwindow
     width: 640
@@ -398,22 +399,13 @@ ApplicationWindow{
             }
         }
     }
-    Item
-    {
-        id:screenTitle
-        anchors.top : optionsArea.bottom
-        anchors.left : parent.left
-        anchors.right : parent.right
-        height:20
-        Text
-        {
-            anchors.left:parent.left
-            anchors.leftMargin : 10
-            anchors.horizontalCenter:parent.horizontalCenter
-            text:"1080 X 720 : Screen"
-            color:"white"
-            font.pixelSize: 12
-        }
+
+    ScreenTitle {
+        id: screenTitle
+        anchors.top: optionsArea.bottom
+        anchors.left: parent.left
+        anchors.right: parent.right
+        title: "1080 X 720 : Screen"
     }
 
     RowLayout {

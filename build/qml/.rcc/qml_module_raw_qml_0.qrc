@@ -1,0 +1,23 @@
+<RCC>
+  <qresource prefix="/qt/qml/bandicam/">
+    <file alias="Main.qml">E:/myProgram/Recorder/record/qml/Main.qml</file>
+    <file alias="videopage.qml">E:/myProgram/Recorder/record/qml/videopage.qml</file>
+    <file alias="settingpage.qml">E:/myProgram/Recorder/record/qml/settingpage.qml</file>
+    <file alias="cuttingpage.qml">E:/myProgram/Recorder/record/qml/cuttingpage.qml</file>
+    <file alias="settinglist.qml">E:/myProgram/Recorder/record/qml/settinglist.qml</file>
+    <file alias="ScreenTitle.qml">E:/myProgram/Recorder/record/qml/ScreenTitle.qml</file>
+    <file alias="../icons/Pause.png">E:/myProgram/Recorder/record/qml/../icons/Pause.png</file>
+    <file alias="../icons/Setting.png">E:/myProgram/Recorder/record/qml/../icons/Setting.png</file>
+    <file alias="../icons/main.png">E:/myProgram/Recorder/record/qml/../icons/main.png</file>
+    <file alias="../icons/main-gray.png">E:/myProgram/Recorder/record/qml/../icons/main-gray.png</file>
+    <file alias="../icons/record.png">E:/myProgram/Recorder/record/qml/../icons/record.png</file>
+    <file alias="../icons/setting-gray.png">E:/myProgram/Recorder/record/qml/../icons/setting-gray.png</file>
+    <file alias="../icons/video-gray.png">E:/myProgram/Recorder/record/qml/../icons/video-gray.png</file>
+    <file alias="../icons/video.png">E:/myProgram/Recorder/record/qml/../icons/video.png</file>
+    <file alias="../icons/microphone.png">E:/myProgram/Recorder/record/qml/../icons/microphone.png</file>
+    <file alias="../icons/audio.png">E:/myProgram/Recorder/record/qml/../icons/audio.png</file>
+    <file alias="../icons/camera.png">E:/myProgram/Recorder/record/qml/../icons/camera.png</file>
+    <file alias="../icons/screen.png">E:/myProgram/Recorder/record/qml/../icons/screen.png</file>
+  </qresource>
+</RCC>
+

@@ -53,6 +53,7 @@ add_subdirectory(event)
 add_subdirectory(thread)
 add_subdirectory(recorder)
 add_subdirectory(encoder)
+add_subdirectory(opengl)
 
 # 主可执行文件
 qt_add_executable(appbandicam
@@ -90,6 +91,7 @@ target_link_libraries(appbandicam
         thread_module
         recorder_module
         encoder_module
+        opengl_module
 
 )
 
@@ -116,4 +118,5 @@ install(TARGETS appbandicam
 install(FILES ${FFMPEG_DLLS}
     DESTINATION ${CMAKE_INSTALL_BINDIR}
 )
+
 

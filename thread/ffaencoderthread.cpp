@@ -71,6 +71,16 @@ void FFAEncoderThread::run()
             initEncoder(frame);
         }
 
+        // 暂停时软暂停：丢帧并短暂等待，防止队列堆积与忙等
+        if (paused.load(std::memory_order_acquire)) {
+            AVFrameTraits::release(frame);
+            std::unique_lock<std::mutex> lk(pause_mutex);
+            pause_cv.wait_for(lk, std::chrono::milliseconds(10), [this] {
+                return !paused.load(std::memory_order_acquire) || m_stop;
+            });
+            continue;
+        }
+
         // 用统一墙钟计算音频 PTS
         int64_t now_us = av_gettime_relative();
         int64_t wall_us = now_us - start_time_us;

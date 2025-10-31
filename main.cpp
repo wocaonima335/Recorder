@@ -159,10 +159,11 @@ public:
     explicit QmlBridge(QObject *parent = nullptr)
         : QObject(parent)
     {}
+
 public slots:
-    void onStartRecording() { startRecording(); }
     void onStopRecording() { stopRecording(); }
     void onPauseRecording() { pauseRecording(); }
+    void onStartRecording() { startRecording(); }
 };
 
 int main(int argc, char *argv[])

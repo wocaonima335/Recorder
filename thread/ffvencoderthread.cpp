@@ -70,7 +70,6 @@ void FFVEncoderThread::onPauseChanged(bool pausedFlag, int64_t ts_us)
     }
 }
 
-// thread/ffvencoderthread.cpp（参考片段：在 run() 中校正 PTS 与暂停行为）
 void FFVEncoderThread::run()
 {
     int64_t frame_count = 0;

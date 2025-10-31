@@ -16,6 +16,7 @@ qt_add_qml_module(qml_module
      QML_FILES settingpage.qml
      QML_FILES cuttingpage.qml
      QML_FILES settinglist.qml
+     QML_FILES ScreenTitle.qml
     RESOURCES
         ../icons/Pause.png
         ../icons/Setting.png
