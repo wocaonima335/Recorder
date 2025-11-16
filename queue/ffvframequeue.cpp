@@ -13,17 +13,17 @@ FFVFrameQueue::~FFVFrameQueue()
 
 void FFVFrameQueue::enqueue(AVFrame *srcFrame)
 {
-    auto start = std::chrono::steady_clock::now();
+    // auto start = std::chrono::steady_clock::now();
     impl->enqueueFromSrc(srcFrame);
-    auto end = std::chrono::steady_clock::now();
+    // auto end = std::chrono::steady_clock::now();
 
     m_enqueueCount.fetch_add(1, std::memory_order_relaxed);
 
-    auto wait_ms = std::chrono::duration_cast<std::chrono::milliseconds>(end - start).count();
-    if (wait_ms > 50) { // 超过50ms警告
-        std::cerr << "[VFrameQueue] enqueue blocked for " << wait_ms
-                  << "ms, queue_len=" << impl->length() << std::endl;
-    }
+    // auto wait_ms = std::chrono::duration_cast<std::chrono::milliseconds>(end - start).count();
+    // if (wait_ms > 50) { // 超过50ms警告
+    //     std::cerr << "[VFrameQueue] enqueue blocked for " << wait_ms
+    //               << "ms, queue_len=" << impl->length() << std::endl;
+    // }
 }
 
 AVFrame *FFVFrameQueue::dequeue()

@@ -4,7 +4,8 @@
 
 FFGLRenderer::FFGLRenderer(FFGLItem *item)
     : m_item(item)
-{}
+{
+}
 
 QOpenGLFramebufferObject *FFGLRenderer::createFramebufferObject(const QSize &size)
 {
@@ -25,7 +26,8 @@ void FFGLRenderer::render()
     ensureTextures();
     {
         QMutexLocker lk(&m_item->mtx);
-        if (m_item->width > 0 && m_item->height > 0 && !m_item->yData.isEmpty()) {
+        if (m_item->width > 0 && m_item->height > 0 && !m_item->yData.isEmpty())
+        {
             int w = m_item->width, h = m_item->height;
             int uvW = w / 2, uvH = h / 2;
 
@@ -98,15 +100,25 @@ void FFGLRenderer::ensureProgram()
     program->addShaderFromSourceFile(QOpenGLShader::Vertex, ":/shaderSource/source.vert");
     program->addShaderFromSourceFile(QOpenGLShader::Fragment, ":/shaderSource/source.frag");
     program->link();
+    qDebug() << "GLSL log:" << program->log();
+    auto ctx = QOpenGLContext::currentContext();
+    qDebug() << "GL version:" << ctx->format().majorVersion() << "." << ctx->format().minorVersion()
+             << ", profile:" << ctx->format().profile();
 }
 
 void FFGLRenderer::ensureBuffers()
 {
     if (vao)
         return;
-    static const float vertices[]
-        = {-1.f, 1.f, 0.f, 0.f, -1.f, -1.f, 0.f, 1.f, 1.f, -1.f, 1.f, 1.f, 1.f, 1.f, 1.f, 0.f};
-    static const unsigned int indices[] = {1, 2, 3, 4};
+    // static const float vertices[] = {-1.f, 1.f, 0.f, 0.f, -1.f, -1.f, 0.f, 1.f, 1.f, -1.f, 1.f, 1.f, 1.f, 1.f, 1.f, 0.f};
+    static const float vertices[] = {
+        -1.f, 1.f, 0.f, 1.f,  // 左上角，v从0改成1
+        -1.f, -1.f, 0.f, 0.f, // 左下角
+        1.f, -1.f, 1.f, 0.f,  // 右下角
+        1.f, 1.f, 1.f, 1.f    // 右上角
+    };
+
+    static const unsigned int indices[] = {0, 1, 2, 3};
     glGenVertexArrays(1, &vao);
     glGenBuffers(1, &vbo);
     glGenBuffers(1, &ebo);
@@ -116,9 +128,9 @@ void FFGLRenderer::ensureBuffers()
     glBufferData(GL_ARRAY_BUFFER, sizeof(vertices), vertices, GL_STATIC_DRAW);
     glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, ebo);
     glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(indices), indices, GL_STATIC_DRAW);
-    glVertexAttribPointer(0, 2, GL_FLOAT, GL_FALSE, 4 * sizeof(float), (void *) 0);
+    glVertexAttribPointer(0, 2, GL_FLOAT, GL_FALSE, 4 * sizeof(float), (void *)0);
     glEnableVertexAttribArray(0);
-    glVertexAttribPointer(1, 2, GL_FLOAT, GL_FALSE, 4 * sizeof(float), (void *) (2 * sizeof(float)));
+    glVertexAttribPointer(1, 2, GL_FLOAT, GL_FALSE, 4 * sizeof(float), (void *)(2 * sizeof(float)));
     glEnableVertexAttribArray(1);
     glBindVertexArray(0);
 }
@@ -132,7 +144,8 @@ void FFGLRenderer::ensureTextures()
     glGenTextures(1, &vTex);
 
     // 先绑定黑屏
-    auto initTex = [&](GLuint tex, uint8_t v) {
+    auto initTex = [&](GLuint tex, uint8_t v)
+    {
         glBindTexture(GL_TEXTURE_2D, tex);
         glTexImage2D(GL_TEXTURE_2D, 0, GL_RED, 1, 1, 0, GL_RED, GL_UNSIGNED_BYTE, &v);
         glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);

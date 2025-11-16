@@ -1,410 +1,410 @@
 [
 {
-  "directory": "E:/myProgram/Recorder/record/build",
-  "command": "F:\\Qt\\Tools\\mingw1310_64\\bin\\g++.exe -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NEEDS_QMAIN -DQT_NETWORK_LIB -DQT_OPENGL_LIB -DQT_QMLINTEGRATION_LIB -DQT_QMLMODELS_LIB -DQT_QML_LIB -DQT_QUICK_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64 @CMakeFiles/appbandicam.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\appbandicam.dir\\appbandicam_autogen\\mocs_compilation.cpp.obj -c E:\\myProgram\\Recorder\\record\\build\\appbandicam_autogen\\mocs_compilation.cpp",
-  "file": "E:/myProgram/Recorder/record/build/appbandicam_autogen/mocs_compilation.cpp",
+  "directory": "D:/Qtprogram/bandicam/build",
+  "command": "D:\\360Downloads\\QT\\Tools\\mingw1310_64\\bin\\g++.exe -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NEEDS_QMAIN -DQT_NETWORK_LIB -DQT_OPENGL_LIB -DQT_QMLINTEGRATION_LIB -DQT_QMLMETA_LIB -DQT_QMLMODELS_LIB -DQT_QMLWORKERSCRIPT_LIB -DQT_QML_LIB -DQT_QUICK_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64 @CMakeFiles/appbandicam.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\appbandicam.dir\\appbandicam_autogen\\mocs_compilation.cpp.obj -c D:\\Qtprogram\\bandicam\\build\\appbandicam_autogen\\mocs_compilation.cpp",
+  "file": "D:/Qtprogram/bandicam/build/appbandicam_autogen/mocs_compilation.cpp",
   "output": "CMakeFiles/appbandicam.dir/appbandicam_autogen/mocs_compilation.cpp.obj"
 },
 {
-  "directory": "E:/myProgram/Recorder/record/build",
-  "command": "F:\\Qt\\Tools\\mingw1310_64\\bin\\g++.exe -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NEEDS_QMAIN -DQT_NETWORK_LIB -DQT_OPENGL_LIB -DQT_QMLINTEGRATION_LIB -DQT_QMLMODELS_LIB -DQT_QML_LIB -DQT_QUICK_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64 @CMakeFiles/appbandicam.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\appbandicam.dir\\main.cpp.obj -c E:\\myProgram\\Recorder\\record\\main.cpp",
-  "file": "E:/myProgram/Recorder/record/main.cpp",
+  "directory": "D:/Qtprogram/bandicam/build",
+  "command": "D:\\360Downloads\\QT\\Tools\\mingw1310_64\\bin\\g++.exe -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NEEDS_QMAIN -DQT_NETWORK_LIB -DQT_OPENGL_LIB -DQT_QMLINTEGRATION_LIB -DQT_QMLMETA_LIB -DQT_QMLMODELS_LIB -DQT_QMLWORKERSCRIPT_LIB -DQT_QML_LIB -DQT_QUICK_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64 @CMakeFiles/appbandicam.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\appbandicam.dir\\main.cpp.obj -c D:\\Qtprogram\\bandicam\\main.cpp",
+  "file": "D:/Qtprogram/bandicam/main.cpp",
   "output": "CMakeFiles/appbandicam.dir/main.cpp.obj"
 },
 {
-  "directory": "E:/myProgram/Recorder/record/build/demuxer",
-  "command": "F:\\Qt\\Tools\\mingw1310_64\\bin\\g++.exe -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64 @CMakeFiles/demuxer_module.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\demuxer_module.dir\\demuxer_module_autogen\\mocs_compilation.cpp.obj -c E:\\myProgram\\Recorder\\record\\build\\demuxer\\demuxer_module_autogen\\mocs_compilation.cpp",
-  "file": "E:/myProgram/Recorder/record/build/demuxer/demuxer_module_autogen/mocs_compilation.cpp",
+  "directory": "D:/Qtprogram/bandicam/build",
+  "command": "D:\\360Downloads\\QT\\Tools\\mingw1310_64\\bin\\g++.exe -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NEEDS_QMAIN -DQT_NETWORK_LIB -DQT_OPENGL_LIB -DQT_QMLINTEGRATION_LIB -DQT_QMLMETA_LIB -DQT_QMLMODELS_LIB -DQT_QMLWORKERSCRIPT_LIB -DQT_QML_LIB -DQT_QUICK_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64 @CMakeFiles/appbandicam.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\appbandicam.dir\\appbandicam_autogen\\EWIEGA46WW\\qrc_res.cpp.obj -c D:\\Qtprogram\\bandicam\\build\\appbandicam_autogen\\EWIEGA46WW\\qrc_res.cpp",
+  "file": "D:/Qtprogram/bandicam/build/appbandicam_autogen/EWIEGA46WW/qrc_res.cpp",
+  "output": "CMakeFiles/appbandicam.dir/appbandicam_autogen/EWIEGA46WW/qrc_res.cpp.obj"
+},
+{
+  "directory": "D:/Qtprogram/bandicam/build/demuxer",
+  "command": "D:\\360Downloads\\QT\\Tools\\mingw1310_64\\bin\\g++.exe -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64 @CMakeFiles/demuxer_module.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\demuxer_module.dir\\demuxer_module_autogen\\mocs_compilation.cpp.obj -c D:\\Qtprogram\\bandicam\\build\\demuxer\\demuxer_module_autogen\\mocs_compilation.cpp",
+  "file": "D:/Qtprogram/bandicam/build/demuxer/demuxer_module_autogen/mocs_compilation.cpp",
   "output": "demuxer/CMakeFiles/demuxer_module.dir/demuxer_module_autogen/mocs_compilation.cpp.obj"
 },
 {
-  "directory": "E:/myProgram/Recorder/record/build/demuxer",
-  "command": "F:\\Qt\\Tools\\mingw1310_64\\bin\\g++.exe -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64 @CMakeFiles/demuxer_module.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\demuxer_module.dir\\demuxer.cpp.obj -c E:\\myProgram\\Recorder\\record\\demuxer\\demuxer.cpp",
-  "file": "E:/myProgram/Recorder/record/demuxer/demuxer.cpp",
+  "directory": "D:/Qtprogram/bandicam/build/demuxer",
+  "command": "D:\\360Downloads\\QT\\Tools\\mingw1310_64\\bin\\g++.exe -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64 @CMakeFiles/demuxer_module.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\demuxer_module.dir\\demuxer.cpp.obj -c D:\\Qtprogram\\bandicam\\demuxer\\demuxer.cpp",
+  "file": "D:/Qtprogram/bandicam/demuxer/demuxer.cpp",
   "output": "demuxer/CMakeFiles/demuxer_module.dir/demuxer.cpp.obj"
 },
 {
-  "directory": "E:/myProgram/Recorder/record/build/qml",
-  "command": "F:\\Qt\\Tools\\mingw1310_64\\bin\\g++.exe -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_OPENGL_LIB -DQT_QMLINTEGRATION_LIB -DQT_QMLMODELS_LIB -DQT_QML_LIB -DQT_QUICK_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64 @CMakeFiles/qml_module.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\qml_module.dir\\qml_module_autogen\\mocs_compilation.cpp.obj -c E:\\myProgram\\Recorder\\record\\build\\qml\\qml_module_autogen\\mocs_compilation.cpp",
-  "file": "E:/myProgram/Recorder/record/build/qml/qml_module_autogen/mocs_compilation.cpp",
+  "directory": "D:/Qtprogram/bandicam/build/qml",
+  "command": "D:\\360Downloads\\QT\\Tools\\mingw1310_64\\bin\\g++.exe -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_OPENGL_LIB -DQT_QMLINTEGRATION_LIB -DQT_QMLMETA_LIB -DQT_QMLMODELS_LIB -DQT_QMLWORKERSCRIPT_LIB -DQT_QML_LIB -DQT_QUICK_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64 @CMakeFiles/qml_module.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\qml_module.dir\\qml_module_autogen\\mocs_compilation.cpp.obj -c D:\\Qtprogram\\bandicam\\build\\qml\\qml_module_autogen\\mocs_compilation.cpp",
+  "file": "D:/Qtprogram/bandicam/build/qml/qml_module_autogen/mocs_compilation.cpp",
   "output": "qml/CMakeFiles/qml_module.dir/qml_module_autogen/mocs_compilation.cpp.obj"
 },
 {
-  "directory": "E:/myProgram/Recorder/record/build/qml",
-  "command": "F:\\Qt\\Tools\\mingw1310_64\\bin\\g++.exe -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_OPENGL_LIB -DQT_QMLINTEGRATION_LIB -DQT_QMLMODELS_LIB -DQT_QML_LIB -DQT_QUICK_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64 @CMakeFiles/qml_module.dir/includes_CXX.rsp -g -std=gnu++17 -Wa,-mbig-obj -o CMakeFiles\\qml_module.dir\\qml_module_qmltyperegistrations.cpp.obj -c E:\\myProgram\\Recorder\\record\\build\\qml\\qml_module_qmltyperegistrations.cpp",
-  "file": "E:/myProgram/Recorder/record/build/qml/qml_module_qmltyperegistrations.cpp",
+  "directory": "D:/Qtprogram/bandicam/build/qml",
+  "command": "D:\\360Downloads\\QT\\Tools\\mingw1310_64\\bin\\g++.exe -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_OPENGL_LIB -DQT_QMLINTEGRATION_LIB -DQT_QMLMETA_LIB -DQT_QMLMODELS_LIB -DQT_QMLWORKERSCRIPT_LIB -DQT_QML_LIB -DQT_QUICK_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64 @CMakeFiles/qml_module.dir/includes_CXX.rsp -g -std=gnu++17 -Wa,-mbig-obj -o CMakeFiles\\qml_module.dir\\qml_module_qmltyperegistrations.cpp.obj -c D:\\Qtprogram\\bandicam\\build\\qml\\qml_module_qmltyperegistrations.cpp",
+  "file": "D:/Qtprogram/bandicam/build/qml/qml_module_qmltyperegistrations.cpp",
   "output": "qml/CMakeFiles/qml_module.dir/qml_module_qmltyperegistrations.cpp.obj"
 },
 {
-  "directory": "E:/myProgram/Recorder/record/build/qml",
-  "command": "F:\\Qt\\Tools\\mingw1310_64\\bin\\g++.exe -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_OPENGL_LIB -DQT_QMLINTEGRATION_LIB -DQT_QMLMODELS_LIB -DQT_QML_LIB -DQT_QUICK_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64 @CMakeFiles/qml_module.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\qml_module.dir\\.rcc\\qmlcache\\qml_module_Main_qml.cpp.obj -c E:\\myProgram\\Recorder\\record\\build\\qml\\.rcc\\qmlcache\\qml_module_Main_qml.cpp",
-  "file": "E:/myProgram/Recorder/record/build/qml/.rcc/qmlcache/qml_module_Main_qml.cpp",
+  "directory": "D:/Qtprogram/bandicam/build/qml",
+  "command": "D:\\360Downloads\\QT\\Tools\\mingw1310_64\\bin\\g++.exe -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_OPENGL_LIB -DQT_QMLINTEGRATION_LIB -DQT_QMLMETA_LIB -DQT_QMLMODELS_LIB -DQT_QMLWORKERSCRIPT_LIB -DQT_QML_LIB -DQT_QUICK_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64 @CMakeFiles/qml_module.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\qml_module.dir\\.qt\\rcc\\qrc_qmake_bandicam.cpp.obj -c D:\\Qtprogram\\bandicam\\build\\qml\\.qt\\rcc\\qrc_qmake_bandicam.cpp",
+  "file": "D:/Qtprogram/bandicam/build/qml/.qt/rcc/qrc_qmake_bandicam.cpp",
+  "output": "qml/CMakeFiles/qml_module.dir/.qt/rcc/qrc_qmake_bandicam.cpp.obj"
+},
+{
+  "directory": "D:/Qtprogram/bandicam/build/qml",
+  "command": "D:\\360Downloads\\QT\\Tools\\mingw1310_64\\bin\\g++.exe -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_OPENGL_LIB -DQT_QMLINTEGRATION_LIB -DQT_QMLMETA_LIB -DQT_QMLMODELS_LIB -DQT_QMLWORKERSCRIPT_LIB -DQT_QML_LIB -DQT_QUICK_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64 @CMakeFiles/qml_module.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\qml_module.dir\\.rcc\\qmlcache\\qml_module_qmlcache_loader.cpp.obj -c D:\\Qtprogram\\bandicam\\build\\qml\\.rcc\\qmlcache\\qml_module_qmlcache_loader.cpp",
+  "file": "D:/Qtprogram/bandicam/build/qml/.rcc/qmlcache/qml_module_qmlcache_loader.cpp",
+  "output": "qml/CMakeFiles/qml_module.dir/.rcc/qmlcache/qml_module_qmlcache_loader.cpp.obj"
+},
+{
+  "directory": "D:/Qtprogram/bandicam/build/qml",
+  "command": "D:\\360Downloads\\QT\\Tools\\mingw1310_64\\bin\\g++.exe -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_OPENGL_LIB -DQT_QMLINTEGRATION_LIB -DQT_QMLMETA_LIB -DQT_QMLMODELS_LIB -DQT_QMLWORKERSCRIPT_LIB -DQT_QML_LIB -DQT_QUICK_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64 @CMakeFiles/qml_module.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\qml_module.dir\\.rcc\\qmlcache\\qml_module_Main_qml.cpp.obj -c D:\\Qtprogram\\bandicam\\build\\qml\\.rcc\\qmlcache\\qml_module_Main_qml.cpp",
+  "file": "D:/Qtprogram/bandicam/build/qml/.rcc/qmlcache/qml_module_Main_qml.cpp",
   "output": "qml/CMakeFiles/qml_module.dir/.rcc/qmlcache/qml_module_Main_qml.cpp.obj"
 },
 {
-  "directory": "E:/myProgram/Recorder/record/build/qml",
-  "command": "F:\\Qt\\Tools\\mingw1310_64\\bin\\g++.exe -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_OPENGL_LIB -DQT_QMLINTEGRATION_LIB -DQT_QMLMODELS_LIB -DQT_QML_LIB -DQT_QUICK_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64 @CMakeFiles/qml_module.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\qml_module.dir\\.rcc\\qmlcache\\qml_module_videopage_qml.cpp.obj -c E:\\myProgram\\Recorder\\record\\build\\qml\\.rcc\\qmlcache\\qml_module_videopage_qml.cpp",
-  "file": "E:/myProgram/Recorder/record/build/qml/.rcc/qmlcache/qml_module_videopage_qml.cpp",
+  "directory": "D:/Qtprogram/bandicam/build/qml",
+  "command": "D:\\360Downloads\\QT\\Tools\\mingw1310_64\\bin\\g++.exe -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_OPENGL_LIB -DQT_QMLINTEGRATION_LIB -DQT_QMLMETA_LIB -DQT_QMLMODELS_LIB -DQT_QMLWORKERSCRIPT_LIB -DQT_QML_LIB -DQT_QUICK_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64 @CMakeFiles/qml_module.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\qml_module.dir\\.rcc\\qmlcache\\qml_module_videopage_qml.cpp.obj -c D:\\Qtprogram\\bandicam\\build\\qml\\.rcc\\qmlcache\\qml_module_videopage_qml.cpp",
+  "file": "D:/Qtprogram/bandicam/build/qml/.rcc/qmlcache/qml_module_videopage_qml.cpp",
   "output": "qml/CMakeFiles/qml_module.dir/.rcc/qmlcache/qml_module_videopage_qml.cpp.obj"
 },
 {
-  "directory": "E:/myProgram/Recorder/record/build/qml",
-  "command": "F:\\Qt\\Tools\\mingw1310_64\\bin\\g++.exe -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_OPENGL_LIB -DQT_QMLINTEGRATION_LIB -DQT_QMLMODELS_LIB -DQT_QML_LIB -DQT_QUICK_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64 @CMakeFiles/qml_module.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\qml_module.dir\\.rcc\\qmlcache\\qml_module_settingpage_qml.cpp.obj -c E:\\myProgram\\Recorder\\record\\build\\qml\\.rcc\\qmlcache\\qml_module_settingpage_qml.cpp",
-  "file": "E:/myProgram/Recorder/record/build/qml/.rcc/qmlcache/qml_module_settingpage_qml.cpp",
+  "directory": "D:/Qtprogram/bandicam/build/qml",
+  "command": "D:\\360Downloads\\QT\\Tools\\mingw1310_64\\bin\\g++.exe -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_OPENGL_LIB -DQT_QMLINTEGRATION_LIB -DQT_QMLMETA_LIB -DQT_QMLMODELS_LIB -DQT_QMLWORKERSCRIPT_LIB -DQT_QML_LIB -DQT_QUICK_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64 @CMakeFiles/qml_module.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\qml_module.dir\\.rcc\\qmlcache\\qml_module_settingpage_qml.cpp.obj -c D:\\Qtprogram\\bandicam\\build\\qml\\.rcc\\qmlcache\\qml_module_settingpage_qml.cpp",
+  "file": "D:/Qtprogram/bandicam/build/qml/.rcc/qmlcache/qml_module_settingpage_qml.cpp",
   "output": "qml/CMakeFiles/qml_module.dir/.rcc/qmlcache/qml_module_settingpage_qml.cpp.obj"
 },
 {
-  "directory": "E:/myProgram/Recorder/record/build/qml",
-  "command": "F:\\Qt\\Tools\\mingw1310_64\\bin\\g++.exe -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_OPENGL_LIB -DQT_QMLINTEGRATION_LIB -DQT_QMLMODELS_LIB -DQT_QML_LIB -DQT_QUICK_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64 @CMakeFiles/qml_module.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\qml_module.dir\\.rcc\\qmlcache\\qml_module_cuttingpage_qml.cpp.obj -c E:\\myProgram\\Recorder\\record\\build\\qml\\.rcc\\qmlcache\\qml_module_cuttingpage_qml.cpp",
-  "file": "E:/myProgram/Recorder/record/build/qml/.rcc/qmlcache/qml_module_cuttingpage_qml.cpp",
+  "directory": "D:/Qtprogram/bandicam/build/qml",
+  "command": "D:\\360Downloads\\QT\\Tools\\mingw1310_64\\bin\\g++.exe -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_OPENGL_LIB -DQT_QMLINTEGRATION_LIB -DQT_QMLMETA_LIB -DQT_QMLMODELS_LIB -DQT_QMLWORKERSCRIPT_LIB -DQT_QML_LIB -DQT_QUICK_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64 @CMakeFiles/qml_module.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\qml_module.dir\\.rcc\\qmlcache\\qml_module_cuttingpage_qml.cpp.obj -c D:\\Qtprogram\\bandicam\\build\\qml\\.rcc\\qmlcache\\qml_module_cuttingpage_qml.cpp",
+  "file": "D:/Qtprogram/bandicam/build/qml/.rcc/qmlcache/qml_module_cuttingpage_qml.cpp",
   "output": "qml/CMakeFiles/qml_module.dir/.rcc/qmlcache/qml_module_cuttingpage_qml.cpp.obj"
 },
 {
-  "directory": "E:/myProgram/Recorder/record/build/qml",
-  "command": "F:\\Qt\\Tools\\mingw1310_64\\bin\\g++.exe -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_OPENGL_LIB -DQT_QMLINTEGRATION_LIB -DQT_QMLMODELS_LIB -DQT_QML_LIB -DQT_QUICK_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64 @CMakeFiles/qml_module.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\qml_module.dir\\.rcc\\qmlcache\\qml_module_settinglist_qml.cpp.obj -c E:\\myProgram\\Recorder\\record\\build\\qml\\.rcc\\qmlcache\\qml_module_settinglist_qml.cpp",
-  "file": "E:/myProgram/Recorder/record/build/qml/.rcc/qmlcache/qml_module_settinglist_qml.cpp",
+  "directory": "D:/Qtprogram/bandicam/build/qml",
+  "command": "D:\\360Downloads\\QT\\Tools\\mingw1310_64\\bin\\g++.exe -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_OPENGL_LIB -DQT_QMLINTEGRATION_LIB -DQT_QMLMETA_LIB -DQT_QMLMODELS_LIB -DQT_QMLWORKERSCRIPT_LIB -DQT_QML_LIB -DQT_QUICK_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64 @CMakeFiles/qml_module.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\qml_module.dir\\.rcc\\qmlcache\\qml_module_settinglist_qml.cpp.obj -c D:\\Qtprogram\\bandicam\\build\\qml\\.rcc\\qmlcache\\qml_module_settinglist_qml.cpp",
+  "file": "D:/Qtprogram/bandicam/build/qml/.rcc/qmlcache/qml_module_settinglist_qml.cpp",
   "output": "qml/CMakeFiles/qml_module.dir/.rcc/qmlcache/qml_module_settinglist_qml.cpp.obj"
 },
 {
-  "directory": "E:/myProgram/Recorder/record/build/qml",
-  "command": "F:\\Qt\\Tools\\mingw1310_64\\bin\\g++.exe -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_OPENGL_LIB -DQT_QMLINTEGRATION_LIB -DQT_QMLMODELS_LIB -DQT_QML_LIB -DQT_QUICK_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64 @CMakeFiles/qml_module.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\qml_module.dir\\.rcc\\qmlcache\\qml_module_ScreenTitle_qml.cpp.obj -c E:\\myProgram\\Recorder\\record\\build\\qml\\.rcc\\qmlcache\\qml_module_ScreenTitle_qml.cpp",
-  "file": "E:/myProgram/Recorder/record/build/qml/.rcc/qmlcache/qml_module_ScreenTitle_qml.cpp",
+  "directory": "D:/Qtprogram/bandicam/build/qml",
+  "command": "D:\\360Downloads\\QT\\Tools\\mingw1310_64\\bin\\g++.exe -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_OPENGL_LIB -DQT_QMLINTEGRATION_LIB -DQT_QMLMETA_LIB -DQT_QMLMODELS_LIB -DQT_QMLWORKERSCRIPT_LIB -DQT_QML_LIB -DQT_QUICK_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64 @CMakeFiles/qml_module.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\qml_module.dir\\.rcc\\qmlcache\\qml_module_ScreenTitle_qml.cpp.obj -c D:\\Qtprogram\\bandicam\\build\\qml\\.rcc\\qmlcache\\qml_module_ScreenTitle_qml.cpp",
+  "file": "D:/Qtprogram/bandicam/build/qml/.rcc/qmlcache/qml_module_ScreenTitle_qml.cpp",
   "output": "qml/CMakeFiles/qml_module.dir/.rcc/qmlcache/qml_module_ScreenTitle_qml.cpp.obj"
 },
 {
-  "directory": "E:/myProgram/Recorder/record/build/qml",
-  "command": "F:\\Qt\\Tools\\mingw1310_64\\bin\\g++.exe -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_OPENGL_LIB -DQT_QMLINTEGRATION_LIB -DQT_QMLMODELS_LIB -DQT_QML_LIB -DQT_QUICK_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64 @CMakeFiles/qml_module_resources_1.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\qml_module_resources_1.dir\\qml_module_resources_1_autogen\\mocs_compilation.cpp.obj -c E:\\myProgram\\Recorder\\record\\build\\qml\\qml_module_resources_1_autogen\\mocs_compilation.cpp",
-  "file": "E:/myProgram/Recorder/record/build/qml/qml_module_resources_1_autogen/mocs_compilation.cpp",
-  "output": "qml/CMakeFiles/qml_module_resources_1.dir/qml_module_resources_1_autogen/mocs_compilation.cpp.obj"
+  "directory": "D:/Qtprogram/bandicam/build/qml",
+  "command": "D:\\360Downloads\\QT\\Tools\\mingw1310_64\\bin\\g++.exe -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_OPENGL_LIB -DQT_QMLINTEGRATION_LIB -DQT_QMLMETA_LIB -DQT_QMLMODELS_LIB -DQT_QMLWORKERSCRIPT_LIB -DQT_QML_LIB -DQT_QUICK_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64 @CMakeFiles/qml_module.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\qml_module.dir\\.qt\\rcc\\qrc_qml_module_raw_qml_0.cpp.obj -c D:\\Qtprogram\\bandicam\\build\\qml\\.qt\\rcc\\qrc_qml_module_raw_qml_0.cpp",
+  "file": "D:/Qtprogram/bandicam/build/qml/.qt/rcc/qrc_qml_module_raw_qml_0.cpp",
+  "output": "qml/CMakeFiles/qml_module.dir/.qt/rcc/qrc_qml_module_raw_qml_0.cpp.obj"
 },
 {
-  "directory": "E:/myProgram/Recorder/record/build/qml",
-  "command": "F:\\Qt\\Tools\\mingw1310_64\\bin\\g++.exe -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_OPENGL_LIB -DQT_QMLINTEGRATION_LIB -DQT_QMLMODELS_LIB -DQT_QML_LIB -DQT_QUICK_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64 @CMakeFiles/qml_module_resources_1.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\qml_module_resources_1.dir\\.rcc\\qrc_qmake_bandicam.cpp.obj -c E:\\myProgram\\Recorder\\record\\build\\qml\\.rcc\\qrc_qmake_bandicam.cpp",
-  "file": "E:/myProgram/Recorder/record/build/qml/.rcc/qrc_qmake_bandicam.cpp",
-  "output": "qml/CMakeFiles/qml_module_resources_1.dir/.rcc/qrc_qmake_bandicam.cpp.obj"
+  "directory": "D:/Qtprogram/bandicam/build/qml",
+  "command": "D:\\360Downloads\\QT\\Tools\\mingw1310_64\\bin\\g++.exe -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_OPENGL_LIB -DQT_QMLINTEGRATION_LIB -DQT_QMLMETA_LIB -DQT_QMLMODELS_LIB -DQT_QMLWORKERSCRIPT_LIB -DQT_QML_LIB -DQT_QUICK_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64 @CMakeFiles/qml_module_resources_1.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\qml_module_resources_1.dir\\.qt\\rcc\\qrc_qmake_bandicam_init.cpp.obj -c D:\\Qtprogram\\bandicam\\build\\qml\\.qt\\rcc\\qrc_qmake_bandicam_init.cpp",
+  "file": "D:/Qtprogram/bandicam/build/qml/.qt/rcc/qrc_qmake_bandicam_init.cpp",
+  "output": "qml/CMakeFiles/qml_module_resources_1.dir/.qt/rcc/qrc_qmake_bandicam_init.cpp.obj"
 },
 {
-  "directory": "E:/myProgram/Recorder/record/build/qml",
-  "command": "F:\\Qt\\Tools\\mingw1310_64\\bin\\g++.exe -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_OPENGL_LIB -DQT_QMLINTEGRATION_LIB -DQT_QMLMODELS_LIB -DQT_QML_LIB -DQT_QUICK_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64 @CMakeFiles/qml_module_qmlcache.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\qml_module_qmlcache.dir\\qml_module_qmlcache_autogen\\mocs_compilation.cpp.obj -c E:\\myProgram\\Recorder\\record\\build\\qml\\qml_module_qmlcache_autogen\\mocs_compilation.cpp",
-  "file": "E:/myProgram/Recorder/record/build/qml/qml_module_qmlcache_autogen/mocs_compilation.cpp",
-  "output": "qml/CMakeFiles/qml_module_qmlcache.dir/qml_module_qmlcache_autogen/mocs_compilation.cpp.obj"
+  "directory": "D:/Qtprogram/bandicam/build/qml",
+  "command": "D:\\360Downloads\\QT\\Tools\\mingw1310_64\\bin\\g++.exe -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_OPENGL_LIB -DQT_QMLINTEGRATION_LIB -DQT_QMLMETA_LIB -DQT_QMLMODELS_LIB -DQT_QMLWORKERSCRIPT_LIB -DQT_QML_LIB -DQT_QUICK_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64 @CMakeFiles/qml_module_resources_2.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\qml_module_resources_2.dir\\.qt\\rcc\\qrc_qml_module_raw_qml_0_init.cpp.obj -c D:\\Qtprogram\\bandicam\\build\\qml\\.qt\\rcc\\qrc_qml_module_raw_qml_0_init.cpp",
+  "file": "D:/Qtprogram/bandicam/build/qml/.qt/rcc/qrc_qml_module_raw_qml_0_init.cpp",
+  "output": "qml/CMakeFiles/qml_module_resources_2.dir/.qt/rcc/qrc_qml_module_raw_qml_0_init.cpp.obj"
 },
 {
-  "directory": "E:/myProgram/Recorder/record/build/qml",
-  "command": "F:\\Qt\\Tools\\mingw1310_64\\bin\\g++.exe -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_OPENGL_LIB -DQT_QMLINTEGRATION_LIB -DQT_QMLMODELS_LIB -DQT_QML_LIB -DQT_QUICK_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64 @CMakeFiles/qml_module_qmlcache.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\qml_module_qmlcache.dir\\.rcc\\qmlcache\\qml_module_qmlcache_loader.cpp.obj -c E:\\myProgram\\Recorder\\record\\build\\qml\\.rcc\\qmlcache\\qml_module_qmlcache_loader.cpp",
-  "file": "E:/myProgram/Recorder/record/build/qml/.rcc/qmlcache/qml_module_qmlcache_loader.cpp",
-  "output": "qml/CMakeFiles/qml_module_qmlcache.dir/.rcc/qmlcache/qml_module_qmlcache_loader.cpp.obj"
-},
-{
-  "directory": "E:/myProgram/Recorder/record/build/qml",
-  "command": "F:\\Qt\\Tools\\mingw1310_64\\bin\\g++.exe -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_OPENGL_LIB -DQT_QMLINTEGRATION_LIB -DQT_QMLMODELS_LIB -DQT_QML_LIB -DQT_QUICK_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64 @CMakeFiles/qml_module_resources_2.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\qml_module_resources_2.dir\\qml_module_resources_2_autogen\\mocs_compilation.cpp.obj -c E:\\myProgram\\Recorder\\record\\build\\qml\\qml_module_resources_2_autogen\\mocs_compilation.cpp",
-  "file": "E:/myProgram/Recorder/record/build/qml/qml_module_resources_2_autogen/mocs_compilation.cpp",
-  "output": "qml/CMakeFiles/qml_module_resources_2.dir/qml_module_resources_2_autogen/mocs_compilation.cpp.obj"
-},
-{
-  "directory": "E:/myProgram/Recorder/record/build/qml",
-  "command": "F:\\Qt\\Tools\\mingw1310_64\\bin\\g++.exe -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_OPENGL_LIB -DQT_QMLINTEGRATION_LIB -DQT_QMLMODELS_LIB -DQT_QML_LIB -DQT_QUICK_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64 @CMakeFiles/qml_module_resources_2.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\qml_module_resources_2.dir\\.rcc\\qrc_qml_module_raw_qml_0.cpp.obj -c E:\\myProgram\\Recorder\\record\\build\\qml\\.rcc\\qrc_qml_module_raw_qml_0.cpp",
-  "file": "E:/myProgram/Recorder/record/build/qml/.rcc/qrc_qml_module_raw_qml_0.cpp",
-  "output": "qml/CMakeFiles/qml_module_resources_2.dir/.rcc/qrc_qml_module_raw_qml_0.cpp.obj"
-},
-{
-  "directory": "E:/myProgram/Recorder/record/build/qml",
-  "command": "F:\\Qt\\Tools\\mingw1310_64\\bin\\g++.exe -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_DEPRECATED_WARNINGS -DQT_NETWORK_LIB -DQT_PLUGIN -DQT_QMLINTEGRATION_LIB -DQT_QML_LIB -DQT_STATICPLUGIN -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64 @CMakeFiles/qml_moduleplugin.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\qml_moduleplugin.dir\\qml_moduleplugin_autogen\\mocs_compilation.cpp.obj -c E:\\myProgram\\Recorder\\record\\build\\qml\\qml_moduleplugin_autogen\\mocs_compilation.cpp",
-  "file": "E:/myProgram/Recorder/record/build/qml/qml_moduleplugin_autogen/mocs_compilation.cpp",
+  "directory": "D:/Qtprogram/bandicam/build/qml",
+  "command": "D:\\360Downloads\\QT\\Tools\\mingw1310_64\\bin\\g++.exe -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_DEPRECATED_WARNINGS -DQT_NETWORK_LIB -DQT_PLUGIN -DQT_QMLINTEGRATION_LIB -DQT_QML_LIB -DQT_STATICPLUGIN -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64 @CMakeFiles/qml_moduleplugin.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\qml_moduleplugin.dir\\qml_moduleplugin_autogen\\mocs_compilation.cpp.obj -c D:\\Qtprogram\\bandicam\\build\\qml\\qml_moduleplugin_autogen\\mocs_compilation.cpp",
+  "file": "D:/Qtprogram/bandicam/build/qml/qml_moduleplugin_autogen/mocs_compilation.cpp",
   "output": "qml/CMakeFiles/qml_moduleplugin.dir/qml_moduleplugin_autogen/mocs_compilation.cpp.obj"
 },
 {
-  "directory": "E:/myProgram/Recorder/record/build/qml",
-  "command": "F:\\Qt\\Tools\\mingw1310_64\\bin\\g++.exe -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_DEPRECATED_WARNINGS -DQT_NETWORK_LIB -DQT_PLUGIN -DQT_QMLINTEGRATION_LIB -DQT_QML_LIB -DQT_STATICPLUGIN -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64 @CMakeFiles/qml_moduleplugin.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\qml_moduleplugin.dir\\qml_moduleplugin_bandicamPlugin.cpp.obj -c E:\\myProgram\\Recorder\\record\\build\\qml\\qml_moduleplugin_bandicamPlugin.cpp",
-  "file": "E:/myProgram/Recorder/record/build/qml/qml_moduleplugin_bandicamPlugin.cpp",
+  "directory": "D:/Qtprogram/bandicam/build/qml",
+  "command": "D:\\360Downloads\\QT\\Tools\\mingw1310_64\\bin\\g++.exe -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_DEPRECATED_WARNINGS -DQT_NETWORK_LIB -DQT_PLUGIN -DQT_QMLINTEGRATION_LIB -DQT_QML_LIB -DQT_STATICPLUGIN -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64 @CMakeFiles/qml_moduleplugin.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\qml_moduleplugin.dir\\qml_moduleplugin_bandicamPlugin.cpp.obj -c D:\\Qtprogram\\bandicam\\build\\qml\\qml_moduleplugin_bandicamPlugin.cpp",
+  "file": "D:/Qtprogram/bandicam/build/qml/qml_moduleplugin_bandicamPlugin.cpp",
   "output": "qml/CMakeFiles/qml_moduleplugin.dir/qml_moduleplugin_bandicamPlugin.cpp.obj"
 },
 {
-  "directory": "E:/myProgram/Recorder/record/build/qml",
-  "command": "F:\\Qt\\Tools\\mingw1310_64\\bin\\g++.exe -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_DEPRECATED_WARNINGS -DQT_NETWORK_LIB -DQT_PLUGIN -DQT_QMLINTEGRATION_LIB -DQT_QML_LIB -DQT_STATICPLUGIN -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64 @CMakeFiles/qml_moduleplugin_init.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\qml_moduleplugin_init.dir\\qml_moduleplugin_init_autogen\\mocs_compilation.cpp.obj -c E:\\myProgram\\Recorder\\record\\build\\qml\\qml_moduleplugin_init_autogen\\mocs_compilation.cpp",
-  "file": "E:/myProgram/Recorder/record/build/qml/qml_moduleplugin_init_autogen/mocs_compilation.cpp",
+  "directory": "D:/Qtprogram/bandicam/build/qml",
+  "command": "D:\\360Downloads\\QT\\Tools\\mingw1310_64\\bin\\g++.exe -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_DEPRECATED_WARNINGS -DQT_NETWORK_LIB -DQT_PLUGIN -DQT_QMLINTEGRATION_LIB -DQT_QML_LIB -DQT_STATICPLUGIN -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64 @CMakeFiles/qml_moduleplugin_init.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\qml_moduleplugin_init.dir\\qml_moduleplugin_init_autogen\\mocs_compilation.cpp.obj -c D:\\Qtprogram\\bandicam\\build\\qml\\qml_moduleplugin_init_autogen\\mocs_compilation.cpp",
+  "file": "D:/Qtprogram/bandicam/build/qml/qml_moduleplugin_init_autogen/mocs_compilation.cpp",
   "output": "qml/CMakeFiles/qml_moduleplugin_init.dir/qml_moduleplugin_init_autogen/mocs_compilation.cpp.obj"
 },
 {
-  "directory": "E:/myProgram/Recorder/record/build/qml",
-  "command": "F:\\Qt\\Tools\\mingw1310_64\\bin\\g++.exe -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_DEPRECATED_WARNINGS -DQT_NETWORK_LIB -DQT_PLUGIN -DQT_QMLINTEGRATION_LIB -DQT_QML_LIB -DQT_STATICPLUGIN -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64 @CMakeFiles/qml_moduleplugin_init.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\qml_moduleplugin_init.dir\\qml_moduleplugin_init.cpp.obj -c E:\\myProgram\\Recorder\\record\\build\\qml\\qml_moduleplugin_init.cpp",
-  "file": "E:/myProgram/Recorder/record/build/qml/qml_moduleplugin_init.cpp",
+  "directory": "D:/Qtprogram/bandicam/build/qml",
+  "command": "D:\\360Downloads\\QT\\Tools\\mingw1310_64\\bin\\g++.exe -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_DEPRECATED_WARNINGS -DQT_NETWORK_LIB -DQT_PLUGIN -DQT_QMLINTEGRATION_LIB -DQT_QML_LIB -DQT_STATICPLUGIN -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64 @CMakeFiles/qml_moduleplugin_init.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\qml_moduleplugin_init.dir\\qml_moduleplugin_init.cpp.obj -c D:\\Qtprogram\\bandicam\\build\\qml\\qml_moduleplugin_init.cpp",
+  "file": "D:/Qtprogram/bandicam/build/qml/qml_moduleplugin_init.cpp",
   "output": "qml/CMakeFiles/qml_moduleplugin_init.dir/qml_moduleplugin_init.cpp.obj"
 },
 {
-  "directory": "E:/myProgram/Recorder/record/build/queue",
-  "command": "F:\\Qt\\Tools\\mingw1310_64\\bin\\g++.exe -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64 @CMakeFiles/queue_module.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\queue_module.dir\\queue_module_autogen\\mocs_compilation.cpp.obj -c E:\\myProgram\\Recorder\\record\\build\\queue\\queue_module_autogen\\mocs_compilation.cpp",
-  "file": "E:/myProgram/Recorder/record/build/queue/queue_module_autogen/mocs_compilation.cpp",
+  "directory": "D:/Qtprogram/bandicam/build/queue",
+  "command": "D:\\360Downloads\\QT\\Tools\\mingw1310_64\\bin\\g++.exe -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64 @CMakeFiles/queue_module.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\queue_module.dir\\queue_module_autogen\\mocs_compilation.cpp.obj -c D:\\Qtprogram\\bandicam\\build\\queue\\queue_module_autogen\\mocs_compilation.cpp",
+  "file": "D:/Qtprogram/bandicam/build/queue/queue_module_autogen/mocs_compilation.cpp",
   "output": "queue/CMakeFiles/queue_module.dir/queue_module_autogen/mocs_compilation.cpp.obj"
 },
 {
-  "directory": "E:/myProgram/Recorder/record/build/queue",
-  "command": "F:\\Qt\\Tools\\mingw1310_64\\bin\\g++.exe -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64 @CMakeFiles/queue_module.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\queue_module.dir\\ffvpacketqueue.cpp.obj -c E:\\myProgram\\Recorder\\record\\queue\\ffvpacketqueue.cpp",
-  "file": "E:/myProgram/Recorder/record/queue/ffvpacketqueue.cpp",
+  "directory": "D:/Qtprogram/bandicam/build/queue",
+  "command": "D:\\360Downloads\\QT\\Tools\\mingw1310_64\\bin\\g++.exe -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64 @CMakeFiles/queue_module.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\queue_module.dir\\ffvpacketqueue.cpp.obj -c D:\\Qtprogram\\bandicam\\queue\\ffvpacketqueue.cpp",
+  "file": "D:/Qtprogram/bandicam/queue/ffvpacketqueue.cpp",
   "output": "queue/CMakeFiles/queue_module.dir/ffvpacketqueue.cpp.obj"
 },
 {
-  "directory": "E:/myProgram/Recorder/record/build/queue",
-  "command": "F:\\Qt\\Tools\\mingw1310_64\\bin\\g++.exe -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64 @CMakeFiles/queue_module.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\queue_module.dir\\ffeventqueue.cpp.obj -c E:\\myProgram\\Recorder\\record\\queue\\ffeventqueue.cpp",
-  "file": "E:/myProgram/Recorder/record/queue/ffeventqueue.cpp",
+  "directory": "D:/Qtprogram/bandicam/build/queue",
+  "command": "D:\\360Downloads\\QT\\Tools\\mingw1310_64\\bin\\g++.exe -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64 @CMakeFiles/queue_module.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\queue_module.dir\\ffeventqueue.cpp.obj -c D:\\Qtprogram\\bandicam\\queue\\ffeventqueue.cpp",
+  "file": "D:/Qtprogram/bandicam/queue/ffeventqueue.cpp",
   "output": "queue/CMakeFiles/queue_module.dir/ffeventqueue.cpp.obj"
 },
 {
-  "directory": "E:/myProgram/Recorder/record/build/queue",
-  "command": "F:\\Qt\\Tools\\mingw1310_64\\bin\\g++.exe -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64 @CMakeFiles/queue_module.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\queue_module.dir\\ffapacketqueue.cpp.obj -c E:\\myProgram\\Recorder\\record\\queue\\ffapacketqueue.cpp",
-  "file": "E:/myProgram/Recorder/record/queue/ffapacketqueue.cpp",
+  "directory": "D:/Qtprogram/bandicam/build/queue",
+  "command": "D:\\360Downloads\\QT\\Tools\\mingw1310_64\\bin\\g++.exe -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64 @CMakeFiles/queue_module.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\queue_module.dir\\ffapacketqueue.cpp.obj -c D:\\Qtprogram\\bandicam\\queue\\ffapacketqueue.cpp",
+  "file": "D:/Qtprogram/bandicam/queue/ffapacketqueue.cpp",
   "output": "queue/CMakeFiles/queue_module.dir/ffapacketqueue.cpp.obj"
 },
 {
-  "directory": "E:/myProgram/Recorder/record/build/queue",
-  "command": "F:\\Qt\\Tools\\mingw1310_64\\bin\\g++.exe -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64 @CMakeFiles/queue_module.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\queue_module.dir\\ffaframequeue.cpp.obj -c E:\\myProgram\\Recorder\\record\\queue\\ffaframequeue.cpp",
-  "file": "E:/myProgram/Recorder/record/queue/ffaframequeue.cpp",
+  "directory": "D:/Qtprogram/bandicam/build/queue",
+  "command": "D:\\360Downloads\\QT\\Tools\\mingw1310_64\\bin\\g++.exe -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64 @CMakeFiles/queue_module.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\queue_module.dir\\ffaframequeue.cpp.obj -c D:\\Qtprogram\\bandicam\\queue\\ffaframequeue.cpp",
+  "file": "D:/Qtprogram/bandicam/queue/ffaframequeue.cpp",
   "output": "queue/CMakeFiles/queue_module.dir/ffaframequeue.cpp.obj"
 },
 {
-  "directory": "E:/myProgram/Recorder/record/build/queue",
-  "command": "F:\\Qt\\Tools\\mingw1310_64\\bin\\g++.exe -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64 @CMakeFiles/queue_module.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\queue_module.dir\\ffvframequeue.cpp.obj -c E:\\myProgram\\Recorder\\record\\queue\\ffvframequeue.cpp",
-  "file": "E:/myProgram/Recorder/record/queue/ffvframequeue.cpp",
+  "directory": "D:/Qtprogram/bandicam/build/queue",
+  "command": "D:\\360Downloads\\QT\\Tools\\mingw1310_64\\bin\\g++.exe -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64 @CMakeFiles/queue_module.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\queue_module.dir\\ffvframequeue.cpp.obj -c D:\\Qtprogram\\bandicam\\queue\\ffvframequeue.cpp",
+  "file": "D:/Qtprogram/bandicam/queue/ffvframequeue.cpp",
   "output": "queue/CMakeFiles/queue_module.dir/ffvframequeue.cpp.obj"
 },
 {
-  "directory": "E:/myProgram/Recorder/record/build/decoder",
-  "command": "F:\\Qt\\Tools\\mingw1310_64\\bin\\g++.exe -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64 @CMakeFiles/decoder_module.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\decoder_module.dir\\decoder_module_autogen\\mocs_compilation.cpp.obj -c E:\\myProgram\\Recorder\\record\\build\\decoder\\decoder_module_autogen\\mocs_compilation.cpp",
-  "file": "E:/myProgram/Recorder/record/build/decoder/decoder_module_autogen/mocs_compilation.cpp",
+  "directory": "D:/Qtprogram/bandicam/build/decoder",
+  "command": "D:\\360Downloads\\QT\\Tools\\mingw1310_64\\bin\\g++.exe -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64 @CMakeFiles/decoder_module.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\decoder_module.dir\\decoder_module_autogen\\mocs_compilation.cpp.obj -c D:\\Qtprogram\\bandicam\\build\\decoder\\decoder_module_autogen\\mocs_compilation.cpp",
+  "file": "D:/Qtprogram/bandicam/build/decoder/decoder_module_autogen/mocs_compilation.cpp",
   "output": "decoder/CMakeFiles/decoder_module.dir/decoder_module_autogen/mocs_compilation.cpp.obj"
 },
 {
-  "directory": "E:/myProgram/Recorder/record/build/decoder",
-  "command": "F:\\Qt\\Tools\\mingw1310_64\\bin\\g++.exe -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64 @CMakeFiles/decoder_module.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\decoder_module.dir\\ffvdecoder.cpp.obj -c E:\\myProgram\\Recorder\\record\\decoder\\ffvdecoder.cpp",
-  "file": "E:/myProgram/Recorder/record/decoder/ffvdecoder.cpp",
+  "directory": "D:/Qtprogram/bandicam/build/decoder",
+  "command": "D:\\360Downloads\\QT\\Tools\\mingw1310_64\\bin\\g++.exe -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64 @CMakeFiles/decoder_module.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\decoder_module.dir\\ffvdecoder.cpp.obj -c D:\\Qtprogram\\bandicam\\decoder\\ffvdecoder.cpp",
+  "file": "D:/Qtprogram/bandicam/decoder/ffvdecoder.cpp",
   "output": "decoder/CMakeFiles/decoder_module.dir/ffvdecoder.cpp.obj"
 },
 {
-  "directory": "E:/myProgram/Recorder/record/build/decoder",
-  "command": "F:\\Qt\\Tools\\mingw1310_64\\bin\\g++.exe -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64 @CMakeFiles/decoder_module.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\decoder_module.dir\\ffadecoder.cpp.obj -c E:\\myProgram\\Recorder\\record\\decoder\\ffadecoder.cpp",
-  "file": "E:/myProgram/Recorder/record/decoder/ffadecoder.cpp",
+  "directory": "D:/Qtprogram/bandicam/build/decoder",
+  "command": "D:\\360Downloads\\QT\\Tools\\mingw1310_64\\bin\\g++.exe -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64 @CMakeFiles/decoder_module.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\decoder_module.dir\\ffadecoder.cpp.obj -c D:\\Qtprogram\\bandicam\\decoder\\ffadecoder.cpp",
+  "file": "D:/Qtprogram/bandicam/decoder/ffadecoder.cpp",
   "output": "decoder/CMakeFiles/decoder_module.dir/ffadecoder.cpp.obj"
 },
 {
-  "directory": "E:/myProgram/Recorder/record/build/resampler",
-  "command": "F:\\Qt\\Tools\\mingw1310_64\\bin\\g++.exe -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64 @CMakeFiles/resampler_module.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\resampler_module.dir\\resampler_module_autogen\\mocs_compilation.cpp.obj -c E:\\myProgram\\Recorder\\record\\build\\resampler\\resampler_module_autogen\\mocs_compilation.cpp",
-  "file": "E:/myProgram/Recorder/record/build/resampler/resampler_module_autogen/mocs_compilation.cpp",
+  "directory": "D:/Qtprogram/bandicam/build/resampler",
+  "command": "D:\\360Downloads\\QT\\Tools\\mingw1310_64\\bin\\g++.exe -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64 @CMakeFiles/resampler_module.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\resampler_module.dir\\resampler_module_autogen\\mocs_compilation.cpp.obj -c D:\\Qtprogram\\bandicam\\build\\resampler\\resampler_module_autogen\\mocs_compilation.cpp",
+  "file": "D:/Qtprogram/bandicam/build/resampler/resampler_module_autogen/mocs_compilation.cpp",
   "output": "resampler/CMakeFiles/resampler_module.dir/resampler_module_autogen/mocs_compilation.cpp.obj"
 },
 {
-  "directory": "E:/myProgram/Recorder/record/build/resampler",
-  "command": "F:\\Qt\\Tools\\mingw1310_64\\bin\\g++.exe -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64 @CMakeFiles/resampler_module.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\resampler_module.dir\\ffaresampler.cpp.obj -c E:\\myProgram\\Recorder\\record\\resampler\\ffaresampler.cpp",
-  "file": "E:/myProgram/Recorder/record/resampler/ffaresampler.cpp",
+  "directory": "D:/Qtprogram/bandicam/build/resampler",
+  "command": "D:\\360Downloads\\QT\\Tools\\mingw1310_64\\bin\\g++.exe -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64 @CMakeFiles/resampler_module.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\resampler_module.dir\\ffaresampler.cpp.obj -c D:\\Qtprogram\\bandicam\\resampler\\ffaresampler.cpp",
+  "file": "D:/Qtprogram/bandicam/resampler/ffaresampler.cpp",
   "output": "resampler/CMakeFiles/resampler_module.dir/ffaresampler.cpp.obj"
 },
 {
-  "directory": "E:/myProgram/Recorder/record/build/resampler",
-  "command": "F:\\Qt\\Tools\\mingw1310_64\\bin\\g++.exe -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64 @CMakeFiles/resampler_module.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\resampler_module.dir\\ffvresampler.cpp.obj -c E:\\myProgram\\Recorder\\record\\resampler\\ffvresampler.cpp",
-  "file": "E:/myProgram/Recorder/record/resampler/ffvresampler.cpp",
+  "directory": "D:/Qtprogram/bandicam/build/resampler",
+  "command": "D:\\360Downloads\\QT\\Tools\\mingw1310_64\\bin\\g++.exe -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64 @CMakeFiles/resampler_module.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\resampler_module.dir\\ffvresampler.cpp.obj -c D:\\Qtprogram\\bandicam\\resampler\\ffvresampler.cpp",
+  "file": "D:/Qtprogram/bandicam/resampler/ffvresampler.cpp",
   "output": "resampler/CMakeFiles/resampler_module.dir/ffvresampler.cpp.obj"
 },
 {
-  "directory": "E:/myProgram/Recorder/record/build/filter",
-  "command": "F:\\Qt\\Tools\\mingw1310_64\\bin\\g++.exe -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64 @CMakeFiles/filter_module.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\filter_module.dir\\filter_module_autogen\\mocs_compilation.cpp.obj -c E:\\myProgram\\Recorder\\record\\build\\filter\\filter_module_autogen\\mocs_compilation.cpp",
-  "file": "E:/myProgram/Recorder/record/build/filter/filter_module_autogen/mocs_compilation.cpp",
+  "directory": "D:/Qtprogram/bandicam/build/filter",
+  "command": "D:\\360Downloads\\QT\\Tools\\mingw1310_64\\bin\\g++.exe -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64 @CMakeFiles/filter_module.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\filter_module.dir\\filter_module_autogen\\mocs_compilation.cpp.obj -c D:\\Qtprogram\\bandicam\\build\\filter\\filter_module_autogen\\mocs_compilation.cpp",
+  "file": "D:/Qtprogram/bandicam/build/filter/filter_module_autogen/mocs_compilation.cpp",
   "output": "filter/CMakeFiles/filter_module.dir/filter_module_autogen/mocs_compilation.cpp.obj"
 },
 {
-  "directory": "E:/myProgram/Recorder/record/build/filter",
-  "command": "F:\\Qt\\Tools\\mingw1310_64\\bin\\g++.exe -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64 @CMakeFiles/filter_module.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\filter_module.dir\\ffvfilter.cpp.obj -c E:\\myProgram\\Recorder\\record\\filter\\ffvfilter.cpp",
-  "file": "E:/myProgram/Recorder/record/filter/ffvfilter.cpp",
+  "directory": "D:/Qtprogram/bandicam/build/filter",
+  "command": "D:\\360Downloads\\QT\\Tools\\mingw1310_64\\bin\\g++.exe -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64 @CMakeFiles/filter_module.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\filter_module.dir\\ffvfilter.cpp.obj -c D:\\Qtprogram\\bandicam\\filter\\ffvfilter.cpp",
+  "file": "D:/Qtprogram/bandicam/filter/ffvfilter.cpp",
   "output": "filter/CMakeFiles/filter_module.dir/ffvfilter.cpp.obj"
 },
 {
-  "directory": "E:/myProgram/Recorder/record/build/filter",
-  "command": "F:\\Qt\\Tools\\mingw1310_64\\bin\\g++.exe -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64 @CMakeFiles/filter_module.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\filter_module.dir\\ffafilter.cpp.obj -c E:\\myProgram\\Recorder\\record\\filter\\ffafilter.cpp",
-  "file": "E:/myProgram/Recorder/record/filter/ffafilter.cpp",
+  "directory": "D:/Qtprogram/bandicam/build/filter",
+  "command": "D:\\360Downloads\\QT\\Tools\\mingw1310_64\\bin\\g++.exe -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64 @CMakeFiles/filter_module.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\filter_module.dir\\ffafilter.cpp.obj -c D:\\Qtprogram\\bandicam\\filter\\ffafilter.cpp",
+  "file": "D:/Qtprogram/bandicam/filter/ffafilter.cpp",
   "output": "filter/CMakeFiles/filter_module.dir/ffafilter.cpp.obj"
 },
 {
-  "directory": "E:/myProgram/Recorder/record/build/muxer",
-  "command": "F:\\Qt\\Tools\\mingw1310_64\\bin\\g++.exe -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64 @CMakeFiles/muxer_module.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\muxer_module.dir\\muxer_module_autogen\\mocs_compilation.cpp.obj -c E:\\myProgram\\Recorder\\record\\build\\muxer\\muxer_module_autogen\\mocs_compilation.cpp",
-  "file": "E:/myProgram/Recorder/record/build/muxer/muxer_module_autogen/mocs_compilation.cpp",
+  "directory": "D:/Qtprogram/bandicam/build/muxer",
+  "command": "D:\\360Downloads\\QT\\Tools\\mingw1310_64\\bin\\g++.exe -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64 @CMakeFiles/muxer_module.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\muxer_module.dir\\muxer_module_autogen\\mocs_compilation.cpp.obj -c D:\\Qtprogram\\bandicam\\build\\muxer\\muxer_module_autogen\\mocs_compilation.cpp",
+  "file": "D:/Qtprogram/bandicam/build/muxer/muxer_module_autogen/mocs_compilation.cpp",
   "output": "muxer/CMakeFiles/muxer_module.dir/muxer_module_autogen/mocs_compilation.cpp.obj"
 },
 {
-  "directory": "E:/myProgram/Recorder/record/build/muxer",
-  "command": "F:\\Qt\\Tools\\mingw1310_64\\bin\\g++.exe -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64 @CMakeFiles/muxer_module.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\muxer_module.dir\\ffmuxer.cpp.obj -c E:\\myProgram\\Recorder\\record\\muxer\\ffmuxer.cpp",
-  "file": "E:/myProgram/Recorder/record/muxer/ffmuxer.cpp",
+  "directory": "D:/Qtprogram/bandicam/build/muxer",
+  "command": "D:\\360Downloads\\QT\\Tools\\mingw1310_64\\bin\\g++.exe -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64 @CMakeFiles/muxer_module.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\muxer_module.dir\\ffmuxer.cpp.obj -c D:\\Qtprogram\\bandicam\\muxer\\ffmuxer.cpp",
+  "file": "D:/Qtprogram/bandicam/muxer/ffmuxer.cpp",
   "output": "muxer/CMakeFiles/muxer_module.dir/ffmuxer.cpp.obj"
 },
 {
-  "directory": "E:/myProgram/Recorder/record/build/event",
-  "command": "F:\\Qt\\Tools\\mingw1310_64\\bin\\g++.exe -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64 @CMakeFiles/event_module.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\event_module.dir\\event_module_autogen\\mocs_compilation.cpp.obj -c E:\\myProgram\\Recorder\\record\\build\\event\\event_module_autogen\\mocs_compilation.cpp",
-  "file": "E:/myProgram/Recorder/record/build/event/event_module_autogen/mocs_compilation.cpp",
+  "directory": "D:/Qtprogram/bandicam/build/event",
+  "command": "D:\\360Downloads\\QT\\Tools\\mingw1310_64\\bin\\g++.exe -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64 @CMakeFiles/event_module.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\event_module.dir\\event_module_autogen\\mocs_compilation.cpp.obj -c D:\\Qtprogram\\bandicam\\build\\event\\event_module_autogen\\mocs_compilation.cpp",
+  "file": "D:/Qtprogram/bandicam/build/event/event_module_autogen/mocs_compilation.cpp",
   "output": "event/CMakeFiles/event_module.dir/event_module_autogen/mocs_compilation.cpp.obj"
 },
 {
-  "directory": "E:/myProgram/Recorder/record/build/event",
-  "command": "F:\\Qt\\Tools\\mingw1310_64\\bin\\g++.exe -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64 @CMakeFiles/event_module.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\event_module.dir\\eventfactory.cpp.obj -c E:\\myProgram\\Recorder\\record\\event\\eventfactory.cpp",
-  "file": "E:/myProgram/Recorder/record/event/eventfactory.cpp",
+  "directory": "D:/Qtprogram/bandicam/build/event",
+  "command": "D:\\360Downloads\\QT\\Tools\\mingw1310_64\\bin\\g++.exe -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64 @CMakeFiles/event_module.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\event_module.dir\\eventfactory.cpp.obj -c D:\\Qtprogram\\bandicam\\event\\eventfactory.cpp",
+  "file": "D:/Qtprogram/bandicam/event/eventfactory.cpp",
   "output": "event/CMakeFiles/event_module.dir/eventfactory.cpp.obj"
 },
 {
-  "directory": "E:/myProgram/Recorder/record/build/event",
-  "command": "F:\\Qt\\Tools\\mingw1310_64\\bin\\g++.exe -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64 @CMakeFiles/event_module.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\event_module.dir\\ffevent.cpp.obj -c E:\\myProgram\\Recorder\\record\\event\\ffevent.cpp",
-  "file": "E:/myProgram/Recorder/record/event/ffevent.cpp",
+  "directory": "D:/Qtprogram/bandicam/build/event",
+  "command": "D:\\360Downloads\\QT\\Tools\\mingw1310_64\\bin\\g++.exe -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64 @CMakeFiles/event_module.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\event_module.dir\\ffevent.cpp.obj -c D:\\Qtprogram\\bandicam\\event\\ffevent.cpp",
+  "file": "D:/Qtprogram/bandicam/event/ffevent.cpp",
   "output": "event/CMakeFiles/event_module.dir/ffevent.cpp.obj"
 },
 {
-  "directory": "E:/myProgram/Recorder/record/build/event",
-  "command": "F:\\Qt\\Tools\\mingw1310_64\\bin\\g++.exe -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64 @CMakeFiles/event_module.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\event_module.dir\\ffopensourceevent.cpp.obj -c E:\\myProgram\\Recorder\\record\\event\\ffopensourceevent.cpp",
-  "file": "E:/myProgram/Recorder/record/event/ffopensourceevent.cpp",
+  "directory": "D:/Qtprogram/bandicam/build/event",
+  "command": "D:\\360Downloads\\QT\\Tools\\mingw1310_64\\bin\\g++.exe -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64 @CMakeFiles/event_module.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\event_module.dir\\ffopensourceevent.cpp.obj -c D:\\Qtprogram\\bandicam\\event\\ffopensourceevent.cpp",
+  "file": "D:/Qtprogram/bandicam/event/ffopensourceevent.cpp",
   "output": "event/CMakeFiles/event_module.dir/ffopensourceevent.cpp.obj"
 },
 {
-  "directory": "E:/myProgram/Recorder/record/build/event",
-  "command": "F:\\Qt\\Tools\\mingw1310_64\\bin\\g++.exe -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64 @CMakeFiles/event_module.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\event_module.dir\\ffeventloop.cpp.obj -c E:\\myProgram\\Recorder\\record\\event\\ffeventloop.cpp",
-  "file": "E:/myProgram/Recorder/record/event/ffeventloop.cpp",
+  "directory": "D:/Qtprogram/bandicam/build/event",
+  "command": "D:\\360Downloads\\QT\\Tools\\mingw1310_64\\bin\\g++.exe -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64 @CMakeFiles/event_module.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\event_module.dir\\ffeventloop.cpp.obj -c D:\\Qtprogram\\bandicam\\event\\ffeventloop.cpp",
+  "file": "D:/Qtprogram/bandicam/event/ffeventloop.cpp",
   "output": "event/CMakeFiles/event_module.dir/ffeventloop.cpp.obj"
 },
 {
-  "directory": "E:/myProgram/Recorder/record/build/event",
-  "command": "F:\\Qt\\Tools\\mingw1310_64\\bin\\g++.exe -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64 @CMakeFiles/event_module.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\event_module.dir\\eventfactorymanager.cpp.obj -c E:\\myProgram\\Recorder\\record\\event\\eventfactorymanager.cpp",
-  "file": "E:/myProgram/Recorder/record/event/eventfactorymanager.cpp",
+  "directory": "D:/Qtprogram/bandicam/build/event",
+  "command": "D:\\360Downloads\\QT\\Tools\\mingw1310_64\\bin\\g++.exe -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64 @CMakeFiles/event_module.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\event_module.dir\\eventfactorymanager.cpp.obj -c D:\\Qtprogram\\bandicam\\event\\eventfactorymanager.cpp",
+  "file": "D:/Qtprogram/bandicam/event/eventfactorymanager.cpp",
   "output": "event/CMakeFiles/event_module.dir/eventfactorymanager.cpp.obj"
 },
 {
-  "directory": "E:/myProgram/Recorder/record/build/event",
-  "command": "F:\\Qt\\Tools\\mingw1310_64\\bin\\g++.exe -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64 @CMakeFiles/event_module.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\event_module.dir\\ffclosesourceevent.cpp.obj -c E:\\myProgram\\Recorder\\record\\event\\ffclosesourceevent.cpp",
-  "file": "E:/myProgram/Recorder/record/event/ffclosesourceevent.cpp",
+  "directory": "D:/Qtprogram/bandicam/build/event",
+  "command": "D:\\360Downloads\\QT\\Tools\\mingw1310_64\\bin\\g++.exe -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64 @CMakeFiles/event_module.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\event_module.dir\\ffclosesourceevent.cpp.obj -c D:\\Qtprogram\\bandicam\\event\\ffclosesourceevent.cpp",
+  "file": "D:/Qtprogram/bandicam/event/ffclosesourceevent.cpp",
   "output": "event/CMakeFiles/event_module.dir/ffclosesourceevent.cpp.obj"
 },
 {
-  "directory": "E:/myProgram/Recorder/record/build/event",
-  "command": "F:\\Qt\\Tools\\mingw1310_64\\bin\\g++.exe -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64 @CMakeFiles/event_module.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\event_module.dir\\ffprocessevent.cpp.obj -c E:\\myProgram\\Recorder\\record\\event\\ffprocessevent.cpp",
-  "file": "E:/myProgram/Recorder/record/event/ffprocessevent.cpp",
+  "directory": "D:/Qtprogram/bandicam/build/event",
+  "command": "D:\\360Downloads\\QT\\Tools\\mingw1310_64\\bin\\g++.exe -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64 @CMakeFiles/event_module.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\event_module.dir\\ffprocessevent.cpp.obj -c D:\\Qtprogram\\bandicam\\event\\ffprocessevent.cpp",
+  "file": "D:/Qtprogram/bandicam/event/ffprocessevent.cpp",
   "output": "event/CMakeFiles/event_module.dir/ffprocessevent.cpp.obj"
 },
 {
-  "directory": "E:/myProgram/Recorder/record/build/event",
-  "command": "F:\\Qt\\Tools\\mingw1310_64\\bin\\g++.exe -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64 @CMakeFiles/event_module.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\event_module.dir\\ffpauseevent.cpp.obj -c E:\\myProgram\\Recorder\\record\\event\\ffpauseevent.cpp",
-  "file": "E:/myProgram/Recorder/record/event/ffpauseevent.cpp",
+  "directory": "D:/Qtprogram/bandicam/build/event",
+  "command": "D:\\360Downloads\\QT\\Tools\\mingw1310_64\\bin\\g++.exe -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64 @CMakeFiles/event_module.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\event_module.dir\\ffpauseevent.cpp.obj -c D:\\Qtprogram\\bandicam\\event\\ffpauseevent.cpp",
+  "file": "D:/Qtprogram/bandicam/event/ffpauseevent.cpp",
   "output": "event/CMakeFiles/event_module.dir/ffpauseevent.cpp.obj"
 },
 {
-  "directory": "E:/myProgram/Recorder/record/build/thread",
-  "command": "F:\\Qt\\Tools\\mingw1310_64\\bin\\g++.exe -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64 @CMakeFiles/thread_module.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\thread_module.dir\\thread_module_autogen\\mocs_compilation.cpp.obj -c E:\\myProgram\\Recorder\\record\\build\\thread\\thread_module_autogen\\mocs_compilation.cpp",
-  "file": "E:/myProgram/Recorder/record/build/thread/thread_module_autogen/mocs_compilation.cpp",
+  "directory": "D:/Qtprogram/bandicam/build/thread",
+  "command": "D:\\360Downloads\\QT\\Tools\\mingw1310_64\\bin\\g++.exe -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_OPENGL_LIB -DQT_QMLINTEGRATION_LIB -DQT_QMLMETA_LIB -DQT_QMLMODELS_LIB -DQT_QMLWORKERSCRIPT_LIB -DQT_QML_LIB -DQT_QUICK_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64 @CMakeFiles/thread_module.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\thread_module.dir\\thread_module_autogen\\mocs_compilation.cpp.obj -c D:\\Qtprogram\\bandicam\\build\\thread\\thread_module_autogen\\mocs_compilation.cpp",
+  "file": "D:/Qtprogram/bandicam/build/thread/thread_module_autogen/mocs_compilation.cpp",
   "output": "thread/CMakeFiles/thread_module.dir/thread_module_autogen/mocs_compilation.cpp.obj"
 },
 {
-  "directory": "E:/myProgram/Recorder/record/build/thread",
-  "command": "F:\\Qt\\Tools\\mingw1310_64\\bin\\g++.exe -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64 @CMakeFiles/thread_module.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\thread_module.dir\\ffthread.cpp.obj -c E:\\myProgram\\Recorder\\record\\thread\\ffthread.cpp",
-  "file": "E:/myProgram/Recorder/record/thread/ffthread.cpp",
+  "directory": "D:/Qtprogram/bandicam/build/thread",
+  "command": "D:\\360Downloads\\QT\\Tools\\mingw1310_64\\bin\\g++.exe -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_OPENGL_LIB -DQT_QMLINTEGRATION_LIB -DQT_QMLMETA_LIB -DQT_QMLMODELS_LIB -DQT_QMLWORKERSCRIPT_LIB -DQT_QML_LIB -DQT_QUICK_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64 @CMakeFiles/thread_module.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\thread_module.dir\\ffthread.cpp.obj -c D:\\Qtprogram\\bandicam\\thread\\ffthread.cpp",
+  "file": "D:/Qtprogram/bandicam/thread/ffthread.cpp",
   "output": "thread/CMakeFiles/thread_module.dir/ffthread.cpp.obj"
 },
 {
-  "directory": "E:/myProgram/Recorder/record/build/thread",
-  "command": "F:\\Qt\\Tools\\mingw1310_64\\bin\\g++.exe -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64 @CMakeFiles/thread_module.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\thread_module.dir\\ffthreadpool.cpp.obj -c E:\\myProgram\\Recorder\\record\\thread\\ffthreadpool.cpp",
-  "file": "E:/myProgram/Recorder/record/thread/ffthreadpool.cpp",
+  "directory": "D:/Qtprogram/bandicam/build/thread",
+  "command": "D:\\360Downloads\\QT\\Tools\\mingw1310_64\\bin\\g++.exe -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_OPENGL_LIB -DQT_QMLINTEGRATION_LIB -DQT_QMLMETA_LIB -DQT_QMLMODELS_LIB -DQT_QMLWORKERSCRIPT_LIB -DQT_QML_LIB -DQT_QUICK_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64 @CMakeFiles/thread_module.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\thread_module.dir\\ffthreadpool.cpp.obj -c D:\\Qtprogram\\bandicam\\thread\\ffthreadpool.cpp",
+  "file": "D:/Qtprogram/bandicam/thread/ffthreadpool.cpp",
   "output": "thread/CMakeFiles/thread_module.dir/ffthreadpool.cpp.obj"
 },
 {
-  "directory": "E:/myProgram/Recorder/record/build/thread",
-  "command": "F:\\Qt\\Tools\\mingw1310_64\\bin\\g++.exe -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64 @CMakeFiles/thread_module.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\thread_module.dir\\ffdemuxerthread.cpp.obj -c E:\\myProgram\\Recorder\\record\\thread\\ffdemuxerthread.cpp",
-  "file": "E:/myProgram/Recorder/record/thread/ffdemuxerthread.cpp",
+  "directory": "D:/Qtprogram/bandicam/build/thread",
+  "command": "D:\\360Downloads\\QT\\Tools\\mingw1310_64\\bin\\g++.exe -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_OPENGL_LIB -DQT_QMLINTEGRATION_LIB -DQT_QMLMETA_LIB -DQT_QMLMODELS_LIB -DQT_QMLWORKERSCRIPT_LIB -DQT_QML_LIB -DQT_QUICK_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64 @CMakeFiles/thread_module.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\thread_module.dir\\ffdemuxerthread.cpp.obj -c D:\\Qtprogram\\bandicam\\thread\\ffdemuxerthread.cpp",
+  "file": "D:/Qtprogram/bandicam/thread/ffdemuxerthread.cpp",
   "output": "thread/CMakeFiles/thread_module.dir/ffdemuxerthread.cpp.obj"
 },
 {
-  "directory": "E:/myProgram/Recorder/record/build/thread",
-  "command": "F:\\Qt\\Tools\\mingw1310_64\\bin\\g++.exe -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64 @CMakeFiles/thread_module.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\thread_module.dir\\ffadecoderthread.cpp.obj -c E:\\myProgram\\Recorder\\record\\thread\\ffadecoderthread.cpp",
-  "file": "E:/myProgram/Recorder/record/thread/ffadecoderthread.cpp",
+  "directory": "D:/Qtprogram/bandicam/build/thread",
+  "command": "D:\\360Downloads\\QT\\Tools\\mingw1310_64\\bin\\g++.exe -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_OPENGL_LIB -DQT_QMLINTEGRATION_LIB -DQT_QMLMETA_LIB -DQT_QMLMODELS_LIB -DQT_QMLWORKERSCRIPT_LIB -DQT_QML_LIB -DQT_QUICK_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64 @CMakeFiles/thread_module.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\thread_module.dir\\ffadecoderthread.cpp.obj -c D:\\Qtprogram\\bandicam\\thread\\ffadecoderthread.cpp",
+  "file": "D:/Qtprogram/bandicam/thread/ffadecoderthread.cpp",
   "output": "thread/CMakeFiles/thread_module.dir/ffadecoderthread.cpp.obj"
 },
 {
-  "directory": "E:/myProgram/Recorder/record/build/thread",
-  "command": "F:\\Qt\\Tools\\mingw1310_64\\bin\\g++.exe -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64 @CMakeFiles/thread_module.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\thread_module.dir\\ffvdecoderthread.cpp.obj -c E:\\myProgram\\Recorder\\record\\thread\\ffvdecoderthread.cpp",
-  "file": "E:/myProgram/Recorder/record/thread/ffvdecoderthread.cpp",
+  "directory": "D:/Qtprogram/bandicam/build/thread",
+  "command": "D:\\360Downloads\\QT\\Tools\\mingw1310_64\\bin\\g++.exe -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_OPENGL_LIB -DQT_QMLINTEGRATION_LIB -DQT_QMLMETA_LIB -DQT_QMLMODELS_LIB -DQT_QMLWORKERSCRIPT_LIB -DQT_QML_LIB -DQT_QUICK_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64 @CMakeFiles/thread_module.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\thread_module.dir\\ffvdecoderthread.cpp.obj -c D:\\Qtprogram\\bandicam\\thread\\ffvdecoderthread.cpp",
+  "file": "D:/Qtprogram/bandicam/thread/ffvdecoderthread.cpp",
   "output": "thread/CMakeFiles/thread_module.dir/ffvdecoderthread.cpp.obj"
 },
 {
-  "directory": "E:/myProgram/Recorder/record/build/thread",
-  "command": "F:\\Qt\\Tools\\mingw1310_64\\bin\\g++.exe -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64 @CMakeFiles/thread_module.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\thread_module.dir\\ffvfilterthread.cpp.obj -c E:\\myProgram\\Recorder\\record\\thread\\ffvfilterthread.cpp",
-  "file": "E:/myProgram/Recorder/record/thread/ffvfilterthread.cpp",
+  "directory": "D:/Qtprogram/bandicam/build/thread",
+  "command": "D:\\360Downloads\\QT\\Tools\\mingw1310_64\\bin\\g++.exe -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_OPENGL_LIB -DQT_QMLINTEGRATION_LIB -DQT_QMLMETA_LIB -DQT_QMLMODELS_LIB -DQT_QMLWORKERSCRIPT_LIB -DQT_QML_LIB -DQT_QUICK_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64 @CMakeFiles/thread_module.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\thread_module.dir\\ffvfilterthread.cpp.obj -c D:\\Qtprogram\\bandicam\\thread\\ffvfilterthread.cpp",
+  "file": "D:/Qtprogram/bandicam/thread/ffvfilterthread.cpp",
   "output": "thread/CMakeFiles/thread_module.dir/ffvfilterthread.cpp.obj"
 },
 {
-  "directory": "E:/myProgram/Recorder/record/build/thread",
-  "command": "F:\\Qt\\Tools\\mingw1310_64\\bin\\g++.exe -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64 @CMakeFiles/thread_module.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\thread_module.dir\\ffafilterthread.cpp.obj -c E:\\myProgram\\Recorder\\record\\thread\\ffafilterthread.cpp",
-  "file": "E:/myProgram/Recorder/record/thread/ffafilterthread.cpp",
+  "directory": "D:/Qtprogram/bandicam/build/thread",
+  "command": "D:\\360Downloads\\QT\\Tools\\mingw1310_64\\bin\\g++.exe -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_OPENGL_LIB -DQT_QMLINTEGRATION_LIB -DQT_QMLMETA_LIB -DQT_QMLMODELS_LIB -DQT_QMLWORKERSCRIPT_LIB -DQT_QML_LIB -DQT_QUICK_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64 @CMakeFiles/thread_module.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\thread_module.dir\\ffafilterthread.cpp.obj -c D:\\Qtprogram\\bandicam\\thread\\ffafilterthread.cpp",
+  "file": "D:/Qtprogram/bandicam/thread/ffafilterthread.cpp",
   "output": "thread/CMakeFiles/thread_module.dir/ffafilterthread.cpp.obj"
 },
 {
-  "directory": "E:/myProgram/Recorder/record/build/thread",
-  "command": "F:\\Qt\\Tools\\mingw1310_64\\bin\\g++.exe -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64 @CMakeFiles/thread_module.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\thread_module.dir\\ffaencoderthread.cpp.obj -c E:\\myProgram\\Recorder\\record\\thread\\ffaencoderthread.cpp",
-  "file": "E:/myProgram/Recorder/record/thread/ffaencoderthread.cpp",
+  "directory": "D:/Qtprogram/bandicam/build/thread",
+  "command": "D:\\360Downloads\\QT\\Tools\\mingw1310_64\\bin\\g++.exe -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_OPENGL_LIB -DQT_QMLINTEGRATION_LIB -DQT_QMLMETA_LIB -DQT_QMLMODELS_LIB -DQT_QMLWORKERSCRIPT_LIB -DQT_QML_LIB -DQT_QUICK_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64 @CMakeFiles/thread_module.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\thread_module.dir\\ffaencoderthread.cpp.obj -c D:\\Qtprogram\\bandicam\\thread\\ffaencoderthread.cpp",
+  "file": "D:/Qtprogram/bandicam/thread/ffaencoderthread.cpp",
   "output": "thread/CMakeFiles/thread_module.dir/ffaencoderthread.cpp.obj"
 },
 {
-  "directory": "E:/myProgram/Recorder/record/build/thread",
-  "command": "F:\\Qt\\Tools\\mingw1310_64\\bin\\g++.exe -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64 @CMakeFiles/thread_module.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\thread_module.dir\\ffvencoderthread.cpp.obj -c E:\\myProgram\\Recorder\\record\\thread\\ffvencoderthread.cpp",
-  "file": "E:/myProgram/Recorder/record/thread/ffvencoderthread.cpp",
+  "directory": "D:/Qtprogram/bandicam/build/thread",
+  "command": "D:\\360Downloads\\QT\\Tools\\mingw1310_64\\bin\\g++.exe -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_OPENGL_LIB -DQT_QMLINTEGRATION_LIB -DQT_QMLMETA_LIB -DQT_QMLMODELS_LIB -DQT_QMLWORKERSCRIPT_LIB -DQT_QML_LIB -DQT_QUICK_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64 @CMakeFiles/thread_module.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\thread_module.dir\\ffvencoderthread.cpp.obj -c D:\\Qtprogram\\bandicam\\thread\\ffvencoderthread.cpp",
+  "file": "D:/Qtprogram/bandicam/thread/ffvencoderthread.cpp",
   "output": "thread/CMakeFiles/thread_module.dir/ffvencoderthread.cpp.obj"
 },
 {
-  "directory": "E:/myProgram/Recorder/record/build/thread",
-  "command": "F:\\Qt\\Tools\\mingw1310_64\\bin\\g++.exe -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64 @CMakeFiles/thread_module.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\thread_module.dir\\ffmuxerthread.cpp.obj -c E:\\myProgram\\Recorder\\record\\thread\\ffmuxerthread.cpp",
-  "file": "E:/myProgram/Recorder/record/thread/ffmuxerthread.cpp",
+  "directory": "D:/Qtprogram/bandicam/build/thread",
+  "command": "D:\\360Downloads\\QT\\Tools\\mingw1310_64\\bin\\g++.exe -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_OPENGL_LIB -DQT_QMLINTEGRATION_LIB -DQT_QMLMETA_LIB -DQT_QMLMODELS_LIB -DQT_QMLWORKERSCRIPT_LIB -DQT_QML_LIB -DQT_QUICK_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64 @CMakeFiles/thread_module.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\thread_module.dir\\ffmuxerthread.cpp.obj -c D:\\Qtprogram\\bandicam\\thread\\ffmuxerthread.cpp",
+  "file": "D:/Qtprogram/bandicam/thread/ffmuxerthread.cpp",
   "output": "thread/CMakeFiles/thread_module.dir/ffmuxerthread.cpp.obj"
 },
 {
-  "directory": "E:/myProgram/Recorder/record/build/recorder",
-  "command": "F:\\Qt\\Tools\\mingw1310_64\\bin\\g++.exe -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64 @CMakeFiles/recorder_module.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\recorder_module.dir\\recorder_module_autogen\\mocs_compilation.cpp.obj -c E:\\myProgram\\Recorder\\record\\build\\recorder\\recorder_module_autogen\\mocs_compilation.cpp",
-  "file": "E:/myProgram/Recorder/record/build/recorder/recorder_module_autogen/mocs_compilation.cpp",
+  "directory": "D:/Qtprogram/bandicam/build/recorder",
+  "command": "D:\\360Downloads\\QT\\Tools\\mingw1310_64\\bin\\g++.exe -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64 @CMakeFiles/recorder_module.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\recorder_module.dir\\recorder_module_autogen\\mocs_compilation.cpp.obj -c D:\\Qtprogram\\bandicam\\build\\recorder\\recorder_module_autogen\\mocs_compilation.cpp",
+  "file": "D:/Qtprogram/bandicam/build/recorder/recorder_module_autogen/mocs_compilation.cpp",
   "output": "recorder/CMakeFiles/recorder_module.dir/recorder_module_autogen/mocs_compilation.cpp.obj"
 },
 {
-  "directory": "E:/myProgram/Recorder/record/build/recorder",
-  "command": "F:\\Qt\\Tools\\mingw1310_64\\bin\\g++.exe -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64 @CMakeFiles/recorder_module.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\recorder_module.dir\\ffrecoder_p.cpp.obj -c E:\\myProgram\\Recorder\\record\\recorder\\ffrecoder_p.cpp",
-  "file": "E:/myProgram/Recorder/record/recorder/ffrecoder_p.cpp",
+  "directory": "D:/Qtprogram/bandicam/build/recorder",
+  "command": "D:\\360Downloads\\QT\\Tools\\mingw1310_64\\bin\\g++.exe -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64 @CMakeFiles/recorder_module.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\recorder_module.dir\\ffrecoder_p.cpp.obj -c D:\\Qtprogram\\bandicam\\recorder\\ffrecoder_p.cpp",
+  "file": "D:/Qtprogram/bandicam/recorder/ffrecoder_p.cpp",
   "output": "recorder/CMakeFiles/recorder_module.dir/ffrecoder_p.cpp.obj"
 },
 {
-  "directory": "E:/myProgram/Recorder/record/build/recorder",
-  "command": "F:\\Qt\\Tools\\mingw1310_64\\bin\\g++.exe -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64 @CMakeFiles/recorder_module.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\recorder_module.dir\\ffrecoder.cpp.obj -c E:\\myProgram\\Recorder\\record\\recorder\\ffrecoder.cpp",
-  "file": "E:/myProgram/Recorder/record/recorder/ffrecoder.cpp",
+  "directory": "D:/Qtprogram/bandicam/build/recorder",
+  "command": "D:\\360Downloads\\QT\\Tools\\mingw1310_64\\bin\\g++.exe -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64 @CMakeFiles/recorder_module.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\recorder_module.dir\\ffrecoder.cpp.obj -c D:\\Qtprogram\\bandicam\\recorder\\ffrecoder.cpp",
+  "file": "D:/Qtprogram/bandicam/recorder/ffrecoder.cpp",
   "output": "recorder/CMakeFiles/recorder_module.dir/ffrecoder.cpp.obj"
 },
 {
-  "directory": "E:/myProgram/Recorder/record/build/encoder",
-  "command": "F:\\Qt\\Tools\\mingw1310_64\\bin\\g++.exe -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64 @CMakeFiles/encoder_module.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\encoder_module.dir\\encoder_module_autogen\\mocs_compilation.cpp.obj -c E:\\myProgram\\Recorder\\record\\build\\encoder\\encoder_module_autogen\\mocs_compilation.cpp",
-  "file": "E:/myProgram/Recorder/record/build/encoder/encoder_module_autogen/mocs_compilation.cpp",
+  "directory": "D:/Qtprogram/bandicam/build/encoder",
+  "command": "D:\\360Downloads\\QT\\Tools\\mingw1310_64\\bin\\g++.exe -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64 @CMakeFiles/encoder_module.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\encoder_module.dir\\encoder_module_autogen\\mocs_compilation.cpp.obj -c D:\\Qtprogram\\bandicam\\build\\encoder\\encoder_module_autogen\\mocs_compilation.cpp",
+  "file": "D:/Qtprogram/bandicam/build/encoder/encoder_module_autogen/mocs_compilation.cpp",
   "output": "encoder/CMakeFiles/encoder_module.dir/encoder_module_autogen/mocs_compilation.cpp.obj"
 },
 {
-  "directory": "E:/myProgram/Recorder/record/build/encoder",
-  "command": "F:\\Qt\\Tools\\mingw1310_64\\bin\\g++.exe -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64 @CMakeFiles/encoder_module.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\encoder_module.dir\\ffaencoder.cpp.obj -c E:\\myProgram\\Recorder\\record\\encoder\\ffaencoder.cpp",
-  "file": "E:/myProgram/Recorder/record/encoder/ffaencoder.cpp",
+  "directory": "D:/Qtprogram/bandicam/build/encoder",
+  "command": "D:\\360Downloads\\QT\\Tools\\mingw1310_64\\bin\\g++.exe -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64 @CMakeFiles/encoder_module.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\encoder_module.dir\\ffaencoder.cpp.obj -c D:\\Qtprogram\\bandicam\\encoder\\ffaencoder.cpp",
+  "file": "D:/Qtprogram/bandicam/encoder/ffaencoder.cpp",
   "output": "encoder/CMakeFiles/encoder_module.dir/ffaencoder.cpp.obj"
 },
 {
-  "directory": "E:/myProgram/Recorder/record/build/encoder",
-  "command": "F:\\Qt\\Tools\\mingw1310_64\\bin\\g++.exe -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64 @CMakeFiles/encoder_module.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\encoder_module.dir\\ffvencoder.cpp.obj -c E:\\myProgram\\Recorder\\record\\encoder\\ffvencoder.cpp",
-  "file": "E:/myProgram/Recorder/record/encoder/ffvencoder.cpp",
+  "directory": "D:/Qtprogram/bandicam/build/encoder",
+  "command": "D:\\360Downloads\\QT\\Tools\\mingw1310_64\\bin\\g++.exe -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64 @CMakeFiles/encoder_module.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\encoder_module.dir\\ffvencoder.cpp.obj -c D:\\Qtprogram\\bandicam\\encoder\\ffvencoder.cpp",
+  "file": "D:/Qtprogram/bandicam/encoder/ffvencoder.cpp",
   "output": "encoder/CMakeFiles/encoder_module.dir/ffvencoder.cpp.obj"
 },
 {
-  "directory": "E:/myProgram/Recorder/record/build/opengl",
-  "command": "F:\\Qt\\Tools\\mingw1310_64\\bin\\g++.exe -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_OPENGL_LIB -DQT_QMLINTEGRATION_LIB -DQT_QMLMODELS_LIB -DQT_QML_LIB -DQT_QUICK_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64 @CMakeFiles/opengl_module.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\opengl_module.dir\\opengl_module_autogen\\mocs_compilation.cpp.obj -c E:\\myProgram\\Recorder\\record\\build\\opengl\\opengl_module_autogen\\mocs_compilation.cpp",
-  "file": "E:/myProgram/Recorder/record/build/opengl/opengl_module_autogen/mocs_compilation.cpp",
+  "directory": "D:/Qtprogram/bandicam/build/opengl",
+  "command": "D:\\360Downloads\\QT\\Tools\\mingw1310_64\\bin\\g++.exe -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_OPENGL_LIB -DQT_QMLINTEGRATION_LIB -DQT_QMLMETA_LIB -DQT_QMLMODELS_LIB -DQT_QMLWORKERSCRIPT_LIB -DQT_QML_LIB -DQT_QUICK_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64 @CMakeFiles/opengl_module.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\opengl_module.dir\\opengl_module_autogen\\mocs_compilation.cpp.obj -c D:\\Qtprogram\\bandicam\\build\\opengl\\opengl_module_autogen\\mocs_compilation.cpp",
+  "file": "D:/Qtprogram/bandicam/build/opengl/opengl_module_autogen/mocs_compilation.cpp",
   "output": "opengl/CMakeFiles/opengl_module.dir/opengl_module_autogen/mocs_compilation.cpp.obj"
 },
 {
-  "directory": "E:/myProgram/Recorder/record/build/opengl",
-  "command": "F:\\Qt\\Tools\\mingw1310_64\\bin\\g++.exe -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_OPENGL_LIB -DQT_QMLINTEGRATION_LIB -DQT_QMLMODELS_LIB -DQT_QML_LIB -DQT_QUICK_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64 @CMakeFiles/opengl_module.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\opengl_module.dir\\ffglitem.cpp.obj -c E:\\myProgram\\Recorder\\record\\opengl\\ffglitem.cpp",
-  "file": "E:/myProgram/Recorder/record/opengl/ffglitem.cpp",
+  "directory": "D:/Qtprogram/bandicam/build/opengl",
+  "command": "D:\\360Downloads\\QT\\Tools\\mingw1310_64\\bin\\g++.exe -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_OPENGL_LIB -DQT_QMLINTEGRATION_LIB -DQT_QMLMETA_LIB -DQT_QMLMODELS_LIB -DQT_QMLWORKERSCRIPT_LIB -DQT_QML_LIB -DQT_QUICK_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64 @CMakeFiles/opengl_module.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\opengl_module.dir\\ffglitem.cpp.obj -c D:\\Qtprogram\\bandicam\\opengl\\ffglitem.cpp",
+  "file": "D:/Qtprogram/bandicam/opengl/ffglitem.cpp",
   "output": "opengl/CMakeFiles/opengl_module.dir/ffglitem.cpp.obj"
 },
 {
-  "directory": "E:/myProgram/Recorder/record/build/opengl",
-  "command": "F:\\Qt\\Tools\\mingw1310_64\\bin\\g++.exe -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_OPENGL_LIB -DQT_QMLINTEGRATION_LIB -DQT_QMLMODELS_LIB -DQT_QML_LIB -DQT_QUICK_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64 @CMakeFiles/opengl_module.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\opengl_module.dir\\ffglrenderer.cpp.obj -c E:\\myProgram\\Recorder\\record\\opengl\\ffglrenderer.cpp",
-  "file": "E:/myProgram/Recorder/record/opengl/ffglrenderer.cpp",
+  "directory": "D:/Qtprogram/bandicam/build/opengl",
+  "command": "D:\\360Downloads\\QT\\Tools\\mingw1310_64\\bin\\g++.exe -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_OPENGL_LIB -DQT_QMLINTEGRATION_LIB -DQT_QMLMETA_LIB -DQT_QMLMODELS_LIB -DQT_QMLWORKERSCRIPT_LIB -DQT_QML_LIB -DQT_QUICK_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64 @CMakeFiles/opengl_module.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\opengl_module.dir\\ffglrenderer.cpp.obj -c D:\\Qtprogram\\bandicam\\opengl\\ffglrenderer.cpp",
+  "file": "D:/Qtprogram/bandicam/opengl/ffglrenderer.cpp",
   "output": "opengl/CMakeFiles/opengl_module.dir/ffglrenderer.cpp.obj"
 }
 ]

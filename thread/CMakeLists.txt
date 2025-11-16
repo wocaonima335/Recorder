@@ -5,7 +5,6 @@ qt_add_library(thread_module STATIC
     ffthreadpool.cpp
     ffdemuxerthread.h
     ffdemuxerthread.cpp
-
     ffadecoderthread.h
     ffadecoderthread.cpp
     ffvdecoderthread.h
@@ -18,10 +17,6 @@ qt_add_library(thread_module STATIC
     ffaencoderthread.cpp
     ffvencoderthread.h
     ffvencoderthread.cpp
-
-
-
-
     ffmuxerthread.h
     ffmuxerthread.cpp
 )
@@ -31,6 +26,7 @@ target_link_libraries(thread_module
     Qt::Core
     ${FFMPEG_LIBRARIES}
     queue_module
+    opengl_module
     decoder_module)
 
 target_include_directories(thread_module PRIVATE

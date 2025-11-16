@@ -14,6 +14,8 @@
 #include "event/eventfactorymanager.h"
 
 #include <QtCore/QtGlobal>
+#include <cstdio>
+#include <chrono>
 
 #define CAPTURE_TIME 60
 
@@ -72,39 +74,83 @@ void FFMuxerThread::wakeAllThread()
 
 void FFMuxerThread::run()
 {
+    fprintf(stderr, "[MuxThread] run() start. Waiting header write...\n");
     muxer->writeHeader();
 
     FFPacket *audioPkt = nullptr;
     FFPacket *videoPkt = nullptr;
-
-    // 预计算时间基准转换因子
-    const double audioTimeBaseFactor = av_q2d(aEncoder->getCodecCtx()->time_base);
-    const double videoTimeBaseFactor = av_q2d(vEncoder->getCodecCtx()->time_base);
 
     // 获取初始包
     while (!audioPkt && !m_stop)
         audioPkt = aPktQueue->dequeue();
     while (!videoPkt && !m_stop)
         videoPkt = vPktQueue->dequeue();
-
     if (!audioPkt || !videoPkt)
         return;
 
     AVPacket *aPacket = &audioPkt->packet;
     AVPacket *vPacket = &videoPkt->packet;
 
-    // 主循环 - 内联优化
+    const AVRational aTB = aEncoder->getCodecCtx()->time_base;
+    const AVRational vTB = vEncoder->getCodecCtx()->time_base;
+    const AVRational usecTB{1, 1000000};
+
+    // 可保留你现有的 AdaptiveSync（动态阈值器）
+    AdaptiveSync adaptSync;
+
+    auto ptsToSec = [](int64_t pts, AVRational tb) -> double {
+        if (pts == AV_NOPTS_VALUE)
+            return NAN;
+        return pts * av_q2d(tb);
+    };
+
+    fprintf(stderr,
+            "[MuxThread] time_base: audio=%d/%d, video=%d/%d\n",
+            aTB.num,
+            aTB.den,
+            vTB.num,
+            vTB.den);
+
     while (!m_stop) {
-        // 快速路径：直接计算时间，避免重复函数调用
-        const double audioTime = aPacket->pts * audioTimeBaseFactor;
-        const double videoTime = vPacket->pts * videoTimeBaseFactor;
+        // 仅用于日志的秒值（决策改用 av_compare_ts）
+        const double aSec = ptsToSec(aPacket->pts, aTB);
+        const double vSec = ptsToSec(vPacket->pts, vTB);
+
+        // 计算动态阈值（秒），并钳制到 <= 50ms
+        double thrSec = (adaptSync.samples() < 10)
+                            ? SYNC_THRESHOLD
+                            : adaptSync.calculateDynamicThreshold(aSec, vSec);
+        thrSec = std::min(thrSec, 0.030);
+
+        // 将阈值从秒 -> 微秒 -> 各自 PTS 单位（避免 double 直接换算误差）
+        const int64_t thrUsec = (int64_t) llround(thrSec * 1000000.0);
+        const int64_t thrAPts = av_rescale_q(thrUsec, usecTB, aTB);
+        const int64_t thrVPts = av_rescale_q(thrUsec, usecTB, vTB);
+
+        // 选择策略：
+        // 若 aPTS <= vPTS + thrVPts，则优先复用音频；否则复用视频。
+        // 同时处理 AV_NOPTS_VALUE 的兜底。
+        bool chooseAudio = false;
+        if (aPacket->pts == AV_NOPTS_VALUE && vPacket->pts == AV_NOPTS_VALUE) {
+            // 双方都无 PTS：退化为先来先用（这里选音频，你也可按需求选视频）
+            chooseAudio = true;
+        } else if (aPacket->pts == AV_NOPTS_VALUE) {
+            // 仅音频无 PTS：用视频
+            chooseAudio = false;
+        } else if (vPacket->pts == AV_NOPTS_VALUE) {
+            // 仅视频无 PTS：用音频
+            chooseAudio = true;
+        } else {
+            // 核心比较：不同 time_base 下稳健比较
+            chooseAudio = av_compare_ts(aPacket->pts - thrAPts, aTB, vPacket->pts, vTB) <= 0;
+        }
 
         int ret;
-        double processedTime;
+        double processedSec;
 
-        if (audioTime <= videoTime + SYNC_THRESHOLD) {
+        if (chooseAudio) {
             ret = muxer->mux(aPacket);
-            processedTime = audioTime;
+            processedSec = aSec;
             FFPacketTraits::release(audioPkt);
             audioPkt = aPktQueue->dequeue();
             if (!audioPkt)
@@ -112,7 +158,7 @@ void FFMuxerThread::run()
             aPacket = &audioPkt->packet;
         } else {
             ret = muxer->mux(vPacket);
-            processedTime = videoTime;
+            processedSec = vSec;
             FFPacketTraits::release(videoPkt);
             videoPkt = vPktQueue->dequeue();
             if (!videoPkt)
@@ -120,21 +166,23 @@ void FFMuxerThread::run()
             vPacket = &videoPkt->packet;
         }
 
-        // 批量进度更新（减少事件发送频率）
-        if (processedTime - lastProcessTime >= 0.01) {
-            sendCaptureProcessEvent(processedTime);
-            lastProcessTime = processedTime;
+        // 进度事件（与原逻辑一致）
+        if (processedSec - lastProcessTime >= 0.01) {
+            sendCaptureProcessEvent(processedSec);
+            lastProcessTime = processedSec;
         }
 
-        if (ret < 0)
-            break; // 快速错误退出
+        if (ret < 0) {
+            fprintf(stderr, "[MuxThread] muxer->mux() returned error=%d, breaking.\n", ret);
+            break;
+        }
     }
 
-    // 清理
     if (audioPkt)
         FFPacketTraits::release(audioPkt);
     if (videoPkt)
         FFPacketTraits::release(videoPkt);
+    fprintf(stderr, "[MuxThread] loop end, writing trailer.\n");
     muxer->writeTrailer();
 }
 

@@ -1,4 +1,5 @@
 #include "event/eventfactorymanager.h"
+#include "opengl/ffglitem.h"
 #include "recorder/ffrecorder.h"
 
 #include "event/ffclosesourceevent.h"
@@ -124,6 +125,8 @@ void stopRecording()
     
     // 停止录制
     FFEventQueue::getInstance().enqueue(closeAudioEvent.release());
+
+    FFRecorder::getInstance().stopRecord();
 }
 
 void pauseRecording()
@@ -164,6 +167,7 @@ public slots:
     void onStopRecording() { stopRecording(); }
     void onPauseRecording() { pauseRecording(); }
     void onStartRecording() { startRecording(); }
+    void onReadyRecording() { readyRecording(); }
 };
 
 int main(int argc, char *argv[])
@@ -171,6 +175,8 @@ int main(int argc, char *argv[])
     QGuiApplication app(argc, argv);
 
     init();
+
+    QQuickWindow::setGraphicsApi(QSGRendererInterface::OpenGLRhi);
 
     QQmlApplicationEngine engine;
     QObject::connect(
@@ -181,15 +187,24 @@ int main(int argc, char *argv[])
         Qt::QueuedConnection);
     
     // Register the recorder object with QML context before loading the module
+    qmlRegisterType<FFGLItem>("GLPreview", 1, 0, "GLView");
     engine.rootContext()->setContextProperty("recorder", &FFRecorder::getInstance());
     engine.loadFromModule("bandicam", "Main");
 
     if (!engine.rootObjects().isEmpty()) {
         auto root = engine.rootObjects().first();
+
+        // 绑定预览项
+        QObject *obj = root->findChild<QObject *>("previewView", Qt::FindChildrenRecursively);
+        auto previewItem = qobject_cast<FFGLItem *>(obj);
+        PreviewBridge::instance().setPreviewItem(previewItem);
+        qDebug() << "PreviewItem set:" << previewItem;
+
         static QmlBridge bridge;
         QObject::connect(root, SIGNAL(startRecording()), &bridge, SLOT(onStartRecording()));
         QObject::connect(root, SIGNAL(stopRecording()), &bridge, SLOT(onStopRecording()));
         QObject::connect(root, SIGNAL(pauseRecording()), &bridge, SLOT(onPauseRecording()));
+        QObject::connect(root, SIGNAL(readyRecording()), &bridge, SLOT(onReadyRecording()));
 
     } else {
         qDebug() << "Failed to load QML root object";

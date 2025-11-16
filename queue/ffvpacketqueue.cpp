@@ -3,7 +3,7 @@
 
 FFVPacketQueue::FFVPacketQueue()
     : serial(0)
-    , impl(new FFBoundedQueue<FFPacket, FFPacketTraits>(120))
+    , impl(new FFBoundedQueue<FFPacket, FFPacketTraits>(30))
 
 {}
 

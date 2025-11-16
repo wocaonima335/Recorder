@@ -4,6 +4,7 @@
 #include "encoder/ffvencoder.h"
 #include "filter/ffvfilter.h"
 #include "muxer/ffmuxer.h"
+#include "opengl/ffglitem.h"
 #include "queue/ffvframequeue.h"
 
 #include <iostream>
@@ -21,26 +22,24 @@ void FFVEncoderThread::init(FFVFilter *vFilter_,
     vEncoder = vEncoder_;
     muxer = muxer_;
     frmQueue = frmQueue_;
+    gLItem = PreviewBridge::instance().get();
     std::cerr << "[VEncThread] init: vFilter=" << vFilter << " vEncoder=" << vEncoder
               << " muxer=" << muxer << " frmQueue=" << frmQueue << std::endl;
 }
 
 void FFVEncoderThread::wakeAllThread()
 {
-    if (frmQueue)
-    {
+    if (frmQueue) {
         frmQueue->wakeAllThread();
     }
-    if (vEncoder)
-    {
+    if (vEncoder) {
         vEncoder->wakeAllThread();
     }
 }
 
 void FFVEncoderThread::close()
 {
-    if (vEncoder)
-    {
+    if (vEncoder) {
         vEncoder->close();
     }
     firstFrame = true;
@@ -112,7 +111,43 @@ void FFVEncoderThread::run()
         int64_t vpts = std::max(wall_pts, ideal_pts);
         frame_count = vpts + 1;
 
+        if (gLItem && frame->format == AV_PIX_FMT_YUV420P) {
+            const int w = frame->width;
+            const int h = frame->height;
+
+            // 注意 stride：按行拷贝避免因 linesize > width 造成图像错乱
+            QByteArray yArr;
+            yArr.resize(w * h);
+            QByteArray uArr;
+            uArr.resize(w * h / 4);
+            QByteArray vArr;
+            vArr.resize(w * h / 4);
+
+            auto copyPlane =
+                [](QByteArray &dst, const uint8_t *src, int width, int height, int linesize) {
+                    char *d = dst.data();
+                    for (int row = 0; row < height; ++row) {
+                        memcpy(d + row * width, src + row * linesize, width);
+                    }
+                };
+
+            copyPlane(yArr, frame->data[0], w, h, frame->linesize[0]);
+            copyPlane(uArr, frame->data[1], w / 2, h / 2, frame->linesize[1]);
+            copyPlane(vArr, frame->data[2], w / 2, h / 2, frame->linesize[2]);
+
+            // 异步调用到 UI 线程
+            QMetaObject::invokeMethod(gLItem,
+                                      "setYUVData",
+                                      Qt::QueuedConnection,
+                                      Q_ARG(QByteArray, yArr),
+                                      Q_ARG(QByteArray, uArr),
+                                      Q_ARG(QByteArray, vArr),
+                                      Q_ARG(int, w),
+                                      Q_ARG(int, h));
+        }
+
         vEncoder->encode(frame, streamIndex, vpts, timeBase);
+
         AVFrameTraits::release(frame);
     }
 }
@@ -123,8 +158,7 @@ void FFVEncoderThread::run()
 //     // double total_encode_time = 0.0;
 //     // double total_dequeue_time = 0.0;
 
-//     while (!m_stop)
-//     {
+//     while (!m_stop) {
 //         // 监控dequeue时间
 //         // auto dequeue_start = std::chrono::high_resolution_clock::now();
 //         AVFrame *frame = frmQueue->dequeue();
@@ -156,24 +190,22 @@ void FFVEncoderThread::run()
 //         frame_count = vpts + 1;
 
 //         // 监控编码时间
-//         // auto encode_start = std::chrono::high_resolution_clock::now();
+//         auto encode_start = std::chrono::high_resolution_clock::now();
 //         vEncoder->encode(frame, streamIndex, vpts, timeBase);
-//         // auto encode_end = std::chrono::high_resolution_clock::now();
+//         auto encode_end = std::chrono::high_resolution_clock::now();
 
-//         // double encode_ms = std::chrono::duration<double, std::milli>(encode_end - encode_start)
-//         //                        .count();
+//         double encode_ms = std::chrono::duration<double, std::milli>(encode_end - encode_start)
+//                                .count();
 //         // total_encode_time += encode_ms;
 
-//         // // 警告慢编码
-//         // if (encode_ms > 50.0)
-//         // {
-//         //     std::cerr << "[VEncThread] WARNING: Slow encode detected! " << encode_ms
-//         //               << "ms (target: <33ms for 30fps)" << std::endl;
-//         // }
+//         // 警告慢编码
+//         if (encode_ms > 50.0) {
+//             std::cerr << "[VEncThread] WARNING: Slow encode detected! " << encode_ms
+//                       << "ms (target: <33ms for 30fps)" << std::endl;
+//         }
 
 //         // // 警告长时间dequeue
-//         // if (dequeue_ms > 50.0)
-//         // {
+//         // if (dequeue_ms > 50.0) {
 //         //     std::cerr << "[VEncThread] WARNING: Long dequeue wait! " << dequeue_ms
 //         //               << "ms (queue may be empty)" << std::endl;
 //         // }

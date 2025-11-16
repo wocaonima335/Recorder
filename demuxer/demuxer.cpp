@@ -84,9 +84,9 @@ int Demuxer::demux()
     } else if (vStream && packet->stream_index == vStream->index) {
         if (vPktQueue) {
             static int v_cnt = 0;
-            std::cerr << "[Demux] V pkt idx=" << packet->stream_index << " pts=" << packet->pts
-                      << " dts=" << packet->dts << " dur=" << packet->duration
-                      << " size=" << packet->size << " count=" << ++v_cnt << std::endl;
+            // std::cerr << "[Demux] V pkt idx=" << packet->stream_index << " pts=" << packet->pts
+            //           << " dts=" << packet->dts << " dur=" << packet->duration
+            //           << " size=" << packet->size << " count=" << ++v_cnt << std::endl;
             vPktQueue->enqueue(packet);
             av_packet_free(&packet);
         } else {

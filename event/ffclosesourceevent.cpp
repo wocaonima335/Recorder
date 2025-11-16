@@ -23,12 +23,11 @@ void FFCloseSourceEvent::close()
             aFilterThread->closeAudioSource(sourceType);
         }
 
-        // Stop demuxer thread and release resources
-        if (aDemuxerThread[index]) {
-            aDemuxerThread[index]->stop();
-            aDemuxerThread[index]->wakeAllThread();
-            aDemuxerThread[index]->wait();
-            aDemuxerThread[index]->close();
+        if (aEncoderThread) {
+            aEncoderThread->stop();
+            aEncoderThread->wakeAllThread();
+            aEncoderThread->wait();
+            aEncoderThread->close();
         }
 
         // Stop decoder thread and release resources
@@ -39,19 +38,15 @@ void FFCloseSourceEvent::close()
             aDecoderThread[index]->close();
         }
 
-        // Close queues
-        if (aPktQueue[index]) {
-            aPktQueue[index]->close();
-        }
-        if (aFrmQueue[index]) {
-            aFrmQueue[index]->close();
+        // Stop demuxer thread and release resources
+        if (aDemuxerThread[index]) {
+            aDemuxerThread[index]->stop();
+            aDemuxerThread[index]->wakeAllThread();
+            aDemuxerThread[index]->wait();
+            aDemuxerThread[index]->close();
         }
 
-        return;
-    }
-
-    // Close video sources (SCREEN / CAMERA / VIDEO)
-    {
+    } else {
         // Stop muxer thread first to finalize trailer after consuming remaining packets
         if (muxerThread) {
             muxerThread->stop();
@@ -83,22 +78,6 @@ void FFCloseSourceEvent::close()
             vDemuxerThread[index]->wait();
             vDemuxerThread[index]->close();
         }
-
-        // Close queues (encoder, filter, decoder)
-        if (recoderContext) {
-            if (recoderContext->getVFilterEncoderFrmQueue()) {
-                recoderContext->getVFilterEncoderFrmQueue()->close();
-            }
-            if (recoderContext->getVEncoderPktQueue()) {
-                recoderContext->getVEncoderPktQueue()->close();
-            }
-        }
-
-        if (vPktQueue[index]) {
-            vPktQueue[index]->close();
-        }
-        if (vFrmQueue[index]) {
-            vFrmQueue[index]->close();
-        }
     }
+    return;
 }

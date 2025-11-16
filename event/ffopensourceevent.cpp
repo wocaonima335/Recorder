@@ -72,7 +72,6 @@ void FFOpenSourceEvent::start()
         aDecoderThread[index]->start();
 
         aEncoderThread->start();
-
         recoderContext->getAEncoderPktQueue()->start();
 
         aPktQueue[index]->start();
@@ -85,7 +84,6 @@ void FFOpenSourceEvent::start()
         vDecoderThread[index]->start();
 
         vEncoderThread->start();
-
         recoderContext->getVEncoderPktQueue()->start();
 
         vPktQueue[index]->start();

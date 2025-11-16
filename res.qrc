@@ -17,5 +17,7 @@
         <file>icons/microphone.png</file>
         <file>icons/camera.png</file>
         <file>icons/screen.png</file>
+        <file>shaderSource/source.frag</file>
+        <file>shaderSource/source.vert</file>
     </qresource>
 </RCC>

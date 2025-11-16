@@ -40,6 +40,8 @@ public:
 
     FFAEncoderPars *getEncoderPars();
     AVCodecContext *getCodecCtx();
+    void flush();
+    void resetPending(int64_t base_pts);
 
     void initAudio(AVFrame *frame);
 

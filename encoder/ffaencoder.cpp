@@ -89,12 +89,12 @@ int FFAEncoder::encode(AVFrame *frame, int streamIndex, int64_t pts, AVRational 
             memcpy(sub_frame->data[ch], src, frame_size * bytes_per_sample);
         }
 
-        {
-            const char *sfmt = av_get_sample_fmt_name((AVSampleFormat) sub_frame->format);
-            std::cerr << "[AEnc] send_frame: nb_samples=" << sub_frame->nb_samples
-                      << " pts=" << sub_frame->pts << " fmt=" << (sfmt ? sfmt : "unknown")
-                      << std::endl;
-        }
+        // {
+        //     const char *sfmt = av_get_sample_fmt_name((AVSampleFormat) sub_frame->format);
+        //     // std::cerr << "[AEnc] send_frame: nb_samples=" << sub_frame->nb_samples
+        //     //           << " pts=" << sub_frame->pts << " fmt=" << (sfmt ? sfmt : "unknown")
+        //     //           << std::endl;
+        // }
         int ret_send = avcodec_send_frame(codecCtx, sub_frame);
         if (ret_send < 0) {
             printError(ret_send);
@@ -116,8 +116,8 @@ int FFAEncoder::encode(AVFrame *frame, int streamIndex, int64_t pts, AVRational 
             }
 
             pkt->stream_index = streamIndex;
-            std::cerr << "[AEncPkt] produced: pts=" << pkt->pts << " dts=" << pkt->dts
-                      << " size=" << pkt->size << " stream=" << streamIndex << std::endl;
+            // std::cerr << "[AEncPkt] produced: pts=" << pkt->pts << " dts=" << pkt->dts
+            //           << " size=" << pkt->size << " stream=" << streamIndex << std::endl;
 
             pkt->stream_index = streamIndex;
             pktQueue->enqueue(pkt);
@@ -146,6 +146,32 @@ FFAEncoderPars *FFAEncoder::getEncoderPars()
 AVCodecContext *FFAEncoder::getCodecCtx()
 {
     return codecCtx;
+}
+
+void FFAEncoder::flush()
+{
+    std::lock_guard<std::mutex> lock(mutex);
+    if (codecCtx) {
+        avcodec_flush_buffers(codecCtx);
+    }
+    pendingFrame.samples = 0;
+    for (int ch = 0; ch < 8; ++ch) {
+        pendingFrame.data[ch].clear();
+        pendingFrame.data[ch].shrink_to_fit();
+    }
+    std::cerr << "[AEnc] flush" << std::endl;
+}
+
+void FFAEncoder::resetPending(int64_t base_pts)
+{
+    std::lock_guard<std::mutex> lock(mutex);
+    pendingFrame.next_pts = base_pts;
+    pendingFrame.samples = 0;
+    for (int ch = 0; ch < 8; ++ch) {
+        pendingFrame.data[ch].clear();
+        pendingFrame.data[ch].shrink_to_fit();
+    }
+    std::cerr << "[AEnc] resetPending base_pts=" << base_pts << std::endl;
 }
 
 void FFAEncoder::initAudio(AVFrame *frame)
@@ -193,13 +219,13 @@ void FFAEncoder::initAudio(AVFrame *frame)
         return;
     }
 
-    std::cerr << "[AEnc] opened: frame_size=" << codecCtx->frame_size
-              << " profile=" << codecCtx->profile << " time_base=" << codecCtx->time_base.num << "/"
-              << codecCtx->time_base.den << " sample_fmt="
-              << (av_get_sample_fmt_name(codecCtx->sample_fmt)
-                      ? av_get_sample_fmt_name(codecCtx->sample_fmt)
-                      : "unknown")
-              << std::endl;
+    // std::cerr << "[AEnc] opened: frame_size=" << codecCtx->frame_size
+    //           << " profile=" << codecCtx->profile << " time_base=" << codecCtx->time_base.num << "/"
+    //           << codecCtx->time_base.den << " sample_fmt="
+    //           << (av_get_sample_fmt_name(codecCtx->sample_fmt)
+    //                   ? av_get_sample_fmt_name(codecCtx->sample_fmt)
+    //                   : "unknown")
+    //           << std::endl;
 }
 
 void FFAEncoder::printError(int ret)

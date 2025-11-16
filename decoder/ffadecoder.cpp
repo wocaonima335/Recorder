@@ -41,12 +41,12 @@ void FFADecoder::decode(AVPacket *packet)
 
         ret = avcodec_receive_frame(codecCtx, frame);
 
-        std::cerr << "[ADec] receive_frame ret=" << ret;
-        if (ret == AVERROR(EAGAIN))
-            std::cerr << " (EAGAIN)";
-        if (ret == AVERROR_EOF)
-            std::cerr << " (EOF)";
-        std::cerr << std::endl;
+        // std::cerr << "[ADec] receive_frame ret=" << ret;
+        // if (ret == AVERROR(EAGAIN))
+        //     std::cerr << " (EAGAIN)";
+        // if (ret == AVERROR_EOF)
+        //     std::cerr << " (EOF)";
+        // std::cerr << std::endl;
 
         if (ret < 0) {
             if (ret == AVERROR_EOF) {
@@ -94,7 +94,7 @@ void FFADecoder::decode(AVPacket *packet)
                     break;
                 } else {
                     // 无重采样分支打印 pts
-                    std::cerr << "ADec][nosws] frame pts=" << frame->pts << std::endl;
+                    // std::cerr << "ADec][nosws] frame pts=" << frame->pts << std::endl;
                     frmQueue->enqueue(frame);
                 }
             }

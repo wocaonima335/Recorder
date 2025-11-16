@@ -101,7 +101,7 @@ template<typename T, typename Traits>
 class FFBoundedQueue
 {
 public:
-    explicit FFBoundedQueue(size_t maxSize = 10);
+    explicit FFBoundedQueue(size_t maxSize = 30);
 
     void start();
     void wakeAllThread();
@@ -158,7 +158,6 @@ template<typename T, typename Traits>
 void FFBoundedQueue<T, Traits>::enqueueFromSrc(T *src)
 {
     std::unique_lock<std::mutex> lock(mutex);
-    cond.wait(lock, [this]() { return q.size() < m_maxSize || m_stop.load(memory_order_acquire); });
 
     if (m_stop.load(std::memory_order_acquire)) {
         Traits::releaseSrc(src);

@@ -26,12 +26,12 @@ void FFVDecoder::decode(AVPacket *packet)
 
     int ret = avcodec_send_packet(codecCtx, packet);
     // 打印 send_packet 返回值
-    std::cerr << "[VDec] send_packet ret=" << ret;
-    if (ret == AVERROR(EAGAIN))
-        std::cerr << " (EAGAIN)";
-    if (ret == AVERROR_EOF)
-        std::cerr << " (EOF)";
-    std::cerr << std::endl;
+    // std::cerr << "[VDec] send_packet ret=" << ret;
+    // if (ret == AVERROR(EAGAIN))
+    //     std::cerr << " (EAGAIN)";
+    // if (ret == AVERROR_EOF)
+    //     std::cerr << " (EOF)";
+    // std::cerr << std::endl;
 
     if (ret < 0 && ret != AVERROR(EAGAIN)) {
         printError(ret);
@@ -48,10 +48,10 @@ void FFVDecoder::decode(AVPacket *packet)
 
         ret = avcodec_receive_frame(codecCtx, frame);
         // 打印 receive_frame 返回值
-        std::cerr << "[VDec] receive_frame ret=" << ret;
-        if (ret == AVERROR(EAGAIN)) std::cerr << " (EAGAIN)";
-        if (ret == AVERROR_EOF) std::cerr << " (EOF)";
-        std::cerr << std::endl;
+        // std::cerr << "[VDec] receive_frame ret=" << ret;
+        // if (ret == AVERROR(EAGAIN)) std::cerr << " (EAGAIN)";
+        // if (ret == AVERROR_EOF) std::cerr << " (EOF)";
+        // std::cerr << std::endl;
 
         if (ret < 0) {
             if (ret == AVERROR_EOF) {
@@ -94,9 +94,9 @@ void FFVDecoder::decode(AVPacket *packet)
                     break;
                 } else {
                     // 打印重采样后帧 pts
-                    if (swsFrame) {
-                        std::cerr << "[VDec][sws] frame pts=" << swsFrame->pts << std::endl;
-                    }
+                    // if (swsFrame) {
+                    //     std::cerr << "[VDec][sws] frame pts=" << swsFrame->pts << std::endl;
+                    // }
                     //解码队列
                     AVFrame *decoderFrame = av_frame_clone(swsFrame);
                     std::cout << "video frame pts: " << decoderFrame->pts << std::endl;

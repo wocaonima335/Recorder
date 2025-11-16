@@ -2,11 +2,13 @@
 #define FFVENCODERTHREAD_H
 
 #include "ffthread.h"
+
 extern "C" {
 #include <libavformat/avformat.h>
 #include <libavutil/time.h>
 }
 
+#include <QThreadPool>
 #include <condition_variable>
 #include <mutex>
 
@@ -16,6 +18,7 @@ class FFVFrameQueue;
 class FFVideoPars;
 class FFMuxer;
 class FFVFilter;
+class FFGLItem;
 
 class FFVEncoderThread : public FFThread
 {
@@ -42,15 +45,22 @@ private:
     FFVEncoder *vEncoder = nullptr;
     FFVFrameQueue *frmQueue = nullptr;
     FFMuxer *muxer = nullptr;
+    QThreadPool previewPool;
 
     int streamIndex = -1;
     FFVFilter *vFilter = nullptr;
+    FFGLItem *gLItem = nullptr;
 
     AVRational timeBase;
     AVRational frameRate;
+    AVRational sourceTimeBase{1, AV_TIME_BASE};
+    int64_t frameStep = 1;
+    int64_t sourcePtsOffset = 0;
 
     int64_t firstFramePts = 0;
     bool firstFrame = true;
+    int64_t fallbackPts = 0;
+    bool ptsInitialized = false;
 
     int64_t start_time_us = 0;
     bool useWallClockPts = true;

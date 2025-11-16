@@ -47,6 +47,8 @@ private:
     int64_t firstFramePts = 0;
     bool firstFrame = true;
     int64_t start_time_us = 0;
+    int64_t audioFallbackPts = 0;
+    bool audioPtsInitialized = false;
 
     std::atomic<bool> paused{false};
     int64_t pause_start_us{0};

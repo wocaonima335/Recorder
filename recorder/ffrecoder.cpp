@@ -39,10 +39,6 @@ void FFRecorder::startRecord()
     if (m_isRecording)
         return;
 
-    int64_t t0 = av_gettime_relative();
-    d->vEncoderThread->setStartTimeUs(t0);
-    d->aEncoderThread->setStartTimeUs(t0);
-
     FFEventQueue::getInstance().start();
     m_eventLoop->start();
     m_isRecording = true;
@@ -52,18 +48,6 @@ void FFRecorder::stopRecord()
 {
     if (!m_isRecording)
         return;
-
-    if (d->vFilterThread) {
-        d->vFilterThread->stop();
-        d->vFilterThread->wakeAllThread();
-        d->vFilterThread->wait();
-    }
-
-    if (d->aFilterThread) {
-        d->aFilterThread->stop();
-        d->aFilterThread->wakeAllThread();
-        d->aFilterThread->wait();
-    }
 
     if (m_eventLoop) {
         m_eventLoop->stop();
