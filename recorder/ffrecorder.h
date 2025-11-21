@@ -66,6 +66,7 @@ public:
     FFEventLoop *getEventLoop();
 
     QString captureTimeText() const;
+    Q_INVOKABLE bool isRecording() const { return m_isRecording; }
 
 public slots:
     void setCaptureTimeText(const QString &timeText);

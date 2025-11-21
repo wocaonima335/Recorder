@@ -35,7 +35,6 @@ void FFOpenSourceEvent::init()
         aEncoderThread->close();
         aEncoder->init(aEncoderPktQueue);
         aEncoderThread->init(aFilter, aEncoder, muxer, aFrmQueue[index]);
-
     }
     else
     {
@@ -60,11 +59,9 @@ void FFOpenSourceEvent::init()
 
 void FFOpenSourceEvent::start()
 {
-    int64_t t0 = av_gettime_relative(); // 统一墙钟起点
-    aEncoderThread->setStartTimeUs(t0);
-    vEncoderThread->setStartTimeUs(t0);
 
-    if (sourceType == AUDIO || sourceType == MICROPHONE) {
+    if (sourceType == AUDIO || sourceType == MICROPHONE)
+    {
         aDemuxerThread[index]->wakeAllThread();
         aDemuxerThread[index]->start();
 
@@ -76,7 +73,9 @@ void FFOpenSourceEvent::start()
 
         aPktQueue[index]->start();
         aFrmQueue[index]->start();
-    } else {
+    }
+    else
+    {
         vDemuxerThread[index]->wakeAllThread();
         vDemuxerThread[index]->start();
 

@@ -5,6 +5,7 @@
 
 extern "C" {
 #include <libavformat/avformat.h>
+#include <libavutil/rational.h>
 #include <libavutil/time.h>
 }
 
@@ -61,6 +62,7 @@ private:
     bool firstFrame = true;
     int64_t fallbackPts = 0;
     bool ptsInitialized = false;
+    bool hasAbsolutePts = false;
 
     int64_t start_time_us = 0;
     bool useWallClockPts = true;

@@ -31,6 +31,12 @@
 },
 {
   "directory": "D:/Qtprogram/bandicam/build/qml",
+  "command": "D:\\360Downloads\\QT\\Tools\\mingw1310_64\\bin\\g++.exe -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_OPENGL_LIB -DQT_QMLINTEGRATION_LIB -DQT_QMLMETA_LIB -DQT_QMLMODELS_LIB -DQT_QMLWORKERSCRIPT_LIB -DQT_QML_LIB -DQT_QUICK_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64 @CMakeFiles/qml_module_resources_1.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\qml_module_resources_1.dir\\.qt\\rcc\\qrc_qmake_bandicam_init.cpp.obj -c D:\\Qtprogram\\bandicam\\build\\qml\\.qt\\rcc\\qrc_qmake_bandicam_init.cpp",
+  "file": "D:/Qtprogram/bandicam/build/qml/.qt/rcc/qrc_qmake_bandicam_init.cpp",
+  "output": "qml/CMakeFiles/qml_module_resources_1.dir/.qt/rcc/qrc_qmake_bandicam_init.cpp.obj"
+},
+{
+  "directory": "D:/Qtprogram/bandicam/build/qml",
   "command": "D:\\360Downloads\\QT\\Tools\\mingw1310_64\\bin\\g++.exe -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_OPENGL_LIB -DQT_QMLINTEGRATION_LIB -DQT_QMLMETA_LIB -DQT_QMLMODELS_LIB -DQT_QMLWORKERSCRIPT_LIB -DQT_QML_LIB -DQT_QUICK_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64 @CMakeFiles/qml_module.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\qml_module.dir\\qml_module_autogen\\mocs_compilation.cpp.obj -c D:\\Qtprogram\\bandicam\\build\\qml\\qml_module_autogen\\mocs_compilation.cpp",
   "file": "D:/Qtprogram/bandicam/build/qml/qml_module_autogen/mocs_compilation.cpp",
   "output": "qml/CMakeFiles/qml_module.dir/qml_module_autogen/mocs_compilation.cpp.obj"
@@ -94,12 +100,6 @@
   "command": "D:\\360Downloads\\QT\\Tools\\mingw1310_64\\bin\\g++.exe -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_OPENGL_LIB -DQT_QMLINTEGRATION_LIB -DQT_QMLMETA_LIB -DQT_QMLMODELS_LIB -DQT_QMLWORKERSCRIPT_LIB -DQT_QML_LIB -DQT_QUICK_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64 @CMakeFiles/qml_module.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\qml_module.dir\\.qt\\rcc\\qrc_qml_module_raw_qml_0.cpp.obj -c D:\\Qtprogram\\bandicam\\build\\qml\\.qt\\rcc\\qrc_qml_module_raw_qml_0.cpp",
   "file": "D:/Qtprogram/bandicam/build/qml/.qt/rcc/qrc_qml_module_raw_qml_0.cpp",
   "output": "qml/CMakeFiles/qml_module.dir/.qt/rcc/qrc_qml_module_raw_qml_0.cpp.obj"
-},
-{
-  "directory": "D:/Qtprogram/bandicam/build/qml",
-  "command": "D:\\360Downloads\\QT\\Tools\\mingw1310_64\\bin\\g++.exe -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_OPENGL_LIB -DQT_QMLINTEGRATION_LIB -DQT_QMLMETA_LIB -DQT_QMLMODELS_LIB -DQT_QMLWORKERSCRIPT_LIB -DQT_QML_LIB -DQT_QUICK_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64 @CMakeFiles/qml_module_resources_1.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\qml_module_resources_1.dir\\.qt\\rcc\\qrc_qmake_bandicam_init.cpp.obj -c D:\\Qtprogram\\bandicam\\build\\qml\\.qt\\rcc\\qrc_qmake_bandicam_init.cpp",
-  "file": "D:/Qtprogram/bandicam/build/qml/.qt/rcc/qrc_qmake_bandicam_init.cpp",
-  "output": "qml/CMakeFiles/qml_module_resources_1.dir/.qt/rcc/qrc_qmake_bandicam_init.cpp.obj"
 },
 {
   "directory": "D:/Qtprogram/bandicam/build/qml",
@@ -286,6 +286,12 @@
   "command": "D:\\360Downloads\\QT\\Tools\\mingw1310_64\\bin\\g++.exe -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64 @CMakeFiles/event_module.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\event_module.dir\\ffpauseevent.cpp.obj -c D:\\Qtprogram\\bandicam\\event\\ffpauseevent.cpp",
   "file": "D:/Qtprogram/bandicam/event/ffpauseevent.cpp",
   "output": "event/CMakeFiles/event_module.dir/ffpauseevent.cpp.obj"
+},
+{
+  "directory": "D:/Qtprogram/bandicam/build/event",
+  "command": "D:\\360Downloads\\QT\\Tools\\mingw1310_64\\bin\\g++.exe -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64 @CMakeFiles/event_module.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\event_module.dir\\ffsourcechangeevent.cpp.obj -c D:\\Qtprogram\\bandicam\\event\\ffsourcechangeevent.cpp",
+  "file": "D:/Qtprogram/bandicam/event/ffsourcechangeevent.cpp",
+  "output": "event/CMakeFiles/event_module.dir/ffsourcechangeevent.cpp.obj"
 },
 {
   "directory": "D:/Qtprogram/bandicam/build/thread",

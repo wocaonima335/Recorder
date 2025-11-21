@@ -38,7 +38,9 @@ void FFRecorder::startRecord()
 {
     if (m_isRecording)
         return;
-
+    int64_t t0 = av_gettime_relative(); // 统一墙钟起点
+    d->aEncoderThread->setStartTimeUs(t0);
+    d->vEncoderThread->setStartTimeUs(t0);
     FFEventQueue::getInstance().start();
     m_eventLoop->start();
     m_isRecording = true;
@@ -49,7 +51,8 @@ void FFRecorder::stopRecord()
     if (!m_isRecording)
         return;
 
-    if (m_eventLoop) {
+    if (m_eventLoop)
+    {
         m_eventLoop->stop();
         m_eventLoop->wakeAllThread();
         m_eventLoop->wait();
@@ -66,7 +69,8 @@ FFRecorderPrivate *FFRecorder::getContext()
 
 void FFRecorder::initCoreComponents()
 {
-    for (size_t i = 0; i < FFRecordContextType::A_DECODER_SIZE; i++) {
+    for (size_t i = 0; i < FFRecordContextType::A_DECODER_SIZE; i++)
+    {
         d->aDecoderPktQueue[i] = new FFAPacketQueue;
         d->aDecoder[i] = new FFADecoder;
         d->aDecoderFrmQueue[i] = new FFAFrameQueue;
@@ -75,7 +79,8 @@ void FFRecorder::initCoreComponents()
         d->aDemuxerThread[i] = new FFDemuxerThread;
     }
 
-    for (size_t i = 0; i < FFRecordContextType::V_DECODER_SIZE; i++) {
+    for (size_t i = 0; i < FFRecordContextType::V_DECODER_SIZE; i++)
+    {
         d->vDecoderPktQueue[i] = new FFVPacketQueue;
         d->vDecoder[i] = new FFVDecoder;
         d->vDecoderFrmQueue[i] = new FFVFrameQueue;
@@ -193,7 +198,6 @@ Demuxer *FFRecorder::getVDemuxer(int index)
         return nullptr;
     return d->vDemuxer[index];
 }
-
 
 FFDemuxerThread *FFRecorder::getADemuxerThread(int index)
 {
@@ -313,7 +317,8 @@ QString FFRecorder::captureTimeText() const
 
 void FFRecorder::setCaptureTimeText(const QString &timeText)
 {
-    if (m_captureTimeText != timeText) {
+    if (m_captureTimeText != timeText)
+    {
         m_captureTimeText = timeText;
         emit captureTimeTextChanged();
     }

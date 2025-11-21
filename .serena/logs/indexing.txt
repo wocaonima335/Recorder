@@ -1,0 +1,4 @@
+include\opencv2\core\cuda\vec_traits.hpp
+Request timed out (timeout=10.0)
+include\opencv2\core\cuda\warp.hpp
+Request timed out (timeout=10.0)

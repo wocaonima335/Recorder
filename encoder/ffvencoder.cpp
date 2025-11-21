@@ -292,8 +292,8 @@ void FFVEncoder::initVideo(AVFrame *frame, AVRational fps)
     else
     {
         // 软件编码器低延迟配置
-        codecCtx->gop_size = 60;    // 减小GOP以降低延迟
-        codecCtx->max_b_frames = 2; // 无B帧以减少延迟
+        codecCtx->gop_size = 30;    // 减小GOP以降低延迟
+        codecCtx->max_b_frames = 0; // 无B帧以减少延迟
         codecCtx->flags |= AV_CODEC_FLAG_LOW_DELAY;
 
         // 软件编码器多线程优化 - 使用更多线程

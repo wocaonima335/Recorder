@@ -42,7 +42,7 @@ void FFVDecoder::decode(AVPacket *packet)
     AVFrame *frame = av_frame_alloc();
     while (ret >= 0) {
         if (m_stop.load(std::memory_order_acquire)) {
-            std::cerr << "[VDec] m_stop observed, break receive-loop" << std::endl;
+            qDebug() << "[VDec] m_stop observed, break receive-loop";
             break;
         }
 
@@ -75,12 +75,10 @@ void FFVDecoder::decode(AVPacket *packet)
                     initResampler();
                 }
                 // 初始化视频参数后打印一次
-                std::cerr << "[VDec] initVideoPars: w=" << frame->width
-                          << " h=" << frame->height
-                          << " in_pixfmt=" << codecCtx->pix_fmt
-                          << " out_pixfmt=" << swsvPars->pixFmtEnum
-                          << " fr=" << codecCtx->framerate.num << "/" << codecCtx->framerate.den
-                          << std::endl;
+                qDebug() << "[VDec] initVideoPars: w=" << frame->width << " h=" << frame->height
+                         << " in_pixfmt=" << codecCtx->pix_fmt
+                         << " out_pixfmt=" << swsvPars->pixFmtEnum
+                         << " fr=" << codecCtx->framerate.num << "/" << codecCtx->framerate.den;
             }
 
             if (resampler) {
@@ -99,7 +97,7 @@ void FFVDecoder::decode(AVPacket *packet)
                     // }
                     //解码队列
                     AVFrame *decoderFrame = av_frame_clone(swsFrame);
-                    std::cout << "video frame pts: " << decoderFrame->pts << std::endl;
+                    qDebug() << "video frame pts: " << decoderFrame->pts;
                     if (frmQueue != nullptr) {
                         frmQueue->enqueue(decoderFrame);
                     }
@@ -111,17 +109,17 @@ void FFVDecoder::decode(AVPacket *packet)
                     av_frame_unref(frame);
                     break;
                 } else {
-                    std::cerr << "[VDec][nosws] frame pts=" << frame->pts << std::endl;
+                    qDebug() << "[VDec][nosws] frame pts=" << frame->pts;
 
                     if (frmQueue) {
                         AVFrame *decoderFrame = av_frame_clone(frame);
                         frmQueue->enqueue(decoderFrame);
                         av_frame_free(&decoderFrame);
-                        std::cerr << "VIDEO decoder run !" << std::endl;
+                        qDebug() << "VIDEO decoder run !";
                     }
 
                     av_frame_unref(frame);
-                    std::cerr << "decoder eunqueue!" << std::endl;
+                    qDebug() << "decoder eunqueue!";
                 }
             }
         }
@@ -149,13 +147,13 @@ void FFVDecoder::init(AVStream *stream_, FFVFrameQueue *frmQueue_)
     }
 
     if (codec == nullptr) {
-        std::cerr << "找不到视频解码器" << std::endl;
+        qDebug() << "找不到视频解码器";
         return;
     }
 
     codecCtx = avcodec_alloc_context3(codec);
     if (codecCtx == nullptr) {
-        std::cerr << "分配解码器上下文失败" << std::endl;
+        qDebug() << "分配解码器上下文失败";
         avcodec_free_context(&codecCtx);
         return;
     }
@@ -251,7 +249,7 @@ void FFVDecoder::close()
         swsvPars = nullptr;
     }
 
-    std::cout << "video Deocder close!" << std::endl;
+    qDebug() << "video Deocder close!";
 }
 
 FFVDecoder::FFVDecoder()

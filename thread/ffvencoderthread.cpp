@@ -23,8 +23,8 @@ void FFVEncoderThread::init(FFVFilter *vFilter_,
     muxer = muxer_;
     frmQueue = frmQueue_;
     gLItem = PreviewBridge::instance().get();
-    std::cerr << "[VEncThread] init: vFilter=" << vFilter << " vEncoder=" << vEncoder
-              << " muxer=" << muxer << " frmQueue=" << frmQueue << std::endl;
+    qDebug() << "[VEncThread] init: vFilter=" << vFilter << " vEncoder=" << vEncoder
+             << " muxer=" << muxer << " frmQueue=" << frmQueue;
 }
 
 void FFVEncoderThread::wakeAllThread()
@@ -45,7 +45,7 @@ void FFVEncoderThread::close()
     firstFrame = true;
     firstFramePts = 0;
     streamIndex = -1;
-    std::cerr << "[VEncThread] close: reset firstFrame and streamIndex" << std::endl;
+    qDebug() << "[VEncThread] close: reset firstFrame and streamIndex";
 }
 
 void FFVEncoderThread::onPauseChanged(bool pausedFlag, int64_t ts_us)
@@ -56,7 +56,7 @@ void FFVEncoderThread::onPauseChanged(bool pausedFlag, int64_t ts_us)
         pause_start_us = ts_us > 0 ? ts_us : av_gettime_relative();
         paused.store(true, std::memory_order_release);
         pause_cv.notify_all();
-        std::cerr << "[VEncThread] paused at " << pause_start_us << "us" << std::endl;
+        qDebug() << "[VEncThread] paused at " << pause_start_us << "us";
     } else {
         // 收到 paused=false
         int64_t now = ts_us > 0 ? ts_us : av_gettime_relative();
@@ -64,8 +64,8 @@ void FFVEncoderThread::onPauseChanged(bool pausedFlag, int64_t ts_us)
         paused.store(false, std::memory_order_release);
         first_after_resume = true; // 恢复后首帧 I 帧
         pause_cv.notify_all();
-        std::cerr << "[VEncThread] resumed at " << now << "us, total_pause=" << pause_accum_us
-                  << "us" << std::endl;
+        qDebug() << "[VEncThread] resumed at " << now << "us, total_pause=" << pause_accum_us
+                 << "us";
     }
 }
 
@@ -85,10 +85,6 @@ void FFVEncoderThread::run()
         if (paused.load(std::memory_order_acquire)) {
             // 软暂停：直接释放帧并等待，避免忙等
             AVFrameTraits::release(frame);
-            std::unique_lock<std::mutex> lk(pause_mutex);
-            pause_cv.wait_for(lk, std::chrono::milliseconds(10), [this] {
-                return !paused.load(std::memory_order_acquire) || m_stop;
-            });
             continue;
         }
 
@@ -151,78 +147,6 @@ void FFVEncoderThread::run()
         AVFrameTraits::release(frame);
     }
 }
-
-// void FFVEncoderThread::run()
-// {
-//     int64_t frame_count = 0;
-//     // double total_encode_time = 0.0;
-//     // double total_dequeue_time = 0.0;
-
-//     while (!m_stop) {
-//         // 监控dequeue时间
-//         // auto dequeue_start = std::chrono::high_resolution_clock::now();
-//         AVFrame *frame = frmQueue->dequeue();
-//         // auto dequeue_end = std::chrono::high_resolution_clock::now();
-
-//         if (!frame)
-//             break;
-
-//         // double dequeue_ms = std::chrono::duration<double, std::milli>(dequeue_end - dequeue_start)
-//         //                         .count();
-//         // total_dequeue_time += dequeue_ms;
-
-//         if (streamIndex == -1)
-//             initEncoder(frame);
-
-//         // 1. 计算墙钟PTS
-//         int64_t now_us = av_gettime_relative();
-//         int64_t wall_us = now_us - start_time_us;
-//         AVRational src_tb = {1, AV_TIME_BASE};
-//         int64_t wall_pts = av_rescale_q(wall_us, src_tb, timeBase);
-
-//         // 2. 计算理想帧计数PTS
-//         int64_t ideal_pts = frame_count;
-
-//         // 3. 混合策略：以墙钟为准，但确保单调递增
-//         int64_t vpts = std::max(wall_pts, ideal_pts);
-
-//         // 4. 更新帧计数为实际使用的PTS
-//         frame_count = vpts + 1;
-
-//         // 监控编码时间
-//         auto encode_start = std::chrono::high_resolution_clock::now();
-//         vEncoder->encode(frame, streamIndex, vpts, timeBase);
-//         auto encode_end = std::chrono::high_resolution_clock::now();
-
-//         double encode_ms = std::chrono::duration<double, std::milli>(encode_end - encode_start)
-//                                .count();
-//         // total_encode_time += encode_ms;
-
-//         // 警告慢编码
-//         if (encode_ms > 50.0) {
-//             std::cerr << "[VEncThread] WARNING: Slow encode detected! " << encode_ms
-//                       << "ms (target: <33ms for 30fps)" << std::endl;
-//         }
-
-//         // // 警告长时间dequeue
-//         // if (dequeue_ms > 50.0) {
-//         //     std::cerr << "[VEncThread] WARNING: Long dequeue wait! " << dequeue_ms
-//         //               << "ms (queue may be empty)" << std::endl;
-//         // }
-
-//         AVFrameTraits::release(frame);
-//     }
-
-//     // if (frame_count > 0)
-//     // {
-//     //     double avg_encode = total_encode_time / frame_count;
-//     //     double avg_dequeue = total_dequeue_time / frame_count;
-//     //     std::cerr << "[VEncThread] Final stats: " << frame_count << " frames processed"
-//     //               << ", avg_encode=" << avg_encode << "ms"
-//     //               << ", avg_dequeue=" << avg_dequeue << "ms"
-//     //               << ", actual_fps=" << (frame_count * 1000.0 / total_encode_time) << std::endl;
-//     // }
-// }
 
 void FFVEncoderThread::initEncoder(AVFrame *frame)
 {

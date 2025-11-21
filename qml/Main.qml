@@ -17,6 +17,7 @@ ApplicationWindow{
     property color sepColor: "#40454F"     // 分隔线颜色
     property int   sepWidth: 1             // 分隔线宽度
     property real  sepOpacity: 0.9         // 分隔线不透明度
+    property bool  screenSelected: true    // true：屏幕；false：摄像头
 
     flags:  Qt.Window | Qt.FramelessWindowHint
 
@@ -25,6 +26,9 @@ ApplicationWindow{
     signal stopRecording()
     signal pauseRecording()
     signal readyRecording()
+    // 用户点击不同源的信号
+    signal openScreen()
+    signal openCamera()
 
     Item
     {
@@ -98,17 +102,16 @@ ApplicationWindow{
                 height: parent.height
                 visible: true
                 color: "#B9E8FE"
-                opacity:0.6
+                opacity: mainwindow.screenSelected ? 1 : (screenMouse.containsMouse ? 1 : 0.6)
                 MouseArea {
+                    id: screenMouse
                     hoverEnabled: true
                     anchors.fill: parent
                     opacity: 1
 
-                    onEntered: {
-                        screenRecordArea.opacity = 1
-                    }
-                    onExited: {
-                        screenRecordArea.opacity = 0.6
+                    onClicked: {
+                        mainwindow.screenSelected = true
+                        mainwindow.openScreen()
                     }
                 }
 
@@ -129,18 +132,17 @@ ApplicationWindow{
                 height: parent.height
                 visible: true
                 color: "#B9E8FE"
-                opacity: 0.6
+                opacity: mainwindow.screenSelected ? (cameraMouse.containsMouse ? 1 : 0.6) : 1
 
                 MouseArea {
+                    id: cameraMouse
                     hoverEnabled: true
                     anchors.fill: parent
                     opacity: 1
 
-                    onEntered: {
-                        cameraRecordArea.opacity = 1
-                    }
-                    onExited: {
-                        cameraRecordArea.opacity = 0.6
+                    onClicked: {
+                        mainwindow.screenSelected = false
+                        mainwindow.openCamera()
                     }
                 }
 
