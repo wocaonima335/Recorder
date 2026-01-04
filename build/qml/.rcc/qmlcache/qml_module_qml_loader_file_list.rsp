@@ -8,3 +8,11 @@ D:/Qtprogram/bandicam/build/qml/.qt/rcc/qml_module_raw_qml_0.qrc
 /qt/qml/bandicam/cuttingpage.qml
 /qt/qml/bandicam/settinglist.qml
 /qt/qml/bandicam/ScreenTitle.qml
+/qt/qml/bandicam/AudioVisualizer.qml
+/qt/qml/bandicam/AudioIndicator.qml
+/qt/qml/bandicam/RecordButton.qml
+/qt/qml/bandicam/TimeDisplay.qml
+/qt/qml/bandicam/PanelBackground.qml
+/qt/qml/bandicam/OptionsArea.qml
+/qt/qml/bandicam/SourceSelectButton.qml
+/qt/qml/bandicam/VerticalSeparator.qml

@@ -26,24 +26,31 @@ void FFRecorder::destoryInstance()
 
 void FFRecorder::initialize()
 {
-    if (m_isRecording)
+    if (m_isRecording || m_initialized)
         return;
     av_log_set_level(AV_LOG_QUIET);
 
     registerMetaTypes();
     initCoreComponents();
+    m_initialized = true;
+    emit audioSamplerChanged();
 }
 
 void FFRecorder::startRecord()
 {
+    if (!m_initialized)
+        initialize();
     if (m_isRecording)
         return;
     int64_t t0 = av_gettime_relative(); // 统一墙钟起点
     d->aEncoderThread->setStartTimeUs(t0);
     d->vEncoderThread->setStartTimeUs(t0);
+    d->audioSampler->clear();
+    d->audioSampler->start();
     FFEventQueue::getInstance().start();
     m_eventLoop->start();
     m_isRecording = true;
+    emit isRecordingChanged();
 }
 
 void FFRecorder::stopRecord()
@@ -57,9 +64,12 @@ void FFRecorder::stopRecord()
         m_eventLoop->wakeAllThread();
         m_eventLoop->wait();
     }
+    d->audioSampler->stop();
+    d->audioSampler->clear();
 
     setCaptureTimeText("00:00.0");
     m_isRecording = false;
+    emit isRecordingChanged();
 }
 
 FFRecorderPrivate *FFRecorder::getContext()
@@ -107,6 +117,10 @@ void FFRecorder::initCoreComponents()
     d->muxerThread = new FFMuxerThread;
     d->aEncoderThread = new FFAEncoderThread;
     d->vEncoderThread = new FFVEncoderThread;
+
+    d->audioSampler = new FFAudioSampler(this);
+
+    d->audioSampler->initialize(48000, 2, AV_SAMPLE_FMT_FLTP);
 
     d->aFilterThread->init(d->aDecoderFrmQueue[aDecoderType::A_MICROPHONE],
                            d->aDecoderFrmQueue[aDecoderType::A_AUDIO],
@@ -169,6 +183,16 @@ FFVEncoder *FFRecorder::getVEncoder()
 FFMuxer *FFRecorder::getMuxer()
 {
     return d ? d->muxer : nullptr;
+}
+
+FFAudioSampler *FFRecorder::getSampler()
+{
+    return d ? d->audioSampler : nullptr;
+}
+
+QObject *FFRecorder::audioSampler() const
+{
+    return d ? d->audioSampler : nullptr;
 }
 
 FFADecoder *FFRecorder::getADecoder(int index)

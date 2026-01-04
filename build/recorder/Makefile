@@ -202,6 +202,30 @@ recorder_module_autogen/fast:
 	cd /d D:\Qtprogram\bandicam\build && $(MAKE) $(MAKESILENT) -f recorder\CMakeFiles\recorder_module_autogen.dir\build.make recorder/CMakeFiles/recorder_module_autogen.dir/build
 .PHONY : recorder_module_autogen/fast
 
+ffaudiosampler.obj: ffaudiosampler.cpp.obj
+.PHONY : ffaudiosampler.obj
+
+# target to build an object file
+ffaudiosampler.cpp.obj:
+	cd /d D:\Qtprogram\bandicam\build && $(MAKE) $(MAKESILENT) -f recorder\CMakeFiles\recorder_module.dir\build.make recorder/CMakeFiles/recorder_module.dir/ffaudiosampler.cpp.obj
+.PHONY : ffaudiosampler.cpp.obj
+
+ffaudiosampler.i: ffaudiosampler.cpp.i
+.PHONY : ffaudiosampler.i
+
+# target to preprocess a source file
+ffaudiosampler.cpp.i:
+	cd /d D:\Qtprogram\bandicam\build && $(MAKE) $(MAKESILENT) -f recorder\CMakeFiles\recorder_module.dir\build.make recorder/CMakeFiles/recorder_module.dir/ffaudiosampler.cpp.i
+.PHONY : ffaudiosampler.cpp.i
+
+ffaudiosampler.s: ffaudiosampler.cpp.s
+.PHONY : ffaudiosampler.s
+
+# target to generate assembly for a file
+ffaudiosampler.cpp.s:
+	cd /d D:\Qtprogram\bandicam\build && $(MAKE) $(MAKESILENT) -f recorder\CMakeFiles\recorder_module.dir\build.make recorder/CMakeFiles/recorder_module.dir/ffaudiosampler.cpp.s
+.PHONY : ffaudiosampler.cpp.s
+
 ffrecoder.obj: ffrecoder.cpp.obj
 .PHONY : ffrecoder.obj
 
@@ -289,6 +313,9 @@ help:
 	@echo ... recorder_module_autogen
 	@echo ... recorder_module_automoc_json_extraction
 	@echo ... recorder_module
+	@echo ... ffaudiosampler.obj
+	@echo ... ffaudiosampler.i
+	@echo ... ffaudiosampler.s
 	@echo ... ffrecoder.obj
 	@echo ... ffrecoder.i
 	@echo ... ffrecoder.s

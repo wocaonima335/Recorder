@@ -1,6 +1,8 @@
 #ifndef FFRECORDER_P_H
 #define FFRECORDER_P_H
 
+#include "ffaudiosampler.h"
+
 #include "decoder/ffadecoder.h"
 #include "decoder/ffvdecoder.h"
 #include "demuxer/demuxer.h"
@@ -143,6 +145,9 @@ namespace FFRecordURLS
 
         // 音频滤镜线程
         FFAFilterThread *aFilterThread;
+
+        //音频采集器
+        FFAudioSampler *audioSampler;
     };
 
     } // namespace FFRecordContextType

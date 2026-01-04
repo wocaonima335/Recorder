@@ -3,20 +3,17 @@
 
 #include "ffthread.h"
 
-extern "C" {
+extern "C"
+{
 #include <libavformat/avformat.h>
 #include <libavutil/rational.h>
 #include <libavutil/time.h>
 }
 
-#include <QThreadPool>
-#include <condition_variable>
 #include <mutex>
 
-class FFVEncoderPars;
 class FFVEncoder;
 class FFVFrameQueue;
-class FFVideoPars;
 class FFMuxer;
 class FFVFilter;
 class FFGLItem;
@@ -32,8 +29,6 @@ public:
     void close();
 
     void setStartTimeUs(int64_t us) { start_time_us = us; }
-
-    // 供事件调用的线程安全入口
     void onPauseChanged(bool pausedFlag, int64_t ts_us);
 
 protected:
@@ -41,38 +36,24 @@ protected:
 
 private:
     void initEncoder(AVFrame *frame);
+    void sendPreviewData(AVFrame *frame);
 
 private:
     FFVEncoder *vEncoder = nullptr;
     FFVFrameQueue *frmQueue = nullptr;
     FFMuxer *muxer = nullptr;
-    QThreadPool previewPool;
+    FFVFilter *vFilter = nullptr;
 
     int streamIndex = -1;
-    FFVFilter *vFilter = nullptr;
-    FFGLItem *gLItem = nullptr;
-
-    AVRational timeBase;
-    AVRational frameRate;
-    AVRational sourceTimeBase{1, AV_TIME_BASE};
-    int64_t frameStep = 1;
-    int64_t sourcePtsOffset = 0;
-
-    int64_t firstFramePts = 0;
-    bool firstFrame = true;
-    int64_t fallbackPts = 0;
-    bool ptsInitialized = false;
-    bool hasAbsolutePts = false;
-
+    AVRational timeBase{};
+    AVRational frameRate{};
     int64_t start_time_us = 0;
-    bool useWallClockPts = true;
 
     std::atomic<bool> paused{false};
-    int64_t pause_start_us{0};
-    int64_t pause_accum_us{0};
-    bool first_after_resume{false};
+    std::atomic<int64_t> pause_accum_us{0};
+    std::atomic<bool> first_after_resume{false};
     std::mutex pause_mutex;
-    std::condition_variable pause_cv;
+    int64_t pause_start_us = 0;
 };
 
 #endif // FFVENCODERTHREAD_H

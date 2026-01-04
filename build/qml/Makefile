@@ -522,6 +522,54 @@ qml_moduleplugin_init_autogen/fast:
 	cd /d D:\Qtprogram\bandicam\build && $(MAKE) $(MAKESILENT) -f qml\CMakeFiles\qml_module_resources_2.dir\build.make qml/CMakeFiles/qml_module_resources_2.dir/.qt/rcc/qrc_qml_module_raw_qml_0_init.cpp.s
 .PHONY : .qt/rcc/qrc_qml_module_raw_qml_0_init.cpp.s
 
+.rcc/qmlcache/qml_module_AudioIndicator_qml.obj: .rcc/qmlcache/qml_module_AudioIndicator_qml.cpp.obj
+.PHONY : .rcc/qmlcache/qml_module_AudioIndicator_qml.obj
+
+# target to build an object file
+.rcc/qmlcache/qml_module_AudioIndicator_qml.cpp.obj:
+	cd /d D:\Qtprogram\bandicam\build && $(MAKE) $(MAKESILENT) -f qml\CMakeFiles\qml_module.dir\build.make qml/CMakeFiles/qml_module.dir/.rcc/qmlcache/qml_module_AudioIndicator_qml.cpp.obj
+.PHONY : .rcc/qmlcache/qml_module_AudioIndicator_qml.cpp.obj
+
+.rcc/qmlcache/qml_module_AudioIndicator_qml.i: .rcc/qmlcache/qml_module_AudioIndicator_qml.cpp.i
+.PHONY : .rcc/qmlcache/qml_module_AudioIndicator_qml.i
+
+# target to preprocess a source file
+.rcc/qmlcache/qml_module_AudioIndicator_qml.cpp.i:
+	cd /d D:\Qtprogram\bandicam\build && $(MAKE) $(MAKESILENT) -f qml\CMakeFiles\qml_module.dir\build.make qml/CMakeFiles/qml_module.dir/.rcc/qmlcache/qml_module_AudioIndicator_qml.cpp.i
+.PHONY : .rcc/qmlcache/qml_module_AudioIndicator_qml.cpp.i
+
+.rcc/qmlcache/qml_module_AudioIndicator_qml.s: .rcc/qmlcache/qml_module_AudioIndicator_qml.cpp.s
+.PHONY : .rcc/qmlcache/qml_module_AudioIndicator_qml.s
+
+# target to generate assembly for a file
+.rcc/qmlcache/qml_module_AudioIndicator_qml.cpp.s:
+	cd /d D:\Qtprogram\bandicam\build && $(MAKE) $(MAKESILENT) -f qml\CMakeFiles\qml_module.dir\build.make qml/CMakeFiles/qml_module.dir/.rcc/qmlcache/qml_module_AudioIndicator_qml.cpp.s
+.PHONY : .rcc/qmlcache/qml_module_AudioIndicator_qml.cpp.s
+
+.rcc/qmlcache/qml_module_AudioVisualizer_qml.obj: .rcc/qmlcache/qml_module_AudioVisualizer_qml.cpp.obj
+.PHONY : .rcc/qmlcache/qml_module_AudioVisualizer_qml.obj
+
+# target to build an object file
+.rcc/qmlcache/qml_module_AudioVisualizer_qml.cpp.obj:
+	cd /d D:\Qtprogram\bandicam\build && $(MAKE) $(MAKESILENT) -f qml\CMakeFiles\qml_module.dir\build.make qml/CMakeFiles/qml_module.dir/.rcc/qmlcache/qml_module_AudioVisualizer_qml.cpp.obj
+.PHONY : .rcc/qmlcache/qml_module_AudioVisualizer_qml.cpp.obj
+
+.rcc/qmlcache/qml_module_AudioVisualizer_qml.i: .rcc/qmlcache/qml_module_AudioVisualizer_qml.cpp.i
+.PHONY : .rcc/qmlcache/qml_module_AudioVisualizer_qml.i
+
+# target to preprocess a source file
+.rcc/qmlcache/qml_module_AudioVisualizer_qml.cpp.i:
+	cd /d D:\Qtprogram\bandicam\build && $(MAKE) $(MAKESILENT) -f qml\CMakeFiles\qml_module.dir\build.make qml/CMakeFiles/qml_module.dir/.rcc/qmlcache/qml_module_AudioVisualizer_qml.cpp.i
+.PHONY : .rcc/qmlcache/qml_module_AudioVisualizer_qml.cpp.i
+
+.rcc/qmlcache/qml_module_AudioVisualizer_qml.s: .rcc/qmlcache/qml_module_AudioVisualizer_qml.cpp.s
+.PHONY : .rcc/qmlcache/qml_module_AudioVisualizer_qml.s
+
+# target to generate assembly for a file
+.rcc/qmlcache/qml_module_AudioVisualizer_qml.cpp.s:
+	cd /d D:\Qtprogram\bandicam\build && $(MAKE) $(MAKESILENT) -f qml\CMakeFiles\qml_module.dir\build.make qml/CMakeFiles/qml_module.dir/.rcc/qmlcache/qml_module_AudioVisualizer_qml.cpp.s
+.PHONY : .rcc/qmlcache/qml_module_AudioVisualizer_qml.cpp.s
+
 .rcc/qmlcache/qml_module_Main_qml.obj: .rcc/qmlcache/qml_module_Main_qml.cpp.obj
 .PHONY : .rcc/qmlcache/qml_module_Main_qml.obj
 
@@ -546,6 +594,78 @@ qml_moduleplugin_init_autogen/fast:
 	cd /d D:\Qtprogram\bandicam\build && $(MAKE) $(MAKESILENT) -f qml\CMakeFiles\qml_module.dir\build.make qml/CMakeFiles/qml_module.dir/.rcc/qmlcache/qml_module_Main_qml.cpp.s
 .PHONY : .rcc/qmlcache/qml_module_Main_qml.cpp.s
 
+.rcc/qmlcache/qml_module_OptionsArea_qml.obj: .rcc/qmlcache/qml_module_OptionsArea_qml.cpp.obj
+.PHONY : .rcc/qmlcache/qml_module_OptionsArea_qml.obj
+
+# target to build an object file
+.rcc/qmlcache/qml_module_OptionsArea_qml.cpp.obj:
+	cd /d D:\Qtprogram\bandicam\build && $(MAKE) $(MAKESILENT) -f qml\CMakeFiles\qml_module.dir\build.make qml/CMakeFiles/qml_module.dir/.rcc/qmlcache/qml_module_OptionsArea_qml.cpp.obj
+.PHONY : .rcc/qmlcache/qml_module_OptionsArea_qml.cpp.obj
+
+.rcc/qmlcache/qml_module_OptionsArea_qml.i: .rcc/qmlcache/qml_module_OptionsArea_qml.cpp.i
+.PHONY : .rcc/qmlcache/qml_module_OptionsArea_qml.i
+
+# target to preprocess a source file
+.rcc/qmlcache/qml_module_OptionsArea_qml.cpp.i:
+	cd /d D:\Qtprogram\bandicam\build && $(MAKE) $(MAKESILENT) -f qml\CMakeFiles\qml_module.dir\build.make qml/CMakeFiles/qml_module.dir/.rcc/qmlcache/qml_module_OptionsArea_qml.cpp.i
+.PHONY : .rcc/qmlcache/qml_module_OptionsArea_qml.cpp.i
+
+.rcc/qmlcache/qml_module_OptionsArea_qml.s: .rcc/qmlcache/qml_module_OptionsArea_qml.cpp.s
+.PHONY : .rcc/qmlcache/qml_module_OptionsArea_qml.s
+
+# target to generate assembly for a file
+.rcc/qmlcache/qml_module_OptionsArea_qml.cpp.s:
+	cd /d D:\Qtprogram\bandicam\build && $(MAKE) $(MAKESILENT) -f qml\CMakeFiles\qml_module.dir\build.make qml/CMakeFiles/qml_module.dir/.rcc/qmlcache/qml_module_OptionsArea_qml.cpp.s
+.PHONY : .rcc/qmlcache/qml_module_OptionsArea_qml.cpp.s
+
+.rcc/qmlcache/qml_module_PanelBackground_qml.obj: .rcc/qmlcache/qml_module_PanelBackground_qml.cpp.obj
+.PHONY : .rcc/qmlcache/qml_module_PanelBackground_qml.obj
+
+# target to build an object file
+.rcc/qmlcache/qml_module_PanelBackground_qml.cpp.obj:
+	cd /d D:\Qtprogram\bandicam\build && $(MAKE) $(MAKESILENT) -f qml\CMakeFiles\qml_module.dir\build.make qml/CMakeFiles/qml_module.dir/.rcc/qmlcache/qml_module_PanelBackground_qml.cpp.obj
+.PHONY : .rcc/qmlcache/qml_module_PanelBackground_qml.cpp.obj
+
+.rcc/qmlcache/qml_module_PanelBackground_qml.i: .rcc/qmlcache/qml_module_PanelBackground_qml.cpp.i
+.PHONY : .rcc/qmlcache/qml_module_PanelBackground_qml.i
+
+# target to preprocess a source file
+.rcc/qmlcache/qml_module_PanelBackground_qml.cpp.i:
+	cd /d D:\Qtprogram\bandicam\build && $(MAKE) $(MAKESILENT) -f qml\CMakeFiles\qml_module.dir\build.make qml/CMakeFiles/qml_module.dir/.rcc/qmlcache/qml_module_PanelBackground_qml.cpp.i
+.PHONY : .rcc/qmlcache/qml_module_PanelBackground_qml.cpp.i
+
+.rcc/qmlcache/qml_module_PanelBackground_qml.s: .rcc/qmlcache/qml_module_PanelBackground_qml.cpp.s
+.PHONY : .rcc/qmlcache/qml_module_PanelBackground_qml.s
+
+# target to generate assembly for a file
+.rcc/qmlcache/qml_module_PanelBackground_qml.cpp.s:
+	cd /d D:\Qtprogram\bandicam\build && $(MAKE) $(MAKESILENT) -f qml\CMakeFiles\qml_module.dir\build.make qml/CMakeFiles/qml_module.dir/.rcc/qmlcache/qml_module_PanelBackground_qml.cpp.s
+.PHONY : .rcc/qmlcache/qml_module_PanelBackground_qml.cpp.s
+
+.rcc/qmlcache/qml_module_RecordButton_qml.obj: .rcc/qmlcache/qml_module_RecordButton_qml.cpp.obj
+.PHONY : .rcc/qmlcache/qml_module_RecordButton_qml.obj
+
+# target to build an object file
+.rcc/qmlcache/qml_module_RecordButton_qml.cpp.obj:
+	cd /d D:\Qtprogram\bandicam\build && $(MAKE) $(MAKESILENT) -f qml\CMakeFiles\qml_module.dir\build.make qml/CMakeFiles/qml_module.dir/.rcc/qmlcache/qml_module_RecordButton_qml.cpp.obj
+.PHONY : .rcc/qmlcache/qml_module_RecordButton_qml.cpp.obj
+
+.rcc/qmlcache/qml_module_RecordButton_qml.i: .rcc/qmlcache/qml_module_RecordButton_qml.cpp.i
+.PHONY : .rcc/qmlcache/qml_module_RecordButton_qml.i
+
+# target to preprocess a source file
+.rcc/qmlcache/qml_module_RecordButton_qml.cpp.i:
+	cd /d D:\Qtprogram\bandicam\build && $(MAKE) $(MAKESILENT) -f qml\CMakeFiles\qml_module.dir\build.make qml/CMakeFiles/qml_module.dir/.rcc/qmlcache/qml_module_RecordButton_qml.cpp.i
+.PHONY : .rcc/qmlcache/qml_module_RecordButton_qml.cpp.i
+
+.rcc/qmlcache/qml_module_RecordButton_qml.s: .rcc/qmlcache/qml_module_RecordButton_qml.cpp.s
+.PHONY : .rcc/qmlcache/qml_module_RecordButton_qml.s
+
+# target to generate assembly for a file
+.rcc/qmlcache/qml_module_RecordButton_qml.cpp.s:
+	cd /d D:\Qtprogram\bandicam\build && $(MAKE) $(MAKESILENT) -f qml\CMakeFiles\qml_module.dir\build.make qml/CMakeFiles/qml_module.dir/.rcc/qmlcache/qml_module_RecordButton_qml.cpp.s
+.PHONY : .rcc/qmlcache/qml_module_RecordButton_qml.cpp.s
+
 .rcc/qmlcache/qml_module_ScreenTitle_qml.obj: .rcc/qmlcache/qml_module_ScreenTitle_qml.cpp.obj
 .PHONY : .rcc/qmlcache/qml_module_ScreenTitle_qml.obj
 
@@ -569,6 +689,78 @@ qml_moduleplugin_init_autogen/fast:
 .rcc/qmlcache/qml_module_ScreenTitle_qml.cpp.s:
 	cd /d D:\Qtprogram\bandicam\build && $(MAKE) $(MAKESILENT) -f qml\CMakeFiles\qml_module.dir\build.make qml/CMakeFiles/qml_module.dir/.rcc/qmlcache/qml_module_ScreenTitle_qml.cpp.s
 .PHONY : .rcc/qmlcache/qml_module_ScreenTitle_qml.cpp.s
+
+.rcc/qmlcache/qml_module_SourceSelectButton_qml.obj: .rcc/qmlcache/qml_module_SourceSelectButton_qml.cpp.obj
+.PHONY : .rcc/qmlcache/qml_module_SourceSelectButton_qml.obj
+
+# target to build an object file
+.rcc/qmlcache/qml_module_SourceSelectButton_qml.cpp.obj:
+	cd /d D:\Qtprogram\bandicam\build && $(MAKE) $(MAKESILENT) -f qml\CMakeFiles\qml_module.dir\build.make qml/CMakeFiles/qml_module.dir/.rcc/qmlcache/qml_module_SourceSelectButton_qml.cpp.obj
+.PHONY : .rcc/qmlcache/qml_module_SourceSelectButton_qml.cpp.obj
+
+.rcc/qmlcache/qml_module_SourceSelectButton_qml.i: .rcc/qmlcache/qml_module_SourceSelectButton_qml.cpp.i
+.PHONY : .rcc/qmlcache/qml_module_SourceSelectButton_qml.i
+
+# target to preprocess a source file
+.rcc/qmlcache/qml_module_SourceSelectButton_qml.cpp.i:
+	cd /d D:\Qtprogram\bandicam\build && $(MAKE) $(MAKESILENT) -f qml\CMakeFiles\qml_module.dir\build.make qml/CMakeFiles/qml_module.dir/.rcc/qmlcache/qml_module_SourceSelectButton_qml.cpp.i
+.PHONY : .rcc/qmlcache/qml_module_SourceSelectButton_qml.cpp.i
+
+.rcc/qmlcache/qml_module_SourceSelectButton_qml.s: .rcc/qmlcache/qml_module_SourceSelectButton_qml.cpp.s
+.PHONY : .rcc/qmlcache/qml_module_SourceSelectButton_qml.s
+
+# target to generate assembly for a file
+.rcc/qmlcache/qml_module_SourceSelectButton_qml.cpp.s:
+	cd /d D:\Qtprogram\bandicam\build && $(MAKE) $(MAKESILENT) -f qml\CMakeFiles\qml_module.dir\build.make qml/CMakeFiles/qml_module.dir/.rcc/qmlcache/qml_module_SourceSelectButton_qml.cpp.s
+.PHONY : .rcc/qmlcache/qml_module_SourceSelectButton_qml.cpp.s
+
+.rcc/qmlcache/qml_module_TimeDisplay_qml.obj: .rcc/qmlcache/qml_module_TimeDisplay_qml.cpp.obj
+.PHONY : .rcc/qmlcache/qml_module_TimeDisplay_qml.obj
+
+# target to build an object file
+.rcc/qmlcache/qml_module_TimeDisplay_qml.cpp.obj:
+	cd /d D:\Qtprogram\bandicam\build && $(MAKE) $(MAKESILENT) -f qml\CMakeFiles\qml_module.dir\build.make qml/CMakeFiles/qml_module.dir/.rcc/qmlcache/qml_module_TimeDisplay_qml.cpp.obj
+.PHONY : .rcc/qmlcache/qml_module_TimeDisplay_qml.cpp.obj
+
+.rcc/qmlcache/qml_module_TimeDisplay_qml.i: .rcc/qmlcache/qml_module_TimeDisplay_qml.cpp.i
+.PHONY : .rcc/qmlcache/qml_module_TimeDisplay_qml.i
+
+# target to preprocess a source file
+.rcc/qmlcache/qml_module_TimeDisplay_qml.cpp.i:
+	cd /d D:\Qtprogram\bandicam\build && $(MAKE) $(MAKESILENT) -f qml\CMakeFiles\qml_module.dir\build.make qml/CMakeFiles/qml_module.dir/.rcc/qmlcache/qml_module_TimeDisplay_qml.cpp.i
+.PHONY : .rcc/qmlcache/qml_module_TimeDisplay_qml.cpp.i
+
+.rcc/qmlcache/qml_module_TimeDisplay_qml.s: .rcc/qmlcache/qml_module_TimeDisplay_qml.cpp.s
+.PHONY : .rcc/qmlcache/qml_module_TimeDisplay_qml.s
+
+# target to generate assembly for a file
+.rcc/qmlcache/qml_module_TimeDisplay_qml.cpp.s:
+	cd /d D:\Qtprogram\bandicam\build && $(MAKE) $(MAKESILENT) -f qml\CMakeFiles\qml_module.dir\build.make qml/CMakeFiles/qml_module.dir/.rcc/qmlcache/qml_module_TimeDisplay_qml.cpp.s
+.PHONY : .rcc/qmlcache/qml_module_TimeDisplay_qml.cpp.s
+
+.rcc/qmlcache/qml_module_VerticalSeparator_qml.obj: .rcc/qmlcache/qml_module_VerticalSeparator_qml.cpp.obj
+.PHONY : .rcc/qmlcache/qml_module_VerticalSeparator_qml.obj
+
+# target to build an object file
+.rcc/qmlcache/qml_module_VerticalSeparator_qml.cpp.obj:
+	cd /d D:\Qtprogram\bandicam\build && $(MAKE) $(MAKESILENT) -f qml\CMakeFiles\qml_module.dir\build.make qml/CMakeFiles/qml_module.dir/.rcc/qmlcache/qml_module_VerticalSeparator_qml.cpp.obj
+.PHONY : .rcc/qmlcache/qml_module_VerticalSeparator_qml.cpp.obj
+
+.rcc/qmlcache/qml_module_VerticalSeparator_qml.i: .rcc/qmlcache/qml_module_VerticalSeparator_qml.cpp.i
+.PHONY : .rcc/qmlcache/qml_module_VerticalSeparator_qml.i
+
+# target to preprocess a source file
+.rcc/qmlcache/qml_module_VerticalSeparator_qml.cpp.i:
+	cd /d D:\Qtprogram\bandicam\build && $(MAKE) $(MAKESILENT) -f qml\CMakeFiles\qml_module.dir\build.make qml/CMakeFiles/qml_module.dir/.rcc/qmlcache/qml_module_VerticalSeparator_qml.cpp.i
+.PHONY : .rcc/qmlcache/qml_module_VerticalSeparator_qml.cpp.i
+
+.rcc/qmlcache/qml_module_VerticalSeparator_qml.s: .rcc/qmlcache/qml_module_VerticalSeparator_qml.cpp.s
+.PHONY : .rcc/qmlcache/qml_module_VerticalSeparator_qml.s
+
+# target to generate assembly for a file
+.rcc/qmlcache/qml_module_VerticalSeparator_qml.cpp.s:
+	cd /d D:\Qtprogram\bandicam\build && $(MAKE) $(MAKESILENT) -f qml\CMakeFiles\qml_module.dir\build.make qml/CMakeFiles/qml_module.dir/.rcc/qmlcache/qml_module_VerticalSeparator_qml.cpp.s
+.PHONY : .rcc/qmlcache/qml_module_VerticalSeparator_qml.cpp.s
 
 .rcc/qmlcache/qml_module_cuttingpage_qml.obj: .rcc/qmlcache/qml_module_cuttingpage_qml.cpp.obj
 .PHONY : .rcc/qmlcache/qml_module_cuttingpage_qml.obj
@@ -878,12 +1070,36 @@ help:
 	@echo ... .qt/rcc/qrc_qml_module_raw_qml_0_init.obj
 	@echo ... .qt/rcc/qrc_qml_module_raw_qml_0_init.i
 	@echo ... .qt/rcc/qrc_qml_module_raw_qml_0_init.s
+	@echo ... .rcc/qmlcache/qml_module_AudioIndicator_qml.obj
+	@echo ... .rcc/qmlcache/qml_module_AudioIndicator_qml.i
+	@echo ... .rcc/qmlcache/qml_module_AudioIndicator_qml.s
+	@echo ... .rcc/qmlcache/qml_module_AudioVisualizer_qml.obj
+	@echo ... .rcc/qmlcache/qml_module_AudioVisualizer_qml.i
+	@echo ... .rcc/qmlcache/qml_module_AudioVisualizer_qml.s
 	@echo ... .rcc/qmlcache/qml_module_Main_qml.obj
 	@echo ... .rcc/qmlcache/qml_module_Main_qml.i
 	@echo ... .rcc/qmlcache/qml_module_Main_qml.s
+	@echo ... .rcc/qmlcache/qml_module_OptionsArea_qml.obj
+	@echo ... .rcc/qmlcache/qml_module_OptionsArea_qml.i
+	@echo ... .rcc/qmlcache/qml_module_OptionsArea_qml.s
+	@echo ... .rcc/qmlcache/qml_module_PanelBackground_qml.obj
+	@echo ... .rcc/qmlcache/qml_module_PanelBackground_qml.i
+	@echo ... .rcc/qmlcache/qml_module_PanelBackground_qml.s
+	@echo ... .rcc/qmlcache/qml_module_RecordButton_qml.obj
+	@echo ... .rcc/qmlcache/qml_module_RecordButton_qml.i
+	@echo ... .rcc/qmlcache/qml_module_RecordButton_qml.s
 	@echo ... .rcc/qmlcache/qml_module_ScreenTitle_qml.obj
 	@echo ... .rcc/qmlcache/qml_module_ScreenTitle_qml.i
 	@echo ... .rcc/qmlcache/qml_module_ScreenTitle_qml.s
+	@echo ... .rcc/qmlcache/qml_module_SourceSelectButton_qml.obj
+	@echo ... .rcc/qmlcache/qml_module_SourceSelectButton_qml.i
+	@echo ... .rcc/qmlcache/qml_module_SourceSelectButton_qml.s
+	@echo ... .rcc/qmlcache/qml_module_TimeDisplay_qml.obj
+	@echo ... .rcc/qmlcache/qml_module_TimeDisplay_qml.i
+	@echo ... .rcc/qmlcache/qml_module_TimeDisplay_qml.s
+	@echo ... .rcc/qmlcache/qml_module_VerticalSeparator_qml.obj
+	@echo ... .rcc/qmlcache/qml_module_VerticalSeparator_qml.i
+	@echo ... .rcc/qmlcache/qml_module_VerticalSeparator_qml.s
 	@echo ... .rcc/qmlcache/qml_module_cuttingpage_qml.obj
 	@echo ... .rcc/qmlcache/qml_module_cuttingpage_qml.i
 	@echo ... .rcc/qmlcache/qml_module_cuttingpage_qml.s
