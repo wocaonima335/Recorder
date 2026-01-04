@@ -3,439 +3,206 @@ import QtQuick.Controls 2.15
 import QtQuick.Layouts 1.15
 import QtQuick.Window 2.15
 import QtQuick.Controls.Material 2.15
+import QtQuick.Effects
+import GLPreview 1.0
 
-
-
-ApplicationWindow{
+ApplicationWindow {
     id: mainwindow
     width: 640
     height: 500
     visible: true
-    color: "#3F4F73"
+    color: "transparent" // Set transparent to let backgroundRectangle show rounded corners
     title: qsTr("bandicam")
 
-    property color sepColor: "#40454F"     // 分隔线颜色
-    property int   sepWidth: 1             // 分隔线宽度
-    property real  sepOpacity: 0.9         // 分隔线不透明度
+    property color sepColor: "#40454F"
+    property int sepWidth: 1
+    property real sepOpacity: 0.9
+    property bool screenSelected: true
 
-    flags:  Qt.Window | Qt.FramelessWindowHint
+    flags: Qt.Window | Qt.FramelessWindowHint
 
-    // 添加录制相关信号
-    signal startRecording()
-    signal stopRecording()
-    signal pauseRecording()
-    signal readyRecording()
+    // 信号定义
+    signal startRecording
+    signal stopRecording
+    signal pauseRecording
+    signal readyRecording
+    signal openScreen
+    signal openCamera
 
-    Item
-    {
-        id:titleBar
-        anchors.left: parent.left
-        anchors.leftMargin:10
-        anchors.right: parent.right
-        anchors.top: parent.top
-        height: 30
-        Rectangle { anchors.fill: parent; color: "transparent" }
+    // 主背景容器
+    Rectangle {
+        id: mainBackground
+        anchors.fill: parent
+        radius: 10 // 如果想要圆角窗口可以设为 10，但无边框窗口通常铺满
+        color: "#2B2E38"
 
-        // 推荐 DragHandler
-        DragHandler {
-            target: null                // 不移动子项，只触发拖拽
-            onActiveChanged: if (active) mainwindow.startSystemMove()
+        gradient: Gradient {
+            GradientStop { position: 0.0; color: "#323642" }
+            GradientStop { position: 1.0; color: "#252830" }
         }
-        Text
-        {
-            anchors.left :parent.left
-            height:20
-            text: "X Record"
-            font.pixelSize: 20
-            font.bold: true
-            color: "#FFFFFF"
-        }
+
+        // 窗口边框
+        border.color: "#40454F"
+        border.width: 1
     }
 
-    Button
-    {
-        id:closeButton
-        anchors.top:parent.top
+    // 标题栏
+    Item {
+        id: titleBar
+        anchors.left: parent.left
         anchors.right: parent.right
-        width:30
-        height: 30
+        anchors.top: parent.top
+        height: 32 //稍作增高
 
-        background: Rectangle
-        {
-            anchors.fill:parent
-            color: parent.hovered ? "#e64340" : "transparent"
+        // 拖拽区域
+        DragHandler {
+            target: null
+            onActiveChanged: if (active) mainwindow.startSystemMove()
+        }
+
+        // 标题文字
+        Row {
+            anchors.left: parent.left
+            anchors.leftMargin: 12
+            anchors.verticalCenter: parent.verticalCenter
+            spacing: 8
+
+            // 甚至可以加个小 logo
+            Rectangle {
+                width: 18
+                height: 18
+                radius: 4
+                color: "#FF4444"
+                anchors.verticalCenter: parent.verticalCenter
+
+                Text {
+                    anchors.centerIn: parent
+                    text: "B"
+                    font.bold: true
+                    font.pixelSize: 12
+                    color: "white"
+                }
+            }
+
+            Text {
+                text: "X Record"
+                font.pixelSize: 14
+                font.bold: true
+                font.family: "Segoe UI"
+                color: "#E0E0E0"
+                anchors.verticalCenter: parent.verticalCenter
+
+                style: Text.Outline
+                styleColor: "#20000000"
+            }
+        }
+
+        // 关闭按钮
+        Rectangle {
+            id: closeButton
+            anchors.right: parent.right
+            anchors.top: parent.top
+            anchors.bottom: parent.bottom // 填满高度便于点击
+            width: 48
+            color: closeMouse.containsMouse ? "#C42B1C" : "transparent"
+
+            // 右上角圆角处理 (如果窗口有圆角)
+            radius: 10
+
+            Behavior on color { ColorAnimation { duration: 150 } }
+
             Text {
                 text: "×"
                 color: "#FFFFFF"
                 anchors.centerIn: parent
-                font.pixelSize: 18
+                font.pixelSize: 20
+                scale: closeMouse.pressed ? 0.9 : 1.0
+            }
+
+            MouseArea {
+                id: closeMouse
+                anchors.fill: parent
+                hoverEnabled: true
+                onClicked: Qt.quit()
             }
         }
-        onClicked: Qt.quit()
     }
 
-    Rectangle {
-        id: optionsArea
+    // 内容加载器
+    Loader {
+        id: optionsAreaLoader
         anchors.left: parent.left
         anchors.right: parent.right
-        anchors.top: parent.top
-        anchors.topMargin:30
+        anchors.top: titleBar.bottom
+        anchors.topMargin: 0
         height: 80
-        radius : 1
-        visible: true
-        color: "#2C2F3C"
-        Row {
-            id: optionDevice
-            spacing: 1
-            anchors.top: parent.top
-            anchors.bottom: parent.bottom
-            anchors.left: parent.left
-            anchors.margins: 2
+        asynchronous: true
+        z: 1 // 保证在阴影上方
 
-            Rectangle {
-                id: screenRecordArea
-                width: 80
-                height: parent.height
-                visible: true
-                color: "#B9E8FE"
-                opacity:0.6
-                MouseArea {
-                    hoverEnabled: true
-                    anchors.fill: parent
-                    opacity: 1
+        sourceComponent: OptionsArea {
+            screenSelected: mainwindow.screenSelected
+            recorderObject: recorder
 
-                    onEntered: {
-                        screenRecordArea.opacity = 1
-                    }
-                    onExited: {
-                        screenRecordArea.opacity = 0.6
-                    }
-                }
-
-                Image
-                {
-                    id:screenIcon
-                    anchors.centerIn:parent
-                    source:"icons/screen.png"
-                    width : 40
-                    height: 40
-                    fillMode: Image.PreserveAspectCrop
-                }
+            onScreenClicked: {
+                mainwindow.screenSelected = true
+                mainwindow.openScreen()
             }
-
-            Rectangle {
-                id: cameraRecordArea
-                width: 80
-                height: parent.height
-                visible: true
-                color: "#B9E8FE"
-                opacity: 0.6
-
-                MouseArea {
-                    hoverEnabled: true
-                    anchors.fill: parent
-                    opacity: 1
-
-                    onEntered: {
-                        cameraRecordArea.opacity = 1
-                    }
-                    onExited: {
-                        cameraRecordArea.opacity = 0.6
-                    }
-                }
-
-                Image {
-                    id: cameraIcon
-                    anchors.centerIn: parent
-                    source: "icons/camera.png"
-                    width: 30
-                    height: 30
-                    fillMode: Image.PreserveAspectCrop
-                }
+            onCameraClicked: {
+                mainwindow.screenSelected = false
+                mainwindow.openCamera()
             }
-        }
-
-        Item {
-            id: timeShowArea
-            anchors.top: parent.top
-            anchors.bottom: parent.bottom
-            anchors.left: optionDevice.right
-            height: parent.height
-            width: 160
-
-            Rectangle { anchors.left: parent.left;  anchors.top: parent.top; anchors.bottom: parent.bottom; width: sepWidth; color: sepColor; opacity: sepOpacity }
-            Rectangle { anchors.right: parent.right; anchors.top: parent.top; anchors.bottom: parent.bottom; width: sepWidth; color: sepColor; opacity: sepOpacity }
-
-            Text {
-                id:showText
-                anchors.centerIn: parent
-                font.pointSize: 30
-                font.family: "Consolas, Monaco, 'Courier New', monospace" // 等宽字体
-                color: palette.text
-                text: recorder.captureTimeText
-                style: Text.Outline
-                styleColor: "white"
-            }
-
-        }
-
-        Item
-        {
-            id : microPhoneArea
-            anchors.top: parent.top
-            anchors.bottom: parent.bottom
-            anchors.left: timeShowArea.right
-            height: parent.height
-            width: 80
-
-            Rectangle { anchors.left: parent.left;  anchors.top: parent.top; anchors.bottom: parent.bottom; width: sepWidth; color: sepColor; opacity: sepOpacity }
-            Rectangle { anchors.right: parent.right; anchors.top: parent.top; anchors.bottom: parent.bottom; width: sepWidth; color: sepColor; opacity: sepOpacity }
-
-            Image
-            {
-                id:microPhoneIcon
-                anchors.centerIn:parent
-                source:"icons/microphone.png"
-                width : 30
-                height: 30
-                fillMode: Image.PreserveAspectCrop
-            }
-
-            Text {
-                anchors.bottom: parent.bottom
-                anchors.bottomMargin : 10
-                anchors.horizontalCenter:parent.horizontalCenter
-                text: "MICROPHONE"
-                color: "#FFFFFF"
-                font.pixelSize: 8
-                font.bold: true
-            }
-        }
-
-        Item
-        {
-            id : audioArea
-            anchors.top: parent.top
-            anchors.bottom: parent.bottom
-            anchors.left: microPhoneArea.right
-            height: parent.height
-            width: 80
-
-            Rectangle { anchors.left: parent.left;  anchors.top: parent.top; anchors.bottom: parent.bottom; width: sepWidth; color: sepColor; opacity: sepOpacity }
-            Rectangle { anchors.right: parent.right; anchors.top: parent.top; anchors.bottom: parent.bottom; width: sepWidth; color: sepColor; opacity: sepOpacity }
-
-            Image
-            {
-                id:audioIcon
-                anchors.centerIn:parent
-                source:"icons/audio.png"
-                width : 30
-                height: 30
-                fillMode: Image.PreserveAspectCrop
-            }
-
-            Text {
-                anchors.bottom: parent.bottom
-                anchors.bottomMargin : 10
-                anchors.horizontalCenter:parent.horizontalCenter
-                text: "Audio"
-                color: "#FFFFFF"
-                font.pixelSize: 10
-                font.bold: true
-            }
-
-        }
-
-       Item {
-            id: recordActionArea
-            anchors.top: parent.top
-            anchors.bottom: parent.bottom
-            anchors.right: parent.right
-            anchors.left: audioArea.right
-
-            // 原有的录制按钮仍在 recordActionArea 内，层效果会包含所有子项
-            Rectangle {
-                id: recordButton
-                anchors.verticalCenter: parent.verticalCenter
-                height: 85
-                width: 85
-                radius: 85
-                color: isRecording ? "#FF4444" : "#FF0000"
-                border.color: "#FFFFFF"
-                border.width: 2
-                property bool isRecording: false
-
-                z: 2
-
-                x: isRecording ? 5 : parent.width - width - 5
-
-                // 添加位置动画
-                Behavior on x {
-                    NumberAnimation {
-                        duration: 300
-                        easing.type: Easing.OutCubic
-                    }
-                }
-
-                // 添加点击事件
-                MouseArea {
-                    anchors.fill: recordButton
-                    onClicked: {
-                        recordButton.isRecording = !recordButton.isRecording
-                        
-                        // 发送录制信号
-                        if (recordButton.isRecording) {
-                            mainwindow.startRecording()
-                        } else {
-                            mainwindow.stopRecording()
-                        }
-                    }
-                }
-
-                Text {
-                    anchors.centerIn: parent
-                    text: "REC"
-                    color: "#FFFFFF"
-                    font.pixelSize: 18
-                    font.bold: true
-                }
-            }
-
-            Canvas {
-                anchors.fill: parent
-                onPaint: {
-                    var ctx = getContext("2d");
-                    ctx.reset();
-                    ctx.antialiasing = true;
-
-                    // 画黑色条
-                    ctx.beginPath();
-                    roundRect(ctx, 16, 12, width-32, height-24, 10);
-                    ctx.fillStyle = "#202225";
-                    ctx.fill();
-                }
-
-                function roundRect(ctx, x, y, w, h, r) {
-                    ctx.moveTo(x + r, y);
-                    ctx.arcTo(x + w, y,     x + w, y + h, r);
-                    ctx.arcTo(x + w, y + h, x,     y + h, r);
-                    ctx.arcTo(x,     y + h, x,     y,     r);
-                    ctx.arcTo(x,     y,     x + w, y,     r);
-                    ctx.closePath();
-                }
-            }
-
-
-            // 停止按钮，位于recordButton下方
-            Rectangle {
-                id: stopButton
-                anchors.verticalCenter: parent.verticalCenter
-                x : parent.width - width - 24
-                height: 40
-                width: 40
-                color: "transparent"
-                z: 1
-
-                property bool isPause: false
-
-                Image {
-                    id: pauseIcon
-                    source: "icons/Pause.png"
-                    anchors.centerIn:parent
-                    fillMode:Image.PreserveAspectFit
-                    width:parent.width * 0.8
-                    height:parent.height * 0.8
-                    visible:parent.opacity > 0
-                    opacity : parent.opacity
-                }
-
-                SequentialAnimation on opacity {
-                         id: blinkAnimation
-                         running: stopButton.isPause && stopButton.opacity > 0
-                         loops: Animation.Infinite
-
-                         NumberAnimation {
-                             from: 1.0
-                             to: 0.3
-                             duration: 500
-                             easing.type: Easing.InOutQuad
-                         }
-                         NumberAnimation {
-                             from: 0.3
-                             to: 1.0
-                             duration: 500
-                             easing.type: Easing.InOutQuad
-                         }
-                     }
-
-                // 只有在录制时才显示
-                opacity: recordButton.isRecording ? 1.0 : 0.0
-                visible: opacity > 0
-
-                // 添加透明度动画
-                Behavior on opacity {
-                    NumberAnimation {
-                        duration: 300
-                        easing.type: Easing.OutCubic
-                    }
-                }
-
-                // 添加点击事件
-                MouseArea {
-                    anchors.fill: parent
-                    onClicked: {
-                        stopButton.isPause = !stopButton.isPause
-                        if(stopButton.isPause)
-                        {
-                            mainwindow.pauseRecording()
-                        }
-                        else
-                        {
-                            mainwindow.readyRecording()
-                        }
-                    }
-                }
-
-            }
+            onStartRecordClicked: mainwindow.startRecording()
+            onStopRecordClicked: mainwindow.stopRecording()
+            onPauseRecordClicked: mainwindow.pauseRecording()
+            onResumeRecordClicked: mainwindow.readyRecording()
         }
     }
 
+    property alias optionsArea: optionsAreaLoader
+
+    // 屏幕信息标题
     ScreenTitle {
         id: screenTitle
         anchors.top: optionsArea.bottom
+        anchors.topMargin: 4
         anchors.left: parent.left
         anchors.right: parent.right
         title: "1080 X 720 : Screen"
+        z: 0
     }
 
+    // 主内容区
     RowLayout {
-
-        id:contentArea
-        anchors.top: optionsArea.bottom
-        anchors.topMargin: 20
+        id: contentArea
+        anchors.top: screenTitle.bottom // 调整对齐
+        anchors.topMargin: 4
         anchors.left: parent.left
         anchors.right: parent.right
         anchors.bottom: parent.bottom
-        anchors.bottomMargin: 20
-        spacing : 0
+        spacing: 0
 
+        // 左侧侧边栏
         Rectangle {
             id: leftPanel
             Layout.preferredWidth: 150
-            color : "#2C2F3C"
             Layout.fillHeight: true
+            color: "transparent" // 透明以显示主背景
 
-            // 使用 settinglist.qml 中的 ListView
+            // 分隔线
+            Rectangle {
+                anchors.right: parent.right
+                height: parent.height
+                width: 1
+                color: "#3A4050"
+            }
+
             Loader {
                 id: settingListLoader
                 anchors.fill: parent
                 source: "settinglist.qml"
-
                 onLoaded: {
-                    // 可以在这里处理加载完成后的逻辑
                     if (item) {
-                        // 连接点击事件
-                        item.itemClicked.connect(function(index, title) {
+                        item.itemClicked.connect(function (index, title) {
                             handleSettingItemClick(index, title)
                         })
                     }
@@ -443,38 +210,125 @@ ApplicationWindow{
             }
         }
 
+        // 右侧内容区
         Rectangle {
             id: rightPanel
             Layout.fillWidth: true
             Layout.fillHeight: true
 
-            StackView {
-                id: stackview
+            // 间距设置
+            Layout.margins: 10
+
+
+            // 内嵌视觉效果
+            color: "#1E2126" // 深色背景
+            radius: 8
+
+            border.color: "#15171B"
+            border.width: 1
+
+            // 内容区域容器 (用于统一做圆角剪裁)
+            Item {
                 anchors.fill: parent
-                initialItem: "videopage.qml"
+                layer.enabled: true
+                layer.effect: MultiEffect {
+                    maskEnabled: true
+                    maskSource: ShaderEffectSource {
+                        sourceItem: Rectangle {
+                            width: rightPanel.width
+                            height: rightPanel.height
+                            radius: rightPanel.radius
+                        }
+                        hideSource: true
+                    }
+                }
+
+                GLView {
+                    id: previewView
+                    anchors.fill: parent
+                    keepRatio: true
+                    objectName: "previewView"
+                    // 仅在当前页面需要预览时显示，且位于底层
+                    visible: stackview.currentItem && stackview.currentItem.showPreview === true
+                }
+
+                StackView {
+                    id: stackview
+                    anchors.fill: parent
+                    initialItem: "videopage.qml"
+
+                    // 背景透明，以便透出底部的 GLView
+                    background: Item { }
+
+                    // 切换动画配置
+                    pushEnter: Transition {
+                        PropertyAnimation {
+                            property: "opacity"
+                            from: 0
+                            to: 1
+                            duration: 200
+                        }
+                        NumberAnimation {
+                            property: "y"
+                            from: 20
+                            to: 0
+                            duration: 300
+                            easing.type: Easing.OutCubic
+                        }
+                    }
+
+                    pushExit: Transition {
+                        PropertyAnimation {
+                            property: "opacity"
+                            from: 1
+                            to: 0
+                            duration: 200
+                        }
+                    }
+
+                    popEnter: Transition {
+                        PropertyAnimation {
+                            property: "opacity"
+                            from: 0
+                            to: 1
+                            duration: 200
+                        }
+                    }
+
+                    popExit: Transition {
+                        PropertyAnimation {
+                            property: "opacity"
+                            from: 1
+                            to: 0
+                            duration: 200
+                        }
+                        NumberAnimation {
+                            property: "y"
+                            from: 0
+                            to: 20
+                            duration: 300
+                            easing.type: Easing.OutCubic
+                        }
+                    }
+
+                    replaceEnter: Transition {
+                        PropertyAnimation { property: "opacity"; from: 0; to: 1; duration: 200 }
+                    }
+                    replaceExit: Transition {
+                        PropertyAnimation { property: "opacity"; from: 1; to: 0; duration: 200 }
+                    }
+                }
             }
         }
     }
-    
-    // 处理设置列表项点击事件
+
     function handleSettingItemClick(index, title) {
         console.log("点击了:", title, "索引:", index)
-        
-        switch(index) {
-            case 0: // 主页
-                if (stackview)
-                    stackview.push("videopage.qml")
-                break
-            case 1: // 设置
-                if (stackview)
-                    stackview.push("settingpage.qml")
-                break
-            case 2: // 视频
-                if (stackview)
-                    stackview.push("cuttingpage.qml")
-                break
-            default:
-                console.log("未知的菜单项")
+        switch (index) {
+        case 0: if (stackview) stackview.push("videopage.qml"); break
+        case 1: if (stackview) stackview.push("settingpage.qml"); break
+        case 2: if (stackview) stackview.push("cuttingpage.qml"); break
+        default: console.log("未知的菜单项")
         }
     }
 }

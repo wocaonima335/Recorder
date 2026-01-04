@@ -21,11 +21,14 @@ private:
     void ensureTextures();
 
 private:
-    FFGLItem *m_item = nullptr;
     QSize m_fboSize;
     QOpenGLShaderProgram *program = nullptr;
     GLuint vao = 0, vbo = 0, ebo = 0;
     GLuint yTex = 0, uTex = 0, vTex = 0;
+
+    QByteArray m_yData, m_uData, m_vData;
+    int m_imgWidth = 0, m_imgHeight = 0;
+    bool m_glInitialized = false;
 };
 
 #endif // FFGLRENDERER_H

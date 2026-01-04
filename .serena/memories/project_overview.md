@@ -1,0 +1,11 @@
+# 项目概览
+- **定位**：Windows 上的桌面录屏/推流客户端，基于 Qt 6 Quick/QML 提供 UI，核心音视频处理链由自研的 demuxer/decoder/filter/encoder/muxer/thread 等模块组成，统一挂在 `FFRecorder`。
+- **技术栈**：C++17、CMake、Qt 6 (Quick/QML/Multimedia/Widgets/Gui)、FFmpeg（仓库自带 `3rdparty/ffmpeg-amf` 发行包）、OpenGL QQuickFramebufferObject 预览。
+- **结构**：
+  - `main.cpp`：初始化 Qt、注册 QML 模块、绑定录制控制信号。
+  - `demuxer/`, `decoder/`, `filter/`, `encoder/`, `muxer/`：对应 FFmpeg 阶段模块，彼此通过 `FFRecorder` 和线程/队列解耦。
+  - `queue/`：封装音/视频帧与事件队列。
+  - `thread/`：各阶段工作线程，含 `FFVEncoderThread`、`FFAEncoderThread` 等。
+  - `qml/`：Quick UI（Main.qml/videopage 等）。
+  - `3rdparty/`：FFmpeg、OpenCV 依赖。
+- **构建**：根 `CMakeLists.txt` 创建 `appbandicam`，链接所有模块并在构建后复制 FFmpeg DLL；推荐使用 Ninja + MSVC/clang-cl。

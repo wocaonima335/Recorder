@@ -3,7 +3,7 @@
 #define MAX_FRAME_SIZE 3
 
 FFAFrameQueue::FFAFrameQueue()
-    : impl(new FFBoundedQueue<AVFrame, AVFrameTraits>())
+    : impl(new FFBoundedQueue<AVFrame, AVFrameTraits>(30))
 {}
 
 FFAFrameQueue::~FFAFrameQueue()

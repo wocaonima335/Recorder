@@ -6,6 +6,14 @@
     <file alias="cuttingpage.qml">E:/myProgram/Recorder/record/qml/cuttingpage.qml</file>
     <file alias="settinglist.qml">E:/myProgram/Recorder/record/qml/settinglist.qml</file>
     <file alias="ScreenTitle.qml">E:/myProgram/Recorder/record/qml/ScreenTitle.qml</file>
+    <file alias="AudioVisualizer.qml">E:/myProgram/Recorder/record/qml/AudioVisualizer.qml</file>
+    <file alias="AudioIndicator.qml">E:/myProgram/Recorder/record/qml/AudioIndicator.qml</file>
+    <file alias="RecordButton.qml">E:/myProgram/Recorder/record/qml/RecordButton.qml</file>
+    <file alias="TimeDisplay.qml">E:/myProgram/Recorder/record/qml/TimeDisplay.qml</file>
+    <file alias="PanelBackground.qml">E:/myProgram/Recorder/record/qml/PanelBackground.qml</file>
+    <file alias="OptionsArea.qml">E:/myProgram/Recorder/record/qml/OptionsArea.qml</file>
+    <file alias="SourceSelectButton.qml">E:/myProgram/Recorder/record/qml/SourceSelectButton.qml</file>
+    <file alias="VerticalSeparator.qml">E:/myProgram/Recorder/record/qml/VerticalSeparator.qml</file>
     <file alias="../icons/Pause.png">E:/myProgram/Recorder/record/qml/../icons/Pause.png</file>
     <file alias="../icons/Setting.png">E:/myProgram/Recorder/record/qml/../icons/Setting.png</file>
     <file alias="../icons/main.png">E:/myProgram/Recorder/record/qml/../icons/main.png</file>

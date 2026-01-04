@@ -20,6 +20,8 @@ struct EventParameters
 struct ControlEventParams : public EventParameters
 {
     ControlEventType type;
+    demuxerType sourceType = demuxerType::NOTYPE;
+    bool useScreen = true; // true：屏幕；false：摄像头
     std::string url;
     std::string format;
     bool paused = false;

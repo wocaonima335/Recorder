@@ -1,20 +1,17 @@
 import QtQuick 2.15
 import QtQuick.Layouts 1.15
-
-pragma ComponentBehavior: Bound
+import QtQuick.Controls 2.15
 
 Item {
     id: root
-
-    // 添加信号，用于通知点击事件
-    signal itemClicked(int index, string title)
     
-    // 添加属性来跟踪当前选中的Item
+    // 信号与属性
+    signal itemClicked(int index, string title)
     property int currentIndex: 0
 
+    // 数据模型
     ListModel {
         id: settingList
-
         ListElement {
             title: "主页"
             icon: "icons/main.png"
@@ -35,72 +32,112 @@ Item {
     ListView {
         id: listView
         anchors.fill: parent
-        orientation: ListView.Vertical
-        spacing: 0
+        anchors.topMargin: 10
+        anchors.bottomMargin: 10
+        spacing: 4
+        
         model: settingList
+        currentIndex: root.currentIndex
+        
+        // 禁用默认的高亮跟随（我们自己处理点击，但保持高亮组件用于动画）
+        highlightFollowsCurrentItem: true
+        highlightMoveDuration: 250
+        highlightMoveVelocity: -1 // 速度为-1表示由 duration 控制
+
+        // 平滑滑动的选中背景 (Highlighter)
+        highlight: Item {
+            width: listView.width
+            height: 48 
+            
+            Rectangle {
+                anchors.fill: parent
+                anchors.leftMargin: 8
+                anchors.rightMargin: 8
+                radius: 6
+                color: "#353A45" // 选中项背景色
+                
+                // 左侧蓝色指示条
+                Rectangle {
+                    width: 3
+                    height: 20
+                    radius: 1.5
+                    color: "#4A9EFF"
+                    anchors.left: parent.left
+                    anchors.leftMargin: 8
+                    anchors.verticalCenter: parent.verticalCenter
+                }
+
+                // 简单的选中发光
+                layer.enabled: true
+                // 注意：如果想用效果需要 import QtQuick.Effects，这里保持简单或确定已引入
+            }
+        }
 
         delegate: Item {
-            id: delegateFrame
-            width: root.width
-            height: 50
-
+            id: delegateItem
+            width: listView.width
+            height: 48 // 增加一点高度，更宽松
+            
             required property string icon
             required property string iconGray
             required property string title
             required property int index
 
-            // 添加背景Rectangle来实现高光效果
-            Rectangle {
-                id: backgroundRect
-                anchors.left :parent.left
-                anchors.top :parent.top
-                anchors.bottom:parent.bottom
-                width:4
-                color: delegateFrame.index === root.currentIndex ? "#5F8EFC" : "transparent"
-                opacity:1
-                radius: 1
+            property bool isSelected: ListView.isCurrentItem
+            property bool isHovered: mouseArea.containsMouse
 
+            // 悬停背景 (非选中时)
+            Rectangle {
+                anchors.fill: parent
+                anchors.margins: 4
+                anchors.leftMargin: 8
+                anchors.rightMargin: 8
+                radius: 6
+                color: "#2C3039" // 略微亮一点的悬停色
+                opacity: (delegateItem.isHovered && !delegateItem.isSelected) ? 1 : 0
                 
-                // 添加平滑的颜色过渡动画
-                Behavior on color {
-                    ColorAnimation {
-                        duration: 200
-                        easing.type: Easing.OutQuad
-                    }
-                }
+                Behavior on opacity { NumberAnimation { duration: 150 } }
             }
 
             RowLayout {
                 anchors.fill: parent
-                anchors.leftMargin:10
-                anchors.margins: 5
-                spacing:10
+                anchors.leftMargin: 24 // 留出左侧指示条的空间
+                anchors.rightMargin: 16
+                spacing: 12
                 
+                // 图标
                 Image {
-                    id: image
                     Layout.preferredWidth: 20
                     Layout.preferredHeight: 20
-                    source: delegateFrame.index === root.currentIndex ? delegateFrame.icon : delegateFrame.iconGray
+                    source: delegateItem.isSelected ? delegateItem.icon : delegateItem.iconGray
                     fillMode: Image.PreserveAspectFit
+                    opacity: delegateItem.isSelected ? 1.0 : 0.7
+                    
+                    Behavior on opacity { NumberAnimation { duration: 200 } }
                 }
 
+                // 标题
                 Text {
                     Layout.fillWidth: true
-                    elide: Text.ElideLeft
-                    text: delegateFrame.title
-                    horizontalAlignment: Text.AlignLeft
-                    verticalAlignment: Text.AlignVCenter
-                    color:delegateFrame.index === root.currentIndex ? "#FFFFFF" : "gray"
-                    font.pixelSize: 16
+                    text: delegateItem.title
+                    color: delegateItem.isSelected ? "#FFFFFF" : "#A0A5B0"
+                    font.pixelSize: 15
+                    font.bold: delegateItem.isSelected
+                    font.family: "Microsoft YaHei" // 或系统默认
+                    
+                    Behavior on color { ColorAnimation { duration: 200 } }
                 }
             }
 
             MouseArea {
+                id: mouseArea
                 anchors.fill: parent
+                hoverEnabled: true
+                cursorShape: Qt.PointingHandCursor
                 onClicked: {
-                    // 更新当前选中的索引
-                    root.currentIndex = delegateFrame.index
-                    root.itemClicked(delegateFrame.index, delegateFrame.title)
+                    listView.currentIndex = delegateItem.index
+                    root.currentIndex = delegateItem.index
+                    root.itemClicked(delegateItem.index, delegateItem.title)
                 }
             }
         }

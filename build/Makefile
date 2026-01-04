@@ -1005,6 +1005,30 @@ opengl_module_autogen/fast:
 	$(MAKE) $(MAKESILENT) -f opengl\CMakeFiles\opengl_module_autogen.dir\build.make opengl/CMakeFiles/opengl_module_autogen.dir/build
 .PHONY : opengl_module_autogen/fast
 
+appbandicam_autogen/EWIEGA46WW/qrc_res.obj: appbandicam_autogen/EWIEGA46WW/qrc_res.cpp.obj
+.PHONY : appbandicam_autogen/EWIEGA46WW/qrc_res.obj
+
+# target to build an object file
+appbandicam_autogen/EWIEGA46WW/qrc_res.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\appbandicam.dir\build.make CMakeFiles/appbandicam.dir/appbandicam_autogen/EWIEGA46WW/qrc_res.cpp.obj
+.PHONY : appbandicam_autogen/EWIEGA46WW/qrc_res.cpp.obj
+
+appbandicam_autogen/EWIEGA46WW/qrc_res.i: appbandicam_autogen/EWIEGA46WW/qrc_res.cpp.i
+.PHONY : appbandicam_autogen/EWIEGA46WW/qrc_res.i
+
+# target to preprocess a source file
+appbandicam_autogen/EWIEGA46WW/qrc_res.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\appbandicam.dir\build.make CMakeFiles/appbandicam.dir/appbandicam_autogen/EWIEGA46WW/qrc_res.cpp.i
+.PHONY : appbandicam_autogen/EWIEGA46WW/qrc_res.cpp.i
+
+appbandicam_autogen/EWIEGA46WW/qrc_res.s: appbandicam_autogen/EWIEGA46WW/qrc_res.cpp.s
+.PHONY : appbandicam_autogen/EWIEGA46WW/qrc_res.s
+
+# target to generate assembly for a file
+appbandicam_autogen/EWIEGA46WW/qrc_res.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\appbandicam.dir\build.make CMakeFiles/appbandicam.dir/appbandicam_autogen/EWIEGA46WW/qrc_res.cpp.s
+.PHONY : appbandicam_autogen/EWIEGA46WW/qrc_res.cpp.s
+
 appbandicam_autogen/mocs_compilation.obj: appbandicam_autogen/mocs_compilation.cpp.obj
 .PHONY : appbandicam_autogen/mocs_compilation.obj
 
@@ -1130,6 +1154,9 @@ help:
 	@echo ... recorder_module
 	@echo ... resampler_module
 	@echo ... thread_module
+	@echo ... appbandicam_autogen/EWIEGA46WW/qrc_res.obj
+	@echo ... appbandicam_autogen/EWIEGA46WW/qrc_res.i
+	@echo ... appbandicam_autogen/EWIEGA46WW/qrc_res.s
 	@echo ... appbandicam_autogen/mocs_compilation.obj
 	@echo ... appbandicam_autogen/mocs_compilation.i
 	@echo ... appbandicam_autogen/mocs_compilation.s

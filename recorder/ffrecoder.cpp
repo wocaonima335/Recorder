@@ -1,5 +1,6 @@
 #include "ffrecorder.h"
 
+#include "event/ffsourcechangeevent.h"
 #include "queue/ffeventqueue.h"
 
 #include <QDebug>
@@ -26,26 +27,31 @@ void FFRecorder::destoryInstance()
 
 void FFRecorder::initialize()
 {
-    if (m_isRecording)
+    if (m_isRecording || m_initialized)
         return;
     av_log_set_level(AV_LOG_QUIET);
 
     registerMetaTypes();
     initCoreComponents();
+    m_initialized = true;
+    emit audioSamplerChanged();
 }
 
 void FFRecorder::startRecord()
 {
+    if (!m_initialized)
+        initialize();
     if (m_isRecording)
         return;
-
-    int64_t t0 = av_gettime_relative();
-    d->vEncoderThread->setStartTimeUs(t0);
+    int64_t t0 = av_gettime_relative(); // 统一墙钟起点
     d->aEncoderThread->setStartTimeUs(t0);
-
+    d->vEncoderThread->setStartTimeUs(t0);
+    d->audioSampler->clear();
+    d->audioSampler->start();
     FFEventQueue::getInstance().start();
     m_eventLoop->start();
     m_isRecording = true;
+    emit isRecordingChanged();
 }
 
 void FFRecorder::stopRecord()
@@ -53,26 +59,19 @@ void FFRecorder::stopRecord()
     if (!m_isRecording)
         return;
 
-    if (d->vFilterThread) {
-        d->vFilterThread->stop();
-        d->vFilterThread->wakeAllThread();
-        d->vFilterThread->wait();
-    }
-
-    if (d->aFilterThread) {
-        d->aFilterThread->stop();
-        d->aFilterThread->wakeAllThread();
-        d->aFilterThread->wait();
-    }
-
-    if (m_eventLoop) {
+    if (m_eventLoop)
+    {
         m_eventLoop->stop();
         m_eventLoop->wakeAllThread();
         m_eventLoop->wait();
     }
+    FFEventQueue::getInstance().clearQueue();
+    d->audioSampler->stop();
+    d->audioSampler->clear();
 
     setCaptureTimeText("00:00.0");
     m_isRecording = false;
+    emit isRecordingChanged();
 }
 
 FFRecorderPrivate *FFRecorder::getContext()
@@ -82,7 +81,8 @@ FFRecorderPrivate *FFRecorder::getContext()
 
 void FFRecorder::initCoreComponents()
 {
-    for (size_t i = 0; i < FFRecordContextType::A_DECODER_SIZE; i++) {
+    for (size_t i = 0; i < FFRecordContextType::A_DECODER_SIZE; i++)
+    {
         d->aDecoderPktQueue[i] = new FFAPacketQueue;
         d->aDecoder[i] = new FFADecoder;
         d->aDecoderFrmQueue[i] = new FFAFrameQueue;
@@ -91,7 +91,8 @@ void FFRecorder::initCoreComponents()
         d->aDemuxerThread[i] = new FFDemuxerThread;
     }
 
-    for (size_t i = 0; i < FFRecordContextType::V_DECODER_SIZE; i++) {
+    for (size_t i = 0; i < FFRecordContextType::V_DECODER_SIZE; i++)
+    {
         d->vDecoderPktQueue[i] = new FFVPacketQueue;
         d->vDecoder[i] = new FFVDecoder;
         d->vDecoderFrmQueue[i] = new FFVFrameQueue;
@@ -119,13 +120,20 @@ void FFRecorder::initCoreComponents()
     d->aEncoderThread = new FFAEncoderThread;
     d->vEncoderThread = new FFVEncoderThread;
 
+    d->audioSampler = new FFAudioSampler(this);
+
+    d->audioSampler->initialize(48000, 2, AV_SAMPLE_FMT_FLTP);
+
     d->aFilterThread->init(d->aDecoderFrmQueue[aDecoderType::A_MICROPHONE],
                            d->aDecoderFrmQueue[aDecoderType::A_AUDIO],
                            d->aFilter);
 
-    d->vFilterThread->init(d->vDecoderFrmQueue[demuxerType::SCREEN], d->vFilter);
+    bool useScreen = FFSourceChangeEvent::sourceChanged.load();
+    demuxerType initialSource = useScreen ? demuxerType::SCREEN : demuxerType::CAMERA;
 
-    d->vFilter->init(d->vDecoderFrmQueue[demuxerType::SCREEN], d->vDecoder[demuxerType::SCREEN]);
+    d->vFilterThread->init(d->vDecoderFrmQueue[initialSource], d->vFilter);
+
+    d->vFilter->init(d->vDecoderFrmQueue[initialSource], d->vDecoder[initialSource]);
 
     m_threadPool = new FFThreadPool();
     m_threadPool->init(4);
@@ -182,6 +190,16 @@ FFMuxer *FFRecorder::getMuxer()
     return d ? d->muxer : nullptr;
 }
 
+FFAudioSampler *FFRecorder::getSampler()
+{
+    return d ? d->audioSampler : nullptr;
+}
+
+QObject *FFRecorder::audioSampler() const
+{
+    return d ? d->audioSampler : nullptr;
+}
+
 FFADecoder *FFRecorder::getADecoder(int index)
 {
     if (!d || index < 0 || static_cast<size_t>(index) >= FFRecordContextType::A_DECODER_SIZE)
@@ -209,7 +227,6 @@ Demuxer *FFRecorder::getVDemuxer(int index)
         return nullptr;
     return d->vDemuxer[index];
 }
-
 
 FFDemuxerThread *FFRecorder::getADemuxerThread(int index)
 {
@@ -329,7 +346,8 @@ QString FFRecorder::captureTimeText() const
 
 void FFRecorder::setCaptureTimeText(const QString &timeText)
 {
-    if (m_captureTimeText != timeText) {
+    if (m_captureTimeText != timeText)
+    {
         m_captureTimeText = timeText;
         emit captureTimeTextChanged();
     }

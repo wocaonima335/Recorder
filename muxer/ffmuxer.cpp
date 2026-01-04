@@ -1,6 +1,9 @@
 #include "ffmuxer.h"
 #include <libavutil/timestamp.h>
 
+#include <QDebug>
+#include <QString>
+
 FFMuxer::FFMuxer() {}
 
 FFMuxer::~FFMuxer()
@@ -30,28 +33,28 @@ void FFMuxer::addStream(AVCodecContext *codecCtx)
 
     // 验证编码器上下文
     if (!codecCtx || !codecCtx->codec) {
-        std::cerr << "Invalid codec context!" << std::endl;
+        qDebug().noquote() << "[Muxer] Invalid codec context!";
         return;
     }
 
     // 验证时间基
     if (codecCtx->time_base.num <= 0 || codecCtx->time_base.den <= 0) {
-        std::cerr << "Invalid time base: " << codecCtx->time_base.num << "/"
-                  << codecCtx->time_base.den << std::endl;
+        qDebug().noquote() << "[Muxer] Invalid time base:" << codecCtx->time_base.num << "/"
+                           << codecCtx->time_base.den;
         return;
     }
 
     AVStream *stream = avformat_new_stream(fmtCtx, nullptr);
 
     if (!stream) {
-        std::cerr << "New Stream Fail !" << std::endl;
+        qDebug().noquote() << "[Muxer] New Stream Fail!";
         return;
     }
 
     int ret = avcodec_parameters_from_context(stream->codecpar, codecCtx);
 
     if (ret < 0) {
-        std::cerr << "Copy Parameters From Context Fail !" << std::endl;
+        qDebug().noquote() << "[Muxer] Copy Parameters From Context Fail!";
         printError(ret);
         return;
     }
@@ -69,7 +72,7 @@ void FFMuxer::addStream(AVCodecContext *codecCtx)
     }
 
     streamCount++;
-    //    std::cout << "streamCout = "<< streamCount <<std::endl;
+    //    qDebug().noquote() << "[Muxer] streamCount =" << streamCount;
     if (streamCount == 2) {
         readyFlag = true; // 直接赋值，由锁保证可见性
     }
@@ -96,13 +99,9 @@ int FFMuxer::mux(AVPacket *packet)
     av_ts_make_string(dts_buf, packet->dts);
     av_ts_make_string(duration_buf, packet->duration);
 
-    printf("[Mux Input] %s pkt: stream_index=%d, pts=%s, dts=%s, duration=%s, size=%d\n",
-           streamType,
-           streamIndex,
-           pts_buf,
-           dts_buf,
-           duration_buf,
-           packet->size);
+    qDebug().noquote() << "[Mux Input]" << streamType << "pkt stream_index=" << streamIndex
+                       << "pts=" << pts_buf << "dts=" << dts_buf << "duration=" << duration_buf
+                       << "size=" << packet->size;
 
     AVRational srcTimeBase, dstTimeBase;
     {
@@ -125,10 +124,9 @@ int FFMuxer::mux(AVPacket *packet)
     if (packet->pts == AV_NOPTS_VALUE || packet->dts == AV_NOPTS_VALUE || packet->pts < 0) {
         av_ts_make_string(pts_buf, packet->pts);
         av_ts_make_string(dts_buf, packet->dts);
-        printf("[Mux Drop] %s pkt dropped: invalid pts/dts (pts=%s, dts=%s)\n",
-               streamType,
-               pts_buf,
-               dts_buf);
+        qDebug().noquote() << "[Mux Drop]" << streamType
+                           << "pkt dropped: invalid pts/dts (pts=" << pts_buf
+                           << ", dts=" << dts_buf << ")";
         return 0;
     }
 
@@ -143,18 +141,16 @@ int FFMuxer::mux(AVPacket *packet)
         av_ts_make_string(pts_buf, packet->pts);
         av_ts_make_string(dts_buf, packet->dts);
 
-        printf("[Mux Write] %s pkt: stream_index=%d, pts=%s(%.6fs), dts=%s(%.6fs), size=%d\n",
-               streamType,
-               packet->stream_index,
-               pts_buf,
-               av_q2d(dstTimeBase) * packet->pts,
-               dts_buf,
-               av_q2d(dstTimeBase) * packet->dts,
-               packet->size);
+        qDebug().noquote() << "[Mux Write]" << streamType << "pkt stream_index="
+                           << packet->stream_index << "pts=" << pts_buf << "("
+                           << QString::number(av_q2d(dstTimeBase) * packet->pts, 'f', 6) << "s)"
+                           << "dts=" << dts_buf << "("
+                           << QString::number(av_q2d(dstTimeBase) * packet->dts, 'f', 6) << "s)"
+                           << "size=" << packet->size;
 
         int ret = av_interleaved_write_frame(fmtCtx, packet);
         if (ret < 0) {
-            std::cerr << "Mux Fail !" << std::endl;
+            qDebug().noquote() << "[Muxer] Mux Fail!";
             printError(ret);
             return -1;
         }
@@ -176,13 +172,13 @@ void FFMuxer::writeHeader()
 
     headerFlag = true;
     if (fmtCtx == nullptr) {
-        std::cerr << "fmtCtx is nullptr" << std::endl;
+        qDebug().noquote() << "[Muxer] fmtCtx is nullptr";
         return;
     }
 
     int ret = avformat_write_header(fmtCtx, nullptr);
     if (ret < 0) {
-        std::cerr << "Write Header Fail !" << std::endl;
+        qDebug().noquote() << "[Muxer] Write Header Fail!";
         printError(ret);
         headerFlag = false; // 恢复状态以防后续错误
     }
@@ -201,7 +197,7 @@ void FFMuxer::writeTrailer()
     }
     int ret = av_write_trailer(fmtCtx);
     if (ret < 0) {
-        std::cerr << "Write Trailer Fail !" << std::endl;
+        qDebug().noquote() << "[Muxer] Write Trailer Fail!";
         printError(ret);
         trailerFlag = false; // 恢复状态以防后续错误
     }
@@ -252,7 +248,7 @@ void FFMuxer::initMuxer()
 {
     int ret = avformat_alloc_output_context2(&fmtCtx, nullptr, format.c_str(), url.c_str());
     if (ret < 0) {
-        std::cerr << "Alloc Output Context Fail !" << std::endl;
+        qDebug().noquote() << "[Muxer] Alloc Output Context Fail!";
         printError(ret);
         return;
     }
@@ -261,16 +257,16 @@ void FFMuxer::initMuxer()
         AVDictionary *opts = nullptr;
         ret = av_opt_set(&opts, "rtsp_transport", "tcp", 0);
         if (ret < 0) {
-            std::cerr << "av_opt_set:rtsp_transport fail" << std::endl;
+            qDebug().noquote() << "[Muxer] av_opt_set:rtsp_transport fail";
         }
         ret = av_dict_set(&opts, "stimeout", "5000000", 0);
         if (ret < 0) {
-            std::cerr << "av_dict_set: stimeout fail" << std::endl;
+            qDebug().noquote() << "[Muxer] av_dict_set: stimeout fail";
         }
 
         ret = av_opt_set_dict(fmtCtx, &opts);
         if (ret < 0) {
-            std::cerr << "av_opt_set_dict fail" << std::endl;
+            qDebug().noquote() << "[Muxer] av_opt_set_dict fail";
         }
 
         av_dict_free(&opts);
@@ -278,7 +274,7 @@ void FFMuxer::initMuxer()
     } else {
         ret = avio_open(&fmtCtx->pb, url.c_str(), AVIO_FLAG_WRITE);
         if (ret < 0) {
-            std::cerr << "Open File Fail !" << std::endl;
+            qDebug().noquote() << "[Muxer] Open File Fail!";
             printError(ret);
             return;
         }
@@ -290,8 +286,8 @@ void FFMuxer::printError(int ret)
     char errorBuffer[AV_ERROR_MAX_STRING_SIZE];
     int res = av_strerror(ret, errorBuffer, sizeof(errorBuffer));
     if (res < 0) {
-        std::cerr << "Unknow Error!" << std::endl;
+        qDebug().noquote() << "[Muxer] Unknown Error";
     } else {
-        std::cerr << "Error:" << errorBuffer << std::endl;
+        qDebug().noquote() << "[Muxer] Error:" << errorBuffer;
     }
 }

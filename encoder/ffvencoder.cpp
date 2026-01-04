@@ -53,10 +53,11 @@ int FFVEncoder::encode(AVFrame *frame, int streamIndex, int64_t pts, AVRational 
         return 0;
     }
 
-    // 性能监控开始
-    auto encodeStart = std::chrono::steady_clock::now();
+    // // 性能监控开始
+    // auto encodeStart = std::chrono::steady_clock::now();
 
     frame->pts = pts; // 将计算好的 PTS 写到 AVFrame 上，交给编码器
+    qDebug() << "[FFVEncoder]:encode pts :" << pts;
 
     int ret = avcodec_send_frame(codecCtx, frame);
     if (ret < 0)
@@ -68,36 +69,43 @@ int FFVEncoder::encode(AVFrame *frame, int streamIndex, int64_t pts, AVRational 
     AVPacket *pkt = av_packet_alloc();
     ret = avcodec_receive_packet(codecCtx, pkt);
 
-    if (ret == AVERROR(EAGAIN)) {
+    if (ret == AVERROR(EAGAIN))
+    {
         av_packet_free(&pkt);
         printError(ret);
-    } else if (ret == AVERROR_EOF) {
+    }
+    else if (ret == AVERROR_EOF)
+    {
         std::cout << "Encode Video EOF !" << std::endl;
         av_packet_free(&pkt);
-    } else if (ret < 0) {
+    }
+    else if (ret < 0)
+    {
         printError(ret);
         av_packet_free(&pkt);
         return -1;
-    } else {
+    }
+    else
+    {
         pkt->stream_index = streamIndex;
-        pktQueue->tryEnqueue(pkt);
+        pktQueue->enqueue(pkt);
         av_packet_free(&pkt);
     }
 
-    // 性能监控结束
-    auto encodeEnd = std::chrono::steady_clock::now();
+    // // 性能监控结束
+    // auto encodeEnd = std::chrono::steady_clock::now();
 
-    auto encodeDuration = std::chrono::duration_cast<std::chrono::microseconds>(encodeEnd
-                                                                                - encodeStart);
-    double encodeTimeMs = encodeDuration.count() / 1000.0;
+    // auto encodeDuration = std::chrono::duration_cast<std::chrono::microseconds>(encodeEnd
+    //                                                                             - encodeStart);
+    // double encodeTimeMs = encodeDuration.count() / 1000.0;
 
-    // 更新平均编码时间
-    encodeCount++;
-    avgEncodeTime = (avgEncodeTime * (encodeCount - 1) + encodeTimeMs) / encodeCount;
+    // // 更新平均编码时间
+    // encodeCount++;
+    // avgEncodeTime = (avgEncodeTime * (encodeCount - 1) + encodeTimeMs) / encodeCount;
 
-    std::cout << "[VEnc] WARNING: Slow encode detected! " << encodeTimeMs << "ms (target: <"
-              << TARGET_ENCODE_TIME_MS << "ms for 30fps), avg: " << avgEncodeTime << "ms"
-              << std::endl;
+    // std::cout << "[VEnc] WARNING: Slow encode detected! " << encodeTimeMs << "ms (target: <"
+    //           << TARGET_ENCODE_TIME_MS << "ms for 30fps), avg: " << avgEncodeTime << "ms"
+    //           << std::endl;
 
     return 0;
 }
@@ -263,8 +271,8 @@ void FFVEncoder::initVideo(AVFrame *frame, AVRational fps)
     codecCtx->width = vPars->width;
     codecCtx->height = vPars->height;
     codecCtx->bit_rate = vPars->biteRate;
-    codecCtx->rc_max_rate = vPars->biteRate * 1.2;  // 允许20%的码率波动
-    codecCtx->rc_buffer_size = vPars->biteRate;     // 减小缓冲区以降低延迟
+    codecCtx->rc_max_rate = vPars->biteRate * 1.2; // 允许20%的码率波动
+    codecCtx->rc_buffer_size = vPars->biteRate;    // 减小缓冲区以降低延迟
     codecCtx->framerate = vPars->frameRate;
     codecCtx->time_base = av_inv_q(vPars->frameRate); // 等同于 {fps.den, fps.num}
     codecCtx->pix_fmt = vPars->videoFmt;
@@ -284,8 +292,8 @@ void FFVEncoder::initVideo(AVFrame *frame, AVRational fps)
     else
     {
         // 软件编码器低延迟配置
-        codecCtx->gop_size = 60;    // 减小GOP以降低延迟
-        codecCtx->max_b_frames = 2; // 无B帧以减少延迟
+        codecCtx->gop_size = 30;    // 减小GOP以降低延迟
+        codecCtx->max_b_frames = 0; // 无B帧以减少延迟
         codecCtx->flags |= AV_CODEC_FLAG_LOW_DELAY;
 
         // 软件编码器多线程优化 - 使用更多线程
@@ -310,8 +318,8 @@ void FFVEncoder::initVideo(AVFrame *frame, AVRational fps)
     else
     {
         // 软件编码器：放宽质量限制以提升速度
-        codecCtx->qmin = 18;       // 提高最小质量值
-        codecCtx->qmax = 45;       // 提高最大质量值
+        codecCtx->qmin = 18; // 提高最小质量值
+        codecCtx->qmax = 45; // 提高最大质量值
     }
 
     AVDictionary *codec_options = nullptr;

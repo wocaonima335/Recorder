@@ -50,6 +50,7 @@ private:
     void initAudioPars(AVFrame *frame);
     void initResampler();
     void printFmt();
+    void processDecodedFrame(AVFrame *frame);
 
 private:
     AVCodecContext *codecCtx = nullptr;

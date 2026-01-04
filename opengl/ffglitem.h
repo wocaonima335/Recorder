@@ -53,4 +53,19 @@ public:
     float m_aspect = 1.60f / 9.0f;
 };
 
+class PreviewBridge : public QObject
+{
+public:
+    static PreviewBridge &instance()
+    {
+        static PreviewBridge b;
+        return b;
+    }
+    void setPreviewItem(FFGLItem *item) { m_item = item; }
+    FFGLItem *get() const { return m_item; }
+
+private:
+    QPointer<FFGLItem> m_item;
+};
+
 #endif // FFGLITEM_H

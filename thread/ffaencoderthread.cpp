@@ -1,10 +1,11 @@
 #include "ffaencoderthread.h"
 
-#include "decoder/ffadecoder.h"
 #include "encoder/ffaencoder.h"
-#include "filter/ffafilter.h"
 #include "muxer/ffmuxer.h"
 #include "queue/ffaframequeue.h"
+
+#include <QDebug>
+#include <algorithm>
 
 FFAEncoderThread::FFAEncoderThread() {}
 
@@ -25,9 +26,8 @@ void FFAEncoderThread::close()
 {
     if (aEncoder)
         aEncoder->close();
-    firstFrame = true;
-    firstFramePts = 0;
     streamIndex = -1;
+    last_apts = 0;
 }
 
 void FFAEncoderThread::wakeAllThread()
@@ -43,24 +43,32 @@ void FFAEncoderThread::wakeAllThread()
 void FFAEncoderThread::onPauseChanged(bool pauseFlag, int64_t ts_us)
 {
     std::unique_lock<std::mutex> lk(pause_mutex);
+    int64_t now = ts_us > 0 ? ts_us : av_gettime_relative();
+
     if (pauseFlag) {
-        pause_start_us = ts_us > 0 ? ts_us : av_gettime_relative();
+        if (paused.load(std::memory_order_relaxed)) {
+            return;
+        }
+        pause_start_us = now;
         paused.store(true, std::memory_order_release);
         pause_cv.notify_all();
-        std::cerr << "[AEncThread] paused at " << pause_start_us << "us" << std::endl;
+        qDebug() << "[AEncThread] paused at" << pause_start_us << "us";
     } else {
-        int64_t now = ts_us > 0 ? ts_us : av_gettime_relative();
+        if (!paused.load(std::memory_order_relaxed)) {
+            return;
+        }
         pause_accum_us += (now - pause_start_us);
         paused.store(false, std::memory_order_release);
-        first_after_resume = true; // 音频不需要 I 帧，但保留标志以保持逻辑一致
+        first_after_resume = true;
         pause_cv.notify_all();
-        std::cerr << "[AEncThread] resumed at " << now << "us, total_pause=" << pause_accum_us
-                  << "us" << std::endl;
+        qDebug() << "[AEncThread] resumed at" << now << "us, total_pause=" << pause_accum_us << "us";
     }
 }
 
 void FFAEncoderThread::run()
 {
+    static constexpr AVRational SRC_TB = {1, AV_TIME_BASE};
+
     while (!m_stop) {
         AVFrame *frame = frmQueue->dequeue();
         if (!frame) {
@@ -71,21 +79,33 @@ void FFAEncoderThread::run()
             initEncoder(frame);
         }
 
-        // 暂停时软暂停：丢帧并短暂等待，防止队列堆积与忙等
         if (paused.load(std::memory_order_acquire)) {
             AVFrameTraits::release(frame);
-            std::unique_lock<std::mutex> lk(pause_mutex);
-            pause_cv.wait_for(lk, std::chrono::milliseconds(10), [this] {
-                return !paused.load(std::memory_order_acquire) || m_stop;
-            });
             continue;
         }
 
-        // 用统一墙钟计算音频 PTS
+        int64_t pause_accum_snapshot;
+        bool need_reset;
+        {
+            std::lock_guard<std::mutex> lk(pause_mutex);
+            pause_accum_snapshot = pause_accum_us;
+            need_reset = first_after_resume;
+            first_after_resume = false;
+        }
+
         int64_t now_us = av_gettime_relative();
-        int64_t wall_us = now_us - start_time_us;
-        AVRational src_tb = {1, AV_TIME_BASE};
-        int64_t apts = av_rescale_q(wall_us, src_tb, audioTimeBase);
+        int64_t wall_us = now_us - start_time_us - pause_accum_snapshot;
+        int64_t apts = av_rescale_q(wall_us, SRC_TB, audioTimeBase);
+
+        apts = std::max(apts, last_apts);
+        last_apts = apts + 1;
+
+        if (need_reset) {
+            aEncoder->resetPending(apts);
+            aEncoder->flush();
+            qDebug() << "[AEncThread] resetPending+flush on resume: base_pts=" << apts
+                     << "tb=" << audioTimeBase.num << "/" << audioTimeBase.den;
+        }
 
         aEncoder->encode(frame, streamIndex, apts, audioTimeBase);
         AVFrameTraits::release(frame);
@@ -94,17 +114,20 @@ void FFAEncoderThread::run()
 
 void FFAEncoderThread::initEncoder(AVFrame *frame)
 {
-    // 初始化音频编码器
+    if (!aEncoder || !muxer) {
+        qWarning() << "[AEncThread] initEncoder failed: null encoder or muxer";
+        return;
+    }
+
     aEncoder->initAudio(frame);
-
-    // 使用编码器的 time_base（与输出流一致）
     audioTimeBase = aEncoder->getCodecCtx()->time_base;
-
-    // 复用器添加音频流，并获取音频流索引
     muxer->addStream(aEncoder->getCodecCtx());
     streamIndex = muxer->getAStreamIndex();
 
-    // 首帧标记仅用于初始化，不用于 PTS 计算
-    firstFrame = false;
-    firstFramePts = 0;
+    if (streamIndex < 0) {
+        qWarning() << "[AEncThread] initEncoder failed: invalid stream index" << streamIndex;
+    } else {
+        qDebug() << "[AEncThread] initialized: streamIndex=" << streamIndex
+                 << "timeBase=" << audioTimeBase.num << "/" << audioTimeBase.den;
+    }
 }

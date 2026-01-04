@@ -4,7 +4,6 @@
 #include "ffrecorder_p.h"
 
 #include "event/ffeventloop.h"
-
 #include "thread/ffthreadpool.h"
 
 #include <QObject>
@@ -16,6 +15,8 @@ class FFRecorder : public QObject
 {
     Q_OBJECT;
     Q_PROPERTY(QString captureTimeText READ captureTimeText NOTIFY captureTimeTextChanged)
+    Q_PROPERTY(QObject *audioSampler READ audioSampler NOTIFY audioSamplerChanged)
+    Q_PROPERTY(bool isRecording READ isRecording NOTIFY isRecordingChanged)
 
 public:
     static FFRecorder &getInstance();
@@ -39,6 +40,8 @@ public:
     FFAEncoder *getAEncoder();
     FFVEncoder *getVEncoder();
     FFMuxer *getMuxer();
+
+    FFAudioSampler *getSampler();
 
     FFDemuxerThread *getADemuxerThread(int index);
     FFDemuxerThread *getVDemuxerThread(int index);
@@ -66,12 +69,16 @@ public:
     FFEventLoop *getEventLoop();
 
     QString captureTimeText() const;
+    bool isRecording() const { return m_isRecording; }
+    QObject *audioSampler() const;
 
 public slots:
     void setCaptureTimeText(const QString &timeText);
 
 signals:
     void captureTimeTextChanged();
+    void audioSamplerChanged();
+    void isRecordingChanged();
 
 private:
     void initCoreComponents();
@@ -89,6 +96,7 @@ private:
     FFEventLoop *m_eventLoop = nullptr;
 
     bool m_isRecording = false;
+    bool m_initialized = false;
 
     QString m_captureTimeText = "00:00.0";
 };

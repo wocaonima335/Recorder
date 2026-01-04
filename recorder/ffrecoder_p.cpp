@@ -41,6 +41,8 @@ FFRecorderPrivate::FFRecorderPrivate()
     vFilterThread = nullptr;
     aFilter = nullptr;
     aFilterThread = nullptr;
+
+    audioSampler = nullptr;
 }
 
 FFRecorderPrivate::~FFRecorderPrivate()
@@ -60,6 +62,8 @@ FFRecorderPrivate::~FFRecorderPrivate()
     vFilterThread = nullptr;
     aFilter = nullptr;
     aFilterThread = nullptr;
+
+    audioSampler = nullptr;
 
     for (size_t i = 0; i < FFRecordContextType::A_DECODER_SIZE; ++i) {
         delete aDecoderThread[i];
@@ -84,6 +88,8 @@ FFRecorderPrivate::~FFRecorderPrivate()
         delete vDemuxerThread[i];
         delete vDemuxer[i];
     }
+
+    delete muxer;
     delete vEncoderPktQueue;
     delete aEncoderPktQueue;
     delete vFilterEncoderFrmQueue;

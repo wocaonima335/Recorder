@@ -17,6 +17,14 @@ qt_add_qml_module(qml_module
      QML_FILES cuttingpage.qml
      QML_FILES settinglist.qml
      QML_FILES ScreenTitle.qml
+     QML_FILES AudioVisualizer.qml
+     QML_FILES AudioIndicator.qml
+     QML_FILES RecordButton.qml
+     QML_FILES TimeDisplay.qml
+     QML_FILES PanelBackground.qml
+     QML_FILES OptionsArea.qml
+     QML_FILES SourceSelectButton.qml
+     QML_FILES VerticalSeparator.qml
     RESOURCES
         ../icons/Pause.png
         ../icons/Setting.png

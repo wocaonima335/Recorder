@@ -4,6 +4,7 @@ project(bandicam VERSION 0.1 LANGUAGES CXX)
 
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
+set(CMAKE_AUTORCC ON)
 
 find_package(Qt6 REQUIRED COMPONENTS Quick)
 find_package(Qt6 REQUIRED COMPONENTS Quick Qml Multimedia Widgets Gui)
@@ -81,6 +82,7 @@ target_link_libraries(appbandicam
         Qt6::Qml
         Qt6::Quick
         qml_module
+        opengl_module
         demuxer_module
         queue_module
         decoder_module
@@ -91,8 +93,6 @@ target_link_libraries(appbandicam
         thread_module
         recorder_module
         encoder_module
-        opengl_module
-
 )
 
 # 复制FFmpeg DLL文件到输出目录

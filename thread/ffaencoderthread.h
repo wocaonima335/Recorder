@@ -6,8 +6,10 @@
 #include <condition_variable>
 #include <mutex>
 
-extern "C" {
+extern "C"
+{
 #include <libavformat/avformat.h>
+#include <libavutil/time.h>
 }
 
 class FFAEncoder;
@@ -40,14 +42,10 @@ private:
     FFAFrameQueue *frmQueue = nullptr;
     FFMuxer *muxer = nullptr;
     AVRational audioTimeBase = {0, 1};
-
     int streamIndex = -1;
     FFAFilter *aFilter = nullptr;
-
-    int64_t firstFramePts = 0;
-    bool firstFrame = true;
     int64_t start_time_us = 0;
-
+    int64_t last_apts = 0;
     std::atomic<bool> paused{false};
     int64_t pause_start_us{0};
     int64_t pause_accum_us{0};

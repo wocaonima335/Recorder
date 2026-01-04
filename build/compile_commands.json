@@ -12,6 +12,12 @@
   "output": "CMakeFiles/appbandicam.dir/main.cpp.obj"
 },
 {
+  "directory": "E:/myProgram/Recorder/record/build",
+  "command": "F:\\Qt\\Tools\\mingw1310_64\\bin\\g++.exe -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NEEDS_QMAIN -DQT_NETWORK_LIB -DQT_OPENGL_LIB -DQT_QMLINTEGRATION_LIB -DQT_QMLMODELS_LIB -DQT_QML_LIB -DQT_QUICK_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64 @CMakeFiles/appbandicam.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\appbandicam.dir\\appbandicam_autogen\\EWIEGA46WW\\qrc_res.cpp.obj -c E:\\myProgram\\Recorder\\record\\build\\appbandicam_autogen\\EWIEGA46WW\\qrc_res.cpp",
+  "file": "E:/myProgram/Recorder/record/build/appbandicam_autogen/EWIEGA46WW/qrc_res.cpp",
+  "output": "CMakeFiles/appbandicam.dir/appbandicam_autogen/EWIEGA46WW/qrc_res.cpp.obj"
+},
+{
   "directory": "E:/myProgram/Recorder/record/build/demuxer",
   "command": "F:\\Qt\\Tools\\mingw1310_64\\bin\\g++.exe -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64 @CMakeFiles/demuxer_module.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\demuxer_module.dir\\demuxer_module_autogen\\mocs_compilation.cpp.obj -c E:\\myProgram\\Recorder\\record\\build\\demuxer\\demuxer_module_autogen\\mocs_compilation.cpp",
   "file": "E:/myProgram/Recorder/record/build/demuxer/demuxer_module_autogen/mocs_compilation.cpp",
@@ -73,15 +79,51 @@
 },
 {
   "directory": "E:/myProgram/Recorder/record/build/qml",
-  "command": "F:\\Qt\\Tools\\mingw1310_64\\bin\\g++.exe -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_OPENGL_LIB -DQT_QMLINTEGRATION_LIB -DQT_QMLMODELS_LIB -DQT_QML_LIB -DQT_QUICK_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64 @CMakeFiles/qml_module_resources_1.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\qml_module_resources_1.dir\\qml_module_resources_1_autogen\\mocs_compilation.cpp.obj -c E:\\myProgram\\Recorder\\record\\build\\qml\\qml_module_resources_1_autogen\\mocs_compilation.cpp",
-  "file": "E:/myProgram/Recorder/record/build/qml/qml_module_resources_1_autogen/mocs_compilation.cpp",
-  "output": "qml/CMakeFiles/qml_module_resources_1.dir/qml_module_resources_1_autogen/mocs_compilation.cpp.obj"
+  "command": "F:\\Qt\\Tools\\mingw1310_64\\bin\\g++.exe -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_OPENGL_LIB -DQT_QMLINTEGRATION_LIB -DQT_QMLMODELS_LIB -DQT_QML_LIB -DQT_QUICK_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64 @CMakeFiles/qml_module.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\qml_module.dir\\.rcc\\qmlcache\\qml_module_AudioVisualizer_qml.cpp.obj -c E:\\myProgram\\Recorder\\record\\build\\qml\\.rcc\\qmlcache\\qml_module_AudioVisualizer_qml.cpp",
+  "file": "E:/myProgram/Recorder/record/build/qml/.rcc/qmlcache/qml_module_AudioVisualizer_qml.cpp",
+  "output": "qml/CMakeFiles/qml_module.dir/.rcc/qmlcache/qml_module_AudioVisualizer_qml.cpp.obj"
 },
 {
   "directory": "E:/myProgram/Recorder/record/build/qml",
-  "command": "F:\\Qt\\Tools\\mingw1310_64\\bin\\g++.exe -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_OPENGL_LIB -DQT_QMLINTEGRATION_LIB -DQT_QMLMODELS_LIB -DQT_QML_LIB -DQT_QUICK_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64 @CMakeFiles/qml_module_resources_1.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\qml_module_resources_1.dir\\.rcc\\qrc_qmake_bandicam.cpp.obj -c E:\\myProgram\\Recorder\\record\\build\\qml\\.rcc\\qrc_qmake_bandicam.cpp",
-  "file": "E:/myProgram/Recorder/record/build/qml/.rcc/qrc_qmake_bandicam.cpp",
-  "output": "qml/CMakeFiles/qml_module_resources_1.dir/.rcc/qrc_qmake_bandicam.cpp.obj"
+  "command": "F:\\Qt\\Tools\\mingw1310_64\\bin\\g++.exe -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_OPENGL_LIB -DQT_QMLINTEGRATION_LIB -DQT_QMLMODELS_LIB -DQT_QML_LIB -DQT_QUICK_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64 @CMakeFiles/qml_module.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\qml_module.dir\\.rcc\\qmlcache\\qml_module_AudioIndicator_qml.cpp.obj -c E:\\myProgram\\Recorder\\record\\build\\qml\\.rcc\\qmlcache\\qml_module_AudioIndicator_qml.cpp",
+  "file": "E:/myProgram/Recorder/record/build/qml/.rcc/qmlcache/qml_module_AudioIndicator_qml.cpp",
+  "output": "qml/CMakeFiles/qml_module.dir/.rcc/qmlcache/qml_module_AudioIndicator_qml.cpp.obj"
+},
+{
+  "directory": "E:/myProgram/Recorder/record/build/qml",
+  "command": "F:\\Qt\\Tools\\mingw1310_64\\bin\\g++.exe -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_OPENGL_LIB -DQT_QMLINTEGRATION_LIB -DQT_QMLMODELS_LIB -DQT_QML_LIB -DQT_QUICK_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64 @CMakeFiles/qml_module.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\qml_module.dir\\.rcc\\qmlcache\\qml_module_RecordButton_qml.cpp.obj -c E:\\myProgram\\Recorder\\record\\build\\qml\\.rcc\\qmlcache\\qml_module_RecordButton_qml.cpp",
+  "file": "E:/myProgram/Recorder/record/build/qml/.rcc/qmlcache/qml_module_RecordButton_qml.cpp",
+  "output": "qml/CMakeFiles/qml_module.dir/.rcc/qmlcache/qml_module_RecordButton_qml.cpp.obj"
+},
+{
+  "directory": "E:/myProgram/Recorder/record/build/qml",
+  "command": "F:\\Qt\\Tools\\mingw1310_64\\bin\\g++.exe -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_OPENGL_LIB -DQT_QMLINTEGRATION_LIB -DQT_QMLMODELS_LIB -DQT_QML_LIB -DQT_QUICK_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64 @CMakeFiles/qml_module.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\qml_module.dir\\.rcc\\qmlcache\\qml_module_TimeDisplay_qml.cpp.obj -c E:\\myProgram\\Recorder\\record\\build\\qml\\.rcc\\qmlcache\\qml_module_TimeDisplay_qml.cpp",
+  "file": "E:/myProgram/Recorder/record/build/qml/.rcc/qmlcache/qml_module_TimeDisplay_qml.cpp",
+  "output": "qml/CMakeFiles/qml_module.dir/.rcc/qmlcache/qml_module_TimeDisplay_qml.cpp.obj"
+},
+{
+  "directory": "E:/myProgram/Recorder/record/build/qml",
+  "command": "F:\\Qt\\Tools\\mingw1310_64\\bin\\g++.exe -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_OPENGL_LIB -DQT_QMLINTEGRATION_LIB -DQT_QMLMODELS_LIB -DQT_QML_LIB -DQT_QUICK_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64 @CMakeFiles/qml_module.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\qml_module.dir\\.rcc\\qmlcache\\qml_module_PanelBackground_qml.cpp.obj -c E:\\myProgram\\Recorder\\record\\build\\qml\\.rcc\\qmlcache\\qml_module_PanelBackground_qml.cpp",
+  "file": "E:/myProgram/Recorder/record/build/qml/.rcc/qmlcache/qml_module_PanelBackground_qml.cpp",
+  "output": "qml/CMakeFiles/qml_module.dir/.rcc/qmlcache/qml_module_PanelBackground_qml.cpp.obj"
+},
+{
+  "directory": "E:/myProgram/Recorder/record/build/qml",
+  "command": "F:\\Qt\\Tools\\mingw1310_64\\bin\\g++.exe -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_OPENGL_LIB -DQT_QMLINTEGRATION_LIB -DQT_QMLMODELS_LIB -DQT_QML_LIB -DQT_QUICK_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64 @CMakeFiles/qml_module.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\qml_module.dir\\.rcc\\qmlcache\\qml_module_OptionsArea_qml.cpp.obj -c E:\\myProgram\\Recorder\\record\\build\\qml\\.rcc\\qmlcache\\qml_module_OptionsArea_qml.cpp",
+  "file": "E:/myProgram/Recorder/record/build/qml/.rcc/qmlcache/qml_module_OptionsArea_qml.cpp",
+  "output": "qml/CMakeFiles/qml_module.dir/.rcc/qmlcache/qml_module_OptionsArea_qml.cpp.obj"
+},
+{
+  "directory": "E:/myProgram/Recorder/record/build/qml",
+  "command": "F:\\Qt\\Tools\\mingw1310_64\\bin\\g++.exe -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_OPENGL_LIB -DQT_QMLINTEGRATION_LIB -DQT_QMLMODELS_LIB -DQT_QML_LIB -DQT_QUICK_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64 @CMakeFiles/qml_module.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\qml_module.dir\\.rcc\\qmlcache\\qml_module_SourceSelectButton_qml.cpp.obj -c E:\\myProgram\\Recorder\\record\\build\\qml\\.rcc\\qmlcache\\qml_module_SourceSelectButton_qml.cpp",
+  "file": "E:/myProgram/Recorder/record/build/qml/.rcc/qmlcache/qml_module_SourceSelectButton_qml.cpp",
+  "output": "qml/CMakeFiles/qml_module.dir/.rcc/qmlcache/qml_module_SourceSelectButton_qml.cpp.obj"
+},
+{
+  "directory": "E:/myProgram/Recorder/record/build/qml",
+  "command": "F:\\Qt\\Tools\\mingw1310_64\\bin\\g++.exe -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_OPENGL_LIB -DQT_QMLINTEGRATION_LIB -DQT_QMLMODELS_LIB -DQT_QML_LIB -DQT_QUICK_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64 @CMakeFiles/qml_module.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\qml_module.dir\\.rcc\\qmlcache\\qml_module_VerticalSeparator_qml.cpp.obj -c E:\\myProgram\\Recorder\\record\\build\\qml\\.rcc\\qmlcache\\qml_module_VerticalSeparator_qml.cpp",
+  "file": "E:/myProgram/Recorder/record/build/qml/.rcc/qmlcache/qml_module_VerticalSeparator_qml.cpp",
+  "output": "qml/CMakeFiles/qml_module.dir/.rcc/qmlcache/qml_module_VerticalSeparator_qml.cpp.obj"
 },
 {
   "directory": "E:/myProgram/Recorder/record/build/qml",
@@ -106,6 +148,18 @@
   "command": "F:\\Qt\\Tools\\mingw1310_64\\bin\\g++.exe -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_OPENGL_LIB -DQT_QMLINTEGRATION_LIB -DQT_QMLMODELS_LIB -DQT_QML_LIB -DQT_QUICK_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64 @CMakeFiles/qml_module_qmlcache.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\qml_module_qmlcache.dir\\.rcc\\qmlcache\\qml_module_qmlcache_loader.cpp.obj -c E:\\myProgram\\Recorder\\record\\build\\qml\\.rcc\\qmlcache\\qml_module_qmlcache_loader.cpp",
   "file": "E:/myProgram/Recorder/record/build/qml/.rcc/qmlcache/qml_module_qmlcache_loader.cpp",
   "output": "qml/CMakeFiles/qml_module_qmlcache.dir/.rcc/qmlcache/qml_module_qmlcache_loader.cpp.obj"
+},
+{
+  "directory": "E:/myProgram/Recorder/record/build/qml",
+  "command": "F:\\Qt\\Tools\\mingw1310_64\\bin\\g++.exe -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_OPENGL_LIB -DQT_QMLINTEGRATION_LIB -DQT_QMLMODELS_LIB -DQT_QML_LIB -DQT_QUICK_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64 @CMakeFiles/qml_module_resources_1.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\qml_module_resources_1.dir\\qml_module_resources_1_autogen\\mocs_compilation.cpp.obj -c E:\\myProgram\\Recorder\\record\\build\\qml\\qml_module_resources_1_autogen\\mocs_compilation.cpp",
+  "file": "E:/myProgram/Recorder/record/build/qml/qml_module_resources_1_autogen/mocs_compilation.cpp",
+  "output": "qml/CMakeFiles/qml_module_resources_1.dir/qml_module_resources_1_autogen/mocs_compilation.cpp.obj"
+},
+{
+  "directory": "E:/myProgram/Recorder/record/build/qml",
+  "command": "F:\\Qt\\Tools\\mingw1310_64\\bin\\g++.exe -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_OPENGL_LIB -DQT_QMLINTEGRATION_LIB -DQT_QMLMODELS_LIB -DQT_QML_LIB -DQT_QUICK_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64 @CMakeFiles/qml_module_resources_1.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\qml_module_resources_1.dir\\.rcc\\qrc_qmake_bandicam.cpp.obj -c E:\\myProgram\\Recorder\\record\\build\\qml\\.rcc\\qrc_qmake_bandicam.cpp",
+  "file": "E:/myProgram/Recorder/record/build/qml/.rcc/qrc_qmake_bandicam.cpp",
+  "output": "qml/CMakeFiles/qml_module_resources_1.dir/.rcc/qrc_qmake_bandicam.cpp.obj"
 },
 {
   "directory": "E:/myProgram/Recorder/record/build/qml",
@@ -288,68 +342,74 @@
   "output": "event/CMakeFiles/event_module.dir/ffpauseevent.cpp.obj"
 },
 {
+  "directory": "E:/myProgram/Recorder/record/build/event",
+  "command": "F:\\Qt\\Tools\\mingw1310_64\\bin\\g++.exe -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64 @CMakeFiles/event_module.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\event_module.dir\\ffsourcechangeevent.cpp.obj -c E:\\myProgram\\Recorder\\record\\event\\ffsourcechangeevent.cpp",
+  "file": "E:/myProgram/Recorder/record/event/ffsourcechangeevent.cpp",
+  "output": "event/CMakeFiles/event_module.dir/ffsourcechangeevent.cpp.obj"
+},
+{
   "directory": "E:/myProgram/Recorder/record/build/thread",
-  "command": "F:\\Qt\\Tools\\mingw1310_64\\bin\\g++.exe -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64 @CMakeFiles/thread_module.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\thread_module.dir\\thread_module_autogen\\mocs_compilation.cpp.obj -c E:\\myProgram\\Recorder\\record\\build\\thread\\thread_module_autogen\\mocs_compilation.cpp",
+  "command": "F:\\Qt\\Tools\\mingw1310_64\\bin\\g++.exe -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_OPENGL_LIB -DQT_QMLINTEGRATION_LIB -DQT_QMLMODELS_LIB -DQT_QML_LIB -DQT_QUICK_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64 @CMakeFiles/thread_module.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\thread_module.dir\\thread_module_autogen\\mocs_compilation.cpp.obj -c E:\\myProgram\\Recorder\\record\\build\\thread\\thread_module_autogen\\mocs_compilation.cpp",
   "file": "E:/myProgram/Recorder/record/build/thread/thread_module_autogen/mocs_compilation.cpp",
   "output": "thread/CMakeFiles/thread_module.dir/thread_module_autogen/mocs_compilation.cpp.obj"
 },
 {
   "directory": "E:/myProgram/Recorder/record/build/thread",
-  "command": "F:\\Qt\\Tools\\mingw1310_64\\bin\\g++.exe -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64 @CMakeFiles/thread_module.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\thread_module.dir\\ffthread.cpp.obj -c E:\\myProgram\\Recorder\\record\\thread\\ffthread.cpp",
+  "command": "F:\\Qt\\Tools\\mingw1310_64\\bin\\g++.exe -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_OPENGL_LIB -DQT_QMLINTEGRATION_LIB -DQT_QMLMODELS_LIB -DQT_QML_LIB -DQT_QUICK_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64 @CMakeFiles/thread_module.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\thread_module.dir\\ffthread.cpp.obj -c E:\\myProgram\\Recorder\\record\\thread\\ffthread.cpp",
   "file": "E:/myProgram/Recorder/record/thread/ffthread.cpp",
   "output": "thread/CMakeFiles/thread_module.dir/ffthread.cpp.obj"
 },
 {
   "directory": "E:/myProgram/Recorder/record/build/thread",
-  "command": "F:\\Qt\\Tools\\mingw1310_64\\bin\\g++.exe -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64 @CMakeFiles/thread_module.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\thread_module.dir\\ffthreadpool.cpp.obj -c E:\\myProgram\\Recorder\\record\\thread\\ffthreadpool.cpp",
+  "command": "F:\\Qt\\Tools\\mingw1310_64\\bin\\g++.exe -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_OPENGL_LIB -DQT_QMLINTEGRATION_LIB -DQT_QMLMODELS_LIB -DQT_QML_LIB -DQT_QUICK_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64 @CMakeFiles/thread_module.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\thread_module.dir\\ffthreadpool.cpp.obj -c E:\\myProgram\\Recorder\\record\\thread\\ffthreadpool.cpp",
   "file": "E:/myProgram/Recorder/record/thread/ffthreadpool.cpp",
   "output": "thread/CMakeFiles/thread_module.dir/ffthreadpool.cpp.obj"
 },
 {
   "directory": "E:/myProgram/Recorder/record/build/thread",
-  "command": "F:\\Qt\\Tools\\mingw1310_64\\bin\\g++.exe -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64 @CMakeFiles/thread_module.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\thread_module.dir\\ffdemuxerthread.cpp.obj -c E:\\myProgram\\Recorder\\record\\thread\\ffdemuxerthread.cpp",
+  "command": "F:\\Qt\\Tools\\mingw1310_64\\bin\\g++.exe -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_OPENGL_LIB -DQT_QMLINTEGRATION_LIB -DQT_QMLMODELS_LIB -DQT_QML_LIB -DQT_QUICK_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64 @CMakeFiles/thread_module.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\thread_module.dir\\ffdemuxerthread.cpp.obj -c E:\\myProgram\\Recorder\\record\\thread\\ffdemuxerthread.cpp",
   "file": "E:/myProgram/Recorder/record/thread/ffdemuxerthread.cpp",
   "output": "thread/CMakeFiles/thread_module.dir/ffdemuxerthread.cpp.obj"
 },
 {
   "directory": "E:/myProgram/Recorder/record/build/thread",
-  "command": "F:\\Qt\\Tools\\mingw1310_64\\bin\\g++.exe -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64 @CMakeFiles/thread_module.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\thread_module.dir\\ffadecoderthread.cpp.obj -c E:\\myProgram\\Recorder\\record\\thread\\ffadecoderthread.cpp",
+  "command": "F:\\Qt\\Tools\\mingw1310_64\\bin\\g++.exe -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_OPENGL_LIB -DQT_QMLINTEGRATION_LIB -DQT_QMLMODELS_LIB -DQT_QML_LIB -DQT_QUICK_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64 @CMakeFiles/thread_module.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\thread_module.dir\\ffadecoderthread.cpp.obj -c E:\\myProgram\\Recorder\\record\\thread\\ffadecoderthread.cpp",
   "file": "E:/myProgram/Recorder/record/thread/ffadecoderthread.cpp",
   "output": "thread/CMakeFiles/thread_module.dir/ffadecoderthread.cpp.obj"
 },
 {
   "directory": "E:/myProgram/Recorder/record/build/thread",
-  "command": "F:\\Qt\\Tools\\mingw1310_64\\bin\\g++.exe -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64 @CMakeFiles/thread_module.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\thread_module.dir\\ffvdecoderthread.cpp.obj -c E:\\myProgram\\Recorder\\record\\thread\\ffvdecoderthread.cpp",
+  "command": "F:\\Qt\\Tools\\mingw1310_64\\bin\\g++.exe -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_OPENGL_LIB -DQT_QMLINTEGRATION_LIB -DQT_QMLMODELS_LIB -DQT_QML_LIB -DQT_QUICK_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64 @CMakeFiles/thread_module.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\thread_module.dir\\ffvdecoderthread.cpp.obj -c E:\\myProgram\\Recorder\\record\\thread\\ffvdecoderthread.cpp",
   "file": "E:/myProgram/Recorder/record/thread/ffvdecoderthread.cpp",
   "output": "thread/CMakeFiles/thread_module.dir/ffvdecoderthread.cpp.obj"
 },
 {
   "directory": "E:/myProgram/Recorder/record/build/thread",
-  "command": "F:\\Qt\\Tools\\mingw1310_64\\bin\\g++.exe -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64 @CMakeFiles/thread_module.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\thread_module.dir\\ffvfilterthread.cpp.obj -c E:\\myProgram\\Recorder\\record\\thread\\ffvfilterthread.cpp",
+  "command": "F:\\Qt\\Tools\\mingw1310_64\\bin\\g++.exe -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_OPENGL_LIB -DQT_QMLINTEGRATION_LIB -DQT_QMLMODELS_LIB -DQT_QML_LIB -DQT_QUICK_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64 @CMakeFiles/thread_module.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\thread_module.dir\\ffvfilterthread.cpp.obj -c E:\\myProgram\\Recorder\\record\\thread\\ffvfilterthread.cpp",
   "file": "E:/myProgram/Recorder/record/thread/ffvfilterthread.cpp",
   "output": "thread/CMakeFiles/thread_module.dir/ffvfilterthread.cpp.obj"
 },
 {
   "directory": "E:/myProgram/Recorder/record/build/thread",
-  "command": "F:\\Qt\\Tools\\mingw1310_64\\bin\\g++.exe -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64 @CMakeFiles/thread_module.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\thread_module.dir\\ffafilterthread.cpp.obj -c E:\\myProgram\\Recorder\\record\\thread\\ffafilterthread.cpp",
+  "command": "F:\\Qt\\Tools\\mingw1310_64\\bin\\g++.exe -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_OPENGL_LIB -DQT_QMLINTEGRATION_LIB -DQT_QMLMODELS_LIB -DQT_QML_LIB -DQT_QUICK_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64 @CMakeFiles/thread_module.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\thread_module.dir\\ffafilterthread.cpp.obj -c E:\\myProgram\\Recorder\\record\\thread\\ffafilterthread.cpp",
   "file": "E:/myProgram/Recorder/record/thread/ffafilterthread.cpp",
   "output": "thread/CMakeFiles/thread_module.dir/ffafilterthread.cpp.obj"
 },
 {
   "directory": "E:/myProgram/Recorder/record/build/thread",
-  "command": "F:\\Qt\\Tools\\mingw1310_64\\bin\\g++.exe -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64 @CMakeFiles/thread_module.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\thread_module.dir\\ffaencoderthread.cpp.obj -c E:\\myProgram\\Recorder\\record\\thread\\ffaencoderthread.cpp",
+  "command": "F:\\Qt\\Tools\\mingw1310_64\\bin\\g++.exe -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_OPENGL_LIB -DQT_QMLINTEGRATION_LIB -DQT_QMLMODELS_LIB -DQT_QML_LIB -DQT_QUICK_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64 @CMakeFiles/thread_module.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\thread_module.dir\\ffaencoderthread.cpp.obj -c E:\\myProgram\\Recorder\\record\\thread\\ffaencoderthread.cpp",
   "file": "E:/myProgram/Recorder/record/thread/ffaencoderthread.cpp",
   "output": "thread/CMakeFiles/thread_module.dir/ffaencoderthread.cpp.obj"
 },
 {
   "directory": "E:/myProgram/Recorder/record/build/thread",
-  "command": "F:\\Qt\\Tools\\mingw1310_64\\bin\\g++.exe -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64 @CMakeFiles/thread_module.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\thread_module.dir\\ffvencoderthread.cpp.obj -c E:\\myProgram\\Recorder\\record\\thread\\ffvencoderthread.cpp",
+  "command": "F:\\Qt\\Tools\\mingw1310_64\\bin\\g++.exe -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_OPENGL_LIB -DQT_QMLINTEGRATION_LIB -DQT_QMLMODELS_LIB -DQT_QML_LIB -DQT_QUICK_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64 @CMakeFiles/thread_module.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\thread_module.dir\\ffvencoderthread.cpp.obj -c E:\\myProgram\\Recorder\\record\\thread\\ffvencoderthread.cpp",
   "file": "E:/myProgram/Recorder/record/thread/ffvencoderthread.cpp",
   "output": "thread/CMakeFiles/thread_module.dir/ffvencoderthread.cpp.obj"
 },
 {
   "directory": "E:/myProgram/Recorder/record/build/thread",
-  "command": "F:\\Qt\\Tools\\mingw1310_64\\bin\\g++.exe -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64 @CMakeFiles/thread_module.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\thread_module.dir\\ffmuxerthread.cpp.obj -c E:\\myProgram\\Recorder\\record\\thread\\ffmuxerthread.cpp",
+  "command": "F:\\Qt\\Tools\\mingw1310_64\\bin\\g++.exe -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_OPENGL_LIB -DQT_QMLINTEGRATION_LIB -DQT_QMLMODELS_LIB -DQT_QML_LIB -DQT_QUICK_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64 @CMakeFiles/thread_module.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\thread_module.dir\\ffmuxerthread.cpp.obj -c E:\\myProgram\\Recorder\\record\\thread\\ffmuxerthread.cpp",
   "file": "E:/myProgram/Recorder/record/thread/ffmuxerthread.cpp",
   "output": "thread/CMakeFiles/thread_module.dir/ffmuxerthread.cpp.obj"
 },
@@ -370,6 +430,12 @@
   "command": "F:\\Qt\\Tools\\mingw1310_64\\bin\\g++.exe -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64 @CMakeFiles/recorder_module.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\recorder_module.dir\\ffrecoder.cpp.obj -c E:\\myProgram\\Recorder\\record\\recorder\\ffrecoder.cpp",
   "file": "E:/myProgram/Recorder/record/recorder/ffrecoder.cpp",
   "output": "recorder/CMakeFiles/recorder_module.dir/ffrecoder.cpp.obj"
+},
+{
+  "directory": "E:/myProgram/Recorder/record/build/recorder",
+  "command": "F:\\Qt\\Tools\\mingw1310_64\\bin\\g++.exe -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64 @CMakeFiles/recorder_module.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\recorder_module.dir\\ffaudiosampler.cpp.obj -c E:\\myProgram\\Recorder\\record\\recorder\\ffaudiosampler.cpp",
+  "file": "E:/myProgram/Recorder/record/recorder/ffaudiosampler.cpp",
+  "output": "recorder/CMakeFiles/recorder_module.dir/ffaudiosampler.cpp.obj"
 },
 {
   "directory": "E:/myProgram/Recorder/record/build/encoder",

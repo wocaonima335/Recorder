@@ -9,7 +9,8 @@ target_link_libraries(decoder_module
     Qt6::Core
     ${FFMPEG_LIBRARIES}
     queue_module
-    resampler_module)
+    resampler_module
+    recorder_module)
 
 
 # 添加FFmpeg头文件目录

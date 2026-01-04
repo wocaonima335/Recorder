@@ -5,13 +5,15 @@
 #include "event/ffopensourceevent.h"
 #include "event/ffpauseevent.h"
 #include "event/ffprocessevent.h"
+#include "event/ffsourcechangeevent.h"
 
 std::unique_ptr<FFEvent> SourceEventFactory::createEvent(FFRecorder *context,
                                                          const EventParameters &params)
 {
     const auto &sourceParams = static_cast<const SourceEventParams &>(params);
 
-    switch (sourceParams.type) {
+    switch (sourceParams.type)
+    {
     case SourceEventType::OPEN_SOURCE:
         return std::make_unique<FFOpenSourceEvent>(context,
                                                    sourceParams.sourceType,
@@ -30,7 +32,8 @@ std::unique_ptr<FFEvent> ProcessEventFactory::createEvent(FFRecorder *context,
 {
     const auto &processParams = static_cast<const ProcessEventParams &>(params);
 
-    switch (processParams.type) {
+    switch (processParams.type)
+    {
     case ProcessEventType::CAPTURE_PROCESS:
         return std::make_unique<FFCaptureProcessEvent>(context, processParams.curSec);
     default:
@@ -42,11 +45,14 @@ std::unique_ptr<FFEvent> ControlEventFactory::createEvent(FFRecorder *context,
                                                           const EventParameters &params)
 {
     const auto &ctrl = static_cast<const ControlEventParams &>(params);
-    switch (ctrl.type) {
+    switch (ctrl.type)
+    {
     case ControlEventType::PAUSE:
         return std::make_unique<FFPauseEvent>(context, true, ctrl.ts_us);
     case ControlEventType::READY:
-        return std::make_unique<FFPauseEvent>(context, false, ctrl.ts_us);
+         return std::make_unique<FFPauseEvent>(context, false, ctrl.ts_us);
+    case ControlEventType::SOURCECHANGE:
+        return std::make_unique<FFSourceChangeEvent>(context, ctrl.useScreen);
     default:
         throw std::invalid_argument("Unknown control event type");
     }

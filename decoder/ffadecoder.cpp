@@ -1,5 +1,7 @@
 #include "ffadecoder.h"
+
 #include "queue/ffaframequeue.h"
+#include "recorder/ffrecorder.h"
 #include "resampler/ffaresampler.h"
 
 FFADecoder::FFADecoder()
@@ -18,13 +20,6 @@ void FFADecoder::decode(AVPacket *packet)
         return;
     }
 
-    // if (packet) {
-    //     std::cerr << "[ADec] decode enter, pkt=" << packet << " pts=" << packet->pts
-    //               << " dts=" << packet->dts << std::endl;
-    // } else {
-    //     std::cerr << "[ADec] decode enter, pkt=null (flush)" << std::endl;
-    // }
-
     int ret = avcodec_send_packet(codecCtx, packet);
 
     if (ret < 0 && ret != AVERROR(EAGAIN)) {
@@ -40,13 +35,6 @@ void FFADecoder::decode(AVPacket *packet)
         }
 
         ret = avcodec_receive_frame(codecCtx, frame);
-
-        std::cerr << "[ADec] receive_frame ret=" << ret;
-        if (ret == AVERROR(EAGAIN))
-            std::cerr << " (EAGAIN)";
-        if (ret == AVERROR_EOF)
-            std::cerr << " (EOF)";
-        std::cerr << std::endl;
 
         if (ret < 0) {
             if (ret == AVERROR_EOF) {
@@ -83,9 +71,11 @@ void FFADecoder::decode(AVPacket *packet)
                 } else {
                     std::cout << "audio frame pts:" << swrFrame->pts << std::endl;
 
-                    if (frmQueue != nullptr)
+                    if (frmQueue != nullptr) {
+                        processDecodedFrame(swrFrame);
                         frmQueue->enqueue(swrFrame);
-                    AVFrameTraits::release(swrFrame);
+                    }
+                    // AVFrameTraits::release(swrFrame);
                 }
             } else {
                 if (m_stop.load(std::memory_order_acquire)) {
@@ -93,8 +83,7 @@ void FFADecoder::decode(AVPacket *packet)
                     m_stop.store(false, std::memory_order_release);
                     break;
                 } else {
-                    // 无重采样分支打印 pts
-                    std::cerr << "ADec][nosws] frame pts=" << frame->pts << std::endl;
+                    processDecodedFrame(frame);
                     frmQueue->enqueue(frame);
                 }
             }
@@ -212,6 +201,67 @@ AVStream *FFADecoder::getStream()
     return stream;
 }
 
+void FFADecoder::processDecodedFrame(AVFrame *frame)
+{
+    if (!frame || !frame->nb_samples) {
+        return;
+    }
+
+    // 获取全局FFRecorder实例
+    FFRecorder &recorder = FFRecorder::getInstance();
+    FFAudioSampler *sampler = recorder.getSampler();
+
+    if (!sampler || !sampler->isActive()) {
+        return; // 采样器未启动，跳过
+    }
+
+    switch (frame->format) {
+    case AV_SAMPLE_FMT_FLT: {
+        // 单通道或交错float格式
+        float *samples = (float *) frame->data[0];
+        int sampleCount = frame->nb_samples * frame->ch_layout.nb_channels;
+        sampler->collectSamples(samples, sampleCount);
+        break;
+    }
+
+    case AV_SAMPLE_FMT_FLTP: {
+        // Planar float格式（多个通道分开存储）
+        // 对于多通道情况，需要交错处理
+        int numSamples = frame->nb_samples;
+        float **samples = (float **) frame->data;
+
+        // 选项1: 只采集第一个声道（单声道分析）
+        if (samples[0]) {
+            sampler->collectSamples(samples[0], numSamples);
+        }
+        break;
+    }
+
+    case AV_SAMPLE_FMT_S16: {
+        // 16位有符号整数格式
+        int16_t *samples = (int16_t *) frame->data[0];
+        int sampleCount = frame->nb_samples * frame->ch_layout.nb_channels;
+        sampler->collectSamples(samples, sampleCount);
+        break;
+    }
+
+    case AV_SAMPLE_FMT_S16P: {
+        // Planar 16位格式
+        int numSamples = frame->nb_samples;
+        int16_t **samples = (int16_t **) frame->data;
+
+        if (samples[0]) {
+            sampler->collectSamples(samples[0], numSamples);
+        }
+        break;
+    }
+
+    default:
+        qWarning() << "Unsupported audio format for sampling:" << frame->format;
+        break;
+    }
+}
+
 void FFADecoder::printError(int ret)
 {
     char errorBuffer[AV_ERROR_MAX_STRING_SIZE];
@@ -228,7 +278,6 @@ void FFADecoder::initAudioPars(AVFrame *frame)
     aPars->timeBase = stream->time_base;
     aPars->nbChannels = frame->ch_layout.nb_channels;
     aPars->aFormatEnum = codecCtx->sample_fmt;
-    aPars->sampleRate = frame->sample_rate = 48000;
     aPars->sampleSize = av_get_bytes_per_sample(codecCtx->sample_fmt);
     aPars->sampleRate = frame->sample_rate;
 
