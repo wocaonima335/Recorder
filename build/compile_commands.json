@@ -85,18 +85,6 @@
 },
 {
   "directory": "E:/myProgram/Recorder/record/build/qml",
-  "command": "F:\\Qt\\Tools\\mingw1310_64\\bin\\g++.exe -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_OPENGL_LIB -DQT_QMLINTEGRATION_LIB -DQT_QMLMODELS_LIB -DQT_QML_LIB -DQT_QUICK_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64 @CMakeFiles/qml_module_qmlcache.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\qml_module_qmlcache.dir\\qml_module_qmlcache_autogen\\mocs_compilation.cpp.obj -c E:\\myProgram\\Recorder\\record\\build\\qml\\qml_module_qmlcache_autogen\\mocs_compilation.cpp",
-  "file": "E:/myProgram/Recorder/record/build/qml/qml_module_qmlcache_autogen/mocs_compilation.cpp",
-  "output": "qml/CMakeFiles/qml_module_qmlcache.dir/qml_module_qmlcache_autogen/mocs_compilation.cpp.obj"
-},
-{
-  "directory": "E:/myProgram/Recorder/record/build/qml",
-  "command": "F:\\Qt\\Tools\\mingw1310_64\\bin\\g++.exe -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_OPENGL_LIB -DQT_QMLINTEGRATION_LIB -DQT_QMLMODELS_LIB -DQT_QML_LIB -DQT_QUICK_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64 @CMakeFiles/qml_module_qmlcache.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\qml_module_qmlcache.dir\\.rcc\\qmlcache\\qml_module_qmlcache_loader.cpp.obj -c E:\\myProgram\\Recorder\\record\\build\\qml\\.rcc\\qmlcache\\qml_module_qmlcache_loader.cpp",
-  "file": "E:/myProgram/Recorder/record/build/qml/.rcc/qmlcache/qml_module_qmlcache_loader.cpp",
-  "output": "qml/CMakeFiles/qml_module_qmlcache.dir/.rcc/qmlcache/qml_module_qmlcache_loader.cpp.obj"
-},
-{
-  "directory": "E:/myProgram/Recorder/record/build/qml",
   "command": "F:\\Qt\\Tools\\mingw1310_64\\bin\\g++.exe -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_OPENGL_LIB -DQT_QMLINTEGRATION_LIB -DQT_QMLMODELS_LIB -DQT_QML_LIB -DQT_QUICK_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64 @CMakeFiles/qml_module_resources_2.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\qml_module_resources_2.dir\\qml_module_resources_2_autogen\\mocs_compilation.cpp.obj -c E:\\myProgram\\Recorder\\record\\build\\qml\\qml_module_resources_2_autogen\\mocs_compilation.cpp",
   "file": "E:/myProgram/Recorder/record/build/qml/qml_module_resources_2_autogen/mocs_compilation.cpp",
   "output": "qml/CMakeFiles/qml_module_resources_2.dir/qml_module_resources_2_autogen/mocs_compilation.cpp.obj"
@@ -106,6 +94,18 @@
   "command": "F:\\Qt\\Tools\\mingw1310_64\\bin\\g++.exe -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_OPENGL_LIB -DQT_QMLINTEGRATION_LIB -DQT_QMLMODELS_LIB -DQT_QML_LIB -DQT_QUICK_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64 @CMakeFiles/qml_module_resources_2.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\qml_module_resources_2.dir\\.rcc\\qrc_qml_module_raw_qml_0.cpp.obj -c E:\\myProgram\\Recorder\\record\\build\\qml\\.rcc\\qrc_qml_module_raw_qml_0.cpp",
   "file": "E:/myProgram/Recorder/record/build/qml/.rcc/qrc_qml_module_raw_qml_0.cpp",
   "output": "qml/CMakeFiles/qml_module_resources_2.dir/.rcc/qrc_qml_module_raw_qml_0.cpp.obj"
+},
+{
+  "directory": "E:/myProgram/Recorder/record/build/qml",
+  "command": "F:\\Qt\\Tools\\mingw1310_64\\bin\\g++.exe -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_OPENGL_LIB -DQT_QMLINTEGRATION_LIB -DQT_QMLMODELS_LIB -DQT_QML_LIB -DQT_QUICK_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64 @CMakeFiles/qml_module_qmlcache.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\qml_module_qmlcache.dir\\qml_module_qmlcache_autogen\\mocs_compilation.cpp.obj -c E:\\myProgram\\Recorder\\record\\build\\qml\\qml_module_qmlcache_autogen\\mocs_compilation.cpp",
+  "file": "E:/myProgram/Recorder/record/build/qml/qml_module_qmlcache_autogen/mocs_compilation.cpp",
+  "output": "qml/CMakeFiles/qml_module_qmlcache.dir/qml_module_qmlcache_autogen/mocs_compilation.cpp.obj"
+},
+{
+  "directory": "E:/myProgram/Recorder/record/build/qml",
+  "command": "F:\\Qt\\Tools\\mingw1310_64\\bin\\g++.exe -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_OPENGL_LIB -DQT_QMLINTEGRATION_LIB -DQT_QMLMODELS_LIB -DQT_QML_LIB -DQT_QUICK_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64 @CMakeFiles/qml_module_qmlcache.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\qml_module_qmlcache.dir\\.rcc\\qmlcache\\qml_module_qmlcache_loader.cpp.obj -c E:\\myProgram\\Recorder\\record\\build\\qml\\.rcc\\qmlcache\\qml_module_qmlcache_loader.cpp",
+  "file": "E:/myProgram/Recorder/record/build/qml/.rcc/qmlcache/qml_module_qmlcache_loader.cpp",
+  "output": "qml/CMakeFiles/qml_module_qmlcache.dir/.rcc/qmlcache/qml_module_qmlcache_loader.cpp.obj"
 },
 {
   "directory": "E:/myProgram/Recorder/record/build/qml",
