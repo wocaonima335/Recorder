@@ -16,11 +16,14 @@ Rectangle {
 
 
     property bool screenSelected: true
+    property bool systemAudioSelected: true  // true=系统音频, false=麦克风
     property var recorderObject: null
 
     // 信号转发 - 用于触发录制动作
     signal screenClicked()
     signal cameraClicked()
+    signal systemAudioClicked()
+    signal microphoneClicked()
     signal startRecordClicked()
     signal stopRecordClicked()
     signal pauseRecordClicked()
@@ -38,6 +41,7 @@ Rectangle {
         SourceSelectButton {
             id: screenRecordArea
             isSelected: screenSelected
+            isEnabled: recorderObject ? !recorderObject.isRecording : true
             iconSource: "icons/screen.png"
             labelText: "屏幕"
             iconWidth: 32
@@ -53,6 +57,7 @@ Rectangle {
         SourceSelectButton {
             id: cameraRecordArea
             isSelected: !screenSelected
+            isEnabled: recorderObject ? !recorderObject.isRecording : true
             iconSource: "icons/camera.png"
             labelText: "摄像头"
             iconWidth: 28
@@ -98,27 +103,33 @@ Rectangle {
             spacing: 0
 
             AudioIndicator {
-                id: microPhoneArea
-                labelText: "MICROPHONE"
-                iconSource: "icons/microphone.png"
+                id: systemAudioArea
+                labelText: "系统音频"
+                iconSource: "icons/audio.png"
                 recorderObject: optionsArea.recorderObject
-                visualizerEnabled: false
+                visualizerEnabled: isSelected // 动态显示跟随选中状态
+                visualizerMode: "volume"
+                isSelected: systemAudioSelected
+                isEnabled: recorderObject ? !recorderObject.isRecording : true
 
                 onClicked: {
-                    console.log("Microphone area clicked")
+                    systemAudioSelected = true
+                    systemAudioClicked()
                 }
             }
 
             AudioIndicator {
-                id: audioArea
-                labelText: "AUDIO"
-                iconSource: "icons/audio.png"
+                id: microphoneArea
+                labelText: "麦克风"
+                iconSource: "icons/microphone.png"
                 recorderObject: optionsArea.recorderObject
-                visualizerEnabled: true
-                visualizerMode: "volume"
+                visualizerEnabled: isSelected // 动态显示跟随选中状态
+                isSelected: !systemAudioSelected
+                isEnabled: recorderObject ? !recorderObject.isRecording : true
 
                 onClicked: {
-                    console.log("Audio area clicked - mode:", visualizerMode)
+                    systemAudioSelected = false
+                    microphoneClicked()
                 }
             }
         }

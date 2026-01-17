@@ -6,30 +6,29 @@ extern "C" {
 #include "libavutil/channel_layout.h"
 #include "libswresample/swresample.h"
 }
-#include <iostream>
+#include <QDebug>
 
 class FFAudioPars;
-class FFAResampler
-{
+class FFAResampler {
 public:
-    explicit FFAResampler();
-    ~FFAResampler();
+  explicit FFAResampler();
+  ~FFAResampler();
 
-    void init(FFAudioPars *src, FFAudioPars *dst);
-    void resample(AVFrame *srcFrame, AVFrame **dstFrame);
-
-private:
-    void initSwr();
-    AVFrame *allocFrame(FFAudioPars *aPars, int nbSamples, AVFrame *srcFrame);
-    void printError(int ret);
+  void init(FFAudioPars *src, FFAudioPars *dst);
+  void resample(AVFrame *srcFrame, AVFrame **dstFrame);
 
 private:
-    SwrContext *swrCtx = nullptr;
-    FFAudioPars *srcPars = nullptr;
-    FFAudioPars *dstPars = nullptr;
+  void initSwr();
+  AVFrame *allocFrame(FFAudioPars *aPars, int nbSamples, AVFrame *srcFrame);
+  void printError(int ret);
 
-    AVChannelLayout srcLayout;
-    AVChannelLayout dstLayout;
+private:
+  SwrContext *swrCtx = nullptr;
+  FFAudioPars *srcPars = nullptr;
+  FFAudioPars *dstPars = nullptr;
+
+  AVChannelLayout srcLayout;
+  AVChannelLayout dstLayout;
 };
 
 #endif // FFARESAMPLER_H

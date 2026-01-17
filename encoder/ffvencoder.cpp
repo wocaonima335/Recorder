@@ -76,7 +76,7 @@ int FFVEncoder::encode(AVFrame *frame, int streamIndex, int64_t pts, AVRational 
     }
     else if (ret == AVERROR_EOF)
     {
-        std::cout << "Encode Video EOF !" << std::endl;
+        std::cout << "Encode Video EOF !";
         av_packet_free(&pkt);
     }
     else if (ret < 0)
@@ -91,21 +91,6 @@ int FFVEncoder::encode(AVFrame *frame, int streamIndex, int64_t pts, AVRational 
         pktQueue->enqueue(pkt);
         av_packet_free(&pkt);
     }
-
-    // // 性能监控结束
-    // auto encodeEnd = std::chrono::steady_clock::now();
-
-    // auto encodeDuration = std::chrono::duration_cast<std::chrono::microseconds>(encodeEnd
-    //                                                                             - encodeStart);
-    // double encodeTimeMs = encodeDuration.count() / 1000.0;
-
-    // // 更新平均编码时间
-    // encodeCount++;
-    // avgEncodeTime = (avgEncodeTime * (encodeCount - 1) + encodeTimeMs) / encodeCount;
-
-    // std::cout << "[VEnc] WARNING: Slow encode detected! " << encodeTimeMs << "ms (target: <"
-    //           << TARGET_ENCODE_TIME_MS << "ms for 30fps), avg: " << avgEncodeTime << "ms"
-    //           << std::endl;
 
     return 0;
 }
@@ -126,11 +111,11 @@ void FFVEncoder::printError(int ret)
     int res = av_strerror(ret, errorBuffer, sizeof errorBuffer);
     if (res < 0)
     {
-        std::cerr << "Unknow Error!" << std::endl;
+        qDebug() << "Unknow Error!";
     }
     else
     {
-        std::cerr << "Error:" << errorBuffer << std::endl;
+        qDebug() << "Error:" << errorBuffer;
     }
 }
 

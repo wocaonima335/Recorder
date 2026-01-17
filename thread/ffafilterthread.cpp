@@ -186,7 +186,7 @@ AVFrame *FFAFilterThread::generateMuteFrame()
 
     int ret = av_frame_get_buffer(frame, 0);
     if (ret < 0) {
-        std::cerr << "get mute Frame buffer error" << std::endl;
+        qDebug() << "get mute Frame buffer error";
         av_frame_free(&frame);
         return nullptr;
     }
@@ -198,7 +198,7 @@ AVFrame *FFAFilterThread::generateMuteFrame()
                                  AUDIO_SAMPLE_FORMAT);
 
     if (ret < 0) {
-        std::cerr << "Set Samples Silence Fail !" << std::endl;
+        qDebug() << "Set Samples Silence Fail !";
         av_frame_free(&frame);
         return nullptr;
     }

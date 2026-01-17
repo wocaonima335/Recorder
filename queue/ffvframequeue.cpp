@@ -18,12 +18,6 @@ void FFVFrameQueue::enqueue(AVFrame *srcFrame)
     // auto end = std::chrono::steady_clock::now();
 
     m_enqueueCount.fetch_add(1, std::memory_order_relaxed);
-
-    // auto wait_ms = std::chrono::duration_cast<std::chrono::milliseconds>(end - start).count();
-    // if (wait_ms > 50) { // 超过50ms警告
-    //     std::cerr << "[VFrameQueue] enqueue blocked for " << wait_ms
-    //               << "ms, queue_len=" << impl->length() << std::endl;
-    // }
 }
 
 AVFrame *FFVFrameQueue::dequeue()
@@ -94,8 +88,8 @@ void FFVFrameQueue::printQueueStats() const
         size_t enqueued = m_enqueueCount.load();
         size_t dequeued = m_dequeueCount.load();
 
-        std::cerr << "[VFrameQueue] Stats: enqueued=" << enqueued << ", dequeued=" << dequeued
-                  << ", queue_len=" << impl->length() << std::endl;
+        qDebug() << "[VFrameQueue] Stats: enqueued=" << enqueued << ", dequeued=" << dequeued
+                 << ", queue_len=" << impl->length();
 
         m_lastStatsTime = now;
     }

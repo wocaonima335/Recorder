@@ -16,6 +16,7 @@ void FFEventLoop::start()
 void FFEventLoop::stop()
 {
     m_stop.store(true, std::memory_order_release);
+    wakeAllThread();
 }
 
 void FFEventLoop::wait()
@@ -41,7 +42,7 @@ void FFEventLoop::work()
         }
 
         threPool->submit([event]() mutable {
-            std::cout << "submit task" << std::endl;
+            qDebug() << "submit task";
             event->work();
             delete event;
         });
@@ -51,10 +52,7 @@ void FFEventLoop::work()
 FFEventLoop::~FFEventLoop()
 {
     stop();
-    if (threPool) {
-        delete threPool;
-        threPool = nullptr;
-    }
+    // threPool由FFRecorder管理，此处不释放
 }
 
 void FFEventLoop::init(FFEventQueue *evQueue_, FFThreadPool *threPool_)

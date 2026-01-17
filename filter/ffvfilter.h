@@ -27,6 +27,7 @@ public:
     ~FFVFilter();
 
     void init(FFVFrameQueue *encoderFrmQueue_, FFVDecoder *vDecoder_);
+    void updateDecoder(FFVDecoder *vDecoder_);
     int sendFilter();
 
     AVRational getFrameRate();

@@ -14,7 +14,7 @@
 #include "event/eventfactorymanager.h"
 
 #include <QtCore/QtGlobal>
-#include <cstdio>
+#include <QDebug>
 #include <chrono>
 
 #define CAPTURE_TIME 60
@@ -77,7 +77,7 @@ void FFMuxerThread::wakeAllThread()
 
 void FFMuxerThread::run()
 {
-    fprintf(stderr, "[MuxThread] run() start. Waiting header write...\n");
+    qDebug() << "[MuxThread] run() start. Waiting header write...";
     muxer->writeHeader();
 
     // 先分别拿到首包
@@ -131,9 +131,8 @@ void FFMuxerThread::run()
         return pts * av_q2d(tb);
     };
 
-    fprintf(stderr,
-            "[MuxThread] time_base: audio=%d/%d, video=%d/%d\n",
-            aTB.num, aTB.den, vTB.num, vTB.den);
+    qDebug() << "[MuxThread] time_base: audio=" << aTB.num << "/" << aTB.den
+             << ", video=" << vTB.num << "/" << vTB.den;
 
     while (!m_stop)
     {
@@ -195,7 +194,7 @@ void FFMuxerThread::run()
         }
         if (ret < 0)
         {
-            fprintf(stderr, "[MuxThread] muxer->mux() returned error=%d, breaking.\n", ret);
+            qDebug() << "[MuxThread] muxer->mux() returned error=" << ret << ", breaking.";
             break;
         }
     }
@@ -204,7 +203,7 @@ void FFMuxerThread::run()
         FFPacketTraits::release(audioPkt);
     if (videoPkt)
         FFPacketTraits::release(videoPkt);
-    fprintf(stderr, "[MuxThread] loop end, writing trailer.\n");
+    qDebug() << "[MuxThread] loop end, writing trailer.";
     muxer->writeTrailer();
 }
 

@@ -1,6 +1,6 @@
 #include "ffthread.h"
 
-#include <iostream>
+#include <QDebug>
 
 FFThread::FFThread()
     : m_stop(true)
@@ -23,7 +23,6 @@ void FFThread::wait()
     bool flag = m_thread.joinable();
     if (flag) {
         m_thread.join();
-        std::cerr << "thread id:" << std::this_thread::get_id() << " join!" << std::endl;
     }
 }
 

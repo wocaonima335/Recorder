@@ -4,6 +4,9 @@ FFEvent::FFEvent(FFRecorder *recoderContext_)
 {
     recoderContext = recoderContext_;
 
+    if (!recoderContext)
+        return;
+
     for (size_t i = 0; i < FFRecordContextType::A_DECODER_SIZE; i++) {
         aPktQueue[i] = this->recoderContext->getADecoderPktQueue(i);
         aFrmQueue[i] = this->recoderContext->getADecoderFrmQueue(i);

@@ -39,6 +39,14 @@ void FFVFilter::init(FFVFrameQueue *encodecFrmQueue_, FFVDecoder *vDecoder_)
     vDecoder = vDecoder_;
 }
 
+void FFVFilter::updateDecoder(FFVDecoder *vDecoder_)
+{
+    std::lock_guard<std::shared_mutex> lock(filterMutex);
+    vDecoder = vDecoder_;
+    codecCtx = nullptr;
+    stream = nullptr;
+}
+
 int FFVFilter::sendFilter()
 {
     std::lock_guard<std::shared_mutex> lock(filterMutex);
@@ -54,7 +62,7 @@ int FFVFilter::sendFilter()
         av_frame_free(&filterFrame);
         return 0;
     } else if (ret < 0) {
-        std::cerr << "Get BufferSinkCtx Frame Fail !" << std::endl;
+        qDebug() << "Get BufferSinkCtx Frame Fail !";
         printError(ret);
         av_frame_unref(filterFrame);
         av_frame_free(&filterFrame);
@@ -107,7 +115,7 @@ void FFVFilter::initFilter(AVCodecContext *codecCtx_, AVStream *stream_)
 
     filterGraph = avfilter_graph_alloc();
     if (!filterGraph) {
-        std::cerr << "Allocc Filter Graph Fail" << std::endl;
+        qDebug() << "Allocc Filter Graph Fail";
     }
 
     createBufferFilter(&bufferCtx, codecCtx, stream, "in");
@@ -121,7 +129,7 @@ void FFVFilter::initFilter(AVCodecContext *codecCtx_, AVStream *stream_)
 
     if (ret < 0) {
         printError(ret);
-        std::cerr << "Config FilterGraph Failed!" << std::endl;
+        qDebug() << "Config FilterGraph Failed!";
         return;
     }
 }
@@ -131,9 +139,9 @@ void FFVFilter::printError(int ret)
     char errorBuffer[AV_ERROR_MAX_STRING_SIZE];
     int res = av_strerror(ret, errorBuffer, sizeof errorBuffer);
     if (res < 0) {
-        std::cerr << "Unknow Error!" << std::endl;
+        qDebug() << "Unknow Error!";
     } else {
-        std::cerr << "Error:" << errorBuffer << std::endl;
+        qDebug() << "Error:" << errorBuffer;
     }
 }
 
@@ -145,7 +153,7 @@ void FFVFilter::createBufferFilter(AVFilterContext **ctx,
     const AVFilter *bufferFilter = avfilter_get_by_name("buffer");
 
     if (!bufferFilter) {
-        std::cerr << "Buffer filter not found!" << std::endl;
+        qDebug() << "Buffer filter not found!";
         return;
     }
 
@@ -166,7 +174,7 @@ void FFVFilter::createBufferFilter(AVFilterContext **ctx,
     int ret = avfilter_graph_create_filter(ctx, bufferFilter, name, args, nullptr, filterGraph);
     if (ret < 0) {
         printError(ret);
-        std::cerr << "Create Buffer Filter Failed: " << name << std::endl;
+        qDebug() << "Create Buffer Filter Failed: " << name;
         return;
     }
 }
@@ -176,8 +184,8 @@ void FFVFilter::linkFilters(AVFilterContext *src, int srcPad, AVFilterContext *d
     int ret = avfilter_link(src, srcPad, dst, dstPad);
     if (ret < 0) {
         printError(ret);
-        std::cerr << "Failed to link filters: " << avfilter_pad_get_name(src->output_pads, srcPad)
-                  << " -> " << avfilter_pad_get_name(dst->input_pads, dstPad) << std::endl;
+        qDebug() << "Failed to link filters: " << avfilter_pad_get_name(src->output_pads, srcPad)
+                 << " -> " << avfilter_pad_get_name(dst->input_pads, dstPad);
         return;
     }
 }
@@ -186,7 +194,7 @@ void FFVFilter::createBufferSinkFilter()
 {
     const AVFilter *bufferSinkFilter = avfilter_get_by_name("buffersink");
     if (!bufferSinkFilter) {
-        std::cerr << "Buffersink filter not found!" << std::endl;
+        qDebug() << "Buffersink filter not found!";
         return;
     }
 
@@ -199,7 +207,7 @@ void FFVFilter::createBufferSinkFilter()
                                            filterGraph);
     if (ret < 0) {
         printError(ret);
-        std::cerr << "Create BufferSink Failed!" << std::endl;
+        qDebug() << "Create BufferSink Failed!";
         return;
     }
 }

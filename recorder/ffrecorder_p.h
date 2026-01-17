@@ -56,17 +56,17 @@ namespace FFRecordURLS
 
     enum aDecoderType
     {
-        A_MICROPHONE,
-        A_AUDIO
+        A_MICROPHONE,  // 0 - 对应 demuxerIndex[MICROPHONE]=0
+        A_AUDIO        // 1 - 对应 demuxerIndex[AUDIO]=1
     };
     enum vDecoderType
     {
-        V_VIDEO,
-        V_SCREEN,
-        V_CAMERA
+        V_SCREEN,      // 0 - 对应 demuxerIndex[SCREEN]=0
+        V_CAMERA,      // 1 - 对应 demuxerIndex[CAMERA]=1
+        V_VIDEO        // 2 - 对应 demuxerIndex[VIDEO]=2
     };
 
-    constexpr int demuxerIndex[A_DEMUXER_SIZE + V_DEMUXER_SIZE + 1]{0, 1, 2, 0, 1, -1};
+    constexpr int demuxerIndex[A_DEMUXER_SIZE + V_DEMUXER_SIZE + 1]{0, 1, 2, 1, 0, -1};
 
     class FFRecorderPrivate
     {

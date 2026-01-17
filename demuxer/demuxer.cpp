@@ -2,8 +2,11 @@
 
 #include "queue/ffapacketqueue.h"
 #include "queue/ffvpacketqueue.h"
+#include "recorder/ffrecorder_p.h"
 
 #include <iostream>
+
+using namespace FFRecordContextType;
 
 Demuxer::Demuxer() {}
 
@@ -31,15 +34,11 @@ int Demuxer::demux()
     AVPacket *packet = av_packet_alloc();
 
     if (fmtCtx == nullptr) {
-        std::cerr << "[Demux] fmtCtx is null, return -1" << std::endl;
+        qDebug() << "[Demux] fmtCtx is null, return -1";
         return -1;
     }
 
     int ret = av_read_frame(fmtCtx, packet);
-
-    // // 打印读取结果
-    // static int read_cnt = 0;
-    // std::cerr << "[Demux] av_read_frame ret=" << ret << " count=" << ++read_cnt << std::endl;
 
     if (ret < 0) {
         if (ret == AVERROR_EOF) {
@@ -55,13 +54,15 @@ int Demuxer::demux()
                 av_packet_free(&packet);
             }
             std::cout << "AVERROR_EOF" << endl;
-            std::cerr << "[Demux] EOF, enqueueNull A/V, return 1" << std::endl;
+            qDebug() << "[Demux] EOF, enqueueNull A/V, return 1";
             return 1;
+        } else if (ret == AVERROR(EAGAIN)) {
+            av_packet_free(&packet);
+            return 0;
         } else {
             char err[256] = {0};
             av_strerror(ret, err, sizeof(err));
-            std::cerr << "[Demux][ERR] ret=" << ret << " msg=" << err << " -> close fmtCtx"
-                      << std::endl;
+            qDebug() << "[Demux][ERR] ret=" << ret << " msg=" << err << " -> close fmtCtx";
             avformat_close_input(&fmtCtx);
             av_packet_free(&packet);
             return -1;
@@ -69,7 +70,7 @@ int Demuxer::demux()
     }
 
     if (stopFlag) {
-        std::cerr << "[Demux] stopFlag set, return 0" << std::endl;
+        qDebug() << "[Demux] stopFlag set, return 0";
         return 0;
     }
 
@@ -83,10 +84,6 @@ int Demuxer::demux()
         }
     } else if (vStream && packet->stream_index == vStream->index) {
         if (vPktQueue) {
-            static int v_cnt = 0;
-            // std::cerr << "[Demux] V pkt idx=" << packet->stream_index << " pts=" << packet->pts
-            //           << " dts=" << packet->dts << " dur=" << packet->duration
-            //           << " size=" << packet->size << " count=" << ++v_cnt << std::endl;
             vPktQueue->enqueue(packet);
             av_packet_free(&packet);
         } else {
@@ -134,25 +131,32 @@ void Demuxer::close()
 
 void Demuxer::initDemuxer()
 {
-    std::cout << "url = " << url << std::endl;
+    qDebug() << "url = " << url;
     avformat_network_init();
     avdevice_register_all();
 
-    // PrintDshowDevices();
+    PrintDshowDevices();
     inputFmt = av_find_input_format(format.c_str());
 
     if (!inputFmt) {
-        std::cerr << "Cannot find input format: " << format << std::endl;
+        qDebug() << "Cannot find input format: " << format;
         return;
     }
-    // 假设 url = "desktop"，inputFmt = av_find_input_format("gdigrab")
+
     AVDictionary *opts = nullptr;
 
-    // 2) 固定帧率
-    av_dict_set(&opts, "framerate", "30", 0);
+    // 根据设备类型设置不同的选项
+    if (type == AUDIO || type == MICROPHONE) {
+        // 音频设备：设置较小的缓冲区以减少延迟（50ms）
+        av_dict_set(&opts, "audio_buffer_size", "50", 0);
+        qDebug() << "[Demux] Audio device, set audio_buffer_size=50ms";
+    } else {
+        // 视频设备：设置帧率
+        av_dict_set(&opts, "framerate", "30", 0);
+    }
 
     int ret = avformat_open_input(&fmtCtx, url.c_str(), inputFmt, &opts);
-    av_dict_free(&opts); // 无论成功与否都释放字典
+    av_dict_free(&opts);
 
     if (ret < 0) {
         avformat_close_input(&fmtCtx);
@@ -192,8 +196,7 @@ void Demuxer::PrintDshowDevices()
     // 枚举 gdigrab 的“源”（gdigrab 一般不实现设备列表，下面加了回退方案）
     const AVInputFormat *fmt = av_find_input_format("gdigrab");
     if (!fmt) {
-        std::cerr << "gdigrab input format not found, your FFmpeg may not include gdigrab."
-                  << std::endl;
+        qDebug() << "gdigrab input format not found, your FFmpeg may not include gdigrab.";
         return;
     }
 
@@ -205,12 +208,12 @@ void Demuxer::PrintDshowDevices()
                                             &list);
 
     if (count > 0 && list) {
-        std::cout << "Found " << list->nb_devices << " gdigrab sources:" << std::endl;
+        std::cout << "Found " << list->nb_devices << " gdigrab sources:";
         for (int i = 0; i < list->nb_devices; ++i) {
             AVDeviceInfo *info = list->devices[i];
             const char *name = (info && info->device_name) ? info->device_name : "";
             const char *desc = (info && info->device_description) ? info->device_description : "";
-            std::cout << "  [" << i << "] name=" << name << " | desc=" << desc << std::endl;
+            std::cout << "  [" << i << "] name=" << name << " | desc=" << desc;
         }
         avdevice_free_list_devices(&list);
         return;
@@ -227,7 +230,7 @@ void Demuxer::PrintDshowDevices()
     if (ret < 0) {
         char err[256] = {0};
         av_strerror(ret, err, sizeof(err));
-        std::cerr << "gdigrab list_windows failed: " << err << std::endl;
+        qDebug() << "gdigrab list_windows failed: " << err;
     } else {
         // gdigrab 已在日志中打印了窗口列表，这里立即关闭
         avformat_close_input(&tmpCtx);
@@ -241,9 +244,9 @@ void Demuxer::printError(int ret)
         char errorBuffer[AV_ERROR_MAX_STRING_SIZE];
         int res = av_strerror(ret, errorBuffer, sizeof errorBuffer);
         if (res < 0) {
-            std::cerr << "Unknow Error!" << std::endl;
+            qDebug() << "Unknow Error!";
         } else {
-            std::cerr << "Error:" << errorBuffer << std::endl;
+            qDebug() << "Error:" << errorBuffer;
         }
     }
 }

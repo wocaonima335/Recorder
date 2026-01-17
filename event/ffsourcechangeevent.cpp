@@ -1,11 +1,6 @@
 #include "ffsourcechangeevent.h"
 
-#include "abstracteventfactory.h"
-#include "eventcategory.h"
-#include "eventfactorymanager.h"
-#include "queue/ffeventqueue.h"
 #include "recorder/ffrecorder.h"
-#include "recorder/ffrecorder_p.h"
 
 std::atomic<bool> FFSourceChangeEvent::sourceChanged{true};
 
@@ -21,35 +16,11 @@ void FFSourceChangeEvent::work()
         return;
     }
 
-    sourceChanged.store(useScreen, std::memory_order_release);
-
-    if (!recoderContext || !recoderContext->isRecording()) {
+    // 录制中：禁止切换，直接返回
+    if (recoderContext && recoderContext->isRecording()) {
         return;
     }
 
-    using namespace FFRecordContextType;
-
-    demuxerType closeType = current ? demuxerType::SCREEN : demuxerType::CAMERA;
-    SourceEventParams closeParams;
-    closeParams.type = SourceEventType::CLOSE_SOURCE;
-    closeParams.sourceType = closeType;
-    auto closeEvent = EventFactoryManager::getInstance().createEvent(EventCategory::SOURCE,
-                                                                      recoderContext,
-                                                                      closeParams);
-    if (closeEvent) {
-        FFEventQueue::getInstance().enqueue(closeEvent.release());
-    }
-
-    demuxerType openType = useScreen ? demuxerType::SCREEN : demuxerType::CAMERA;
-    SourceEventParams openParams;
-    openParams.type = SourceEventType::OPEN_SOURCE;
-    openParams.sourceType = openType;
-    openParams.url = useScreen ? FFRecordURLS::SCREEN_URL : FFRecordURLS::CAMERA_URL;
-    openParams.format = "dshow";
-    auto openEvent = EventFactoryManager::getInstance().createEvent(EventCategory::SOURCE,
-                                                                     recoderContext,
-                                                                     openParams);
-    if (openEvent) {
-        FFEventQueue::getInstance().enqueue(openEvent.release());
-    }
+    // 未录制时：仅更新源标志，录制开始时根据此标志选择源
+    sourceChanged.store(useScreen, std::memory_order_release);
 }

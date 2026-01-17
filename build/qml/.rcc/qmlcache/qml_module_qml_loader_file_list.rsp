@@ -1,3 +1,7 @@
+--resource
+D:/Qtprogram/bandicam/build/qml/.qt/rcc/qmake_bandicam.qrc
+--resource
+D:/Qtprogram/bandicam/build/qml/.qt/rcc/qml_module_raw_qml_0.qrc
 /qt/qml/bandicam/Main.qml
 /qt/qml/bandicam/videopage.qml
 /qt/qml/bandicam/settingpage.qml

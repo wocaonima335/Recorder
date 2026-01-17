@@ -9,7 +9,7 @@ enum class EventCategory {
     PROCESS    // 处理类事件
 };
 
-enum class ControlEventType { START, STOP, PAUSE, READY, END, SOURCECHANGE };
+enum class ControlEventType { START, STOP, PAUSE, READY, END, SOURCECHANGE, AUDIO_SOURCECHANGE };
 
 enum class SourceEventType { OPEN_SOURCE, CLOSE_SOURCE };
 

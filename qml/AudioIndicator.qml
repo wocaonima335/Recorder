@@ -12,16 +12,42 @@ Item {
     property var recorderObject: null
     property string visualizerMode: "volume"
     property bool visualizerEnabled: true
+    property bool isSelected: false      // 新增：选中状态
+    property bool isEnabled: true        // 新增：启用状态
 
     signal clicked()
 
     property bool isHovered: mouseArea.containsMouse
     property bool isRecording: recorderObject ? recorderObject.isRecording : false
 
+    // 选中状态边框（呼吸框）
+    Rectangle {
+        id: selectionFrame
+        anchors.fill: parent
+        radius: 6
+        color: "transparent"
+        border.color: (isSelected && !isRecording) ? "#4A9EFF" : "transparent"
+        border.width: 2
+        opacity: isEnabled ? 1.0 : 0.4
+
+        SequentialAnimation {
+            running: isSelected && !isRecording && isEnabled
+            loops: Animation.Infinite
+            OpacityAnimator { target: selectionFrame; from: 1.0; to: 0.5; duration: 800; easing.type: Easing.InOutQuad }
+            OpacityAnimator { target: selectionFrame; from: 0.5; to: 1.0; duration: 800; easing.type: Easing.InOutQuad }
+        }
+
+        Behavior on border.color {
+            ColorAnimation { duration: 200 }
+        }
+    }
+
     PanelBackground {
         anchors.fill: parent
-        isHovered: root.isHovered
-        isRecording: root.isRecording
+        anchors.margins: 2
+        isHovered: root.isHovered && root.isEnabled
+        isRecording: root.isRecording && root.isSelected
+        opacity: root.isEnabled ? 1.0 : 0.5
     }
 
     Image {
@@ -88,10 +114,12 @@ Item {
         id: mouseArea
         anchors.fill: parent
         hoverEnabled: true
-        cursorShape: Qt.PointingHandCursor
+        cursorShape: root.isEnabled ? Qt.PointingHandCursor : Qt.ForbiddenCursor
 
         onClicked: {
-            root.clicked()
+            if (root.isEnabled) {
+                root.clicked()
+            }
         }
     }
 

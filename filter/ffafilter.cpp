@@ -58,7 +58,7 @@ int FFAFilter::processDualtAudioFrames(AVFrame *audioFrame,
                                            audioFrame,
                                            AV_BUFFERSRC_FLAG_KEEP_REF);
     if (ret < 0) {
-        std::cerr << "Failed to send frame to buffer1" << std::endl;
+        qDebug() << "Failed to send frame to buffer1";
         logError(ret);
         return -1;
     }
@@ -67,7 +67,7 @@ int FFAFilter::processDualtAudioFrames(AVFrame *audioFrame,
                                        microphoneFrame,
                                        AV_BUFFERSRC_FLAG_KEEP_REF);
     if (ret < 0) {
-        std::cerr << "Failed to send frame to buffer2" << std::endl;
+        qDebug() << "Failed to send frame to buffer2";
         logError(ret);
         return -1;
     }
@@ -80,7 +80,7 @@ int FFAFilter::processDualtAudioFrames(AVFrame *audioFrame,
             break;
         }
         if (ret < 0) {
-            std::cerr << "Failed to get frame from sink" << std::endl;
+            qDebug() << "Failed to get frame from sink";
             logError(ret);
             av_frame_free(&filterFrame);
             return -1;
@@ -126,7 +126,7 @@ void FFAFilter::processSingleAudioFrame(AVFrame *frame,
                                               frame,
                                               AV_BUFFERSRC_FLAG_KEEP_REF);
     if (result < 0) {
-        std::cerr << "Failed to send frame to individual buffer" << std::endl;
+        qDebug() << "Failed to send frame to individual buffer";
         logError(result);
         return;
     }
@@ -142,7 +142,7 @@ void FFAFilter::processSingleAudioFrame(AVFrame *frame,
         }
 
         if (result < 0) {
-            std::cerr << "Failed to get frame from individual sink" << std::endl;
+            qDebug() << "Failed to get frame from individual sink";
             logError(result);
             av_frame_free(&processedFrame);
             return;
@@ -449,8 +449,8 @@ void FFAFilter::logError(int errorCode) const
     char errorBuffer[AV_ERROR_MAX_STRING_SIZE];
     int result = av_strerror(errorCode, errorBuffer, sizeof(errorBuffer));
     if (result < 0) {
-        std::cerr << "Unknown Error!" << std::endl;
+        qDebug() << "Unknown Error!";
     } else {
-        std::cerr << "Error: " << errorBuffer << std::endl;
+        qDebug() << "Error: " << errorBuffer;
     }
 }

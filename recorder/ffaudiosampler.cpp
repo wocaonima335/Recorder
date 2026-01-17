@@ -3,7 +3,6 @@
 #include <QDebug>
 #include <algorithm>
 #include <cmath>
-#include <iostream>
 
 FFAudioSampler::FFAudioSampler(QObject *parent)
     : QObject(parent), m_sampleRate(48000), m_channels(2), m_format(0)
@@ -37,23 +36,35 @@ void FFAudioSampler::initialize(int sampleRate, int channels, int format)
 
 void FFAudioSampler::start()
 {
-    std::lock_guard<std::mutex> lock(m_dataMutex);
-    if (!m_isActive)
+    bool shouldEmit = false;
     {
-        m_isActive = true;
-        emit activeStateChanged(true);
-        qDebug() << "FFAudioSampler started";
+        std::lock_guard<std::mutex> lock(m_dataMutex);
+        if (!m_isActive)
+        {
+            m_isActive = true;
+            shouldEmit = true;
+        }
+    }
+    if (shouldEmit)
+    {
+        QMetaObject::invokeMethod(this, "activeStateChanged", Qt::QueuedConnection, Q_ARG(bool, true));
     }
 }
 
 void FFAudioSampler::stop()
 {
-    std::lock_guard<std::mutex> lock(m_dataMutex);
-    if (m_isActive)
+    bool shouldEmit = false;
     {
-        m_isActive = false;
-        emit activeStateChanged(false);
-        qDebug() << "FFAudioSampler stopped";
+        std::lock_guard<std::mutex> lock(m_dataMutex);
+        if (m_isActive)
+        {
+            m_isActive = false;
+            shouldEmit = true;
+        }
+    }
+    if (shouldEmit)
+    {
+        QMetaObject::invokeMethod(this, "activeStateChanged", Qt::QueuedConnection, Q_ARG(bool, false));
     }
 }
 
@@ -142,8 +153,8 @@ void FFAudioSampler::collectSamples(const int16_t *samples, int sampleCount)
  */
 void FFAudioSampler::updateVolumeLevel()
 {
-    // 取缓冲区最后1秒的数据来计算音量
-    int sampleWindow = std::min(m_sampleRate, (int)m_sampleBuffer.size());
+    // 优化：减少窗口至 ~100ms 提高响应性和性能
+    int sampleWindow = std::min(m_sampleRate / 10, (int)m_sampleBuffer.size());
     int startIdx = (m_bufferIndex - sampleWindow + (int)m_sampleBuffer.size()) % m_sampleBuffer.size();
 
     // 计算RMS
@@ -167,15 +178,12 @@ void FFAudioSampler::updateVolumeLevel()
         float dB = 20.0f * std::log10(rms);
         dB = std::max(-40.0f, std::min(0.0f, dB));
         newLevel = (int)((dB + 40.0f) / 40.0f * 100.0f);
-    } else {
-        std::cout << "rms is smaller than zero" << std::endl;
     }
 
     // 平滑处理，避免音量抖动
     m_volumeLevel = (int)(m_volumeLevel * VOLUME_SMOOTH_FACTOR + newLevel * (1.0f - VOLUME_SMOOTH_FACTOR));
-    std::cout << "volumeLevel:" << m_volumeLevel << std::endl;
     // 发送信号通知QML更新
-    emit volumeLevelChanged(m_volumeLevel);
+    QMetaObject::invokeMethod(this, "volumeLevelChanged", Qt::QueuedConnection, Q_ARG(int, m_volumeLevel));
 }
 
 /**
@@ -195,7 +203,7 @@ void FFAudioSampler::updateWaveformData()
         m_waveformData[i] = (int)(sample * 100.0f);
     }
 
-    emit waveformDataChanged();
+    QMetaObject::invokeMethod(this, "waveformDataChanged", Qt::QueuedConnection);
 }
 
 /**
@@ -226,7 +234,7 @@ void FFAudioSampler::computeSpectrum()
         m_spectrumData[bin] = (dB + 100.0f) / 100.0f; // 0-1 范围
     }
 
-    emit spectrumDataChanged();
+    QMetaObject::invokeMethod(this, "spectrumDataChanged", Qt::QueuedConnection);
 }
 
 QVector<int> FFAudioSampler::getWaveformData() const

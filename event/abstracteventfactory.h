@@ -22,6 +22,7 @@ struct ControlEventParams : public EventParameters
     ControlEventType type;
     demuxerType sourceType = demuxerType::NOTYPE;
     bool useScreen = true; // true：屏幕；false：摄像头
+    bool useSystemAudio = true; // true：系统音频；false：麦克风
     std::string url;
     std::string format;
     bool paused = false;

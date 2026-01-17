@@ -28,7 +28,7 @@ void FFAEncoder::close()
         delete aPars;
         aPars = nullptr;
     }
-    std::cerr << "[AEnc] close" << std::endl;
+    qDebug() << "[AEnc] close";
 }
 
 void FFAEncoder::wakeAllThread()
@@ -46,9 +46,9 @@ int FFAEncoder::encode(AVFrame *frame, int streamIndex, int64_t pts, AVRational 
         return 0;
     }
 
-    std::cerr << "[AEnc] encode enter: in_nb_samples=" << frame->nb_samples
-              << " ch=" << codecCtx->ch_layout.nb_channels << " frame_size=" << codecCtx->frame_size
-              << " pending=" << pendingFrame.samples << " stream=" << streamIndex << std::endl;
+    qDebug() << "[AEnc] encode enter: in_nb_samples=" << frame->nb_samples
+             << " ch=" << codecCtx->ch_layout.nb_channels << " frame_size=" << codecCtx->frame_size
+             << " pending=" << pendingFrame.samples << " stream=" << streamIndex;
 
     int frame_size = codecCtx->frame_size;
     int input_samples = frame->nb_samples;
@@ -89,12 +89,11 @@ int FFAEncoder::encode(AVFrame *frame, int streamIndex, int64_t pts, AVRational 
             memcpy(sub_frame->data[ch], src, frame_size * bytes_per_sample);
         }
 
-        // {
-        //     const char *sfmt = av_get_sample_fmt_name((AVSampleFormat) sub_frame->format);
-        //     // std::cerr << "[AEnc] send_frame: nb_samples=" << sub_frame->nb_samples
-        //     //           << " pts=" << sub_frame->pts << " fmt=" << (sfmt ? sfmt : "unknown")
-        //     //           << std::endl;
-        // }
+        {
+            const char *sfmt = av_get_sample_fmt_name((AVSampleFormat) sub_frame->format);
+            qDebug() << "[AEnc] send_frame: nb_samples=" << sub_frame->nb_samples
+                     << " pts=" << sub_frame->pts << " fmt=" << (sfmt ? sfmt : "unknown");
+        }
         int ret_send = avcodec_send_frame(codecCtx, sub_frame);
         if (ret_send < 0) {
             printError(ret_send);
@@ -116,8 +115,6 @@ int FFAEncoder::encode(AVFrame *frame, int streamIndex, int64_t pts, AVRational 
             }
 
             pkt->stream_index = streamIndex;
-            // std::cerr << "[AEncPkt] produced: pts=" << pkt->pts << " dts=" << pkt->dts
-            //           << " size=" << pkt->size << " stream=" << streamIndex << std::endl;
 
             pkt->stream_index = streamIndex;
             pktQueue->enqueue(pkt);
@@ -159,7 +156,7 @@ void FFAEncoder::flush()
         pendingFrame.data[ch].clear();
         pendingFrame.data[ch].shrink_to_fit();
     }
-    std::cerr << "[AEnc] flush" << std::endl;
+    qDebug() << "[AEnc] flush";
 }
 
 void FFAEncoder::resetPending(int64_t base_pts)
@@ -171,7 +168,7 @@ void FFAEncoder::resetPending(int64_t base_pts)
         pendingFrame.data[ch].clear();
         pendingFrame.data[ch].shrink_to_fit();
     }
-    std::cerr << "[AEnc] resetPending base_pts=" << base_pts << std::endl;
+    qDebug() << "[AEnc] resetPending base_pts=" << base_pts;
 }
 
 void FFAEncoder::initAudio(AVFrame *frame)
@@ -186,13 +183,13 @@ void FFAEncoder::initAudio(AVFrame *frame)
 
     const AVCodec *codec = avcodec_find_encoder(AV_CODEC_ID_AAC);
     if (codec == nullptr) {
-        std::cerr << "Find AAC Codec Fail !" << std::endl;
+        qDebug() << "Find AAC Codec Fail !";
         return;
     }
 
     codecCtx = avcodec_alloc_context3(codec);
     if (codecCtx == nullptr) {
-        std::cerr << "Alloc CodecCtx Fail !" << std::endl;
+        qDebug() << "Alloc CodecCtx Fail !";
         return;
     }
 
@@ -206,11 +203,10 @@ void FFAEncoder::initAudio(AVFrame *frame)
 
     {
         const char *sfmt = av_get_sample_fmt_name(codecCtx->sample_fmt);
-        std::cerr << "[AEnc] initAudio params: br=" << codecCtx->bit_rate
-                  << " ch=" << codecCtx->ch_layout.nb_channels << " sr=" << codecCtx->sample_rate
-                  << " sample_fmt=" << (sfmt ? sfmt : "unknown")
-                  << " time_base=" << codecCtx->time_base.num << "/" << codecCtx->time_base.den
-                  << std::endl;
+        qDebug() << "[AEnc] initAudio params: br=" << codecCtx->bit_rate
+                 << " ch=" << codecCtx->ch_layout.nb_channels << " sr=" << codecCtx->sample_rate
+                 << " sample_fmt=" << (sfmt ? sfmt : "unknown")
+                 << " time_base=" << codecCtx->time_base.num << "/" << codecCtx->time_base.den;
     }
 
     int ret = avcodec_open2(codecCtx, codec, nullptr);
@@ -219,13 +215,13 @@ void FFAEncoder::initAudio(AVFrame *frame)
         return;
     }
 
-    // std::cerr << "[AEnc] opened: frame_size=" << codecCtx->frame_size
+    // qDebug() << "[AEnc] opened: frame_size=" << codecCtx->frame_size
     //           << " profile=" << codecCtx->profile << " time_base=" << codecCtx->time_base.num << "/"
     //           << codecCtx->time_base.den << " sample_fmt="
     //           << (av_get_sample_fmt_name(codecCtx->sample_fmt)
     //                   ? av_get_sample_fmt_name(codecCtx->sample_fmt)
     //                   : "unknown")
-    //           << std::endl;
+    //           ;
 }
 
 void FFAEncoder::printError(int ret)
@@ -233,8 +229,8 @@ void FFAEncoder::printError(int ret)
     char errorBuffer[AV_ERROR_MAX_STRING_SIZE];
     int res = av_strerror(ret, errorBuffer, sizeof errorBuffer);
     if (res < 0) {
-        std::cerr << "Unknow Error!" << std::endl;
+        qDebug() << "Unknow Error!";
     } else {
-        std::cerr << "Error:" << errorBuffer << std::endl;
+        qDebug() << "Error:" << errorBuffer;
     }
 }

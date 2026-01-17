@@ -1,7 +1,15 @@
 {
   "permissions": {
     "allow": [
-      "Bash(python:*)"
+      "Bash(python:*)",
+      "Bash(dir \"C:\\\\Users\\\\xue雪烟\\\\AppData\\\\Local\\\\Temp\\\\claude\\\\d--Qtprogram-bandicam\\\\tasks\")",
+      "Bash(cmake:*)",
+      "Skill(collaborating-with-codex)",
+      "Skill(collaborating-with-codex:*)",
+      "Skill(collaborating-with-gemini)",
+      "Skill(collaborating-with-gemini:*)",
+      "Skill(collaborating-with-grok)",
+      "Skill(collaborating-with-grok:*)"
     ]
   }
 }

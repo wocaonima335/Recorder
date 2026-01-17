@@ -47,51 +47,48 @@ FFRecorderPrivate::FFRecorderPrivate()
 
 FFRecorderPrivate::~FFRecorderPrivate()
 {
-    vEncoderPktQueue = nullptr;
-    aEncoderPktQueue = nullptr;
-    vFilterEncoderFrmQueue = nullptr;
-    aFilterEncoderFrmQueue = nullptr;
+    auto stopAndDeleteThread = [](auto *&thread) {
+        if (thread) {
+            thread->stop();
+            thread->wakeAllThread();
+            thread->wait();
+            delete thread;
+            thread = nullptr;
+        }
+    };
 
-    muxer = nullptr;
-    muxerThread = nullptr;
-    aEncoder = nullptr;
-    aEncoderThread = nullptr;
-    vEncoder = nullptr;
-    vEncoderThread = nullptr;
-    vFilter = nullptr;
-    vFilterThread = nullptr;
-    aFilter = nullptr;
-    aFilterThread = nullptr;
-
-    audioSampler = nullptr;
+    stopAndDeleteThread(muxerThread);
+    stopAndDeleteThread(aEncoderThread);
+    stopAndDeleteThread(vEncoderThread);
+    stopAndDeleteThread(vFilterThread);
+    stopAndDeleteThread(aFilterThread);
 
     for (size_t i = 0; i < FFRecordContextType::A_DECODER_SIZE; ++i) {
-        delete aDecoderThread[i];
+        stopAndDeleteThread(aDecoderThread[i]);
+        stopAndDeleteThread(aDemuxerThread[i]);
         delete aDecoderPktQueue[i];
         delete aDecoderFrmQueue[i];
         delete aDecoder[i];
-    }
-
-    for (size_t i = 0; i < FFRecordContextType::V_DECODER_SIZE; ++i) {
-        delete vDecoderThread[i];
-        delete vDecoderPktQueue[i];
-        delete vDecoderFrmQueue[i];
-        delete vDecoder[i];
-    }
-
-    for (size_t i = 0; i < FFRecordContextType::A_DEMUXER_SIZE; ++i) {
-        delete aDemuxerThread[i];
         delete aDemuxer[i];
     }
 
-    for (size_t i = 0; i < FFRecordContextType::V_DEMUXER_SIZE; ++i) {
-        delete vDemuxerThread[i];
+    for (size_t i = 0; i < FFRecordContextType::V_DECODER_SIZE; ++i) {
+        stopAndDeleteThread(vDecoderThread[i]);
+        stopAndDeleteThread(vDemuxerThread[i]);
+        delete vDecoderPktQueue[i];
+        delete vDecoderFrmQueue[i];
+        delete vDecoder[i];
         delete vDemuxer[i];
     }
 
     delete muxer;
+    delete aEncoder;
+    delete vEncoder;
+    delete vFilter;
+    delete aFilter;
     delete vEncoderPktQueue;
     delete aEncoderPktQueue;
     delete vFilterEncoderFrmQueue;
     delete aFilterEncoderFrmQueue;
+    delete audioSampler;
 }

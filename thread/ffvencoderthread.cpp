@@ -56,12 +56,20 @@ void FFVEncoderThread::run()
     int64_t frame_count = 0;
 
     while (!m_stop) {
+        if (!frmQueue)
+            break;
+
         AVFrame *frame = frmQueue->dequeue();
         if (!frame)
             break;
 
-        if (streamIndex == -1)
+        if (streamIndex == -1) {
+            if (!vFilter || !vEncoder || !muxer) {
+                AVFrameTraits::release(frame);
+                break;
+            }
             initEncoder(frame);
+        }
 
         if (paused.load(std::memory_order_acquire)) {
             AVFrameTraits::release(frame);

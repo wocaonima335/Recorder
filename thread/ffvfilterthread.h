@@ -20,6 +20,7 @@ public:
     virtual ~FFVFilterThread() override;
 
     void init(FFVFrameQueue *frmQueue_, FFVFilter *filter_);
+    void updateQueue(FFVFrameQueue *frmQueue_);
 
     void startEncoder();
     void stopEncoder();

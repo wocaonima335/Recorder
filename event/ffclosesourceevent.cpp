@@ -46,21 +46,29 @@ void FFCloseSourceEvent::close()
             aDemuxerThread[index]->close();
         }
 
-    } else {
-        // Stop muxer thread first to finalize trailer after consuming remaining packets
-        if (muxerThread) {
-            muxerThread->stop();
-            muxerThread->wakeAllThread();
-            muxerThread->wait();
-            muxerThread->close();
+        // Clear queue residual data
+        if (aPktQueue[index]) {
+            aPktQueue[index]->clearQueue();
+        }
+        if (aFrmQueue[index]) {
+            aFrmQueue[index]->clearQueue();
         }
 
-        // Stop encoder thread and release encoder resources
+    } else {
+        // Stop video encoder thread
         if (vEncoderThread) {
             vEncoderThread->stop();
             vEncoderThread->wakeAllThread();
             vEncoderThread->wait();
             vEncoderThread->close();
+        }
+
+        // Stop muxer thread to finalize trailer after consuming remaining packets
+        if (muxerThread) {
+            muxerThread->stop();
+            muxerThread->wakeAllThread();
+            muxerThread->wait();
+            muxerThread->close();
         }
 
         // Stop decoder thread
@@ -77,6 +85,14 @@ void FFCloseSourceEvent::close()
             vDemuxerThread[index]->wakeAllThread();
             vDemuxerThread[index]->wait();
             vDemuxerThread[index]->close();
+        }
+
+        // Clear queue residual data
+        if (vPktQueue[index]) {
+            vPktQueue[index]->clearQueue();
+        }
+        if (vFrmQueue[index]) {
+            vFrmQueue[index]->clearQueue();
         }
     }
     return;

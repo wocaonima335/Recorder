@@ -28,6 +28,8 @@ ApplicationWindow {
     signal readyRecording
     signal openScreen
     signal openCamera
+    signal openSystemAudio
+    signal openMicrophone
 
     // 主背景容器
     Rectangle {
@@ -97,6 +99,33 @@ ApplicationWindow {
             }
         }
 
+        // 最小化按钮
+        Rectangle {
+            id: minButton
+            anchors.right: closeButton.left
+            anchors.top: parent.top
+            anchors.bottom: parent.bottom
+            width: 48
+            color: minMouse.containsMouse ? "#3A4050" : "transparent"
+
+            Behavior on color { ColorAnimation { duration: 150 } }
+
+            Text {
+                text: "—"
+                color: "#FFFFFF"
+                anchors.centerIn: parent
+                font.pixelSize: 14
+                scale: minMouse.pressed ? 0.9 : 1.0
+            }
+
+            MouseArea {
+                id: minMouse
+                anchors.fill: parent
+                hoverEnabled: true
+                onClicked: mainwindow.showMinimized()
+            }
+        }
+
         // 关闭按钮
         Rectangle {
             id: closeButton
@@ -151,6 +180,12 @@ ApplicationWindow {
                 mainwindow.screenSelected = false
                 mainwindow.openCamera()
             }
+            onSystemAudioClicked: {
+                mainwindow.openSystemAudio()
+            }
+            onMicrophoneClicked: {
+                mainwindow.openMicrophone()
+            }
             onStartRecordClicked: mainwindow.startRecording()
             onStopRecordClicked: mainwindow.stopRecording()
             onPauseRecordClicked: mainwindow.pauseRecording()
@@ -167,7 +202,7 @@ ApplicationWindow {
         anchors.topMargin: 4
         anchors.left: parent.left
         anchors.right: parent.right
-        title: "1080 X 720 : Screen"
+        title: recorder.videoResolution
         z: 0
     }
 

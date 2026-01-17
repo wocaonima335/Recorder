@@ -6,7 +6,8 @@
 
 FFADecoder::FFADecoder()
     : m_stop(false)
-{}
+{
+}
 
 FFADecoder::~FFADecoder()
 {
@@ -16,73 +17,112 @@ FFADecoder::~FFADecoder()
 void FFADecoder::decode(AVPacket *packet)
 {
     std::lock_guard<std::mutex> lock(mutex);
-    if (codecCtx == nullptr) {
+    if (codecCtx == nullptr)
+    {
         return;
     }
 
     int ret = avcodec_send_packet(codecCtx, packet);
 
-    if (ret < 0 && ret != AVERROR(EAGAIN)) {
+    if (ret < 0 && ret != AVERROR(EAGAIN))
+    {
         printError(ret);
         avcodec_free_context(&codecCtx);
         return;
     }
     AVFrame *frame = av_frame_alloc();
-    while (ret >= 0) {
-        if (m_stop.load(std::memory_order_acquire)) {
-            std::cerr << "[ADec] m_stop observed, break receive-loop" << std::endl;
+    while (ret >= 0)
+    {
+        if (m_stop.load(std::memory_order_acquire))
+        {
+            qDebug() << "[ADec] m_stop observed, break receive-loop";
             break;
         }
 
         ret = avcodec_receive_frame(codecCtx, frame);
 
-        if (ret < 0) {
-            if (ret == AVERROR_EOF) {
+        if (ret < 0)
+        {
+            if (ret == AVERROR_EOF)
+            {
                 break;
-            } else if (ret == AVERROR(EAGAIN)) {
+            }
+            else if (ret == AVERROR(EAGAIN))
+            {
                 continue;
-            } else {
+            }
+            else
+            {
                 printError(ret);
                 av_frame_free(&frame);
                 avcodec_free_context(&codecCtx);
                 return;
             }
-        } else {
-            if (aPars == nullptr) {
+        }
+        else
+        {
+            if (aPars == nullptr)
+            {
                 aPars = new FFAudioPars();
                 swraPars = new FFAudioPars();
                 initAudioPars(frame);
-                if (aPars->aFormatEnum != swraPars->aFormatEnum) {
+                if (aPars->aFormatEnum != swraPars->aFormatEnum)
+                {
                     resampler = new FFAResampler();
                     initResampler();
                     printFmt();
                 }
             }
 
-            if (resampler) {
+            if (resampler)
+            {
                 AVFrame *swrFrame = nullptr;
+                // qDebug() << "[ADec] Before resample: frame pts=" << frame->pts
+                //          << "nb_samples=" << frame->nb_samples
+                //          << "format=" << frame->format;
                 resampler->resample(frame, &swrFrame);
                 av_frame_unref(frame);
-                if (m_stop.load(std::memory_order_acquire)) {
+                if (m_stop.load(std::memory_order_acquire))
+                {
+                    qDebug() << "[ADec] m_stop detected after resample, cleaning up";
                     av_frame_unref(frame);
                     av_frame_free(&swrFrame);
                     m_stop.store(false, std::memory_order_release);
                     break;
-                } else {
-                    std::cout << "audio frame pts:" << swrFrame->pts << std::endl;
+                }
+                else
+                {
+                    // qDebug() << "[ADec] After resample: swrFrame pts=" << swrFrame->pts
+                    //          << "nb_samples=" << swrFrame->nb_samples
+                    //          << "format=" << swrFrame->format;
 
-                    if (frmQueue != nullptr) {
+                    if (frmQueue != nullptr)
+                    {
+                        qDebug() << "[ADec] Calling processDecodedFrame and enqueue";
                         processDecodedFrame(swrFrame);
                         frmQueue->enqueue(swrFrame);
                     }
+                    else
+                    {
+                        qDebug() << "[ADec] frmQueue is nullptr, skipping enqueue";
+                    }
                     // AVFrameTraits::release(swrFrame);
                 }
-            } else {
-                if (m_stop.load(std::memory_order_acquire)) {
+            }
+            else
+            {
+                if (m_stop.load(std::memory_order_acquire))
+                {
+                    qDebug() << "[ADec] m_stop detected (no resampler), cleaning up";
                     av_frame_unref(frame);
                     m_stop.store(false, std::memory_order_release);
                     break;
-                } else {
+                }
+                else
+                {
+                    qDebug() << "[ADec] No resampler: frame pts=" << frame->pts
+                             << "nb_samples=" << frame->nb_samples
+                             << "format=" << frame->format;
                     processDecodedFrame(frame);
                     frmQueue->enqueue(frame);
                 }
@@ -99,25 +139,29 @@ void FFADecoder::init(AVStream *stream_, FFAFrameQueue *frmQueue_)
     stream = stream_;
     frmQueue = frmQueue_;
 
-    if (stream->codecpar == nullptr) {
+    if (stream->codecpar == nullptr)
+    {
         return;
     }
 
     const AVCodec *codec = avcodec_find_decoder(stream->codecpar->codec_id);
 
-    if (codec == nullptr) {
-        std::cerr << "找不到音频解码器" << std::endl;
+    if (codec == nullptr)
+    {
+        qDebug() << "找不到音频解码器";
         return;
     }
 
     codecCtx = avcodec_alloc_context3(codec);
-    if (codecCtx == nullptr) {
-        std::cerr << "分配解码器上下文失败" << std::endl;
+    if (codecCtx == nullptr)
+    {
+        qDebug() << "分配解码器上下文失败";
         return;
     }
 
     int ret = avcodec_parameters_to_context(codecCtx, stream->codecpar);
-    if (ret < 0) {
+    if (ret < 0)
+    {
         printError(ret);
         avcodec_free_context(&codecCtx);
         return;
@@ -126,7 +170,8 @@ void FFADecoder::init(AVStream *stream_, FFAFrameQueue *frmQueue_)
     AVDictionary *codec_options = nullptr;
 
     ret = avcodec_open2(codecCtx, codec, &codec_options);
-    if (ret < 0) {
+    if (ret < 0)
+    {
         printError(ret);
         avcodec_free_context(&codecCtx);
         return;
@@ -170,25 +215,35 @@ void FFADecoder::flushQueue()
 
 void FFADecoder::close()
 {
-    decode(nullptr);
     stop();
+
     std::lock_guard<std::mutex> lock(mutex);
-    if (codecCtx) {
+
+    // 刷新解码器
+    if (codecCtx)
+    {
+        avcodec_send_packet(codecCtx, nullptr);
         avcodec_free_context(&codecCtx);
     }
-    if (aPars) {
+
+    if (aPars)
+    {
         delete aPars;
         aPars = nullptr;
     }
-    if (swraPars) {
+    if (swraPars)
+    {
         delete swraPars;
         swraPars = nullptr;
     }
 
-    if (resampler) {
+    if (resampler)
+    {
         delete resampler;
         resampler = nullptr;
     }
+
+    qDebug() << "[AEnc] close";
 }
 
 AVCodecContext *FFADecoder::getCodecCtx()
@@ -203,7 +258,8 @@ AVStream *FFADecoder::getStream()
 
 void FFADecoder::processDecodedFrame(AVFrame *frame)
 {
-    if (!frame || !frame->nb_samples) {
+    if (!frame || !frame->nb_samples)
+    {
         return;
     }
 
@@ -211,46 +267,55 @@ void FFADecoder::processDecodedFrame(AVFrame *frame)
     FFRecorder &recorder = FFRecorder::getInstance();
     FFAudioSampler *sampler = recorder.getSampler();
 
-    if (!sampler || !sampler->isActive()) {
+    if (!sampler || !sampler->isActive())
+    {
+        qDebug() << "Audio sampler is not active, skipping sample collection.";
         return; // 采样器未启动，跳过
     }
 
-    switch (frame->format) {
-    case AV_SAMPLE_FMT_FLT: {
+    switch (frame->format)
+    {
+    case AV_SAMPLE_FMT_FLT:
+    {
         // 单通道或交错float格式
-        float *samples = (float *) frame->data[0];
+        float *samples = (float *)frame->data[0];
         int sampleCount = frame->nb_samples * frame->ch_layout.nb_channels;
         sampler->collectSamples(samples, sampleCount);
         break;
     }
 
-    case AV_SAMPLE_FMT_FLTP: {
+    case AV_SAMPLE_FMT_FLTP:
+    {
         // Planar float格式（多个通道分开存储）
         // 对于多通道情况，需要交错处理
         int numSamples = frame->nb_samples;
-        float **samples = (float **) frame->data;
+        float **samples = (float **)frame->data;
 
         // 选项1: 只采集第一个声道（单声道分析）
-        if (samples[0]) {
+        if (samples[0])
+        {
             sampler->collectSamples(samples[0], numSamples);
         }
         break;
     }
 
-    case AV_SAMPLE_FMT_S16: {
+    case AV_SAMPLE_FMT_S16:
+    {
         // 16位有符号整数格式
-        int16_t *samples = (int16_t *) frame->data[0];
+        int16_t *samples = (int16_t *)frame->data[0];
         int sampleCount = frame->nb_samples * frame->ch_layout.nb_channels;
         sampler->collectSamples(samples, sampleCount);
         break;
     }
 
-    case AV_SAMPLE_FMT_S16P: {
+    case AV_SAMPLE_FMT_S16P:
+    {
         // Planar 16位格式
         int numSamples = frame->nb_samples;
-        int16_t **samples = (int16_t **) frame->data;
+        int16_t **samples = (int16_t **)frame->data;
 
-        if (samples[0]) {
+        if (samples[0])
+        {
             sampler->collectSamples(samples[0], numSamples);
         }
         break;
@@ -266,10 +331,13 @@ void FFADecoder::printError(int ret)
 {
     char errorBuffer[AV_ERROR_MAX_STRING_SIZE];
     int res = av_strerror(ret, errorBuffer, sizeof(errorBuffer));
-    if (res < 0) {
-        std::cerr << "UnKonw Error!" << std::endl;
-    } else {
-        std::cerr << "Error:" << errorBuffer << std::endl;
+    if (res < 0)
+    {
+        qDebug() << "UnKonw Error!";
+    }
+    else
+    {
+        qDebug() << "Error:" << errorBuffer;
     }
 }
 
@@ -294,15 +362,14 @@ void FFADecoder::initResampler()
 
 void FFADecoder::printFmt()
 {
-    std::cout << "audio format : " << av_get_sample_fmt_name(aPars->aFormatEnum) << std::endl;
-    std::cout << "sample_rate : " << aPars->sampleRate << std::endl;
-    std::cout << "channels : " << aPars->nbChannels << std::endl;
-    std::cout << "time_base : " << aPars->timeBase.num << " / " << aPars->timeBase.den << std::endl;
+    std::cout << "audio format : " << av_get_sample_fmt_name(aPars->aFormatEnum);
+    std::cout << "sample_rate : " << aPars->sampleRate;
+    std::cout << "channels : " << aPars->nbChannels;
+    std::cout << "time_base : " << aPars->timeBase.num << " / " << aPars->timeBase.den;
 
-    std::cout << "=================" << std::endl;
-    std::cout << "audio format : " << av_get_sample_fmt_name(swraPars->aFormatEnum) << std::endl;
-    std::cout << "sample_rate : " << swraPars->sampleRate << std::endl;
-    std::cout << "channels : " << swraPars->nbChannels << std::endl;
-    std::cout << "time_base : " << swraPars->timeBase.num << " / " << swraPars->timeBase.den
-              << std::endl;
+    std::cout << "=================";
+    std::cout << "audio format : " << av_get_sample_fmt_name(swraPars->aFormatEnum);
+    std::cout << "sample_rate : " << swraPars->sampleRate;
+    std::cout << "channels : " << swraPars->nbChannels;
+    std::cout << "time_base : " << swraPars->timeBase.num << " / " << swraPars->timeBase.den;
 }

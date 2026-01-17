@@ -6,6 +6,7 @@ Rectangle {
     id: root
 
     property bool isSelected: false
+    property bool isEnabled: true
     property string iconSource: ""
     property string labelText: ""
     property real iconWidth: 32
@@ -18,15 +19,17 @@ Rectangle {
     anchors.verticalCenter: parent.verticalCenter
     radius: 10
 
+    opacity: isEnabled ? 1.0 : 0.5
+
     // 渐变背景
     gradient: Gradient {
         GradientStop {
             position: 0.0
-            color: isSelected ? "#5BC9FF" : (bgMouse.containsMouse ? "#4A9EFF" : "#3A4050")
+            color: isSelected ? "#5BC9FF" : (bgMouse.containsMouse && isEnabled ? "#4A9EFF" : "#3A4050")
         }
         GradientStop {
             position: 1.0
-            color: isSelected ? "#38B2F0" : (bgMouse.containsMouse ? "#3A7FCC" : "#2A2F3E")
+            color: isSelected ? "#38B2F0" : (bgMouse.containsMouse && isEnabled ? "#3A7FCC" : "#2A2F3E")
         }
     }
 
@@ -38,7 +41,7 @@ Rectangle {
     }
 
     // 阴影效果
-    layer.enabled: isSelected || bgMouse.containsMouse
+    layer.enabled: isSelected || (bgMouse.containsMouse && isEnabled)
     layer.effect: MultiEffect {
         shadowEnabled: true
         shadowColor: isSelected ? "#405BC9FF" : "#20000000"
@@ -48,12 +51,15 @@ Rectangle {
 
     MouseArea {
         id: bgMouse
-        hoverEnabled: true
+        hoverEnabled: isEnabled
         anchors.fill: parent
-        cursorShape: Qt.PointingHandCursor
+        cursorShape: isEnabled ? Qt.PointingHandCursor : Qt.ForbiddenCursor
+        enabled: isEnabled
 
         onClicked: {
-            root.clicked()
+            if (isEnabled) {
+                root.clicked()
+            }
         }
     }
 

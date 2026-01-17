@@ -33,6 +33,12 @@ void FFVFilterThread::init(FFVFrameQueue *frmQueue_, FFVFilter *filter_)
     filter = filter_;
 }
 
+void FFVFilterThread::updateQueue(FFVFrameQueue *frmQueue_)
+{
+    std::lock_guard<std::mutex> lock(mutex);
+    frmQueue = frmQueue_;
+}
+
 void FFVFilterThread::startEncoder()
 {
     std::lock_guard<std::mutex> lock(mutex);
@@ -61,6 +67,7 @@ void FFVFilterThread::openVideoSource(int sourceType)
         break;
     case CAMERA:
         cameraFlag.store(true);
+        break;
     default:
         break;
     }
@@ -79,6 +86,7 @@ void FFVFilterThread::closeVideoSource(int sourceType)
         break;
     case CAMERA:
         cameraFlag.store(false);
+        break;
 
     default:
         break;
@@ -119,9 +127,8 @@ void FFVFilterThread::run()
         if (!hascamera && !hasEncoder && !hasPause) {
             std::unique_lock<std::mutex> lock(mutex);
             // log: thread is idle and waiting for condition
-            std::cerr << "[FFVFilterThread] idle, waiting (camera=" << hascamera
-                      << ", encoder=" << hasEncoder
-                      << ", pause=" << hasPause << ")" << std::endl;
+            qDebug() << "[FFVFilterThread] idle, waiting (camera=" << hascamera
+                     << ", encoder=" << hasEncoder << ", pause=" << hasPause << ")";
             cond.wait_for(lock, std::chrono::milliseconds(100));
             continue;
         }
@@ -130,21 +137,22 @@ void FFVFilterThread::run()
 
         if (hasEncoder && !hasPause) {
             std::lock_guard<std::mutex> lock(mutex);
-            std::cerr << "[FFVFilterThread] ready to dequeue frame (encoder=1, pause=0)" << std::endl;
+            qDebug() << "[FFVFilterThread] ready to dequeue frame (encoder=1, pause=0)";
             AVFrame *encodeFrame = frmQueue->dequeue();
             auto end = av_gettime_relative();
             int64_t duration = (end - start) * 10;
-            std::cerr << "[FFVFilterThread] dequeue done, frame=" << encodeFrame
-                      << ", wait_us=" << (end - start) << std::endl;
+            qDebug() << "[FFVFilterThread] dequeue done, frame=" << encodeFrame
+                     << ", wait_us=" << (end - start);
 
             overplayPts = av_gettime_relative() * 10 + duration - pauseTime * 10;
-            std::cerr << "[FFVFilterThread] computed pts (100ns units)=" << overplayPts
-                      << ", pauseTime(100ns)=" << (pauseTime.load() * 10) << std::endl;
+            qDebug() << "[FFVFilterThread] computed pts (100ns units)=" << overplayPts
+                     << ", pauseTime(100ns)=" << (pauseTime.load() * 10);
 
             encodeFrame->pts = overplayPts;
-            std::cerr << "[FFVFilterThread] set frame->pts and forwarding to encoder queue" << std::endl;
+            qDebug() << "[FFVFilterThread] set frame->pts and forwarding to encoder queue";
             filter->sendEncodeFrame(encodeFrame);
-            std::cerr << "[FFVFilterThread] forwarded frame to encoderFrameQueue via FFVFilter::sendEncodeFrame" << std::endl;
+            qDebug() << "[FFVFilterThread] forwarded frame to encoderFrameQueue via "
+                        "FFVFilter::sendEncodeFrame";
         }
     }
 }
