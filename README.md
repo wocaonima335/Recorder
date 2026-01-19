@@ -78,10 +78,7 @@ QML交互 -> QmlBridge -> EventFactoryManager -> FFEventQueue
 - 若需支持更多采集协议，可在 `Demuxer::init` 中扩展 URL/format 解析。
 
 ## 规划与 TODO
-
-- [ ] 支持自定义输出路径与文件命名策略。
-- [ ] UI 中展示音量、帧率等监控信息。
-- [ ] 设置界面和视频界面的实现。
+- [ ] 处理二次录制时导致的音视频不同步问题。
 - [ ] 启用视频和音频滤镜模块。
 
 ## 参与贡献
